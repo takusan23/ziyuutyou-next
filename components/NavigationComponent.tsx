@@ -1,5 +1,4 @@
 import { BookRounded, BubbleChartOutlined, HomeOutlined } from "@mui/icons-material"
-import Avatar from "@mui/material/Avatar"
 import Box from "@mui/material/Box"
 import CardHeader from "@mui/material/CardHeader"
 import Divider from "@mui/material/Divider"
@@ -9,7 +8,7 @@ import ListItem from "@mui/material/ListItem"
 import ListItemIcon from "@mui/material/ListItemIcon"
 import ListItemText from "@mui/material/ListItemText"
 import Link from "next/link"
-import Image from 'next/image'
+import NextAvater from "./NextAvater"
 
 /** ナビゲーションドロワーに表示するメニュー */
 const linkList = [
@@ -55,10 +54,7 @@ const NavigationLink = () => {
 const NavigationHeader = () => {
     return (<CardHeader
         avatar={
-            // Next.jsのImageを利用することでページ遷移時でもパスを自動で修正してくれる
-            <Avatar alt="takusan_23">
-                <Image src="/icon.png" layout="fill" />
-            </ Avatar>
+            <NextAvater path="/icon.png" />
         }
         title="たくさんの自由帳"
         subheader="Androidのお話"

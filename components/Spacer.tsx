@@ -9,9 +9,7 @@ type SpacerProps = {
 /** 空白をあけるだけ */
 const Spacer: React.FC<SpacerProps> = (props) => {
     return (
-        <Box sx={{ margin: props.value }}>
-
-        </Box>
+        <Box sx={{ margin: props.value }} />
     )
 }
 

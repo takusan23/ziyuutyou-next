@@ -1,14 +1,13 @@
 import Typography from "@mui/material/Typography"
-import Paper from "@mui/material/Paper"
 import Button from "@mui/material/Button"
 import List from "@mui/material/List"
 import ListItem from "@mui/material/ListItem"
 import { AndroidOutlined, WebOutlined } from "@mui/icons-material"
-import Box from "@mui/material/Box"
 import IconButton from "@mui/material/IconButton"
 import Divider from "@mui/material/Divider"
 import { useEffect, useState } from "react"
 import Spacer from "./Spacer"
+import RoundedCornerBox from "./RoundedCorner"
 
 /** 作ったもの配列にあるデータの構造 */
 type MakingAppItem = {
@@ -53,17 +52,15 @@ type MakingAppNavigationRailProps = {
 /** 作ったものを切り替えるNavigationRail */
 const MakingAppNavigationRail: React.FC<MakingAppNavigationRailProps> = (props) => {
     return (
-        <Box>
-            <List>
-                {Object.keys(makingApp).map((text, index) => (
-                    <ListItem button key={text} onClick={() => props.onMenuClick(text)}>
-                        <IconButton>
-                            {iconList[index]}
-                        </IconButton>
-                    </ListItem>
-                ))}
-            </List>
-        </Box>
+        <List>
+            {Object.keys(makingApp).map((text, index) => (
+                <ListItem button key={text} onClick={() => props.onMenuClick(text)}>
+                    <IconButton>
+                        {iconList[index]}
+                    </IconButton>
+                </ListItem>
+            ))}
+        </List>
     )
 }
 
@@ -87,8 +84,8 @@ const MakingAppList: React.FC<MakingAppListProps> = (props) => {
                             {item.description}
                         </Typography>
                         <Spacer value={1} />
-                        <Button variant="text" size="small">リンクへ</Button>
-                        <Button variant="text" size="small">GitHubを開く</Button>
+                        <Button variant="text">リンクへ</Button>
+                        <Button variant="text">GitHubを開く</Button>
                         <Divider />
                         <Spacer value={1} />
                     </>
@@ -125,12 +122,7 @@ const MakingAppCard = () => {
     }, [])
 
     return (
-        <Paper
-            elevation={0}
-            sx={{
-                borderRadius: 3
-            }}
-        >
+        <RoundedCornerBox value={3}>
             <Typography variant="h6" sx={{ padding: 1 }}>
                 作ったもの
             </Typography>
@@ -140,7 +132,7 @@ const MakingAppCard = () => {
                 />
                 <MakingAppList list={appList} />
             </div>
-        </Paper>
+        </RoundedCornerBox>
     )
 }
 

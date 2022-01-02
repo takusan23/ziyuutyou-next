@@ -1,50 +1,66 @@
-import Grid from "@mui/material/Grid"
 import Typography from "@mui/material/Typography"
-import Avatar from "@mui/material/Avatar"
-import Image from 'next/image'
-import Paper from "@mui/material/Paper"
+import CardHeader from "@mui/material/CardHeader"
+import CardMedia from "@mui/material/CardMedia"
+import CardContent from "@mui/material/CardContent"
+import NextAvater from "./NextAvater"
+import { useEffect, useState } from "react"
+import CardActions from "@mui/material/CardActions"
 import Button from "@mui/material/Button"
-import BookRounded from "@mui/icons-material/BookRounded"
+import { BookOutlined } from "@mui/icons-material"
 import Link from "next/link"
+import RoundedCornerBox from "./RoundedCorner"
 
-/** アイコンと名前と記事一覧ボタンがあるやつ */
+/** 一言メッセージ */
+const textList = [
+    "このサイトはNext.jsとMaterial-UIでできています。普段はAndroidアプリを書いてます。たまにJavaScriptとかWPFとか。",
+    "JetpackComposeとReactって似てるから書きやすい。",
+    "4G転用5Gって何がやりたいんや？",
+    "D.C.4 SH 発表めでたい!"
+]
+
+/** アイコンと名前とひとこと の部分 */
 const ProfileCard = () => {
+    /** 一言メッセージ */
+    const [msg, setMsg] = useState("")
+
+    // ランダムで決定!
+    useEffect(() => {
+        const randomInt = Math.floor(Math.random() * textList.length);
+        setMsg(textList[randomInt])
+    }, [])
+
     return (
-        <Paper
-            elevation={0}
-            sx={{
-                borderRadius: 3
-            }}
-        >
-            <Grid
-                container
-                spacing={0}
-                direction="column"
-                alignItems="center"
-                justifyContent="center"
-            >
-                <Grid item xs={12} sx={{ paddingTop: 1 }}>
-                    <Avatar
-                        alt="takusan_23"
-                        sx={{ width: 75, height: 75 }}
-                    >
-                        <Image src="/icon.png" layout="fill" />
-                    </ Avatar>
-                </Grid>
-                <Grid item xs={12} sx={{ paddingTop: 1 }}>
-                    <Typography variant="h5">
-                        たくさん / takusan_23
-                    </Typography>
-                </Grid>
-                <Grid item xs={12} sx={{ paddingTop: 1, paddingBottom: 1 }}>
-                    <Link href="/posts/page/1">
-                        <Button variant="contained" startIcon={<BookRounded />}>
-                            記事一覧へ
-                        </Button>
-                    </Link>
-                </Grid>
-            </Grid>
-        </Paper>
+        <RoundedCornerBox value={3}>
+            <CardHeader
+                avatar={
+                    <NextAvater path="/icon.png" />
+                }
+                title="たくさん"
+                subheader="@takusan_23"
+            />
+            <CardMedia
+                component="img"
+                height="194"
+                alt="なんか思いついたら画像を貼る"
+            />
+            <CardContent>
+                <Typography variant="body2" color="text.secondary">
+                    {msg}
+                </Typography>
+            </CardContent>
+            <CardActions>
+                <Link href="/posts/page/1">
+                    <Button
+                        sx={{ borderRadius: 10, marginLeft: 'auto' }}
+                        variant="contained"
+                        disableElevation
+                        aria-expanded={true}
+                        startIcon={<BookOutlined />}>
+                        記事一覧へ
+                    </Button>
+                </Link>
+            </CardActions>
+        </RoundedCornerBox>
     )
 }
 
