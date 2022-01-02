@@ -5,7 +5,7 @@ import ListItem from "@mui/material/ListItem"
 import { AndroidOutlined, WebOutlined } from "@mui/icons-material"
 import IconButton from "@mui/material/IconButton"
 import Divider from "@mui/material/Divider"
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import Spacer from "./Spacer"
 import RoundedCornerBox from "./RoundedCorner"
 
@@ -76,7 +76,7 @@ const MakingAppList: React.FC<MakingAppListProps> = (props) => {
         <List sx={{ marginLeft: 2, marginRight: 2, width: '100%' }}>
             {
                 props.list.map(item => (
-                    <>
+                    <React.Fragment key={item.link}>
                         <Typography variant="h5" component="div">
                             {item.title}
                         </Typography>
@@ -88,7 +88,7 @@ const MakingAppList: React.FC<MakingAppListProps> = (props) => {
                         <Button variant="text">GitHubを開く</Button>
                         <Divider />
                         <Spacer value={1} />
-                    </>
+                    </React.Fragment>
                 ))
             }
         </List>

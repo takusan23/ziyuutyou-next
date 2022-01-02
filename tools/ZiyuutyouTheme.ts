@@ -20,13 +20,6 @@ const theme = createTheme({
             default: '#ffffff',
             paper: '#dce1ff'
         },
-    },
-    components: {
-        MuiAppBar: {
-            styleOverrides: {
-                colorDefault: '#dce1ff'
-            }
-        }
     }
 })
 

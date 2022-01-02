@@ -15,7 +15,8 @@ const textList = [
     "このサイトはNext.jsとMaterial-UIでできています。普段はAndroidアプリを書いてます。たまにJavaScriptとかWPFとか。",
     "JetpackComposeとReactって似てるから書きやすい。",
     "4G転用5Gって何がやりたいんや？",
-    "D.C.4 SH 発表めでたい!"
+    "D.C.4 SH 発表めでたい!",
+    "コンビニのセイイキはまだですかね、fengさん？"
 ]
 
 /** アイコンと名前とひとこと の部分 */
