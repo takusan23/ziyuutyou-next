@@ -1,11 +1,11 @@
 import BlogListItem from "../../../components/BlogListItem"
-import BlogContentManager from "../../../src/BlogContentManager"
 import BlogItem from "../../../src/data/BlogItem"
 import { GetStaticPaths, GetStaticProps } from "next"
 import React from "react"
 import Spacer from "../../../components/Spacer"
 import RoundedCornerBox from "../../../components/RoundedCorner"
 import Divider from "@mui/material/Divider"
+import ContentFolderManager from "../../../src/ContentFolderManager"
 
 /** 一度に取得する件数 */
 const blogLimit = 10
@@ -51,7 +51,7 @@ export const getStaticProps: GetStaticProps<BlogListPageProps> = async context =
     // posts/page/<ここ> を取得
     const pageId = parseInt(context.params["page"] as string)
     // 記事一覧を取得する。async なので待つ。-1してるのは1ページ目はskip:0にしたいため
-    const blogListResult = await BlogContentManager.getBlogItemList(blogLimit, blogLimit * (pageId - 1))
+    const blogListResult = await ContentFolderManager.getBlogItemList(blogLimit, blogLimit * (pageId - 1))
     const blogList = blogListResult.result
     return {
         props: {
@@ -69,7 +69,7 @@ export const getStaticProps: GetStaticProps<BlogListPageProps> = async context =
  */
 export const getStaticPaths: GetStaticPaths = async () => {
     // async なので待つ。合計数がほしいので適当に一つだけ
-    const blogListResult = await BlogContentManager.getBlogItemList(1, 1)
+    const blogListResult = await ContentFolderManager.getBlogItemList(1, 1)
     const totalCount = blogListResult.totalCount
     // 割り算をして必要な数用意する
     const requirePageCount = (totalCount / blogLimit) + 1 // あまりのために +1
