@@ -1,6 +1,14 @@
+/* フォント読み込み */
+@font-face {
+    font-family: 'Koruri Regular';
+    src: url('fonts/Koruri-Regular-sub.eot');
+    src: url('fonts/Koruri-Regular-sub.eot?#iefix') format('embedded-opentype'), url('fonts/Koruri-Regular-sub.woff') format('woff'), url('fonts/Koruri-Regular-sub.ttf') format('truetype');
+}
+
 /* コードブロック */
 code {
     overflow-x: scroll;
+    font-family: 'Koruri Regular';
 }
 
 /* Table（表）に線が入らないので調整 */

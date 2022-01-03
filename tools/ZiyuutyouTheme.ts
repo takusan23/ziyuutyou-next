@@ -1,5 +1,4 @@
 import { createTheme } from '@mui/material/styles';
-
 /**
  * 見た目というかテーマのデータを作る
  * 
@@ -20,6 +19,11 @@ const theme = createTheme({
             default: '#dce1ff',
             paper: '#ffffff'
         },
+    },
+    typography: {
+        fontFamily: [
+            'Koruri Regular'
+        ].join(','),
     }
 })
 
