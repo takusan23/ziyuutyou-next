@@ -6,6 +6,7 @@ import Link from "next/link"
 import React from "react"
 import BlogItem from "../src/data/BlogItem"
 import Spacer from "./Spacer"
+import TagChipGroup from "./TagChipGroup"
 
 /** BlogItem へ渡すデータ */
 type BlogItemProps = {
@@ -26,6 +27,8 @@ const BlogListItem: React.FC<BlogItemProps> = (props) => {
             <Typography variant="body2" color="text.secondary">
                 {props.blogItem.description}
             </Typography>
+            <Spacer value={2} />
+            <TagChipGroup tagList={props.blogItem.tags} />
             <Spacer value={2} />
             <div style={{
                 display: 'flex',
