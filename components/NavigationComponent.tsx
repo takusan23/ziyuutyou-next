@@ -88,6 +88,7 @@ const NavigationLinkDrawer: React.FC<NavigationLinkDrawerProps> = (props) => {
                 onClose={props.onClose}
                 variant="temporary"
                 elevation={0}
+
                 sx={{
                     backgroundColor: "initial !important",
                     display: { xs: 'block', sm: 'none' },
@@ -99,7 +100,6 @@ const NavigationLinkDrawer: React.FC<NavigationLinkDrawerProps> = (props) => {
                 }}
             >
                 <NavigationHeader />
-                <Divider />
                 <NavigationLink />
             </Drawer>
             <Drawer
@@ -109,14 +109,14 @@ const NavigationLinkDrawer: React.FC<NavigationLinkDrawerProps> = (props) => {
                     '& .MuiDrawer-paper': {
                         boxSizing: 'border-box',
                         width: drawerWidth,
-                        backgroundColor: 'background.default'
+                        backgroundColor: 'background.default',
+                        borderRight: 'initial'
                     },
                 }}
                 elevation={0}
                 open
             >
                 <NavigationHeader />
-                <Divider />
                 <NavigationLink />
             </Drawer>
         </Box>
