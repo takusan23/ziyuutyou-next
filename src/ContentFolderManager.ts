@@ -19,14 +19,25 @@ class ContentFolderManager {
     /** ブログ記事のベースURL */
     static POSTS_BASE_URL = `/posts`
 
+    /** 固定ページのベースURL */
+    static PAGES_BASE_URL = `/pages`
+
     /**
-     * 書き出す必要のあるMarkdownファイルを返す
+     * 書き出す必要のある固定ページのファイル名配列を返す
+     * 
+     * @returns ファイル名一覧
+     */
+    static getPageNameList() {
+        return this.getFileNameList(this.PAGES_FOLDER_PATH)
+    }
+
+    /**
+     * 書き出す必要のある記事一覧のファイル名配列を返す
      * 
      * @returns ファイル名一覧
      */
     static getBlogNameList() {
-        return fs.readdirSync(this.POSTS_FOLDER_PATH)
-            .map(name => path.parse(name).name)
+        return this.getFileNameList(this.POSTS_FOLDER_PATH)
     }
 
     /**
@@ -66,15 +77,39 @@ class ContentFolderManager {
     }
 
     /**
-     * Markdownを読み込んでパースしたデータを返す
+     * 記事のMarkdownを読み込んで返す
      * 
      * @param fileName ファイル名 
+     * @returns パース結果
      */
     static async getBlogItem(fileName: string) {
         // 拡張子！！！！
         const filePath = `${this.POSTS_FOLDER_PATH}/${fileName}.md`
-        const markdownData = await MarkdownParser.parse(filePath, this.POSTS_BASE_URL)
+        return this.getItem(filePath, this.POSTS_BASE_URL)
+    }
+
+    /**
+     * 固定ページのMarkdownを読み込んで返す
+     * 
+     * @param fileName ファイル名
+     * @returns パース結果
+     */
+    static async getPageItem(fileName: string) {
+        // 拡張子！！！！
+        const filePath = `${this.PAGES_FOLDER_PATH}/${fileName}.md`
+        return this.getItem(filePath, this.PAGES_BASE_URL)
+    }
+
+    /** Markdownを読み込んで解析して返す */
+    private static async getItem(filePath: string, baseUrl: string) {
+        const markdownData = await MarkdownParser.parse(filePath, baseUrl)
         return markdownData
+    }
+
+    /** 引数のフォルダパスの中身をファイル名配列として返す */
+    private static getFileNameList(folderPath: string) {
+        return fs.readdirSync(folderPath)
+            .map(name => path.parse(name).name)
     }
 
 }

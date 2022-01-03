@@ -303,7 +303,7 @@ private val bleCallBack = object : ScanCallback() {
 
 `app/build.gradle`を開いて
 
-```gradle
+```
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"

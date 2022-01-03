@@ -50,7 +50,7 @@ const ProfileCard = () => {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Link href="/posts/page/1">
+                <Link passHref href="/posts/page/1">
                     <Button
                         sx={{ borderRadius: 10, marginLeft: 'auto' }}
                         variant="contained"

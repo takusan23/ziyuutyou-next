@@ -40,7 +40,7 @@ class MarkdownParser {
         // ライブラリ君が勝手にDateオブジェクトに変換してくれた模様
         const date = matterResult.data['created_at'] as Date
         const createdAt = date.toLocaleDateString()
-        const tags = matterResult.data['tags'] as Array<string>
+        const tags = (matterResult.data['tags'] ?? []) as Array<string>
         const fileName = path.parse(filePath).name
         const createdAtUnixTime = date.getTime()
         // マークダウン -> unified -> HTML 
@@ -50,7 +50,10 @@ class MarkdownParser {
             .use(rehypeRaw)
             .use(remarkGfm)
             .use(rehypeStringify)
-            .use(rehypeHighlight)
+            .use(rehypeHighlight, {
+                // 利用できない言語の場合はエラー出さずに無視
+                ignoreMissing: true
+            })
             .process(matterResult.content)
         const markdownToHtml = remarkParser.toString()
         const data: MarkdownData = {

@@ -24,7 +24,7 @@ type BlogListPagingButtonProps = {
 /** NextLinkなButton */
 const BlogListPagingButton: React.FC<BlogListPagingButtonProps> = (props) => {
     return (
-        <Link href={props.href}>
+        <Link passHref href={props.href}>
             <Button
                 variant="contained"
                 sx={{ borderRadius: 10 }}
@@ -134,9 +134,9 @@ export const getStaticProps: GetStaticProps<BlogListPageProps> = async context =
  * ブログ一覧では次のページを生成する必要があるため、必要な次のページの分だけURLを作って返す必要があります。(実際は[page]の部分ですが)
  */
 export const getStaticPaths: GetStaticPaths = async () => {
-    // async なので待つ。合計数がほしいので適当に一つだけ
-    const blogListResult = await ContentFolderManager.getBlogItemList(1, 1)
-    const totalCount = blogListResult.totalCount
+    // async なので待つ。合計数がほしいので名前だけの配列で
+    const nameList = await ContentFolderManager.getBlogNameList()
+    const totalCount = nameList.length
     // 割り算をして必要な数用意する
     const requirePageCount = (totalCount / blogLimit) + 1 // あまりのために +1
     // 必要なURLを作成

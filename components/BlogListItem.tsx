@@ -19,7 +19,7 @@ const BlogListItem: React.FC<BlogItemProps> = (props) => {
     const theme = useTheme()
     return (
         <Box sx={{ padding: 3 }}>
-            <Link href={props.blogItem.link}>
+            <Link passHref href={props.blogItem.link}>
                 <a style={{ color: theme.palette.primary.main, fontSize: 25 }} >
                     {props.blogItem.title}
                 </a>
@@ -37,7 +37,7 @@ const BlogListItem: React.FC<BlogItemProps> = (props) => {
             }}>
                 <UploadFileOutlined />
                 <Typography color="text.secondary">
-                    {props.blogItem.createdAt}
+                    {`${props.blogItem.createdAt} 投稿`}
                 </Typography>
             </div>
         </Box>

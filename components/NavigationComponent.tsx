@@ -1,10 +1,9 @@
 import { BookRounded, BubbleChartOutlined, HomeOutlined } from "@mui/icons-material"
 import Box from "@mui/material/Box"
 import CardHeader from "@mui/material/CardHeader"
-import Divider from "@mui/material/Divider"
 import Drawer from "@mui/material/Drawer"
 import List from "@mui/material/List"
-import ListItem from "@mui/material/ListItem"
+import ListItemButton from "@mui/material/ListItemButton"
 import ListItemIcon from "@mui/material/ListItemIcon"
 import ListItemText from "@mui/material/ListItemText"
 import Link from "next/link"
@@ -38,10 +37,10 @@ const NavigationLink = () => {
                     // mapでElementを返す
                     linkList.map(linkData => (
                         <Link href={linkData.link} passHref key={linkData.link}>
-                            <ListItem button>
+                            <ListItemButton component="a">
                                 <ListItemIcon>{linkData.icon}</ListItemIcon>
                                 <ListItemText primary={linkData.title} />
-                            </ListItem>
+                            </ListItemButton>
                         </Link>
                     ))
                 }
