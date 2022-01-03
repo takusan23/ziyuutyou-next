@@ -51,23 +51,6 @@ const BlogDetail: React.FC<BlogDetailProps> = (props) => {
                 img {
                     max-width: 80%;
                 }
-                code {
-                    overflow-x: scroll;
-                }
-                /* Table（表）に線が入らないので調整 */
-                table {
-                    border-collapse: collapse;
-                    border-spacing: 0;
-                    width: 100%;
-                    margin: 10px;
-                }
-                table tr {
-                    border-bottom: solid 1px #000;
-                }
-                table td {
-                    padding: 10px;
-                    text-align: center;
-                }
             `}</style>
         </>
     )

@@ -4,6 +4,8 @@ import Layout from "../components/Layout"
 import theme from "../tools/ZiyuutyouTheme"
 // シンタックスハイライトのCSS
 import 'highlight.js/styles/vs2015.css'
+// テーブルとかスクロールバーのCSS
+import '../styles/css/styles.css'
 
 
 /**

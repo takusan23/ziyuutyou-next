@@ -53,7 +53,6 @@ class MarkdownParser {
             .use(rehypeHighlight)
             .process(matterResult.content)
         const markdownToHtml = remarkParser.toString()
-        console.log(markdownToHtml)
         const data: MarkdownData = {
             title: title,
             createdAt: createdAt,

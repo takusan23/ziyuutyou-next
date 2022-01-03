@@ -1,0 +1,40 @@
+
+/* コードブロック */
+code {
+    overflow-x: scroll;
+}
+
+/* Table（表）に線が入らないので調整 */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    margin: 10px;
+}
+
+table tr {
+    border-bottom: solid 1px #000;
+}
+
+table td {
+    padding: 10px;
+    text-align: center;
+}
+
+/* スクロールバー */
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #5870cb;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 2px #fff;
+}
