@@ -41,6 +41,7 @@ const Layout = ({ children }) => {
                 }}
             >
                 <Toolbar />
+                {/* ページ遷移はこれ。<router>みたいなやつ */}
                 {children}
             </Box>
         </Box>

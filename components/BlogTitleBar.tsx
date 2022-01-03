@@ -4,7 +4,6 @@ import Toolbar from "@mui/material/Toolbar"
 import Typography from "@mui/material/Typography";
 import MenuIcon from '@mui/icons-material/Menu';
 import React from "react";
-import { useTheme } from "@mui/material";
 
 /** タイトルバーへ渡すデータ */
 type BlogTitleBarProps = {
@@ -19,7 +18,6 @@ type BlogTitleBarProps = {
 /** タイトルバー */
 const BlogTitleBar: React.FC<BlogTitleBarProps> = (props) => {
     const drawerWidth = props.drawerWidth ?? 240
-    const theme = useTheme()
 
     return (
         <AppBar
@@ -41,7 +39,7 @@ const BlogTitleBar: React.FC<BlogTitleBarProps> = (props) => {
                 </IconButton>
                 <Typography
                     variant="h5"
-                    color={theme.palette.primary.main}
+                    color="primary.main"
                 >
                     {props.title}
                 </Typography>

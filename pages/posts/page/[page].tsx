@@ -4,8 +4,8 @@ import BlogItem from "../../../src/data/BlogItem"
 import { GetStaticPaths, GetStaticProps } from "next"
 import React from "react"
 import Spacer from "../../../components/Spacer"
-import Box from "@mui/material/Box"
-import { useTheme } from "@mui/material/styles"
+import RoundedCornerBox from "../../../components/RoundedCorner"
+import Divider from "@mui/material/Divider"
 
 /** 一度に取得する件数 */
 const blogLimit = 10
@@ -18,19 +18,23 @@ type BlogListPageProps = {
 
 /** ブログ一覧ページ。動的ルーティング */
 const BlogListPage: React.FC<BlogListPageProps> = ({ ...props }) => {
-    const theme = useTheme()
 
     return (
-        <Box color={theme.palette.primary.main}>
+        <RoundedCornerBox value={3}>
             {
-                props.blogList.map((blog) => (
+                props.blogList.map((blog, index) => (
                     <React.Fragment key={blog.link}>
+                        {
+                            // 区切り線を入れる。&&で右側がtrueなら左の評価もする仕様を使った方法らしい
+                            // https://ja.reactjs.org/docs/conditional-rendering.html#inline-if-with-logical--operator
+                            index != 0 && <Divider />
+                        }
                         <BlogListItem blogItem={blog} />
                         <Spacer value={1} />
                     </React.Fragment>
                 ))
             }
-        </Box>
+        </RoundedCornerBox>
     )
 }
 

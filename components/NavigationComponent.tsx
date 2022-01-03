@@ -76,6 +76,7 @@ type NavigationLinkDrawerProps = {
 const NavigationLinkDrawer: React.FC<NavigationLinkDrawerProps> = (props) => {
     // ドロワーの幅
     const drawerWidth = props.drawerWidth ?? 240
+
     return (
         <Box
             component="nav"
@@ -86,9 +87,15 @@ const NavigationLinkDrawer: React.FC<NavigationLinkDrawerProps> = (props) => {
                 open={props.isOpen}
                 onClose={props.onClose}
                 variant="temporary"
+                elevation={0}
                 sx={{
+                    backgroundColor: "initial !important",
                     display: { xs: 'block', sm: 'none' },
-                    '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+                    '& .MuiDrawer-paper': {
+                        boxSizing: 'border-box',
+                        width: drawerWidth,
+                        backgroundColor: 'background.default'
+                    },
                 }}
             >
                 <NavigationHeader />
@@ -99,8 +106,13 @@ const NavigationLinkDrawer: React.FC<NavigationLinkDrawerProps> = (props) => {
                 variant="permanent"
                 sx={{
                     display: { xs: 'none', sm: 'block' },
-                    '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+                    '& .MuiDrawer-paper': {
+                        boxSizing: 'border-box',
+                        width: drawerWidth,
+                        backgroundColor: 'background.default'
+                    },
                 }}
+                elevation={0}
                 open
             >
                 <NavigationHeader />
