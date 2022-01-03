@@ -11,11 +11,17 @@
     "@mui/icons-material": "^5.2.5",
     "@mui/material": "^5.2.6",
     "gray-matter": "^4.0.3",
+    "highlight.js": "^11.3.1",
     "next": "latest",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "remark": "^14.0.2",
-    "remark-html": "^15.0.1"
+    "rehype-highlight": "^5.0.2",
+    "rehype-raw": "^6.1.1",
+    "rehype-stringify": "^9.0.2",
+    "remark-gfm": "^3.0.1",
+    "remark-parse": "^10.0.1",
+    "remark-rehype": "^10.1.0",
+    "unified": "^10.1.1"
   },
   "devDependencies": {
     "@types/react": "^17.0.38",

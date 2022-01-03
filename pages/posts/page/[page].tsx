@@ -142,6 +142,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     // 必要なURLを作成
     const pathIdList = []
     for (let i = 0; i < requirePageCount; i++) {
+        // この場合はキーが page になるけどこれはファイル名によって変わる（[page].tsxだから）
         pathIdList.push({ params: { page: `${i}` } })
     }
     return {

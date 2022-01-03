@@ -1,6 +1,7 @@
 import BlogItem from "./data/BlogItem";
 import fs from "fs"
 import MarkdownParser from "./MarkdownParser";
+import path from "path"
 
 /**
  * `content`フォルダにあるコンテンツを取得する関数がある。
@@ -9,7 +10,7 @@ import MarkdownParser from "./MarkdownParser";
  */
 class ContentFolderManager {
 
-    /** 記事を保存しているフォルダパス。process.cwd()はnpm run devしたときのフォルダパス？ */
+    /** 記事を保存しているフォルダパス。process.cwd()はnpm run devしたときのフォルダパス？どの階層で呼んでも同じパスになるよう */
     static POSTS_FOLDER_PATH = `${process.cwd()}/content/posts`
 
     /** 固定ページを保存しているフォルダパス */
@@ -17,6 +18,16 @@ class ContentFolderManager {
 
     /** ブログ記事のベースURL */
     static POSTS_BASE_URL = `/posts`
+
+    /**
+     * 書き出す必要のあるMarkdownファイルを返す
+     * 
+     * @returns ファイル名一覧
+     */
+    static getBlogNameList() {
+        return fs.readdirSync(this.POSTS_FOLDER_PATH)
+            .map(name => path.parse(name).name)
+    }
 
     /**
      * 記事一覧を取得する
@@ -53,6 +64,19 @@ class ContentFolderManager {
             result: blogList.slice(skip, skip + limit)
         } as BlogItemResult
     }
+
+    /**
+     * Markdownを読み込んでパースしたデータを返す
+     * 
+     * @param fileName ファイル名 
+     */
+    static async getBlogItem(fileName: string) {
+        // 拡張子！！！！
+        const filePath = `${this.POSTS_FOLDER_PATH}/${fileName}.md`
+        const markdownData = await MarkdownParser.parse(filePath, this.POSTS_BASE_URL)
+        return markdownData
+    }
+
 }
 
 /** 記事一覧の返り値 */

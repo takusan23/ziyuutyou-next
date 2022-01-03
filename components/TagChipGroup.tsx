@@ -14,6 +14,7 @@ const TagChipGroup: React.FC<TagChipGroupProps> = (props) => {
             {
                 props.tagList.map(tagName => (
                     <Chip
+                        key={tagName}
                         sx={{
                             marginRight: 1
                         }}

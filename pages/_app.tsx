@@ -1,7 +1,10 @@
-import { ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles'
 import { useEffect } from "react"
 import Layout from "../components/Layout"
 import theme from "../tools/ZiyuutyouTheme"
+// シンタックスハイライトのCSS
+import 'highlight.js/styles/vs2015.css'
+
 
 /**
  * Androidで言うところのActivity。この中でPages(AndroidでいうとFragment)を切り替える

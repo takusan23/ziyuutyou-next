@@ -1,16 +1,26 @@
 import fs from "fs"
 import matter from "gray-matter"
-import { remark } from "remark"
-import remarkHtml from "remark-html"
 import MarkdownData from "./data/MarkdownData"
 import path from "path"
+import rehypeHighlight from "rehype-highlight"
+import remarkGfm from "remark-gfm"
+import { unified } from "unified"
+import remarkParse from "remark-parse"
+import remarkRehype from "remark-rehype"
+import rehypeRaw from "rehype-raw"
+import rehypeStringify from "rehype-stringify/lib"
 
 /**
  * Markdownパーサー
  * 
- * - remark (Markdownパーサー)
- * - remark-html (remarkの結果をhtmlに変換する)
- * - gray-matter (Markdown冒頭のメタデータをパースする)
+ *  - gray-matter (Markdown冒頭のメタデータをパースする)
+ * 
+ * - unified (Markdown / HTML 変換するためのシステム)
+ * - remarkParse (Markdownパーサー)
+ * - remarkRehype / rehypeStringify (HTML変換)
+ * - rehypeRaw (Markdownに埋め込んだHTMLを利用する)
+ * - rehypeHighlight (シンタックスハイライト。CSSはHighlight.jsから。_app.tsxで読み込んでる)
+ * - remarkGfm (テーブル、打ち消し線、自動リンク機能)
  */
 class MarkdownParser {
 
@@ -33,17 +43,23 @@ class MarkdownParser {
         const tags = matterResult.data['tags'] as Array<string>
         const fileName = path.parse(filePath).name
         const createdAtUnixTime = date.getTime()
-        // マークダウン -> HTML
-        const parseContent = await remark()
-            .use(remarkHtml)
+        // マークダウン -> unified -> HTML 
+        const remarkParser = await unified()
+            .use(remarkParse)
+            .use(remarkRehype, { allowDangerousHtml: true })
+            .use(rehypeRaw)
+            .use(remarkGfm)
+            .use(rehypeStringify)
+            .use(rehypeHighlight)
             .process(matterResult.content)
-        const content = parseContent.toString()
+        const markdownToHtml = remarkParser.toString()
+        console.log(markdownToHtml)
         const data: MarkdownData = {
             title: title,
             createdAt: createdAt,
             createdAtUnixTime: createdAtUnixTime,
             tags: tags,
-            html: content,
+            html: markdownToHtml,
             link: `${baseUrl}/${fileName}`
         }
         return data
