@@ -2,6 +2,7 @@ import UploadFileOutlined from "@mui/icons-material/UploadFileOutlined"
 import { Typography, useTheme } from "@mui/material"
 import Box from "@mui/material/Box"
 import { GetStaticPaths, GetStaticProps } from "next"
+import Head from "next/head"
 import React from "react"
 import RoundedCornerBox from "../../components/RoundedCorner"
 import Spacer from "../../components/Spacer"
@@ -18,8 +19,17 @@ type BlogDetailProps = {
 /** ブログ本文 */
 const BlogDetail: React.FC<BlogDetailProps> = (props) => {
     const theme = useTheme()
+    const ogpTitle = `${props.markdownData.title} - たくさんの自由帳`
+    const ogpUrl = `https://takusan.negitoro.dev${props.markdownData.link}/`
+
     return (
         <>
+            <Head>
+                <title>{ogpTitle}</title>
+                <meta property="og:url" content={ogpUrl}></meta>
+                <meta property="og:title" content={ogpTitle}></meta>
+                <link rel="canonical" href={ogpUrl} />
+            </Head>
             <Typography color="primary.main">
                 <span style={{ fontSize: 30 }}>
                     {props.markdownData.title}

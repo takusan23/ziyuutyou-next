@@ -9,6 +9,7 @@ import ContentFolderManager from "../../../src/ContentFolderManager"
 import Button from "@mui/material/Button"
 import Box from "@mui/material/Box"
 import Link from "next/link"
+import Head from "next/head"
 
 /** 一度に取得する件数 */
 const blogLimit = 10
@@ -53,6 +54,9 @@ const BlogListPage: React.FC<BlogListPageProps> = ({ ...props }) => {
 
     return (
         <>
+            <Head>
+                <title>記事一覧 - たくさんの自由帳</title>
+            </Head>
             <RoundedCornerBox value={3}>
                 {
                     props.blogList.map((blog, index) => (
