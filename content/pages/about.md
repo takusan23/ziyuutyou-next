@@ -32,7 +32,7 @@ const ExpandedText = () => {
         <>
             <p>Hello</p>
             {
-                isExpanded $$ <p>World</p>
+                isExpanded && <p>World</p>
             }
             <Button onClick={()=> setExpanded(!isExpanded)}>
                 Open!

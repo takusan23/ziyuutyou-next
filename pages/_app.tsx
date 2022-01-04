@@ -1,17 +1,28 @@
 import { ThemeProvider } from '@mui/material/styles'
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import Layout from "../components/Layout"
-import theme from "../tools/ZiyuutyouTheme"
+import useCustomTheme from '../tools/ZiyuutyouTheme'
+import useMediaQuery from '@mui/material/useMediaQuery'
 // シンタックスハイライトのCSS
 import 'highlight.js/styles/vs2015.css'
 // テーブルとかスクロールバーのCSS
 import '../styles/css/styles.css'
 
-
 /**
  * Androidで言うところのActivity。この中でPages(AndroidでいうとFragment)を切り替える
  */
 const App = ({ Component, pageProps }) => {
+    // ダークモードスイッチ
+    const [isDarkmode, setDarkmode] = useState(false)
+    // テーマ。カスタムフック？何もわからん
+    const theme = useCustomTheme(isDarkmode)
+
+    // システム設定がダークモードならダークモードにする。Win10で確認済み
+    const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
+    // システム設定のダークモード切り替え時にテーマも切り替え
+    useEffect(() => {
+        setDarkmode(prefersDarkMode)
+    }, [prefersDarkMode])
 
     // Next.jsではMaterial-UIの設定が必要。
     // useEffectはJetpackComposeで言うところのLaunchedEffectのようなもの
@@ -24,7 +35,10 @@ const App = ({ Component, pageProps }) => {
         <>
             <ThemeProvider theme={theme}>
                 {/* ナビゲーションドロワーとタイトルバーをAppで描画する。各Pageでは描画しない */}
-                <Layout>
+                <Layout
+                    isDarkmode={isDarkmode}
+                    onDarkmodeChange={() => setDarkmode(!isDarkmode)}
+                >
                     {/* 各Pageはここで切り替える。これでタイトルバー等は共通化される */}
                     <Component {...pageProps} />
                 </Layout>

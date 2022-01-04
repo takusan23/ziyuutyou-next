@@ -5,6 +5,14 @@ import NavigationLinkDrawer from "./NavigationComponent"
 import CssBaseline from '@mui/material/CssBaseline';
 import Toolbar from '@mui/material/Toolbar';
 
+/** Layout へ渡すデータ */
+type LayoutProps = {
+    /** ダークモードかどうか */
+    isDarkmode: boolean,
+    /** スイッチ切り替えたら呼ばれる */
+    onDarkmodeChange: (boolean) => void,
+}
+
 /**
  * ナビゲーションドロワーなどをすべてのページで表示するためにAppに置いて、共通化する
  * 
@@ -12,7 +20,7 @@ import Toolbar from '@mui/material/Toolbar';
  * 
  * JetpackComposeだとScaffold的な？
  */
-const Layout = ({ children }) => {
+const Layout: React.FC<LayoutProps> = ({ children, ...props }) => {
     // ナビゲーションドロワーを開くかどうか。JetpackComposeの remember{ mutableStateOf(false) } みたいな
     const [isOpen, setOpen] = React.useState(false);
 
@@ -32,6 +40,8 @@ const Layout = ({ children }) => {
                 isOpen={isOpen}
                 onClose={() => setOpen(false)}
                 drawerWidth={drawerWidth}
+                isDarkmode={props.isDarkmode}
+                onDarkmodeChange={props.onDarkmodeChange}
             />
             <Box
                 component="main"

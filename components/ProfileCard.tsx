@@ -30,6 +30,7 @@ const ProfileCard = () => {
         setMsg(textList[randomInt])
     }, [])
 
+    const [isExpanded, setExpanded] = useState(false)
     return (
         <RoundedCornerBox value={3}>
             <CardHeader

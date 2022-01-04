@@ -7,6 +7,7 @@ import ListItemButton from "@mui/material/ListItemButton"
 import ListItemIcon from "@mui/material/ListItemIcon"
 import ListItemText from "@mui/material/ListItemText"
 import Link from "next/link"
+import DarkmodeSwitch from "./DarkmodeSwitch"
 import NextAvater from "./NextAvater"
 
 /** ナビゲーションドロワーに表示するメニュー */
@@ -66,7 +67,12 @@ type NavigationLinkDrawerProps = {
     isOpen: boolean,
     /** 閉じる際に呼ばれる */
     onClose: () => void,
+    /** ドロワーの幅。かえたければ */
     drawerWidth?: number,
+    /** ダークモードかどうか */
+    isDarkmode: boolean,
+    /** スイッチ切り替えたら呼ばれる */
+    onDarkmodeChange: (boolean) => void,
 }
 
 /**
@@ -75,6 +81,18 @@ type NavigationLinkDrawerProps = {
 const NavigationLinkDrawer: React.FC<NavigationLinkDrawerProps> = (props) => {
     // ドロワーの幅
     const drawerWidth = props.drawerWidth ?? 240
+
+    // ドロワーに表示するコンテンツ
+    const drawerContnets = (
+        <>
+            <NavigationHeader />
+            <DarkmodeSwitch
+                isDarkmode={props.isDarkmode}
+                onChange={props.onDarkmodeChange}
+            />
+            <NavigationLink />
+        </>
+    )
 
     return (
         <Box
@@ -98,8 +116,7 @@ const NavigationLinkDrawer: React.FC<NavigationLinkDrawerProps> = (props) => {
                     },
                 }}
             >
-                <NavigationHeader />
-                <NavigationLink />
+                {drawerContnets}
             </Drawer>
             <Drawer
                 variant="permanent"
@@ -115,8 +132,7 @@ const NavigationLinkDrawer: React.FC<NavigationLinkDrawerProps> = (props) => {
                 elevation={0}
                 open
             >
-                <NavigationHeader />
-                <NavigationLink />
+                {drawerContnets}
             </Drawer>
         </Box>
     )
