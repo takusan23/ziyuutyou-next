@@ -8,37 +8,14 @@ import Divider from "@mui/material/Divider"
 import ContentFolderManager from "../../../src/ContentFolderManager"
 import Button from "@mui/material/Button"
 import Box from "@mui/material/Box"
-import Link from "next/link"
 import Head from "next/head"
+import NextLinkButton from "../../../components/NextLinkButton"
 
 /** 一度に取得する件数 */
-const blogLimit = 10
-
-/** BlogListPagingButton へ渡すデータ */
-type BlogListPagingButtonProps = {
-    /** URL */
-    href: string,
-    /** ボタンテキスト */
-    text: string,
-}
-
-/** NextLinkなButton */
-const BlogListPagingButton: React.FC<BlogListPagingButtonProps> = (props) => {
-    return (
-        <Link passHref href={props.href}>
-            <Button
-                variant="contained"
-                sx={{ borderRadius: 10 }}
-                disableElevation
-            >
-                {props.text}
-            </Button>
-        </Link>
-    )
-}
+export const blogLimit = 10
 
 /** BlogListPageProps へ渡すデータ */
-type BlogListPageProps = {
+export type BlogListPageProps = {
     /** 記事一覧 */
     blogList: Array<BlogItem>,
     /** ページ */
@@ -76,7 +53,7 @@ const BlogListPage: React.FC<BlogListPageProps> = ({ ...props }) => {
             <Box textAlign='center'>
                 {
                     // 前のページボタンを出すか。null以外で
-                    props.prevPageId !== null && <BlogListPagingButton
+                    props.prevPageId !== null && <NextLinkButton
                         href={`/posts/page/${props.prevPageId}`}
                         text="前のページ"
                     />
@@ -91,7 +68,7 @@ const BlogListPage: React.FC<BlogListPageProps> = ({ ...props }) => {
                 </Button>
                 {
                     // 次のページを出すか。(ry
-                    props.nextPageId !== null && <BlogListPagingButton
+                    props.nextPageId !== null && <NextLinkButton
                         href={`/posts/page/${props.pageId + 1}`}
                         text="次のページ"
                     />
@@ -127,7 +104,7 @@ export const getStaticProps: GetStaticProps<BlogListPageProps> = async context =
             nextPageId: nextPageId,
             prevPageId: prevPageId
         }
-    };
+    }
 }
 
 /**
