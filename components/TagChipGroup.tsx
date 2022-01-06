@@ -8,7 +8,7 @@ type TagChipGroupProps = {
     tagList: Array<string>
 }
 
-/** タグを表示するChip */
+/** タグを表示するChip。上方向にMarginかけてるので注意 */
 const TagChipGroup: React.FC<TagChipGroupProps> = (props) => {
     return (
         <>
@@ -18,7 +18,8 @@ const TagChipGroup: React.FC<TagChipGroupProps> = (props) => {
                         <Chip
                             component="a"
                             sx={{
-                                marginRight: 1
+                                marginRight: 1,
+                                marginTop: 1
                             }}
                             color="primary"
                             icon={<LocalOfferOutlined />}

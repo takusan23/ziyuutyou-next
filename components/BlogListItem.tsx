@@ -27,7 +27,7 @@ const BlogListItem: React.FC<BlogItemProps> = (props) => {
             <Typography variant="body2" color="text.secondary">
                 {props.blogItem.description}
             </Typography>
-            <Spacer value={2} />
+            <Spacer value={1} />
             <TagChipGroup tagList={props.blogItem.tags} />
             <Spacer value={2} />
             <div style={{

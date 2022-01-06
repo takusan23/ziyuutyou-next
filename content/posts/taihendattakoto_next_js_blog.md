@@ -12,7 +12,11 @@ tags:
     - 知らんけどONにしておく
 
 ## nuxt/content で使ってた機能
+- リアルタイム更新
 
+## Intの割り算だと思ったらFloatだった
+そう言えばJSってnumberしか無かったわ。  
+数十分消し飛んだ。
 
 ## remark() と rehype() 
 - remark

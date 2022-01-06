@@ -86,20 +86,17 @@ class ContentFolderManager {
     }
 
     /**
-     * 指定したタグが含まれた記事一覧配列を返す
+     * 指定したタグが含まれた記事一覧配列を返す。
      * 
      * @param tagName タグ名
-     * @param skip ページネーション用。どこまでスキップするか ((現在のページ - 1) * limit) を入れればいいと思う
-     * @param limit 一度にどれだけ取得するか
-     * @returns 頼まれた分の記事一覧配列
+     * @returns 含まれている記事一覧
      */
-    static async getTagFilterBlogItem(tagName: string, limit: number = 10, skip: number) {
+    static async getTagFilterBlogItem(tagName: string) {
         // とりあえず全件取得
         const blogList = await this.getItemList(this.POSTS_FOLDER_PATH, this.POSTS_BASE_URL)
         // フィルターにかけて
         const filteredList = blogList
             .filter((blog) => blog.tags.includes(tagName))
-            // .slice(skip, skip + limit)
         return {
             totalCount: blogList.length,
             result: filteredList
