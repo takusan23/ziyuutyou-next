@@ -19,12 +19,12 @@ const linkList = [
     },
     {
         title: "記事一覧",
-        link: "/posts/page/1",
+        link: "/posts/page/1/",
         icon: <BookRounded />
     },
     {
         title: "このサイトについて",
-        link: "/pages/about",
+        link: "/pages/about/",
         icon: <BubbleChartOutlined />
     },
 ]

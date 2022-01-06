@@ -62,7 +62,7 @@ class MarkdownParser {
             createdAtUnixTime: createdAtUnixTime,
             tags: tags,
             html: markdownToHtml,
-            link: `${baseUrl}/${fileName}`
+            link: `${baseUrl}/${fileName}/`
         }
         return data
     }

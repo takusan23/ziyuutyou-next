@@ -1,0 +1,27 @@
+{
+    "name": "たくさんの自由帳",
+    "short_name": "たくさんの自由帳",
+    "description": "Androidのお話",
+    "icons": [
+        {
+            "src": "/icon.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#4559a9",
+    "theme_color": "#4559a9",
+    "lang": "ja",
+    "title": "たくさんの自由帳",
+    "og:title": "たくさんの自由帳",
+    "shortcuts": [
+        {
+            "name": "記事一覧",
+            "short_name": "記事一覧",
+            "description": "記事一覧を開きます",
+            "url": "/posts/page/1/"
+        }
+    ]
+}

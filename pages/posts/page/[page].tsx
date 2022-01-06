@@ -54,7 +54,7 @@ const BlogListPage: React.FC<BlogListPageProps> = ({ ...props }) => {
                 {
                     // 前のページボタンを出すか。null以外で
                     props.prevPageId !== null && <NextLinkButton
-                        href={`/posts/page/${props.prevPageId}`}
+                        href={`/posts/page/${props.prevPageId}/`}
                         text="前のページ"
                     />
                 }
@@ -69,7 +69,7 @@ const BlogListPage: React.FC<BlogListPageProps> = ({ ...props }) => {
                 {
                     // 次のページを出すか。(ry
                     props.nextPageId !== null && <NextLinkButton
-                        href={`/posts/page/${props.pageId + 1}`}
+                        href={`/posts/page/${props.pageId + 1}/`}
                         text="次のページ"
                     />
                 }

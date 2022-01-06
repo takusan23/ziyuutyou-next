@@ -14,7 +14,7 @@ const TagChipGroup: React.FC<TagChipGroupProps> = (props) => {
         <>
             {
                 props.tagList.map(tagName => (
-                    <Link href={`/posts/tag/${tagName}`} passHref key={tagName}>
+                    <Link href={`/posts/tag/${tagName}/`} passHref key={tagName}>
                         <Chip
                             component="a"
                             sx={{
