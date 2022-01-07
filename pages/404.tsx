@@ -23,19 +23,16 @@ const NotFoundPage = () => {
                 <p>そこになければ無いですね。</p>
                 <p>URLを確認してみてください。</p>
             </Box>
-            {/* 
-                CSSの属性セレクターを利用してSVG要素の中のpath、circleの色を変えている。
-                [style*="fill:none"]はstyle属性にfill:noneが含まれている場合に適用されるらしい。
-            */}
+            {/* CSSの属性セレクターを利用してSVG要素の中のpath、circleの色を変えている。 */}
             <style jsx global>{`
                 .theme_color path {
-                    stroke: ${theme.palette.primary.main} !important;
+                    stroke: ${theme.palette.primary.main};
                 }
                 .theme_color circle[style*="fill:none"] {
-                    stroke: ${theme.palette.primary.main} !important;
+                    stroke: ${theme.palette.primary.main};
                 }
                 .theme_color circle[style*="stroke:none"] {
-                    fill: ${theme.palette.primary.main} !important;
+                    fill: ${theme.palette.primary.main};
                 }
             `}</style>
         </>
