@@ -56,7 +56,7 @@ const BlogDetail: React.FC<BlogDetailProps> = (props) => {
             {/* Vue.jsにもあるcssのあれ */}
             <style jsx global>{`
                 h1, h2, h3, h4, h5, h6 {
-                    color: ${theme.palette.primary.main}
+                    color: ${theme.palette.primary.main};
                 }
                 img {
                     max-width: 80%;
