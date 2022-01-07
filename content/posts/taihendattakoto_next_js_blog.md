@@ -11,7 +11,7 @@ tags:
 - URLの末尾にスラッシュを付ける
     - 知らんけどONにしておく
 
-## nuxt/content で使ってた機能
+### nuxt/content で使ってた機能
 - 記事書いてるときのリアルタイム更新
     - いらないと言えばいらないかも...
 
@@ -208,3 +208,56 @@ const App = ({ Component, pageProps }) => {
 ここに例があります。thx!!!
 
 https://mui.com/components/switches/#customization
+
+## SVG画像の色を簡単に変えられると思ってた
+Androidだと`Drawable#setTint() だっけ？`できるけどCSSにはそういう機能無いらしい。  
+なのでこういうCSSをかけばいいと思います。私もよく知らないので詳しくは 属性セレクター とかで検索してください。  
+`!important`を追記すればsvg内のpath、circleの色も上書き出来ます。使っていいのかは知らんけど
+
+```html
+<svg className="svg_color">
+
+</svg>
+```
+
+```css
+.svg_color path {
+    stroke: red;
+}
+.svg_color circle[style*="fill:none"] {
+    stroke: red;
+}
+.svg_color circle[style*="stroke:none"] {
+    fill: red;
+}
+```
+
+`pages/404.tsx`参照
+
+
+## サイトマップ
+
+https://github.com/iamvishnusankar/next-sitemap 
+
+を利用することで簡単に作成できます。  
+
+いれて
+
+`npm install --save-dev next-sitemap`
+
+`package.json`があるフォルダに`next-sitemap.config.js`を作成します。  
+公式では`next-sitemap.js`を作れと言ってますが、Windowsの場合は駄目だと思います。
+
+(Windowsだとどうやら 環境変数 よりも フォルダ内ファイル が優先されるらしい)
+
+あとはビルド時に生成するように`package.json`に追記すればおk
+
+```
+"scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start",
+  "postbuild": "next-sitemap --config next-sitemap.config.js",
+  "deploy": "npm run build && npm run postbuild && npm run export"
+},
+```
