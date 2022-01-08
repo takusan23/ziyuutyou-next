@@ -10,8 +10,12 @@ type MarkdownData = {
     tags: Array<string>,
     /** 本文 */
     html: string,
-    /** ファイル名。URLの一部 */
+    /** URLの一部 */
     link: string,
+    /** ファイル名 */
+    fileName: string,
+    /** マークダウンの時点での文字数 */
+    textCount: number,
 }
 
 export default MarkdownData

@@ -1,9 +1,11 @@
+import CreateOutlined from "@mui/icons-material/CreateOutlined"
 import UploadFileOutlined from "@mui/icons-material/UploadFileOutlined"
 import { Typography, useTheme } from "@mui/material"
 import Box from "@mui/material/Box"
 import { GetStaticPaths, GetStaticProps } from "next"
 import Head from "next/head"
 import React from "react"
+import { GitHubHistoryButton, TwitterShareButton } from "../../components/BlogDetailButton"
 import RoundedCornerBox from "../../components/RoundedCorner"
 import Spacer from "../../components/Spacer"
 import TagChipGroup from "../../components/TagChipGroup"
@@ -20,7 +22,46 @@ type BlogDetailProps = {
 const BlogDetail: React.FC<BlogDetailProps> = (props) => {
     const theme = useTheme()
     const ogpTitle = `${props.markdownData.title} - たくさんの自由帳`
-    const ogpUrl = `https://takusan.negitoro.dev${props.markdownData.link}/`
+    const ogpUrl = `https://takusan.negitoro.dev${props.markdownData.link}`
+
+    /** 文字数 */
+    const textCountText = (
+        <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+        }}>
+            <CreateOutlined color="primary" />
+            <Typography color="primary.main">
+                {`文字数(だいたい) : ${props.markdownData.textCount}`}
+            </Typography>
+        </div>
+    )
+
+    /** 投稿日 */
+    const createdAtText = (
+        <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+        }}>
+            <UploadFileOutlined color="primary" />
+            <Typography color="primary.main">
+                {`投稿日 : ${props.markdownData.createdAt}`}
+            </Typography>
+        </div>
+    )
+
+    /* 共有、GitHub履歴 */
+    const shareOrHistoryButton = (
+        <Box textAlign="end">
+            <TwitterShareButton
+                url={ogpUrl}
+                title={ogpTitle}
+            />
+            <GitHubHistoryButton fileName={props.markdownData.fileName} />
+        </Box>
+    )
 
     return (
         <>
@@ -30,29 +71,27 @@ const BlogDetail: React.FC<BlogDetailProps> = (props) => {
                 <meta property="og:title" content={ogpTitle}></meta>
                 <link rel="canonical" href={ogpUrl} />
             </Head>
+
             <Typography color="primary.main">
                 <span style={{ fontSize: 30 }}>
                     {props.markdownData.title}
                 </span>
             </Typography>
+
+            {createdAtText}
+            {textCountText}
+            <Spacer value={2} />
             <TagChipGroup tagList={props.markdownData.tags} />
+            {shareOrHistoryButton}
             <Spacer value={2} />
-            <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                flexWrap: 'wrap',
-            }}>
-                <UploadFileOutlined color="primary" />
-                <Typography color="primary.main">
-                    {props.markdownData.createdAt}
-                </Typography>
-            </div>
-            <Spacer value={2} />
+
             <RoundedCornerBox>
                 <Box sx={{ padding: 2 }}>
                     <div id="content_div" dangerouslySetInnerHTML={{ __html: props.markdownData.html }} />
                 </Box>
+                <Spacer value={1} />
             </RoundedCornerBox>
+
             {/* Vue.jsにもあるcssのあれ */}
             <style jsx global>{`
                 h1, h2, h3, h4, h5, h6 {

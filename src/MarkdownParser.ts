@@ -34,6 +34,7 @@ class MarkdownParser {
     static async parse(filePath: string, baseUrl: string = '/posts') {
         // マークダウン読み出す
         const rawMarkdownText = await fs.readFileSync(filePath, { encoding: 'utf-8' })
+        const textCount = rawMarkdownText.length
         const matterResult = matter(rawMarkdownText)
         // メタデータ
         const title = matterResult.data['title'] as string
@@ -62,7 +63,9 @@ class MarkdownParser {
             createdAtUnixTime: createdAtUnixTime,
             tags: tags,
             html: markdownToHtml,
-            link: `${baseUrl}/${fileName}/`
+            link: `${baseUrl}/${fileName}/`,
+            fileName: fileName,
+            textCount: textCount
         }
         return data
     }
