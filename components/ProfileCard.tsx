@@ -3,34 +3,30 @@ import CardHeader from "@mui/material/CardHeader"
 import CardMedia from "@mui/material/CardMedia"
 import CardContent from "@mui/material/CardContent"
 import NextAvater from "./NextAvater"
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import CardActions from "@mui/material/CardActions"
 import Button from "@mui/material/Button"
 import { BookOutlined } from "@mui/icons-material"
 import Link from "next/link"
 import RoundedCornerBox from "./RoundedCorner"
 
-/** 一言メッセージ */
-const textList = [
-    "このサイトはNext.jsとMaterial-UIでできています。普段はAndroidアプリを書いてます。たまにJavaScriptとかWPFとか。",
-    "JetpackComposeとReactって似てるから書きやすい。",
-    "4G転用5Gって何がやりたいんや？",
-    "D.C.4 SH 発表めでたい!",
-    "コンビニのセイイキはまだですかね、fengさん？"
-]
+/** ProfileCard へ渡すデータ */
+type ProfileCardProps = {
+    /** ランダムメッセージ一覧 */
+    randomMessageList: Array<string>
+}
 
 /** アイコンと名前とひとこと の部分 */
-const ProfileCard = () => {
+const ProfileCard: React.FC<ProfileCardProps> = (props) => {
     /** 一言メッセージ */
     const [msg, setMsg] = useState("")
 
     // ランダムで決定!
     useEffect(() => {
-        const randomInt = Math.floor(Math.random() * textList.length);
-        setMsg(textList[randomInt])
+        const randomInt = Math.floor(Math.random() * props.randomMessageList.length);
+        setMsg(props.randomMessageList[randomInt])
     }, [])
 
-    const [isExpanded, setExpanded] = useState(false)
     return (
         <RoundedCornerBox value={3}>
             <CardHeader

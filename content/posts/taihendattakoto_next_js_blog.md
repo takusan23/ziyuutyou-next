@@ -210,7 +210,7 @@ const App = ({ Component, pageProps }) => {
 https://mui.com/components/switches/#customization
 
 ## SVG画像の色を簡単に変えられると思ってた
-Androidだと`Drawable#setTint() だっけ？`できるけどCSSにはそういう機能無いらしい。  
+Androidだと`ImageView#setTint() だっけ？`できるけどCSSにはそういう機能無いらしい。  
 なのでこういうCSSをかけばいいと思います。私もよく知らないので詳しくは 属性セレクター とかで検索してください。  
 `!important`を追記すればsvg内のpath、circleの色も上書き出来ます。使っていいのかは知らんけど
 

@@ -7,6 +7,8 @@ type NextLinkButtonProps = {
     href: string,
     /** ボタンテキスト */
     text: string,
+    /** MUIのButtonのVariant */
+    variant?: 'text' | 'outlined' | 'contained'
 }
 
 /** NextLinkなButton */
@@ -14,7 +16,7 @@ const NextLinkButton: React.FC<NextLinkButtonProps> = (props) => {
     return (
         <Link passHref href={props.href}>
             <Button
-                variant="contained"
+                variant={props.variant ?? "contained"}
                 sx={{ borderRadius: 10 }}
                 disableElevation
             >

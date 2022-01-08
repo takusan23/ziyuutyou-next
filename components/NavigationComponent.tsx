@@ -105,7 +105,6 @@ const NavigationLinkDrawer: React.FC<NavigationLinkDrawerProps> = (props) => {
                 onClose={props.onClose}
                 variant="temporary"
                 elevation={0}
-
                 sx={{
                     backgroundColor: "initial !important",
                     display: { xs: 'block', sm: 'none' },

@@ -1,4 +1,3 @@
-import { BlogListPageProps } from "../page/[page]"
 import { GetStaticPaths, GetStaticProps } from "next"
 import ContentFolderManager from "../../../src/ContentFolderManager"
 import BlogItem from "../../../src/data/BlogItem"

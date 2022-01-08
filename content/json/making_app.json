@@ -1,0 +1,42 @@
+{
+    "android": [
+        {
+            "name": "工事中",
+            "description": "",
+            "link": "https://github.com/takusan23/ChocoDroid",
+            "github": "https://github.com/takusan23/ChocoDroid"
+        }
+    ],
+    "web": [
+        {
+            "name": "このサイト",
+            "description": "Next.js と Material-UI で出来ている",
+            "link": "/",
+            "github": "https://github.com/takusan23/ziyuutyou-next"
+        }
+    ],
+    "akashic": [
+        {
+            "name": "ニコ生ゲーム",
+            "description": "詳しくはアツマールへ",
+            "link": "https://game.nicovideo.jp/atsumaru/users/40210583",
+            "github": ""
+        }
+    ],
+    "minecraft": [
+        {
+            "name": "ClickManaita",
+            "description": "チートMOD (Forge / Fabric)。1.12.2 / 1.16.x / 1.17.x / 1.18.x",
+            "link": "https://www.curseforge.com/minecraft/mc-mods/clickmanaita",
+            "github": "https://github.com/takusan23/ClickManaita2"
+        }
+    ],
+    "windows": [
+        {
+            "name": "いたかーそる",
+            "description": "仮想カーソルと仮想トラックパッドを追加します。スクリーンショットボタンも付いてきます",
+            "link": "ms-windows-store://pdp/?productid=XP8BZ1XV93S6X1",
+            "github": "https://github.com/takusan23/ItaCursor"
+        }
+    ]
+}
