@@ -1,5 +1,4 @@
 import Typography from "@mui/material/Typography"
-import Button from "@mui/material/Button"
 import List from "@mui/material/List"
 import ListItem from "@mui/material/ListItem"
 import { AndroidOutlined, ComputerOutlined, GridViewOutlined, VideogameAssetOutlined, WebOutlined } from "@mui/icons-material"
@@ -124,16 +123,18 @@ const MakingAppCard: React.FC<MakingAppCardProps> = (props) => {
 
     return (
         <RoundedCornerBox value={3}>
-            <Typography variant="h5" sx={{ padding: 1, marginLeft: 1 }} color="primary">
-                作ったもの
-            </Typography>
-            <div style={{ display: 'flex' }}>
-                <MakingAppNavigationRail
-                    platformNameToIconMap={nameToIconMap}
-                    onMenuClick={platformName => changeAppListPlatform(platformName)}
-                />
-                <MakingAppList list={appList} />
-            </div>
+            <Box sx={{ padding: 1 }}>
+                <Typography variant="h5" sx={{ padding: 1, marginLeft: 1 }} color="primary">
+                    作ったもの
+                </Typography>
+                <div style={{ display: 'flex' }}>
+                    <MakingAppNavigationRail
+                        platformNameToIconMap={nameToIconMap}
+                        onMenuClick={platformName => changeAppListPlatform(platformName)}
+                    />
+                    <MakingAppList list={appList} />
+                </div>
+            </Box>
         </RoundedCornerBox>
     )
 }

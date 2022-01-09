@@ -1,4 +1,5 @@
 import fs from 'fs'
+import LinkData from './data/LinkData'
 import { MakingAppData, MakingAppDetailData } from './data/MakingAppData'
 
 /** 
@@ -15,6 +16,20 @@ class JsonFolderManager {
 
     /** 一言メッセージJSONのファイル名 */
     static JSON_RANDOM_MESSAGE_FILE_NAME = `random_message.json`
+
+    /** リンク集のJSONのファイル名 */
+    static JSON_LINK_FILE_NAME = `link.json`
+
+    /**
+     * リンク集のJSONを読み出して返す
+     * 
+     * @returns リンク集データの配列
+     */
+    static async getLinkList() {
+        const linkJSON = await this.readTextFile(`${this.JSON_FOLDER_PATH}/${this.JSON_LINK_FILE_NAME}`)
+        const json = JSON.parse(linkJSON)
+        return json["link"] as Array<LinkData>
+    }
 
     /**
      * ランダムで返すメッセージ

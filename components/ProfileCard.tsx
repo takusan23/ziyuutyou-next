@@ -16,7 +16,7 @@ type ProfileCardProps = {
     randomMessageList: Array<string>
 }
 
-/** アイコンと名前とひとこと の部分 */
+/** アイコンと名前とメッセージ の部分 */
 const ProfileCard: React.FC<ProfileCardProps> = (props) => {
     /** 一言メッセージ */
     const [msg, setMsg] = useState("")
