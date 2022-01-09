@@ -262,6 +262,39 @@ https://github.com/iamvishnusankar/next-sitemap
 },
 ```
 
-## Google アナリティクス 4 に引っ越した
-`GA4 移行しませんか?`って定期的にメールで送ってきてたのでついでに対応した。  
-注意点ですが、`next/script`を読み込む際は`next/head`内に書いてはいけません。通常のコンポーネントのように呼ぶ必要があります。
+## Google Analytics 4 を入れる
+Googleさんが定期的にメールで GA4いかが・・ ってメールで送ってくるので対応した。  
+
+というか`GA4`、これ今までの`UA`を置き換えるやつかと思ってたんだけど、どうやら違うみたい？  
+なんかユニバーサルアナリティクスで集めてた時代のデータは引き継いでくれないっぽいし何やねん・・・
+
+```
+GA4 設定アシスタント ウィザードでは、作成した GA4 プロパティが過去のデータに基づきバックフィルされることはありません。GA4 プロパティに保存されるのは、設定後に発生したデータのみです。過去のデータを参照する際は、ユニバーサル アナリティクス プロパティのレポートを使用してください。
+```
+
+<https://support.google.com/analytics/answer/9744165?hl=ja&utm_id=ad#zippy=%2Cご自身またはウェブ-デベロッパーがウェブページに手動でタグを設定する場合>
+
+というわけで、今のところは`GA4`と`UA`の両方で集計するようにしてあります。
+
+![Imgur](https://imgur.com/4bkbzPv)
+
+`head`内に`GA4`のJavaScriptを差し込むようにすればいいです。
+`GA_TRACKING_ID`には**GA4の測定ID**、`UA_TRACKING_ID`には**UAのトラッキングコード**を変数に入れておいて下さい。  
+多分`Google アナリティクス 4 プロパティの設定アシスタント`を利用しないと駄目かも？
+
+```tsx
+<Head>
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}></script>
+    <script dangerouslySetInnerHTML={{
+        __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${UA_TRACKING_ID}');
+            gtag('config', '${GA_TRACKING_ID}');
+        `}}
+    />
+</Head>
+```
+
+なんか調べてると`next/script`でいい感じに読み込む書き方をしてる例がありますが私の環境では重複して送信されたので辞めました。

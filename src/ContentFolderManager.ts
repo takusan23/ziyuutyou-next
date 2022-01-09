@@ -98,7 +98,7 @@ class ContentFolderManager {
         const filteredList = blogList
             .filter((blog) => blog.tags.includes(tagName))
         return {
-            totalCount: blogList.length,
+            totalCount: filteredList.length,
             result: filteredList
         } as BlogItemResult
     }
