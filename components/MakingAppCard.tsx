@@ -7,7 +7,7 @@ import React, { useEffect, useState } from "react"
 import Spacer from "./Spacer"
 import RoundedCornerBox from "./RoundedCorner"
 import { MakingAppData, MakingAppDetailData } from "../src/data/MakingAppData"
-import { Box, ListItemIcon, ListItemText, useMediaQuery } from "@mui/material"
+import { Box, ListItemIcon, ListItemText, useMediaQuery, useTheme } from "@mui/material"
 import NextLinkButton from "./NextLinkButton"
 
 /** MakingAppNavigationRail へ渡すデータ */
@@ -54,23 +54,25 @@ type MakingAppListProps = {
 
 /** 実際に作ったものを表示する */
 const MakingAppList: React.FC<MakingAppListProps> = (props) => {
+    const theme = useTheme()
+
     return (
         <List sx={{ marginLeft: 2, marginRight: 2, width: '100%' }}>
             {
                 props.list.map(item => (
-                    <React.Fragment key={item.link}>
-                        <Typography variant="h5" component="div">
-                            {item.name}
-                        </Typography>
-                        <Typography sx={{ fontSize: 14 }} color="text.secondary">
-                            {item.description}
-                        </Typography>
-                        <Spacer value={1} />
-                        <NextLinkButton variant="text" href={item.link} text="リンクへ" />
-                        <NextLinkButton variant="text" href={item.github} text="GitHubを開く" />
-                        {/* <Divider /> */}
-                        <Spacer value={1} />
-                    </React.Fragment>
+                    <RoundedCornerBox key={item.link} colorCode={theme.palette.background.default}>
+                        <Box sx={{ padding: 2 }}>
+                            <Typography variant="h5" component="div">
+                                {item.name}
+                            </Typography>
+                            <Typography sx={{ fontSize: 14 }} color="text.secondary">
+                                {item.description}
+                            </Typography>
+                            <Spacer value={1} />
+                            <NextLinkButton variant="text" href={item.link} text="リンクへ" />
+                            <NextLinkButton variant="text" href={item.github} text="GitHubを開く" />
+                        </Box>
+                    </RoundedCornerBox>
                 ))
             }
         </List>
