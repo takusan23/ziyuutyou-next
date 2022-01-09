@@ -3,10 +3,12 @@ import { useEffect, useState } from "react"
 import Layout from "../components/Layout"
 import useCustomTheme from '../src/tools/ZiyuutyouTheme'
 import useMediaQuery from '@mui/material/useMediaQuery'
+import GoogleAnalyticsHead from '../components/GoogleAnalyticsHead'
 // シンタックスハイライトのCSS
 import 'highlight.js/styles/vs2015.css'
 // テーブルとかスクロールバーのCSS
 import '../styles/css/styles.css'
+import useGoogleAnalytics from '../src/hooks/GoogleAnalyticsHooks'
 
 /**
  * Androidで言うところのActivity。この中でPages(AndroidでいうとFragment)を切り替える
@@ -31,8 +33,14 @@ const App = ({ Component, pageProps }) => {
         jssStyles?.parentElement?.removeChild(jssStyles)
     }, [])
 
+    // GoogleAnalyticsへnext/routerのページ遷移を通知する。
+    useGoogleAnalytics()
+
     return (
         <>
+            {/* Google アナリティクス 4 */}
+            <GoogleAnalyticsHead />
+
             <ThemeProvider theme={theme}>
                 {/* ナビゲーションドロワーとタイトルバーをAppで描画する。各Pageでは描画しない */}
                 <Layout

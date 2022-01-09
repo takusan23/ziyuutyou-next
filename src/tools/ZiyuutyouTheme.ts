@@ -32,9 +32,7 @@ const useCustomTheme = (isDarkmode: boolean) => {
                     'Koruri Regular'
                 ].join(','),
             }
-        }),
-        [isDarkmode]
-    )
+        }), [isDarkmode])
 }
 
 export default useCustomTheme

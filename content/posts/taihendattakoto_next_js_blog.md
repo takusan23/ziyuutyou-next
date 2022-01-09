@@ -261,3 +261,7 @@ https://github.com/iamvishnusankar/next-sitemap
   "deploy": "npm run build && npm run postbuild && npm run export"
 },
 ```
+
+## Google アナリティクス 4 に引っ越した
+`GA4 移行しませんか?`って定期的にメールで送ってきてたのでついでに対応した。  
+注意点ですが、`next/script`を読み込む際は`next/head`内に書いてはいけません。通常のコンポーネントのように呼ぶ必要があります。

@@ -3,6 +3,7 @@ import { IconButton, ListItem, ListItemButton, ListItemText, useTheme } from "@m
 import Typography from "@mui/material/Typography"
 import { Box } from "@mui/system"
 import Link from "next/link"
+import React from "react"
 import LinkData from "../src/data/LinkData"
 import RoundedCornerBox from "./RoundedCorner"
 import Spacer from "./Spacer"
@@ -29,7 +30,7 @@ const LinkCard: React.FC<LinkCardProps> = (props) => {
                     </Typography>
                     {
                         props.linkList.map((linkData) => (
-                            <>
+                            <React.Fragment key={linkData.name}>
                                 <RoundedCornerBox value={3} colorCode={theme.palette.background.default}>
                                     <Spacer value={1} />
                                     <ListItem
@@ -44,7 +45,7 @@ const LinkCard: React.FC<LinkCardProps> = (props) => {
                                         </Link>
                                     </ListItem>
                                 </RoundedCornerBox>
-                            </>
+                            </React.Fragment>
                         ))
                     }
                 </Box>
