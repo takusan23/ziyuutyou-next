@@ -298,3 +298,52 @@ GA4 設定アシスタント ウィザードでは、作成した GA4 プロパ�
 ```
 
 なんか調べてると`next/script`でいい感じに読み込む書き方をしてる例がありますが私の環境では重複して送信されたので辞めました。
+
+## Material-UIのアイコンを書くときの注意点
+名前付きインポートだと開発環境の読み込みが遅くなります。  
+
+```tsx
+import { AndroidOutlined } from '@mui/icons-material' // これだと重くなる
+```
+
+```tsx
+import AndroidOutlined from '@mui/icons-material/AndroidOutlined'
+```
+
+詳しくは：https://takusan.negitoro.dev/posts/next_js_mui_material_icon_build_speed/
+
+今回はBabelの設定せずに個別にインポートするようにしてます。
+
+ちなみにこれはKotlinで該当のJavaScriptを渡すと変換してくれるコード。気分次第で`Kotlin/JS`で書くかも
+
+```kotlin
+fun main() {
+
+    val javaScriptCode = """
+        
+import { BookOutlined } from "@mui/icons-material"
+
+    """.trimIndent()
+
+    // "@mui/icons-material" の部分を取得する正規表現
+    val packageRegex = "\"(.*?)\"".toRegex()
+    val packageName = packageRegex.find(javaScriptCode)!!.groupValues[1]
+
+    // { BookOutlined } の部分を取得する正規表現
+    val namedImportRegex = "\\{(.*?)}".toRegex()
+    val namedImportCode = namedImportRegex.find(javaScriptCode)!!.groupValues[1]
+    // 複数インポートされているか
+    val namedImportList = if (namedImportCode.contains(",")) {
+        namedImportCode
+            .split(",")
+            .map { it.replace(" ", "") }
+    } else {
+        listOf(namedImportCode.replace(" ", ""))
+    }
+
+    namedImportList.forEach { name ->
+        println("""import $name from "${packageName}/${name}" """)
+    }
+
+}
+```

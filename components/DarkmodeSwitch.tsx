@@ -1,8 +1,6 @@
-import { styled } from "@mui/material"
+import { ListItemIcon, ListItemText, styled } from "@mui/material"
 import DarkModeOutlined from "@mui/icons-material/DarkModeOutlined"
-import LightModeOutlined from "@mui/icons-material/LightModeOutlined" 
-import FormControlLabel from "@mui/material/FormControlLabel"
-import FormGroup from "@mui/material/FormGroup"
+import LightModeOutlined from "@mui/icons-material/LightModeOutlined"
 import ListItem from "@mui/material/ListItem"
 import Switch from "@mui/material/Switch"
 import React from "react"
@@ -56,24 +54,16 @@ const Android12Switch = styled(Switch)(({ theme }) => ({
 /** ダークモードスイッチ */
 const DarkmodeSwitch: React.FC<DarkmodeSwitchProps> = (props) => {
     return (
-        <ListItem>
-            <FormGroup>
-                <FormControlLabel
-                    control={
-                        <>
-                            <Android12Switch
-                                checked={props.isDarkmode}
-                                onChange={props.onChange}
-                            />
-                            {
-                                props.isDarkmode ? <DarkModeOutlined /> : <LightModeOutlined />
-                            }
-                        </>
-                    }
-                    labelPlacement="start"
-                    label="ダークモード"
-                />
-            </FormGroup>
+        <ListItem
+            secondaryAction={<Android12Switch
+                checked={props.isDarkmode}
+                onChange={props.onChange}
+            />}
+        >
+            <ListItemIcon>
+                {props.isDarkmode ? <DarkModeOutlined /> : <LightModeOutlined />}
+            </ListItemIcon>
+            <ListItemText primary="ダークモード" />
         </ListItem>
     )
 }
