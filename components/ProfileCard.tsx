@@ -6,7 +6,7 @@ import NextAvater from "./NextAvater"
 import React, { useEffect, useState } from "react"
 import CardActions from "@mui/material/CardActions"
 import Button from "@mui/material/Button"
-import { BookOutlined } from "@mui/icons-material"
+import BookOutlined from "@mui/icons-material/BookOutlined" 
 import Link from "next/link"
 import RoundedCornerBox from "./RoundedCorner"
 

@@ -1,5 +1,5 @@
-import { OpenInBrowserOutlined } from "@mui/icons-material"
-import { IconButton, ListItem, ListItemButton, ListItemText, useTheme } from "@mui/material"
+import OpenInBrowserOutlined from "@mui/icons-material/OpenInBrowserOutlined"
+import { ListItem, ListItemButton, ListItemText, useTheme } from "@mui/material"
 import Typography from "@mui/material/Typography"
 import { Box } from "@mui/system"
 import Link from "next/link"

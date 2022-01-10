@@ -1,5 +1,6 @@
-import { DarkModeOutlined, LightModeOutlined } from "@mui/icons-material"
 import { styled } from "@mui/material"
+import DarkModeOutlined from "@mui/icons-material/DarkModeOutlined"
+import LightModeOutlined from "@mui/icons-material/LightModeOutlined" 
 import FormControlLabel from "@mui/material/FormControlLabel"
 import FormGroup from "@mui/material/FormGroup"
 import ListItem from "@mui/material/ListItem"

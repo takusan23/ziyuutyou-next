@@ -1,4 +1,6 @@
-import { BookRounded, BubbleChartOutlined, HomeOutlined } from "@mui/icons-material"
+import BookRounded from "@mui/icons-material/BookRounded"
+import BubbleChartOutlined from "@mui/icons-material/BubbleChartOutlined"
+import HomeOutlined from "@mui/icons-material/HomeOutlined" 
 import Box from "@mui/material/Box"
 import CardHeader from "@mui/material/CardHeader"
 import Drawer from "@mui/material/Drawer"

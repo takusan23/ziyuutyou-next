@@ -1,4 +1,5 @@
-import { HistoryOutlined, Twitter } from "@mui/icons-material"
+import HistoryOutlined from "@mui/icons-material/HistoryOutlined"
+import Twitter from "@mui/icons-material/Twitter" 
 import { Button } from "@mui/material"
 import React from "react"
 
