@@ -75,9 +75,9 @@ export const getStaticProps: GetStaticProps<TagListPageProps> = async context =>
  * 静的書き出し時に呼ばれる
  */
 export const getStaticPaths: GetStaticPaths = async () => {
-    const tagNameList = await ContentFolderManager.getAllTagList()
+    const tagNameList = await ContentFolderManager.getAllTagDataList()
     const pathList = tagNameList
-        .map((name) => ({ params: { tag: name } }))
+        .map((name) => ({ params: { tag: name.name } }))
     return {
         paths: pathList,
         fallback: false

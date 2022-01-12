@@ -2,6 +2,7 @@ import BlogItem from "./data/BlogItem";
 import fs from "fs"
 import MarkdownParser from "./MarkdownParser";
 import path from "path"
+import TagData from "./data/TagData";
 
 /**
  * `content`フォルダにあるコンテンツを取得する関数がある。
@@ -106,14 +107,20 @@ class ContentFolderManager {
     /**
      * 投稿した記事すべて読み込んで追加したことがあるタグ一覧を作成する
      */
-    static async getAllTagList() {
+    static async getAllTagDataList() {
         const blogList = await this.getItemList(this.POSTS_FOLDER_PATH, this.POSTS_BASE_URL)
-        // flatに
-        const allTagList = blogList
-            .flatMap((blog) => blog.tags)
-        // 重複を消す
-        const allTagListDeleteDistinct = Array.from(new Set(allTagList))
-        return allTagListDeleteDistinct
+        // タグの名前だけのflatにする
+        const tagNameList = this.distinctFromList(
+            blogList.flatMap((blog) => blog.tags)
+        )
+        // TagDataの配列にする。多い順にする
+        const tagDataList = tagNameList
+            .map<TagData>((name) => ({
+                name: name,
+                count: blogList.filter((blogItem) => blogItem.tags.includes(name)).length
+            }))
+            .sort((a, b) => b.count - a.count)
+        return tagDataList
     }
 
     /** Markdownを読み込んで解析して返す */
@@ -150,6 +157,16 @@ class ContentFolderManager {
                 tags: data.tags
             })
         return blogList
+    }
+
+    /**
+     * 配列内から同じやつを消す
+     * 
+     * @param list 配列
+     * @returns かぶりがない配列
+     */
+    private static distinctFromList<T>(list: Array<T>) {
+        return Array.from(new Set(list))
     }
 
 }

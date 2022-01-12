@@ -1,6 +1,7 @@
 import BookRounded from "@mui/icons-material/BookRounded"
 import BubbleChartOutlined from "@mui/icons-material/BubbleChartOutlined"
-import HomeOutlined from "@mui/icons-material/HomeOutlined" 
+import HomeOutlined from "@mui/icons-material/HomeOutlined"
+import LocalOfferOutlined from "@mui/icons-material/LocalOfferOutlined"
 import Box from "@mui/material/Box"
 import CardHeader from "@mui/material/CardHeader"
 import Drawer from "@mui/material/Drawer"
@@ -23,6 +24,11 @@ const linkList = [
         title: "記事一覧",
         link: "/posts/page/1/",
         icon: <BookRounded />
+    },
+    {
+        title: "タグ一覧",
+        link: "/posts/tag/all_tags/",
+        icon: <LocalOfferOutlined />
     },
     {
         title: "このサイトについて",
