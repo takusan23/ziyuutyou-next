@@ -5,7 +5,7 @@
     "build": "next build",
     "start": "next start",
     "postbuild": "next-sitemap --config ./next-sitemap.config.js",
-    "deploy": "npm run build && npm run postbuild && npm run export"
+    "deploy": "npm run build && next export && npm run postbuild"
   },
   "dependencies": {
     "@emotion/react": "^11.7.1",

@@ -87,7 +87,7 @@ const BlogDetail: React.FC<BlogDetailProps> = (props) => {
 
             <RoundedCornerBox>
                 <Box sx={{ padding: 2 }}>
-                    <div id="content_div" dangerouslySetInnerHTML={{ __html: props.markdownData.html }} />
+                    <div className="content_div" dangerouslySetInnerHTML={{ __html: props.markdownData.html }} />
                 </Box>
                 <Spacer value={1} />
             </RoundedCornerBox>
@@ -97,7 +97,7 @@ const BlogDetail: React.FC<BlogDetailProps> = (props) => {
                 h1, h2, h3, h4, h5, h6 {
                     color: ${theme.palette.primary.main};
                 }
-                img {
+                .content_div img {
                     max-width: 80%;
                 }
             `}</style>

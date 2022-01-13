@@ -36,7 +36,7 @@ https://github.com/takusan23/ComposeOrigamiLayout
 
 appフォルダ内のbuild.gradleを開いて
 
-```
+```gradle
 android {
     // 省略
     kotlinOptions {

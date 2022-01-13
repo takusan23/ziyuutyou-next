@@ -38,14 +38,15 @@ const ProfileCard: React.FC<ProfileCardProps> = (props) => {
                     title="たくさん"
                     subheader="@takusan_23"
                 />
-                <div style={{ height: '200px', maxHeight: '200px', position: 'relative' }}>
-                    <Image
-                        alt='別になくてもいい画像'
-                        layout='fill'
-                        objectFit='cover'
-                        src={profileCardJpegImg}
-                    />
-                </div>
+                {/* next/imageの最適化機能、Vercel以外では使えないのでimg */}
+                <img
+                    style={{
+                        height: '200px',
+                        maxHeight: '200px',
+                        width: '100%',
+                        objectFit: 'cover'
+                    }}
+                    src={profileCardJpegImg.src} />
                 <CardContent>
                     <Typography variant="body2" color="text.secondary">
                         {msg}

@@ -1,5 +1,4 @@
 import Avatar from "@mui/material/Avatar"
-import Image from 'next/image'
 
 /** NextAvater へ渡すデータ */
 type NextAvaterProps = {
@@ -15,14 +14,18 @@ type NextAvaterProps = {
 
 /** Material-UIのAvaterにNext.jsのImageを搭載したもの */
 const NextAvater: React.FC<NextAvaterProps> = (props) => {
+    // next/imageの最適化機能、Vercel以外では使えないのでimg
     return (
-        <Avatar alt={props.alt} sx={{
-            width: props.width,
-            height: props.height
-        }}>
-            {/* Next.jsのImageを利用することでページ遷移時でもパスを自動で修正してくれる */}
-            <Image src={props.path} layout="fill" />
-        </ Avatar>
+        <>
+            <Avatar
+                alt={props.alt}
+                src={props.path}
+                sx={{
+                    width: props.width,
+                    height: props.height,
+                }} />
+
+        </>
     )
 }
 
