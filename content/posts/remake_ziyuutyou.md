@@ -6,6 +6,11 @@ tags:
 - TypeScript
 - 自作ブログ
 ---
+ここの内容もNext.jsに移行したので関係なくなります。
+
+[Next.jsで移行したメモはこちら](/posts/taihendattakoto_next_js_blog/)
+
+
 # 本題
 `TypeScript`+`nuxt/content`でこのブログを作り直す。  
 そこで躓いたところなどを書いていこうと思う。

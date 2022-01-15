@@ -7,6 +7,13 @@ tags:
 - 自作ブログ
 ---
 
+どうもこんばんわ。
+
+Next.jsへ移行したらなんか読み込みが早くなった気がする。TypeScriptのサポートがいいね！
+  
+Internet Explorer 11 でも見れなくはないですね。  
+先人が頑張ってPolyfillしたんかな、、、お疲れ様です
+
 ## Nuxt.js からの移行
 - URLの末尾にスラッシュを付ける
     - 知らんけどONにしておく
@@ -273,7 +280,7 @@ GA4 設定アシスタント ウィザードでは、作成した GA4 プロパ�
 
 というわけで、今のところは`GA4`と`UA`の両方で集計するようにしてあります。
 
-![Imgur](https://imgur.com/4bkbzPv)
+![Imgur](https://imgur.com/4bkbzPv.png)
 
 `head`内に`GA4`のJavaScriptを差し込むようにすればいいです。
 `GA_TRACKING_ID`には**GA4の測定ID**、`UA_TRACKING_ID`には**UAのトラッキングコード**を変数に入れておいて下さい。  
@@ -344,3 +351,19 @@ import { BookOutlined } from "@mui/icons-material"
 
 }
 ```
+
+## Netlifyでホスティングする際は
+SSGモードの場合はプラグインをOFFにする必要があります。
+
+Netlifyのサイトの設定から、Build & Deployを開いて、環境変数に追加します。
+
+![Imgur](https://imgur.com/9u5rplE.png)
+
+ちなみにビルドコマンドと公開するフォルダは
+
+Build commands：`npm run build && npm run export`  
+Publish directory：`out`
+
+になります～
+
+https://docs.netlify.com/configure-builds/common-configurations/
