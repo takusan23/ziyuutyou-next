@@ -1,17 +1,29 @@
 ---
 title: Next.jsへGoogleアナリティクスのGA4とUAを共存させる
-created_at: 2022-01-10
+created_at: 2022-01-16
 tags:
 - Next.js
 - GoogleAnalytics
 ---
 
 どうもこんばんわ。  
-Kyashの移行作業めんどいなあ...
+
+キスから始まるギャルの恋 〜くるみのウワサとホントのキモチ〜 攻略しました。
+
+http://prekano.com/products/galkoi/
+
+いいね！次回作も予約した
+
+![Imgur](https://imgur.com/kBGvFeJ.png)
+
+丁寧に書かれてて？良かったと思います
+
+![Imgur](https://imgur.com/gZpbJXu.png)
 
 # 本題
 
-GoogleアナリティクスからGA4を使ってみませんかって定期的にメールでお知らせしてくるので対応してみた。
+GoogleアナリティクスからGA4を使ってみませんかって定期的にメールでお知らせしてくるので対応してみた。  
+Next.jsで作り直した記念に
 
 # 環境
 
@@ -93,7 +105,7 @@ UAの方の設定画面を開いて、**トラッキング情報 > トラッキ�
 作っていない場合は他調べて作って下さい。
 
 そしたら、以下を参考に書いて下さい（まるなげ）  
-analytics.js時代のコードは消しちゃってください。  
+analytics.js時代のコードは消しちゃえ～。  
 定数`UA_TRACKING_ID`の中には各自UAのトラッキングIDを入れて下さい。
 
 ```tsx
@@ -244,6 +256,8 @@ GA4とUAそれぞれ開いて、ちゃんとリアルタイムに現れたら成
 ついでに本番環境のみGoogle アナリティクスを動作させるようにしました。
 
 ```tsx
+// GoogleAnalytics.tsx
+
 /** Google アナリティクス (UA) の 測定ID */
 export const UA_TRACKING_ID = `UA-`
 
@@ -328,7 +342,7 @@ const App = ({ Component, pageProps }) => {
 }
 ```
 
-本番環境のみで動くので、テストしたい場合は
+もしパクった場合は本番環境のみで動くので、動いてるか確認したい場合は
 
 ```
 npm run build
@@ -337,10 +351,4 @@ npm run start
 
 すれば本番環境のビルド成果物をホストした開発サーバーが立ち上がります。
 
-メモ
-
-- 既存のGoogle アナリティクス (UA) の設定から、GA4を有効にする
-- `analytics.js`の場合は`gtag.js`に書き換える
-- `gtag('config', 'G-xxx')`を書き足して、`UA`と共存させる
-- ページ遷移のイベントを検知する部分に`GA4`のバージョンを追加する
-    - `UA`を引き継いでくれるわけじゃないみたい
+![Imgur](https://imgur.com/DwEizfq.png)
