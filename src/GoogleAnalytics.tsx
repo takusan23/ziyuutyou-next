@@ -24,7 +24,7 @@ const isDevelopment = process.env.NODE_ENV === 'development'
  * 
  * @param {string} url うらる
  */
-const pageview = (url) => {
+const pageview = (url: string) => {
     // 本番のみ実行
     if (isDevelopment) {
         return

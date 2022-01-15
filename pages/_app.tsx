@@ -37,7 +37,7 @@ const App = ({ Component, pageProps }) => {
 
     return (
         <>            
-            {/* Google アナリティクス 4 */}
+            {/* Google アナリティクス GA4 / UA */}
             <GoogleAnalyticsHead />
 
             <ThemeProvider theme={theme}>

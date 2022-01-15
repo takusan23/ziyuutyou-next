@@ -1,5 +1,5 @@
 ---
-title: Next.jsでブログを作った際に大変だったこと
+title: Next.jsでブログ作り直したのでその際に大変だったこと
 created_at: 2022-01-04
 tags:
 - Next.js
@@ -14,9 +14,6 @@ tags:
 ### nuxt/content で使ってた機能
 - 記事書いてるときのリアルタイム更新
     - いらないと言えばいらないかも...
-
-## Intの割り算だと思ったらFloatだった
-ReactとかNext.js以前の問題だったわ
 
 ## remark() と rehype() 
 - remark
@@ -314,7 +311,7 @@ import AndroidOutlined from '@mui/icons-material/AndroidOutlined'
 
 今回はBabelの設定せずに個別にインポートするようにしてます。
 
-ちなみにこれはKotlinで該当のJavaScriptを渡すと変換してくれるコード。気分次第で`Kotlin/JS`で書くかも
+ちなみにこれはKotlinで該当のJavaScriptを渡すと変換してくれるコード。
 
 ```kotlin
 fun main() {
