@@ -100,6 +100,9 @@ const BlogDetail: React.FC<BlogDetailProps> = (props) => {
                 .content_div img {
                     max-width: 80%;
                 }
+                .content_div { 
+                    word-wrap: break-word;
+                }
             `}</style>
         </>
     )
