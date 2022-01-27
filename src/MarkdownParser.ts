@@ -40,7 +40,8 @@ class MarkdownParser {
         const title = matterResult.data['title'] as string
         // ライブラリ君が勝手にDateオブジェクトに変換してくれた模様
         const date = matterResult.data['created_at'] as Date
-        const createdAt = date.toLocaleDateString()
+        // 誰もビルドマシンが日本語環境とは言っていない、ので日本語のローカルを指定する（Netlifyでビルドすると外国語環境なので日付がおかしくなる）
+        const createdAt = date.toLocaleDateString('ja-JP')
         const tags = (matterResult.data['tags'] ?? []) as Array<string>
         const fileName = path.parse(filePath).name
         const createdAtUnixTime = date.getTime()
