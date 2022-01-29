@@ -20,10 +20,13 @@ export type TagListPageProps = {
 
 /** タグ一覧画面。ページネーションはまた今度 */
 const TagListPage: React.FC<TagListPageProps> = (props) => {
+    // 正規URL。 送信された URL が正規 URL として選択されていません 対策
+    const canonicalUrl = `https://takusan.negitoro.dev/posts/tag/${props.tagName}/`
     return (
         <>
             <Head>
                 <title>{`タグ名:${props.tagName} - たくさんの自由帳`}</title>
+                <link rel="canonical" href={canonicalUrl} />
             </Head>
             <Typography color="primary.main">
                 <span style={{ fontSize: 30 }}>
