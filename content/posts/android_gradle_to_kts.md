@@ -6,6 +6,9 @@ tags:
 - Kotlin
 - Gradle
 ---
+
+(Android Studio Bumblebee 以降書き方変わったので一番最後も参照にしてください)
+
 どうもこんばんわ。  
 Android 12、あんま評判よくないな？1画面で見れる情報量が減った感はあると思う。  
 オーバースクロール時の挙動は賛否両論？
@@ -338,6 +341,54 @@ tasks.register("exportDependency") {
 その後、プロジェクトをエクスプローラー（macOSならあの顔のやつ。Finderだっけ？）で開いて、`.idea`を消すか、適当に名前を変えます。  
 
 そのあと再度Android Studioでプロジェクトを開き、実行ボタンの近くにある`Make Project`ボタン（Ctrl+F9）を押せば治りました。  
+
+# おまけ 2022/01/30 追記
+Android Studio Bumblebee 以降書き方変わったので置いておきます
+
+## トップレベル build.gradle.kts
+
+```kotlin
+buildscript {
+    val kotlinVersion: String by extra("1.6.10")
+    val composeVersion: String by extra("1.1.0-rc03")
+}
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    id("com.android.application").version("7.1.0").apply(false)
+    id("com.android.library").version("7.1.0").apply(false)
+    id("org.jetbrains.kotlin.android").version("1.6.10").apply(false)
+}
+
+tasks.register("clean") {
+    doFirst {
+        delete(rootProject.buildDir)
+    }
+}
+```
+
+## settings.gradle.kts
+
+```kotlin
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        jcenter() // Warning: this repository is going to shut down soon
+    }
+}
+// ここから下は各自書き換えて
+rootProject.name = "ChocoDroid"
+include(":app")
+```
 
 
 # 終わりに
