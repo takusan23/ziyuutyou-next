@@ -4,13 +4,14 @@ import { Typography, useTheme } from "@mui/material"
 import Box from "@mui/material/Box"
 import { GetStaticPaths, GetStaticProps } from "next"
 import Head from "next/head"
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { GitHubHistoryButton, TwitterShareButton } from "../../components/BlogDetailButton"
 import RoundedCornerBox from "../../components/RoundedCorner"
 import Spacer from "../../components/Spacer"
 import TagChipGroup from "../../components/TagChipGroup"
 import ContentFolderManager from "../../src/ContentFolderManager"
 import MarkdownData from "../../src/data/MarkdownData"
+import DateDiffTool from "../../src/DateDiffTool"
 
 /** BlogDetail へ渡すデータ */
 type BlogDetailProps = {
@@ -23,6 +24,15 @@ const BlogDetail: React.FC<BlogDetailProps> = (props) => {
     const theme = useTheme()
     const ogpTitle = `${props.markdownData.title} - たくさんの自由帳`
     const ogpUrl = `https://takusan.negitoro.dev${props.markdownData.link}`
+    // timeタグに入れるやつ、これ必要？ yyyy-MM-dd
+    const dateTimeFormat = props.markdownData.createdAt.replace(/\//g, '-')
+
+    // 何日前かを計算する
+    const [diffDate, setDiffDate] = useState(0)
+    useEffect(() => {
+        // クライアント側で計算する
+        setDiffDate(DateDiffTool.nowDateDiff(dateTimeFormat))
+    }, [])
 
     /** 文字数 */
     const textCountText = (
@@ -47,7 +57,9 @@ const BlogDetail: React.FC<BlogDetailProps> = (props) => {
         }}>
             <UploadFileOutlined color="primary" />
             <Typography color="primary.main">
-                {`投稿日 : ${props.markdownData.createdAt}`}
+                {`投稿日 : `}
+                <time dateTime={dateTimeFormat}>{props.markdownData.createdAt}</time>
+                {` | ${diffDate} 日前`}
             </Typography>
         </div>
     )
@@ -99,9 +111,6 @@ const BlogDetail: React.FC<BlogDetailProps> = (props) => {
                 }
                 .content_div img {
                     max-width: 80%;
-                }
-                .content_div { 
-                    word-wrap: break-word;
                 }
             `}</style>
         </>

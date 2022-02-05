@@ -5,10 +5,16 @@
     src: url('fonts/Koruri-Regular-sub.eot?#iefix') format('embedded-opentype'), url('fonts/Koruri-Regular-sub.woff') format('woff'), url('fonts/Koruri-Regular-sub.ttf') format('truetype');
 }
 
+body {
+    /* リンクがはみ出るので */
+    word-wrap: break-word;
+}
+
 /* コードブロック */
 code {
     overflow-x: scroll;
     font-family: 'Koruri Regular';
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
 /* Table（表）に線が入らないので調整 */

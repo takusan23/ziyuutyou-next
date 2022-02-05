@@ -37,7 +37,8 @@ const BlogListItem: React.FC<BlogItemProps> = (props) => {
             }}>
                 <UploadFileOutlined />
                 <Typography color="text.secondary">
-                    {`${props.blogItem.createdAt} 投稿`}
+                    <time>{props.blogItem.createdAt}</time>
+                    {` 投稿`}
                 </Typography>
             </div>
         </Box>

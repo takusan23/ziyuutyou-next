@@ -42,6 +42,8 @@ class MarkdownParser {
         const date = matterResult.data['created_at'] as Date
         // 誰もビルドマシンが日本語環境とは言っていない、ので日本語のローカルを指定する（Netlifyでビルドすると外国語環境なので日付がおかしくなる）
         const createdAt = date.toLocaleDateString('ja-JP')
+        // datetime 属性に入れるためのやつ、必要かどうかは不明
+        const dateTimeAttr = `${date.getFullYear()}-${date.getMonth()}-${date.getDate}`
         const tags = (matterResult.data['tags'] ?? []) as Array<string>
         const fileName = path.parse(filePath).name
         const createdAtUnixTime = date.getTime()

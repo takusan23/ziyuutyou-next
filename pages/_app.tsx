@@ -1,7 +1,7 @@
 import { ThemeProvider } from '@mui/material/styles'
 import { useEffect, useState } from "react"
 import Layout from "../components/Layout"
-import useCustomTheme from '../src/tools/ZiyuutyouTheme'
+import useCustomTheme from '../src/ZiyuutyouTheme'
 import useMediaQuery from '@mui/material/useMediaQuery'
 // シンタックスハイライトのCSS
 import 'highlight.js/styles/vs2015.css'

@@ -8,7 +8,6 @@ import Button from "@mui/material/Button"
 import BookOutlined from "@mui/icons-material/BookOutlined"
 import Link from "next/link"
 import RoundedCornerBox from "./RoundedCorner"
-import Image from "next/image"
 import profileCardJpegImg from "../public/profile_card_img.jpg"
 
 /** ProfileCard へ渡すデータ */
