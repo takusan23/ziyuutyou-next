@@ -8,6 +8,7 @@ import 'highlight.js/styles/vs2015.css'
 // テーブルとかスクロールバーのCSS
 import '../styles/css/styles.css'
 import { GoogleAnalyticsHead, useGoogleAnalytics } from '../src/GoogleAnalytics'
+import AndroidStatusbarColor from '../src/AndroidStatusbarColor'
 
 /**
  * Androidで言うところのActivity。この中でPages(AndroidでいうとFragment)を切り替える
@@ -35,8 +36,13 @@ const App = ({ Component, pageProps }) => {
     // GoogleAnalyticsへnext/routerのページ遷移を通知する。
     useGoogleAnalytics()
 
+    console.log(theme.palette.background.default)
+
     return (
-        <>            
+        <>
+            {/* ステータスバーの色 */}
+            <AndroidStatusbarColor colorCode={theme.palette.background.default} />
+
             {/* Google アナリティクス GA4 / UA */}
             <GoogleAnalyticsHead />
 
