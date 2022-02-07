@@ -36,8 +36,6 @@ const App = ({ Component, pageProps }) => {
     // GoogleAnalyticsへnext/routerのページ遷移を通知する。
     useGoogleAnalytics()
 
-    console.log(theme.palette.background.default)
-
     return (
         <>
             {/* ステータスバーの色 */}
