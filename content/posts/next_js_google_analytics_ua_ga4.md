@@ -10,8 +10,6 @@ tags:
 
 キスから始まるギャルの恋 〜くるみのウワサとホントのキモチ〜 攻略しました。
 
-http://prekano.com/products/galkoi/
-
 いいね！次回作も予約した
 
 ![Imgur](https://imgur.com/kBGvFeJ.png)
