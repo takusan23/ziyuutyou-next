@@ -48,7 +48,7 @@ export default ExpandedText
 普段はAndroidの記事を書いています。  
 **Next.js**の静的書き出し機能(SSG)を使ってこのサイトは出来ています。
 
-前のブログ(`Nuxt.js`)のソースコード→ https://github.com/takusan23/ziyuutyou-next  
+前のブログ(`Nuxt.js`)のソースコード→ https://github.com/takusan23/ziyuutyou  
 前の前のブログ(`Hexo`)→ https://takusan23.github.io/Bibouroku/
 
 # プライバシーポリシー
