@@ -2,13 +2,23 @@
 title: Hello Android 13。懐中電灯編
 created_at: 2022-04-12
 tags:
-- Android 13
+- Android13
 - Camera2
 - Kotlin
 ---
 
 どうもこんばんわ。  
 姫宮さんはかまいたい 攻略しました。こういうのでいいんだよ。
+
+![Imgur](https://imgur.com/cI9ldMy.jpg)
+
+それな
+
+![Imgur](https://imgur.com/bglBKYa.jpg)
+
+![Imgur](https://imgur.com/wNwRC4D.jpg)
+
+かわいい！
 
 戯画、ゲームエンジンが使いやすい。
 
@@ -22,7 +32,6 @@ https://www.xda-developers.com/android-13-flashlight-brightness-adjustment/
 
 Galaxy S7 Edge にはフラッシュライトの明るさ調整が存在する。Samsung Experience 懐かしい。  
 あの時はSDカードが刺さるって宣伝してたのに今は...  
-超絶どうでもいいけどGalaxy、カタログスペックの割に持ってみると重量が軽く感じるのってなんでだろう、不思議。
 
 ![Imgur](https://imgur.com/dw93hKy.png)
 
