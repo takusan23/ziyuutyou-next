@@ -69,9 +69,14 @@ found 0 vulnerabilities
  in 605 scanned packages
 ```
 
-消えていました。
-
+消えていました。  
 以上です。
+
+# GitHubへPush
+
+GitHubへPushし、数十秒後にちゃんと消えていました。よかった
+
+![Imgur](https://imgur.com/zAKmxGs.png)
 
 # おわりに
 
