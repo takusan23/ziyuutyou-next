@@ -91,7 +91,7 @@ const BlogListPage: React.FC<BlogListPageProps> = ({ ...props }) => {
  */
 export const getStaticProps: GetStaticProps<BlogListPageProps> = async context => {
     // posts/page/<ここ> を取得
-    const pageId = parseInt(context.params["page"] as string)
+    const pageId = Number(context.params["page"])
     // 記事一覧を取得する。async なので待つ。-1してるのは1ページ目はskip:0にしたいため
     const blogListResult = await ContentFolderManager.getBlogItemList(blogLimit, blogLimit * (pageId - 1))
     const blogList = blogListResult.result

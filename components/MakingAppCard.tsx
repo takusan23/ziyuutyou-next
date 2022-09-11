@@ -2,7 +2,7 @@ import AndroidOutlined from "@mui/icons-material/AndroidOutlined"
 import ComputerOutlined from "@mui/icons-material/ComputerOutlined"
 import GridViewOutlined from "@mui/icons-material/GridViewOutlined"
 import VideogameAssetOutlined from "@mui/icons-material/VideogameAssetOutlined"
-import WebOutlined from "@mui/icons-material/WebOutlined" 
+import WebOutlined from "@mui/icons-material/WebOutlined"
 import Typography from "@mui/material/Typography"
 import List from "@mui/material/List"
 import ListItem from "@mui/material/ListItem"
@@ -64,19 +64,21 @@ const MakingAppList: React.FC<MakingAppListProps> = (props) => {
         <List sx={{ marginLeft: 2, marginRight: 2, width: '100%' }}>
             {
                 props.list.map(item => (
-                    <RoundedCornerBox key={item.link} colorCode={theme.palette.background.default}>
-                        <Box sx={{ padding: 2 }}>
-                            <Typography variant="h5" component="div">
-                                {item.name}
-                            </Typography>
-                            <Typography sx={{ fontSize: 14 }} color="text.secondary">
-                                {item.description}
-                            </Typography>
-                            <Spacer value={1} />
-                            <NextLinkButton variant="text" href={item.link} text="リンクへ" />
-                            <NextLinkButton variant="text" href={item.github} text="GitHubを開く" />
-                        </Box>
-                    </RoundedCornerBox>
+                    <Box sx={{ paddingBottom: 1 }}>
+                        <RoundedCornerBox key={item.link} colorCode={theme.palette.background.default}>
+                            <Box sx={{ padding: 2 }}>
+                                <Typography variant="h5" component="div">
+                                    {item.name}
+                                </Typography>
+                                <Typography sx={{ fontSize: 14 }} color="text.secondary">
+                                    {item.description}
+                                </Typography>
+                                <Spacer value={1} />
+                                <NextLinkButton variant="text" href={item.link} text="リンクへ" />
+                                <NextLinkButton variant="text" href={item.github} text="GitHubを開く" />
+                            </Box>
+                        </RoundedCornerBox>
+                    </Box>
                 ))
             }
         </List>
