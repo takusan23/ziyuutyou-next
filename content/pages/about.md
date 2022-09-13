@@ -37,7 +37,7 @@ const ExpandedText = () => {
             <Button onClick={()=> setExpanded(!isExpanded)}>
                 Open!
             </Button>
-        </p>
+        </>
     )
 }
 
