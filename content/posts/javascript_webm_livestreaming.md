@@ -30,7 +30,7 @@ Dreamin'Her -僕は、彼女の夢を見る。- 攻略しました。(全年齢)
 
 OP曲の`おやすみモノクローム`、めっちゃいい
 
-（Steamで買えます。）
+（ゲームはSteamで買えます。）
 
 # 本題
 
@@ -487,7 +487,32 @@ fun main(args: Array<String>) {
 
 **すごい！！サーバー側は仲介しかして無いのになんちゃってライブ配信が完成しました！**
 
-ちなみに配信を終え、再度配信するためにはセグメントフォルダの中身を消すのと、インデックスを0に戻す必要があります。  
+# 真面目に作るには
+動いたことに満足したのですが、まだ直したほうがいいところがあります。
+
+- 配信をやめて再配信する場合
+    - 再度配信するためにはセグメントフォルダの中身を消すのと、インデックスを0に戻す必要があります。
+    - 現状はサーバーを再起動しないと再配信できません。
+- 視聴側が最初から再生されてしまう（すでにセグメントが生成されているのに）
+    - リロードして視聴を再度始めると最初から始まる
+    - $Number$ を`0`から開始しないようにすればいい
+    - マニフェストで`availabilityStartTime`をセットすることで、途中から視聴した場合も最新のが取得されるはずです。
+        - `availabilityStartTime`はライブ配信が利用可能になる時間（ISO 8601）
+        - `availabilityStartTime="2022-09-13T00:00:00+09:00"`
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<MPD xmlns="urn:mpeg:dash:schema:mpd:2011" availabilityStartTime="2022-09-13T00:00:00+09:00" maxSegmentDuration="PT3S" minBufferTime="PT3S" type="dynamic" profiles="urn:mpeg:dash:profile:isoff-live:2011,http://dashif.org/guidelines/dash-if-simple">
+  <BaseURL>/</BaseURL>
+  <Period start="PT0S">
+    <AdaptationSet mimeType="video/webm">
+      <Role schemeIdUri="urn:mpeg:dash:role:2011" value="main" />
+      <SegmentTemplate duration="3" initialization="/segment0.webm" media="/segment$Number$.webm" startNumber="1"/>
+      <Representation id="default" codecs="vp9"/>
+    </AdaptationSet>
+  </Period>
+</MPD>
+```
 
 # Q&A
 
