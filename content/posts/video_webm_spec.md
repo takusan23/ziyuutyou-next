@@ -1191,3 +1191,12 @@ Pixel Watch はよ来い！！！！
 docomoでもセルラー通信できたら WearOS でもLTEバンド取得できるのか試してみたかったんだけどな、、、
 
 Kotlinの便利機能ばっかり使ったのであんまり参考にならなそう。  
+
+# 参考にしました
+たすかります！！！
+
+- https://www.slideshare.net/mganeko/inside-webm
+- https://www.slideshare.net/mganeko/media-recorder-and-webm
+- https://qiita.com/ryiwamoto/items/0ff451da6ab76b4f4064
+- https://qiita.com/legokichi/items/83871e1f034331222fd2
+- https://scrapbox.io/unarist/MediaRecorderAPIで作ったwebmをseekableにしたい
