@@ -520,3 +520,56 @@ https://github.com/takusan23/BatteryAppLauncherComplication
 （もしかしたら WearOS で開発者向けオプションを有効にしないと出来ないかも）
 
 ![Imgur](https://imgur.com/cr6Ddg7.png)
+
+# 追記 2022/10/23
+もしかしたら、これ有効にすると `りゅうず` 回したときの感触フィードバックが無効になるかもしれないです。  
+原因は`accessibility_service_config.xml`で`canPerformGestures`を`true`にしたせいだと思います。  
+
+対策としては、`canPerformGestures`をブロードキャストを受信した際に動的に有効にすることで利用できると思います。
+
+`accessibility_service_config.xml`の`canPerformGestures`を`false`にして
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityFeedbackType="feedbackGeneric" android:accessibilityFlags="flagDefault"
+    android:canPerformGestures="false" />
+```
+
+ブロードキャストを受信した際に`canPerformGestures`を有効にします。ホームボタンを押したら再度`canPerformGestures`を向こうにします。  
+で、動的に有効にするための関数が`@UnsupportedAppUsage`アノテーションで隠されているため、普通には呼び出せません。  
+リフレクションで呼び出すしか無いと思います。(ほんとか？)
+
+(AccessibilityService_canRetrieveWindowContent が 動的に変更はできない(xmlで指定しろ)って書いてあるので、逆に動的に変更するメソッドがあるのかと期待してたのですがアノテーションで隠されてました。)
+
+```kotlin
+/** ホームボタンを押してほしいことを受け取るブロードキャスト */
+private val broadcastReceiver = object : BroadcastReceiver() {
+    override fun onReceive(context: Context?, intent: Intent?) {
+        when (intent?.action) {
+            // ホームボタンを押す
+            DOWN_HOME_BUTTON -> {
+                // xml で android:canPerformGestures を指定すると、
+                // りゅうず を回したときの感触フィードバック が貰えなくなるため、
+                // 実行時に canPerformGestures を指定する
+                // ただ、↑のメソッドが隠されているためリフレクションで呼び出す
+                val setCapabilities = AccessibilityServiceInfo::class.java
+                    .methods
+                    .first { it.name == "setCapabilities" }
+                setCapabilities.invoke(serviceInfo, AccessibilityServiceInfo.CAPABILITY_CAN_PERFORM_GESTURES)
+                // 再セットする
+                serviceInfo = serviceInfo
+                // ホームボタンを押す
+                performGlobalAction(GLOBAL_ACTION_HOME)
+                // そして最後に戻す
+                setCapabilities.invoke(serviceInfo, 0)
+                serviceInfo = serviceInfo
+            }
+        }
+    }
+}
+```
+
+対応コミットです  
+
+https://github.com/takusan23/BatteryAppLauncherComplication/commit/75d83f584322d268bbcbae2d14aa0fcdbc61b5e1
