@@ -45,8 +45,15 @@ const NavigationLink = () => {
                 {
                     // mapでElementを返す
                     linkList.map(linkData => (
-                        <Link href={linkData.link} passHref key={linkData.link}>
-                            <ListItemButton component="a">
+                        <Link
+                            style={{
+                                textDecoration: 'none',
+                                color: 'inherit'
+                            }}
+                            href={linkData.link}
+                            key={linkData.link}
+                        >
+                            <ListItemButton>
                                 <ListItemIcon>{linkData.icon}</ListItemIcon>
                                 <ListItemText primary={linkData.title} />
                             </ListItemButton>

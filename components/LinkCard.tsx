@@ -33,17 +33,23 @@ const LinkCard: React.FC<LinkCardProps> = (props) => {
                             <React.Fragment key={linkData.name}>
                                 <RoundedCornerBox value={3} colorCode={theme.palette.background.default}>
                                     <Spacer value={1} />
-                                    <ListItem
-                                        disablePadding
-                                        secondaryAction={<OpenInBrowserOutlined color="primary" />}>
-                                        <Link href={linkData.href} passHref>
-                                            <ListItemButton component="a">
+                                    <Link
+                                        href={linkData.href}
+                                        style={{
+                                            textDecoration: 'none',
+                                            color: 'inherit'
+                                        }}
+                                    >
+                                        <ListItem
+                                            disablePadding
+                                            secondaryAction={<OpenInBrowserOutlined color="primary" />}>
+                                            <ListItemButton>
                                                 <ListItemText
                                                     primary={linkData.name}
                                                     secondary={linkData.description} />
                                             </ListItemButton>
-                                        </Link>
-                                    </ListItem>
+                                        </ListItem>
+                                    </Link>
                                 </RoundedCornerBox>
                             </React.Fragment>
                         ))

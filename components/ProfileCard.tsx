@@ -4,11 +4,10 @@ import CardContent from "@mui/material/CardContent"
 import NextAvater from "./NextAvater"
 import React, { useEffect, useState } from "react"
 import CardActions from "@mui/material/CardActions"
-import Button from "@mui/material/Button"
 import BookOutlined from "@mui/icons-material/BookOutlined"
-import Link from "next/link"
 import RoundedCornerBox from "./RoundedCorner"
 import profileCardJpegImg from "../public/profile_card_img.jpg"
+import NextLinkButton from "./NextLinkButton"
 
 /** ProfileCard へ渡すデータ */
 type ProfileCardProps = {
@@ -52,16 +51,11 @@ const ProfileCard: React.FC<ProfileCardProps> = (props) => {
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Link passHref href="/posts/page/1/">
-                        <Button
-                            sx={{ borderRadius: 10, marginLeft: 'auto' }}
-                            variant="contained"
-                            disableElevation
-                            aria-expanded={true}
-                            startIcon={<BookOutlined />}>
-                            記事一覧へ
-                        </Button>
-                    </Link>
+                    <NextLinkButton
+                        href="/posts/page/1/"
+                        startIcon={<BookOutlined />}
+                        text="記事一覧へ"
+                    />
                 </CardActions>
             </RoundedCornerBox>
         </>

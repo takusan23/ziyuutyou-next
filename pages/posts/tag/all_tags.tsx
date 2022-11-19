@@ -37,13 +37,20 @@ const AllTags: React.FC<AllTagsProps> = (props) => {
 
             <Box sx={{ padding: 0 }}>
                 {props.tags.map((data) => (
-                    <Link href={`/posts/tag/${data.name}/`} passHref key={data.name}>
+                    <Link
+                        style={{
+                            textDecoration: 'none',
+                            color: 'inherit'
+                        }}
+                        href={`/posts/tag/${data.name}/`}
+                        key={data.name}
+                    >
                         <Chip
-                            component="a"
                             sx={{
                                 marginRight: 1,
                                 marginTop: 1
                             }}
+                            clickable
                             color="primary"
                             icon={<LocalOfferOutlined />}
                             label={`${data.name} - ${data.count} 件`}

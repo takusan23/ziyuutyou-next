@@ -14,13 +14,20 @@ const TagChipGroup: React.FC<TagChipGroupProps> = (props) => {
         <>
             {
                 props.tagList.map(tagName => (
-                    <Link href={`/posts/tag/${tagName}/`} passHref key={tagName}>
+                    <Link
+                        style={{
+                            textDecoration: 'none',
+                            color: 'inherit'
+                        }}
+                        href={`/posts/tag/${tagName}/`}
+                        key={tagName}
+                    >
                         <Chip
-                            component="a"
                             sx={{
                                 marginRight: 1,
                                 marginTop: 1
                             }}
+                            clickable
                             color="primary"
                             icon={<LocalOfferOutlined />}
                             label={tagName}

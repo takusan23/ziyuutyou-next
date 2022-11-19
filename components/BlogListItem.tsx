@@ -19,10 +19,14 @@ const BlogListItem: React.FC<BlogItemProps> = (props) => {
     const theme = useTheme()
     return (
         <Box sx={{ padding: 3 }}>
-            <Link passHref href={props.blogItem.link}>
-                <a style={{ color: theme.palette.primary.main, fontSize: 25 }} >
-                    {props.blogItem.title}
-                </a>
+            <Link
+                style={{
+                    color: theme.palette.primary.main,
+                    fontSize: 25
+                }}
+                href={props.blogItem.link}
+            >
+                {props.blogItem.title}
             </Link>
             <Typography variant="body2" color="text.secondary">
                 {props.blogItem.description}
