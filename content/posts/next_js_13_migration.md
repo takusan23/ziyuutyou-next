@@ -3,6 +3,7 @@ title: Next.js 13 にした (しただけ)
 created_at: 2022-11-20
 tags:
 - Next.js
+- React.js
 - Node.js
 - TypeScript
 ---

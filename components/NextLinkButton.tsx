@@ -3,6 +3,8 @@ import Link from "next/link"
 
 /** BlogListPagingButton へ渡すデータ */
 type NextLinkButtonProps = {
+    /** style */
+    style?: React.CSSProperties,
     /** URL */
     href: string,
     /** ボタンテキスト */
@@ -18,6 +20,7 @@ const NextLinkButton: React.FC<NextLinkButtonProps> = (props) => {
     return (
         <Link
             style={{
+                ...props.style,
                 textDecoration: 'none',
                 color: 'inherit'
             }}

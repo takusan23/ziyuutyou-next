@@ -52,6 +52,7 @@ const ProfileCard: React.FC<ProfileCardProps> = (props) => {
                 </CardContent>
                 <CardActions>
                     <NextLinkButton
+                        style={{ marginLeft: 'auto' }}
                         href="/posts/page/1/"
                         startIcon={<BookOutlined />}
                         text="記事一覧へ"
