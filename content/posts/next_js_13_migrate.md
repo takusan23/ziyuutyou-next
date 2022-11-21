@@ -1,5 +1,5 @@
 ---
-title: Next.js 13 にした
+title: Next.js 13 にした (しただけ)
 created_at: 2022-11-20
 tags:
 - Next.js
@@ -40,10 +40,6 @@ added 1 package from 1 contributor, removed 2 packages, updated 124 packages and
 はい！動かなくなりました！
 
 ![Imgur](https://imgur.com/j6iRaTB.png)
-
-```
-
-```
 
 # ついでに Material UI のアップデート
 
@@ -168,4 +164,5 @@ const NavigationLink = () => {
 </Link>
 ```
 
-おわり
+おわり。  
+`appディレクトリ`はなんか難しそう...だし`Netlify`で動くか分からんので様子見します ( ˘ω˘)ｽﾔｧ
