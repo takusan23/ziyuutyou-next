@@ -167,3 +167,31 @@ const NavigationLink = () => {
 
 おわり。  
 `appディレクトリ`はなんか難しそう...だし`Netlify`で動くか分からんので様子見します ( ˘ω˘)ｽﾔｧ
+
+# おまけ
+`Netlify`の`Build image`が古くてコケてました。  
+`Ubuntu`のバージョンアップ？どうやら警告が来ていたそうですが見落としてました。すいません
+
+![Imgur](https://imgur.com/k5yYXC4.png)
+
+## テストする
+多分動くと思うのですが、一応ちゃんと見れるか確認したいです。  
+自動公開をオフにすると動作確認できるそうです。
+
+`Lock to stop auto publishing` を押します。
+
+![Imgur](https://imgur.com/fy4lEKx.png)
+
+そのあと`Site setting`へ進み`Build & Deploy`の`Build image`を新しいのにします。
+
+![Imgur](https://imgur.com/WdiYnJg.png)
+
+出来たら`Deploys`に戻り、手動デプロイをします。  
+
+![Imgur](https://imgur.com/206PDDO.png)
+
+ロックされているのでまだ古いままの成果物がホスティングされています。
+
+![Imgur](https://imgur.com/VDRodqk.png)
+
+ちなみに今回は特に何事もなくデプロイされていました。以上です。
