@@ -1,4 +1,4 @@
-import fs from 'fs'
+import fs from 'fs/promises'
 import LinkData from './data/LinkData'
 import { MakingAppData, MakingAppDetailData } from './data/MakingAppData'
 
@@ -66,7 +66,7 @@ class JsonFolderManager {
      * @returns 読みだしたファイル
      */
     private static async readTextFile(filePath: string) {
-        return await fs.readFileSync(filePath, { encoding: 'utf-8' })
+        return await fs.readFile(filePath, { encoding: 'utf-8' })
     }
 
 }

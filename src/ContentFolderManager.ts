@@ -1,8 +1,9 @@
 import BlogItem from "./data/BlogItem";
-import fs from "fs"
+import fs from "fs/promises"
 import MarkdownParser from "./MarkdownParser";
 import path from "path"
 import TagData from "./data/TagData";
+import BlogItemResult from "./data/BlogItemResult";
 
 /**
  * `content`フォルダにあるコンテンツを取得する関数がある。
@@ -31,7 +32,7 @@ class ContentFolderManager {
      * 
      * @returns ファイル名一覧
      */
-    static getPageNameList() {
+    static async getPageNameList() {
         return this.getFileNameList(this.PAGES_FOLDER_PATH)
     }
 
@@ -40,7 +41,7 @@ class ContentFolderManager {
      * 
      * @returns ファイル名一覧
      */
-    static getBlogNameList() {
+    static async getBlogNameList() {
         return this.getFileNameList(this.POSTS_FOLDER_PATH)
     }
 
@@ -56,10 +57,11 @@ class ContentFolderManager {
     static async getBlogItemList(limit: number = 10, skip: number) {
         // content/posts の中身を読み出す
         const blogList = await this.getItemList(this.POSTS_FOLDER_PATH, this.POSTS_BASE_URL)
-        return {
+        const result: BlogItemResult = {
             totalCount: blogList.length,
             result: blogList.slice(skip, skip + limit)
-        } as BlogItemResult
+        }
+        return result
     }
 
     /**
@@ -98,10 +100,11 @@ class ContentFolderManager {
         // フィルターにかけて
         const filteredList = blogList
             .filter((blog) => blog.tags.includes(tagName))
-        return {
+        const result: BlogItemResult = {
             totalCount: filteredList.length,
             result: filteredList
-        } as BlogItemResult
+        }
+        return result
     }
 
     /**
@@ -114,8 +117,8 @@ class ContentFolderManager {
             blogList.flatMap((blog) => blog.tags)
         )
         // TagDataの配列にする。多い順にする
-        const tagDataList = tagNameList
-            .map<TagData>((name) => ({
+        const tagDataList: TagData[] = tagNameList
+            .map((name) => ({
                 name: name,
                 count: blogList.filter((blogItem) => blogItem.tags.includes(name)).length
             }))
@@ -130,32 +133,31 @@ class ContentFolderManager {
     }
 
     /** 引数のフォルダパスの中身をファイル名配列として返す */
-    private static getFileNameList(folderPath: string) {
-        return fs.readdirSync(folderPath)
-            .map(name => path.parse(name).name)
+    private static async getFileNameList(folderPath: string) {
+        return (await fs.readdir(folderPath)).map(name => path.parse(name).name)
     }
 
     /** 指定パスのフォルダに入ってる記事一覧を返す */
     private static async getItemList(folderPath: string, baseUrl: string) {
         // content/posts の中身を読み出す
-        const postFileList = fs.readdirSync(folderPath)
+        const postFileList = await fs.readdir(folderPath)
         // Markdownパーサーへかける
         const markdownParsePromiseList = postFileList
             .map(fileName => `${folderPath}/${fileName}`)
             .map(filePath => MarkdownParser.parse(filePath, baseUrl))
         // Promiseの結果を全部待つ。mapの中でawait使えなかった；；
         const markdownDataList = await Promise.all(markdownParsePromiseList)
-        const blogList = markdownDataList
+        const blogList: BlogItem[] = markdownDataList
             // 新しい順に並び替え。なんでこれで動くのかは知らないです（）
             .sort((a, b) => b.createdAtUnixTime - a.createdAtUnixTime)
             // 一覧用に変換
-            .map(data => <BlogItem>{
+            .map(data => ({
                 title: data.title,
                 createdAt: data.createdAt,
                 description: data.html.substring(0, 100),
                 link: data.link,
                 tags: data.tags
-            })
+            }))
         return blogList
     }
 
@@ -169,14 +171,6 @@ class ContentFolderManager {
         return Array.from(new Set(list))
     }
 
-}
-
-/** 記事一覧の返り値 */
-interface BlogItemResult {
-    /** 合計記事数 */
-    totalCount: number;
-    /** 取得した記事一覧 */
-    result: Array<BlogItem>;
 }
 
 export default ContentFolderManager

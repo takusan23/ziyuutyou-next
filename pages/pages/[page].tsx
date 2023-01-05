@@ -84,8 +84,8 @@ export const getStaticProps: GetStaticProps<PageDetailsPrpos> = async context =>
  * @returns 生成するページの名前
  */
 export const getStaticPaths: GetStaticPaths = async () => {
-    const fileNameList = ContentFolderManager.getPageNameList()
-        .map(name => ({ params: { page: `${name}` } }))
+    const fileNameList = (await ContentFolderManager.getPageNameList())
+        .map(name => ({ params: { page: name } }))
     return {
         paths: fileNameList,
         fallback: false

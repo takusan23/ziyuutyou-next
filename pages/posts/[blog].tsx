@@ -142,9 +142,9 @@ export const getStaticProps: GetStaticProps<BlogDetailProps> = async context => 
  * これも上記同様クライアント側では呼ばれない。
  */
 export const getStaticPaths: GetStaticPaths = async () => {
-    const fileNameList = ContentFolderManager.getBlogNameList()
+    const fileNameList = (await ContentFolderManager.getBlogNameList())
         // この場合はキーが blog になるけどこれはファイル名によって変わる（[page].tsxなら page がキーになる）
-        .map(name => ({ params: { blog: `${name}` } }))
+        .map(name => ({ params: { blog: name } }))
     return {
         paths: fileNameList,
         fallback: false
