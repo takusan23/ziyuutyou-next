@@ -9,6 +9,7 @@ import remarkParse from "remark-parse"
 import remarkRehype from "remark-rehype"
 import rehypeRaw from "rehype-raw"
 import rehypeStringify from "rehype-stringify/lib"
+import rehypeSlug from "rehype-slug"
 
 /**
  * Markdownパーサー
@@ -21,6 +22,7 @@ import rehypeStringify from "rehype-stringify/lib"
  * - rehypeRaw (Markdownに埋め込んだHTMLを利用する)
  * - rehypeHighlight (シンタックスハイライト。CSSはHighlight.jsから。_app.tsxで読み込んでる)
  * - remarkGfm (テーブル、打ち消し線、自動リンク機能)
+ * - rehypeSlug (HTML生成後に h1, h2 等に id属性 をセットしてくれる。目次からスクロールするため)
  */
 class MarkdownParser {
 
@@ -54,6 +56,7 @@ class MarkdownParser {
             .use(rehypeRaw)
             .use(remarkGfm)
             .use(rehypeStringify)
+            .use(rehypeSlug)
             .use(rehypeHighlight, {
                 // 利用できない言語の場合はエラー出さずに無視
                 ignoreMissing: true

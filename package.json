@@ -21,6 +21,7 @@
     "react-dom": "^18.2.0",
     "rehype-highlight": "^5.0.2",
     "rehype-raw": "^6.1.1",
+    "rehype-slug": "^5.1.0",
     "rehype-stringify": "^9.0.2",
     "remark-gfm": "^3.0.1",
     "remark-parse": "^10.0.1",
