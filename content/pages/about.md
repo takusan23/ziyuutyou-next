@@ -110,6 +110,12 @@ thx!!!
 - remark-rehype
     - MIT License
     - https://github.com/remarkjs/remark-rehype/blob/main/license
+- rehype-parse
+    - MIT License
+    - https://github.com/rehypejs/rehype/blob/main/license
+- rehype-slug
+    - MIT License
+    - https://github.com/rehypejs/rehype-slug/blob/main/license
 - unified
     - MIT License
     - https://github.com/unifiedjs/unified/blob/main/license

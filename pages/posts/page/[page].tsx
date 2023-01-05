@@ -52,8 +52,8 @@ const BlogListPage: React.FC<BlogListPageProps> = ({ ...props }) => {
 
             <Box textAlign='center'>
                 {
-                    // 前のページボタンを出すか。null以外で
-                    props.prevPageId !== null && <NextLinkButton
+                    // 前のページボタンを出すか
+                    props.prevPageId && <NextLinkButton
                         variant="contained"
                         href={`/posts/page/${props.prevPageId}/`}
                         text="前のページ"
@@ -68,8 +68,8 @@ const BlogListPage: React.FC<BlogListPageProps> = ({ ...props }) => {
                     {`${props.pageId}`}
                 </Button>
                 {
-                    // 次のページを出すか。(ry
-                    props.nextPageId !== null && <NextLinkButton
+                    // 次のページを出すか。
+                    props.nextPageId && <NextLinkButton
                         variant="contained"
                         href={`/posts/page/${props.pageId + 1}/`}
                         text="次のページ"

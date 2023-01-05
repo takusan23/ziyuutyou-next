@@ -64,7 +64,7 @@ const MakingAppList: React.FC<MakingAppListProps> = (props) => {
         <List sx={{ marginLeft: 2, marginRight: 2, width: '100%' }}>
             {
                 props.list.map(item => (
-                    <Box sx={{ paddingBottom: 1 }}>
+                    <Box sx={{ paddingBottom: 1 }} key={item.github}>
                         <RoundedCornerBox key={item.link} colorCode={theme.palette.background.default}>
                             <Box sx={{ padding: 2 }}>
                                 <Typography variant="h5" component="div">
@@ -117,7 +117,7 @@ const MakingAppCard: React.FC<MakingAppCardProps> = (props) => {
      */
     const changeAppListPlatform = (platformName: string) => {
         // あれTypeScriptくんこれ通すんか？
-        setAppList(makingAppList.find(platformObj => platformObj.platfromName == platformName).appList)
+        setAppList(makingAppList.find(platformObj => platformObj.platfromName === platformName).appList)
     }
 
     /**

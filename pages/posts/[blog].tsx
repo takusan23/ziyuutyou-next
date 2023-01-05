@@ -9,9 +9,13 @@ import { GitHubHistoryButton, TwitterShareButton } from "../../components/BlogDe
 import RoundedCornerBox from "../../components/RoundedCorner"
 import Spacer from "../../components/Spacer"
 import TagChipGroup from "../../components/TagChipGroup"
+import { TocListLayout, TocList } from "../../components/TocList"
 import ContentFolderManager from "../../src/ContentFolderManager"
 import MarkdownData from "../../src/data/MarkdownData"
 import DateDiffTool from "../../src/DateDiffTool"
+
+/** 目次の幅 */
+const TOC_LIST_WIDTH = 300
 
 /** BlogDetail へ渡すデータ */
 type BlogDetailProps = {
@@ -97,12 +101,19 @@ const BlogDetail: React.FC<BlogDetailProps> = (props) => {
             {shareOrHistoryButton}
             <Spacer value={2} />
 
-            <RoundedCornerBox>
-                <Box sx={{ padding: 2 }}>
-                    <div className="content_div" dangerouslySetInnerHTML={{ __html: props.markdownData.html }} />
-                </Box>
-                <Spacer value={1} />
-            </RoundedCornerBox>
+            {/* 画面の幅が広いときだけ目次を表示させる */}
+            <TocListLayout
+                secondaryWidth={TOC_LIST_WIDTH}
+                master={
+                    <RoundedCornerBox>
+                        <Box sx={{ padding: 2 }}>
+                            <div className="content_div" dangerouslySetInnerHTML={{ __html: props.markdownData.html }} />
+                        </Box>
+                        <Spacer value={1} />
+                    </RoundedCornerBox>
+                }
+                secondary={<TocList tocDataList={props.markdownData.tocDataList} />}
+            />
 
             {/* Vue.jsにもあるcssのあれ */}
             <style jsx global>{`

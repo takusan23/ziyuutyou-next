@@ -46,7 +46,8 @@ const Layout: React.FC<LayoutProps> = ({ children, ...props }) => {
             <Box
                 component="main"
                 sx={{
-                    flexGrow: 1, p: 3,
+                    flexGrow: 1,
+                    p: 3,
                     width: {
                         sm: `calc(100% - ${drawerWidth}px)`,
                         xs: '100%',

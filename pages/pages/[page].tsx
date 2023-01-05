@@ -4,8 +4,12 @@ import { GetStaticPaths, GetStaticProps } from "next"
 import Head from "next/head"
 import RoundedCornerBox from "../../components/RoundedCorner"
 import Spacer from "../../components/Spacer"
+import { TocList, TocListLayout } from "../../components/TocList"
 import ContentFolderManager from "../../src/ContentFolderManager"
 import MarkdownData from "../../src/data/MarkdownData"
+
+/** 目次の幅 */
+const TOC_LIST_WIDTH = 300
 
 /** BlogDetail へ渡すデータ */
 type PageDetailsPrpos = {
@@ -44,11 +48,21 @@ const PageDetail: React.FC<PageDetailsPrpos> = (props) => {
                 </Typography>
             </div>
             <Spacer value={2} />
-            <RoundedCornerBox>
-                <Box sx={{ padding: 2 }}>
-                    <div id="content_div" dangerouslySetInnerHTML={{ __html: props.markdownData.html }} />
-                </Box>
-            </RoundedCornerBox>
+
+            {/* 画面の幅が広いときだけ目次を表示させる */}
+            <TocListLayout
+                secondaryWidth={TOC_LIST_WIDTH}
+                master={
+                    <RoundedCornerBox>
+                        <Box sx={{ padding: 2 }}>
+                            <div className="content_div" dangerouslySetInnerHTML={{ __html: props.markdownData.html }} />
+                        </Box>
+                        <Spacer value={1} />
+                    </RoundedCornerBox>
+                }
+                secondary={<TocList tocDataList={props.markdownData.tocDataList} />}
+            />
+
             {/* Vue.jsにもあるcssのあれ */}
             <style jsx global>{`
                 h1, h2, h3, h4, h5, h6 {
