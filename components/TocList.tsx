@@ -56,7 +56,10 @@ export const TocList: React.FC<TocListProps> = (props) => {
     )
 }
 
-/** 画面の幅が広いときだけ横に目次を出すレイアウト */
+/**
+ * 画面の幅が広いときだけ横に目次を出すレイアウト。
+ * 目次なのでセカンダリーコンポーネントはスクロール時に追従するCSSをセットしてあります。
+ */
 export const TocListLayout: React.FC<TocListLayoutProps> = (props) => {
     return (
         <Box
@@ -86,7 +89,10 @@ export const TocListLayout: React.FC<TocListLayoutProps> = (props) => {
                         lg: 'block'
                     },
                     width: props.secondaryWidth,
-                    paddingLeft: 2
+                    paddingLeft: 2,
+                    position: 'sticky',
+                    alignSelf: 'flex-start',
+                    top: 0,
                 }}
             >
                 {props.secondary}
