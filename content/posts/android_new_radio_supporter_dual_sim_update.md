@@ -1,5 +1,5 @@
 ---
-title: NewRadioSupporterがデュアルSIM対応に対応しました
+title: NewRadioSupporterがデュアルSIMに対応しました
 created_at: 2022-12-31
 tags:
 - Android
@@ -440,6 +440,59 @@ enum class NrStandAloneType {
 }
 ```
 
+# TelephonyCallback.CellInfoListenerの @NonNull は嘘
+リリース後、`Kotlin`で書いてある部分でなぜか`ぬるぽ`で落ちてるんですよね、  
+そんな ぬるぽ になる場所なんてあったかな、、と思い見てみたのですが、どうやらこれ`Android`が悪いんですよね。
+
+こんな感じに`@NonNull`が書いてあるので`null`が入らないと**私もKotlin**も思ってたのですが、一部の条件で`null`になるんですよね、、  
+（一部の条件：再起動したあとすぐ起動すると`null`になる。Issue にちょうどあって再現もした：https://issuetracker.google.com/issues/237308373）
+
+```java
+public interface CellInfoListener {
+    @RequiresPermission(allOf = {
+            Manifest.permission.READ_PHONE_STATE,
+            Manifest.permission.ACCESS_FINE_LOCATION
+    })
+    void onCellInfoChanged(@NonNull List<CellInfo> cellInfo);
+}
+```
+
+`Java（AndroidのNonNull）`の場合、`@NonNull`はビルド時に`null`の可能性があるときに警告が出る程度なので実際に実行中に`null`になっても、特に何もなく動きます、、、  
+一方、`Kotlin`の場合は`Android の @NonNull アノテーション`も`NonNull`として扱う上、`NonNull`の場合実行時も`null`チェックするコードを挿入するため、`null`を渡して呼び出した場合は落ちてしまいます。  
+詳しい話→ http://takusan.negitoro.dev/posts/android_nonnull_annotation_kotlin/
+
+```kotlin
+val callback = object : TelephonyCallback(), TelephonyCallback.CellInfoListener {
+   
+    override fun onCellInfoChanged(cellInfo: MutableList<CellInfo>) {
+        // ビルド時にここに cellInfo が null ではないことを確認するコードが以下のように挿入される
+        // Intrinsics.checkNotNullExpressionValue(...)
+        // cellInfo
+    }
+
+}
+```
+
+対策としては、`Java`でインターフェースを作成し、`TelephonyCallback.onCellInfoChanged`を継承して、引数の部分の`@NonNull`を`@Nullable`に置き換えるようにすると動くはずです。  
+
+```java
+/** NonNull が付いているが、onCellInfoChanged を null で呼び出す事があるため、Nullable にしたもの */
+@RequiresApi(api = Build.VERSION_CODES.S)
+public interface NullableCellInfoListener extends TelephonyCallback.CellInfoListener {
+
+    @Override
+    void onCellInfoChanged(@Nullable List<CellInfo> cellInfo);
+}
+```
+
+```kotlin
+val callback = object : TelephonyCallback(), NullableCellInfoListener {
+    override fun onCellInfoChanged(cellInfo: MutableList<CellInfo>?) {
+        // nullable になった
+    }
+}
+```
+
 # 電波関連のIssue
 - https://issuetracker.google.com/issues/145308680
     - `NSA`の場合`CellInfo`が返ってくるかはメーカー次第
@@ -465,7 +518,7 @@ https://github.com/takusan23/NewRadioSupporter
 au / Softbank が転用5Gしてるせいなのか、はたまた Snapdragon搭載端末 だからなのかは知らないのですが、5Gの掴みがいい気がしました。（Pixelより掴むのかな？）  
 転用5Gだと少し歩けば掴むので動作確認がずいぶん楽になりますね（ドコモショップにいかなくても済む）
 
-そしてドコモも転用5Gを始めたみたい（公式発表はまだ）なのですが、なんかドコモ端末以外は接続できないらしい？（私は持ってない）。  
+そしてドコモも転用5Gを始めたみたい（公式発表済み、運用も始まってるとかなんとか？）なのですが、なんかドコモ端末以外は接続できないらしい？（私は持ってない）。  
 **しかし噂によると転用でも`80MHz`を使うところがあるらしいので結構速そう**（新周波数帯の5Gが`100MHz ~`なので8割ぐらいは出る？ｗｋｔｋ）。
 
 血を見ると力が抜けてくのって気のせいかな
