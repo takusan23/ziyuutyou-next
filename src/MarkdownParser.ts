@@ -92,7 +92,8 @@ class MarkdownParser {
     static parseToc(html: string): TocData[] {
         // DOM パーサー ライブラリを利用して h1 , h2 ... を取得する
         // この関数は ブラウザ ではなく Node.js から呼び出されるため、document は使えない。
-        const { document } = (new JSDOM(html)).window
+        const window = (new JSDOM(html)).window
+        const document = window.document
         const tocElementList = document.querySelectorAll('h1, h2, h3, h4, h5, h6')
         // 目次データに変換して返す
         const tocDataList: TocData[] = Array.from(tocElementList).map((element) => ({
@@ -100,6 +101,7 @@ class MarkdownParser {
             level: Number(element.tagName.charAt(1)), // h1 の 1 だけ取り出し数値型へ
             hashTag: `#${element.getAttribute('id')}` // id属性 を取り出し、先頭に#をつける
         }))
+        window.close()
         return tocDataList
     }
 
