@@ -84,13 +84,13 @@ class MarkdownParser {
     }
 
     /**
-     * HTML を解析して 目次データを作成する
+     * HTML を解析して 目次データを作成する。結構時間がかかる。
      * 
      * @param html HTML
      * @returns 目次データの配列
      */
     static parseToc(html: string): TocData[] {
-        // DOM パーサー ライブラリを利用して h1 , h2 ... を取得する
+        // HTML パーサー ライブラリを利用して h1 , h2 ... を取得する
         // この関数は ブラウザ ではなく Node.js から呼び出されるため、document は使えない。
         const window = (new JSDOM(html)).window
         const document = window.document

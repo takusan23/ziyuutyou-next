@@ -1,7 +1,7 @@
 # ziyuutyou-next
 たくさんの自由帳 Next.js リメイク版
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/cc14df48-3e5f-4582-a498-503503d319f3/deploy-status)](https://app.netlify.com/sites/takusan23-ziyuutyou/deploys)
+[![Netlify Deploy](https://github.com/takusan23/ziyuutyou-next/actions/workflows/netlify-deploy.yml/badge.svg?branch=main)](https://github.com/takusan23/ziyuutyou-next/actions/workflows/netlify-deploy.yml)
 
 ![Imgur](https://imgur.com/6N5X7yQ.png)
 
@@ -16,11 +16,11 @@
     - 最新版を入れておけば良さそう
     - 本番環境へデプロイするならその環境のNode.jsのバージョンも確認してね
 
-### 起動まで
+### 開発環境の起動まで
 
 - このリポジトリをクローンします
 - クローンしたフォルダ内でターミナルを立ち上げます
-- 以下を実行します
+- 以下を実行します（初回時）
 ```
 npm i
 ```
@@ -31,8 +31,9 @@ npm run dev
 - (多分) `localhost:3000`をブラウザで開きます
 
 
-### 本番環境のテスト
-本番環境でビルドして開発サーバーを立ち上げます
+### 本番環境でビルドして動作確認をする
+本番環境でビルドして開発サーバーを立ち上げます。  
+`next/link`のプリフェッチ機能などは本番ビルドしか動かないので
 
 ```
 npm run build
@@ -56,8 +57,15 @@ npm run deploy
 `out`フォルダに成果物が入っています。  
 このフォルダを公開すればいいと思います。
 
+### Netlify
+私だけかもしれませんが、`Netlify`ではビルドできなくなってしまったので、  
+もしどうやっても成功しない場合はこのリポジトリの`GitHub Actions`を参考に`GitHub Actions`でビルドしたあとに`Netlify`で書き出したファイルをホスティングするようにしてみてください。
+
 ## ファイル構造
 
+- .github/workflows
+    - GitHub Actions にやらせる作業を書いたファイルです
+    - GitHubのWeb上で編集することをおすすめします
 - content
     - 記事のMarkdown とか 書き出し時に呼び出すJSONとか
 - components
