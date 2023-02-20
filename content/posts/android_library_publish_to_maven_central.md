@@ -78,6 +78,8 @@ https://github.com/gradle-nexus/publish-plugin
 
 https://github.com/Kotlin/dokka
 
+(Dokkaでjavadoc.jar 生成 : https://kotlinlang.org/docs/dokka-gradle.html#build-javadoc-jar)
+
 ## 参考にしました、ありがとうございます！
 https://getstream.io/blog/publishing-libraries-to-mavencentral-2021/
 
@@ -266,6 +268,8 @@ certutil -f -encode export_secret export_secret_base64
 
 # いよいよライブラリを公開するためのGradleタスクを書いていく...
 
+**2023/02/19 めっちゃ間違えてました。すいませｎ。ソースとjavadocが入るように修正しました。**
+
 ## ルート (.idea がある場所) の build.gradle.kts
 
 まずルートにある build.gradle.kts へ書き足します。  
@@ -276,16 +280,17 @@ https://github.com/gradle/kotlin-dsl-samples/issues/1287
 
 ```kotlin
 buildscript {
-    val kotlinVersion: String by extra("1.6.10")
-    val composeVersion: String by extra("1.1.0-rc03")
+    val kotlinVersion: String by extra("1.7.10")
+    val composeVersion: String by extra("1.3.1")
 }
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
-    id("com.android.application").version("7.1.2").apply(false)
-    id("com.android.library").version("7.1.2").apply(false)
-    id("org.jetbrains.kotlin.android").version("1.6.10").apply(false)
-    // ライブラリ公開で使う
-    id("io.github.gradle-nexus.publish-plugin").version("1.1.0") // これを足す
+    id("com.android.application").version("7.4.0").apply(false)
+    id("com.android.library").version("7.4.0").apply(false)
+    id("org.jetbrains.kotlin.android").version("1.7.10").apply(false)
+    // ドキュメント生成と Maven Central へ公開をしてくれるやつ
+    id("org.jetbrains.dokka").version("1.7.10")
+    id("io.github.gradle-nexus.publish-plugin").version("1.1.0")
 }
 
 tasks.register("clean") {
@@ -294,7 +299,6 @@ tasks.register("clean") {
     }
 }
 
-// ここから
 // ライブラリ署名情報がなくてもビルドできるようにする
 extra["signing.keyId"] = ""
 extra["signing.password"] = ""
@@ -347,25 +351,26 @@ plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
     // ライブラリに同梱するドキュメント生成器
-    id("org.jetbrains.dokka").version("1.6.10")
+    id("org.jetbrains.dokka")
     // ライブラリ作成に必要
     `maven-publish`
     signing
 }
 
 // ライブラリバージョン
-val libraryVersion = "1.0.1"
+val libraryVersion = "1.0.2"
 // ライブラリ名
 val libraryName = "conecocore"
 // ライブラリの説明
 val libraryDescription = "It is a library that connects multiple videos into one."
 
 android {
-    compileSdk = 31
+    compileSdk = 33
+    namespace = "io.github.takusan23.conecocore"
 
     defaultConfig {
         minSdk = 21
-        targetSdk = 31
+        targetSdk = 33
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFile("consumer-rules.pro")
@@ -398,32 +403,24 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
 }
 
-tasks.dokkaHtml.configure {
-    outputDirectory.set(buildDir.resolve("javadoc"))
-}
-
 val androidSourcesJar = tasks.register<Jar>("androidSourcesJar") {
     archiveClassifier.set("sources")
-    from("android.sourceSets.main.java.srcDirs")
-    from("android.sourceSets.main.kotlin.srcDirs")
+    from(android.sourceSets["main"].java.srcDirs)
 }
 
-val javadocJar = tasks.register<Jar>("javadocJar") {
+tasks.dokkaJavadoc {
+    outputDirectory.set(File(buildDir, "dokkaJavadoc"))
+}
+
+val javadocJar = tasks.register<Jar>("dokkaJavadocJar") {
+    dependsOn(tasks.dokkaJavadoc)
+    from(tasks.dokkaJavadoc.flatMap { it.outputDirectory })
     archiveClassifier.set("javadoc")
-    from(tasks.dokkaHtml.get().outputDirectory)
 }
 
 artifacts {
     archives(androidSourcesJar)
     archives(javadocJar)
-}
-
-tasks.dokkaHtml.configure {
-    dokkaSourceSets {
-        named("main") {
-            noAndroidSdkLink.set(false)
-        }
-    }
 }
 
 signing {
@@ -603,7 +600,13 @@ implementation("io.github.takusan23:conecocore:1.0.0")
 
 ![Imgur](https://imgur.com/qek6dbP.png)
 
-(なんか別にドキュメントを生成しないとダメみたいですね...)
+~~(なんか別にドキュメントを生成しないとダメみたいですね...)~~
+
+ライブラリを入れた際に一緒に`XXX-sources.jar`がダウンロードされるので、IDE上でもそのまま表示されるようになります。  
+
+![Imgur](https://imgur.com/AwCm0Oh.png)
+
+![Imgur](https://imgur.com/RuVmcSf.png)
 
 # 他にライブラリを公開したい場合
 すでにリポジトリがある(Sonatype OSSRH nexus repository manager が使える)ので、`build.gradle.kts`のところからやればいいと思います。
