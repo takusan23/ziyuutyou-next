@@ -28,7 +28,11 @@ export const TocList: React.FC<TocListProps> = (props) => {
                 borderLeftWidth: 1,
                 borderLeftColor: theme.palette.primary.main,
                 listStyleType: 'none',
-                paddingLeft: 0
+                paddingLeft: 0,
+                // 目次にスクロールバーを出す
+                overflowY: 'scroll',
+                maxHeight: '100vh',
+                paddingRight: 5,
             }}
         >
             {
