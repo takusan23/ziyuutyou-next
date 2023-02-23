@@ -35,7 +35,7 @@ const BlogDetail: React.FC<BlogDetailProps> = (props) => {
     const [diffDate, setDiffDate] = useState(0)
     useEffect(() => {
         // クライアント側で計算する
-        setDiffDate(DateDiffTool.nowDateDiff(dateTimeFormat))
+        setDiffDate(DateDiffTool.nowDateDiff(props.markdownData.createdAtUnixTime))
     }, [])
 
     /** 文字数 */

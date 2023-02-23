@@ -6,7 +6,7 @@ type MarkdownData = {
     title: string,
     /** 作成日 */
     createdAt: string,
-    /** 作成日、UnixTime版。並び替えで使う */
+    /** 作成日、UnixTime版 */
     createdAtUnixTime: number,
     /** タグ */
     tags: Array<string>,
