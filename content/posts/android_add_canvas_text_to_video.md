@@ -39,7 +39,7 @@ OP曲が良すぎ。ぜひ聞いてみてね
 ↓ こんな感じに テキストとドロイド君（画像） 重ねてエンコードしてみる話です。  
 元動画はこれ：https://nico.ms/sm36044089
 
-<video src="https://user-images.githubusercontent.com/32033405/219969962-999f71a9-2b55-484e-adfd-ad6f597431b9.mp4" width="500" controls></video>
+<video src="https://user-images.githubusercontent.com/32033405/219969962-999f71a9-2b55-484e-adfd-ad6f597431b9.mp4" width="80%" controls></video>
 
 ![Imgur](https://imgur.com/vw7176n.png)
 

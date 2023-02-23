@@ -5,6 +5,11 @@
     src: url('fonts/Koruri-Regular-sub.eot?#iefix') format('embedded-opentype'), url('fonts/Koruri-Regular-sub.woff') format('woff'), url('fonts/Koruri-Regular-sub.ttf') format('truetype');
 }
 
+html {
+    /* Firefox スクロールバー */
+    scrollbar-color: #5870cb transparent;
+}
+
 body {
     /* リンクがはみ出るので */
     word-wrap: break-word;
@@ -43,11 +48,10 @@ table td {
 }
 
 ::-webkit-scrollbar-track {
-    background: #fff;
+    background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
     background: #5870cb;
     border-radius: 10px;
-    box-shadow: inset 0 0 0 2px #fff;
 }
