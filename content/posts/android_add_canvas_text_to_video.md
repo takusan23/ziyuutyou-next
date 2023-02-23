@@ -472,6 +472,7 @@ class CodecInputSurface(
      */
     fun drawImage(onCanvasDrawRequest: (Canvas) -> Unit) {
         val surfaceTexture = surfaceTexture ?: return
+        textureRenderer.prepareDraw()
         textureRenderer.drawFrame(surfaceTexture)
         textureRenderer.drawCanvas(onCanvasDrawRequest)
         textureRenderer.invokeGlFinish()
@@ -609,6 +610,26 @@ class TextureRenderer(
         Matrix.setIdentityM(mSTMatrix, 0)
     }
 
+    /** 描画前に呼び出す */
+    fun prepareDraw() {
+        // glError 1282 の原因とかになる
+        GLES20.glUseProgram(mProgram)
+        checkGlError("glUseProgram")
+        mTriangleVertices.position(TRIANGLE_VERTICES_DATA_POS_OFFSET)
+        GLES20.glVertexAttribPointer(maPositionHandle, 3, GLES20.GL_FLOAT, false, TRIANGLE_VERTICES_DATA_STRIDE_BYTES, mTriangleVertices)
+        checkGlError("glVertexAttribPointer maPosition")
+        GLES20.glEnableVertexAttribArray(maPositionHandle)
+        checkGlError("glEnableVertexAttribArray maPositionHandle")
+        mTriangleVertices.position(TRIANGLE_VERTICES_DATA_UV_OFFSET)
+        GLES20.glVertexAttribPointer(maTextureHandle, 2, GLES20.GL_FLOAT, false, TRIANGLE_VERTICES_DATA_STRIDE_BYTES, mTriangleVertices)
+        checkGlError("glVertexAttribPointer maTextureHandle")
+        GLES20.glEnableVertexAttribArray(maTextureHandle)
+        checkGlError("glEnableVertexAttribArray maTextureHandle")
+
+        // Snapdragon だと glClear が無いと映像が乱れる
+        GLES20.glClear(GLES20.GL_DEPTH_BUFFER_BIT or GLES20.GL_COLOR_BUFFER_BIT)
+    }
+
     /**
      * フレームを描画する
      *
@@ -617,8 +638,6 @@ class TextureRenderer(
     fun drawFrame(surfaceTexture: SurfaceTexture) {
         checkGlError("onDrawFrame start")
         surfaceTexture.getTransformMatrix(mSTMatrix)
-        GLES20.glUseProgram(mProgram)
-        checkGlError("glUseProgram")
         GLES20.glActiveTexture(GLES20.GL_TEXTURE0)
         GLES20.glBindTexture(GLES11Ext.GL_TEXTURE_EXTERNAL_OES, videoTextureID)
         // 映像のテクスチャユニットは GLES20.GL_TEXTURE0 なので 0
@@ -904,6 +923,9 @@ class TextureRenderer(
 （もしうまく動いてない（ひっくり返ってる）場合は `Matrix.rotateM` の部分を見直してみてください、、よくわかりません。）
 
 あと、`Canvas`の何も書いていない部分は透明になるのですが、`アルファブレンド`の設定をしていないと`重ねたCanvas`のせいで透明の部分が真っ黒になります。
+
+#### Snapdragon端末で映像が乱れた
+`glClear`関数を呼ぶことで直りました。
 
 ### VideoProcessor.kt
 最後に MediaCodec とかと上で書いたコードを組み合わせます。  
