@@ -57,7 +57,7 @@ https://www.sisik.eu/blog/android/media/add-text-to-video
 ![Maven Central](https://img.shields.io/maven-central/v/io.github.takusan23/akaricore)
 
 ```kotlin
-implementation("io.github.takusan23:akaricore:1.0.0-alpha01")
+implementation("io.github.takusan23:akaricore:1.0.0-alpha03")
 ```
 
 最低限過ぎてこの記事で紹介する`音声の追加`部分、`MediaStore`の部分はまだ存在しないので自分で作る必要があります。
@@ -93,37 +93,39 @@ class MainActivity : AppCompatActivity() {
             // エンコーダー
             val videoWidth = 1280
             val videoHeight = 720
-            val videoProcessor = VideoProcessor(
-                videoFile = originVideoFile, // もと動画ファイル
-                resultFile = resultFile, // エンコード後の動画ファイル
-                outputVideoWidth = videoWidth,
-                outputVideoHeight = videoHeight
-            )
+
             val textPaint = Paint().apply {
                 textSize = 100f
             }
             val logoBitmap = ContextCompat.getDrawable(this@MainActivity, R.drawable.ic_launcher_foreground)?.apply {
                 setTint(Color.WHITE)
             }?.toBitmap(300, 300)!!
+
             // Canvas にかく
             // 処理が終わるまで一時停止する
-            videoProcessor.start { canvas, positionMs ->
+            VideoCanvasProcessor.start(
+                videoFile = originVideoFile, // もと動画ファイル
+                resultFile = resultFile, // エンコード後の動画ファイル
+                outputVideoWidth = videoWidth,
+                outputVideoHeight = videoHeight
+            ) { positionMs ->
                 // 適当に文字を書く
                 val text = "動画の時間 = ${"%.2f".format(positionMs / 1000f)}"
 
                 textPaint.color = Color.BLACK
                 textPaint.style = Paint.Style.STROKE
                 // 枠取り文字
-                canvas.drawText(text, 200f, 300f, textPaint)
+                drawText(text, 200f, 300f, textPaint)
 
                 textPaint.style = Paint.Style.FILL
                 textPaint.color = Color.WHITE
                 // 枠無し文字
-                canvas.drawText(text, 200f, 300f, textPaint)
+                drawText(text, 200f, 300f, textPaint)
 
                 // 画像も表示する
-                canvas.drawBitmap(logoBitmap, (videoWidth - logoBitmap.width).toFloat(), (videoHeight - logoBitmap.height).toFloat(), textPaint)
+                drawBitmap(logoBitmap, (videoWidth - logoBitmap.width).toFloat(), (videoHeight - logoBitmap.height).toFloat(), textPaint)
             }
+
             // 音声の追加など
             // MediaStore を使って ギャラリーに追加するとか
             Toast.makeText(this@MainActivity, "終了しました", Toast.LENGTH_SHORT).show()
