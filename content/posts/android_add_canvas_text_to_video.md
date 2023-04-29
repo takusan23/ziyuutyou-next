@@ -5,6 +5,7 @@ tags:
 - Android
 - Kotlin
 - MediaCodec
+- OpenGL
 ---
 どうもこんばんわ  
 D.S. -Dal Segno- 攻略しました。  
