@@ -101,19 +101,21 @@ const BlogDetail: React.FC<BlogDetailProps> = (props) => {
             {shareOrHistoryButton}
             <Spacer value={2} />
 
-            {/* 画面の幅が広いときだけ目次を表示させる */}
-            <TocListLayout
-                secondaryWidth={TOC_LIST_WIDTH}
-                master={
-                    <RoundedCornerBox>
-                        <Box sx={{ padding: 2 }}>
-                            <div className="content_div" dangerouslySetInnerHTML={{ __html: props.markdownData.html }} />
-                        </Box>
-                        <Spacer value={1} />
-                    </RoundedCornerBox>
-                }
-                secondary={<TocList tocDataList={props.markdownData.tocDataList} />}
-            />
+            <RoundedCornerBox colorCode={theme.palette.background.secondary}>
+                {/* 画面の幅が広いときだけ目次を表示させる */}
+                <TocListLayout
+                    secondaryWidth={TOC_LIST_WIDTH}
+                    master={
+                        <RoundedCornerBox>
+                            <Box sx={{ padding: 2 }}>
+                                <div className="content_div" dangerouslySetInnerHTML={{ __html: props.markdownData.html }} />
+                            </Box>
+                        </RoundedCornerBox>
+                    }
+                    secondary={<TocList tocDataList={props.markdownData.tocDataList} />}
+                />
+            </RoundedCornerBox>
+            <Spacer value={1} />
 
             {/* Vue.jsにもあるcssのあれ */}
             <style jsx global>{`

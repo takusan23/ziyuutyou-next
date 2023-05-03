@@ -24,32 +24,31 @@ export const TocList: React.FC<TocListProps> = (props) => {
     return (
         <ul
             style={{
-                borderLeft: 'solid',
-                borderLeftWidth: 1,
-                borderLeftColor: theme.palette.primary.main,
-                listStyleType: 'none',
-                paddingLeft: 0,
                 // 目次にスクロールバーを出す
                 overflowY: 'scroll',
                 maxHeight: '100vh',
+                paddingLeft: 0,
                 paddingRight: 5,
+                marginTop: 0,
             }}
         >
             {
                 props.tocDataList.map((tocData, index) => (
-                    <li key={index}
+                    <li
+                        key={index}
                         style={{
                             // 階層を padding でわかりやすく...
                             paddingLeft: tocData.level * 10,
                             paddingBottom: 5,
                             paddingTop: 5
-                        }}>
+                        }}
+                    >
                         <Link
                             style={{
                                 textDecoration: 'none',
                                 color: theme.palette.primary.main,
                             }}
-                            href={`${tocData.hashTag}`}
+                            href={tocData.hashTag}
                         >
                             {tocData.label}
                         </Link>
@@ -93,7 +92,7 @@ export const TocListLayout: React.FC<TocListLayoutProps> = (props) => {
                         lg: 'block'
                     },
                     width: props.secondaryWidth,
-                    paddingLeft: 2,
+                    paddingLeft: 1,
                     position: 'sticky',
                     alignSelf: 'flex-start',
                     top: 0,
