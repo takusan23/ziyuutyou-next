@@ -39,7 +39,7 @@ const useCustomTheme = (isDarkmode: boolean) => {
                     default: isDarkmode ? '#000000' : '#DEE0FF', // md_theme_light_primaryContainer
                     paper: isDarkmode ? '#1B1B1F' : '#FFFBFF', // md_theme_light_surface : md_theme_dark_surface
                     // createPallete.d.ts を書いて追加した
-                    secondary: isDarkmode ? '#1F1E26' : '#E5E1E5', // md_theme_light_surface : md_theme_dark_surface に 0.9 をかけたもの。カラーコード 明るさ とかで検索してください
+                    secondary: isDarkmode ? '#19191d' : '#f2eef2', // md_theme_light_surface : md_theme_dark_surface の RGB に 0.95 をかけたもの。カラーコード 明るさ とかで検索
                 }
             },
             typography: {
