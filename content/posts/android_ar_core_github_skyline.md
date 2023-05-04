@@ -1797,3 +1797,22 @@ https://github.com/takusan23/ARCoreGitHubSkyline/releases/tag/1.0.0
 ![Imgur](https://imgur.com/3ALfT8A.png)
 
 以上です。お疲れ様でした ﾉｼ 888
+
+# 追記 2023/05/05
+回転しないでほしい場合は、`ARCoreOpenGlRenderer.kt`へ以下のようなコードを描くと良いです。  
+`Pose#extractTranslation`で回転を考慮しない行列を作ってくれます。
+
+```diff
+         // ARオブジェクトを描画
+         render.clear(virtualSceneFramebuffer, 0f, 0f, 0f, 0f)
+         wrappedAnchors.filter { it.anchor.trackingState == TrackingState.TRACKING }.forEach { (anchor, trackable) ->
+-            // アンカーポーズ
+-            anchor.pose.toMatrix(modelMatrix, 0)
++            // 描画のための行列を用意する
++            // TODO extractTranslation を呼ぶと、回転（axis）を除いた行列を返してくれる。呼ばずに Post#toMatrix すると、回転も考慮される
++            // anchor.pose.toMatrix(modelMatrix, 0)
++            anchor.pose.extractTranslation().toMatrix(modelMatrix, 0)
+             // モデル、ビュー、投影行列 を計算
+             Matrix.multiplyMM(modelViewMatrix, 0, viewMatrix, 0, modelMatrix, 0)
+             Matrix.multiplyMM(modelViewProjectionMatrix, 0, projectionMatrix, 0, modelViewMatrix, 0)	
+```
