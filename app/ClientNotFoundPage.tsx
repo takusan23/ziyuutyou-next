@@ -1,3 +1,5 @@
+"use client"
+
 import { useTheme } from "@mui/material"
 import Box from "@mui/material/Box"
 import Head from "next/head"
@@ -5,7 +7,7 @@ import Head from "next/head"
 import NotFoundIcon from "../public/not_found.svg"
 
 /** 404ページ */
-const NotFoundPage = () => {
+export default function ClientNotFoundPage() {
     const theme = useTheme()
     return (
         <>
@@ -38,5 +40,3 @@ const NotFoundPage = () => {
         </>
     )
 }
-
-export default NotFoundPage
