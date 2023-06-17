@@ -26,3 +26,13 @@ export default async function TagListPage({ params }: PageProps) {
 
     return <ClientTagListPage blogList={tagFilterBlogList.result} tagName={params.tag} totalItemCount={tagFilterBlogList.totalCount} />
 }
+
+/** 
+ * タグの数だけタグのページを作る
+ * 
+ * 静的書き出し時に呼ばれる
+ */
+export async function generateStaticParams() {
+    const tagNameList = await ContentFolderManager.getAllTagDataList()
+    return tagNameList.map((name) => ({ params: { tag: name.name } }))
+}

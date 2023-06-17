@@ -32,3 +32,9 @@ export default async function PageDetailPage({ params }: PageProps) {
 
     return <ClientPageDetailPage markdownData={markdownData} />
 }
+
+/** 生成するページを列挙して返す */
+export async function generateStaticParams() {
+    const pageNameList = await ContentFolderManager.getPageNameList()
+    return pageNameList.map(name => ({ params: { page: name } }))
+}

@@ -28,7 +28,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 /** 記事本文 */
 export default async function BlogDetailPage({ params }: PageProps) {
+    // サーバー側でロードする
     const markdownData = await ContentFolderManager.getBlogItem(params.blog)
-
+    // クライアントコンポーネント
     return <ClientBlogDetailPage markdownData={markdownData} />
+}
+
+/**
+ * ここで生成するページを列挙して返す。（実際にはパスの一部）
+ * 
+ * /posts/<ここ> ←ここの部分の名前を渡して生成すべきページを全部列挙して返してる
+ * 
+ * これも上記同様クライアント側では呼ばれない。
+ */
+export async function generateStaticParams() {
+    const fileNameList = await ContentFolderManager.getBlogNameList()
+    // この場合はキーが blog になるけどこれはファイル名によって変わる（[page].tsxなら page がキーになる）
+    return fileNameList.map((name) => ({ blog: name }))
 }
