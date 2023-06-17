@@ -11,6 +11,8 @@ type LayoutProps = {
     isDarkmode: boolean,
     /** スイッチ切り替えたら呼ばれる */
     onDarkmodeChange: (boolean) => void,
+    /** 子要素 */
+    children: React.ReactNode
 }
 
 /**
