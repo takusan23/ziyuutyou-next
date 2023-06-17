@@ -25,7 +25,6 @@ export const metadata: Metadata = {
 
 /** 共通レイアウト部分 */
 export default function RootLayout({ children, }: { children: React.ReactNode }) {
-    // クライアントコンポーネントとして描画する必要があるため
     return (
         <html>
             <body className={koruriFont.variable}>

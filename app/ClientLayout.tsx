@@ -22,7 +22,6 @@ export default function ClientLayout({ children }: ClientLayoutProps) {
     const theme = useCustomTheme(isDarkmode)
     // システム設定がダークモードならダークモードにする。Win10で確認済み
     const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
-
     // システム設定のダークモード切り替え時にテーマも切り替え
     useEffect(() => {
         setDarkmode(prefersDarkMode)

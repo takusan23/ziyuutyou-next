@@ -1,6 +1,6 @@
 ---
 title: Next.js の AppRouter に移行する
-created_at: 2023-07-10
+created_at: 2023-06-18
 tags:
 - Next.js
 - TypeScript
@@ -8,47 +8,7 @@ tags:
 ---
 
 どうもこんばんわ。
-恋にはあまえが必要です 攻略しました。  
-ゆびさきのときとは違ってちゃんとメッセージアプリのテキストも読み上げてくれます神。  
-
-この子のBルートの最後のイベントCGがめっちゃ好みです。
-
-![Imgur](https://imgur.com/KvcE0Gh.png)
-
-![Imgur](https://imgur.com/tB5j7YX.png)
-
-個人的には 満留さん と 千羽ちゃん のルートが好きです、  
-Aルートのほうが好みでした。
-
-![Imgur](https://imgur.com/UTyFiFD.png)
-
-![Imgur](https://imgur.com/62BW6gS.png)
-
-かわいい
-
-![Imgur](https://imgur.com/bOC7SP1.png)
-
-↑ ヒロイン視点がめっちゃいい
-
-![Imgur](https://imgur.com/PYaEeQ2.png)
-
-ルート選択、妹ちゃんルートはちゃんと午後からしか出現しないようになってた（それはそうか
-
-![Imgur](https://imgur.com/d4bVeUR.png)
-
-あつい・・・あついね  
-予想よりもめっちゃよかったです！！おすすめ（様子見しようかと思ってたけど予約してよかった）
-
-あとめっちゃ関係ないですが`Misskeyのお一人様インスタンス`立ててみました。しばらく見てないうちに`インスタンス`ではなく`サーバー`って言うようになったらしい。  
-こちらです。立ててしまった以上使わないとお金かかかるので使います・・・多分（？？？）
-
-- URL
-    - https://diary.negitoro.dev/@takusan_23
-- ID と 鯖
-    - `@takusan_23@diary.negitoro.dev`
-
-なぜか私の鯖からリモートのユーザー情報が取れない鯖があるんですけどよく分かりません・・・  
-io鯖とかは普通にリモートフォロー出来たのでほんとに謎です・・・
+// TODO 乾燥書く
 
 # 本題
 `Next.js`の`AppRouter`に移行しようと思います。いい加減やります。  
@@ -58,10 +18,10 @@ io鯖とかは普通にリモートフォロー出来たのでほんとに謎で
 
 |            |                     |
 |------------|---------------------|
-| Next.js    | 13.4.4              |
+| リポジトリ | App Router ブランチ |
+| Next.js    | 13.4.6              |
 | React      | 18.2.0              |
 | TypeScript | 5.1.3 (後述)        |
-| リポジトリ | app_router ブランチ |
 
 
 # Next.js の AppRouter
@@ -112,8 +72,8 @@ async function Detail() {
 export default async function DetailPage() {
   return (
     <>
-        <Title/>
-        <Detail />
+        <Title>{data.title}</Title>
+        <Detail body={data.body} />
     </>
   )
 }
@@ -127,7 +87,7 @@ export default async function DetailPage() {
     - `fetch()`が使えない（このブログのように、`Node.js`の`fs モジュール`を使うなど）場合は`cache()`を用意したから使ってね！
 
 ## Material-UI
-このブログは`Material-UI`を使っていて、`Material-UI`はクライアントコンポーネントで描画する必要があります。  
+このブログは`Material-UI`を使っていて、`Material-UI`はクライアント側で描画する必要があります。  
 というわけで、`"use client";`をひたすら書いていくのが今回の移行作業だと思います・・・
 
 - https://github.com/mui/material-ui/issues/34905#issuecomment-1587760474
@@ -939,20 +899,11 @@ export default function useAndroidStatusBarColor(colorCode: string) {
 }
 ```
 
-# 動きました！
-`pages`→`app`差分はこんな感じになります。  
-
-https://github.com/takusan23/ziyuutyou-next/pull/1
-
-実際に適当に公開しても問題なさそうだったので、人がいなさそうな時にあげようかな。いや別にいつでも良いか・・？  
-
-## 2023/07/11 午前2~3時 くらいに入れました
-`Next.js` `AppRouter` 対応を入れます。  
-見てる人無さそうだったので（そもそもあんまり居ない；；
-
 # おわりに
-めちゃ関係ないけど`Tailwind CSS`ﾁｮｯﾄだけ触ってみましたが、これで良くない？  
+
+`Tailwind CSS`ﾁｮｯﾄだけ触ってみましたが、これで良くない？  
 サーバーコンポーネントとしても`Tailwind CSS`は使えるみたいなので`Material-UI`をやめてもいいかもしれない  
+（そこまで`Material-UI`が重要かと言われるとそうでもない気がしてきた。これ転送量が若干多くなるんだよなあ）
 
 あと公式ドキュメント、Chromeの翻訳してるとルーティング失敗しない？  
 あと`VSCode`は`Altキー`を押しながらスクロールすると高速でスクロールできます。  
