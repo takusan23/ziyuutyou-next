@@ -17,14 +17,14 @@ import UrlTool from "../../../src/UrlTool"
 /** 目次の幅 */
 const TOC_LIST_WIDTH = 300
 
-/** BlogDetail へ渡すデータ */
-type ClientDetailPageProps = {
+/** ClientBlogDetailPage へ渡すデータ */
+type ClientBlogDetailPageProps = {
     /** 記事データ */
     markdownData: MarkdownData
 }
 
 /** ブログ本文 */
-export default function ClientDetailPage({ markdownData }: ClientDetailPageProps) {
+export default function ClientBlogDetailPage({ markdownData }: ClientBlogDetailPageProps) {
     const theme = useTheme()
     const ogpTitle = `${markdownData.title} - たくさんの自由帳`
     const ogpUrl = `${UrlTool.BASE_URL}${markdownData.link}`

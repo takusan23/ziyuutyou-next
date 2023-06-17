@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import ContentFolderManager from "../../../src/ContentFolderManager";
-import ClientDetailPage from "./ClientDetailPage";
+import ClientBlogDetailPage from "./ClientBlogDetailPage";
 import UrlTool from "../../../src/UrlTool";
 
 /** 動的ルーティング */
@@ -27,8 +27,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 /** 記事本文 */
-export default async function DetailPage({ params }: PageProps) {
+export default async function BlogDetailPage({ params }: PageProps) {
     const markdownData = await ContentFolderManager.getBlogItem(params.blog)
 
-    return <ClientDetailPage markdownData={markdownData} />
+    return <ClientBlogDetailPage markdownData={markdownData} />
 }
