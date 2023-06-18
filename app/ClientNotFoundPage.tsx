@@ -2,7 +2,7 @@
 
 import { useTheme } from "@mui/material"
 import Box from "@mui/material/Box"
-// https://github.com/vercel/next.js/tree/canary/examples/svg-components 参照
+// https://react-svgr.com/docs/next/ 参照
 import NotFoundIcon from "../public/not_found.svg"
 
 /** 404ページ */
@@ -11,7 +11,6 @@ export default function ClientNotFoundPage() {
     return (
         <>
             <Box textAlign='center'>
-                {/* インラインSVG */}
                 <NotFoundIcon
                     className={'theme_color'}
                     height={250}

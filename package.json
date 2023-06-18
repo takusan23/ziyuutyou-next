@@ -29,9 +29,9 @@
     "unified": "^10.1.1"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.0.1",
     "@types/jsdom": "^20.0.1",
     "@types/react": "^18.2.8",
-    "babel-plugin-inline-react-svg": "^2.0.1",
     "typescript": "^5.1.3"
   }
 }
