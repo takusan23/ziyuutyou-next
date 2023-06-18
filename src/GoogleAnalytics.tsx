@@ -47,7 +47,7 @@ export default function GoogleAnalytics() {
 
     // Google Analytics へnext/routerのページ遷移の状態を通知する
     useEffect(() => {
-        const url = `${pathname}?${searchParams}`
+        const url = `${pathname}${searchParams}`
         pageview(url)
     }, [pathname, searchParams])
 
