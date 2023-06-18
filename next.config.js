@@ -6,8 +6,9 @@ const withPWA = require('next-pwa')({
 })
 
 module.exports = withPWA({
+    output: 'export',
     trailingSlash: true,
     experimental: {
         scrollRestoration: true,
-    },
-});
+    }
+})

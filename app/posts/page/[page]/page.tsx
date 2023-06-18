@@ -3,7 +3,7 @@ import ContentFolderManager from "../../../../src/ContentFolderManager"
 import ClientBlogList from "./ClientBlogList"
 
 /** 一度に取得する件数 */
-export const BLOG_SIZE_LIMIT = 10
+const BLOG_SIZE_LIMIT = 10
 
 /** 動的ルーティング */
 type PageProps = {
@@ -44,10 +44,9 @@ export async function generateStaticParams() {
     // 割り算をして必要な数用意する
     const requirePageCount = (totalCount / BLOG_SIZE_LIMIT) + 1 // あまりのために +1
     // 必要なURLを作成
-    const pathIdList: PageProps[] = []
-    for (let i = 0; i < requirePageCount; i++) {
-        // この場合はキーが page になるけどこれはファイル名によって変わる（[page].tsxだから）
-        pathIdList.push({ params: { page: i.toString() } })
-    }
+    // 配列を指定数nullで埋めてmapする
+    const pathIdList = new Array(Math.floor(requirePageCount))
+        .fill(null)
+        .map((_, index) => ({ page: (index + 1).toString() })) // 1ページ目から開始なので
     return pathIdList
 }

@@ -94,11 +94,20 @@ class MarkdownParser {
         const document = window.document
         const tocElementList = document.querySelectorAll('h1, h2, h3, h4, h5, h6')
         // 目次データに変換して返す
-        const tocDataList: TocData[] = Array.from(tocElementList).map((element) => ({
-            label: element.textContent,
-            level: Number(element.tagName.charAt(1)), // h1 の 1 だけ取り出し数値型へ
-            hashTag: `#${element.getAttribute('id')}` // id属性 を取り出し、先頭に#をつける
-        }))
+        const tocDataList: TocData[] = Array.from(tocElementList)
+            .map(element => {
+                if (element.textContent) {
+                    return {
+                        label: element.textContent,
+                        level: Number(element.tagName.charAt(1)), // h1 の 1 だけ取り出し数値型へ
+                        hashTag: `#${element.getAttribute('id')}` // id属性 を取り出し、先頭に#をつける
+                    }
+                } else {
+                    return null
+                }
+            })
+            // null を配列から消す技です
+            .flatMap(tocDataOrNull => tocDataOrNull ? [tocDataOrNull] : [])
         window.close()
         return tocDataList
     }

@@ -36,5 +36,5 @@ export default async function PageDetailPage({ params }: PageProps) {
 /** 生成するページを列挙して返す */
 export async function generateStaticParams() {
     const pageNameList = await ContentFolderManager.getPageNameList()
-    return pageNameList.map(name => ({ params: { page: name } }))
+    return pageNameList.map(name => ({ page: name }))
 }

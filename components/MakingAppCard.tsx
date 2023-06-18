@@ -53,7 +53,7 @@ const MakingAppNavigationRail: React.FC<MakingAppNavigationRailProps> = (props) 
 /** MakingAppList へ渡すデータ */
 type MakingAppListProps = {
     /** 作ったもの配列 */
-    list: Array<MakingAppDetailData>
+    list: MakingAppDetailData[]
 }
 
 /** 実際に作ったものを表示する */
@@ -106,7 +106,7 @@ const MakingAppCard: React.FC<MakingAppCardProps> = (props) => {
 
     // JetpackComposeの remember { mutableStateOf(arrayOf()) } みたいな
     // 表示するプラットフォーム
-    const [appList, setAppList] = useState(new Array<MakingAppDetailData>())
+    const [appList, setAppList] = useState<MakingAppDetailData[]>([])
 
     /**
      * 作ったものリストを切り替える
@@ -116,8 +116,10 @@ const MakingAppCard: React.FC<MakingAppCardProps> = (props) => {
      * @param platformName androidとか
      */
     const changeAppListPlatform = (platformName: string) => {
-        // あれTypeScriptくんこれ通すんか？
-        setAppList(makingAppList.find(platformObj => platformObj.platfromName === platformName).appList)
+        const makingApp = makingAppList.find(platformObj => platformObj.platfromName === platformName)
+        if (makingApp) {
+            setAppList(makingApp.appList)
+        }
     }
 
     /**

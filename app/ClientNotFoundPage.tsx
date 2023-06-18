@@ -2,7 +2,6 @@
 
 import { useTheme } from "@mui/material"
 import Box from "@mui/material/Box"
-import Head from "next/head"
 // https://github.com/vercel/next.js/tree/canary/examples/svg-components 参照
 import NotFoundIcon from "../public/not_found.svg"
 
@@ -11,9 +10,6 @@ export default function ClientNotFoundPage() {
     const theme = useTheme()
     return (
         <>
-            <Head>
-                <title>404 - たくさんの自由帳</title>
-            </Head>
             <Box textAlign='center'>
                 {/* インラインSVG */}
                 <NotFoundIcon

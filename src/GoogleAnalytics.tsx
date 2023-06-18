@@ -58,6 +58,9 @@ export default function GoogleAnalytics() {
                 <Script
                     strategy="afterInteractive"
                     src={`https://www.googletagmanager.com/gtag/js?id=${UA_TRACKING_ID}`}
+                />
+                <Script
+                    strategy="afterInteractive"
                     dangerouslySetInnerHTML={{
                         __html: `
                         window.dataLayer = window.dataLayer || [];

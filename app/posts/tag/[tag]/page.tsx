@@ -34,5 +34,5 @@ export default async function TagListPage({ params }: PageProps) {
  */
 export async function generateStaticParams() {
     const tagNameList = await ContentFolderManager.getAllTagDataList()
-    return tagNameList.map((name) => ({ params: { tag: name.name } }))
+    return tagNameList.map((name) => ({ tag: name.name }))
 }
