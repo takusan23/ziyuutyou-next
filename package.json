@@ -5,8 +5,7 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "postbuild": "next-sitemap --config ./next-sitemap.config.js",
-    "deploy": "npm run build && npm run postbuild"
+    "deploy": "npm run build"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -33,7 +32,6 @@
     "@types/jsdom": "^20.0.1",
     "@types/react": "^18.2.8",
     "babel-plugin-inline-react-svg": "^2.0.1",
-    "next-sitemap": "^1.9.12",
     "typescript": "^5.1.3"
   }
 }
