@@ -1,5 +1,7 @@
 import { Metadata } from "next"
 import ClientLayout from "./ClientLayout"
+import { Suspense } from "react"
+import GoogleAnalytics from "../src/GoogleAnalytics"
 // コードブロックのCSS
 import "highlight.js/styles/vs2015.css"
 // グローバルCSS
@@ -11,7 +13,17 @@ export const metadata: Metadata = {
 
 /** 共通レイアウト部分 */
 export default function RootLayout({ children, }: { children: React.ReactNode }) {
-    // TODO Google Analytics
     // クライアントコンポーネントとして描画する必要があるため
-    return (<ClientLayout children={children} />)
+    return (
+        <html>
+            <body>
+                {/* 共通レイアウト。ナビゲーションドロワーとか */}
+                <ClientLayout children={children} />
+                {/* GoogleAnalytics */}
+                <Suspense fallback={null}>
+                    <GoogleAnalytics />
+                </Suspense>
+            </body>
+        </html>
+    )
 }

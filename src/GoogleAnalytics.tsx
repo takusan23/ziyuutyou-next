@@ -1,6 +1,9 @@
-import Head from "next/head"
-import { useRouter } from "next/router"
-import { useEffect } from "react"
+// クライアント側で動く
+"use client"
+
+import { useEffect } from 'react'
+import { usePathname, useSearchParams } from 'next/navigation'
+import Script from "next/script"
 
 /**
  * 参考
@@ -37,29 +40,26 @@ const pageview = (url: string) => {
     });
 }
 
-/** Google Analytics へnext/routerのページ遷移の状態を通知する */
-export const useGoogleAnalytics = () => {
-    // Google アナリティクスへページ遷移を通知
-    const router = useRouter()
-    useEffect(() => {
-        const handleRouteChange = (url: string) => {
-            pageview(url)
-        }
-        router.events.on('routeChangeComplete', handleRouteChange)
-        return () => {
-            router.events.off('routeChangeComplete', handleRouteChange)
-        }
-    }, [router.events])
-}
-
 /** Google Analytics 4 で利用するJavaScriptを差し込むやつ。本番（意味深）のみ実行 */
-export const GoogleAnalyticsHead = () => {
+export default function GoogleAnalytics() {
+    const pathname = usePathname()
+    const searchParams = useSearchParams()
+
+    // Google Analytics へnext/routerのページ遷移の状態を通知する
+    useEffect(() => {
+        const url = `${pathname}?${searchParams}`
+        pageview(url)
+    }, [pathname, searchParams])
+
+    // 本番ビルド時のみ GoogleAnalytics をセットアップする
     return (
         <>
-            {!isDevelopment && <Head>
-                <script async src={`https://www.googletagmanager.com/gtag/js?id=${UA_TRACKING_ID}`}></script>
-                <script dangerouslySetInnerHTML={{
-                    __html: `
+            {!isDevelopment && <>
+                <Script
+                    strategy="afterInteractive"
+                    src={`https://www.googletagmanager.com/gtag/js?id=${UA_TRACKING_ID}`}
+                    dangerouslySetInnerHTML={{
+                        __html: `
                         window.dataLayer = window.dataLayer || [];
                         function gtag(){dataLayer.push(arguments);}
                         gtag('js', new Date());
@@ -67,7 +67,7 @@ export const GoogleAnalyticsHead = () => {
                         gtag('config', '${GA_TRACKING_ID}');
                     `}}
                 />
-            </Head>}
+            </>}
         </>
     )
 }
