@@ -2,7 +2,7 @@ import { Metadata } from "next"
 import ClientLayout from "./ClientLayout"
 import { Suspense } from "react"
 import GoogleAnalytics from "../src/GoogleAnalytics"
-import localFont from "@next/font/local"
+import localFont from "next/font/local"
 // コードブロックのCSS
 import "highlight.js/styles/vs2015.css"
 // グローバルCSS

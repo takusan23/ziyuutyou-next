@@ -6,6 +6,7 @@ import Layout from '../components/Layout'
 import useCustomTheme from '../src/ZiyuutyouTheme'
 import { useEffect, useState } from "react"
 import useMediaQuery from '@mui/material/useMediaQuery'
+import useAndroidStatusBarColor from '../components/useAndroidStatusBarColor'
 
 /** ClientLayout へ渡す値  */
 type ClientLayoutProps = {
@@ -21,10 +22,14 @@ export default function ClientLayout({ children }: ClientLayoutProps) {
     const theme = useCustomTheme(isDarkmode)
     // システム設定がダークモードならダークモードにする。Win10で確認済み
     const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
+
     // システム設定のダークモード切り替え時にテーマも切り替え
     useEffect(() => {
         setDarkmode(prefersDarkMode)
     }, [prefersDarkMode])
+
+    // ステータスバーの色
+    useAndroidStatusBarColor(theme.palette.background.default)
 
     return (
         <>
