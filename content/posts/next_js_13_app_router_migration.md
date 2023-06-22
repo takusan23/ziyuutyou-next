@@ -955,3 +955,8 @@ https://github.com/takusan23/ziyuutyou-next/pull/1
 ストレージがたりない！！！
 
 `[Error: ENOSPC: no space left on device, write]`
+
+# おわりに3
+これなに？  
+
+`<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: TypeError: Cannot read properties of undefined (reading 'length')`
