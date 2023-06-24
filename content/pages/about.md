@@ -71,9 +71,6 @@ thx!!!
 - next
     - MIT
     - https://github.com/vercel/next.js/blob/canary/license.md
-- next-pwa
-    - MIT
-    - https://github.com/shadowwalker/next-pwa/blob/master/LICENSE
 - @mui/icons-material
     - MIT
     - https://github.com/mui-org/material-ui/blob/master/LICENSE
@@ -122,12 +119,9 @@ thx!!!
 - @types/react
     - MIT
     - https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/LICENSE
-- babel-plugin-inline-react-svg
-    - MIT License
-    - https://github.com/airbnb/babel-plugin-inline-react-svg/blob/master/LICENSE
-- next-sitemap
-    - MIT License
-    - https://github.com/iamvishnusankar/next-sitemap/blob/master/LICENSE
+- @svgr/webpack
+    - MIT
+    - https://github.com/gregberge/svgr/blob/main/LICENSE
 - typescript
     - Apache License 2.0
     - https://github.com/microsoft/TypeScript/blob/main/LICENSE.txt
