@@ -13,8 +13,8 @@ export default function ClientNotFoundPage() {
             <Box textAlign='center'>
                 <NotFoundIcon
                     className={'theme_color'}
-                    height={250}
-                    width={250}
+                    height={200}
+                    width={400}
                 />
                 <h1>404 - 見つかりませんでした</h1>
                 <p>そこになければ無いですね。</p>
@@ -23,13 +23,19 @@ export default function ClientNotFoundPage() {
             {/* CSSの属性セレクターを利用してSVG要素の中のpath、circleの色を変えている。 */}
             <style jsx global>{`
                 .theme_color path {
-                    stroke: ${theme.palette.primary.main};
+                    stroke: ${theme.palette.primary.main} !important;
+                }
+                .theme_color ellipse {
+                    stroke: ${theme.palette.primary.main} !important;
+                }
+                .theme_color rect {
+                    stroke: ${theme.palette.primary.main} !important;
                 }
                 .theme_color circle[style*="fill:none"] {
-                    stroke: ${theme.palette.primary.main};
+                    stroke: ${theme.palette.primary.main} !important;
                 }
                 .theme_color circle[style*="stroke:none"] {
-                    fill: ${theme.palette.primary.main};
+                    fill: ${theme.palette.primary.main} !important;
                 }
             `}</style>
         </>
