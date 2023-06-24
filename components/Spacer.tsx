@@ -1,5 +1,3 @@
-import Box from "@mui/material/Box"
-
 /** Spacerへ渡す値 */
 type SpacerProps = {
     /** どれぐらい開けるか */
@@ -7,10 +5,8 @@ type SpacerProps = {
 }
 
 /** 空白をあけるだけ */
-const Spacer: React.FC<SpacerProps> = (props) => {
+export default function Spacer({ value }: SpacerProps) {
     return (
-        <Box sx={{ margin: props.value }} />
+        <div className={`m-[${value}px]`} />
     )
 }
-
-export default Spacer

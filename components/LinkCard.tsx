@@ -1,63 +1,51 @@
-import OpenInBrowserOutlined from "@mui/icons-material/OpenInBrowserOutlined"
-import { ListItem, ListItemButton, ListItemText, useTheme } from "@mui/material"
-import Typography from "@mui/material/Typography"
-import { Box } from "@mui/system"
 import Link from "next/link"
 import React from "react"
 import LinkData from "../src/data/LinkData"
 import RoundedCornerBox from "./RoundedCorner"
 import Spacer from "./Spacer"
+import HomeIcon from "../public/icon/material-home.svg"
 
 /** LinkCard へ渡すデータ */
 type LinkCardProps = {
     /** リンクのデータの配列 */
-    linkList: Array<LinkData>
+    linkList: LinkData[]
 }
 
 /** リンク集を表示する部分 */
-const LinkCard: React.FC<LinkCardProps> = (props) => {
-    const theme = useTheme()
-
+export default function LinkCard({ linkList }: LinkCardProps) {
     return (
-        <>
-            <RoundedCornerBox value={3}>
-                <Box sx={{ padding: 1 }}>
-                    <Typography variant="h5" sx={{ padding: 1, marginLeft: 1 }} color="primary">
-                        リンク
-                    </Typography>
-                    <Typography sx={{ marginLeft: 2 }}>
-                        Twitterが良いと思います
-                    </Typography>
-                    {
-                        props.linkList.map((linkData) => (
-                            <React.Fragment key={linkData.name}>
-                                <RoundedCornerBox value={3} colorCode={theme.palette.background.default}>
-                                    <Spacer value={1} />
-                                    <Link
-                                        href={linkData.href}
-                                        style={{
-                                            textDecoration: 'none',
-                                            color: 'inherit'
-                                        }}
-                                    >
-                                        <ListItem
-                                            disablePadding
-                                            secondaryAction={<OpenInBrowserOutlined color="primary" />}>
-                                            <ListItemButton>
-                                                <ListItemText
-                                                    primary={linkData.name}
-                                                    secondary={linkData.description} />
-                                            </ListItemButton>
-                                        </ListItem>
-                                    </Link>
-                                </RoundedCornerBox>
-                            </React.Fragment>
-                        ))
-                    }
-                </Box>
-            </RoundedCornerBox>
-        </>
+        <RoundedCornerBox value={10}>
+            <div className="p-3">
+                <h2 className="text-2xl text-content-primary-light">
+                    リンク
+                </h2>
+                <p>
+                    Twitterが良いと思います
+                </p>
+                {
+                    linkList.map((linkData) => (
+                        <RoundedCornerBox
+                            className='bg-background-light'
+                            key={linkData.name}
+                            value={10}
+                        >
+                            <Spacer value={10} />
+                            <Link
+                                className="no-underline text-inherit"
+                                href={linkData.href}
+                            >
+                                <div className="flex flex-row p-3 items-center">
+                                    <div className="flex flex-col grow">
+                                        <p className="text-base">{linkData.name}</p>
+                                        <p className="text-sm">{linkData.description}</p>
+                                    </div>
+                                    <HomeIcon className="w-5 h-5" />
+                                </div>
+                            </Link>
+                        </RoundedCornerBox>
+                    ))
+                }
+            </div>
+        </RoundedCornerBox>
     )
 }
-
-export default LinkCard

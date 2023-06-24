@@ -2,6 +2,8 @@ import { Metadata } from "next";
 import JsonFolderManager from "../src/JsonFolderManager";
 import ProfileCard from "../components/ProfileCard";
 import EnvironmentTool from "../src/EnvironmentTool";
+import Spacer from "../components/Spacer";
+import LinkCard from "../components/LinkCard";
 
 /** <head> に入れる値 */
 export const metadata: Metadata = {
@@ -28,6 +30,8 @@ export default async function Home() {
     return (
         <div className="flex flex-col p-2">
             <ProfileCard randomMessageList={randomMessageList} />
+            <Spacer value={10} />
+            <LinkCard linkList={linkList} />
         </div>
     )
 }
