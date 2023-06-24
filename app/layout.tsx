@@ -1,12 +1,13 @@
 import { Metadata } from "next"
-import ClientLayout from "./ClientLayout"
 import { Suspense } from "react"
 import GoogleAnalytics from "../src/GoogleAnalytics"
 import localFont from "next/font/local"
+import NavigationDrawer from "../components/NavigationDrawer"
 // コードブロックのCSS
 import "highlight.js/styles/vs2015.css"
 // グローバルCSS
 import "../styles/css/global.css"
+import ResponsiveLayout from "../components/ResponsiveLayout"
 
 /** フォントを読み込む */
 const koruriFont = localFont({
@@ -26,10 +27,20 @@ export const metadata: Metadata = {
 /** 共通レイアウト部分 */
 export default function RootLayout({ children, }: { children: React.ReactNode }) {
     return (
-        <html>
-            <body className={koruriFont.variable}>
-                {/* 共通レイアウト。ナビゲーションドロワーとか */}
-                <ClientLayout children={children} />
+        <html className={koruriFont.variable}>
+            <body className="font-body bg-background-light">
+
+                {/* レスポンシブデザイン。画面の幅が大きいときにドロワーが表示される */}
+                <ResponsiveLayout
+                    navigationDrawer={<NavigationDrawer />}
+                    title={<h1 className="text-content-primary-light text-2xl">たくさんの自由帳</h1>}
+                >
+                    <div className="flex-col">
+                    </div>
+                    <p>ああああああああああああああああ～～～～～～～</p>
+                    <p>ああああああああああああああああ～～～～～～～</p>
+                </ResponsiveLayout>
+
                 {/* GoogleAnalytics */}
                 <Suspense fallback={null}>
                     <GoogleAnalytics />

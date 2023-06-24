@@ -1,3 +1,5 @@
+// TODO このブランチは app_router から切った
+
 # ziyuutyou-next
 たくさんの自由帳 Next.js リメイク版
 
