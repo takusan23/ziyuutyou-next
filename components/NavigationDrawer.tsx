@@ -1,6 +1,7 @@
 import { ReactNode } from "react"
-import HomeIcon from "../public/icon/material-home.svg"
 import Link from "next/link"
+import HomeIcon from "../public/icon/material-home.svg"
+import RoundedImage from "./RoundedImage"
 
 /** ナビゲーションドロワーの表示先、パス、コンポーネント */
 const DRAWER_LINK: NavigationDrawerItemProps[] = [
@@ -61,10 +62,7 @@ export default function NavigationDrawer() {
             <div className="h-2" />
 
             <div className="flex flex-row p-2 items-center">
-                <img
-                    className="w-10 h-10 rounded-full mr-2"
-                    src="/icon.png"
-                />
+                <RoundedImage src="/icon.png" />
                 <div className="flex flex-col text-content-text-light">
                     <p className="text-base">たくさんの自由帳</p>
                     <p className="text-sm">Androidのお話</p>

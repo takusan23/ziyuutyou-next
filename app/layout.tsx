@@ -3,11 +3,11 @@ import { Suspense } from "react"
 import GoogleAnalytics from "../src/GoogleAnalytics"
 import localFont from "next/font/local"
 import NavigationDrawer from "../components/NavigationDrawer"
+import ResponsiveLayout from "../components/ResponsiveLayout"
 // コードブロックのCSS
 import "highlight.js/styles/vs2015.css"
 // グローバルCSS
 import "../styles/css/global.css"
-import ResponsiveLayout from "../components/ResponsiveLayout"
 
 /** フォントを読み込む */
 const koruriFont = localFont({
@@ -35,10 +35,7 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
                     navigationDrawer={<NavigationDrawer />}
                     title={<h1 className="text-content-primary-light text-2xl">たくさんの自由帳</h1>}
                 >
-                    <div className="flex-col">
-                    </div>
-                    <p>ああああああああああああああああ～～～～～～～</p>
-                    <p>ああああああああああああああああ～～～～～～～</p>
+                    {children}
                 </ResponsiveLayout>
 
                 {/* GoogleAnalytics */}
