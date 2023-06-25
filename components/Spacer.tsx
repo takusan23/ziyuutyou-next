@@ -12,13 +12,13 @@ export default function Spacer({ space }: SpacerProps) {
     let className: string
     switch (space ?? 'small') {
         case 'small':
-            className = 'm-2'
+            className = 'm-1'
             break
         case 'medium':
-            className = 'm-5'
+            className = 'm-3'
             break
         case 'large':
-            className = 'm-7'
+            className = 'm-5'
             break
     }
 

@@ -1,9 +1,8 @@
 import Link from "next/link"
-import React, { Fragment } from "react"
 import LinkData from "../src/data/LinkData"
 import RoundedCornerBox from "./RoundedCorner"
-import Spacer from "./Spacer"
 import HomeIcon from "../public/icon/material-home.svg"
+import RoundedCornerList from "./RoundedCornerList"
 
 /** LinkCard へ渡すデータ */
 type LinkCardProps = {
@@ -22,30 +21,26 @@ export default function LinkCard({ linkList }: LinkCardProps) {
                 <p>
                     Twitterが良いと思います
                 </p>
-                {
-                    linkList.map((linkData) => (
-                        <Fragment key={linkData.name}>
-                            <Spacer space="small" />
-                            <RoundedCornerBox
-                                className='bg-background-light'
-                                rounded="medium"
+
+                <RoundedCornerList
+                    list={linkList}
+                    content={(className, linkData) => (
+                        <div className={`${className} bg-background-light`}>
+                            <Link
+                                className="no-underline text-inherit"
+                                href={linkData.href}
                             >
-                                <Link
-                                    className="no-underline text-inherit"
-                                    href={linkData.href}
-                                >
-                                    <div className="flex flex-row p-3 items-center">
-                                        <div className="flex flex-col grow">
-                                            <p className="text-base">{linkData.name}</p>
-                                            <p className="text-sm">{linkData.description}</p>
-                                        </div>
-                                        <HomeIcon className="w-5 h-5" />
+                                <div className="flex flex-row p-3 items-center">
+                                    <div className="flex flex-col grow">
+                                        <p className="text-base">{linkData.name}</p>
+                                        <p className="text-sm">{linkData.description}</p>
                                     </div>
-                                </Link>
-                            </RoundedCornerBox>
-                        </Fragment>
-                    ))
-                }
+                                    <HomeIcon className="w-5 h-5" />
+                                </div>
+                            </Link>
+                        </div>
+                    )}
+                />
             </div>
         </RoundedCornerBox>
     )

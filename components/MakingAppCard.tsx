@@ -6,6 +6,7 @@ import RoundedCornerBox from "./RoundedCorner"
 import { MakingAppData, MakingAppDetailData } from "../src/data/MakingAppData"
 import NextLinkButton from "./NextLinkButton"
 import HomeIcon from "../public/icon/material-home.svg"
+import RoundedCornerList from "./RoundedCornerList"
 
 /** 名前とアイコンの型 */
 type PlatformData = {
@@ -54,43 +55,33 @@ type MakingAppListProps = {
 /** 実際に作ったものを表示する */
 function MakingAppList({ list }: MakingAppListProps) {
     return (
-        <>
-            {
-                list.map(item => (
-                    <Fragment key={item.link}>
+        <RoundedCornerList
+            list={list}
+            content={(className, item) => (
+                <div className={`p-3 bg-background-light ${className}`}>
+                    <h3 className="text-2xl text-content-text-light">
+                        {item.name}
+                    </h3>
+                    <p className="text-content-text-light">
+                        {item.description}
+                    </p>
+                    <Spacer space="small" />
+                    <div className="flex flex-row">
+                        <NextLinkButton
+                            variant="text"
+                            href={item.link}
+                            text="リンクへ"
+                        />
                         <Spacer space="small" />
-                        <RoundedCornerBox
-                            key={item.link}
-                            rounded="medium"
-                            className="bg-background-light"
-                        >
-                            <div className="flex flex-col p-3">
-                                <h3 className="text-2xl text-content-text-light">
-                                    {item.name}
-                                </h3>
-                                <p className="text-content-text-light">
-                                    {item.description}
-                                </p>
-                                <Spacer space="small" />
-                                <div className="flex flex-row">
-                                    <NextLinkButton
-                                        variant="text"
-                                        href={item.link}
-                                        text="リンクへ"
-                                    />
-                                    <Spacer space="small" />
-                                    <NextLinkButton
-                                        variant="text"
-                                        href={item.github}
-                                        text="GitHubを開く"
-                                    />
-                                </div>
-                            </div>
-                        </RoundedCornerBox>
-                    </Fragment>
-                ))
-            }
-        </>
+                        <NextLinkButton
+                            variant="text"
+                            href={item.github}
+                            text="GitHubを開く"
+                        />
+                    </div>
+                </div>
+            )}
+        />
     )
 }
 
