@@ -1,51 +1,46 @@
-import AndroidOutlined from "@mui/icons-material/AndroidOutlined"
-import ComputerOutlined from "@mui/icons-material/ComputerOutlined"
-import GridViewOutlined from "@mui/icons-material/GridViewOutlined"
-import VideogameAssetOutlined from "@mui/icons-material/VideogameAssetOutlined"
-import WebOutlined from "@mui/icons-material/WebOutlined"
-import Typography from "@mui/material/Typography"
-import List from "@mui/material/List"
-import ListItem from "@mui/material/ListItem"
-import IconButton from "@mui/material/IconButton"
-import React, { useEffect, useState } from "react"
+"use client"
+
+import { Fragment, ReactNode, useEffect, useState } from "react"
 import Spacer from "./Spacer"
 import RoundedCornerBox from "./RoundedCorner"
 import { MakingAppData, MakingAppDetailData } from "../src/data/MakingAppData"
-import { Box, ListItemIcon, ListItemText, useMediaQuery, useTheme } from "@mui/material"
 import NextLinkButton from "./NextLinkButton"
+import HomeIcon from "../public/icon/material-home.svg"
+
+/** 名前とアイコンの型 */
+type PlatformData = {
+    /** プラットフォーム名。android とか */
+    name: string
+    /** アイコン */
+    icon: ReactNode
+}
 
 /** MakingAppNavigationRail へ渡すデータ */
 type MakingAppNavigationRailProps = {
     /** プラットフォームの一覧とアイコンのMap */
-    platformNameToIconMap: Map<string, JSX.Element>,
+    platformNameToIconMap: PlatformData[],
     /** メニュー選択した際に呼ばれる。引数はandroidとかwebとかプラットフォームの名前 */
     onMenuClick: (platform: string) => void,
 }
 
 /** プラットフォーム一覧 NavigationRail */
-const MakingAppNavigationRail: React.FC<MakingAppNavigationRailProps> = (props) => {
-    const isMobileDevice = useMediaQuery("(max-width:600px)")
+function MakingAppNavigationRail({ platformNameToIconMap, onMenuClick }: MakingAppNavigationRailProps) {
+    // const isMobileDevice = useMediaQuery("(max-width:600px)")
+
     return (
         <>
-            <Box>
-                <List>
-                    {/* Mapには Array#map がない？ */}
-                    {Array.from(props.platformNameToIconMap).map(([text, iconElement]) => (
-                        <ListItem button key={text} onClick={() => props.onMenuClick(text)}>
-                            {!isMobileDevice ? (
-                                <>
-                                    <ListItemIcon>
-                                        {iconElement}
-                                    </ListItemIcon>
-                                    <ListItemText>
-                                        {text}
-                                    </ListItemText>
-                                </>
-                            ) : (<IconButton>{iconElement}</IconButton>)}
-                        </ListItem>
-                    ))}
-                </List>
-            </Box>
+            {
+                platformNameToIconMap.map(({ name, icon }) => (
+                    <div
+                        className="flex flex-row items-center p-5 cursor-pointer"
+                        key={name}
+                        onClick={() => onMenuClick(name)}
+                    >
+                        <div className="sm:mr-2">{icon}</div>
+                        <p className="hidden sm:block">{name}</p>
+                    </div>
+                ))
+            }
         </>
     )
 }
@@ -57,33 +52,56 @@ type MakingAppListProps = {
 }
 
 /** 実際に作ったものを表示する */
-const MakingAppList: React.FC<MakingAppListProps> = (props) => {
-    const theme = useTheme()
-
+function MakingAppList({ list }: MakingAppListProps) {
     return (
-        <List sx={{ marginLeft: 2, marginRight: 2, width: '100%' }}>
+        <>
             {
-                props.list.map(item => (
-                    <Box sx={{ paddingBottom: 1 }} key={item.github}>
-                        <RoundedCornerBox key={item.link} colorCode={theme.palette.background.default}>
-                            <Box sx={{ padding: 2 }}>
-                                <Typography variant="h5" component="div">
+                list.map(item => (
+                    <Fragment key={item.link}>
+                        <Spacer space="small" />
+                        <RoundedCornerBox
+                            key={item.link}
+                            rounded="medium"
+                            className="bg-background-light"
+                        >
+                            <div className="flex flex-col p-3">
+                                <h3 className="text-2xl text-content-text-light">
                                     {item.name}
-                                </Typography>
-                                <Typography sx={{ fontSize: 14 }} color="text.secondary">
+                                </h3>
+                                <p className="text-content-text-light">
                                     {item.description}
-                                </Typography>
-                                <Spacer value={1} />
-                                <NextLinkButton variant="text" href={item.link} text="リンクへ" />
-                                <NextLinkButton variant="text" href={item.github} text="GitHubを開く" />
-                            </Box>
+                                </p>
+                                <Spacer space="small" />
+                                <div className="flex flex-row">
+                                    <NextLinkButton
+                                        variant="text"
+                                        href={item.link}
+                                        text="リンクへ"
+                                    />
+                                    <Spacer space="small" />
+                                    <NextLinkButton
+                                        variant="text"
+                                        href={item.github}
+                                        text="GitHubを開く"
+                                    />
+                                </div>
+                            </div>
                         </RoundedCornerBox>
-                    </Box>
+                    </Fragment>
                 ))
             }
-        </List>
+        </>
     )
 }
+
+// プラットフォームのアイコンと名前の配列をつくる
+const APP_NAME_TO_ICON_LIST: PlatformData[] = [
+    { name: "android", icon: <HomeIcon className="w-5 h-5" /> },
+    { name: "web", icon: <HomeIcon className="w-5 h-5" /> },
+    { name: "akashic", icon: <HomeIcon className="w-5 h-5" /> },
+    { name: "minecraft", icon: <HomeIcon className="w-5 h-5" /> },
+    { name: "windows", icon: <HomeIcon className="w-5 h-5" /> },
+]
 
 /** MakingAppData へ渡すデータ */
 type MakingAppCardProps = {
@@ -92,25 +110,13 @@ type MakingAppCardProps = {
 }
 
 /** 作ったもの表示してるところ */
-const MakingAppCard: React.FC<MakingAppCardProps> = (props) => {
-    const makingAppList = props.makingAppList
-
-    // プラットフォームのアイコンと名前の配列をつくる
-    const nameToIconMap = new Map([
-        ["android", <AndroidOutlined />],
-        ["web", <WebOutlined />],
-        ["akashic", <VideogameAssetOutlined />],
-        ["minecraft", <GridViewOutlined />],
-        ["windows", <ComputerOutlined />]
-    ])
-
+export default function MakingAppCard({ makingAppList }: MakingAppCardProps) {
     // JetpackComposeの remember { mutableStateOf(arrayOf()) } みたいな
     // 表示するプラットフォーム
     const [appList, setAppList] = useState<MakingAppDetailData[]>([])
 
     /**
      * 作ったものリストを切り替える
-     * 
      * Vueよりも関数書きやすいやん！
      * 
      * @param platformName androidとか
@@ -122,31 +128,30 @@ const MakingAppCard: React.FC<MakingAppCardProps> = (props) => {
         }
     }
 
-    /**
-     * 初期値を入れる
-     * 
-     * JetpackComposeの LaunchedEffect みたいなやつ
-     */
+    // 初期値を入れる
+    // JetpackComposeの LaunchedEffect みたいなやつ
     useEffect(() => {
         changeAppListPlatform("android")
     }, [])
 
     return (
-        <RoundedCornerBox value={3}>
-            <Box sx={{ padding: 1 }}>
-                <Typography variant="h5" sx={{ padding: 1, marginLeft: 1 }} color="primary">
+        <RoundedCornerBox rounded="large">
+            <div className="pt-3">
+                <h2 className="text-2xl px-3 text-content-primary-light">
                     作ったもの
-                </Typography>
-                <div style={{ display: 'flex' }}>
-                    <MakingAppNavigationRail
-                        platformNameToIconMap={nameToIconMap}
-                        onMenuClick={platformName => changeAppListPlatform(platformName)}
-                    />
-                    <MakingAppList list={appList} />
+                </h2>
+                <div className="flex flex-row py-2">
+                    <div>
+                        <MakingAppNavigationRail
+                            platformNameToIconMap={APP_NAME_TO_ICON_LIST}
+                            onMenuClick={platformName => changeAppListPlatform(platformName)}
+                        />
+                    </div>
+                    <div className="flex flex-col grow px-2">
+                        <MakingAppList list={appList} />
+                    </div>
                 </div>
-            </Box>
+            </div>
         </RoundedCornerBox>
     )
 }
-
-export default MakingAppCard

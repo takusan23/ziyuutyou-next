@@ -2,6 +2,7 @@ import { ReactNode } from "react"
 import Link from "next/link"
 import HomeIcon from "../public/icon/material-home.svg"
 import RoundedImage from "./RoundedImage"
+import Spacer from "./Spacer"
 
 /** ナビゲーションドロワーの表示先、パス、コンポーネント */
 const DRAWER_LINK: NavigationDrawerItemProps[] = [
@@ -57,9 +58,9 @@ function NavigationDrawerItem({ title, icon, path }: NavigationDrawerItemProps) 
 /** ナビゲーションドロワー */
 export default function NavigationDrawer() {
     return (
-        <div className="flex flex-col pl-2 pr-2">
+        <div className="flex flex-col pl-2 pr-2 w-[250px]">
 
-            <div className="h-2" />
+            <Spacer space="small" />
 
             <div className="flex flex-row p-2 items-center">
                 <RoundedImage src="/icon.png" />
@@ -69,7 +70,7 @@ export default function NavigationDrawer() {
                 </div>
             </div>
 
-            <div className="h-2" />
+            <Spacer space="small" />
 
             <nav>
                 {

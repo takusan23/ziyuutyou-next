@@ -25,7 +25,7 @@ export default function ProfileCard({ randomMessageList }: ProfileCardProps) {
     }, [])
 
     return (
-        <RoundedCornerBox value={10}>
+        <RoundedCornerBox rounded="large">
 
             <div className="flex flex-row items-center p-3">
                 <RoundedImage src="/icon.png" />
