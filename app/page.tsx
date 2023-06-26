@@ -29,7 +29,7 @@ export default async function Home() {
     ])
 
     return (
-        <div className="flex flex-col p-2">
+        <div className="flex flex-col p-4">
             <ProfileCard randomMessageList={randomMessageList} />
             <Spacer space="medium" />
             <LinkCard linkList={linkList} />

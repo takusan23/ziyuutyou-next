@@ -1,6 +1,6 @@
-import LocalOfferOutlined from "@mui/icons-material/LocalOfferOutlined"
-import Chip from "@mui/material/Chip"
-import Link from "next/link"
+import NextLinkButton from "./NextLinkButton"
+import MenuIcon from "../public/icon/material-menu.svg"
+import Spacer from "./Spacer"
 
 /** TagChipGroup へ渡すデータ */
 type TagChipGroupProps = {
@@ -8,35 +8,23 @@ type TagChipGroupProps = {
     tagList: Array<string>
 }
 
-/** タグを表示するChip。上方向にMarginかけてるので注意 */
-const TagChipGroup: React.FC<TagChipGroupProps> = (props) => {
+/** タグを表示する */
+export default function TagChipGroup({ tagList }: TagChipGroupProps) {
     return (
-        <>
+        <div className="flex flex-row flex-wrap gap-2">
             {
-                props.tagList.map(tagName => (
-                    <Link
-                        style={{
-                            textDecoration: 'none',
-                            color: 'inherit'
-                        }}
-                        href={`/posts/tag/${tagName}/`}
-                        key={tagName}
-                    >
-                        <Chip
-                            sx={{
-                                marginRight: 1,
-                                marginTop: 1
-                            }}
-                            clickable
-                            color="primary"
-                            icon={<LocalOfferOutlined />}
-                            label={tagName}
+                tagList.map(tagName => (
+                    <>
+                        <NextLinkButton
+                            size="small"
+                            key={tagName}
+                            href={`/posts/tag/${tagName}/`}
+                            startIcon={<MenuIcon className="w-5 h-5" />}
+                            text={tagName}
                         />
-                    </Link>
+                    </>
                 ))
             }
-        </>
+        </div>
     )
 }
-
-export default TagChipGroup

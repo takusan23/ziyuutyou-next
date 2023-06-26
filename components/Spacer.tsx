@@ -7,7 +7,10 @@ type SpacerProps = {
     space?: 'small' | 'medium' | 'large' // TODO non-null
 }
 
-/** 空白をあけるだけ */
+/**
+ * 空白をあけるだけ。
+ * Tailwind CSS の場合、 space-x-2 や gap など便利なのがあるのであんまり出番がなさそう。
+ */
 export default function Spacer({ space }: SpacerProps) {
     let className: string
     switch (space ?? 'small') {

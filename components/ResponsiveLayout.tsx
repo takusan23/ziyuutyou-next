@@ -48,15 +48,17 @@ export default function ResponsiveLayout({ navigationDrawer, title, children }: 
                 )
             }
 
-            <main className="flex grow flex-col">
+            <main className="flex flex-col grow">
                 {/* タイトル部分 */}
                 <div className="flex flex-row items-center py-5">
                     {/* デフォルトで出しておいて、それ以上のサイズのときにドロワー展開ボタンを出す */}
                     <MenuIcon
-                        className="h-6 w-6 mx-5 block cursor-pointer sm:hidden"
+                        className="h-6 w-6 ml-4 block cursor-pointer sm:hidden"
                         onClick={() => setDrawerOpen(!isDrawerOpen)}
                     />
-                    {title}
+                    <div className="ml-4">
+                        {title}
+                    </div>
                 </div>
                 {children}
             </main>

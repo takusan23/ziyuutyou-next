@@ -25,7 +25,10 @@ export default function LinkCard({ linkList }: LinkCardProps) {
                 <RoundedCornerList
                     list={linkList}
                     content={(className, linkData) => (
-                        <div className={`${className} bg-background-light`}>
+                        <div
+                            className={`${className} bg-background-light`}
+                            key={linkData.href}
+                        >
                             <Link
                                 className="no-underline text-inherit"
                                 href={linkData.href}

@@ -58,7 +58,10 @@ function MakingAppList({ list }: MakingAppListProps) {
         <RoundedCornerList
             list={list}
             content={(className, item) => (
-                <div className={`p-3 bg-background-light ${className}`}>
+                <div
+                    className={`p-3 bg-background-light ${className}`}
+                    key={item.link}
+                >
                     <h3 className="text-2xl text-content-text-light">
                         {item.name}
                     </h3>

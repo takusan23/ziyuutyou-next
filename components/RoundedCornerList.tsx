@@ -1,5 +1,4 @@
-import { Fragment, ReactNode } from "react"
-import Spacer from "./Spacer"
+import { ReactNode } from "react"
 
 /** RoundedCornerList へ渡すデータ */
 type RoundedCornerListProps<T> = {
@@ -20,30 +19,25 @@ type RoundedCornerListProps<T> = {
 export default function RoundedCornerList<T>({ list, content }: RoundedCornerListProps<T>) {
     // flex つけないとマージンうまくかかんない？
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col space-y-2">
             {
                 list.map((item, index) => {
 
                     let roundedClassName: string
                     if (list.length === 1) {
                         // アイテム数が 1 のとき
-                        roundedClassName = 'rounded-2xl'
+                        roundedClassName = 'rounded-3xl'
                     } else if (index === 0) {
                         // 先頭は上の辺をより丸くする
-                        roundedClassName = 'rounded-b-lg rounded-t-2xl'
+                        roundedClassName = 'rounded-b-lg rounded-t-3xl'
                     } else if ((index + 1) === list.length) {
                         // 最後はその逆
-                        roundedClassName = 'rounded-b-2xl rounded-t-lg'
+                        roundedClassName = 'rounded-b-3xl rounded-t-lg'
                     } else {
                         roundedClassName = 'rounded-lg'
                     }
 
-                    return (
-                        <Fragment key={index}>
-                            <Spacer space="small" />
-                            {content(roundedClassName, item)}
-                        </Fragment>
-                    )
+                    return content(roundedClassName, item)
                 })
             }
         </div>
