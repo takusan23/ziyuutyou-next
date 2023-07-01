@@ -58,7 +58,7 @@ function NavigationDrawerItem({ title, icon, path }: NavigationDrawerItemProps) 
 /** ナビゲーションドロワー */
 export default function NavigationDrawer() {
     return (
-        <div className="flex flex-col pl-2 pr-2 w-[250px]">
+        <div className="flex flex-col pl-2 pr-2 w-full">
 
             <Spacer space="small" />
 

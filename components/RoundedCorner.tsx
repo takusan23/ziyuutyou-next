@@ -25,10 +25,10 @@ export default function RoundedCornerBox({ className, rounded, children }: Round
             roundedClassName = 'rounded-md'
             break
         case 'medium':
-            roundedClassName = 'rounded-lg'
+            roundedClassName = 'rounded-xl'
             break
         case 'large':
-            roundedClassName = 'rounded-xl'
+            roundedClassName = 'rounded-3xl'
             break
     }
 

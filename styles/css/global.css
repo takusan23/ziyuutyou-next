@@ -7,38 +7,7 @@ html {
     scrollbar-color: #5870cb transparent;
 }
 
-body {
-    /* リンクがはみ出るので */
-    word-wrap: break-word;
-}
-
-/* コードブロック */
-code {
-    overflow-x: scroll;
-    font-family: var(--koruri-font);
-    background-color: rgba(0, 0, 0, 0.05);
-}
-
-/* Table（表）に線が入らないので調整 */
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    margin: 10px;
-}
-
-table tr {
-    border-bottom: solid 1px #000;
-}
-
-table td {
-    padding: 10px;
-    text-align: center;
-}
-
 /* スクロールバー */
-
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px;

@@ -97,8 +97,7 @@ export default function ClientBlogDetailPage({ markdownData }: ClientBlogDetailP
             <RoundedCornerBox colorCode={theme.palette.background.secondary}>
                 {/* 画面の幅が広いときだけ目次を表示させる */}
                 <TocListLayout
-                    secondaryWidth={TOC_LIST_WIDTH}
-                    master={
+                    children={
                         <RoundedCornerBox>
                             <Box sx={{ padding: 2 }}>
                                 <div className="content_div" dangerouslySetInnerHTML={{ __html: markdownData.html }} />
