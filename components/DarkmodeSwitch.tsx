@@ -12,9 +12,11 @@ export default function DarkmodeSwitch() {
     // 端末のテーマ設定をセットする
     // TODO 責務的にここでやるべきではない
     useEffect(() => {
-        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        // メディアクエリでダークモードかチェック
         const isDarkmode = window.matchMedia('(prefers-color-scheme: dark)').matches
-        setDarkmode(isDarkmode)
+        // すでに Tailwind CSS のダークモードが有効かどうか。サイズ変更したらリセットされちゃった
+        const isCurrentDarkmode = document.documentElement.classList.contains('dark')
+        setDarkmode(isDarkmode || isCurrentDarkmode)
     }, [])
 
     // 切替時のイベント
