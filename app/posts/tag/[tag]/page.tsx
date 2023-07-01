@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 import EnvironmentTool from "../../../../src/EnvironmentTool";
 import ContentFolderManager from "../../../../src/ContentFolderManager";
-import ClientTagListPage from "./ClientTagListPage";
+import RoundedCornerList from "../../../../components/RoundedCornerList"
+import BlogListItem from "../../../../components/BlogListItem"
 
 /** 動的ルーティング */
 type PageProps = {
@@ -27,7 +28,30 @@ export default async function TagListPage({ params }: PageProps) {
     // ページネーションは後で
     const tagFilterBlogList = await ContentFolderManager.getTagFilterBlogItem(unEscapeText)
 
-    return <ClientTagListPage blogList={tagFilterBlogList.result} tagName={unEscapeText} totalItemCount={tagFilterBlogList.totalCount} />
+    return (
+        <>
+            <div className="flex flex-col space-y-4">
+
+                <div>
+                    <h1 className="text-content-primary-light text-3xl">
+                        {unEscapeText}
+                    </h1>
+                    <h3 className="text-content-primary-light text-lg">
+                        {`${tagFilterBlogList.totalCount} 件`}
+                    </h3>
+                </div>
+
+                <RoundedCornerList
+                    list={tagFilterBlogList.result}
+                    content={(className, item) => (
+                        <div className={`bg-container-primary-light ${className}`}>
+                            <BlogListItem blogItem={item} />
+                        </div>
+                    )}
+                />
+            </div>
+        </>
+    )
 }
 
 /** 
