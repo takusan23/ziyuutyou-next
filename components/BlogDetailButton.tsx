@@ -1,6 +1,8 @@
 import React from "react"
 import NextLinkButton from "./NextLinkButton"
 import EnvironmentTool from "../src/EnvironmentTool"
+import OpenInBrowserIcon from "../public/icon/open_in_browser.svg"
+import ShareIcon from "../public/icon/share.svg"
 
 /** TwitterShareButton へ渡すデータ */
 type TwitterShareButtonProps = {
@@ -11,13 +13,14 @@ type TwitterShareButtonProps = {
 }
 
 /** Twitterシェアボタン */
-export const TwitterShareButton: React.FC<TwitterShareButtonProps> = (props) => {
+export function TwitterShareButton({ title, url }: TwitterShareButtonProps) {
     // 共有URL
-    const href = `http://twitter.com/share?url=${encodeURIComponent(props.url)}&text=${encodeURIComponent(props.title)}`
+    const href = `http://twitter.com/share?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`
     return (
         <NextLinkButton
             variant="text"
             href={href}
+            startIcon={<ShareIcon />}
             text="Twitterで共有" />
     )
 }
@@ -35,6 +38,7 @@ export const GitHubHistoryButton: React.FC<GitHubHistoryButtonProps> = (props) =
         <NextLinkButton
             variant="text"
             href={href}
+            startIcon={<OpenInBrowserIcon />}
             text="GitHubで開く" />
     )
 }

@@ -2,12 +2,8 @@ import { ReactNode } from "react"
 
 /** RoundedCornerBox へ渡すデータ */
 type RoundedCornerBoxProps = {
-    /** どれだけ丸くするか @deprecated 使えない */
-    value?: number
-    colorCode?: string
-
     /** どれだけ丸くするか */
-    rounded?: 'small' | 'medium' | 'large' // TODO non-null
+    rounded?: 'small' | 'medium' | 'large'
     /** Tailwind CSS のクラス名 */
     className?: string
     /** 子要素 */

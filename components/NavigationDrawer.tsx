@@ -51,7 +51,7 @@ type NavigationDrawerItemProps = {
 function NavigationDrawerItem({ title, icon, path }: NavigationDrawerItemProps) {
     return (
         <Link href={path}>
-            <div className="flex flex-row p-3 items-center space-x-4">
+            <div className="flex flex-row p-3 items-center space-x-4 rounded-xl hover:bg-hover-light dark:hover:bg-hover-dark">
                 <IconParent>
                     {icon}
                 </IconParent>

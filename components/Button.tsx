@@ -22,6 +22,7 @@ export default function Button({ text, startIcon, variant, isDisabled, size }: B
     const commonClassName = `${buttonAlpha} select-none`
     const nonNullVariant = variant ?? 'contained'
 
+    // ボタンの Padding
     let buttonPaddingClassName: string
     switch (size ?? 'medium') {
         case 'small':
@@ -35,6 +36,17 @@ export default function Button({ text, startIcon, variant, isDisabled, size }: B
             break
     }
 
+    // アイコンの色
+    let iconColorClassName: string | undefined
+    switch (nonNullVariant) {
+        case "text":
+            iconColorClassName = 'fill-content-primary-light dark:fill-content-primary-dark'
+            break;
+        case "contained":
+            iconColorClassName = 'fill-[#ffffff]'
+            break;
+    }
+
     /** ボタンの中身を作成する */
     const createButtonContent = (
         <div className={`flex flex-row items-center space-x-1 ${buttonPaddingClassName}`}>
@@ -43,7 +55,7 @@ export default function Button({ text, startIcon, variant, isDisabled, size }: B
                 startIcon && (
                     <IconParent
                         size={(size === 'small') ? 'small' : 'medium'}
-                        className={(nonNullVariant === 'contained') ? 'fill-[#ffffff]' : undefined}
+                        className={iconColorClassName}
                     >
                         {startIcon}
                     </IconParent>

@@ -4,8 +4,6 @@ import Button, { ButtonProps } from "./Button"
 
 /** NextLinkButton へ渡すデータ */
 type NextLinkButtonProps = {
-    /** style @deprecated */
-    style?: CSSProperties
     /** URL */
     href: string
 } & ButtonProps

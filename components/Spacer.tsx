@@ -1,10 +1,7 @@
 /** Spacerへ渡す値 */
 type SpacerProps = {
-    /** どれぐらい開けるか @deprecated 消す */
-    value?: number
-
     /** どれぐらい開けるか */
-    space?: 'small' | 'medium' | 'large' // TODO non-null
+    space?: 'small' | 'medium' | 'large'
 }
 
 /**

@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import JsonFolderManager from "../src/JsonFolderManager";
 import ProfileCard from "../components/ProfileCard";
 import EnvironmentTool from "../src/EnvironmentTool";
-import Spacer from "../components/Spacer";
 import LinkCard from "../components/LinkCard";
 import MakingAppCard from "../components/MakingAppCard";
 

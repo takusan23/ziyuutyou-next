@@ -32,11 +32,11 @@ type MakingAppNavigationRailProps = {
 /** プラットフォーム一覧 NavigationRail */
 function MakingAppNavigationRail({ platformNameToIconMap, onMenuClick }: MakingAppNavigationRailProps) {
     return (
-        <>
+        <div className="flex flex-col space-y-3">
             {
                 platformNameToIconMap.map(({ name, icon }) => (
                     <div
-                        className="flex flex-row items-center p-5 cursor-pointer"
+                        className="flex flex-row items-center cursor-pointer p-2 rounded-xl hover:bg-hover-light dark:hover:bg-hover-dark"
                         key={name}
                         onClick={() => onMenuClick(name)}
                     >
@@ -49,7 +49,7 @@ function MakingAppNavigationRail({ platformNameToIconMap, onMenuClick }: MakingA
                     </div>
                 ))
             }
-        </>
+        </div>
     )
 }
 
@@ -137,17 +137,15 @@ export default function MakingAppCard({ makingAppList }: MakingAppCardProps) {
 
     return (
         <RoundedCornerBox rounded="large">
-            <div className="pt-3">
-                <h2 className="text-2xl px-3 text-content-primary-light dark:text-content-primary-dark">
+            <div className="p-3">
+                <h2 className="text-2xl text-content-primary-light dark:text-content-primary-dark">
                     作ったもの
                 </h2>
                 <div className="flex flex-row py-2">
-                    <div>
-                        <MakingAppNavigationRail
-                            platformNameToIconMap={APP_NAME_TO_ICON_LIST}
-                            onMenuClick={platformName => changeAppListPlatform(platformName)}
-                        />
-                    </div>
+                    <MakingAppNavigationRail
+                        platformNameToIconMap={APP_NAME_TO_ICON_LIST}
+                        onMenuClick={platformName => changeAppListPlatform(platformName)}
+                    />
                     <div className="flex flex-col grow px-2">
                         <MakingAppList list={appList} />
                     </div>

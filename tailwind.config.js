@@ -15,6 +15,11 @@
  * Android 向けに export して使っています
  */
 
+/**
+ * カラーコード明るさ調整
+ * https://color-code-brightness.negitoro.dev/
+ */
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
@@ -60,7 +65,7 @@ module.exports = {
           },
           // セカンダリーカラー
           secondary: {
-            // md_theme_light_surface : md_theme_dark_surface の RGB に 0.95 をかけたもの。カラーコード 明るさ とかで検索
+            // md_theme_light_surface : md_theme_dark_surface の RGB それぞれに 0.95 倍したもの。カラーコード 明るさ とかで検索
             light: '#f2eef2',
             dark: '#19191d'
           }
@@ -78,6 +83,13 @@ module.exports = {
           // md_theme_light_primaryContainer
           light: '#DEE0FF',
           dark: '#000000'
+        },
+
+        // 選択時の色（ホバー）
+        hover: {
+          // md_theme_light_primary の 25% の色。16進数なので 40 です（RGBA）
+          light: '#4A58A940',
+          dark: '#BBC3FF40'
         },
       },
       fontFamily: {
