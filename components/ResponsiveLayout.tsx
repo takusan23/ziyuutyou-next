@@ -44,7 +44,9 @@ export default function ResponsiveLayout({ navigationDrawer, title, children }: 
                                 {navigationDrawer}
                             </div>
                             {/* ナビゲーションドロワー以外を押したら閉じるように */}
-                            <div className="grow bg-background-light dark:bg-background-dark opacity-80" onClick={() => setDrawerOpen(false)} />
+                            <div
+                                className="grow bg-background-light dark:bg-background-dark opacity-80"
+                                onClick={() => setDrawerOpen(false)} />
                         </div>
                     </div>
                 )

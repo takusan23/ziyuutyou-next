@@ -24,66 +24,67 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    // ネストできるので、テーマ別にそれぞれ
-    colors: {
-
-      // コンテンツで使う色
-      content: {
-        // プライマリーカラー
-        primary: {
-          // md_theme_light_primary
-          light: '#4A58A9',
-          dark: '#BBC3FF'
+    // 既存の色を拡張する（プライマリカラー等を追加する）
+    extend: {
+      // ネストできるので、テーマ別にそれぞれ
+      colors: {
+        // コンテンツで使う色
+        content: {
+          // プライマリーカラー
+          primary: {
+            // md_theme_light_primary
+            light: '#4A58A9',
+            dark: '#BBC3FF'
+          },
+          // セカンダリーカラー
+          secondary: {
+            // md_theme_light_secondary
+            light: '#974068',
+            dark: '#974068'
+          },
+          // 文字
+          text: {
+            // md_theme_dark_background : md_theme_light_background
+            light: '#1B1B1F',
+            dark: '#FEFBFF'
+          }
         },
-        // セカンダリーカラー
-        secondary: {
-          // md_theme_light_secondary
-          light: '#974068',
-          dark: '#974068'
+
+        // コンテナの色。コンテンツの色の下に敷く
+        container: {
+          // プライマリーカラー
+          primary: {
+            // md_theme_light_surface : md_theme_dark_surface
+            light: '#FFFBFF',
+            dark: '#1B1B1F'
+          },
+          // セカンダリーカラー
+          secondary: {
+            // md_theme_light_surface : md_theme_dark_surface の RGB に 0.95 をかけたもの。カラーコード 明るさ とかで検索
+            light: '#f2eef2',
+            dark: '#19191d'
+          }
         },
-        // 文字
-        text: {
-          // md_theme_dark_background : md_theme_light_background
-          light: '#1B1B1F',
-          dark: '#FEFBFF'
-        }
-      },
 
-      // コンテナの色。コンテンツの色の下に敷く
-      container: {
-        // プライマリーカラー
-        primary: {
-          // md_theme_light_surface : md_theme_dark_surface
-          light: '#FFFBFF',
-          dark: '#1B1B1F'
+        // Error ?
+        error: {
+          // md_theme_light_error
+          light: '#BA1A1A',
+          dark: '#BA1A1A'
         },
-        // セカンダリーカラー
-        secondary: {
-          // md_theme_light_surface : md_theme_dark_surface の RGB に 0.95 をかけたもの。カラーコード 明るさ とかで検索
-          light: '#f2eef2',
-          dark: '#19191d'
-        }
-      },
 
-      // Error ?
-      error: {
-        // md_theme_light_error
-        light: '#BA1A1A',
-        dark: '#BA1A1A'
+        // 背景色
+        background: {
+          // md_theme_light_primaryContainer
+          light: '#DEE0FF',
+          dark: '#000000'
+        },
       },
-
-      // 背景色
-      background: {
-        // md_theme_light_primaryContainer
-        light: '#DEE0FF',
-        dark: '#000000'
-      },
+      fontFamily: {
+        // next/font で読み込んだやつ
+        'body': ['var(--koruri-font)'],
+      }
     },
-    fontFamily: {
-      // next/font で読み込んだやつ
-      'body': ['var(--koruri-font)'],
-    },
-    extend: {},
   },
   plugins: [],
 }

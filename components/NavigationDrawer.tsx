@@ -59,7 +59,7 @@ function NavigationDrawerItem({ title, icon, path }: NavigationDrawerItemProps) 
 /** ナビゲーションドロワー */
 export default function NavigationDrawer() {
     return (
-        <div className="flex flex-col pl-2 pr-2 space-y-4 w-full">
+        <div className="flex flex-col p-2 space-y-4 w-full">
 
             <div className="flex flex-row p-2 items-center">
                 <RoundedImage src="/icon.png" />
