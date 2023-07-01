@@ -38,7 +38,7 @@ export default function DarkmodeSwitch() {
                 ダークモード
             </span>
             {/* チェックが付いたら左に寄せる、丸を大きくする（peer-checked:justify-end） */}
-            <div className="h-8 w-14 flex flex-row items-center bg-container-primary-light dark:bg-container-primary-dark rounded-full border-content-primary-light dark:border-content-primary-dark border-2 p-1.5 peer-checked:p-0.5 justify-start peer-checked:justify-end">
+            <div className="h-8 w-14 flex flex-row items-center rounded-full border-content-primary-light dark:border-content-primary-dark border-2 p-1.5 peer-checked:p-0.5 justify-start peer-checked:justify-end">
                 <div className="h-full aspect-square bg-content-primary-light dark:bg-content-primary-dark rounded-full" />
             </div>
         </label>

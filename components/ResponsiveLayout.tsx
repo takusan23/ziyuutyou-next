@@ -1,7 +1,7 @@
 "use client"
 
 import { ReactNode, useState } from "react"
-import MenuIcon from "../public/icon/material-menu.svg"
+import MenuIcon from "../public/icon/menu.svg"
 
 // 定数
 const NAVIGATION_DRAWER_WIDTH = 'w-[250px]'

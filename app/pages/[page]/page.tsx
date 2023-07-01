@@ -6,7 +6,8 @@ import DateCountText from "../../../components/DateCountText";
 import TagChipGroup from "../../../components/TagChipGroup";
 import { TocList, TocListLayout } from "../../../components/TocList";
 import RoundedCornerBox from "../../../components/RoundedCorner";
-import MenuIcon from "../../../public/icon/material-menu.svg"
+import IconParent from "../../../components/IconParent";
+import EditIcon from "../../../public/icon/edit.svg"
 // 部分的に修正した css
 import "../../../styles/css/content.css"
 
@@ -45,7 +46,9 @@ export default async function PageDetailPage({ params }: PageProps) {
     /** 文字数 */
     const textCountText = (
         <div className="flex flex-row flex-wrap items-center">
-            <MenuIcon className="w-5 h-5" />
+            <IconParent className="fill-content-primary-light dark:fill-content-primary-dark">
+                <EditIcon />
+            </IconParent>
             <p className="text-content-primary-light dark:text-content-primary-dark">
                 {`文字数(だいたい) : ${markdownData.textCount}`}
             </p>

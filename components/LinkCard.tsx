@@ -1,8 +1,9 @@
 import Link from "next/link"
 import LinkData from "../src/data/LinkData"
 import RoundedCornerBox from "./RoundedCorner"
-import HomeIcon from "../public/icon/material-home.svg"
 import RoundedCornerList from "./RoundedCornerList"
+import IconParent from "./IconParent"
+import OpenInBrowserIcon from "../public/icon/open_in_browser.svg"
 
 /** LinkCard へ渡すデータ */
 type LinkCardProps = {
@@ -39,7 +40,9 @@ export default function LinkCard({ linkList }: LinkCardProps) {
                                         <p className="text-content-text-light dark:text-content-text-dark text-base">{linkData.name}</p>
                                         <p className="text-content-text-light dark:text-content-text-dark text-sm">{linkData.description}</p>
                                     </div>
-                                    <HomeIcon className="w-5 h-5" />
+                                    <IconParent>
+                                        <OpenInBrowserIcon />
+                                    </IconParent>
                                 </div>
                             </Link>
                         </div>

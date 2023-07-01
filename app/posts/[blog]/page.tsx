@@ -5,8 +5,9 @@ import { GitHubHistoryButton, TwitterShareButton } from "../../../components/Blo
 import TagChipGroup from "../../../components/TagChipGroup"
 import RoundedCornerBox from "../../../components/RoundedCorner"
 import { TocList, TocListLayout } from "../../../components/TocList"
-import MenuIcon from "../../../public/icon/material-menu.svg"
 import DateCountText from "../../../components/DateCountText"
+import IconParent from "../../../components/IconParent"
+import EditIcon from "../../../public/icon/edit.svg"
 // 部分的に修正した css
 import "../../../styles/css/content.css"
 
@@ -45,7 +46,9 @@ export default async function BlogDetailPage({ params }: PageProps) {
     /** 文字数 */
     const textCountText = (
         <div className="flex flex-row flex-wrap items-center">
-            <MenuIcon className="w-5 h-5" />
+            <IconParent className="fill-content-primary-light dark:fill-content-primary-dark">
+                <EditIcon />
+            </IconParent>
             <p className="text-content-primary-light dark:text-content-primary-dark">
                 {`文字数(だいたい) : ${markdownData.textCount}`}
             </p>
@@ -62,7 +65,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
 
     return (
         <div className="flex flex-col space-y-4">
-            
+
             <h1 className="text-content-primary-light dark:text-content-primary-dark text-3xl">
                 {markdownData.title}
             </h1>

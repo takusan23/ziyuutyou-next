@@ -1,12 +1,17 @@
 "use client"
 
-import { Fragment, ReactNode, useEffect, useState } from "react"
+import { ReactNode, useEffect, useState } from "react"
 import Spacer from "./Spacer"
 import RoundedCornerBox from "./RoundedCorner"
 import { MakingAppData, MakingAppDetailData } from "../src/data/MakingAppData"
 import NextLinkButton from "./NextLinkButton"
-import HomeIcon from "../public/icon/material-home.svg"
 import RoundedCornerList from "./RoundedCornerList"
+import IconParent from "./IconParent"
+import AndroidIcon from "../public/icon/android.svg"
+import WebIcon from "../public/icon/web.svg"
+import VideoGameAssetIcon from "../public/icon/videogame_asset.svg"
+import GridIcon from "../public/icon/grid_view.svg"
+import LaptopIcon from "../public/icon/laptop_windows.svg"
 
 /** 名前とアイコンの型 */
 type PlatformData = {
@@ -26,8 +31,6 @@ type MakingAppNavigationRailProps = {
 
 /** プラットフォーム一覧 NavigationRail */
 function MakingAppNavigationRail({ platformNameToIconMap, onMenuClick }: MakingAppNavigationRailProps) {
-    // const isMobileDevice = useMediaQuery("(max-width:600px)")
-
     return (
         <>
             {
@@ -37,7 +40,11 @@ function MakingAppNavigationRail({ platformNameToIconMap, onMenuClick }: MakingA
                         key={name}
                         onClick={() => onMenuClick(name)}
                     >
-                        <div className="sm:mr-2">{icon}</div>
+                        <div className="sm:mr-2">
+                            <IconParent>
+                                {icon}
+                            </IconParent>
+                        </div>
                         <p className="text-content-text-light dark:text-content-text-dark hidden sm:block">{name}</p>
                     </div>
                 ))
@@ -90,11 +97,11 @@ function MakingAppList({ list }: MakingAppListProps) {
 
 // プラットフォームのアイコンと名前の配列をつくる
 const APP_NAME_TO_ICON_LIST: PlatformData[] = [
-    { name: "android", icon: <HomeIcon className="w-5 h-5" /> },
-    { name: "web", icon: <HomeIcon className="w-5 h-5" /> },
-    { name: "akashic", icon: <HomeIcon className="w-5 h-5" /> },
-    { name: "minecraft", icon: <HomeIcon className="w-5 h-5" /> },
-    { name: "windows", icon: <HomeIcon className="w-5 h-5" /> },
+    { name: "android", icon: <AndroidIcon /> },
+    { name: "web", icon: <WebIcon /> },
+    { name: "akashic", icon: <VideoGameAssetIcon /> },
+    { name: "minecraft", icon: <GridIcon /> },
+    { name: "windows", icon: <LaptopIcon /> }
 ]
 
 /** MakingAppData へ渡すデータ */

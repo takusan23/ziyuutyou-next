@@ -1,4 +1,5 @@
 import { ReactNode } from "react"
+import IconParent from "./IconParent"
 
 /** Button へ渡すデータ */
 export type ButtonProps = {
@@ -19,6 +20,7 @@ export default function Button({ text, startIcon, variant, isDisabled, size }: B
     // className をつくる
     const buttonAlpha = isDisabled ? 'opacity-50' : 'opacity-100'
     const commonClassName = `${buttonAlpha} select-none`
+    const nonNullVariant = variant ?? 'contained'
 
     let buttonPaddingClassName: string
     switch (size ?? 'medium') {
@@ -35,16 +37,28 @@ export default function Button({ text, startIcon, variant, isDisabled, size }: B
 
     /** ボタンの中身を作成する */
     const createButtonContent = (
-        <div className={`flex flex-row items-center space-x-2 ${buttonPaddingClassName}`}>
-            {startIcon}
-            <p>{text}</p>
+        <div className={`flex flex-row items-center space-x-1 ${buttonPaddingClassName}`}>
+            {
+                // 塗りつぶしだけ白色のアイコンにする
+                startIcon && (
+                    <IconParent
+                        size={(size === 'small') ? 'small' : 'medium'}
+                        className={(nonNullVariant === 'contained') ? 'fill-[#ffffff]' : undefined}
+                    >
+                        {startIcon}
+                    </IconParent>
+                )
+            }
+            <p>
+                {text}
+            </p>
         </div>
     )
 
     /** variant に合わせたボタンを生成する */
     const createButton = () => {
         // JSX で switch 使うの、関数にしないとダメ？
-        switch (variant ?? 'contained') {
+        switch (nonNullVariant) {
             case 'text':
                 return (
                     <div className={`rounded-full text-content-primary-light dark:text-content-primary-dark ${commonClassName}`}>

@@ -1,7 +1,8 @@
 "use client"
 import { useEffect, useState } from "react"
 import DateDiffTool from "../src/DateDiffTool"
-import MenuIcon from "../public/icon/material-menu.svg"
+import IconParent from "./IconParent"
+import UploadFileIcon from "../public/icon/upload_file.svg"
 
 /** DateCountText へ渡すデータ */
 type DateCountTextProps = {
@@ -24,7 +25,9 @@ export default function DateCountText({ timeTagTimeFormat, dateTimeFormat, creat
 
     return (
         <div className="flex flex-row flex-wrap items-center">
-            <MenuIcon className="w-5 h-5" />
+            <IconParent className="fill-content-primary-light dark:fill-content-primary-dark">
+                <UploadFileIcon />
+            </IconParent>
             <p className="text-content-primary-light dark:text-content-primary-dark">
                 <span>投稿日 : </span>
                 {/* time にしないと、Googleとかの検索結果に日付が出ない？ */}

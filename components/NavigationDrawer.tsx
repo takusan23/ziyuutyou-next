@@ -1,35 +1,38 @@
 import { ReactNode } from "react"
 import Link from "next/link"
-import HomeIcon from "../public/icon/material-home.svg"
 import RoundedImage from "./RoundedImage"
-import Spacer from "./Spacer"
 import DarkmodeSwitch from "./DarkmodeSwitch"
+import IconParent from "./IconParent"
+import HomeIcon from "../public/icon/home.svg"
+import BookIcon from "../public/icon/book.svg"
+import SellIcon from "../public/icon/sell.svg"
+import BubbleChart from "../public/icon/bubble_chart.svg"
 
 /** ナビゲーションドロワーの表示先、パス、コンポーネント */
 const DRAWER_LINK: NavigationDrawerItemProps[] = [
     {
         title: 'ホーム',
-        icon: <HomeIcon className="w-6 h-6 mr-5" />,
+        icon: <HomeIcon />,
         path: '/'
     },
     {
         title: '記事一覧',
-        icon: <HomeIcon className="w-6 h-6 mr-5" />,
+        icon: <BookIcon />,
         path: '/posts/page/1/'
     },
     {
         title: 'タグ一覧',
-        icon: <HomeIcon className="w-6 h-6 mr-5" />,
+        icon: <SellIcon />,
         path: '/posts/tag/all_tags/'
     },
     {
         title: '検索（ベータ）',
-        icon: <HomeIcon className="w-6 h-6 mr-5" />,
+        icon: <BubbleChart />,
         path: '/search/'
     },
     {
         title: 'このサイトについて',
-        icon: <HomeIcon className="w-6 h-6 mr-5" />,
+        icon: <BubbleChart />,
         path: '/pages/about/'
     },
 ]
@@ -48,9 +51,13 @@ type NavigationDrawerItemProps = {
 function NavigationDrawerItem({ title, icon, path }: NavigationDrawerItemProps) {
     return (
         <Link href={path}>
-            <div className="flex flex-row p-3 items-center">
-                {icon}
-                <p className="text-content-text-light dark:text-content-text-dark text-base">{title}</p>
+            <div className="flex flex-row p-3 items-center space-x-4">
+                <IconParent>
+                    {icon}
+                </IconParent>
+                <p className="text-content-text-light dark:text-content-text-dark text-base">
+                    {title}
+                </p>
             </div>
         </Link>
     )
@@ -59,7 +66,7 @@ function NavigationDrawerItem({ title, icon, path }: NavigationDrawerItemProps) 
 /** ナビゲーションドロワー */
 export default function NavigationDrawer() {
     return (
-        <div className="flex flex-col p-2 space-y-4 w-full">
+        <div className="flex flex-col p-2 w-full">
 
             <div className="flex flex-row p-2 items-center">
                 <RoundedImage src="/icon.png" />
