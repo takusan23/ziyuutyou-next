@@ -1,11 +1,10 @@
 import NextLinkButton from "./NextLinkButton"
 import MenuIcon from "../public/icon/material-menu.svg"
-import Spacer from "./Spacer"
 
 /** TagChipGroup へ渡すデータ */
 type TagChipGroupProps = {
     /** タグ一覧 */
-    tagList: Array<string>
+    tagList: string[]
 }
 
 /** タグを表示する */
