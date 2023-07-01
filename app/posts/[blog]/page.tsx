@@ -6,9 +6,9 @@ import TagChipGroup from "../../../components/TagChipGroup"
 import RoundedCornerBox from "../../../components/RoundedCorner"
 import { TocList, TocListLayout } from "../../../components/TocList"
 import MenuIcon from "../../../public/icon/material-menu.svg"
+import DateCountText from "../../../components/DateCountText"
 // 部分的に修正した css
 import "../../../styles/css/content.css"
-import DateCountText from "../../../components/DateCountText"
 
 /** 動的ルーティング */
 type PageProps = {
@@ -68,11 +68,12 @@ export default async function BlogDetailPage({ params }: PageProps) {
             </h1>
             <div>
                 <DateCountText
-                    dateTimeFormat={dateTimeFormat}
+                    timeTagTimeFormat={dateTimeFormat}
+                    dateTimeFormat={markdownData.createdAt}
                     createdAtUnixTime={markdownData.createdAtUnixTime} />
                 {textCountText}
             </div>
-            
+
             <TagChipGroup tagList={markdownData.tags} />
             {shareOrHistoryButton}
 
