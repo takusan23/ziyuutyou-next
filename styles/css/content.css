@@ -6,16 +6,20 @@ React の dangerouslySetInnerHTML を使って既にある HTML を埋め込む�
 一応、dangerouslySetInnerHTML の親の div に content_div っていう名前のクラス名をつけておいたので、
 .contentdiv タグ名 { }
 にすれば、dangerouslySetInnerHTML の中だけに適用される CSS になる。（記事を表示している部分以外には適用されない）
-*/
 
-/* 画像が大きくなりすぎないように */
-.content_div img {
-    max-width: 80%;
-}
+あと、dark:ユーティリティ で書いたあと、VSCode のフォーマットをかけると、dark: との間にスペースができるんだけど、スペースがあるとエラーが出ちゃうので注意してください。
+*/
 
 .content_div {
     /* リンクがはみ出るので */
     word-wrap: break-word;
+    /** 文字の色 */
+    @apply text-content-text-light dark:text-content-text-dark;
+}
+
+/* 画像が大きくなりすぎないように */
+.content_div img {
+    max-width: 80%;
 }
 
 /* コードブロック */
@@ -57,6 +61,7 @@ React の dangerouslySetInnerHTML を使って既にある HTML を埋め込む�
 .content_div h5,
 .content_div h6 {
     @apply text-content-primary-light;
+    @apply dark:text-content-primary-dark;
     @apply my-4;
     @apply font-medium;
 }

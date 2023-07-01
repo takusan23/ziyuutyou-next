@@ -18,7 +18,7 @@ type RoundedCornerBoxProps = {
 export default function RoundedCornerBox({ className, rounded, children }: RoundedCornerBoxProps) {
     // 変数埋め込みとかは使えない
     // https://tailwindcss.com/docs/content-configuration#class-detection-in-depth
-    const colorOrDefault = className ?? 'bg-container-primary-light'
+    const colorOrDefault = className ?? 'bg-container-primary-light dark:bg-container-primary-dark'
     let roundedClassName: string
     switch (rounded ?? 'small') {
         case 'small':

@@ -46,7 +46,7 @@ export default async function PageDetailPage({ params }: PageProps) {
     const textCountText = (
         <div className="flex flex-row flex-wrap items-center">
             <MenuIcon className="w-5 h-5" />
-            <p className="text-content-primary-light">
+            <p className="text-content-primary-light dark:text-content-primary-dark">
                 {`文字数(だいたい) : ${markdownData.textCount}`}
             </p>
         </div>
@@ -63,7 +63,7 @@ export default async function PageDetailPage({ params }: PageProps) {
     return (
         <div className="flex flex-col space-y-4">
 
-            <h1 className="text-content-primary-light text-3xl">
+            <h1 className="text-content-primary-light dark:text-content-primary-dark text-3xl">
                 {markdownData.title}
             </h1>
             <div>

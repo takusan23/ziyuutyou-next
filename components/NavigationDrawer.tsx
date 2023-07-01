@@ -3,6 +3,7 @@ import Link from "next/link"
 import HomeIcon from "../public/icon/material-home.svg"
 import RoundedImage from "./RoundedImage"
 import Spacer from "./Spacer"
+import DarkmodeSwitch from "./DarkmodeSwitch"
 
 /** ナビゲーションドロワーの表示先、パス、コンポーネント */
 const DRAWER_LINK: NavigationDrawerItemProps[] = [
@@ -47,9 +48,9 @@ type NavigationDrawerItemProps = {
 function NavigationDrawerItem({ title, icon, path }: NavigationDrawerItemProps) {
     return (
         <Link href={path}>
-            <div className="flex flex-row p-3 items-center text-content-text-light">
+            <div className="flex flex-row p-3 items-center">
                 {icon}
-                <p className="text-base">{title}</p>
+                <p className="text-content-text-light dark:text-content-text-dark text-base">{title}</p>
             </div>
         </Link>
     )
@@ -58,19 +59,17 @@ function NavigationDrawerItem({ title, icon, path }: NavigationDrawerItemProps) 
 /** ナビゲーションドロワー */
 export default function NavigationDrawer() {
     return (
-        <div className="flex flex-col pl-2 pr-2 w-full">
-
-            <Spacer space="small" />
+        <div className="flex flex-col pl-2 pr-2 space-y-4 w-full">
 
             <div className="flex flex-row p-2 items-center">
                 <RoundedImage src="/icon.png" />
                 <div className="flex flex-col text-content-text-light">
-                    <p className="text-base">たくさんの自由帳</p>
-                    <p className="text-sm">Androidのお話</p>
+                    <p className="text-content-text-light dark:text-content-text-dark text-base">たくさんの自由帳</p>
+                    <p className="text-content-text-light dark:text-content-text-dark text-sm">Androidのお話</p>
                 </div>
             </div>
 
-            <Spacer space="small" />
+            <DarkmodeSwitch />
 
             <nav>
                 {

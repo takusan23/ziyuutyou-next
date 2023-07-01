@@ -14,11 +14,12 @@ type LinkCardProps = {
 export default function LinkCard({ linkList }: LinkCardProps) {
     return (
         <RoundedCornerBox rounded="large">
-            <div className="p-3">
-                <h2 className="text-2xl text-content-primary-light">
+            <div className="flex flex-col p-3 space-y-2">
+
+                <h2 className="text-content-primary-light dark:text-content-primary-dark text-2xl">
                     リンク
                 </h2>
-                <p>
+                <p className="text-content-text-light dark:text-content-text-dark ">
                     Twitterが良いと思います
                 </p>
 
@@ -26,7 +27,7 @@ export default function LinkCard({ linkList }: LinkCardProps) {
                     list={linkList}
                     content={(className, linkData) => (
                         <div
-                            className={`${className} bg-background-light`}
+                            className={`${className} bg-background-light dark:bg-background-dark`}
                             key={linkData.href}
                         >
                             <Link
@@ -35,8 +36,8 @@ export default function LinkCard({ linkList }: LinkCardProps) {
                             >
                                 <div className="flex flex-row p-3 items-center">
                                     <div className="flex flex-col grow">
-                                        <p className="text-base">{linkData.name}</p>
-                                        <p className="text-sm">{linkData.description}</p>
+                                        <p className="text-content-text-light dark:text-content-text-dark text-base">{linkData.name}</p>
+                                        <p className="text-content-text-light dark:text-content-text-dark text-sm">{linkData.description}</p>
                                     </div>
                                     <HomeIcon className="w-5 h-5" />
                                 </div>

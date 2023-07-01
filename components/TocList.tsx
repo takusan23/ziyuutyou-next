@@ -47,10 +47,12 @@ export function TocList({ tocDataList }: TocListProps) {
                         className={calcPaddingLeft(tocData.level)}
                     >
                         <Link
-                            className="no-underline text-content-primary-light"
+                            className="no-underline text-content-primary-light dark:text-content-primary-dark"
                             href={tocData.hashTag}
                         >
-                            {tocData.label}
+                            <p className="text-content-primary-light dark:text-content-primary-dark ">
+                                {tocData.label}
+                            </p>
                         </Link>
                     </li>
                 ))
@@ -76,7 +78,7 @@ export function TocListLayout({ children, secondary }: TocListLayoutProps) {
             <div className={`flex-col sticky top-0 self-start hidden ${TOC_LIST_WIDTH} lg:flex`}>
                 <RoundedCornerBox
                     rounded="large"
-                    className="ml-2 bg-container-secondary-light"
+                    className="ml-2 bg-container-secondary-light dark:bg-container-secondary-dark"
                 >
                     {secondary}
                 </RoundedCornerBox>

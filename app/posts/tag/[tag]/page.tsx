@@ -33,10 +33,10 @@ export default async function TagListPage({ params }: PageProps) {
             <div className="flex flex-col space-y-4">
 
                 <div>
-                    <h1 className="text-content-primary-light text-3xl">
+                    <h1 className="text-content-primary-light dark:text-content-primary-dark text-3xl">
                         {unEscapeText}
                     </h1>
-                    <h3 className="text-content-primary-light text-lg">
+                    <h3 className="text-content-primary-light dark:text-content-primary-dark text-lg">
                         {`${tagFilterBlogList.totalCount} 件`}
                     </h3>
                 </div>
@@ -44,7 +44,7 @@ export default async function TagListPage({ params }: PageProps) {
                 <RoundedCornerList
                     list={tagFilterBlogList.result}
                     content={(className, item) => (
-                        <div className={`bg-container-primary-light ${className}`}>
+                        <div className={`bg-container-primary-light dark:bg-container-primary-dark ${className}`}>
                             <BlogListItem blogItem={item} />
                         </div>
                     )}

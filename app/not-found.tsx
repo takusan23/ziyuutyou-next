@@ -19,7 +19,7 @@ export default function NotFound() {
                 height={200}
                 width={400}
             />
-            <h1 className="text-content-primary-light text-3xl">
+            <h1 className="text-content-primary-light dark:text-content-primary-dark text-3xl">
                 404 - 見つかりませんでした
             </h1>
             <p>そこになければ無いですね。</p>

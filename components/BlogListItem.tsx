@@ -17,11 +17,11 @@ export default function BlogListItem({ blogItem }: BlogItemProps) {
         <div className="flex flex-col p-5">
 
             <Link href={blogItem.link}>
-                <h2 className="text-content-primary-light text-2xl underline">
+                <h2 className="text-content-primary-light dark:text-content-primary-dark text-2xl underline">
                     {blogItem.title}
                 </h2>
             </Link>
-            <p className="text-content-primary-light py-2 text-sm">
+            <p className="text-content-primary-light dark:text-content-primary-dark py-2 text-sm">
                 {blogItem.description}
             </p>
 
@@ -31,7 +31,7 @@ export default function BlogListItem({ blogItem }: BlogItemProps) {
             <Spacer space="small" />
             <div className="flex flex-row items-center">
                 <MenuIcon className="h-5 w-5" />
-                <p className="text-content-primary-light text-md">
+                <p className="text-content-primary-light dark:text-content-primary-dark text-md">
                     <time>{blogItem.createdAt}</time>
                     <span className="ml-1">投稿</span>
                 </p>

@@ -17,10 +17,10 @@ export default async function ClientAllTagPage() {
         <div className="flex flex-col space-y-4">
 
             <div>
-                <h1 className="text-content-primary-light text-3xl">
+                <h1 className="text-content-primary-light dark:text-content-primary-dark text-3xl">
                     タグ一覧
                 </h1>
-                <h3 className="text-content-primary-light text-lg">
+                <h3 className="text-content-primary-light dark:text-content-primary-dark text-lg">
                     {`${tagDataList.length} 件`}
                 </h3>
             </div>

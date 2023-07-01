@@ -40,11 +40,11 @@ export default function ResponsiveLayout({ navigationDrawer, title, children }: 
                     <div className="fixed z-10">
                         <div className="flex flex-row h-screen w-screen">
                             {/* ナビゲーションドロワー */}
-                            <div className={`${NAVIGATION_DRAWER_WIDTH} flex-none drop-shadow-md bg-background-light`}>
+                            <div className={`${NAVIGATION_DRAWER_WIDTH} flex-none drop-shadow-md bg-background-light dark:bg-background-dark`}>
                                 {navigationDrawer}
                             </div>
                             {/* ナビゲーションドロワー以外を押したら閉じるように */}
-                            <div className="grow bg-background-light opacity-80" onClick={() => setDrawerOpen(false)} />
+                            <div className="grow bg-background-light dark:bg-background-dark opacity-80" onClick={() => setDrawerOpen(false)} />
                         </div>
                     </div>
                 )

@@ -38,7 +38,7 @@ function MakingAppNavigationRail({ platformNameToIconMap, onMenuClick }: MakingA
                         onClick={() => onMenuClick(name)}
                     >
                         <div className="sm:mr-2">{icon}</div>
-                        <p className="hidden sm:block">{name}</p>
+                        <p className="text-content-text-light dark:text-content-text-dark hidden sm:block">{name}</p>
                     </div>
                 ))
             }
@@ -59,13 +59,13 @@ function MakingAppList({ list }: MakingAppListProps) {
             list={list}
             content={(className, item) => (
                 <div
-                    className={`p-3 bg-background-light ${className}`}
+                    className={`p-3 bg-background-light dark:bg-background-dark ${className}`}
                     key={item.link}
                 >
-                    <h3 className="text-2xl text-content-text-light">
+                    <h3 className="text-content-primary-light dark:text-content-primary-dark text-2xl">
                         {item.name}
                     </h3>
-                    <p className="text-content-text-light">
+                    <p className="text-content-text-light dark:text-content-text-dark">
                         {item.description}
                     </p>
                     <Spacer space="small" />
@@ -131,7 +131,7 @@ export default function MakingAppCard({ makingAppList }: MakingAppCardProps) {
     return (
         <RoundedCornerBox rounded="large">
             <div className="pt-3">
-                <h2 className="text-2xl px-3 text-content-primary-light">
+                <h2 className="text-2xl px-3 text-content-primary-light dark:text-content-primary-dark">
                     作ったもの
                 </h2>
                 <div className="flex flex-row py-2">

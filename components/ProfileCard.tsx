@@ -30,15 +30,15 @@ export default function ProfileCard({ randomMessageList }: ProfileCardProps) {
             <div className="flex flex-row items-center p-3">
                 <RoundedImage src="/icon.png" />
                 <div className="flex-col">
-                    <p className="text-base">たくさん</p>
-                    <p className="text-sm">@takusan_23</p>
+                    <p className="text-content-text-light dark:text-content-text-dark text-base">たくさん</p>
+                    <p className="text-content-text-light dark:text-content-text-dark text-sm">@takusan_23</p>
                 </div>
             </div>
 
             {/* next/imageの最適化機能、Vercel以外では使えないのでimg */}
             <img className="h-[200px] w-full object-cover" src={profileCardJpegImg.src} />
 
-            <div className="text-content-text-light p-3">
+            <div className="text-content-text-light dark:text-content-text-dark p-3">
                 {message}
             </div>
 
