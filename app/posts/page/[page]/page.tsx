@@ -1,6 +1,7 @@
 import { Metadata } from "next"
 import ContentFolderManager from "../../../../src/ContentFolderManager"
 import ClientBlogList from "./ClientBlogList"
+import EnvironmentTool from "../../../../src/EnvironmentTool"
 
 /** 一度に取得する件数 */
 const BLOG_SIZE_LIMIT = 10
@@ -12,7 +13,7 @@ type PageProps = {
 
 /** head に値を入れる */
 export const metadata: Metadata = {
-    title: '記事一覧 - たくさんの自由帳'
+    title: `記事一覧 - ${EnvironmentTool.SITE_NAME}`
 }
 
 /** 記事一覧ページ */

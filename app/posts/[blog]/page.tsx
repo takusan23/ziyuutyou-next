@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import ContentFolderManager from "../../../src/ContentFolderManager";
 import ClientBlogDetailPage from "./ClientBlogDetailPage";
-import UrlTool from "../../../src/UrlTool";
+import EnvironmentTool from "../../../src/EnvironmentTool";
 
 /** 動的ルーティング */
 type PageProps = {
@@ -11,8 +11,8 @@ type PageProps = {
 /** head に値を入れる */
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
     const markdownData = await ContentFolderManager.getBlogItem(params.blog)
-    const ogpTitle = `${markdownData.title} - たくさんの自由帳`
-    const ogpUrl = `${UrlTool.BASE_URL}${markdownData.link}`
+    const ogpTitle = `${markdownData.title} - ${EnvironmentTool.SITE_NAME}`
+    const ogpUrl = `${EnvironmentTool.BASE_URL}${markdownData.link}`
 
     return {
         title: ogpTitle,

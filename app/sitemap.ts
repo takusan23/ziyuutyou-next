@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import UrlTool from "../src/UrlTool";
+import EnvironmentTool from "../src/EnvironmentTool";
 import ContentFolderManager from "../src/ContentFolderManager";
 
 /**
@@ -12,7 +12,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // 静的ページ
     const staticPathList: MetadataRoute.Sitemap = [
         {
-            url: `${UrlTool.BASE_URL}/`,
+            url: `${EnvironmentTool.BASE_URL}/`,
             lastModified: currentTime
         }
     ]
@@ -20,14 +20,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // ブログ記事
     const blogPathList = (await ContentFolderManager.getBlogNameList())
         .map(name => ({
-            url: `${UrlTool.BASE_URL}/posts/${name}/`,
+            url: `${EnvironmentTool.BASE_URL}/posts/${name}/`,
             lastModified: currentTime
         }))
 
     // 固定ページ
     const pagePathList = (await ContentFolderManager.getPageNameList())
         .map(name => ({
-            url: `${UrlTool.BASE_URL}/pages/${name}/`,
+            url: `${EnvironmentTool.BASE_URL}/pages/${name}/`,
             lastModified: currentTime
         }))
 

@@ -1,10 +1,11 @@
 import { Metadata } from "next";
 import JsonFolderManager from "../src/JsonFolderManager";
 import ClientHomePage from "./ClientHomePage";
+import EnvironmentTool from "../src/EnvironmentTool";
 
 /** <head> に入れる値 */
 export const metadata: Metadata = {
-    title: 'トップページ - たくさんの自由帳'
+    title: `トップページ - ${EnvironmentTool.SITE_NAME}`
 }
 
 /** 最初に表示されるページ */

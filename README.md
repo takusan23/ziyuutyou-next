@@ -68,13 +68,13 @@ npm run deploy
 - .github/workflows
     - GitHub Actions にやらせる作業を書いたファイルです
     - GitHubのWeb上で編集することをおすすめします
+- app
+    - 画面遷移等のページ
+    - AndroidのFragmentみたいな
 - content
     - 記事のMarkdown とか 書き出し時に呼び出すJSONとか
 - components
     - MUIには無いUI部品
-- pages
-    - 画面遷移等のページ
-    - AndroidのFragmentみたいな
 - public
     - アイコン等のリソース
 - src
@@ -82,3 +82,5 @@ npm run deploy
     - 記事読み込みクラスとか
 - styles/css
     - ほとんどMUIがやってるけどちょっとだけcssを書いたので
+- .env
+    - 環境変数。サイトのURL など

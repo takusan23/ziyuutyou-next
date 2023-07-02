@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import UrlTool from "../../../../src/UrlTool";
+import EnvironmentTool from "../../../../src/EnvironmentTool";
 import ContentFolderManager from "../../../../src/ContentFolderManager";
 import ClientTagListPage from "./ClientTagListPage";
 
@@ -11,10 +11,10 @@ type PageProps = {
 /** head に値を入れる */
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
     return {
-        title: `タグ名:${params.tag} - たくさんの自由帳`,
+        title: `タグ名:${params.tag} - ${EnvironmentTool.SITE_NAME}`,
         alternates: {
             // 正規URL。 送信された URL が正規 URL として選択されていません 対策
-            canonical: `${UrlTool.BASE_URL}/${params.tag}/`
+            canonical: `${EnvironmentTool.BASE_URL}/${params.tag}/`
         },
     }
 }

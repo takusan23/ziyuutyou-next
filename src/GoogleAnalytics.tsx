@@ -4,6 +4,7 @@
 import { useEffect } from 'react'
 import { usePathname, useSearchParams } from 'next/navigation'
 import Script from "next/script"
+import EnvironmentTool from './EnvironmentTool'
 
 /**
  * 参考
@@ -14,10 +15,10 @@ import Script from "next/script"
  */
 
 /** Google アナリティクス (UA) の 測定ID */
-export const UA_TRACKING_ID = `UA-149954537-2`
+const UA_TRACKING_ID = EnvironmentTool.UA_TRACKING_ID
 
 /** Google アナリティクス (GA4) の 測定ID */
-export const GA_TRACKING_ID = `G-LH09FLQ8DX`
+const GA_TRACKING_ID = EnvironmentTool.GA_TRACKING_ID
 
 /** 開発モード。本番（意味深）だけアナリティクスを動作させるため */
 const isDevelopment = process.env.NODE_ENV === 'development'

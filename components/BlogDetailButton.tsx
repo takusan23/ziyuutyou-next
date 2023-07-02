@@ -1,7 +1,8 @@
 import HistoryOutlined from "@mui/icons-material/HistoryOutlined"
-import Twitter from "@mui/icons-material/Twitter" 
+import Twitter from "@mui/icons-material/Twitter"
 import { Button } from "@mui/material"
 import React from "react"
+import EnvironmentTool from "../src/EnvironmentTool"
 
 /** TwitterShareButton へ渡すデータ */
 type TwitterShareButtonProps = {
@@ -30,7 +31,7 @@ type GitHubHistoryButtonProps = {
 
 /** GitHubの履歴を出すボタン */
 export const GitHubHistoryButton: React.FC<GitHubHistoryButtonProps> = (props) => {
-    const href = `https://github.com/takusan23/ziyuutyou-next/commits/main/content/posts/${props.fileName}.md`
+    const href = `${EnvironmentTool.REPOSITORY_URL}/commits/main/content/posts/${props.fileName}.md`
     return (
         <Button href={href} startIcon={<HistoryOutlined />} >
             GitHubで開く

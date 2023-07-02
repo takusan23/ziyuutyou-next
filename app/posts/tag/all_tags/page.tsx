@@ -1,10 +1,11 @@
 import { Metadata } from "next";
 import ClientAllTagsPage from "./ClientAllTagPage";
 import ContentFolderManager from "../../../../src/ContentFolderManager";
+import EnvironmentTool from "../../../../src/EnvironmentTool";
 
 /** head に値を入れる */
 export const metadata: Metadata = {
-    title: 'タグ一覧 - たくさんの自由帳'
+    title: `タグ一覧 - ${EnvironmentTool.SITE_NAME}`
 }
 
 /** タグ一覧ページ */

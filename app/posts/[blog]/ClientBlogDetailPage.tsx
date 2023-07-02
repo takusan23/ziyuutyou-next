@@ -12,7 +12,7 @@ import Spacer from "../../../components/Spacer"
 import TagChipGroup from "../../../components/TagChipGroup"
 import RoundedCornerBox from "../../../components/RoundedCorner"
 import { TocList, TocListLayout } from "../../../components/TocList"
-import UrlTool from "../../../src/UrlTool"
+import EnvironmentTool from "../../../src/EnvironmentTool"
 
 /** 目次の幅 */
 const TOC_LIST_WIDTH = 300
@@ -26,8 +26,8 @@ type ClientBlogDetailPageProps = {
 /** ブログ本文 */
 export default function ClientBlogDetailPage({ markdownData }: ClientBlogDetailPageProps) {
     const theme = useTheme()
-    const ogpTitle = `${markdownData.title} - たくさんの自由帳`
-    const ogpUrl = `${UrlTool.BASE_URL}${markdownData.link}`
+    const ogpTitle = `${markdownData.title} - ${EnvironmentTool.SITE_NAME}`
+    const ogpUrl = `${EnvironmentTool.BASE_URL}${markdownData.link}`
     // timeタグに入れるやつ、これ必要？ yyyy-MM-dd
     const dateTimeFormat = markdownData.createdAt.replace(/\//g, '-')
 
