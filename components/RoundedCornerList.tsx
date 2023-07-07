@@ -19,7 +19,7 @@ type RoundedCornerListProps<T> = {
 export default function RoundedCornerList<T>({ list, content }: RoundedCornerListProps<T>) {
     // flex つけないとマージンうまくかかんない？
     return (
-        <div className="flex flex-col space-y-2">
+        <div className="flex flex-col w-full space-y-2">
             {
                 list.map((item, index) => {
 

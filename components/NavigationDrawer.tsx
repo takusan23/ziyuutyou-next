@@ -6,7 +6,9 @@ import IconParent from "./IconParent"
 import HomeIcon from "../public/icon/home.svg"
 import BookIcon from "../public/icon/book.svg"
 import SellIcon from "../public/icon/sell.svg"
+import SearchIcon from "../public/icon/search.svg"
 import BubbleChart from "../public/icon/bubble_chart.svg"
+import EnvironmentTool from "../src/EnvironmentTool"
 
 /** ナビゲーションドロワーの表示先、パス、コンポーネント */
 const DRAWER_LINK: NavigationDrawerItemProps[] = [
@@ -27,14 +29,15 @@ const DRAWER_LINK: NavigationDrawerItemProps[] = [
     },
     {
         title: '検索（ベータ）',
-        icon: <BubbleChart />,
-        path: '/search/'
+        icon: <SearchIcon />,
+        path: '/search/',
+        isHide: !EnvironmentTool.SEARCH_API_URL // 検索 API が実装されるまで隠す
     },
     {
         title: 'このサイトについて',
         icon: <BubbleChart />,
         path: '/pages/about/'
-    },
+    }
 ]
 
 /** NavigationDraweItem へ渡すデータ */
@@ -45,6 +48,8 @@ type NavigationDrawerItemProps = {
     icon: ReactNode
     /** 遷移先パス */
     path: string
+    /** 利用できない場合は true */
+    isHide?: boolean
 }
 
 /** ナビゲーションドロワーの各メニュー */
@@ -80,14 +85,16 @@ export default function NavigationDrawer() {
 
             <nav>
                 {
-                    DRAWER_LINK.map(props => (
-                        <NavigationDrawerItem
-                            key={props.path}
-                            title={props.title}
-                            icon={props.icon}
-                            path={props.path}
-                        />
-                    ))
+                    DRAWER_LINK
+                        .filter(menu => !menu.isHide)
+                        .map(menu => (
+                            <NavigationDrawerItem
+                                key={menu.path}
+                                title={menu.title}
+                                icon={menu.icon}
+                                path={menu.path}
+                            />
+                        ))
                 }
             </nav>
         </div>

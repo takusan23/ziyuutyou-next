@@ -73,21 +73,21 @@ export default function Button({ text, startIcon, variant, isDisabled, size }: B
         switch (nonNullVariant) {
             case 'text':
                 return (
-                    <div className={`rounded-full text-content-primary-light dark:text-content-primary-dark ${commonClassName}`}>
+                    <button className={`rounded-full text-content-primary-light dark:text-content-primary-dark cursor-pointer ${commonClassName}`}>
                         {createButtonContent}
-                    </div>
+                    </button>
                 )
             case 'outlined':
                 return (
-                    <div className={`rounded-full border-2 border-content-primary-light text-content-text-light dark:text-content-text-dark ${buttonAlpha}`}>
+                    <button className={`rounded-full border-2 border-content-primary-light text-content-text-light dark:text-content-text-dark cursor-pointer ${buttonAlpha}`}>
                         {createButtonContent}
-                    </div>
+                    </button>
                 )
             case 'contained':
                 return (
-                    <div className={`rounded-full bg-content-primary-light text-[#ffffff] ${buttonAlpha}`}>
+                    <button className={`rounded-full bg-content-primary-light text-[#ffffff] cursor-pointer ${buttonAlpha}`}                    >
                         {createButtonContent}
-                    </div>
+                    </button>
                 )
         }
     }
