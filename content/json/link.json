@@ -1,6 +1,11 @@
 {
     "link": [
         {
+            "name": "Misskey",
+            "description": "@takusan_23@diary.negitoro.dev",
+            "href": "https://diary.negitoro.dev/@takusan_23"
+        },
+        {
             "name": "Twitter",
             "description": "@takusan__23",
             "href": "https://twitter.com/takusan__23"
