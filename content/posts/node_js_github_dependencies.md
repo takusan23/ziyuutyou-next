@@ -18,7 +18,20 @@ Only the owner of this repository can see this message.
 
 ![Imgur](https://imgur.com/9yLmNje.png)
 
-## 直し方
+## 自分で入れたライブラリの場合は
+
+`npm i ライブラリ名`
+
+すれば良いはず
+
+## 直し方1 ( 追記 2023/07/11 )
+自分で入れたライブラリではない（ライブラリの中で使われているライブラリの場合）  
+もしかしたらライブラリ開発者さんが対応してくれているかもしれません。
+
+`package-lock.json` と `node_modules` を消した後、ターミナル（コマンドプロンプト PowerShellとか）を開いて  
+`npm i` をすると対応終了するかもしれません。
+
+## 直し方2
 
 とりあえず `package.json` があるフォルダ内でターミナル（PowerShellとか）を開き、 `npm audit` を叩きます。  
 

@@ -17,7 +17,7 @@ tags:
 
 ![Imgur](https://imgur.com/tB5j7YX.png)
 
-個人的にはこの二人のルートが好きです、  
+個人的には 満留さん と 千羽ちゃん のルートが好きです、  
 Aルートのほうが好みでした。
 
 ![Imgur](https://imgur.com/UTyFiFD.png)
@@ -28,13 +28,16 @@ Aルートのほうが好みでした。
 
 ![Imgur](https://imgur.com/bOC7SP1.png)
 
-ルート選択、妹ちゃんルートはちゃんと午後からしか出現しないようになってた（それはそうか
+↑ ヒロイン視点がめっちゃいい
 
 ![Imgur](https://imgur.com/PYaEeQ2.png)
 
+ルート選択、妹ちゃんルートはちゃんと午後からしか出現しないようになってた（それはそうか
+
 ![Imgur](https://imgur.com/d4bVeUR.png)
 
-あつい・・・あついね
+あつい・・・あついね  
+予想よりもめっちゃよかったです！！おすすめ（様子見しようかと思ってたけど予約してよかった）
 
 あとめっちゃ関係ないですが`Misskeyのお一人様インスタンス`立ててみました。しばらく見てないうちに`インスタンス`ではなく`サーバー`って言うようになったらしい。  
 こちらです。立ててしまった以上使わないとお金かかかるので使います・・・多分（？？？）
@@ -46,7 +49,6 @@ Aルートのほうが好みでした。
 
 なぜか私の鯖からリモートのユーザー情報が取れない鯖があるんですけどよく分かりません・・・  
 io鯖とかは普通にリモートフォロー出来たのでほんとに謎です・・・
-
 
 # 本題
 `Next.js`の`AppRouter`に移行しようと思います。いい加減やります。  
@@ -938,11 +940,15 @@ export default function useAndroidStatusBarColor(colorCode: string) {
 ```
 
 # 動きました！
-差分はこんな感じになります。  
+`pages`→`app`差分はこんな感じになります。  
 
 https://github.com/takusan23/ziyuutyou-next/pull/1
 
-実際に適当に公開しても問題なさそうだったので、人がいなさそうな時にあげようかな。いや別にいつでも良いか・・？
+実際に適当に公開しても問題なさそうだったので、人がいなさそうな時にあげようかな。いや別にいつでも良いか・・？  
+
+## 2023/07/11 午前2~3時 くらいに入れました
+`Next.js` `AppRouter` 対応を入れます。  
+見てる人無さそうだったので（そもそもあんまり居ない；；
 
 # おわりに
 めちゃ関係ないけど`Tailwind CSS`ﾁｮｯﾄだけ触ってみましたが、これで良くない？  
@@ -955,8 +961,3 @@ https://github.com/takusan23/ziyuutyou-next/pull/1
 ストレージがたりない！！！
 
 `[Error: ENOSPC: no space left on device, write]`
-
-# おわりに3
-これなに？  
-
-`<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: TypeError: Cannot read properties of undefined (reading 'length')`
