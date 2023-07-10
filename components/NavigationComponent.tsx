@@ -12,6 +12,7 @@ import ListItemText from "@mui/material/ListItemText"
 import Link from "next/link"
 import DarkmodeSwitch from "./DarkmodeSwitch"
 import NextAvater from "./NextAvater"
+import EnvironmentTool from "../src/EnvironmentTool"
 
 /** ナビゲーションドロワーに表示するメニュー */
 const linkList = [
@@ -71,7 +72,7 @@ const NavigationHeader = () => {
         avatar={
             <NextAvater path="/icon.png" />
         }
-        title="たくさんの自由帳"
+        title={EnvironmentTool.SITE_NAME}
         subheader="Androidのお話"
     />)
 }

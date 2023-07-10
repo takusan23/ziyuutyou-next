@@ -63,18 +63,30 @@ npm run deploy
 私だけかもしれませんが、`Netlify`ではビルドできなくなってしまったので、  
 もしどうやっても成功しない場合はこのリポジトリの`GitHub Actions`を参考に`GitHub Actions`でビルドしたあとに`Netlify`で書き出したファイルをホスティングするようにしてみてください。
 
+## 環境変数
+`.env`ファイルに公開先の URL などの値を入れています。  
+`EnvironmentTool.ts`から値を参照できるようにしています。  
+
+| 名前                              | 説明                                                                    |
+|-----------------------------------|-------------------------------------------------------------------------|
+| NEXT_PUBLIC_SITE_BASE_URL         | WebサイトのURLのドメインまで。`https://takusan.negitoro.dev/`みたいな。 |
+| NEXT_PUBLIC_SITE_NAME             | サイト名です。`<title>`タグとかで使われます。                           |
+| NEXT_PUBLIC_GITHUB_REPOSITORY_URL | `GitHub`のリポジトリです。記事本文ページの`GitHubで開く`で使われます。  |
+| NEXT_PUBLIC_UA_TRACKING_ID        | `Google アナリティクス`の`ユニバーサルアナリティクス`の`測定ID`です。   |
+| NEXT_PUBLIC_GA_TRACKING_ID        | `Google アナリティクス`の`GA4`の`測定ID`です。                          |
+
 ## ファイル構造
 
 - .github/workflows
     - GitHub Actions にやらせる作業を書いたファイルです
     - GitHubのWeb上で編集することをおすすめします
+- app
+    - 画面遷移等のページ
+    - AndroidのFragmentみたいな
 - content
     - 記事のMarkdown とか 書き出し時に呼び出すJSONとか
 - components
     - MUIには無いUI部品
-- pages
-    - 画面遷移等のページ
-    - AndroidのFragmentみたいな
 - public
     - アイコン等のリソース
 - src
@@ -82,3 +94,5 @@ npm run deploy
     - 記事読み込みクラスとか
 - styles/css
     - ほとんどMUIがやってるけどちょっとだけcssを書いたので
+- .env
+    - 環境変数。サイトのURL など

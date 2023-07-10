@@ -4,6 +4,7 @@ import BlogTitleBar from "./BlogTitleBar"
 import NavigationLinkDrawer from "./NavigationComponent"
 import CssBaseline from '@mui/material/CssBaseline';
 import Toolbar from '@mui/material/Toolbar';
+import EnvironmentTool from '../src/EnvironmentTool';
 
 /** Layout へ渡すデータ */
 type LayoutProps = {
@@ -11,6 +12,8 @@ type LayoutProps = {
     isDarkmode: boolean,
     /** スイッチ切り替えたら呼ばれる */
     onDarkmodeChange: (boolean) => void,
+    /** 子要素 */
+    children: React.ReactNode
 }
 
 /**
@@ -32,7 +35,7 @@ const Layout: React.FC<LayoutProps> = ({ children, ...props }) => {
             <CssBaseline />
             {/* 関数を引数に持つ感じ、JetpackComposeみたいでいいね */}
             <BlogTitleBar
-                title="たくさんの自由帳"
+                title={EnvironmentTool.SITE_NAME}
                 drawerWidth={drawerWidth}
                 onDrawerMenuClick={() => setOpen(true)}
             />

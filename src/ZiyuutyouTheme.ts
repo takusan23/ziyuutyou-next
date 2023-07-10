@@ -44,7 +44,7 @@ const useCustomTheme = (isDarkmode: boolean) => {
             },
             typography: {
                 fontFamily: [
-                    'Koruri Regular'
+                    'var(--koruri-font)'
                 ].join(','),
             }
         }), [isDarkmode])

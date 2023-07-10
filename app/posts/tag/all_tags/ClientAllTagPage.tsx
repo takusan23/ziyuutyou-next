@@ -1,42 +1,37 @@
+"use client"
+
+import TagData from "../../../../src/data/TagData";
 import LocalOfferOutlined from "@mui/icons-material/LocalOfferOutlined"
 import { Box, Chip } from "@mui/material"
 import Typography from "@mui/material/Typography"
-import { GetStaticProps } from "next"
-import Head from "next/head"
 import Link from "next/link"
 import React from "react"
-import Spacer from "../../../components/Spacer"
-import ContentFolderManager from "../../../src/ContentFolderManager"
-import TagData from "../../../src/data/TagData"
+import Spacer from "../../../../components/Spacer";
 
-/** AllTags へ渡すデータ */
-type AllTagsProps = {
+/** ClientAllTagsPage へ渡すデータ */
+type ClientAllTagsPageProps = {
     /** タグのデータ配列 */
-    tags: Array<TagData>,
+    tags: TagData[],
     /** タグ件数 */
     tagCount: number,
 }
 
-/** タグ一覧 */
-const AllTags: React.FC<AllTagsProps> = (props) => {
+/** タグ一覧ページ */
+export default function ClientAllTagsPage({ tagCount, tags }: ClientAllTagsPageProps) {
     return (
         <>
-            <Head>
-                <title>タグ一覧 - たくさんの自由帳</title>
-            </Head>
-
             <Typography color="primary.main">
                 <span style={{ fontSize: 30 }}>
                     タグ一覧
                 </span>
             </Typography>
             <Typography color="primary.main">
-                {`${props.tagCount} 件`}
+                {`${tagCount} 件`}
             </Typography>
             <Spacer value={2} />
 
             <Box sx={{ padding: 0 }}>
-                {props.tags.map((data) => (
+                {tags.map((data) => (
                     <Link
                         style={{
                             textDecoration: 'none',
@@ -60,17 +55,4 @@ const AllTags: React.FC<AllTagsProps> = (props) => {
             </Box>
         </>
     )
-}
-
-export default AllTags
-
-/** タグ一覧を用意する */
-export const getStaticProps: GetStaticProps<AllTagsProps> = async context => {
-    const tagDataList = await ContentFolderManager.getAllTagDataList()
-    return {
-        props: {
-            tags: tagDataList,
-            tagCount: tagDataList.length
-        }
-    }
 }

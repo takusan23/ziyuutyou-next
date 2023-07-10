@@ -6,6 +6,8 @@ type RoundedCornerProps = {
     value?: number,
     /** 色。カラーコードで。省略時 <Papger> の BackgroundColor */
     colorCode?: string,
+    /** 子要素 */
+    children: React.ReactNode
 }
 
 /** 角丸なBox */
