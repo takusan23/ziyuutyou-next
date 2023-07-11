@@ -1,4 +1,3 @@
-import { CSSProperties } from "react"
 import Link from "next/link"
 import Button, { ButtonProps } from "./Button"
 
@@ -13,7 +12,7 @@ export default function NextLinkButton({ href, text, startIcon, variant, isDisab
 
     return (
         <Link
-            className="no-underline text-inherit"
+            className="flex items-center no-underline text-inherit"
             href={href}
         >
             <Button

@@ -32,8 +32,8 @@ type GitHubHistoryButtonProps = {
 }
 
 /** GitHubの履歴を出すボタン */
-export const GitHubHistoryButton: React.FC<GitHubHistoryButtonProps> = (props) => {
-    const href = `${EnvironmentTool.REPOSITORY_URL}/commits/main/content/posts/${props.fileName}.md`
+export function GitHubHistoryButton({ fileName }: GitHubHistoryButtonProps) {
+    const href = `${EnvironmentTool.REPOSITORY_URL}/commits/main/content/posts/${fileName}.md`
     return (
         <NextLinkButton
             variant="text"
