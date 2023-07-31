@@ -46,10 +46,6 @@ thx!!!!!!!!!!
 - Mastodon / Misskey のアカウント
     - 他からアクセスできるか確認用
 
-## 本家との差分
-- Cloudflare ではなく nginx + certbot
-- オブジェクトストレージ に s3。間に nginx を経由する
-
 ## 構成図？
 
 ![Imgur](https://imgur.com/A4ruvgv.png)
