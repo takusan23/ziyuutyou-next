@@ -540,7 +540,8 @@ sudo systemctl stop misskey
 
 ```bash
 sudo su - misskey
-vim ~/misskey/.config/default.yml
+cd ~/misskey
+vim .config/default.yml
 ```
 
 そしたら、ファイルシステムに書き込む設定をコメントアウト（`#`でコメントアウトできる）して、  
