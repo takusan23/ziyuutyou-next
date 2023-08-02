@@ -1,13 +1,14 @@
 import { Metadata } from "next";
 import ContentFolderManager from "../../../src/ContentFolderManager";
 import EnvironmentTool from "../../../src/EnvironmentTool";
-import { GitHubHistoryButton, TwitterShareButton } from "../../../components/BlogDetailButton"
+import { GitHubHistoryButton } from "../../../components/BlogDetailButton"
 import TagChipGroup from "../../../components/TagChipGroup"
 import RoundedCornerBox from "../../../components/RoundedCorner"
 import { TocList, TocListLayout } from "../../../components/TocList"
 import DateCountText from "../../../components/DateCountText"
 import IconParent from "../../../components/IconParent"
 import EditIcon from "../../../public/icon/edit.svg"
+import ActivityPubShare from "../../../components/ActivityPubShare";
 // 部分的に修正した css
 import "../../../styles/css/content.css"
 
@@ -57,9 +58,9 @@ export default async function BlogDetailPage({ params }: PageProps) {
 
     /* 共有、GitHub履歴 */
     const shareOrHistoryButton = (
-        <div className="flex flex-row-reverse space-x-2 space-x-reverse">
+        <div className="flex flex-row-reverse flex-wrap space-x-2 space-x-reverse">
             <GitHubHistoryButton fileName={markdownData.fileName} />
-            <TwitterShareButton url={ogpUrl} title={ogpTitle} />
+            <ActivityPubShare url={ogpUrl} title={ogpTitle} />
         </div>
     )
 

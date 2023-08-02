@@ -62,7 +62,7 @@ React の dangerouslySetInnerHTML を使って既にある HTML を埋め込む�
 .content_div h6 {
     @apply text-content-primary-light;
     @apply dark:text-content-primary-dark;
-    @apply my-4;
+    @apply mt-6 mb-4;
     @apply font-medium;
 }
 

@@ -12,7 +12,7 @@ type IconParentProps = {
 
 /** アイコンを置く親。サイズとテーマに合わせた色にする */
 export default function IconParent({ className, size, children }: IconParentProps) {
-    const colorClassName = className ? className : 'fill-content-text-light dark:fill-content-text-dark'
+    const colorClassName = className ?? 'fill-content-text-light dark:fill-content-text-dark'
 
     let sizeClassName: string
     switch (size ?? 'medium') {
