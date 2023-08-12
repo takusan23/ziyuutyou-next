@@ -26,6 +26,17 @@ thx!!!!!!!!!!
 - https://blog.noellabo.jp/entry/2019/08/14/8i3RHuZ1wJNDinIn
 - https://seritude.com/misskey-alone-server/
 
+# 更新 2023/08/13
+以下を変更しないと、一部のサーバー（インスタンス）との通信に失敗します  
+（リクエスト結果が`403`になり通信できません）
+
+- Ubuntu ( OS )
+    -  `20.04` ではなく `22.04` を選ぶ
+        - そのままでは`mongoDB`の導入に失敗します。追記しました。
+- Node.js
+    - バージョンを 16 ではなく 18 を使う
+        - おそらく`Misskey v10`でも動くはず
+
 # ひつようなもの
 今回は**v13**ではなく**v10**を建てます。（めいすきー）  
 古いので最新版を建てたい人からしたらあんまり参考にならないと思う（`https`化くらい？同じなの）
@@ -206,6 +217,17 @@ sudo systemctl enable mongod
 sudo apt -y install redis git build-essential nginx ssl-cert letsencrypt ffmpeg
 ```
 
+#### 追記 2023/08/13 MongoDB が Ubuntu 22.04 でインストールできない
+どうやら必要な`libssl`が`22.04`から同梱されなくなったみたい...  
+取りあえず入れることで回避することにします。
+
+https://stackoverflow.com/questions/73656873
+
+```bash
+sudo wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
+sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2_amd64.deb
+```
+
 ### ソースコードをダウンロード（git clone）してくる
 まず Misskey ユーザーに切り替えて、
 
@@ -317,6 +339,7 @@ sudo su - misskey
 次に、`Misskey サーバー`が起動できるか試してみます。
 
 ```bash
+cd ~/misskey
 pnpm start
 ```
 
@@ -726,3 +749,87 @@ scp -i C:\Users\takusan23\key.pem -r ubuntu@000.000.000.000:~/dump C:\Users\taku
 書いた。`v10`なので`v13`だと直さないと使えない
 
 https://github.com/takusan23/misskey#手元の開発環境構築
+
+### 2023/08/06 追記 Cloudflare を利用して Misskey サーバーを保護する？
+`Certbot`で`HTTPS`通信できるようにしましたが、`Misskey`的には`Cloudflare`で`SSL (HTTPS)`するのが良いらしい。  
+
+あらかじめ、`Cloudflare`にドメインを移管しておく必要があります。（いや`Cloudflare DNS`を使えるようしておく必要があります）
+
+まずは`Cloudflare ダッシュボード`から`Webサイト`を選び、稼働しているドメインを選びます。  
+そして`SSL/TLS`を押して、`概要`の`暗号化モード`を`フル`にします。不具合の原因になるみたい。
+
+![Imgur](https://imgur.com/H6Kgw28.png)
+
+次に、`DNS`>`レコード`と進み、`Misskey`の`IPアドレス`のレコードが`プロキシ済み`かどうか確認します。  
+`プロキシ済み`じゃない場合はしてください。雲のアイコンがオレンジ色になれば良いはず。  
+これで、`Misskey サーバー`との通信の前に`Cloudflare`が入るようになります。  
+
+```plaintext
+[ブラウザ (PC / スマホ) ] <---> [Cloudflare] <---> [Misskey サーバー (VPS)]
+```
+
+さっきの`SSL/TLS`の設定はこの間に入る`Cloudflare`の設定のために必要でした。
+
+次に`VPS`へログインします。  
+まずは`Misskey`を止めて、お好みでバックアップを取ってください。
+
+```bash
+sudo systemctl stop misskey
+```
+
+次に`nginx`のコンフィグを開いて、`Let's Encrypt`ではなく、`自己署名証明書`をセットします。
+
+```bash
+sudo vim /etc/nginx/sites-enabled/misskey.nginx
+```
+
+```nginx
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name diary.negitoro.dev;
+    ssl_session_cache shared:ssl_session_cache:10m;
+
+    # Self-Certificate
+    ssl_certificate     /etc/ssl/certs/ssl-cert-snakeoil.pem;
+    ssl_certificate_key /etc/ssl/private/ssl-cert-snakeoil.key;
+
+    # Disbaled Certbot ( thats because, use Cloudflare )
+    # To use Debian/Ubuntu's self-signed certificate (For testing or before issuing a certificate)
+    # ssl_certificate /etc/letsencrypt/live/diary.negitoro.dev/fullchain.pem; # managed by Certbot
+    # ssl_certificate_key /etc/letsencrypt/live/diary.negitoro.dev/privkey.pem; # managed by Certbot
+```
+
+保存して、`Misskey`を起動し、ブラウザで開けるか確認します。
+
+```bash
+sudo systemctl start misskey
+```
+
+成功していれば、リクエストのレスポンスヘッダーに`Cloudflare`関連の値が入るようになっているはずです。  
+![Imgur](https://imgur.com/7AUss7f.png)
+
+そしたらもう、今使っている`Let's Encrypt`の証明書は不要になるので、消してしまいます。  
+
+```bash
+sudo certbot revoke --cert-path /etc/letsencrypt/live/ドメイン名/cert.pem
+```
+
+```plaintext
+Would you like to delete the certificate(s) you just revoked, along with all
+earlier and later versions of the certificate?
+```
+`Y`で
+
+```plaintext
+WARNING: Before continuing, ensure that the listed certificates are not being
+used by any installed server software (e.g. Apache, nginx, mail servers).
+Deleting a certificate that is still being used will cause the server software
+to stop working. See https://certbot.org/deleting-certs for information on
+deleting certificates safely.
+
+Are you sure you want to delete the above certificate(s)?
+```
+`Y`で
+
+`Deleted all files relating to certificate ドメイン名.`が表示されれば完了です。
