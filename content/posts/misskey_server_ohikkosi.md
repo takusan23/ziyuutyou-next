@@ -57,7 +57,7 @@ E: Unable to correct problems, you have held broken packages.
 ```
 
 `libssl1.1`が必要なのですが、どうやら`Ubuntu 22.04`からは同梱されなくなったみたいです。  
-`mongoDB`の最新版にすると治るそうですが、、、`Misskey`のバックエンドいじるのこわい（というか`DB`が何もわからない）ので、一旦`libssl`を入れる方面でいきます。
+`MongoDB`の最新版にすると治るそうですが、、、`Misskey`のバックエンドいじるのこわい（というか`DB`が何もわからない）ので、一旦`libssl`を入れる方面でいきます。
 
 https://stackoverflow.com/questions/73656873
 
@@ -67,7 +67,7 @@ sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2_amd64.deb
 ```
 
 `amd`版（`Intel`、`AMD`系`CPU`）なので、`arm`とかの場合は読み替えてください  
-これで`mongoDB`入れられるはず
+これで`MongoDB`入れられるはず
 
 ```
 sudo apt-get install -y mongodb-org
@@ -78,7 +78,7 @@ sudo apt-get install -y mongodb-org
 `Misskey`のコンフィグ、`nginx`のコンフィグを元のサーバーからコピーしてきます。  
 コピーは`Vim`のペーストモードが便利です（そのまま貼り付けると`#`でコメントアウトされたり、インデントされてしまう）
 
-# mongoDB の引き継ぎ
+# MongoDB の引き継ぎ
 
 ## 移行前サーバー
 
@@ -191,7 +191,7 @@ cat /var/log/nginx/access.log
 # おわりに
 
 今回はギリギリまで（`DB`引っ越し）まで移行前のサーバーを動かす方法で行きました。  
-が、多分データベース、コンフィグファイル（`misskey`と`nginx`）を`手元の Windows マシン`とかにバックアップしておいて、  
+が、多分データベース、画像とかのメディア（S3とかのオブジェクトストレージを使ってないなら）、コンフィグファイル（`misskey`と`nginx`）を`手元の Windows マシン`とかにバックアップしておいて、  
 `VPS`を消す方法でも良いはずです。（最後まで残す方法だと、移行作業中は二台`VPS`を動かすことになるので、お一人様にそこまでのお金をかけられるか...）
 
 # そのほか
