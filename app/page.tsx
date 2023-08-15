@@ -5,7 +5,11 @@ import EnvironmentTool from "../src/EnvironmentTool";
 
 /** <head> に入れる値 */
 export const metadata: Metadata = {
-    title: `トップページ - ${EnvironmentTool.SITE_NAME}`
+    title: `トップページ - ${EnvironmentTool.SITE_NAME}`,
+    // Google Search Console の所有権確認
+    verification: {
+        google: EnvironmentTool.GOOGLE_SEARCH_CONSOLE
+    }
 }
 
 /** 最初に表示されるページ */
