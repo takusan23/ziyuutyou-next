@@ -38,7 +38,10 @@ export default async function BlogListPage({ params }: PageProps) {
             <RoundedCornerList
                 list={blogList}
                 content={(className, item) => (
-                    <div className={`bg-container-primary-light dark:bg-container-primary-dark ${className}`}>
+                    <div
+                        className={`bg-container-primary-light dark:bg-container-primary-dark ${className}`}
+                        key={item.link}
+                    >
                         <BlogListItem blogItem={item} />
                     </div>
                 )}

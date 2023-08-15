@@ -44,7 +44,10 @@ export default async function TagListPage({ params }: PageProps) {
                 <RoundedCornerList
                     list={tagFilterBlogList.result}
                     content={(className, item) => (
-                        <div className={`bg-container-primary-light dark:bg-container-primary-dark ${className}`}>
+                        <div
+                            className={`bg-container-primary-light dark:bg-container-primary-dark ${className}`}
+                            key={item.link}
+                        >
                             <BlogListItem blogItem={item} />
                         </div>
                     )}
