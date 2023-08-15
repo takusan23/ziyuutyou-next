@@ -20,7 +20,7 @@ class EnvironmentTool {
     static GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID!
 
     /** Google Search Console の所有権確認のための HTML タグの content の値 */
-    static GOOGLE_SEARCH_CONSOLE = process.env.GOOGLE_SEARCH_CONSOLE
+    static GOOGLE_SEARCH_CONSOLE = process.env.NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE
 }
 
 export default EnvironmentTool

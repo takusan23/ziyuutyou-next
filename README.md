@@ -67,13 +67,14 @@ npm run deploy
 `.env`ファイルに公開先の URL などの値を入れています。  
 `EnvironmentTool.ts`から値を参照できるようにしています。  
 
-| 名前                              | 説明                                                                    |
-|-----------------------------------|-------------------------------------------------------------------------|
-| NEXT_PUBLIC_SITE_BASE_URL         | WebサイトのURLのドメインまで。`https://takusan.negitoro.dev/`みたいな。 |
-| NEXT_PUBLIC_SITE_NAME             | サイト名です。`<title>`タグとかで使われます。                           |
-| NEXT_PUBLIC_GITHUB_REPOSITORY_URL | `GitHub`のリポジトリです。記事本文ページの`GitHubで開く`で使われます。  |
-| NEXT_PUBLIC_UA_TRACKING_ID        | `Google アナリティクス`の`ユニバーサルアナリティクス`の`測定ID`です。   |
-| NEXT_PUBLIC_GA_TRACKING_ID        | `Google アナリティクス`の`GA4`の`測定ID`です。                          |
+| 名前                              | 説明                                                                                                                  |
+|-----------------------------------|-----------------------------------------------------------------------------------------------------------------------|
+| NEXT_PUBLIC_SITE_BASE_URL         | WebサイトのURLのドメインまで。`https://takusan.negitoro.dev/`みたいな。                                               |
+| NEXT_PUBLIC_SITE_NAME             | サイト名です。`<title>`タグとかで使われます。                                                                         |
+| NEXT_PUBLIC_GITHUB_REPOSITORY_URL | `GitHub`のリポジトリです。記事本文ページの`GitHubで開く`で使われます。                                                |
+| NEXT_PUBLIC_UA_TRACKING_ID        | `Google アナリティクス`の`ユニバーサルアナリティクス`の`測定ID`です。                                                 |
+| NEXT_PUBLIC_GA_TRACKING_ID        | `Google アナリティクス`の`GA4`の`測定ID`です。                                                                        |
+| NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE | `Google Search Console`の所有権確認のために、`HTML タグ`の`content`の値を入れてください。任意なので無くても動くはず。 |
 
 ## ファイル構造
 
