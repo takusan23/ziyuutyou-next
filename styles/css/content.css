@@ -64,6 +64,9 @@ React の dangerouslySetInnerHTML を使って既にある HTML を埋め込む�
     @apply dark:text-content-primary-dark;
     @apply mt-6 mb-4;
     @apply font-medium;
+    /* 目次には下線を引く */
+    @apply border-b-[1px];
+    @apply border-content-primary-light dark:border-content-primary-dark;
 }
 
 /* Tailwind css では h1,h2... のタグがすべて同じ大きさになっているが、記事本文ではちゃんと大きくなって欲しい */
