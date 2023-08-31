@@ -128,3 +128,6 @@ thx!!!
  - Koruri Regular
     - Apache License 2.0
     - https://github.com/Koruri/Koruri/blob/master/LICENSE
+- google/material-design-icons
+    - Apache License 2.0
+    - https://github.com/google/material-design-icons/blob/master/LICENSE
