@@ -10,21 +10,24 @@ type PageProps = {
 
 /** head に値を入れる */
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+    const unEscapeText = decodeURIComponent(params.tag)
     return {
-        title: `タグ名:${params.tag} - ${EnvironmentTool.SITE_NAME}`,
+        title: `タグ名:${unEscapeText} - ${EnvironmentTool.SITE_NAME}`,
         alternates: {
             // 正規URL。 送信された URL が正規 URL として選択されていません 対策
-            canonical: `${EnvironmentTool.BASE_URL}/${params.tag}/`
-        },
+            canonical: `${EnvironmentTool.BASE_URL}/${unEscapeText}/`
+        }
     }
 }
 
 /** タグがついてる記事一覧ページ */
 export default async function TagListPage({ params }: PageProps) {
+    // パーセントエンコーディングされているため戻す
+    const unEscapeText = decodeURIComponent(params.tag)
     // ページネーションは後で
-    const tagFilterBlogList = await ContentFolderManager.getTagFilterBlogItem(params.tag)
+    const tagFilterBlogList = await ContentFolderManager.getTagFilterBlogItem(unEscapeText)
 
-    return <ClientTagListPage blogList={tagFilterBlogList.result} tagName={params.tag} totalItemCount={tagFilterBlogList.totalCount} />
+    return <ClientTagListPage blogList={tagFilterBlogList.result} tagName={unEscapeText} totalItemCount={tagFilterBlogList.totalCount} />
 }
 
 /** 
