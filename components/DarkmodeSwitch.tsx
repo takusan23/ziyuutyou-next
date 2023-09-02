@@ -3,6 +3,9 @@
 import { useEffect, useRef, useState } from "react"
 import resolveConfig from "tailwindcss/resolveConfig"
 import tailwindConfig from "../tailwind.config.js"
+import IconParent from "./IconParent"
+import LightModeIcon from "../public/icon/light_mode.svg"
+import DarkModeIcon from "../public/icon/dark_mode.svg"
 
 /**
  * Tailwind CSS のダークモードスイッチ
@@ -47,14 +50,26 @@ export default function DarkmodeSwitch() {
     }, [isDarkmode])
 
     return (
-        <label className="flex flex-row items-center select-none cursor-pointer p-2">
+        <label className="flex flex-row p-3 items-center select-none cursor-pointer">
             {/* peer をつけておくと、チェック true / false 時にそれぞれ指定する CSS をセットできる（ JS で動的に className を変化させる必要がない ） */}
             <input
                 className="sr-only peer"
                 type="checkbox"
                 checked={isDarkmode}
                 onChange={(ev) => setDarkmode(ev.target.checked)} />
-            <span className="text-content-text-light dark:text-content-text-dark flex grow">
+
+            <div className="flex peer-checked:hidden">
+                <IconParent>
+                    <LightModeIcon />
+                </IconParent>
+            </div>
+            <div className="hidden peer-checked:flex">
+                <IconParent>
+                    <DarkModeIcon />
+                </IconParent>
+            </div>
+
+            <span className="text-content-text-light dark:text-content-text-dark flex grow ml-4">
                 ダークモード
             </span>
             {/* チェックが付いたら左に寄せる、丸を大きくする（peer-checked:justify-end） */}

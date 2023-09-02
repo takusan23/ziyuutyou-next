@@ -74,7 +74,7 @@ export default async function BlogListPage({ params }: PageProps) {
                         text="次のページ"
                     /> : <Button
                         isDisabled
-                        text="おわりだよ"
+                        text="追いついた...!?"
                     />
                 }
             </div>

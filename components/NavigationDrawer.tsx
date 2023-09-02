@@ -56,7 +56,7 @@ type NavigationDrawerItemProps = {
 function NavigationDrawerItem({ title, icon, path }: NavigationDrawerItemProps) {
     return (
         <Link href={path}>
-            <div className="flex flex-row p-3 items-center space-x-4 rounded-xl hover:bg-hover-light dark:hover:bg-hover-dark">
+            <div className="flex flex-row p-3 items-center space-x-4 rounded-xl hover:bg-hover-light dark:hover:bg-hover-dark select-none cursor-pointer">
                 <IconParent>
                     {icon}
                 </IconParent>
@@ -76,8 +76,12 @@ export default function NavigationDrawer() {
             <div className="flex flex-row p-2 items-center">
                 <RoundedImage src="/icon.png" />
                 <div className="flex flex-col text-content-text-light">
-                    <p className="text-content-text-light dark:text-content-text-dark text-base">たくさんの自由帳</p>
-                    <p className="text-content-text-light dark:text-content-text-dark text-sm">Androidのお話</p>
+                    <p className="text-content-text-light dark:text-content-text-dark text-base">
+                        たくさんの自由帳
+                    </p>
+                    <p className="text-content-text-light dark:text-content-text-dark text-sm">
+                        Androidのお話
+                    </p>
                 </div>
             </div>
 
