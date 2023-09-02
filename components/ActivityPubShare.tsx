@@ -4,7 +4,7 @@
 import { useState } from "react"
 import IconParent from "./IconParent"
 import Button from "./Button"
-import RoundedCornerBox from "./RoundedCorner"
+import RoundedCornerBox from "./RoundedCornerBox"
 import ShareIcon from "../public/icon/share.svg"
 import CloseIcon from "../public/icon/close.svg"
 import SendIcon from "../public/icon/send.svg"

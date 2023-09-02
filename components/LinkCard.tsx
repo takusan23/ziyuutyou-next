@@ -1,6 +1,6 @@
 import Link from "next/link"
 import LinkData from "../src/data/LinkData"
-import RoundedCornerBox from "./RoundedCorner"
+import RoundedCornerBox from "./RoundedCornerBox"
 import RoundedCornerList from "./RoundedCornerList"
 import IconParent from "./IconParent"
 import OpenInBrowserIcon from "../public/icon/open_in_browser.svg"
@@ -21,7 +21,7 @@ export default function LinkCard({ linkList }: LinkCardProps) {
                     リンク
                 </h2>
                 <p className="text-content-text-light dark:text-content-text-dark ">
-                    Misskey お一人様サーバーにいます。他の Misskey / Mastodon サーバーから探せるはずです。
+                    Misskey お一人様サーバーにいます。お住まいの Misskey / Mastodon サーバーから探せるはずです。
                 </p>
 
                 <RoundedCornerList

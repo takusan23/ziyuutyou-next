@@ -3,7 +3,7 @@ import ContentFolderManager from "../../../src/ContentFolderManager";
 import EnvironmentTool from "../../../src/EnvironmentTool";
 import { GitHubHistoryButton } from "../../../components/BlogDetailButton"
 import TagChipGroup from "../../../components/TagChipGroup"
-import RoundedCornerBox from "../../../components/RoundedCorner"
+import RoundedCornerBox from "../../../components/RoundedCornerBox"
 import { TocList, TocListLayout } from "../../../components/TocList"
 import DateCountText from "../../../components/DateCountText"
 import IconParent from "../../../components/IconParent"

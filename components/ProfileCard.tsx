@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react"
 import profileCardJpegImg from "../public/profile_card_img.jpg"
-import RoundedCornerBox from "./RoundedCorner"
+import RoundedCornerBox from "./RoundedCornerBox"
 import NextLinkButton from "./NextLinkButton"
 import RoundedImage from "./RoundedImage"
 import BookIcon from "../public/icon/book.svg"

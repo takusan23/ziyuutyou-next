@@ -5,7 +5,7 @@ import { GitHubHistoryButton } from "../../../components/BlogDetailButton";
 import DateCountText from "../../../components/DateCountText";
 import TagChipGroup from "../../../components/TagChipGroup";
 import { TocList, TocListLayout } from "../../../components/TocList";
-import RoundedCornerBox from "../../../components/RoundedCorner";
+import RoundedCornerBox from "../../../components/RoundedCornerBox";
 import IconParent from "../../../components/IconParent";
 import EditIcon from "../../../public/icon/edit.svg"
 import ActivityPubShare from "../../../components/ActivityPubShare";

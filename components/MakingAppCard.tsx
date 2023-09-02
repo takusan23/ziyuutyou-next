@@ -2,7 +2,7 @@
 
 import { ReactNode, useEffect, useState } from "react"
 import Spacer from "./Spacer"
-import RoundedCornerBox from "./RoundedCorner"
+import RoundedCornerBox from "./RoundedCornerBox"
 import { MakingAppData, MakingAppDetailData } from "../src/data/MakingAppData"
 import NextLinkButton from "./NextLinkButton"
 import RoundedCornerList from "./RoundedCornerList"

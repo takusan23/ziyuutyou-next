@@ -1,7 +1,7 @@
 import { ReactNode } from "react"
 import Link from "next/link"
 import TocData from "../src/data/TocData"
-import RoundedCornerBox from "./RoundedCorner"
+import RoundedCornerBox from "./RoundedCornerBox"
 
 // 定数
 const TOC_LIST_WIDTH = 'w-[300px]'
