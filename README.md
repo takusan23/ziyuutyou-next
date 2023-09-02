@@ -5,7 +5,7 @@
 
 ![Imgur](https://imgur.com/6N5X7yQ.png)
 
-`Next.js` / `MUI` / `unified` で出来ている。
+`Next.js` / `Tailwind CSS` / `unified` で出来ている。
 
 ## 開発環境構築
 
@@ -87,7 +87,7 @@ npm run deploy
 - content
     - 記事のMarkdown とか 書き出し時に呼び出すJSONとか
 - components
-    - MUIには無いUI部品
+    - 共通して使うコンポーネント
 - public
     - アイコン等のリソース
 - src

@@ -1,7 +1,10 @@
 import { Metadata } from "next"
 import ContentFolderManager from "../../../../src/ContentFolderManager"
-import ClientBlogList from "./ClientBlogList"
 import EnvironmentTool from "../../../../src/EnvironmentTool"
+import NextLinkButton from "../../../../components/NextLinkButton"
+import Button from "../../../../components/Button"
+import RoundedCornerList from "../../../../components/RoundedCornerList"
+import BlogListItem from "../../../../components/BlogListItem"
 
 /** 一度に取得する件数 */
 const BLOG_SIZE_LIMIT = 10
@@ -28,7 +31,55 @@ export default async function BlogListPage({ params }: PageProps) {
     const nextPageId = ((BLOG_SIZE_LIMIT * pageId) <= totalCount) ? pageId + 1 : null
     const prevPageId = (pageId > 1) ? pageId - 1 : null
 
-    return <ClientBlogList blogList={blogList} pageId={pageId} nextPageId={nextPageId} prevPageId={prevPageId} />
+    return (
+        <div className="flex flex-col">
+
+            {/* 記事一覧 */}
+            <RoundedCornerList
+                list={blogList}
+                content={(className, item) => (
+                    <div
+                        className={`bg-container-primary-light dark:bg-container-primary-dark ${className}`}
+                        key={item.link}
+                    >
+                        <BlogListItem blogItem={item} />
+                    </div>
+                )}
+            />
+
+            {/* ページネーション */}
+            <div className="flex flex-row py-4 items-center justify-center space-x-4">
+                {
+                    // 前のページボタンを出すか。
+                    // 無い場合は Disabled なボタンを出す
+                    prevPageId ? <NextLinkButton
+                        variant="contained"
+                        href={`/posts/page/${prevPageId}/`}
+                        text="前のページ"
+                    /> : <Button
+                        isDisabled
+                        text="ここだよ"
+                    />
+                }
+
+                <Button
+                    variant="outlined"
+                    text={pageId.toString()} />
+
+                {
+                    // 次のページを出すか。
+                    nextPageId ? <NextLinkButton
+                        variant="contained"
+                        href={`/posts/page/${pageId + 1}/`}
+                        text="次のページ"
+                    /> : <Button
+                        isDisabled
+                        text="追いついた...!?"
+                    />
+                }
+            </div>
+        </div>
+    )
 }
 
 /**

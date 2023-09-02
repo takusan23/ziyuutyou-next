@@ -21,6 +21,9 @@ class EnvironmentTool {
 
     /** Google Search Console の所有権確認のための HTML タグの content の値 */
     static GOOGLE_SEARCH_CONSOLE = process.env.NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE
+    
+    /** 検索 API URL。省略したら undefined */
+    static SEARCH_API_URL = process.env.NEXT_PUBLIC_SEARCH_API_URL
 }
 
 export default EnvironmentTool

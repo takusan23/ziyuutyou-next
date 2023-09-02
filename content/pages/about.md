@@ -71,18 +71,15 @@ thx!!!
 - next
     - MIT
     - https://github.com/vercel/next.js/blob/canary/license.md
-- @mui/icons-material
-    - MIT
-    - https://github.com/mui-org/material-ui/blob/master/LICENSE
-- @mui/material
-    - MIT
-    - https://github.com/mui-org/material-ui/blob/master/LICENSE
-- @emotion/react
-    - MIT
-    - https://github.com/emotion-js/emotion/blob/main/packages/react/LICENSE
-- @emotion/styled
-    - MIT
-    - https://github.com/emotion-js/emotion/blob/main/packages/styled/LICENSE
+- autoprefixer
+    - MIT License
+    - https://github.com/postcss/autoprefixer/blob/main/LICENSE
+- postcss
+    - MIT License
+    - https://github.com/postcss/postcss/blob/main/LICENSE
+- tailwindcss
+    - MIT License
+    - https://github.com/tailwindlabs/tailwindcss/blob/master/LICENSE
 - gray-matter
     - MIT
     - https://github.com/jonschlinkert/gray-matter/blob/master/LICENSE
@@ -116,6 +113,9 @@ thx!!!
 - jsdom
     - MIT License
     - https://github.com/jsdom/jsdom/blob/master/LICENSE.txt
+- @types/jsdom
+    - MIT
+    - https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/LICENSE
 - @types/react
     - MIT
     - https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/LICENSE
@@ -128,3 +128,6 @@ thx!!!
  - Koruri Regular
     - Apache License 2.0
     - https://github.com/Koruri/Koruri/blob/master/LICENSE
+- google/material-design-icons
+    - Apache License 2.0
+    - https://github.com/google/material-design-icons/blob/master/LICENSE

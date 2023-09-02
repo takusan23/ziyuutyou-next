@@ -11,18 +11,12 @@
             "description": "Sub-6 / ミリ波 / アンカーバンド の検出ができるアプリ",
             "link": "https://play.google.com/store/apps/details?id=io.github.takusan23.newradiosupporter",
             "github": "https://github.com/takusan23/NewRadioSupporter"
-        },
-        {
-            "name": "工事中",
-            "description": "",
-            "link": "https://github.com/takusan23/ChocoDroid",
-            "github": "https://github.com/takusan23/ChocoDroid"
         }
     ],
     "web": [
         {
             "name": "このサイト",
-            "description": "Next.js と Material-UI で出来ている",
+            "description": "Next.js と Tailwind CSS と unified で出来ている",
             "link": "/",
             "github": "https://github.com/takusan23/ziyuutyou-next"
         }

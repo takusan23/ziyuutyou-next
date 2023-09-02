@@ -1,7 +1,9 @@
 import { Metadata } from "next";
 import JsonFolderManager from "../src/JsonFolderManager";
-import ClientHomePage from "./ClientHomePage";
+import ProfileCard from "../components/ProfileCard";
 import EnvironmentTool from "../src/EnvironmentTool";
+import LinkCard from "../components/LinkCard";
+import MakingAppCard from "../components/MakingAppCard";
 
 /** <head> に入れる値 */
 export const metadata: Metadata = {
@@ -25,5 +27,11 @@ export default async function Home() {
         JsonFolderManager.getLinkList()
     ])
 
-    return (<ClientHomePage randomMessageList={randomMessageList} makingAppList={makingAppList} linkList={linkList} />)
+    return (
+        <div className="flex flex-col space-y-5">
+            <ProfileCard randomMessageList={randomMessageList} />
+            <LinkCard linkList={linkList} />
+            <MakingAppCard makingAppList={makingAppList} />
+        </div>
+    )
 }

@@ -1,12 +1,10 @@
-import UploadFileOutlined from "@mui/icons-material/UploadFileOutlined"
-import { useTheme } from "@mui/material"
-import Box from "@mui/material/Box"
-import Typography from "@mui/material/Typography"
 import Link from "next/link"
 import React from "react"
 import BlogItem from "../src/data/BlogItem"
 import Spacer from "./Spacer"
 import TagChipGroup from "./TagChipGroup"
+import IconParent from "./IconParent"
+import UploadFileIcon from "../public/icon/upload_file.svg"
 
 /** BlogItem へ渡すデータ */
 type BlogItemProps = {
@@ -15,38 +13,32 @@ type BlogItemProps = {
 }
 
 /** 記事一覧の各レイアウト */
-const BlogListItem: React.FC<BlogItemProps> = (props) => {
-    const theme = useTheme()
+export default function BlogListItem({ blogItem }: BlogItemProps) {
     return (
-        <Box sx={{ padding: 3 }}>
-            <Link
-                style={{
-                    color: theme.palette.primary.main,
-                    fontSize: 25
-                }}
-                href={props.blogItem.link}
-            >
-                {props.blogItem.title}
+        <div className="flex flex-col p-5">
+
+            <Link href={blogItem.link}>
+                <h2 className="text-content-primary-light dark:text-content-primary-dark text-2xl underline">
+                    {blogItem.title}
+                </h2>
             </Link>
-            <Typography variant="body2" color="text.secondary">
-                {props.blogItem.description}
-            </Typography>
-            <Spacer value={1} />
-            <TagChipGroup tagList={props.blogItem.tags} />
-            <Spacer value={2} />
-            <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                flexWrap: 'wrap',
-            }}>
-                <UploadFileOutlined />
-                <Typography color="text.secondary">
-                    <time>{props.blogItem.createdAt}</time>
-                    {` 投稿`}
-                </Typography>
+            <p className="text-content-primary-light dark:text-content-primary-dark py-2 text-sm">
+                {blogItem.description}
+            </p>
+
+            <Spacer space="small" />
+            <TagChipGroup tagList={blogItem.tags} />
+
+            <Spacer space="small" />
+            <div className="flex flex-row items-center">
+                <IconParent>
+                    <UploadFileIcon />
+                </IconParent>
+                <p className="text-content-primary-light dark:text-content-primary-dark text-md">
+                    <time>{blogItem.createdAt}</time>
+                    <span className="ml-1">投稿</span>
+                </p>
             </div>
-        </Box>
+        </div>
     )
 }
-
-export default BlogListItem

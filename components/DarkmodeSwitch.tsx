@@ -1,71 +1,81 @@
-import { ListItemIcon, ListItemText, styled } from "@mui/material"
-import DarkModeOutlined from "@mui/icons-material/DarkModeOutlined"
-import LightModeOutlined from "@mui/icons-material/LightModeOutlined"
-import ListItem from "@mui/material/ListItem"
-import Switch from "@mui/material/Switch"
-import React from "react"
+"use client"
 
-/** DarkmodeSwitch へ渡すデータ */
-type DarkmodeSwitchProps = {
-    /** ダークモードかどうか */
-    isDarkmode: boolean,
-    /** スイッチ切り替えたら呼ばれる */
-    onChange: (boolean) => void,
-}
+import { useEffect, useRef, useState } from "react"
+import resolveConfig from "tailwindcss/resolveConfig"
+import tailwindConfig from "../tailwind.config.js"
+import IconParent from "./IconParent"
+import LightModeIcon from "../public/icon/light_mode.svg"
+import DarkModeIcon from "../public/icon/dark_mode.svg"
 
-/** 
- * Android 12みたいなスイッチ
- * 
- * 参考：https://mui.com/components/switches/#customization
+/**
+ * Tailwind CSS のダークモードスイッチ
+ * @see https://tailwindcss.com/docs/dark-mode
  */
-const Android12Switch = styled(Switch)(({ theme }) => ({
-    padding: 8,
-    '& .MuiSwitch-track': {
-        borderRadius: 22 / 2,
-        '&:before, &:after': {
-            content: '""',
-            position: 'absolute',
-            top: '50%',
-            transform: 'translateY(-50%)',
-            width: 16,
-            height: 16,
-        },
-        '&:before': {
-            backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 24 24"><path fill="${encodeURIComponent(
-                theme.palette.getContrastText(theme.palette.primary.main),
-            )}" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>')`,
-            left: 12,
-        },
-        '&:after': {
-            backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 24 24"><path fill="${encodeURIComponent(
-                theme.palette.getContrastText(theme.palette.primary.main),
-            )}" d="M19,13H5V11H19V13Z" /></svg>')`,
-            right: 12,
-        },
-    },
-    '& .MuiSwitch-thumb': {
-        boxShadow: 'none',
-        width: 16,
-        height: 16,
-        margin: 2,
-    },
-}));
+export default function DarkmodeSwitch() {
+    const [isDarkmode, setDarkmode] = useState(false)
 
-/** ダークモードスイッチ */
-const DarkmodeSwitch: React.FC<DarkmodeSwitchProps> = (props) => {
+    // ここでやるべきではないが、ついでに Android のステータスバーの色を適用する
+    const statusBarColorMeta = useRef<HTMLMetaElement>()
+
+    // 端末のテーマ設定をセットする
+    // TODO 責務的にここでやるべきではない
+    useEffect(() => {
+        // メディアクエリでダークモードかチェック
+        const isDarkmode = window.matchMedia('(prefers-color-scheme: dark)').matches
+        // すでに Tailwind CSS のダークモードが有効かどうか。サイズ変更したらリセットされちゃった
+        const isCurrentDarkmode = document.documentElement.classList.contains('dark')
+        setDarkmode(isDarkmode || isCurrentDarkmode)
+
+        // Android のステータスバーの色をセットする <meta>
+        statusBarColorMeta.current = document.createElement('meta')
+        statusBarColorMeta.current.setAttribute('name', 'theme-color')
+        document.head.append(statusBarColorMeta.current)
+    }, [])
+
+    // 切替時のイベント
+    useEffect(() => {
+        // Tailwind CSS はクラス名でテーマ切り替えする
+        if (isDarkmode) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+
+        // 動的に Tailwind CSS のテーマを取得して、ステータスバーの色にする
+        const colors = resolveConfig(tailwindConfig).theme?.colors
+        if (colors) {
+            const backgroundColor = isDarkmode ? colors['background']['dark'] : colors['background']['light']
+            statusBarColorMeta.current?.setAttribute('content', backgroundColor)
+        }
+    }, [isDarkmode])
+
     return (
-        <ListItem
-            secondaryAction={<Android12Switch
-                checked={props.isDarkmode}
-                onChange={props.onChange}
-            />}
-        >
-            <ListItemIcon>
-                {props.isDarkmode ? <DarkModeOutlined /> : <LightModeOutlined />}
-            </ListItemIcon>
-            <ListItemText primary="ダークモード" />
-        </ListItem>
+        <label className="flex flex-row p-3 items-center select-none cursor-pointer">
+            {/* peer をつけておくと、チェック true / false 時にそれぞれ指定する CSS をセットできる（ JS で動的に className を変化させる必要がない ） */}
+            <input
+                className="sr-only peer"
+                type="checkbox"
+                checked={isDarkmode}
+                onChange={(ev) => setDarkmode(ev.target.checked)} />
+
+            <div className="flex peer-checked:hidden">
+                <IconParent>
+                    <LightModeIcon />
+                </IconParent>
+            </div>
+            <div className="hidden peer-checked:flex">
+                <IconParent>
+                    <DarkModeIcon />
+                </IconParent>
+            </div>
+
+            <span className="text-content-text-light dark:text-content-text-dark flex grow ml-4">
+                ダークモード
+            </span>
+            {/* チェックが付いたら左に寄せる、丸を大きくする（peer-checked:justify-end） */}
+            <div className="h-8 w-14 flex flex-row items-center rounded-full border-content-primary-light dark:border-content-primary-dark border-2 p-1.5 peer-checked:p-0.5 justify-start peer-checked:justify-end">
+                <div className="h-full aspect-square bg-content-primary-light dark:bg-content-primary-dark rounded-full" />
+            </div>
+        </label>
     )
 }
-
-export default DarkmodeSwitch

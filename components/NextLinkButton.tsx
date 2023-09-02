@@ -1,41 +1,26 @@
-import Button from "@mui/material/Button"
 import Link from "next/link"
+import Button, { ButtonProps } from "./Button"
 
-/** BlogListPagingButton へ渡すデータ */
+/** NextLinkButton へ渡すデータ */
 type NextLinkButtonProps = {
-    /** style */
-    style?: React.CSSProperties,
     /** URL */
-    href: string,
-    /** ボタンテキスト */
-    text: string,
-    /** アイコンを出すなら */
-    startIcon?: React.ReactNode,
-    /** MUIのButtonのVariant */
-    variant?: 'text' | 'outlined' | 'contained'
-}
+    href: string
+} & ButtonProps
 
-/** NextLinkなButton */
-const NextLinkButton: React.FC<NextLinkButtonProps> = (props) => {
+/** NextLink でラップした <Button> */
+export default function NextLinkButton({ href, text, startIcon, variant, isDisabled, size }: NextLinkButtonProps) {
+
     return (
         <Link
-            style={{
-                ...props.style,
-                textDecoration: 'none',
-                color: 'inherit'
-            }}
-            href={props.href}
+            className="flex items-center no-underline text-inherit"
+            href={href}
         >
             <Button
-                variant={props.variant ?? "contained"}
-                sx={{ borderRadius: 10 }}
-                disableElevation
-                startIcon={props.startIcon}
-            >
-                {props.text}
-            </Button>
+                text={text}
+                startIcon={startIcon}
+                variant={variant}
+                isDisabled={isDisabled}
+                size={size} />
         </Link>
     )
 }
-
-export default NextLinkButton
