@@ -6,11 +6,6 @@
             "href": "https://diary.negitoro.dev/@takusan_23"
         },
         {
-            "name": "Twitter",
-            "description": "@takusan__23",
-            "href": "https://twitter.com/takusan__23"
-        },
-        {
             "name": "GitHub",
             "description": "takusan_23",
             "href": "https://github.com/takusan23"
@@ -19,6 +14,11 @@
             "name": "このサイトのソースコード",
             "description": "ziyuutyou-next",
             "href": "https://github.com/takusan23/ziyuutyou-next"
+        },
+        {
+            "name": "Twitter",
+            "description": "@takusan__23",
+            "href": "https://twitter.com/takusan__23"
         },
         {
             "name": "Email",
