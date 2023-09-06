@@ -28,7 +28,8 @@ React の dangerouslySetInnerHTML を使って既にある HTML を埋め込む�
     font-family: var(--koruri-font);
 }
 
-.content_div p>code {
+/* バッククオート1つだけのコードブロック？、親が pre 要素以外の時に適用する */
+.content_div :not(pre) code {
     background-color: rgba(0, 0, 0, 0.1);
     @apply px-2;
     @apply rounded-md;
