@@ -1,6 +1,6 @@
 {
     "random_message": [
-        "このサイトは Next.js / Material-UI で出来ています",
+        "このサイトは Next.js / Tailwind CSS で出来ています",
         "普段はAndroidアプリのお話をしています",
         "ここのメッセージはクライアント側でランダムで選んでます。F5押すたびに変わると思う",
         "ReactってJetpack Composeと書き方似てていいね。CSSは何もわからんけど",
