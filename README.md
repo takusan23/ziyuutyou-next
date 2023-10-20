@@ -94,6 +94,6 @@ npm run deploy
     - components でも pages でもないTypeScriptファイルの置き場所
     - 記事読み込みクラスとか
 - styles/css
-    - ほとんどMUIがやってるけどちょっとだけcssを書いたので
+    - Tailwind CSS でちょっと書いた、記事本文とか
 - .env
     - 環境変数。サイトのURL など
