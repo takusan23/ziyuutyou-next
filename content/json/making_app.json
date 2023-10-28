@@ -24,6 +24,12 @@
     "akashic": [
         {
             "name": "ニコ生ゲーム",
+            "description": "RPGアツマールがサービス終了しちゃったので、こちらで公開しています。",
+            "link": "https://namagame.negitoro.dev/",
+            "github": ""
+        },
+        {
+            "name": "ニコ生ゲーム",
             "description": "詳しくはアツマールへ",
             "link": "https://game.nicovideo.jp/atsumaru/users/40210583",
             "github": ""
