@@ -1,0 +1,54 @@
+# ビルドして成果物を Amazon S3 にアップロードして、CloudFront のキャッシュを消す
+
+# 名前
+name: AWS Deploy
+
+# 起動条件。pushと手動起動
+on:
+  push:
+  workflow_dispatch:
+
+# OpenID Connect
+permissions:
+  id-token: write
+  contents: read
+
+# やらせること
+jobs:
+  build:
+    # OS
+    runs-on: ubuntu-latest
+    steps:
+
+      # リポジトリをクローン
+      - name: Clone repository
+        uses: actions/checkout@v2
+
+      # AWS の認証を行う
+      - name: Setup aws credentials
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE }}
+          aws-region: ${{ secrets.AWS_REGION }}
+      
+      # Node.js インストール
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.9.0
+      
+      # 依存関係
+      - name: Package install
+        run: npm i
+      
+      # 書き出し
+      - name: Build page
+        run: npm run deploy
+        
+      # Amazon S3 のバケットにアップロード
+      - name: Upload S3 backet
+        run: aws s3 sync --delete ./out s3://${{ secrets.AWS_S3_BACKET }}
+
+      # CloudFront のキャッシュを消す
+      - name: Clear CloudFront cache
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION }} --paths "/*"
