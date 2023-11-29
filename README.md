@@ -81,7 +81,7 @@ npm run deploy
 
 ## GitHub Actions
 `Netlify （ビルドは GitHub Actions でやってホスティングは Netlify）`と`Amazon S3 + Amazon CloudFront`の2種類があります。  
-もしかすると`Netlify`の`ビルド機能`は使えないかもしれません（私のはエラーで動かなくなっちゃった）
+`Netlify`の`ビルド機能`はなんかこのリポジトリだと動かなくなったので、`GitHub Actions`書きました。  
 
 もし使わない場合は`Actions`の画面で無効にしたいワークフローを押して、`Disable workflow`を押すことで無効にできます。  
 
