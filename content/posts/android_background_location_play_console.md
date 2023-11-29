@@ -3,7 +3,7 @@ title: Play ストアでバックグラウンド位置情報取得権限 ACCESS_
 created_at: 2023-10-08
 tags:
 - Android
-- GooglePlay
+- PlayConsole
 ---
 
 どうもこんにちは。  

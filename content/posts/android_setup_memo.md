@@ -41,7 +41,7 @@ created_at: 2023-11-08
 
 - Xperia
     - サイドセンスをスクリーンショットに割り当て
-    - ボリュームキーでも画面ロック解除が出来る設定を有効
+    - ボリュームキーでもスリーブ解除が出来る設定を有効
 
 # キーボード
 - 設定
@@ -62,6 +62,8 @@ created_at: 2023-11-08
 # Google
 - ニアバイシェア？
 - ロケーション履歴？
+- Google Pay
+    - チャージなどの初回支払い時はセキュリティコードを打ち込む必要あり
 
 # ストアから入れるアプリ
 - Firefox
@@ -82,6 +84,7 @@ created_at: 2023-11-08
 - Play Console (リジェクトの時に通知くる)
 - Google Keep
 - Google 翻訳（文字選択時に翻訳出来るように）
+- Yahoo 乗換案内
 - Twitter（情報収集用に）
 - ポイントカード
     - ラクウル（ソフマップ）
@@ -95,10 +98,10 @@ created_at: 2023-11-08
 自作アプリは apk 作ってないのでビルドする必要あり  
 ついでに targetSdk / Kotlin / AGP / Gradle / ライブラリ の更新も必要なら上げておいてくれ
 
-- OneLock
-- MobileStatusWidget
 - NewRadioSupporter
 - TelephoneyManagerAPI
+- OneLock
+- MobileStatusWidget
 
 お好みで
 

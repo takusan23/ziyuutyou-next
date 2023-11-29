@@ -3,7 +3,11 @@
 
 [![Netlify Deploy](https://github.com/takusan23/ziyuutyou-next/actions/workflows/netlify-deploy.yml/badge.svg?branch=main)](https://github.com/takusan23/ziyuutyou-next/actions/workflows/netlify-deploy.yml)
 
-![Imgur](https://imgur.com/6N5X7yQ.png)
+[![AWS Deploy](https://github.com/takusan23/ziyuutyou-next/actions/workflows/aws-deploy.yml/badge.svg?branch=main)](https://github.com/takusan23/ziyuutyou-next/actions/workflows/aws-deploy.yml)
+
+![Imgur](https://imgur.com/ceQ6UID.png)
+
+![Imgur](https://imgur.com/CaZ2lr0.png)
 
 `Next.js` / `Tailwind CSS` / `unified` で出来ている。
 
@@ -43,6 +47,9 @@ npm run start
 ```
 
 ### 静的HTML書き出し(意味深)
+`サーバーでのレンダリング（Server Side Rendering）`機能は使っていないので、  
+全て`静的サイト（Static Site Generation）`として書き出せます。
+
 以下のコマンドを叩くと
 - すべてのページのhtml書き出し
 - サイトマップ作成
@@ -59,10 +66,6 @@ npm run deploy
 `out`フォルダに成果物が入っています。  
 このフォルダを公開すればいいと思います。
 
-### Netlify
-私だけかもしれませんが、`Netlify`ではビルドできなくなってしまったので、  
-もしどうやっても成功しない場合はこのリポジトリの`GitHub Actions`を参考に`GitHub Actions`でビルドしたあとに`Netlify`で書き出したファイルをホスティングするようにしてみてください。
-
 ## 環境変数
 `.env`ファイルに公開先の URL などの値を入れています。  
 `EnvironmentTool.ts`から値を参照できるようにしています。  
@@ -75,6 +78,43 @@ npm run deploy
 | NEXT_PUBLIC_UA_TRACKING_ID        | `Google アナリティクス`の`ユニバーサルアナリティクス`の`測定ID`です。                                                 |
 | NEXT_PUBLIC_GA_TRACKING_ID        | `Google アナリティクス`の`GA4`の`測定ID`です。                                                                        |
 | NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE | `Google Search Console`の所有権確認のために、`HTML タグ`の`content`の値を入れてください。任意なので無くても動くはず。 |
+
+## GitHub Actions
+`Netlify （ビルドは GitHub Actions でやってホスティングは Netlify）`と`Amazon S3 + Amazon CloudFront`の2種類があります。  
+もしかすると`Netlify`の`ビルド機能`は使えないかもしれません（私のはエラーで動かなくなっちゃった）
+
+もし使わない場合は`Actions`の画面で無効にしたいワークフローを押して、`Disable workflow`を押すことで無効にできます。  
+
+![Imgur](https://imgur.com/Jm1V17f.png)
+
+### Netlify で公開する
+必要なシークレットはこの2つです
+
+| 名前               | 値                                                                            |
+|--------------------|-------------------------------------------------------------------------------|
+| NETLIFY_AUTH_TOKEN | `Netlify のアカウント画面` >  `Applications` > `New access token`から生成する |
+| NETLIFY_SITE_ID    | `Netlify のサイト詳細画面` > `Site configuration` > `Site ID` をコピー        |
+
+![Imgur](https://imgur.com/4EeM4q4.png)
+
+詳しくは昔書いたのでそっち見てください：  
+https://takusan.negitoro.dev/posts/github_actions_netlify/
+
+### Amazon S3 + Amazon CloudFront で公開する
+必要なシークレットはこの4つです。  
+`OpenID Connect`を使う方法で認証するのでちょっとややこしいです。（アクセスキー使うように直してもいいんじゃない？）
+
+| 名前                        | 値                                                    |
+|-----------------------------|-------------------------------------------------------|
+| AWS_CLOUDFRONT_DISTRIBUTION | `Amazon CloudFront`のディストリビューションの`ID`です |
+| AWS_REGION                  | リージョン、多分東京でいいはず？ `ap-northeast-1`     |
+| AWS_ROLE                    | `IAM ロール`の`ARN`の値です                           |
+| AWS_S3_BACKET               | ビルド成果物を保存する`S3 バケット`の名前です         |
+
+![Imgur](https://imgur.com/nAFBOTS.png)
+
+詳しくは書いたので見てください：  
+https://takusan.negitoro.dev/posts/aws_sitatic_site_hosting/
 
 ## ファイル構造
 
@@ -91,7 +131,7 @@ npm run deploy
 - public
     - アイコン等のリソース
 - src
-    - components でも pages でもないTypeScriptファイルの置き場所
+    - components でも app でもないTypeScriptファイルの置き場所
     - 記事読み込みクラスとか
 - styles/css
     - Tailwind CSS でちょっと書いた、記事本文とか
