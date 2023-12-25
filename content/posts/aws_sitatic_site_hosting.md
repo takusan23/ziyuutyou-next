@@ -685,3 +685,16 @@ Netlify
 `Nexus 系列（まだ Nexus の頃）`を買わないと見る機会はなかったのかもしれない？
 
 このゲームの`readme.txt`開いたら`AOSP`のライセンス（`Apache License 2.0`）あったけどもしかしてフォントのことだったのかな。
+
+## おわりに3 2023/12/26 追記
+2023年 12月 から試しに`CloudFront`からこのブログを配信しています。特に問題は無さそう感。  
+
+![Imgur](https://imgur.com/KUWiRQV.png)
+
+```bash
+C:\Users\takusan23>curl -I https://takusan.negitoro.dev/
+HTTP/1.1 200 OK
+Content-Type: text/html
+Server: AmazonS3
+X-Cache: Hit from cloudfront
+```

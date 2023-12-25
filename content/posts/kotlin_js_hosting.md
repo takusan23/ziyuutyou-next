@@ -19,6 +19,10 @@ JSみたいにDOM操作とかも出来る。
 
 # IDEAを開き新規プロジェクトを作成します
 
+## 追記 2023/12/26
+なんか画面が変わって作り方も変わってしかもよく分からなくなってるのでこっちも見て下さい。  
+https://takusan.negitoro.dev/posts/kotlin_js_fix_javascript_mediarecorder_webm_seek/
+
 `Gradle`を押して、`Kotlin DSL build script`にチェックを入れ、`Kotlin/JS for browser`を選択します。
 
 ![Imgur](https://imgur.com/mjYwnR1.png)
