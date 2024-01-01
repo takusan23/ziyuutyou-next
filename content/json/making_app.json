@@ -19,6 +19,12 @@
             "description": "Next.js と Tailwind CSS と unified で出来ている",
             "link": "/",
             "github": "https://github.com/takusan23/ziyuutyou-next"
+        },
+        {
+            "name": "Kotlin/JS で作った WebM ツール",
+            "description": "JavaScript の MediaRecorder で出来る WebM をシーク可能にする。ついでに JavaScript の MediaRecorder を使って画面録画する。",
+            "link": "https://webm.negitoro.dev/",
+            "github": "https://github.com/takusan23/FixSeekableWebmKotlinJs"
         }
     ],
     "akashic": [
@@ -45,10 +51,10 @@
     ],
     "windows": [
         {
-            "name": "いたかーそる",
-            "description": "仮想カーソルと仮想トラックパッドを追加します。スクリーンショットボタンも付いてきます",
-            "link": "ms-windows-store://pdp/?productid=XP8BZ1XV93S6X1",
-            "github": "https://github.com/takusan23/ItaCursor"
+            "name": "DesktopLine",
+            "description": "仮想デスクトップ切り替えのショートカットが覚えられないので、線を書くだけで切り替えができるアプリ。",
+            "link": "https://github.com/takusan23/DesktopLine/releases/tag/1.0.0",
+            "github": "https://github.com/takusan23/DesktopLine"
         }
     ]
 }
