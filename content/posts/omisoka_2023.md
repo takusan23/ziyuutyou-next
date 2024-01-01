@@ -121,7 +121,7 @@ https://github.com/takusan23/TweetReader
 
 あ！！！  
 `Google`さん、もし見てたら`PhysicalChannelConfig`を`公開 API`にしてください！！  
-`*#*#4636#*#*`で開く画面の、**物理チャンネルの構成:**の表示でこの`API`を使ってるんですが、今のところプリインストールアプリしか使えない権限で保護されてて無理になってる。  
+`*#*#4636#*#*`で開く画面の、 **物理チャンネルの構成:** の表示でこの`API`を使ってるんですが、今のところプリインストールアプリしか使えない権限で保護されてて無理になってる。  
 https://developer.android.com/reference/android/telephony/PhysicalChannelConfig
 
 これがあると多分`LTEのキャリアアグリゲーション`の表示や、`EN-DC`のプライマリセルの`バンド`の表示、`Sub6-CA`の表示が出来るはず？なので何とかなりませんか・・・  
