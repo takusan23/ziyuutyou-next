@@ -3,6 +3,7 @@ title: 再エンコードアプリを作った
 created_at: 2024-01-09
 tags:
 - Android
+- MediaCodec
 ---
 
 どうもこんばんわ。  
@@ -24,6 +25,9 @@ tags:
 - https://takusan.negitoro.dev/posts/tag/WebM/
 
 ![Imgur](https://imgur.com/wjH8mi1.png)
+
+`AV1`エンコーダーが`targetSdk 34 (Android 14)`からっぽいので、`最低 Android バージョン`は`14`です。  
+![Imgur](https://imgur.com/dECAUna.png)
 
 以上です。
 
