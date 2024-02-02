@@ -1,16 +1,22 @@
 {
     "android": [
         {
+            "name": "NewRadioSupporter",
+            "description": "Sub-6 / ミリ波 / アンカーバンド の検出ができるアプリ",
+            "link": "https://play.google.com/store/apps/details?id=io.github.takusan23.newradiosupporter",
+            "github": "https://github.com/takusan23/NewRadioSupporter"
+        },
+        {
             "name": "ぜろみらー",
             "description": "Androidの画面をブラウザへミラーリングするアプリ",
             "link": "https://play.google.com/store/apps/details?id=io.github.takusan23.zeromirror",
             "github": "https://github.com/takusan23/ZeroMirror"
         },
         {
-            "name": "NewRadioSupporter",
-            "description": "Sub-6 / ミリ波 / アンカーバンド の検出ができるアプリ",
-            "link": "https://play.google.com/store/apps/details?id=io.github.takusan23.newradiosupporter",
-            "github": "https://github.com/takusan23/NewRadioSupporter"
+            "name": "どうがうんどろいど",
+            "description": "逆再生動画作成アプリ",
+            "link": "https://play.google.com/store/apps/details?id=io.github.takusan23.dougaundroid",
+            "github": "https://github.com/takusan23/DougaUnDroid"
         }
     ],
     "web": [
