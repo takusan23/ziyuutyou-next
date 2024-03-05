@@ -55,6 +55,8 @@ tags:
 `Android 15`の機能として紹介された。`14 QPR2`で試験的に入って`15`でリリースなんですかね？`15`を待とう・・！  
 https://android-developers.googleblog.com/2024/02/first-developer-preview-android15.html
 
+`Pixel`端末は`2024年3月`の`Feature Drop`で対応したそう。もうわけがわからないよ
+
 ## 部分的な画面共有機能
 - ドキュメント
     - https://developer.android.com/about/versions/14/features/partial-screen-sharing
