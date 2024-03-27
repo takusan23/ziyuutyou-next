@@ -649,6 +649,7 @@ private suspend fun awaitSeekToPrevDecode(
 ```
 
 ### 前回より後の位置にあるフレームを取り出す
+2024/03/28 追記。コード間違えてた、対応しないと無限ループに陥ります。詳しくは後述
 
 ```plaintext
 |-------◯----|
@@ -757,6 +758,84 @@ private suspend fun awaitSeekToNextDecode(
         }
     }
 }
+```
+
+#### 追記
+`MediaExtractor`からもうデータが取れないときの対応が必要です。  
+これしないと、最後まで取得しようとした時に多分無限ループになります。
+
+なので、もうデータがない場合は null を返すように修正する必要があります。  
+このコミット参照。  
+https://github.com/takusan23/AndroidVideoFrameFastNextExtractor/commit/bceea63d9bb12616eea65a261d8c309900c9c0ff#diff-c7c817c9f4104122158d59c5d4aa6a97ba894f79f99e73d15eee88b892502ebe
+
+説明すると、  
+
+`getVideoFrameBitmap`の`Bitmap`を`nullable`にする。  
+
+```diff
+     suspend fun getVideoFrameBitmap(
+         seekToMs: Long
+-    ): Bitmap = withContext(Dispatchers.Default) {
++    ): Bitmap? = withContext(Dispatchers.Default) {
+```
+
+`getVideoFrameBitmap`の`else`でフレームがないなら`getImageReaderBitmap`を呼ばないように。
+
+```diff
+             else -> {
+                 // 巻き戻しでも無く、フレームを取り出す必要がある
+                 awaitSeekToNextDecode(seekToMs)
+-                getImageReaderBitmap()
++                // 巻き戻しでも無く、フレームを取り出す必要がある
++                val hasData = awaitSeekToNextDecode(seekToMs)
++                if (hasData) getImageReaderBitmap() else null
+             }
+```
+
+`awaitSeekToNextDecode`が`Boolean`を返せるようにします。`true`ならフレームがある（`getImageReaderBitmap`が呼び出せる）、`false`なら無いです。
+
+```diff
+     private suspend fun awaitSeekToNextDecode(
+         seekToMs: Long
+-    ) = withContext(Dispatchers.Default) {
++    ): Boolean = withContext(Dispatchers.Default) {
+```
+
+`awaitSeekToNextDecode`のループ直前で、`MediaExtractor#getSampleTime()`を呼び出して、`-1`（もうデータがない）場合は何もせず、false を返します。  
+
+```diff
+         val decodeMediaCodec = decodeMediaCodec!!
+         val mediaExtractor = mediaExtractor!!
+         val inputSurface = inputSurface!!
+
++        // advance() で false を返したことがある場合、もうデータがない。getSampleTime も -1 になる。
++        if (mediaExtractor.sampleTime == -1L) {
++            return@withContext false
++        }
++
+         var isRunning = isActive
+         val bufferInfo = MediaCodec.BufferInfo()
+```
+
+`MediaExtractor#advance()`の返り値を見て、もうデータがない場合（`false`）は、ループを抜けるようにします。  
+
+```diff
+
+-            // 次に進める
+-            mediaExtractor.advance()
++            // 次に進める。advance() が false の場合はもうデータがないので、break する。
++            val isEndOfFile = !mediaExtractor.advance()
++            if (isEndOfFile) {
++                break
++            }
+```
+
+これで、無限ループは回避出来るはず。  
+`nullable`になった関係で、呼び出し箇所も修正が必要かもです。
+
+```diff
+-                bitmap.value = videoFrameBitmapExtractor.getVideoFrameBitmap(currentPositionMs.value).asImageBitmap()
++                bitmap.value = videoFrameBitmapExtractor.getVideoFrameBitmap(currentPositionMs.value)?.asImageBitmap()
 ```
 
 ### ImageReader から Bitmap を取り出す処理
