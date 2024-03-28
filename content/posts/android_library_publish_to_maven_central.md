@@ -270,6 +270,8 @@ certutil -f -encode export_secret export_secret_base64
 
 **2023/02/19 めっちゃ間違えてました。すいませｎ。ソースとjavadocが入るように修正しました。**
 
+**2024/03/29 Android Gradle Plugin の更新でまた動かなくなってました。不要な箇所があるので追記読んでください。**
+
 ## ルート (.idea がある場所) の build.gradle.kts
 
 まずルートにある build.gradle.kts へ書き足します。  
@@ -480,6 +482,169 @@ afterEvaluate {
 }
 ```
 
+# 追記 Android Gradle Plugin 最新バージョン追従
+- https://developer.android.com/build/publish-library
+- https://stackoverflow.com/questions/76859081/
+
+なんか見ないうちに、公式ドキュメントに、ライブラリの作り方が言及されるようになってる。  
+変更点ですが、
+
+- `Android Gradle Plugin`が元のソースコードを同梱するようになったので、自分で`task`を書かなくて良い
+    - `withSourcesJar()`、`withJavadocJar()`を使えばいい（いつから追加されたのこれ？？？）
+- 同様に、`Javadoc`も`AGP`が勝手に生成して同梱するようになったので、自分で`dokka`をセットアップする必要はなくなった
+- それに伴い、`build.gradle`に書いている記述も修正が必要
+
+まずは、ルートの`build.gradle.kts`から`dokka`は不要なので消しちゃって
+
+```diff
+plugins {
+     alias(libs.plugins.kotlin.android).apply(false)
+     // akaricore ライブラリ公開で使う
+     alias(libs.plugins.gradle.nexus.publish.plugin)
+-    alias(libs.plugins.jetpbrains.dokka)
+-}
+-
+-subprojects {
+-    apply(plugin = "org.jetbrains.dokka")
+ }
+```
+
+そして、ライブラリの方の`build.gradle.kts`を以下のように書き直します。  
+`namespace`とかは各自違うと思う。コメントは不要なので消していいよ
+
+```kotlin
+plugins {
+    id("com.android.library")
+    id("org.jetbrains.kotlin.android")
+    // Maven Central に公開する際に利用
+    `maven-publish`
+    signing
+}
+
+// ライブラリ公開は Android でも言及するようになったので目を通すといいかも
+// https://developer.android.com/build/publish-library/upload-library
+// そのほか役に立ちそうなドキュメント
+// https://docs.gradle.org/current/dsl/org.gradle.api.publish.maven.MavenPublication.html
+// https://github.com/gradle-nexus/publish-plugin
+
+// OSSRH にアップロードせずに成果物を確認する方法があります。ローカルに吐き出せばいい
+// gradle :akari-core:publishToMavenLocal
+
+android {
+    namespace = "io.github.takusan23.akaricore"
+    compileSdk = 34
+
+    defaultConfig {
+        minSdk = 21
+        targetSdk = 34
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
+    }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    // どうやら Android Gradle Plugin 側で sources.jar と javadoc.jar を作る機能が実装されたそう
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
+}
+
+// ライブラリ
+dependencies {
+
+    implementation(libs.androidx.core)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.kotlinx.coroutine)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.kotlinx.coroutine.test)
+    androidTestImplementation(libs.androidx.test.junit)
+    androidTestImplementation(libs.androidx.test.espresso.core)
+}
+
+// ライブラリのメタデータ
+publishing {
+    publications {
+        create<MavenPublication>("release") {
+            groupId = "io.github.takusan23"
+            artifactId = "akaricore"
+            version = "2.0.0-alpha01"
+
+            // afterEvaluate しないとエラーなる
+            afterEvaluate {
+                from(components["release"])
+            }
+
+            pom {
+                // ライブラリ情報
+                name.set("akaricore")
+                description.set("AkariDroid is Video editor app in Android. AkariDroid core library")
+                url.set("https://github.com/takusan23/AkariDroid/")
+                // ライセンス
+                licenses {
+                    license {
+                        name.set("Apache License 2.0")
+                        url.set("https://github.com/takusan23/AkariDroid/blob/master/LICENSE")
+                    }
+                }
+                // 開発者
+                developers {
+                    developer {
+                        id.set("takusan_23")
+                        name.set("takusan_23")
+                        url.set("https://takusan.negitoro.dev/")
+                    }
+                }
+                // git
+                scm {
+                    connection.set("scm:git:github.com/takusan23/AkariDroid")
+                    developerConnection.set("scm:git:ssh://github.com/takusan23/AkariDroid")
+                    url.set("https://github.com/takusan23/AkariDroid")
+                }
+            }
+        }
+    }
+}
+
+// 署名
+signing {
+    // ルート build.gradle.kts の extra を見に行く
+    useInMemoryPgpKeys(
+        rootProject.extra["signing.keyId"] as String,
+        rootProject.extra["signing.key"] as String,
+        rootProject.extra["signing.password"] as String,
+    )
+    sign(publishing.publications["release"])
+}
+```
+
+変更点ですが、
+- `android { }`の中に`publishing { }`を追加した
+- ソースコードとドキュメント生成の`task`を消した、`artifacts { }`も消した、
+- `afterEvaluate { }`に`from`だけ移動。
+    - 多分ここは関係ない。ただ Android のドキュメントに従ってみた
+    - https://developer.android.com/build/publish-library/upload-library
+- 多分`from`でソースと`javadoc`が入るので、`artifact()`は書かなくていい
+- `signing { }`を一番最後に
+
+全部の差分はこちらから  
+https://github.com/takusan23/AkariDroid/commit/54e1dd4329569bda09bacdd090b34e78a65ab892
+
 # local.properties に認証情報を書き込む
 このファイルはgitの管理下にしてはいけません。絶対人には見せちゃだめですよ。  
 なんか書いてあるかもだけどその下にかけばいいです。
@@ -608,13 +773,17 @@ implementation("io.github.takusan23:conecocore:1.0.0")
 
 ![Imgur](https://imgur.com/RuVmcSf.png)
 
+![Imgur](https://imgur.com/iAM8juN.png)
+
 # 他にライブラリを公開したい場合
 すでにリポジトリがある(Sonatype OSSRH nexus repository manager が使える)ので、`build.gradle.kts`のところからやればいいと思います。
 
 # ソースコード
 どうぞ
 
-https://github.com/takusan23/Coneco
+~~https://github.com/takusan23/Coneco~~
+
+https://github.com/takusan23/AkariDroid
 
 # おわりに
 
