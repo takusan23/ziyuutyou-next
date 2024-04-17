@@ -2,7 +2,7 @@ import fs from "fs/promises"
 import matter from "gray-matter"
 import MarkdownData from "./data/MarkdownData"
 import path from "path"
-import rehypeHighlight from "rehype-highlight"
+import rehypePrettyCode from "rehype-pretty-code"
 import remarkGfm from "remark-gfm"
 import { unified } from "unified"
 import remarkParse from "remark-parse"
@@ -24,7 +24,7 @@ import { JSDOM } from "jsdom"
  * - remarkParse (Markdownパーサー)
  * - remarkRehype / rehypeStringify (HTML変換)
  * - rehypeRaw (Markdownに埋め込んだHTMLを利用する)
- * - rehypeHighlight (シンタックスハイライト。CSSはHighlight.jsから。_app.tsxで読み込んでる)
+ * - rehypePrettyCode (シンタックスハイライト)
  * - remarkGfm (テーブル、打ち消し線、自動リンク機能)
  * - rehypeSlug (HTML生成後に h1, h2 等に id属性 をセットしてくれる。目次からスクロールするため)
  */
@@ -59,7 +59,7 @@ class MarkdownParser {
             .use(remarkGfm)
             .use(rehypeStringify)
             .use(rehypeSlug)
-            .use(rehypeHighlight)
+            .use(rehypePrettyCode, { theme: "dark-plus" })
             .process(matterResult.content)
         const markdownToHtml = remarkParser.toString()
         // Markdown から生成した HTML から 目次だけを取り出す

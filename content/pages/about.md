@@ -83,15 +83,9 @@ thx!!!
 - gray-matter
     - MIT
     - https://github.com/jonschlinkert/gray-matter/blob/master/LICENSE
-- highlight.js
-    - BSD-3-Clause License
-    - https://github.com/highlightjs/highlight.js/blob/main/LICENSE
 - rehype-stringify
     - MIT License
     - https://github.com/rehypejs/rehype/blob/main/license
-- rehype-highlight
-    - MIT License
-    - https://github.com/rehypejs/rehype-highlight/blob/main/license
 - rehype-raw
     - MIT License
     - https://github.com/rehypejs/rehype-raw/blob/main/license
@@ -125,6 +119,12 @@ thx!!!
 - typescript
     - Apache License 2.0
     - https://github.com/microsoft/TypeScript/blob/main/LICENSE.txt
+- rehype-pretty-code
+    - MIT
+    - https://github.com/rehype-pretty/rehype-pretty-code/blob/master/LICENSE
+- shiki
+    - MIT
+    - https://github.com/shikijs/shiki/blob/main/LICENSE
  - Koruri Regular
     - Apache License 2.0
     - https://github.com/Koruri/Koruri/blob/master/LICENSE
