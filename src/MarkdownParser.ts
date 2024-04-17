@@ -8,7 +8,7 @@ import { unified } from "unified"
 import remarkParse from "remark-parse"
 import remarkRehype from "remark-rehype"
 import rehypeRaw from "rehype-raw"
-import rehypeStringify from "rehype-stringify/lib"
+import rehypeStringify from "rehype-stringify"
 import rehypeSlug from "rehype-slug"
 import TocData from "./data/TocData"
 import { JSDOM } from "jsdom"
@@ -59,10 +59,7 @@ class MarkdownParser {
             .use(remarkGfm)
             .use(rehypeStringify)
             .use(rehypeSlug)
-            .use(rehypeHighlight, {
-                // 利用できない言語の場合はエラー出さずに無視
-                ignoreMissing: true
-            })
+            .use(rehypeHighlight)
             .process(matterResult.content)
         const markdownToHtml = remarkParser.toString()
         // Markdown から生成した HTML から 目次だけを取り出す
