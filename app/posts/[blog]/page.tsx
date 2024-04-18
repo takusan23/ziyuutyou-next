@@ -40,7 +40,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
     // サーバー側でロードする
     const markdownData = await ContentFolderManager.getBlogItem(params.blog)
 
-    const ogpTitle = `${markdownData.title} - たくさんの自由帳`
+    const ogpTitle = `${markdownData.title} - ${EnvironmentTool.SITE_NAME}`
     const ogpUrl = `${EnvironmentTool.BASE_URL}${markdownData.link}`
     const dateTimeFormat = markdownData.createdAt.replace(/\//g, '-')
 
