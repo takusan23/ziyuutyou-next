@@ -28,7 +28,7 @@ class JsonFolderManager {
     static async getLinkList() {
         const linkJSON = await this.readTextFile(`${this.JSON_FOLDER_PATH}/${this.JSON_LINK_FILE_NAME}`)
         const json = JSON.parse(linkJSON)
-        return json["link"] as Array<LinkData>
+        return json["link"] as LinkData[]
     }
 
     /**
@@ -39,7 +39,7 @@ class JsonFolderManager {
     static async getRandomMessageList() {
         const randomMessageJSON = await this.readTextFile(`${this.JSON_FOLDER_PATH}/${this.JSON_RANDOM_MESSAGE_FILE_NAME}`)
         const json = JSON.parse(randomMessageJSON)
-        return json["random_message"] as Array<string>
+        return json["random_message"] as string[]
     }
 
     /**
@@ -53,7 +53,7 @@ class JsonFolderManager {
         return Object.keys(json).map((key) => {
             const platformData: MakingAppData = {
                 platfromName: key,
-                appList: json[key] as Array<MakingAppDetailData>
+                appList: json[key] as MakingAppDetailData[]
             }
             return platformData
         })
