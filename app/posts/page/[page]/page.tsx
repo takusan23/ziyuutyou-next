@@ -1,5 +1,5 @@
 import { Metadata } from "next"
-import ContentFolderManager from "../../../../src/ContentFolderManager"
+import ContentFolderManager from "../../../../src/v2/ContentFolderManager"
 import EnvironmentTool from "../../../../src/EnvironmentTool"
 import NextLinkButton from "../../../../components/NextLinkButton"
 import Button from "../../../../components/Button"
@@ -24,7 +24,7 @@ export default async function BlogListPage({ params }: PageProps) {
     // posts/page/<ここ> を取得
     const pageId = Number(params.page)
     // 記事一覧を取得する。async なので待つ。-1してるのは1ページ目はskip:0にしたいため
-    const blogListResult = await ContentFolderManager.getBlogItemList(BLOG_SIZE_LIMIT, BLOG_SIZE_LIMIT * (pageId - 1))
+    const blogListResult = await ContentFolderManager.getInstance().getBlogItemList(BLOG_SIZE_LIMIT, BLOG_SIZE_LIMIT * (pageId - 1))
     const blogList = blogListResult.result
     const totalCount = blogListResult.totalCount
     // 次のページ、前のページボタン
@@ -91,7 +91,7 @@ export default async function BlogListPage({ params }: PageProps) {
  */
 export async function generateStaticParams() {
     // async なので待つ。合計数がほしいので名前だけの配列で
-    const nameList = await ContentFolderManager.getBlogNameList()
+    const nameList = await ContentFolderManager.getInstance().getBlogNameList()
     const totalCount = nameList.length
     // 割り算をして必要な数用意する
     const requirePageCount = (totalCount / BLOG_SIZE_LIMIT) + 1 // あまりのために +1
