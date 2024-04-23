@@ -1,6 +1,6 @@
 import { Metadata } from "next"
 import EnvironmentTool from "../../../../src/EnvironmentTool"
-import ContentFolderManager from "../../../../src/v2/ContentFolderManager"
+import ContentFolderManager from "../../../../src/ContentFolderManager"
 import RoundedCornerList from "../../../../components/RoundedCornerList"
 import BlogListItem from "../../../../components/BlogListItem"
 
@@ -26,7 +26,7 @@ export default async function TagListPage({ params }: PageProps) {
     // パーセントエンコーディングされているため戻す
     const unEscapeText = decodeURIComponent(params.tag)
     // ページネーションは後で
-    const tagFilterBlogList = await ContentFolderManager.getInstance().getTagFilterBlogItem(unEscapeText)
+    const tagFilterBlogList = await ContentFolderManager.getTagFilterBlogItem(unEscapeText)
 
     return (
         <>
@@ -63,6 +63,6 @@ export default async function TagListPage({ params }: PageProps) {
  * 静的書き出し時に呼ばれる
  */
 export async function generateStaticParams() {
-    const tagNameList = await ContentFolderManager.getInstance().getAllTagDataList()
+    const tagNameList = await ContentFolderManager.getAllTagDataList()
     return tagNameList.map((name) => ({ tag: name.name }))
 }

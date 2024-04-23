@@ -1,5 +1,5 @@
 import { Metadata } from "next"
-import ContentFolderManager from "../../../src/v2/ContentFolderManager"
+import ContentFolderManager from "../../../src/ContentFolderManager"
 import EnvironmentTool from "../../../src/EnvironmentTool"
 import { GitHubHistoryButton } from "../../../components/BlogDetailButton"
 import TagChipGroup from "../../../components/TagChipGroup"
@@ -19,7 +19,7 @@ type PageProps = {
 
 /** head に値を入れる */
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-    const markdownData = await ContentFolderManager.getInstance().getBlogItem(params.blog)
+    const markdownData = await ContentFolderManager.getBlogItem(params.blog)
     const ogpTitle = `${markdownData.title} - ${EnvironmentTool.SITE_NAME}`
     const ogpUrl = `${EnvironmentTool.BASE_URL}${markdownData.link}`
 
@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 /** 記事本文 */
 export default async function BlogDetailPage({ params }: PageProps) {
     // サーバー側でロードする
-    const markdownData = await ContentFolderManager.getInstance().getBlogItem(params.blog)
+    const markdownData = await ContentFolderManager.getBlogItem(params.blog)
 
     const ogpTitle = `${markdownData.title} - ${EnvironmentTool.SITE_NAME}`
     const ogpUrl = `${EnvironmentTool.BASE_URL}${markdownData.link}`
@@ -103,7 +103,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
  * これも上記同様クライアント側では呼ばれない。
  */
 export async function generateStaticParams() {
-    const fileNameList = await ContentFolderManager.getInstance().getBlogNameList()
+    const fileNameList = await ContentFolderManager.getBlogNameList()
     // この場合はキーが blog になるけどこれはファイル名によって変わる（[page].tsxなら page がキーになる）
     return fileNameList.map((name) => ({ blog: name }))
 }

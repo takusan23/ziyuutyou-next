@@ -1,5 +1,5 @@
 import { Metadata } from "next"
-import ContentFolderManager from "../../../../src/v2/ContentFolderManager"
+import ContentFolderManager from "../../../../src/ContentFolderManager"
 import EnvironmentTool from "../../../../src/EnvironmentTool"
 import NextLinkButton from "../../../../components/NextLinkButton"
 import SellIcon from "../../../../public/icon/sell.svg"
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 /** タグ一覧ページ */
 export default async function ClientAllTagPage() {
-    const tagDataList = await ContentFolderManager.getInstance().getAllTagDataList()
+    const tagDataList = await ContentFolderManager.getAllTagDataList()
 
     return (
         <div className="flex flex-col space-y-4">
