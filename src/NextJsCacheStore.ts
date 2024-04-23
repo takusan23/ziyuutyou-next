@@ -21,7 +21,13 @@ export class NextJsCacheStore<T> implements CacheStore<T> {
     }
 
     deleteCache(key: string): void {
-        revalidateTag(key)
+        // マークダウンに変更があったらキャッシュを消すため。
+        // 静的書き出し時（本番、意味深）は使えないため、分岐する。
+        //（書き出し時はキャッシュを消すこと無いので、getCache さえ動けばいい）
+        // 開発時は next.config.js で SSR で動くようにしているため利用できます。
+        if (process.env.NODE_ENV === 'development') {
+            revalidateTag(key)
+        }
     }
 
 }
