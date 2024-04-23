@@ -1,6 +1,6 @@
 import { Metadata } from "next"
-import { GoogleAnalytics } from "@next/third-parties/google"
-import EnvironmentTool from "../src/EnvironmentTool"
+import { Suspense } from "react"
+import GoogleAnalytics from "../src/GoogleAnalytics"
 import localFont from "next/font/local"
 import NavigationDrawer from "../components/NavigationDrawer"
 import ResponsiveLayout from "../components/ResponsiveLayout"
@@ -36,13 +36,11 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
                     {children}
                 </ResponsiveLayout>
 
+                {/* GoogleAnalytics */}
+                <Suspense fallback={null}>
+                    <GoogleAnalytics />
+                </Suspense>
             </body>
-
-            {
-                // Google アナリティクス。Next.js 製のを使う。ブラウザ履歴イベントの設定を有効にする必要があります。
-                // 本番のみ
-                process.env.NODE_ENV === 'production' && <GoogleAnalytics gaId={EnvironmentTool.GA_TRACKING_ID} />
-            }
         </html>
     )
 }
