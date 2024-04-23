@@ -1,6 +1,7 @@
 "use client"
 
-import { ReactNode, useState } from "react"
+import { ReactNode, useEffect, useState } from "react"
+import { usePathname } from "next/navigation"
 import MenuIcon from "../public/icon/menu.svg"
 
 // 定数
@@ -23,6 +24,12 @@ type ResponsiveLayoutProps = {
  */
 export default function ResponsiveLayout({ navigationDrawer, title, children }: ResponsiveLayoutProps) {
     const [isDrawerOpen, setDrawerOpen] = useState(false)
+
+    // 画面遷移後にナビゲーションドロワーを消す
+    const pathname = usePathname()
+    useEffect(() => {
+        setDrawerOpen(false)
+    }, [pathname])
 
     return (
         <div className="flex flex-row w-full">
