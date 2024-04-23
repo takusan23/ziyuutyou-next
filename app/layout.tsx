@@ -4,6 +4,7 @@ import GoogleAnalytics from "../src/GoogleAnalytics"
 import localFont from "next/font/local"
 import NavigationDrawer from "../components/NavigationDrawer"
 import ResponsiveLayout from "../components/ResponsiveLayout"
+import { ApplyThemeToTailwindCss } from "../components/theme/ThemeConponents"
 // グローバルCSS
 import "../styles/css/global.css"
 
@@ -40,6 +41,9 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
                 <Suspense fallback={null}>
                     <GoogleAnalytics />
                 </Suspense>
+
+                {/* テーマ変更を検知して Tailwind CSS へ適用するやつ */}
+                <ApplyThemeToTailwindCss />
             </body>
         </html>
     )
