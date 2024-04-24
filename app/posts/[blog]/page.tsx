@@ -4,7 +4,7 @@ import EnvironmentTool from "../../../src/EnvironmentTool"
 import { GitHubHistoryButton } from "../../../components/BlogDetailButton"
 import TagChipGroup from "../../../components/TagChipGroup"
 import RoundedCornerBox from "../../../components/RoundedCornerBox"
-import { TocList, TocListLayout } from "../../../components/TocList"
+import { ExpandTocList, LargeTocList, TocListLayout } from "../../../components/TocList"
 import DateCountText from "../../../components/DateCountText"
 import IconParent from "../../../components/IconParent"
 import EditIcon from "../../../public/icon/edit.svg"
@@ -35,7 +35,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     }
 }
 
-/** 記事本文 */
+/**
+ * 記事本文。
+ * 反映されない場合はスーパーリロードしてみてください。
+ */
 export default async function BlogDetailPage({ params }: PageProps) {
     // サーバー側でロードする
     const markdownData = await ContentFolderManager.getBlogItem(params.blog)
@@ -81,8 +84,11 @@ export default async function BlogDetailPage({ params }: PageProps) {
             <TagChipGroup tagList={markdownData.tags} />
             {shareOrHistoryButton}
 
+            {/* 画面の幅が狭いときは記事始まる前に目次を置く */}
+            <ExpandTocList tocDataList={markdownData.tocDataList} />
+
             {/* 画面の幅が広いときだけ目次を表示させる */}
-            <TocListLayout secondary={<TocList tocDataList={markdownData.tocDataList} />}>
+            <TocListLayout secondary={<LargeTocList tocDataList={markdownData.tocDataList} />}>
                 <RoundedCornerBox rounded="large">
                     <div className="p-4">
                         <div
