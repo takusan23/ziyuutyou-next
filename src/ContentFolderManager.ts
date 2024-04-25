@@ -17,10 +17,10 @@ class ContentFolderManager {
     private static cacheStore = new NextJsCacheStore<MarkdownData>()
 
     /** 記事を保存しているフォルダパス。process.cwd()はnpm run devしたときのフォルダパス？どの階層で呼んでも同じパスになるよう */
-    static POSTS_FOLDER_PATH = `${process.cwd()}/content/posts`
+    static POSTS_FOLDER_PATH = path.join(process.cwd(), `content`, `posts`)
 
     /** 固定ページを保存しているフォルダパス */
-    static PAGES_FOLDER_PATH = `${process.cwd()}/content/pages`
+    static PAGES_FOLDER_PATH = path.join(process.cwd(), `content`, `pages`)
 
     /** ブログ記事のベースURL */
     static POSTS_BASE_URL = `/posts`
@@ -89,7 +89,7 @@ class ContentFolderManager {
      */
     static async getBlogItem(fileName: string) {
         // 拡張子！！！！
-        const filePath = `${this.POSTS_FOLDER_PATH}/${fileName}.md`
+        const filePath = path.join(this.POSTS_FOLDER_PATH, `${fileName}.md`)
         return this.parseMarkdown(filePath, this.POSTS_BASE_URL)
     }
 
@@ -101,7 +101,7 @@ class ContentFolderManager {
      */
     static async getPageItem(fileName: string) {
         // 拡張子！！！！
-        const filePath = `${this.PAGES_FOLDER_PATH}/${fileName}.md`
+        const filePath = path.join(this.PAGES_FOLDER_PATH, `${fileName}.md`)
         return this.parseMarkdown(filePath, this.PAGES_BASE_URL)
     }
 
@@ -180,7 +180,7 @@ class ContentFolderManager {
         const postFileList = await fs.readdir(folderPath)
         // Markdownパーサーへかける
         const markdownParsePromiseList = postFileList
-            .map(fileName => `${folderPath}/${fileName}`)
+            .map(fileName => path.join(folderPath, fileName))
             .map(filePath => this.parseMarkdown(filePath, baseUrl))
         // Promiseの結果を全部待つ。mapの中でawait使えなかった；；
         const markdownDataList = await Promise.all(markdownParsePromiseList)

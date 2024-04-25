@@ -13,7 +13,8 @@ export class NextJsCacheStore<T> implements CacheStore<T> {
         // キャッシュがあればそれ、なければ notExists を呼び出す
         const cacheOrCreate = unstable_cache(
             async () => notExists(key),
-            [key]
+            [key],
+            { tags: [key] }
         )
         // 待って返す
         const result = await cacheOrCreate()

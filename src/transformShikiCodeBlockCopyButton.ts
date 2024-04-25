@@ -27,7 +27,7 @@ export default function transformShikiCodeBlockCopyButton(): ShikiTransformer {
             // コピーボタンを差し込む
             node.children.push({
                 type: 'element',
-                tagName: 'div',
+                tagName: 'button',
                 properties: {
                     data: this.source,
                     onclick: /* javascript */ `navigator.clipboard.writeText(this.attributes.data.value)`,
@@ -56,7 +56,7 @@ export default function transformShikiCodeBlockCopyButton(): ShikiTransformer {
                         ]
                     }
                 ],
-            });
+            })
         }
-    };
+    }
 }
