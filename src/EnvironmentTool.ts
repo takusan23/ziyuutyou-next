@@ -18,9 +18,12 @@ class EnvironmentTool {
 
     /** Google Search Console の所有権確認のための HTML タグの content の値 */
     static GOOGLE_SEARCH_CONSOLE = process.env.GOOGLE_SEARCH_CONSOLE
-    
+
     /** 検索 API URL。省略したら undefined */
     static SEARCH_API_URL = process.env.SEARCH_API_URL
+
+    /** 検索結果に乗らないように noindex する場合は true */
+    static NO_INDEX_MODE = process.env.NO_INDEX_MODE === 'true'
 }
 
 export default EnvironmentTool

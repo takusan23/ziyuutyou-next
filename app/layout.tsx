@@ -7,6 +7,7 @@ import ResponsiveLayout from "../components/ResponsiveLayout"
 import { ApplyThemeToTailwindCss } from "../components/theme/ThemeConponents"
 // グローバルCSS
 import "../styles/css/global.css"
+import EnvironmentTool from "../src/EnvironmentTool"
 
 /** フォントを読み込む */
 const koruriFont = localFont({
@@ -20,7 +21,11 @@ const koruriFont = localFont({
 })
 
 export const metadata: Metadata = {
-    manifest: '/manifest.json'
+    manifest: '/manifest.json',
+    // テスト用。検索結果に乗らないようクローラーを指示する
+    robots: {
+        index: !EnvironmentTool.NO_INDEX_MODE
+    }
 }
 
 /** 共通レイアウト部分 */

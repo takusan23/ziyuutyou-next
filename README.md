@@ -16,7 +16,7 @@
 ### 必要なもの
 
 - Node.js
-    - v18.17.0 以降？
+    - v20.9.0 以降？
     - LTS の最新版を入れておけば良さそう
     - 本番環境へデプロイするならその環境のNode.jsのバージョンも確認してね
 
@@ -42,7 +42,7 @@ npm run dev
 `next/link`のプリフェッチ機能などは本番ビルドしか動かないので
 
 ```
-npm run build
+npm run deploy
 npm run start
 ```
 
@@ -51,11 +51,11 @@ npm run start
 全て`静的サイト（Static Site Generation）`として書き出せます。
 
 以下のコマンドを叩くと
-- すべてのページのhtml書き出し
+- すべてのページの html 書き出し
 - サイトマップ作成
 が行われます。
 
-CPU使用率が書き出し中は100%で張り付くけどしゃあない。
+CPU 使用率が書き出し中は 100% で張り付くけどしゃあない。
 
 ```
 npm run deploy
@@ -70,14 +70,14 @@ npm run deploy
 `.env`ファイルに公開先の URL などの値を入れています。  
 `EnvironmentTool.ts`から値を参照できるようにしています。  
 
-| 名前                              | 説明                                                                                                                  |
-|-----------------------------------|-----------------------------------------------------------------------------------------------------------------------|
-| NEXT_PUBLIC_SITE_BASE_URL         | WebサイトのURLのドメインまで。`https://takusan.negitoro.dev/`みたいな。                                               |
-| NEXT_PUBLIC_SITE_NAME             | サイト名です。`<title>`タグとかで使われます。                                                                         |
-| NEXT_PUBLIC_GITHUB_REPOSITORY_URL | `GitHub`のリポジトリです。記事本文ページの`GitHubで開く`で使われます。                                                |
-| NEXT_PUBLIC_UA_TRACKING_ID        | `Google アナリティクス`の`ユニバーサルアナリティクス`の`測定ID`です。                                                 |
-| NEXT_PUBLIC_GA_TRACKING_ID        | `Google アナリティクス`の`GA4`の`測定ID`です。                                                                        |
-| NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE | `Google Search Console`の所有権確認のために、`HTML タグ`の`content`の値を入れてください。任意なので無くても動くはず。 |
+| 名前                  | 説明                                                                                                                  |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------|
+| SITE_BASE_URL         | WebサイトのURLのドメインまで。`https://takusan.negitoro.dev/`みたいな。                                               |
+| SITE_NAME             | サイト名です。`<title>`タグとかで使われます。                                                                         |
+| GITHUB_REPOSITORY_URL | `GitHub`のリポジトリです。記事本文ページの`GitHubで開く`で使われます。                                                |
+| GA_TRACKING_ID        | `Google アナリティクス`の`GA4`の`測定ID`です。                                                                        |
+| GOOGLE_SEARCH_CONSOLE | `Google Search Console`の所有権確認のために、`HTML タグ`の`content`の値を入れてください。任意なので無くても動くはず。 |
+| NO_INDEX_MODE         | 検索結果にでないように、`<meta>`タグで`noindex`を指定したい場合は true を入れる。                                     |
 
 ## GitHub Actions
 `Netlify （ビルドは GitHub Actions でやってホスティングは Netlify）`と`Amazon S3 + Amazon CloudFront`の2種類があります。  
