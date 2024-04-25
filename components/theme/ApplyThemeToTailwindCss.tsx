@@ -9,7 +9,7 @@ import tailwindConfig from "../../tailwind.config.js"
  * テーマ設定を監視して、Tailwind CSS のクラスを書き換えるやつ。
  * レイアウトのルートらへんにおいておけばいいと思う。
  */
-export function ApplyThemeToTailwindCss() {
+export default function ApplyThemeToTailwindCss() {
     const { theme } = useTheme()
 
     /**
@@ -47,5 +47,5 @@ export function ApplyThemeToTailwindCss() {
         setTailwindThemeAndStatusBarColor(isDarkMode)
     }, [theme])
 
-    return (<></>)
+    return null
 }

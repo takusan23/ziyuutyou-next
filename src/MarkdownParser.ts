@@ -3,6 +3,7 @@ import matter from "gray-matter"
 import MarkdownData from "./data/MarkdownData"
 import path from "path"
 import rehypePrettyCode from "rehype-pretty-code"
+import transformShikiCodeBlockCopyButton from "./transformShikiCodeBlockCopyButton"
 import remarkGfm from "remark-gfm"
 import { unified } from "unified"
 import remarkParse from "remark-parse"
@@ -59,7 +60,13 @@ class MarkdownParser {
             .use(remarkGfm)
             .use(rehypeStringify)
             .use(rehypeSlug)
-            .use(rehypePrettyCode, { theme: "dark-plus" })
+            .use(rehypePrettyCode, {
+                theme: "dark-plus",
+                transformers: [
+                    // コピーボタンを差し込む
+                    transformShikiCodeBlockCopyButton()
+                ]
+            })
             .process(matterResult.content)
         const markdownToHtml = remarkParser.toString()
         // Markdown から生成した HTML から 目次だけを取り出す

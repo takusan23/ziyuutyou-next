@@ -4,10 +4,10 @@ import GoogleAnalytics from "../src/GoogleAnalytics"
 import localFont from "next/font/local"
 import NavigationDrawer from "../components/NavigationDrawer"
 import ResponsiveLayout from "../components/ResponsiveLayout"
-import { ApplyThemeToTailwindCss } from "../components/theme/ThemeConponents"
+import ApplyThemeToTailwindCss from "../components/theme/ApplyThemeToTailwindCss"
+import EnvironmentTool from "../src/EnvironmentTool"
 // グローバルCSS
 import "../styles/css/global.css"
-import EnvironmentTool from "../src/EnvironmentTool"
 
 /** フォントを読み込む */
 const koruriFont = localFont({
