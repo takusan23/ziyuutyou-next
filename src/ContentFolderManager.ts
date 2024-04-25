@@ -31,19 +31,6 @@ class ContentFolderManager {
     /** 含まれたタグの記事一覧のベースURL */
     static POSTS_INCLUDE_TAG_LIST = `/posts/tag`
 
-    static {
-        // マークダウンファイルの変更を追跡して、キャッシュしているマークダウンパース結果を削除する
-        // 複数回呼ばれるらしいので、その都度パースするではなく、消すだけ消して必要になったらパースする方向で
-        this.watchFolder(ContentFolderManager.POSTS_FOLDER_PATH, (filePath) => {
-            console.log(`[change] ${filePath}`)
-            this.cacheStore.deleteCache(filePath)
-        })
-        this.watchFolder(ContentFolderManager.PAGES_FOLDER_PATH, (filePath) => {
-            console.log(`[change] ${filePath}`)
-            this.cacheStore.deleteCache(filePath)
-        })
-    }
-
     /**
      * 書き出す必要のある固定ページのファイル名配列を返す
      * 
@@ -206,27 +193,6 @@ class ContentFolderManager {
      */
     private static distinctFromList<T>(list: Array<T>) {
         return Array.from(new Set(list))
-    }
-
-    /**
-     * fs.watch を使ったフォルダの監視。複数回呼ばれるらしい。
-     * マークダウンに変更があった際に通知されてほしいので。
-     * 
-     * @param folderPath フォルダパス
-     * @param onChange 変更があった際に呼ばれます。引数はファイルパス。
-     */
-    private static watchFolder(
-        folderPath: string,
-        onChange: (filePath: string) => void
-    ) {
-        (async () => {
-            const pagesWatcher = fs.watch(folderPath)
-            for await (const result of pagesWatcher) {
-                if (result.eventType === 'change' && result.filename) {
-                    onChange(path.join(folderPath, result.filename))
-                }
-            }
-        })()
     }
 
 }
