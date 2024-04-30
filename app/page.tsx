@@ -3,7 +3,6 @@ import JsonFolderManager from "../src/JsonFolderManager";
 import ProfileCard from "../components/ProfileCard";
 import EnvironmentTool from "../src/EnvironmentTool";
 import LinkCard from "../components/LinkCard";
-import MakingAppCard from "../components/MakingAppCard";
 import PortfolioCard from "../components/portfolio/PortfolioCard";
 
 /** <head> に入れる値 */
@@ -33,7 +32,6 @@ export default async function Home() {
             <ProfileCard randomMessageList={randomMessageList} />
             <LinkCard linkList={linkList} />
             <PortfolioCard portPolioDataList={portPolioData} />
-            <MakingAppCard makingAppList={portPolioData} />
         </div>
     )
 }

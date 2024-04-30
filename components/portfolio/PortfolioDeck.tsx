@@ -35,7 +35,7 @@ function PortfolioOtherDeckColumn({ portfolioData, onMoreClick }: PortfolioOther
             {
                 portfolioData.categoryItemList.map((categoryItem) => (
                     <PortfolioOtherDeckItem
-                        key={categoryItem.name}
+                        key={categoryItem.link}
                         name={categoryItem.name}
                         description={categoryItem.description}
                         link={categoryItem.link}
@@ -71,7 +71,7 @@ export default function PortfolioDeck({ portPolioDataListWithoutCurrentSelect, o
             </h2>
 
             {/* カラムを並べる */}
-            <div className="flex flex-row py-2 space-x-4 overflow-y-scroll">
+            <div className="flex flex-row py-2 space-x-4 overflow-x-scroll">
                 {
                     portPolioDataListWithoutCurrentSelect.map((portfolioData) => (
                         <PortfolioOtherDeckColumn

@@ -52,7 +52,7 @@ export default function PortfolioCard({ portPolioDataList }: PortfolioCardProps)
                 </h2>
 
                 {/* タブ */}
-                <div className="flex flex-row flex-nowrap overflow-x-scroll items-center">
+                <div className="flex flex-row flex-nowrap overflow-x-scroll items-center [scrollbar-width:none]">
                     {
                         tabLabelList.map((label) => (
                             <PortfolioTab
@@ -70,7 +70,7 @@ export default function PortfolioCard({ portPolioDataList }: PortfolioCardProps)
                     {
                         categoryItemList.map((detailData) => (
                             <PortfolioItem
-                                key={detailData.name}
+                                key={detailData.link}
                                 name={detailData.name}
                                 description={detailData.description}
                                 link={detailData.link}

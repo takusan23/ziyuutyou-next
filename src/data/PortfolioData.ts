@@ -8,7 +8,11 @@ export type PortfolioDetailData = {
     link: string
     /** ソースコードのリンク（あれば） */
     github?: string
-    /** 画像リンク（あれば） */
+    /**
+     * 画像リンク（あれば）
+     * public フォルダ内の画像を使う場合は、public/avater.png → /avater.png みたいな。
+     * imgur とかのインターネットの画像 URL でもいいはず。
+     */
     image?: string
 }
 
