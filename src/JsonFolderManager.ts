@@ -1,6 +1,6 @@
-import fs from 'fs/promises'
-import LinkData from './data/LinkData'
-import { MakingAppData, MakingAppDetailData } from './data/MakingAppData'
+import fs from "fs/promises"
+import LinkData from "./data/LinkData"
+import { PortfolioData, PortfolioDetailData } from "./data/PortfolioData"
 
 /** 
  * ContentFolderManager の JSONフォルダ版 
@@ -45,18 +45,16 @@ class JsonFolderManager {
     /**
      * 作ったアプリの配列を返す
      * 
-     * @returns MakingAppData配列
+     * @returns PortfolioData の配列
      */
-    static async getMakingAppMap() {
+    static async getPortfolioList() {
         const makingJSON = await this.readTextFile(`${this.JSON_FOLDER_PATH}/${this.JSON_MAKING_APP_FILE_NAME}`)
         const json = JSON.parse(makingJSON)
-        return Object.keys(json).map((key) => {
-            const platformData: MakingAppData = {
-                platfromName: key,
-                appList: json[key] as MakingAppDetailData[]
-            }
-            return platformData
-        })
+        const portfolioData: PortfolioData[] = Object.keys(json).map((key) => ({
+            categoryName: key,
+            categoryItemList: json[key] as PortfolioDetailData[]
+        }))
+        return portfolioData
     }
 
     /**

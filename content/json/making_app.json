@@ -2,7 +2,7 @@
     "android": [
         {
             "name": "NewRadioSupporter",
-            "description": "Sub-6 / ミリ波 / アンカーバンド の検出ができるアプリ",
+            "description": "Sub-6 / ミリ波 / アンカーバンド / 転用 5G の検出ができるアプリ",
             "link": "https://play.google.com/store/apps/details?id=io.github.takusan23.newradiosupporter",
             "github": "https://github.com/takusan23/NewRadioSupporter"
         },
@@ -11,6 +11,12 @@
             "description": "Androidの画面をブラウザへミラーリングするアプリ",
             "link": "https://play.google.com/store/apps/details?id=io.github.takusan23.zeromirror",
             "github": "https://github.com/takusan23/ZeroMirror"
+        },
+        {
+            "name": "あかりどろいど",
+            "description": "動画編集アプリ、あんまり機能はない",
+            "link": "https://play.google.com/store/apps/details?id=io.github.takusan23.akaridroid",
+            "github": "https://github.com/takusan23/AkariDroid"
         },
         {
             "name": "どうがうんどろいど",
@@ -31,6 +37,12 @@
             "description": "JavaScript の MediaRecorder で出来る WebM をシーク可能にする。ついでに JavaScript の MediaRecorder を使って画面録画する。",
             "link": "https://webm.negitoro.dev/",
             "github": "https://github.com/takusan23/FixSeekableWebmKotlinJs"
+        },
+        {
+            "name": "前のブログ（備忘録）",
+            "description": "Hexo 製のブログ",
+            "link": "https://takusan23.github.io/Bibouroku/",
+            "github": "https://github.com/takusan23/Bibouroku"
         }
     ],
     "akashic": [
@@ -50,7 +62,7 @@
     "minecraft": [
         {
             "name": "ClickManaita",
-            "description": "チートMOD (Forge / Fabric)。1.12.2 / 1.16.x / 1.17.x / 1.18.x",
+            "description": "チートMOD (Forge / Fabric)。1.12.2 / 1.16.x / 1.17.x / 1.18.x / 1.19.x / 1.20.x",
             "link": "https://www.curseforge.com/minecraft/mc-mods/clickmanaita",
             "github": "https://github.com/takusan23/ClickManaita2"
         }

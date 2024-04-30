@@ -3,7 +3,7 @@
 import { ReactNode, useEffect, useState } from "react"
 import Spacer from "./Spacer"
 import RoundedCornerBox from "./RoundedCornerBox"
-import { MakingAppData, MakingAppDetailData } from "../src/data/MakingAppData"
+import { PortfolioData, PortfolioDetailData } from "../src/data/PortfolioData"
 import NextLinkButton from "./NextLinkButton"
 import RoundedCornerList from "./RoundedCornerList"
 import IconParent from "./IconParent"
@@ -56,7 +56,7 @@ function MakingAppNavigationRail({ platformNameToIconMap, onMenuClick }: MakingA
 /** MakingAppList へ渡すデータ */
 type MakingAppListProps = {
     /** 作ったもの配列 */
-    list: MakingAppDetailData[]
+    list: PortfolioDetailData[]
 }
 
 /** 実際に作ったものを表示する */
@@ -83,11 +83,13 @@ function MakingAppList({ list }: MakingAppListProps) {
                             text="リンクへ"
                         />
                         <Spacer space="small" />
-                        <NextLinkButton
-                            variant="text"
-                            href={item.github}
-                            text="GitHubを開く"
-                        />
+                        {
+                            item.github && <NextLinkButton
+                                variant="text"
+                                href={item.github}
+                                text="GitHubを開く"
+                            />
+                        }
                     </div>
                 </div>
             )}
@@ -107,14 +109,14 @@ const APP_NAME_TO_ICON_LIST: PlatformData[] = [
 /** MakingAppData へ渡すデータ */
 type MakingAppCardProps = {
     /** 作ったアプリの配列 */
-    makingAppList: Array<MakingAppData>
+    makingAppList: Array<PortfolioData>
 }
 
 /** 作ったもの表示してるところ */
 export default function MakingAppCard({ makingAppList }: MakingAppCardProps) {
     // JetpackComposeの remember { mutableStateOf(arrayOf()) } みたいな
     // 表示するプラットフォーム
-    const [appList, setAppList] = useState<MakingAppDetailData[]>([])
+    const [appList, setAppList] = useState<PortfolioDetailData[]>([])
 
     /**
      * 作ったものリストを切り替える
@@ -123,9 +125,9 @@ export default function MakingAppCard({ makingAppList }: MakingAppCardProps) {
      * @param platformName androidとか
      */
     const changeAppListPlatform = (platformName: string) => {
-        const makingApp = makingAppList.find(platformObj => platformObj.platfromName === platformName)
+        const makingApp = makingAppList.find(platformObj => platformObj.categoryName === platformName)
         if (makingApp) {
-            setAppList(makingApp.appList)
+            setAppList(makingApp.categoryItemList)
         }
     }
 

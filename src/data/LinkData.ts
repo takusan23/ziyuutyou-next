@@ -7,7 +7,7 @@ type LinkData = {
     /** リンク */
     href: string
     /** rel="me" したい場合は "me" を渡す */
-    rel: string | undefined
+    rel?: string
 }
 
 export default LinkData
