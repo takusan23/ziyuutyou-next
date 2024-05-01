@@ -30,7 +30,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         },
         openGraph: {
             title: ogpTitle,
-            url: ogpUrl
+            url: ogpUrl,
+            // OGP 画像は opengraph-image.png/route.tsx 参照
+            images: `${ogpUrl}opengraph-image.png`
         }
     }
 }

@@ -31,6 +31,15 @@ class FileReadTool {
     static async readTextFile(...filePathSegments: string[]) {
         return await fs.readFile(path.join(process.cwd(), ...filePathSegments), { encoding: 'utf-8' })
     }
+
+    /**
+     * 引数に渡したファイルパスを読み出して Buffer で返す
+     * 
+     * @param filePathSegments ファイルパス。/styles/css/fonts/font.ttf なら可変長引数に 'styles', 'css', 'fonts', 'font.ttf' を渡す。
+     */
+    static async readByteArray(...filePathSegments: string[]) {
+        return await fs.readFile(path.join(process.cwd(), ...filePathSegments))
+    }
 }
 
 export default FileReadTool
