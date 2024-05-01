@@ -1,4 +1,5 @@
 import fs from "fs/promises"
+import path from "path"
 import LinkData from "./data/LinkData"
 import { PortfolioData, PortfolioDetailData } from "./data/PortfolioData"
 
@@ -26,7 +27,7 @@ class JsonFolderManager {
      * @returns リンク集データの配列
      */
     static async getLinkList() {
-        const linkJSON = await this.readTextFile(`${this.JSON_FOLDER_PATH}/${this.JSON_LINK_FILE_NAME}`)
+        const linkJSON = await this.readTextFile(path.join(this.JSON_FOLDER_PATH, this.JSON_LINK_FILE_NAME))
         const json = JSON.parse(linkJSON)
         return json["link"] as LinkData[]
     }
@@ -37,7 +38,7 @@ class JsonFolderManager {
      * @returns ランダムメッセージの配列
      */
     static async getRandomMessageList() {
-        const randomMessageJSON = await this.readTextFile(`${this.JSON_FOLDER_PATH}/${this.JSON_RANDOM_MESSAGE_FILE_NAME}`)
+        const randomMessageJSON = await this.readTextFile(path.join(this.JSON_FOLDER_PATH, this.JSON_RANDOM_MESSAGE_FILE_NAME))
         const json = JSON.parse(randomMessageJSON)
         return json["random_message"] as string[]
     }
@@ -48,7 +49,7 @@ class JsonFolderManager {
      * @returns PortfolioData の配列
      */
     static async getPortfolioList() {
-        const makingJSON = await this.readTextFile(`${this.JSON_FOLDER_PATH}/${this.JSON_MAKING_APP_FILE_NAME}`)
+        const makingJSON = await this.readTextFile(path.join(this.JSON_FOLDER_PATH, this.JSON_MAKING_APP_FILE_NAME))
         const json = JSON.parse(makingJSON)
         const portfolioData: PortfolioData[] = Object.keys(json).map((key) => ({
             categoryName: key,

@@ -50,7 +50,7 @@ npm run dev
 
 また、`Next.js`のキャッシュ機能を利用し、できる限り`マークダウン→HTML`の変換回数が少なくなるようになっています。  
 その影響で開発サーバーを立ち上げて記事を開いても、リロードしても反映されないことがあります。  
-その場合は**スーパーリロード**を試してみてください。
+その場合は**スーパーリロード（force refresh / force reload）**を試してみてください。多分キャッシュが消えるはず。
 
 ### 本番環境でビルドして動作確認をする
 本番環境でビルドして開発サーバーを立ち上げます。  
@@ -92,7 +92,7 @@ npm run deploy
 | GITHUB_REPOSITORY_URL | `GitHub`のリポジトリです。記事本文ページの`GitHubで開く`で使われます。                                                |
 | GA_TRACKING_ID        | `Google アナリティクス`の`GA4`の`測定ID`です。                                                                        |
 | GOOGLE_SEARCH_CONSOLE | `Google Search Console`の所有権確認のために、`HTML タグ`の`content`の値を入れてください。任意なので無くても動くはず。 |
-| NO_INDEX_MODE         | 検索結果にでないように、`<meta>`タグで`noindex`を指定したい場合は true を入れる。                                     |
+| NO_INDEX_MODE         | 検索結果にでないように、`<meta>`タグで`noindex`を指定したい場合は true を入れる。任意です。                           |
 
 ## GitHub Actions
 `Netlify （ビルドは GitHub Actions でやってホスティングは Netlify）`と`Amazon S3 + Amazon CloudFront`の2種類があります。  
