@@ -24,6 +24,10 @@ class EnvironmentTool {
 
     /** 検索結果に乗らないように noindex する場合は true */
     static NO_INDEX_MODE = process.env.NO_INDEX_MODE === 'true'
+
+    /** OGP 画像を無効にする場合は true */
+    static DISABLE_OGP_IMAGE = process.env.DISABLE_OGP_IMAGE === 'true'
+
 }
 
 export default EnvironmentTool

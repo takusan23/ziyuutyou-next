@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             title: ogpTitle,
             url: ogpUrl,
             // OGP 画像は opengraph-image.png/route.tsx 参照
-            images: `${ogpUrl}opengraph-image.png`
+            images: EnvironmentTool.DISABLE_OGP_IMAGE ? undefined : `${ogpUrl}opengraph-image.png`
         }
     }
 }
