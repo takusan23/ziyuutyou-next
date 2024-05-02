@@ -37,7 +37,7 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
                 {/* レスポンシブデザイン。画面の幅が大きいときにドロワーが表示される */}
                 <ResponsiveLayout
                     navigationDrawer={<NavigationDrawer />}
-                    title={<h1 className="text-content-primary-light dark:text-content-primary-dark text-2xl">たくさんの自由帳</h1>}
+                    title={<p className="text-content-primary-light dark:text-content-primary-dark text-2xl">たくさんの自由帳</p>}
                 >
                     {children}
                 </ResponsiveLayout>

@@ -125,7 +125,10 @@ thx!!!
 - shiki
     - MIT
     - https://github.com/shikijs/shiki/blob/main/LICENSE
- - Koruri Regular
+- pagefind
+    - MIT
+    - https://github.com/CloudCannon/pagefind/blob/main/LICENSE
+- Koruri Regular
     - Apache License 2.0
     - https://github.com/Koruri/Koruri/blob/master/LICENSE
 - google/material-design-icons

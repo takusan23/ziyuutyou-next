@@ -1,0 +1,20 @@
+/* Tailwind CSS で SVG に色を当てるための CSS。<svg> の className に 'theme_color' を付与してください。 */
+.theme_color path {
+    @apply !stroke-content-primary-light dark:!stroke-content-primary-dark;
+}
+
+.theme_color ellipse {
+    @apply !stroke-content-primary-light dark:!stroke-content-primary-dark;
+}
+
+.theme_color rect {
+    @apply !stroke-content-primary-light dark:!stroke-content-primary-dark;
+}
+
+.theme_color circle[style*="fill:none"] {
+    @apply !stroke-content-primary-light dark:!stroke-content-primary-dark;
+}
+
+.theme_color circle[style*="stroke:none"] {
+    @apply !stroke-content-primary-light dark:!stroke-content-primary-dark;
+}

@@ -8,7 +8,6 @@ import BookIcon from "../public/icon/book.svg"
 import SellIcon from "../public/icon/sell.svg"
 import SearchIcon from "../public/icon/search.svg"
 import BubbleChart from "../public/icon/bubble_chart.svg"
-import EnvironmentTool from "../src/EnvironmentTool"
 
 /** ナビゲーションドロワーの表示先、パス、コンポーネント */
 const DRAWER_LINK: NavigationDrawerItemProps[] = [
@@ -28,10 +27,9 @@ const DRAWER_LINK: NavigationDrawerItemProps[] = [
         path: '/posts/tag/all_tags/'
     },
     {
-        title: '検索（ベータ）',
+        title: '記事検索',
         icon: <SearchIcon />,
-        path: '/search/',
-        isHide: !EnvironmentTool.SEARCH_API_URL // 検索 API が実装されるまで隠す
+        path: '/search/'
     },
     {
         title: 'このサイトについて',

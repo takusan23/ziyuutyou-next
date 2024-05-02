@@ -94,6 +94,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
                 <RoundedCornerBox rounded="large">
                     <div className="p-4">
                         <div
+                            data-pagefind-body
                             className="content_div"
                             dangerouslySetInnerHTML={{ __html: markdownData.html }} />
                     </div>
