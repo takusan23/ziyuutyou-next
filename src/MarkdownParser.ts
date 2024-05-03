@@ -32,6 +32,13 @@ import { JSDOM } from "jsdom"
 class MarkdownParser {
 
     /**
+     * Markdown のコードブロックに一致する正規表現。正規表現リテラル。
+     * ```任意のプログラミング言語名 から始まって、``` で終わる文字列に一致する。
+     * 一応言語名付けないと動かないようにしてみた。（``` から ``` だと閉じ忘れたときにおかしくなりそう）
+     */
+    private static REGEX_MARKDOWN_CODE_BLOCK = /```([\S])([\s\S\n]*?)```/g
+
+    /**
      * Markdownのファイルを渡してHTMLに変換する
      * 
      * @param filePath 解析するMarkdownフォルダのファイルパス
@@ -41,9 +48,13 @@ class MarkdownParser {
     static async parse(filePath: string, baseUrl: string = '/posts') {
         // マークダウン読み出す
         const rawMarkdownText = await fs.readFile(filePath, { encoding: 'utf-8' })
-        const textCount = rawMarkdownText.length
-        const matterResult = matter(rawMarkdownText)
+        // 文字数カウント。
+        // 正規表現でコードブロックを取り出して、その分の文字数を消す
+        const markdownCodeBlockAllExtract = Array.from(rawMarkdownText.matchAll(this.REGEX_MARKDOWN_CODE_BLOCK), (m) => m[0])
+        const markdownCodeBlockLength = markdownCodeBlockAllExtract.reduce((accumulator, currentValue) => accumulator + currentValue.length, 0,)
+        const textCount = rawMarkdownText.length - markdownCodeBlockLength
         // メタデータ
+        const matterResult = matter(rawMarkdownText)
         const title = matterResult.data['title'] as string
         // ライブラリ君が勝手にDateオブジェクトに変換してくれた模様
         const date = matterResult.data['created_at'] as Date
