@@ -66,6 +66,11 @@ npm run deploy
 npm run start
 ```
 
+### 検索機能
+`pagefind`を利用して、静的サイトでも全文検索が出来るようになっています（不思議！）  
+検索結果の対象になるのは、`app/posts/[blog]/page.tsx`だけです。（`data-pagefind-body`を付けているのがそのファイルだけなので）  
+他の画面も検索対象にしたい場合は`data-pagefind-body`を付けてください。
+
 ### 静的HTML書き出し(意味深)
 `サーバーでのレンダリング（Server Side Rendering）`機能は使っていないので、  
 全て`静的サイト（Static Site Generation）`として書き出せます。
@@ -98,6 +103,7 @@ npm run deploy
 | GA_TRACKING_ID        | `Google アナリティクス`の`GA4`の`測定ID`です。                                                                        |
 | GOOGLE_SEARCH_CONSOLE | `Google Search Console`の所有権確認のために、`HTML タグ`の`content`の値を入れてください。任意なので無くても動くはず。 |
 | NO_INDEX_MODE         | 検索結果にでないように、`<meta>`タグで`noindex`を指定したい場合は true を入れる。任意です。                           |
+| DISABLE_OGP_IMAGE     | OGP 画像を配信しない場合は true。`<head>`から OGP 画像の URL を消します。任意です。                                   |
 
 ## GitHub Actions
 `Netlify （ビルドは GitHub Actions でやってホスティングは Netlify）`と`Amazon S3 + Amazon CloudFront`の2種類があります。  

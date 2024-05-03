@@ -1,8 +1,6 @@
-import { ReactNode } from "react"
-import Link from "next/link"
 import RoundedImage from "./RoundedImage"
 import DarkmodeSwitch from "./DarkmodeSwitch"
-import IconParent from "./IconParent"
+import NavigationDrawerItem from "./NavigationDrawerItem"
 import HomeIcon from "../public/icon/home.svg"
 import BookIcon from "../public/icon/book.svg"
 import SellIcon from "../public/icon/sell.svg"
@@ -10,7 +8,7 @@ import SearchIcon from "../public/icon/search.svg"
 import BubbleChart from "../public/icon/bubble_chart.svg"
 
 /** ナビゲーションドロワーの表示先、パス、コンポーネント */
-const DRAWER_LINK: NavigationDrawerItemProps[] = [
+const DRAWER_LINK = [
     {
         title: 'ホーム',
         icon: <HomeIcon />,
@@ -38,34 +36,6 @@ const DRAWER_LINK: NavigationDrawerItemProps[] = [
     }
 ]
 
-/** NavigationDraweItem へ渡すデータ */
-type NavigationDrawerItemProps = {
-    /** テキスト */
-    title: string
-    /** アイコン */
-    icon: ReactNode
-    /** 遷移先パス */
-    path: string
-    /** 利用できない場合は true */
-    isHide?: boolean
-}
-
-/** ナビゲーションドロワーの各メニュー */
-function NavigationDrawerItem({ title, icon, path }: NavigationDrawerItemProps) {
-    return (
-        <Link href={path}>
-            <div className="flex flex-row p-3 items-center space-x-4 rounded-xl hover:bg-hover-light dark:hover:bg-hover-dark select-none cursor-pointer">
-                <IconParent>
-                    {icon}
-                </IconParent>
-                <p className="text-content-text-light dark:text-content-text-dark text-base">
-                    {title}
-                </p>
-            </div>
-        </Link>
-    )
-}
-
 /** ナビゲーションドロワー */
 export default function NavigationDrawer() {
     return (
@@ -87,16 +57,14 @@ export default function NavigationDrawer() {
 
             <nav>
                 {
-                    DRAWER_LINK
-                        .filter(menu => !menu.isHide)
-                        .map(menu => (
-                            <NavigationDrawerItem
-                                key={menu.path}
-                                title={menu.title}
-                                icon={menu.icon}
-                                path={menu.path}
-                            />
-                        ))
+                    DRAWER_LINK.map(menu => (
+                        <NavigationDrawerItem
+                            key={menu.path}
+                            title={menu.title}
+                            icon={menu.icon}
+                            path={menu.path}
+                        />
+                    ))
                 }
             </nav>
         </div>
