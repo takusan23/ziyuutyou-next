@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import SearchForm from "../../components/search/SearchForm"
 import { PagefindSearchFragment, PagefindSearchResult, PagefindSearchResults } from "../../src/data/PagefindData"
 import SearchResult from "../../components/search/SearchResult"
+import CircleLoading from "../../components/CircleLoading"
 import SearchImage from "../../public/search.svg"
 // SVG に色を当てるための CSS。
 import "../../styles/css/svg-css.css"
@@ -30,7 +31,9 @@ export default function PagefindSearch() {
     // キーワード
     const [searchWord, setSearchWord] = useState('')
     // 検索結果
-    const [searchResult, setSearchResult] = useState<PagefindSearchFragment[]>([])
+    const [searchResult, setSearchResult] = useState<PagefindSearchFragment[]>()
+    // ロード中かどうか
+    const [isLoading, setIsLoading] = useState(false)
 
     // pagefind を読み込む
     // window.pagefind が使えるように 
@@ -59,6 +62,8 @@ export default function PagefindSearch() {
      */
     async function search(keyword: string) {
         if (window["pagefind"]) {
+            // ロード中へ
+            setIsLoading(true)
             // 検索する
             const pagefindResult = await window["pagefind"].search(keyword) as PagefindSearchResults
             // ロードする
@@ -67,8 +72,17 @@ export default function PagefindSearch() {
             const formatTextResultFragmentList = searchResultFragmentList.map((fragment) => ({ ...fragment, content: fragment.content.substring(0, 100) }))
             // UI に反映
             setSearchResult(formatTextResultFragmentList)
+            setIsLoading(false)
         }
     }
+
+    // 検索画面の画像
+    const searchLogoElement = (
+        <SearchImage
+            className="theme_color"
+            width={200}
+            height={100} />
+    )
 
     return (
         <div className="flex flex-col items-center w-full space-y-6">
@@ -79,18 +93,39 @@ export default function PagefindSearch() {
                 onExecure={() => search(searchWord)}
             />
 
-            {
-                searchResult.length !== 0
-                    ? <SearchResult resultList={searchResult} />
-                    : <SearchImage
-                        className="theme_color"
-                        width={200}
-                        height={100} />
-            }
+            {(() => {
+
+                // ロード中
+                if (isLoading) {
+                    return <CircleLoading />
+                }
+
+                // まだ検索してない
+                if (!searchResult) {
+                    return searchLogoElement
+                }
+
+                // 検索したけど 0 件だった
+                if (searchResult.length === 0) {
+                    return (
+                        <>
+                            {searchLogoElement}
+                            <p className="text-content-primary-light dark:text-content-primary-dark">
+                                検索結果が見つかりませんでした。
+                            </p>
+                        </>
+                    )
+                }
+
+                // 検索結果を出す
+                return <SearchResult resultList={searchResult} />
+
+            })()}
 
             <p className="text-content-primary-light dark:text-content-primary-dark">
                 pagefind ライブラリを利用した検索機能です。10 件まで表示されます。
             </p>
+
         </div >
     )
 }
