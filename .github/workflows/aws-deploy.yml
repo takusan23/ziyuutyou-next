@@ -3,9 +3,11 @@
 # 名前
 name: AWS Deploy
 
-# 起動条件。pushと手動起動
+# 起動条件。main ブランチへ push もしくは手動起動
 on:
   push:
+    branches: 
+      - 'main'
   workflow_dispatch:
 
 # OpenID Connect
