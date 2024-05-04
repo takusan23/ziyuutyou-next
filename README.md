@@ -49,12 +49,12 @@ npm run dev
 - 見出しに id 属性付与
 
 また、`Next.js`のキャッシュ機能を利用し、できる限り`マークダウン→HTML`の変換回数が少なくなるようになっています。  
-その影響で開発サーバーを立ち上げて記事を開いても、リロードしても反映されないことがあります。  
-その場合は**スーパーリロード（force refresh / force reload）**を試してみてください。多分キャッシュが消えるはず。
+**その影響で開発サーバーを立ち上げて記事を開いても、リロードしても反映されないことがあります。**  
+その場合は **スーパーリロード（force refresh / force reload）** を試してみてください。多分キャッシュが消えるはず。
 
 ### 本番環境でビルドして動作確認をする
 本番環境でビルドして開発サーバーを立ち上げます。  
-`next/link`のプリフェッチ機能などは本番ビルドしか動かないので
+`next/link`のプリフェッチ機能、`Google Analytics`、`pagefind`の検索機能とかは本番ビルドしか動かないので
 
 静的書き出しをします  
 ```shell
@@ -68,8 +68,10 @@ npm run start
 
 ### 検索機能
 `pagefind`を利用して、静的サイトでも全文検索が出来るようになっています（不思議！）  
-検索結果の対象になるのは、`app/posts/[blog]/page.tsx`だけです。（`data-pagefind-body`を付けているのがそのファイルだけなので）  
+検索結果の対象になるのは、`app/posts/[blog]/page.tsx`だけです。理由は`data-pagefind-body`を付けているのがそのファイルだけなので。  
 他の画面も検索対象にしたい場合は`data-pagefind-body`を付けてください。
+
+全文検索がつきましたが、もちろんこのサイトは静的サイトとして配信できます。
 
 ### 静的HTML書き出し(意味深)
 `サーバーでのレンダリング（Server Side Rendering）`機能は使っていないので、  
@@ -77,7 +79,9 @@ npm run start
 
 以下のコマンドを叩くと
 - すべてのページの html 書き出し
-- サイトマップ作成
+- OGP 画像の生成
+- サイトマップとか
+- pagefind のインデックス
 が行われます。
 
 CPU 使用率が書き出し中は 100% で張り付くけどしゃあない。
@@ -146,12 +150,12 @@ https://takusan.negitoro.dev/posts/aws_sitatic_site_hosting/
 
 - .github/workflows
     - GitHub Actions にやらせる作業を書いたファイルです
-    - GitHubのWeb上で編集することをおすすめします
+    - GitHub の Web 上で編集することをおすすめします
 - app
-    - 画面遷移等のページ
-    - AndroidのFragmentみたいな
+    - 画面遷移時のページや共通レイアウト
+    - Android の Fragment みたいな
 - content
-    - 記事のMarkdown とか 書き出し時に呼び出すJSONとか
+    - 記事の Markdown とか書き出し時に呼び出す JSON とか
 - components
     - 共通して使うコンポーネント
 - public
@@ -162,4 +166,4 @@ https://takusan.negitoro.dev/posts/aws_sitatic_site_hosting/
 - styles/css
     - Tailwind CSS でちょっと書いた、記事本文とか
 - .env
-    - 環境変数。サイトのURL など
+    - 環境変数。サイトの URL など
