@@ -48,21 +48,23 @@ class MarkdownParser {
     static async parse(filePath: string, baseUrl: string = '/posts') {
         // マークダウン読み出す
         const rawMarkdownText = await fs.readFile(filePath, { encoding: 'utf-8' })
-        // 文字数カウント。
-        // 正規表現でコードブロックを取り出して、その分の文字数を消す
-        const markdownCodeBlockAllExtract = Array.from(rawMarkdownText.matchAll(this.REGEX_MARKDOWN_CODE_BLOCK), (m) => m[0])
-        const markdownCodeBlockLength = markdownCodeBlockAllExtract.reduce((accumulator, currentValue) => accumulator + currentValue.length, 0,)
-        const textCount = rawMarkdownText.length - markdownCodeBlockLength
+        const fileName = path.parse(filePath).name
         // メタデータ
         const matterResult = matter(rawMarkdownText)
+        // メタデータ抜き。本文
+        const markdownContent = matterResult.content
         const title = matterResult.data['title'] as string
         // ライブラリ君が勝手にDateオブジェクトに変換してくれた模様
         const date = matterResult.data['created_at'] as Date
         // 誰もビルドマシンが日本語環境とは言っていない、ので日本語のローカルを指定する（Netlifyでビルドすると外国語環境なので日付がおかしくなる）
         const createdAt = date.toLocaleDateString('ja-JP')
-        const tags = (matterResult.data['tags'] ?? []) as Array<string>
-        const fileName = path.parse(filePath).name
+        const tags = (matterResult.data['tags'] ?? []) as string[]
         const createdAtUnixTime = date.getTime()
+        // 文字数カウント。
+        // 正規表現でコードブロックを取り出して、その分の文字数を消す
+        const markdownCodeBlockAllExtract = Array.from(markdownContent.matchAll(this.REGEX_MARKDOWN_CODE_BLOCK), (m) => m[0])
+        const markdownCodeBlockLength = markdownCodeBlockAllExtract.reduce((accumulator, currentValue) => accumulator + currentValue.length, 0)
+        const textCount = markdownContent.length - markdownCodeBlockLength
         // マークダウン -> unified -> HTML 
         const remarkParser = await unified()
             .use(remarkParse)
@@ -78,7 +80,7 @@ class MarkdownParser {
                     transformShikiCodeBlockCopyButton()
                 ]
             })
-            .process(matterResult.content)
+            .process(markdownContent)
         const markdownToHtml = remarkParser.toString()
         // Markdown から生成した HTML から 目次だけを取り出す
         const tocDataList = this.parseToc(markdownToHtml)
@@ -88,6 +90,7 @@ class MarkdownParser {
             createdAtUnixTime: createdAtUnixTime,
             tags: tags,
             html: markdownToHtml,
+            description: markdownContent.substring(0, 100),
             link: `${baseUrl}/${fileName}/`,
             fileName: fileName,
             textCount: textCount,

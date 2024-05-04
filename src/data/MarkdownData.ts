@@ -10,6 +10,8 @@ type MarkdownData = {
     createdAtUnixTime: number
     /** タグ */
     tags: string[]
+    /** 見出し。100 文字まで */
+    description: string
     /** 本文 */
     html: string
     /** URLの一部 */

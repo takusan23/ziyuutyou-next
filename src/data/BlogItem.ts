@@ -5,15 +5,15 @@
  */
 type BlogItem = {
     /** タイトル */
-    title: string,
+    title: string
     /** URL */
-    link: string,
+    link: string
     /** 投稿日 */
-    createdAt: string,
+    createdAt: string
     /** チラ見せ。 */
-    description: string,
+    description: string
     /** タグ */
-    tags: Array<string>
+    tags: string[]
 }
 
 export default BlogItem
