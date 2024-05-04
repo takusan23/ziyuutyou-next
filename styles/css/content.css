@@ -28,6 +28,11 @@ React の dangerouslySetInnerHTML を使って既にある HTML を埋め込む�
     font-family: var(--koruri-font);
 }
 
+/* コードブロックに padding 欲しい */
+.content_div figure>pre>code {
+    padding: 1em;
+}
+
 /* バッククオート1つだけのコードブロック？、親が pre 要素以外の時に適用する */
 .content_div :not(pre) code {
     background-color: rgba(0, 0, 0, 0.1);

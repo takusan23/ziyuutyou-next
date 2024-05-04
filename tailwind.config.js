@@ -27,6 +27,8 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    // コピーボタンを差し込むので
+    "./src/transformShikiCodeBlockCopyButton.ts"
   ],
   theme: {
     // 既存の色を拡張する（プライマリカラー等を追加する）

@@ -2,9 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-    /* Firefox スクロールバー */
-    scrollbar-color: #5870cb transparent;
+/* Firefox スクロールバー TODO Firefox だけ CSS を適用する技らしい */
+@-moz-document url-prefix() {
+    html {
+        scrollbar-color: #5870cb transparent;
+    }
 }
 
 /* スクロールバー */

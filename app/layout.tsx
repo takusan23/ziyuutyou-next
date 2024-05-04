@@ -4,8 +4,8 @@ import GoogleAnalytics from "../src/GoogleAnalytics"
 import localFont from "next/font/local"
 import NavigationDrawer from "../components/NavigationDrawer"
 import ResponsiveLayout from "../components/ResponsiveLayout"
-// コードブロックのCSS
-import "highlight.js/styles/vs2015.css"
+import ApplyThemeToTailwindCss from "../components/theme/ApplyThemeToTailwindCss"
+import EnvironmentTool from "../src/EnvironmentTool"
 // グローバルCSS
 import "../styles/css/global.css"
 
@@ -21,7 +21,11 @@ const koruriFont = localFont({
 })
 
 export const metadata: Metadata = {
-    manifest: '/manifest.json'
+    manifest: '/manifest.json',
+    // テスト用。検索結果に乗らないようクローラーを指示する
+    robots: {
+        index: !EnvironmentTool.NO_INDEX_MODE
+    }
 }
 
 /** 共通レイアウト部分 */
@@ -33,7 +37,7 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
                 {/* レスポンシブデザイン。画面の幅が大きいときにドロワーが表示される */}
                 <ResponsiveLayout
                     navigationDrawer={<NavigationDrawer />}
-                    title={<h1 className="text-content-primary-light dark:text-content-primary-dark text-2xl">たくさんの自由帳</h1>}
+                    title={<p className="text-content-primary-light dark:text-content-primary-dark text-2xl">たくさんの自由帳</p>}
                 >
                     {children}
                 </ResponsiveLayout>
@@ -42,6 +46,9 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
                 <Suspense fallback={null}>
                     <GoogleAnalytics />
                 </Suspense>
+
+                {/* テーマ変更を検知して Tailwind CSS へ適用するやつ */}
+                <ApplyThemeToTailwindCss />
             </body>
         </html>
     )

@@ -3,23 +3,25 @@ import TocData from "./TocData"
 /** Markdownを解析した結果を入れるデータクラスみたいなのを作りたかった */
 type MarkdownData = {
     /** タイトル */
-    title: string,
+    title: string
     /** 作成日 */
-    createdAt: string,
+    createdAt: string
     /** 作成日、UnixTime版 */
-    createdAtUnixTime: number,
+    createdAtUnixTime: number
     /** タグ */
-    tags: Array<string>,
+    tags: string[]
+    /** 見出し。100 文字まで */
+    description: string
     /** 本文 */
-    html: string,
+    html: string
     /** URLの一部 */
-    link: string,
+    link: string
     /** ファイル名 */
-    fileName: string,
+    fileName: string
     /** マークダウンの時点での文字数 */
-    textCount: number,
+    textCount: number
     /** 目次の配列 */
-    tocDataList: Array<TocData>
+    tocDataList: TocData[]
 }
 
 export default MarkdownData

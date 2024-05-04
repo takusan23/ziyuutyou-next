@@ -7,6 +7,8 @@ export type ButtonProps = {
     text: string
     /** アイコンを出すなら */
     startIcon?: ReactNode
+    /** 後ろにアイコンを出すなら */
+    endIcon?: ReactNode
     /** ボタンの種類。テキストだけ / 枠取り / 塗りつぶし */
     variant?: 'text' | 'outlined' | 'contained'
     /** 有効 / 無効 無効時は半透明になる */
@@ -16,7 +18,7 @@ export type ButtonProps = {
 }
 
 /** ボタン */
-export default function Button({ text, startIcon, variant, isDisabled, size }: ButtonProps) {
+export default function Button({ text, startIcon, endIcon, variant, isDisabled, size }: ButtonProps) {
     // className をつくる
     const buttonAlpha = isDisabled ? 'opacity-50' : 'opacity-100'
     const commonClassName = `${buttonAlpha} select-none`
@@ -64,6 +66,17 @@ export default function Button({ text, startIcon, variant, isDisabled, size }: B
             <p>
                 {text}
             </p>
+            {
+                // 後ろにアイコンを出す
+                endIcon && (
+                    <IconParent
+                        size={(size === 'small') ? 'small' : 'medium'}
+                        className={iconColorClassName}
+                    >
+                        {endIcon}
+                    </IconParent>
+                )
+            }
         </div>
     )
 

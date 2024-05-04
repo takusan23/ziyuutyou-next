@@ -1,14 +1,14 @@
-import { Metadata } from "next";
-import ContentFolderManager from "../../../src/ContentFolderManager";
-import EnvironmentTool from "../../../src/EnvironmentTool";
+import { Metadata } from "next"
+import ContentFolderManager from "../../../src/ContentFolderManager"
+import EnvironmentTool from "../../../src/EnvironmentTool"
 import { GitHubHistoryButton } from "../../../components/BlogDetailButton"
 import TagChipGroup from "../../../components/TagChipGroup"
 import RoundedCornerBox from "../../../components/RoundedCornerBox"
-import { TocList, TocListLayout } from "../../../components/TocList"
+import { ExpandTocList, LargeTocList, TocListLayout } from "../../../components/TocList"
 import DateCountText from "../../../components/DateCountText"
 import IconParent from "../../../components/IconParent"
 import EditIcon from "../../../public/icon/edit.svg"
-import ActivityPubShare from "../../../components/ActivityPubShare";
+import ActivityPubShare from "../../../components/ActivityPubShare"
 // 部分的に修正した css
 import "../../../styles/css/content.css"
 
@@ -30,17 +30,22 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         },
         openGraph: {
             title: ogpTitle,
-            url: ogpUrl
+            url: ogpUrl,
+            // OGP 画像は opengraph-image.png/route.tsx 参照
+            images: EnvironmentTool.DISABLE_OGP_IMAGE ? undefined : `${ogpUrl}opengraph-image.png`
         }
     }
 }
 
-/** 記事本文 */
+/**
+ * 記事本文。
+ * 反映されない場合はスーパーリロードしてみてください。
+ */
 export default async function BlogDetailPage({ params }: PageProps) {
     // サーバー側でロードする
     const markdownData = await ContentFolderManager.getBlogItem(params.blog)
 
-    const ogpTitle = `${markdownData.title} - たくさんの自由帳`
+    const ogpTitle = `${markdownData.title} - ${EnvironmentTool.SITE_NAME}`
     const ogpUrl = `${EnvironmentTool.BASE_URL}${markdownData.link}`
     const dateTimeFormat = markdownData.createdAt.replace(/\//g, '-')
 
@@ -81,11 +86,15 @@ export default async function BlogDetailPage({ params }: PageProps) {
             <TagChipGroup tagList={markdownData.tags} />
             {shareOrHistoryButton}
 
+            {/* 画面の幅が狭いときは記事始まる前に目次を置く */}
+            <ExpandTocList tocDataList={markdownData.tocDataList} />
+
             {/* 画面の幅が広いときだけ目次を表示させる */}
-            <TocListLayout secondary={<TocList tocDataList={markdownData.tocDataList} />}>
+            <TocListLayout secondary={<LargeTocList tocDataList={markdownData.tocDataList} />}>
                 <RoundedCornerBox rounded="large">
                     <div className="p-4">
                         <div
+                            data-pagefind-body
                             className="content_div"
                             dangerouslySetInnerHTML={{ __html: markdownData.html }} />
                     </div>

@@ -1,22 +1,26 @@
-import BlogItem from "./data/BlogItem";
+import BlogItem from "./data/BlogItem"
 import fs from "fs/promises"
-import MarkdownParser from "./MarkdownParser";
+import MarkdownParser from "./MarkdownParser"
 import path from "path"
-import TagData from "./data/TagData";
-import BlogItemResult from "./data/BlogItemResult";
+import TagData from "./data/TagData"
+import BlogItemResult from "./data/BlogItemResult"
+import { NextJsCacheStore } from "./NextJsCacheStore"
+import MarkdownData from "./data/MarkdownData"
 
 /**
- * `content`フォルダにあるコンテンツを取得する関数がある。
- * 
- * この関数は静的書き出し（意味深）時に呼ばれる。
+ * content/posts フォルダにあるマークダウンファイルを取得したり、HTML パース結果を返すやつ。
+ * この関数は静的書き出し（意味深）時に呼ばれる。ブラウザ側では利用できず、Node.js 側でのみ利用できます。
  */
 class ContentFolderManager {
 
+    /** マークダウンパース結果をキャッシュして使い回す。中身は Next.js の cache() です。 */
+    private static cacheStore = new NextJsCacheStore<MarkdownData>()
+
     /** 記事を保存しているフォルダパス。process.cwd()はnpm run devしたときのフォルダパス？どの階層で呼んでも同じパスになるよう */
-    static POSTS_FOLDER_PATH = `${process.cwd()}/content/posts`
+    static POSTS_FOLDER_PATH = path.join(process.cwd(), `content`, `posts`)
 
     /** 固定ページを保存しているフォルダパス */
-    static PAGES_FOLDER_PATH = `${process.cwd()}/content/pages`
+    static PAGES_FOLDER_PATH = path.join(process.cwd(), `content`, `pages`)
 
     /** ブログ記事のベースURL */
     static POSTS_BASE_URL = `/posts`
@@ -72,8 +76,8 @@ class ContentFolderManager {
      */
     static async getBlogItem(fileName: string) {
         // 拡張子！！！！
-        const filePath = `${this.POSTS_FOLDER_PATH}/${fileName}.md`
-        return this.getItem(filePath, this.POSTS_BASE_URL)
+        const filePath = path.join(this.POSTS_FOLDER_PATH, `${fileName}.md`)
+        return this.parseMarkdown(filePath, this.POSTS_BASE_URL)
     }
 
     /**
@@ -84,8 +88,8 @@ class ContentFolderManager {
      */
     static async getPageItem(fileName: string) {
         // 拡張子！！！！
-        const filePath = `${this.PAGES_FOLDER_PATH}/${fileName}.md`
-        return this.getItem(filePath, this.PAGES_BASE_URL)
+        const filePath = path.join(this.PAGES_FOLDER_PATH, `${fileName}.md`)
+        return this.parseMarkdown(filePath, this.PAGES_BASE_URL)
     }
 
     /**
@@ -126,25 +130,45 @@ class ContentFolderManager {
         return tagDataList
     }
 
-    /** Markdownを読み込んで解析して返す */
-    private static async getItem(filePath: string, baseUrl: string) {
-        const markdownData = await MarkdownParser.parse(filePath, baseUrl)
+    /**
+     * Markdown をパースして返す。
+     * キャッシュがあればキャッシュを返します。
+     * 
+     * @param filePath ファイルパス
+     * @param baseUrl /posts /pages など
+     * @returns MarkdownData
+     */
+    private static async parseMarkdown(filePath: string, baseUrl: string) {
+        // キャッシュがあるか問い合わせる
+        const markdownData = await this.cacheStore.getCache(filePath, (_) => MarkdownParser.parse(filePath, baseUrl))
         return markdownData
     }
 
-    /** 引数のフォルダパスの中身をファイル名配列として返す */
+    /**
+     * 引数のフォルダパスの中身をファイル名配列として返す
+     * 
+     * @param folderPath フォルダパス
+     * @returns ファイル名の配列
+     */
     private static async getFileNameList(folderPath: string) {
         return (await fs.readdir(folderPath)).map(name => path.parse(name).name)
     }
 
-    /** 指定パスのフォルダに入ってる記事一覧を返す */
+    /**
+     * 指定パスのフォルダに入ってる記事一覧を返す。
+     * キャッシュがあればそれを返します。
+     * 
+     * @param folderPath フォルダパス
+     * @param baseUrl /posts /pages など
+     * @returns BlogItem[]
+     */
     private static async getItemList(folderPath: string, baseUrl: string) {
         // content/posts の中身を読み出す
         const postFileList = await fs.readdir(folderPath)
         // Markdownパーサーへかける
         const markdownParsePromiseList = postFileList
-            .map(fileName => `${folderPath}/${fileName}`)
-            .map(filePath => MarkdownParser.parse(filePath, baseUrl))
+            .map(fileName => path.join(folderPath, fileName))
+            .map(filePath => this.parseMarkdown(filePath, baseUrl))
         // Promiseの結果を全部待つ。mapの中でawait使えなかった；；
         const markdownDataList = await Promise.all(markdownParsePromiseList)
         const blogList: BlogItem[] = markdownDataList
@@ -154,7 +178,7 @@ class ContentFolderManager {
             .map(data => ({
                 title: data.title,
                 createdAt: data.createdAt,
-                description: data.html.substring(0, 100),
+                description: data.description,
                 link: data.link,
                 tags: data.tags
             }))

@@ -1,6 +1,7 @@
-import fs from 'fs/promises'
-import LinkData from './data/LinkData'
-import { MakingAppData, MakingAppDetailData } from './data/MakingAppData'
+import fs from "fs/promises"
+import path from "path"
+import LinkData from "./data/LinkData"
+import { PortfolioData, PortfolioDetailData } from "./data/PortfolioData"
 
 /** 
  * ContentFolderManager の JSONフォルダ版 
@@ -26,9 +27,9 @@ class JsonFolderManager {
      * @returns リンク集データの配列
      */
     static async getLinkList() {
-        const linkJSON = await this.readTextFile(`${this.JSON_FOLDER_PATH}/${this.JSON_LINK_FILE_NAME}`)
+        const linkJSON = await this.readTextFile(path.join(this.JSON_FOLDER_PATH, this.JSON_LINK_FILE_NAME))
         const json = JSON.parse(linkJSON)
-        return json["link"] as Array<LinkData>
+        return json["link"] as LinkData[]
     }
 
     /**
@@ -37,26 +38,24 @@ class JsonFolderManager {
      * @returns ランダムメッセージの配列
      */
     static async getRandomMessageList() {
-        const randomMessageJSON = await this.readTextFile(`${this.JSON_FOLDER_PATH}/${this.JSON_RANDOM_MESSAGE_FILE_NAME}`)
+        const randomMessageJSON = await this.readTextFile(path.join(this.JSON_FOLDER_PATH, this.JSON_RANDOM_MESSAGE_FILE_NAME))
         const json = JSON.parse(randomMessageJSON)
-        return json["random_message"] as Array<string>
+        return json["random_message"] as string[]
     }
 
     /**
      * 作ったアプリの配列を返す
      * 
-     * @returns MakingAppData配列
+     * @returns PortfolioData の配列
      */
-    static async getMakingAppMap() {
-        const makingJSON = await this.readTextFile(`${this.JSON_FOLDER_PATH}/${this.JSON_MAKING_APP_FILE_NAME}`)
+    static async getPortfolioList() {
+        const makingJSON = await this.readTextFile(path.join(this.JSON_FOLDER_PATH, this.JSON_MAKING_APP_FILE_NAME))
         const json = JSON.parse(makingJSON)
-        return Object.keys(json).map((key) => {
-            const platformData: MakingAppData = {
-                platfromName: key,
-                appList: json[key] as Array<MakingAppDetailData>
-            }
-            return platformData
-        })
+        const portfolioData: PortfolioData[] = Object.keys(json).map((key) => ({
+            categoryName: key,
+            categoryItemList: json[key] as PortfolioDetailData[]
+        }))
+        return portfolioData
     }
 
     /**

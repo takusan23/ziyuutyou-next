@@ -1,6 +1,6 @@
-import { Metadata } from "next";
-import EnvironmentTool from "../../../../src/EnvironmentTool";
-import ContentFolderManager from "../../../../src/ContentFolderManager";
+import { Metadata } from "next"
+import EnvironmentTool from "../../../../src/EnvironmentTool"
+import ContentFolderManager from "../../../../src/ContentFolderManager"
 import RoundedCornerList from "../../../../components/RoundedCornerList"
 import BlogListItem from "../../../../components/BlogListItem"
 

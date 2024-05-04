@@ -1,8 +1,3 @@
-// クライアント側で動く
-"use client"
-
-import { useEffect } from 'react'
-import { usePathname, useSearchParams } from 'next/navigation'
 import Script from "next/script"
 import EnvironmentTool from './EnvironmentTool'
 
@@ -11,11 +6,8 @@ import EnvironmentTool from './EnvironmentTool'
  * 
  * https://github.com/vercel/next.js/tree/master/examples/with-google-analytics
  * 
- * GA4 と UA を共存させる。GA4に移行しても良いんだけど、今までの記録が引き継がれないみたいなので...
+ * UA は終わるので、GA4 へのみ送っています。
  */
-
-/** Google アナリティクス (UA) の 測定ID */
-const UA_TRACKING_ID = EnvironmentTool.UA_TRACKING_ID
 
 /** Google アナリティクス (GA4) の 測定ID */
 const GA_TRACKING_ID = EnvironmentTool.GA_TRACKING_ID
@@ -24,41 +16,17 @@ const GA_TRACKING_ID = EnvironmentTool.GA_TRACKING_ID
 const isDevelopment = process.env.NODE_ENV === 'development'
 
 /**
- * ページ遷移のたびに呼ぶ
- * 
- * @param {string} url うらる
+ * Google Analytics 4 で利用するJavaScriptを差し込むやつ。本番（意味深）のみ実行
+ * Hooks でページ遷移イベントを送るのはもうやめました（めんどい）、GA4 の「ブラウザの履歴イベントに基づくページの変更」を有効にしてください。
  */
-const pageview = (url: string) => {
-    // 本番のみ実行
-    if (isDevelopment) {
-        return
-    }
-    (window as any).gtag('config', UA_TRACKING_ID, {
-        page_path: url,
-    });
-    (window as any).gtag('config', GA_TRACKING_ID, {
-        page_path: url,
-    });
-}
-
-/** Google Analytics 4 で利用するJavaScriptを差し込むやつ。本番（意味深）のみ実行 */
 export default function GoogleAnalytics() {
-    const pathname = usePathname()
-    const searchParams = useSearchParams()
-
-    // Google Analytics へnext/routerのページ遷移の状態を通知する
-    useEffect(() => {
-        const url = `${pathname}${searchParams}`
-        pageview(url)
-    }, [pathname, searchParams])
-
-    // 本番ビルド時のみ GoogleAnalytics をセットアップする
+    // 本番時のみ GoogleAnalytics をセットアップする
     return (
         <>
             {!isDevelopment && <>
                 <Script
                     strategy="afterInteractive"
-                    src={`https://www.googletagmanager.com/gtag/js?id=${UA_TRACKING_ID}`}
+                    src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
                 />
                 <Script
                     strategy="afterInteractive"
@@ -67,7 +35,6 @@ export default function GoogleAnalytics() {
                         window.dataLayer = window.dataLayer || [];
                         function gtag(){dataLayer.push(arguments);}
                         gtag('js', new Date());
-                        gtag('config', '${UA_TRACKING_ID}');
                         gtag('config', '${GA_TRACKING_ID}');
                     `}}
                 />

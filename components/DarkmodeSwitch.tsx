@@ -1,60 +1,16 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import resolveConfig from "tailwindcss/resolveConfig"
-import tailwindConfig from "../tailwind.config.js"
 import IconParent from "./IconParent"
 import LightModeIcon from "../public/icon/light_mode.svg"
 import DarkModeIcon from "../public/icon/dark_mode.svg"
+import useTheme from "./theme/useTheme"
 
 /**
  * Tailwind CSS のダークモードスイッチ
- * @see https://tailwindcss.com/docs/dark-mode
+ * 実際の切り替え処理は {@link useTheme}、{@link ApplyThemeToTailwindCss}などを参照。
  */
 export default function DarkmodeSwitch() {
-
-    /**
-     * Tailwind CSS とステータスバーの色をテーマ切り替え
-     * @param isDarkmode ダークモードなら true
-     */
-    function setTailwindThemeAndStatusBarColor(isDarkmode: boolean) {
-        // Tailwind CSS のテーマ
-        if (isDarkmode) {
-            document.documentElement.classList.add('dark')
-        } else {
-            document.documentElement.classList.remove('dark')
-        }
-        // 動的に Tailwind CSS のテーマを取得して
-        // ステータスバーの色にする
-        const colors = resolveConfig(tailwindConfig).theme?.colors
-        if (colors) {
-            const backgroundColor = isDarkmode ? colors['background']['dark'] : colors['background']['light']
-            document.querySelector("meta[name='theme-color']")?.setAttribute('content', backgroundColor)
-        }
-    }
-
-    const [isDarkmode, setDarkmode] = useState(false)
-
-    // 端末のテーマ設定をセットする
-    // TODO 責務的にここでやるべきではない
-    useEffect(() => {
-        // Android のステータスバーの色をセットする <meta name="theme-color"> が初回時は無いので作る
-        if (!document.querySelector("meta[name='theme-color']")) {
-            const metaElement = document.createElement('meta')
-            metaElement.setAttribute('name', 'theme-color')
-            document.head.append(metaElement)
-        }
-
-        // メディアクエリでダークモードかチェック
-        const isDarkmodeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)').matches
-        // すでに Tailwind CSS のダークモードが有効かどうか。サイズ変更したらリセットされちゃった
-        const isTailwindDarkmode = document.documentElement.classList.contains('dark')
-
-        // ダークモード切り替えスイッチとテーマを反映させる
-        const isCurrentDarkMode = isDarkmodeMediaQuery || isTailwindDarkmode
-        setDarkmode(isCurrentDarkMode)
-        setTailwindThemeAndStatusBarColor(isCurrentDarkMode)
-    }, [])
+    const { theme, setTheme } = useTheme()
 
     return (
         <label className="flex flex-row p-3 items-center select-none cursor-pointer">
@@ -62,11 +18,10 @@ export default function DarkmodeSwitch() {
             <input
                 className="sr-only peer"
                 type="checkbox"
-                checked={isDarkmode}
+                checked={theme === 'dark'}
                 onChange={(ev) => {
                     const isChecked = ev.target.checked
-                    setDarkmode(isChecked)
-                    setTailwindThemeAndStatusBarColor(isChecked)
+                    setTheme(isChecked ? 'dark' : 'light')
                 }} />
 
             <div className="flex peer-checked:hidden">

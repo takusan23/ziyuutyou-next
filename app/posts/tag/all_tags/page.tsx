@@ -1,7 +1,7 @@
-import { Metadata } from "next";
-import ContentFolderManager from "../../../../src/ContentFolderManager";
-import EnvironmentTool from "../../../../src/EnvironmentTool";
-import NextLinkButton from "../../../../components/NextLinkButton";
+import { Metadata } from "next"
+import ContentFolderManager from "../../../../src/ContentFolderManager"
+import EnvironmentTool from "../../../../src/EnvironmentTool"
+import NextLinkButton from "../../../../components/NextLinkButton"
 import SellIcon from "../../../../public/icon/sell.svg"
 
 /** head に値を入れる */

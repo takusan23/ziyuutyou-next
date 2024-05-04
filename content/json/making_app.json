@@ -2,21 +2,31 @@
     "android": [
         {
             "name": "NewRadioSupporter",
-            "description": "Sub-6 / ミリ波 / アンカーバンド の検出ができるアプリ",
+            "description": "Sub-6 / ミリ波 / アンカーバンド / 転用 5G の検出ができるアプリ",
             "link": "https://play.google.com/store/apps/details?id=io.github.takusan23.newradiosupporter",
-            "github": "https://github.com/takusan23/NewRadioSupporter"
+            "github": "https://github.com/takusan23/NewRadioSupporter",
+            "image": "/portfolio/newradiosupporter.jpg"
         },
         {
             "name": "ぜろみらー",
             "description": "Androidの画面をブラウザへミラーリングするアプリ",
             "link": "https://play.google.com/store/apps/details?id=io.github.takusan23.zeromirror",
-            "github": "https://github.com/takusan23/ZeroMirror"
+            "github": "https://github.com/takusan23/ZeroMirror",
+            "image": "/portfolio/zeromirror.jpg"
+        },
+        {
+            "name": "あかりどろいど",
+            "description": "動画編集アプリ、あんまり機能はない",
+            "link": "https://play.google.com/store/apps/details?id=io.github.takusan23.akaridroid",
+            "github": "https://github.com/takusan23/AkariDroid",
+            "image": "/portfolio/akaridroid.jpg"
         },
         {
             "name": "どうがうんどろいど",
             "description": "逆再生動画作成アプリ",
             "link": "https://play.google.com/store/apps/details?id=io.github.takusan23.dougaundroid",
-            "github": "https://github.com/takusan23/DougaUnDroid"
+            "github": "https://github.com/takusan23/DougaUnDroid",
+            "image": "/portfolio/dougaundroid.jpg"
         }
     ],
     "web": [
@@ -24,13 +34,22 @@
             "name": "このサイト",
             "description": "Next.js と Tailwind CSS と unified で出来ている",
             "link": "/",
-            "github": "https://github.com/takusan23/ziyuutyou-next"
+            "github": "https://github.com/takusan23/ziyuutyou-next",
+            "image": "/portfolio/ziyuutyou.jpg"
         },
         {
             "name": "Kotlin/JS で作った WebM ツール",
             "description": "JavaScript の MediaRecorder で出来る WebM をシーク可能にする。ついでに JavaScript の MediaRecorder を使って画面録画する。",
             "link": "https://webm.negitoro.dev/",
-            "github": "https://github.com/takusan23/FixSeekableWebmKotlinJs"
+            "github": "https://github.com/takusan23/FixSeekableWebmKotlinJs",
+            "image": "/portfolio/fixseekablewebmkotlinjs.jpg"
+        },
+        {
+            "name": "前のブログ（備忘録）",
+            "description": "Hexo 製のブログ、はずい",
+            "link": "https://takusan23.github.io/Bibouroku/",
+            "github": "https://github.com/takusan23/Bibouroku",
+            "image": "/portfolio/bibouroku.jpg"
         }
     ],
     "akashic": [
@@ -38,21 +57,31 @@
             "name": "ニコ生ゲーム",
             "description": "RPGアツマールがサービス終了しちゃったので、こちらで公開しています。",
             "link": "https://namagame.negitoro.dev/",
-            "github": ""
+            "github": "",
+            "image": "/portfolio/namagame.png"
         },
         {
             "name": "ニコ生ゲーム",
             "description": "詳しくはアツマールへ",
             "link": "https://game.nicovideo.jp/atsumaru/users/40210583",
-            "github": ""
+            "github": "",
+            "image": "/portfolio/namagame.png"
         }
     ],
     "minecraft": [
         {
             "name": "ClickManaita",
-            "description": "チートMOD (Forge / Fabric)。1.12.2 / 1.16.x / 1.17.x / 1.18.x",
+            "description": "チートMOD (Forge / Fabric)。1.12.2 / 1.16.x / 1.17.x / 1.18.x / 1.19.x / 1.20.x",
             "link": "https://www.curseforge.com/minecraft/mc-mods/clickmanaita",
-            "github": "https://github.com/takusan23/ClickManaita2"
+            "github": "https://github.com/takusan23/ClickManaita2",
+            "image": "/portfolio/clickmanaita.jpg"
+        },
+        {
+            "name": "ResetTable",
+            "description": "クラフトしたアイテムを元に戻す",
+            "link": "https://www.curseforge.com/minecraft/mc-mods/resettable",
+            "github": "https://github.com/takusan23/ResetTable",
+            "image": "/portfolio/resettable.jpg"
         }
     ],
     "windows": [
@@ -60,7 +89,8 @@
             "name": "DesktopLine",
             "description": "仮想デスクトップ切り替えのショートカットが覚えられないので、線を書くだけで切り替えができるアプリ。",
             "link": "https://github.com/takusan23/DesktopLine/releases/tag/1.0.0",
-            "github": "https://github.com/takusan23/DesktopLine"
+            "github": "https://github.com/takusan23/DesktopLine",
+            "image": "/portfolio/desktopline.jpg"
         }
     ]
 }
