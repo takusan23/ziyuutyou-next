@@ -80,6 +80,7 @@ export default function PagefindSearch() {
     const searchLogoElement = (
         <SearchImage
             className="theme_color"
+            aria-label="虫眼鏡で太陽光を集めている絵"
             width={200}
             height={100} />
     )
