@@ -362,6 +362,8 @@ getVideoFrameBitmap(ms = 99)
 ~~一応`MediaCodec`の出力先を`ImageReader`にするだけで動くので、`MediaCodec`系といっしょに使われる`OpenGL`とかは要らないはずですが~~  
 ~~`OpenGL`を一枚噛ませるとさせておくとより安心です~~（嘘です。なんか間違えたのか**Google Pixel**以外で落ちました。**OpenGL**を噛ませないと動きません。落ちた話は後半でします。）
 
+→ 2024/05/30 追記もあります。`ImageReader`何もわからない。
+
 ## 今回の作戦
 前回の位置から、巻き戻っていない場合は、コンテナから次のデータを取り出してデコーダーに渡すようにします。  
 これをするため、フレームが取得し終わっても`MediaCodec / MediaExtractor`はそのままにしておく必要があります（待機状態というのでしょうか・・）
@@ -1261,6 +1263,49 @@ decodeMediaCodec!!.start()
 
 `OpenGL ES`周りは厳しいけど（`AOSP`コピペで何がなんだかわからない）、けど、それなりのメリットはありそうです。  
 あとフラグメントシェーダーで加工できるのもメリットだけど難しそう。
+
+## 追記：2024/05/30 ImageReader の width と height は決まっている説
+`ImageReader`のドキュメントには乗ってませんが、`width / height`の値は決まった数字以外で動かないっぽい？  
+
+https://developer.android.com/reference/android/media/ImageReader#newInstance(int,%20int,%20int,%20int,%20long)
+
+変な解像度`videoWidth = 1104 / videoHeight = 2560`の場合に出力された映像がぐちゃぐちゃになっちゃった。  
+調べてもよくわからないので、色々試した感じ、`1280x720`とかの解像度は動く。けどメジャーじゃない、中途半端な数字では動かない。  
+`MediaCodec`の噂では、`16`の倍数じゃないといけないとかで、`16`で割れるかのチェックを入れてみたんですけどそれもダメそうで。結局動く値に丸めることにした。  
+
+面倒なので縦も横も同じ正方形に、`ImageReader`から取り出した`Bitmap`を`Bitmap#scale`で元のサイズに戻すのが、今のところ安定している。。。
+
+```kotlin
+// しかし、一部の縦動画（画面録画）を入れるとどうしても乱れてしまう。
+// Google Pixel の場合は、縦と横にを 16 で割り切れる数字にすることで修正できたが、Snapdragon は直らなかった。
+// ・・・・
+// Snapdragon がどうやっても直んないので、別の方法を取る。
+// 色々いじってみた結果、Snapdragon も 320 / 480 / 720 / 1280 / 1920 / 2560 / 3840 とかのキリがいい数字は何故か動くので、もうこの値を縦と横に適用する。
+// その後元あった Bitmap のサイズに戻す。もう何もわからない。なんだよこれ・・
+val originWidth = videoWidth
+val originHeight = videoHeight
+val maxSize = maxOf(videoWidth, videoHeight)
+val imageReaderSize = when {
+    maxSize < 320 -> 320
+    maxSize < 480 -> 480
+    maxSize < 720 -> 720
+    maxSize < 1280 -> 1280
+    maxSize < 1920 -> 1920
+    maxSize < 2560 -> 2560
+    maxSize < 3840 -> 3840
+    else -> 1920 // 何もなければ適当に Full HD
+}
+imageReader = ImageReader.newInstance(imageReaderSize, imageReaderSize, PixelFormat.RGBA_8888, 2)
+```
+
+戻すのがこの辺。  
+
+```kotlin
+val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
+bitmap.copyPixelsFromBuffer(buffer)
+// アスペクト比を戻す
+val resultBitmap = bitmap.scale(originWidth, originHeight)
+```
 
 # おわりに
 こんな長々と書く予定はありませんでした。  

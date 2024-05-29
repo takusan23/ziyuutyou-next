@@ -119,6 +119,12 @@ https://github.com/takusan23/AkariDroid
 
 ![Imgur](https://imgur.com/uk9kwLp.png)
 
+（補足）  
+最近の`Play ストア`、`フォアグラウンドサービス`を使う場合は起動方法を説明した動画を渡す必要がある。（どこかインターネットから見れる場所に上げて`URL`を記入する）  
+そのための動画をこれで作った。。。スマホで完結。
+
+https://takusan.negitoro.dev/posts/android_foreground_service_permission_play_console/
+
 # アプリの特徴
 大した機能はない。
 
@@ -204,7 +210,7 @@ implementation("io.github.takusan23:akaricore:2.0.0-alpha01")
 `mp4`は知りませんが、`webm`ならこんな感じの構造だと思います。  
 `Cluster`に音声と映像がそれぞれ書き込まれていくわけですね。多分映像データのが大きくなるのでこんな感じじゃないかな...
 
-```
+```plaintext
 - demo.webm
     - Header
     - Segment

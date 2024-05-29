@@ -100,3 +100,9 @@ https://github.com/takusan23/NewRadioSupporter/blob/master/app/src/main/AndroidM
 
 以上です！！  
 お疲れ様でした 88888888888888888888
+
+# 宣伝
+動画編集アプリをお探しで・・？  
+あんまり使いやすくないし、機能あんまりないけどあるよ。Android で
+
+https://takusan.negitoro.dev/posts/android_video_editor_akari_droid/
