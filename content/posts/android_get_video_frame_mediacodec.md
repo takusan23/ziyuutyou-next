@@ -1307,6 +1307,9 @@ bitmap.copyPixelsFromBuffer(buffer)
 val resultBitmap = bitmap.scale(originWidth, originHeight)
 ```
 
+## 追記：2024/06/04
+やっぱり`16`の倍数にするだけでいい気がする。
+
 # おわりに
 こんな長々と書く予定はありませんでした。  
 ぜひ試す際はいろんな動画を入れてみるといいと思います、たまに変に動くやついる↑もそれで見つけた
