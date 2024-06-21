@@ -666,6 +666,11 @@ ossrhPassword=password
 sonatypeStagingProfileId=8320....
 ```
 
+## 追記 ユーザーネーム、パスワードでログインできなくなった
+こちらを参考に、ユーザートークンなるもの作ってください。
+
+https://takusan.negitoro.dev/posts/maven_central_ossrh_upload_401_error/
+
 ## ステージングプロファイルId どこやねん
 
 Sonatype OSSRH の nexus repository manager へログインします。  
