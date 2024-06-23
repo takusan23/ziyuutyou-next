@@ -25,10 +25,15 @@ https://takusan.negitoro.dev/posts/summer_vacation_r3_akiba_used_eroge/
 移転先は**ソフマップAKIBA アミューズメント館**です。（駅からすごく近くなった！）  
 後述しますがエロゲだけで2フロアあってとても広い。
 
-## トレーダー 3号店 が建て替え工事により休業中
-本店と2号店は引き続きあります。  
-地味にこのお店はエロゲの広告を道路側に出していた店でもあった。  
-http://www.e-trader.jp/event/trader3_closed.html
+## ~~トレーダー 3号店 が建て替え工事により休業中~~ 2024/06/23 追記 戻ってきました
+前 3 号店があったところが本店になりました。
+
+~~本店と2号店は引き続きあります。~~  
+~~地味にこのお店はエロゲの広告を道路側に出していた店でもあった。~~  
+~~http://www.e-trader.jp/event/trader3_closed.html~~
+
+## 2024/06/23 追記 入れ替わりでトレーダー本店が建て替え工事です
+入れ替わりで本店が建て替え工事になりました。  
 
 ## ムーラン（本店、中央通り店）共にエロゲコーナー無くなった？
 ちょっと探したけど見つけられなかった。  
@@ -56,9 +61,13 @@ http://www.e-trader.jp/event/trader3_closed.html
     - 新品コーナーに CD やグッズがあります
 - トレーダー (本店、2号店)
     - [本店](#トレーダー本店)
+        - 3 号店があったところが本店になりました、本店は入れ替わりで建て替え工事に入った。
         - http://www.e-trader.jp/shop/akiba01.html
-        - 新品・中古ともに 5 階
-        - CD は4 階
+        - 移転後はこちらです
+            - 新品・中古ともに 6 階
+            - CD は 2 階
+        - ~~新品・中古ともに 5 階~~
+        - ~~CD は4 階~~
     - [2号店](#トレーダー2号店)
         - http://www.e-trader.jp/shop/akiba02.html
         - 新品・中古ともに 2 階
@@ -103,7 +112,9 @@ http://www.e-trader.jp/event/trader3_closed.html
 # おすすめのルート（？）
 好きなようにすればいいと思う、、、  
 
-トレーダー 3 号店が休業中 + とらのあなが無くなってしまったため、地図で見ると大体のエロゲのお店が中央通りから見て西側に寄ってますね。  
+~~トレーダー 3 号店が休業中 + とらのあなが無くなってしまったため、地図で見ると大体のエロゲのお店が中央通りから見て西側に寄ってますね。~~  
+**トレーダー本店として戻ってきたのでそんなことない！、品揃えかなり良いので横断してでも行きたい**  
+
 げっちゅ屋は営業時間が 19 時までなので、日が沈む頃に行くなら先に行くといいかも（？）  
 トレーダーやソフマップはそこそこ品揃えがいいので時間多めに取っておくと幸せになれるかもしれない。  
 
@@ -167,26 +178,35 @@ http://www.e-trader.jp/event/trader3_closed.html
 (彼女のセイイキ より)
 
 ## トレーダー本店
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d321.45457672269225!2d139.77172183862558!3d35.700160983813284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c1dc59fff41%3A0xf44917d603081bf7!2z44OI44Os44O844OA44O8IOacrOW6lw!5e0!3m2!1sja!2sjp!4v1719115259792!5m2!1sja!2sjp" width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3240.0285516532867!2d139.771307!3d35.700915!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c1dc59fff41%3A0xf44917d603081bf7!2z44OI44Os44O844OA44O8IOacrOW6lw!5e0!3m2!1sja!2sus!4v1703690634496!5m2!1sja!2sus" width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+新しくなった！！！！  
+元々 3 号店があったところが本店になったそうです。でけ～  
 
-![Imgur](https://imgur.com/ZYSVa1c.png)
+![Imgur](https://imgur.com/W1Rk1BR.png)
 
-![Imgur](https://imgur.com/kcVheuc.png)
+![Imgur](https://imgur.com/XxULLnH.png)
 
-新品・中古ともに 5 階、CD は 4 階です。  
-タペストリーとかも 5 階にあったかな、いたるところにエロゲの広告がある（柱とか）。
+めっちゃきれい。  
+エロゲコーナーは 6 階です、CD とかは 2 階の角っこの方にありました。
 
-ここも在庫いっぱいあるので、お目当てのもソフマップかトレーダーで見つかるんじゃないかな。  
+![Imgur](https://imgur.com/xMMm5Fj.png)
 
-階段で上がるとエロゲの広告が見られるので良いかも（いやエレベーターの中にもあるか）  
-天井裏とかにも貼ってあったりなかったり
+在庫はかなりあると思う（写真ぶれた...）。  
+結構広い方です
 
-![Imgur](https://imgur.com/c8Q3S1p.png)
+![Imgur](https://imgur.com/MqyzTnQ.png)
 
-![Imgur](https://imgur.com/hd1gd8n.png)
+![Imgur](https://imgur.com/P6YE1HL.png)
 
-地べたに貼ってあるエロゲ広告、あんまり踏みたくないんだけどうまく避けれそうにもないなっていつも思ってる・・・
+広告もちゃんと戻ってきています！！  
+地べたに広告貼らないのかな（）（）（）
+
+![Imgur](https://imgur.com/1DnkUws.png)
+
+![Imgur](https://imgur.com/UU9Gaay.png)
+
+![Imgur](https://imgur.com/lwJrBoO.png)
 
 ## トレーダー2号店
 
@@ -372,6 +392,29 @@ CD の品揃えは結構ある方だとおもう。
 # そのほか写真など
 せっかくあるので
 
+### 建て替え工事中 旧トレーダー本店
+本店は前 3 号店があったところになって、こちらは工事中です。  
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3240.0285516532867!2d139.771307!3d35.700915!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c1dc59fff41%3A0xf44917d603081bf7!2z44OI44Os44O844OA44O8IOacrOW6lw!5e0!3m2!1sja!2sus!4v1703690634496!5m2!1sja!2sus" width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+![Imgur](https://imgur.com/ZYSVa1c.png)
+
+![Imgur](https://imgur.com/kcVheuc.png)
+
+新品・中古ともに 5 階、CD は 4 階です。  
+タペストリーとかも 5 階にあったかな、いたるところにエロゲの広告がある（柱とか）。
+
+ここも在庫いっぱいあるので、お目当てのもソフマップかトレーダーで見つかるんじゃないかな。  
+
+階段で上がるとエロゲの広告が見られるので良いかも（いやエレベーターの中にもあるか）  
+天井裏とかにも貼ってあったりなかったり
+
+![Imgur](https://imgur.com/c8Q3S1p.png)
+
+![Imgur](https://imgur.com/hd1gd8n.png)
+
+地べたに貼ってあるエロゲ広告、あんまり踏みたくないんだけどうまく避けれそうにもないなっていつも思ってる・・・
+
 ### とらのあな
 無くなる前の写真がありました、エロゲコーナーは地下 1 階でしたね。  
 そういえば、リアル店舗撤退だけじゃなく、エロゲの店舗特典も見かけなくなった気がする？  
@@ -419,7 +462,7 @@ CD の品揃えは結構ある方だとおもう。
 
 # おわりに
 ソフマップ移転が一番でかい気がする。めっちゃ広くなってすげ～なってる  
-トレーダー 3 号店もそろそろ戻ってくるのかな、気になる。
+~~トレーダー 3 号店もそろそろ戻ってくるのかな、気になる。~~ 戻ってきました！！！
 
 人が写り込まないように撮影するの、難しい  
 （しかも日が沈んだ後で暗いからシャッタースピードが遅くなっちゃう）
