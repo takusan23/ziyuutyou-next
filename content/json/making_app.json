@@ -27,6 +27,13 @@
             "link": "https://play.google.com/store/apps/details?id=io.github.takusan23.dougaundroid",
             "github": "https://github.com/takusan23/DougaUnDroid",
             "image": "/portfolio/dougaundroid.jpg"
+        },
+        {
+            "name": "こまどろいど",
+            "description": "前後カメラを重ねて保存できるカメラアプリ",
+            "link": "https://play.google.com/store/apps/details?id=io.github.takusan23.komadroid",
+            "github": "https://github.com/takusan23/KomaDroid",
+            "image": "/portfolio/komadroid.jpg"
         }
     ],
     "web": [
