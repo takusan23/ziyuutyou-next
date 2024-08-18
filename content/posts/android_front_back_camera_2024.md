@@ -47,6 +47,11 @@ https://takusan.negitoro.dev/posts/android_front_back_camera/
 
 細かい説明は去年書いたやつに任せるとして、でもコードはほぼ書き直しです。
 
+# 前面と背面が同時に撮影できる Android アプリを探してるんだけど検索妨害するのやめない？
+はい。  
+
+https://play.google.com/store/apps/details?id=io.github.takusan23.komadroid
+
 # ざっくり概要
 前面背面それぞれプレビュー用の`SurfaceView`を持つと、見る分には良いのですが、静止画、動画撮影が出来ないんですよね。  
 なので、どうにかして一つの`Surface`に合成する必要があります。  
