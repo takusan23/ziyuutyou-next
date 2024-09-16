@@ -1310,6 +1310,74 @@ val resultBitmap = bitmap.scale(originWidth, originHeight)
 ## 追記：2024/06/04
 やっぱり`16`の倍数にするだけでいい気がする。
 
+## 追記：2024/09/16 もうちょっと速くできる
+もう少し速く出来るのでその話をします。  
+`TIMEOUT_US`の時間を`0`にすればさらに速くなるはずです。これを書いた時点の私は`10_000L`よりも小さくすると映像が崩れてしまうので、最低でもこれくらいは必要だろうと**適当**に入れてたのですが、**そんなことはなく単に私の書いたコードが間違えてました。**
+
+映像が崩れてしまう原因ですが、デコーダーに入れて無いのにコンテナ（`mp4`）のデータを次に読み進めていたのが原因でした。  
+デコーダーに入れた後にデータを次に読み進める分には正解なのですが、デコーダーに入れてもないのにデータを読み進めたのが悪かったようです。はい私のせい。
+
+タイムアウトが長かったため、タイムアウトよりもデコーダーの用意が先に来ることがほとんどになるためうまく動いていた。しかし、タイムアウトを短くしたことにより、デコーダーが間に合わずリトライが必要になる場合が出てきた。  
+しかし、現状のコードではデコーダーに入れたかどうか確認せずにコンテナのデータを読み進めていた。確認してないのでデータだけが先に読み進んでしまった。  
+
+明らかにキーフレームが欠落した動画フレームが出てきて疑ったらビンゴ。
+
+というわけで修正箇所がこんな感じで、`MediaCodec#queueInputBuffer`をしていることを確認してから`MediaExtractor#advance`するように直しました。  
+あとタイムアウトの定数を`0`にした。
+
+```diff
+     companion object {
+         /** MediaCodec タイムアウト */
+-        private const val TIMEOUT_US = 10_000L
++        private const val TIMEOUT_US = 0L
+```
+
+```diff
+-            // 次に進める。advance() が false の場合はもうデータがないので、break する。
+-            val isEndOfFile = !mediaExtractor.advance()
+-            if (isEndOfFile) {
+-                break
++            // 次に進める。デコーダーにデータを入れた事を確認してから。
++            // advance() が false の場合はもうデータがないので、break する。
++            if (0 <= inputBufferIndex) {
++                val isEndOfFile = !mediaExtractor.advance()
++                if (isEndOfFile) {
++                    break
++                }
+             }
+```
+
+あとここも。  
+タイムアウトを短くしたことにより`latestDecodePositionMs = presentationTimeMs`の部分が2回以上通過しちゃうことがあった。  
+別プロジェクトでおかしくなってしまったので調査したらこの部分が2回以上呼ばれてたからだった。
+
+```diff
+                         val presentationTimeMs = bufferInfo.presentationTimeUs / 1000
+                         if (seekToMs <= presentationTimeMs) {
+                             isRunning = false
++                            isDecoderOutputAvailable = false
+                             latestDecodePositionMs = presentationTimeMs
+                         }
+                     }
+```
+
+これが乱れた動画フレーム。  
+デコーダーに入れるべきデータがずれてしまったのが多分原因。
+
+![Imgur](https://imgur.com/Ei09qdC.png)
+
+`TIMEOUT_US`が`0`になったので、さらに速くなった？リトライが多くなってるとは思うけどコード間違って無ければ問題ないはず。
+
+![Imgur](https://imgur.com/eq7wo7g.png)
+
+ちなみにこれが`TIMEOUT_US`が`10_000L`だった頃。↑が改善後なので速くなった。  
+
+![Imgur](https://imgur.com/FvPI0Xo.png)
+
+修正コミットはこちらです。  
+- https://github.com/takusan23/AndroidVideoFrameFastNextExtractor/commit/0965aa2504377c18b9faafd7b1a18d41f04d73c5
+- https://github.com/takusan23/AndroidVideoFrameFastNextExtractor/commit/6a294974d6202fc9a9d359c8ab0cfe0d23c0a24a
+
 # おわりに
 こんな長々と書く予定はありませんでした。  
 ぜひ試す際はいろんな動画を入れてみるといいと思います、たまに変に動くやついる↑もそれで見つけた
