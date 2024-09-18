@@ -12,7 +12,7 @@ React の dangerouslySetInnerHTML を使って既にある HTML を埋め込む�
 
 .content_div {
     /* リンクがはみ出るので */
-    word-wrap: break-word;
+    overflow-wrap: break-word;
     /** 文字の色 */
     @apply text-content-text-light dark:text-content-text-dark;
 }

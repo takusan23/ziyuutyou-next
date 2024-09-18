@@ -23,3 +23,9 @@
     background: #5870cb;
     border-radius: 10px;
 }
+
+/* Tailwind CSS に overflow-wrap: anywhere のユーティリティ名が追加されるまでの一時しのぎ */
+/* https://github.com/tailwindlabs/tailwindcss/pull/12128 */
+.break-anywhere {
+    overflow-wrap: anywhere;
+}

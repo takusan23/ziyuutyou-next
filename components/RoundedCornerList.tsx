@@ -18,8 +18,9 @@ type RoundedCornerListProps<T> = {
 /** 各レイアウトの角が丸いリスト。先頭と最後尾はより丸くする。 */
 export default function RoundedCornerList<T>({ list, content }: RoundedCornerListProps<T>) {
     // flex つけないとマージンうまくかかんない？
+    // break-anywhere は global.css 参照
     return (
-        <div className="flex flex-col w-full space-y-2">
+        <div className="flex flex-col w-full space-y-2 break-anywhere">
             {
                 list.map((item, index) => {
 
