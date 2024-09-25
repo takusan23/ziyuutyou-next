@@ -5,6 +5,7 @@ tags:
 - Android
 - Kotlin
 - KotlinCoroutines
+- KotlinCoroutines解説
 ---
 
 どうもこんばんわ。  
@@ -1529,6 +1530,13 @@ class MainActivity : ComponentActivity() {
 cancelAndJoin() 終わりました
 ```
 
+ギガが減るのも良くないけど、キャンセルが適切に行われないとクラッシュを巻き起こす可能性もあります。  
+画面回転や、Fragment の破棄後に非同期処理が終わり、破棄されているのに`UI`更新しようとして落ちるパターン。`ViewModel`が来る前まではみんな引っかかってたはず。  
+`getActivity() != null`とか、`Fragment#isAdded() == true`とかで分岐してなんとかしのいでた。
+
+例に漏れずコルーチンでも、`UI`破棄のタイミングでキャンセルを要求したのは良いものの、キャンセル対応のサスペンド関数を書いていないと、破棄後に`UI`更新する羽目になりやっぱり同じエラーに鳴ってしまいます。  
+まあ`UI`関係ないなら`ViewModel`に書けよという話ではあるんですが。
+
 ## キャンセル可能な処理の作り方
 いくつか、キャンセルに関連する関数、フラグがあります。
 
@@ -1691,6 +1699,99 @@ https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.co
 戻った際にキャンセルが要求されていることが分かったら`coroutineScope { }`自身が例外を投げます。
 
 よって、今回書いてきたコードではどちらを使っても`coroutineScope { }`か`ensureActive()`が例外を投げてくれるので、キャンセルに対応することになります。
+
+### 付録 yield() の説明もしろ
+なんて読むのか調べたら`いーるど`って読むらしい。  
+記事書き終わった後に良い例を思い出したので書いてみる。
+
+ドキュメントではスレッドを譲るって書いてあるけど、なんか難しくて避けてた。  
+これはスレッドを専有するような処理を書く時に使うと良いみたい。
+
+まだ習ってない物を使いますが、`limitedParallelism()`を使い、`1スレッド`で処理されるコルーチンを2つ起動します。  
+`1スレッド`しかないため、どちらかのコルーチンがスレッドを専有、ずっと終わらない処理を書いた場合はもう片方のコルーチンは処理されないことになります。例を書きます。
+
+```kotlin
+class MainActivity : ComponentActivity() {
+
+    /** とりあえずは 1スレッド で処理されるコルーチンを作るためのものだと思って */
+    private val singleThreadDispatcher = Dispatchers.Default.limitedParallelism(1)
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+
+        // シングルスレッドでコルーチンを2つ起動
+        lifecycleScope.launch(singleThreadDispatcher) {
+            while (isActive) {
+                // スレッドを専有する。
+                // ここでは Thread.sleep() を使いスレッドを譲らずに経過時間までブロックする
+                // 本来は Thread.sleep() は使わない。スレッドをブロックする例のため意図的に使っている。
+                // ブロックするならインターネット通信等の IO 処理でもいいよ
+                Thread.sleep(3_000)
+                println("[launch 1] Thread.sleep")
+            }
+        }
+        lifecycleScope.launch(singleThreadDispatcher) {
+            // 同じものを作る
+            while (isActive) {
+                Thread.sleep(3_000)
+                println("[launch 2] Thread.sleep")
+            }
+        }
+    }
+}
+```
+
+これで`logcat`を見てみると、`[launch 1]`しかログが出ていません。  
+なぜなら**シングルスレッドしか無い上に**、**スレッドをブロックする無限ループ**を書いて専有してしまっているためです。
+
+```plaintext
+[launch 1] Thread.sleep
+[launch 1] Thread.sleep
+[launch 1] Thread.sleep
+[launch 1] Thread.sleep
+[launch 1] Thread.sleep
+```
+
+ここで`yield()`が役に立ちます。説明どおりならスレッドを譲ってくれるはずです。  
+ループ毎に`yield()`を呼び出してみましょう。
+
+```kotlin
+class MainActivity : ComponentActivity() {
+
+    /** とりあえずは 1スレッド で処理されるコルーチンを作るためのものだと思って */
+    private val singleThreadDispatcher = Dispatchers.Default.limitedParallelism(1)
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+
+        // シングルスレッドでコルーチンを2つ起動
+        lifecycleScope.launch(singleThreadDispatcher) {
+            while (isActive) {
+                yield() // 他にコルーチンあれば譲る
+                // スレッドを専有する。
+                // ここでは Thread.sleep() を使いスレッドを譲らずに経過時間までブロックする
+                // 本来は Thread.sleep() は使わない。スレッドをブロックする例のため意図的に使っている。
+                // ブロックするならインターネット通信等の IO 処理でもいいよ
+                Thread.sleep(3_000)
+                println("[launch 1] Thread.sleep")
+            }
+        }
+        lifecycleScope.launch(singleThreadDispatcher) {
+            // 同じものを作る
+            while (isActive) {
+                yield() // 他にコルーチンあれば譲る
+                Thread.sleep(3_000)
+                println("[launch 2] Thread.sleep")
+            }
+        }
+    }
+}
+```
+
+これで、`logcat`を見てみると、`[launch 2]`の出力がされるようになりました。  
+スレッドを専有するような処理では`yield()`を入れておくと良いかもですね！
 
 ## try-finally が動く
 キャンセルできるサスペンド関数は、キャンセル時はキャンセル例外を投げるため、`try-finally`が完全に動作します。  
