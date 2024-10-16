@@ -1100,6 +1100,46 @@ https://github.com/takusan23/AndroidPartialScreenInternalAudioRecorder
 
 https://github.com/takusan23/AndroidPartialScreenInternalAudioRecorder/tree/master/app/src/main/java/io/github/takusan23/androidpartialscreeninternalaudiorecorder
 
+## 追記 2024/10/17 Android 15 QPR1
+`Android 15`の次のバージョンのベータ版`Android 15 QPR1`で`MediaProjection`に変更が入ってます。  
+https://developer.android.com/about/versions/15/behavior-changes-all#media-projection-status-bar-chip
+
+まず、ステータスバーから`MediaProjection`を利用している旨の`Chip`が追加されました。  
+しかも押せるようになってて、ここから終了すると、`MediaProjection.Callback`の`onStop()`が呼び出されます。  
+
+あと通知領域を開いたとしても、詳しい内容は隠されるようになりました。  
+また、スマホをスリープにしたときにも、`MediaProjection.Callback`の`onStop()`が呼ばれるようになります。今までは`Always On Display`とかが写ってた？
+
+![Imgur](https://imgur.com/56nE9gL.png)
+
+![Imgur](https://imgur.com/ZvB35yQ.png)
+
+![Imgur](https://imgur.com/vk5xcmb.png)
+
+で、**この記事では onStop() が呼び出されても何もしていません、が、おそらくサービスや画面録画を終了するような処理を追加で書く必要があると思います。**  
+雑に対応してみた→ https://github.com/takusan23/ZeroMirror/commit/9d7cb51224c989e9e3342f7da6a8a462855a751e
+
+```kotlin
+mediaProjection.registerCallback(object : MediaProjection.Callback() {
+    override fun onCapturedContentVisibilityChanged(isVisible: Boolean) {
+        super.onCapturedContentVisibilityChanged(isVisible)
+        // 単一アプリが非表示になった
+        // 代わりに代替画像を流す
+    }
+
+    override fun onCapturedContentResize(width: Int, height: Int) {
+        super.onCapturedContentResize(width, height)
+        // 単一アプリのサイズが変化した
+    }
+
+    override fun onStop() {
+        super.onStop()
+        // MediaProjection が終了したとき
+        // 録画を停止するとか、サービスを終了するとか、、、
+    }
+}, null)
+```
+
 # 番外編 単一アプリが画面に映っていないときの話
 さて、ここから先はおまけです。ほとんどの人は関係ありません  
 冒頭の方で、単一アプリの表示中で、その単一アプリが画面外に移動した場合、エンコーダーからデータが流れてこないんですよね。  
