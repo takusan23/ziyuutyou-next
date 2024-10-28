@@ -52,6 +52,15 @@ https://takusan.negitoro.dev/posts/android_front_back_camera/
 
 https://play.google.com/store/apps/details?id=io.github.takusan23.komadroid
 
+# 追記 2024/10/29
+`CameraX`が追いついてきました。  
+もう私みたいに`OpenGL ES`のシェーダーやら何やら書くこと無く、2つのカメラ映像を重ねた状態で`SurfaceView`で表示したり、`MediaCodec`で録画できるらしいです。  
+
+https://android-developers.googleblog.com/2024/10/camerax-update-makes-dual-concurrent-camera-easier.html
+
+悔しい...ですよね？  
+もう`CameraX`を使えばいいと思いました。
+
 # ざっくり概要
 前面背面それぞれプレビュー用の`SurfaceView`を持つと、見る分には良いのですが、静止画、動画撮影が出来ないんですよね。  
 なので、どうにかして一つの`Surface`に合成する必要があります。  

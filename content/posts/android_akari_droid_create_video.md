@@ -20,6 +20,8 @@ tags:
 
 # 作った動画
 
+https://www.nicovideo.jp/watch/sm44212192
+
 <script type="application/javascript" src="https://embed.nicovideo.jp/watch/sm44212192/script?w=640&h=360"></script><noscript><a href="https://www.nicovideo.jp/watch/sm44212192">【ゆっくり実況】自作MODを新しいバージョンに追従するまで（1.20.6）</a></noscript>
 
 `1080p（1920x1080）`の、`60fps`なので、なかなか豪華。  

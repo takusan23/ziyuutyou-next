@@ -2439,7 +2439,7 @@ https://kotlinlang.org/docs/coroutine-context-and-dispatchers.html
 |-----------------------|----------------------------------------------------------------------------------|----------------------------------------|
 | `Dispatchers.Default` | メインスレッド以外のスレッドで、CPU を消費する処理向けです。                     | 2 個以上`CPU のコア数`以下             |
 | `Dispatchers.IO`      | メインスレッド以外のスレッドで、インターネット通信や、ファイル読み書き向けです。 | 少なくとも 64 個、足りなければ増える。 |
-| `Dispatchers.Main` | メインスレッドです。                                                             | 1 個                                   |
+| `Dispatchers.Main`    | メインスレッドです。                                                             | 1 個                                   |
 
 `Default`と`IO`は、`Dispatchers`が複数のスレッドを持っている（雇っている）形になります。  
 その時空いているスレッドが使われる感じです。
@@ -3058,12 +3058,18 @@ class MainActivity : ComponentActivity() {
 # Flow と Channel
 https://kotlinlang.org/docs/flow.html
 
-<p style="font-size:30px; color:red">省略します！！！</p>
+<p style="font-size:30px; color:red; ">↓書きました↓</p>
 
-やる気があれば`Flow`の話をします。  
-というのも`Flow`はサスペンド関数のそれ同じくらい内容があってそれだけで記事一本出来てしまうので。。。
+https://takusan.negitoro.dev/posts/amairo_kotlin_coroutines_flow/
 
-いやだって目次が多すぎる。。。
+<del>
+<p style="font-size:30px; color:red; ">省略します！！！</p>
+</del>
+
+~~やる気があれば`Flow`の話をします。~~  
+~~というのも`Flow`はサスペンド関数のそれ同じくらい内容があってそれだけで記事一本出来てしまうので。。。~~
+
+~~いやだって目次が多すぎる。。。~~
 
 # 例外
 例外の話です。地味に新しい事実がある  
@@ -3642,8 +3648,8 @@ https://stackoverflow.com/questions/1050222/
 
 |          | 平行（同時に起動する） | 並列（同時に処理する。使うスレッド数を制限する） |
 |----------|------------------------|--------------------------------------------------|
-| 1つだけ  | Mutex()                | limitedParallelism(1)                              |
-| 上限付き | Semaphore(上限の数)    | limitedParallelism(上限の数)                       |
+| 1つだけ  | Mutex()                | limitedParallelism(1)                            |
+| 上限付き | Semaphore(上限の数)    | limitedParallelism(上限の数)                     |
 
 ### Mutex
 例えば以下の関数は`withLock { }`の中からのみ呼び出されているため、`successTask()`を3つ並列にしても、1つずつ処理されることになります。  
