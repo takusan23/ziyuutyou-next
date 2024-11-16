@@ -3375,7 +3375,6 @@ class MainActivity : ComponentActivity() {
 ```
 
 `Dispatchers`の章で話した通り、`Dispatchers.Main`やシングルスレッドの`Dispatchers`を使えば、他スレッドから参照されたり変更されたりしないので、ちゃんと期待通りになります。  
-ちなみに`repeat { }`の中で`withContext { }`よりも`withContext { }`の中で`repeat { }`のほうが良いです。
 
 ```kotlin
 class MainActivity : ComponentActivity() {
@@ -3413,6 +3412,45 @@ class MainActivity : ComponentActivity() {
 ```
 
 また、変数に`@Volatile`を付けても期待通りにならないそうです（これがなんなのかいまいちわからないのでスルーします）
+
+## ループと withContext
+ちなみに`repeat { }`の中で`withContext { }`よりも`withContext { }`の中で`repeat { }`のほうが良いです。  
+いくら軽いとはいえ、繰り返し文のたびに`withContext { }`を呼び出すのはコストがかかるそうです。
+
+```kotlin
+class MainActivity : ComponentActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+
+        lifecycleScope.launch {
+            var count = 0
+            val time1 = measureTimeMillis {
+                repeat(10_000) {
+                    withContext(Dispatchers.Default) {
+                        count++ // 特に意味のないことをしてます。withContext の呼び出しが地味に重いので、time2 のようにループ開始前に呼び出しておくこと
+                    }
+                }
+            }
+            val time2 = measureTimeMillis {
+                withContext(Dispatchers.Default) {
+                    repeat(10_000) {
+                        count++
+                    }
+                }
+            }
+            println("ループの中で withContext = $time1")
+            println("withContext の中でループ = $time2")
+        }
+    }
+}
+```
+
+```plaintext
+ループの中で withContext = 716
+withContext の中でループ = 0
+```
 
 ## スレッドセーフ
 いくつかあります。  
