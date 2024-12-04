@@ -11,6 +11,9 @@ tags:
 
 ![Imgur](https://imgur.com/wWbPz2a.png)
 
+開発には関係ないって言ったんだけど嘘で、`MediaMetadataRetriever#getFrameAtTime`の呼び出しが返ってこなくなってしまったことを思い出した。  
+![Imgur](https://imgur.com/SaWllaD.png)
+
 # 直った
 セーフモードで再起動して戻したら直った。ただの再起動じゃだめだった気がする。気のせいかも。  
 これでいいのか（？）
