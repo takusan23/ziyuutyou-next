@@ -1,6 +1,8 @@
 ---
 title: わたし用メモ Android 初期設定
 created_at: 2023-11-08
+tags:
+- その他
 ---
 わたし用のメモ  
 前の端末から引き継げという話はそれはそう
@@ -32,6 +34,8 @@ created_at: 2023-11-08
 - スリープ時間を伸ばす
 - モバイルデータのデータ利用サイクルを1日にする（携帯会社のギガ表示と合わない）
 - 機内モードをクイック設定の上の方に持ってくる
+- サイレントモードで通知を全て非表示
+- 持ち上げてスリープ解除
 
 - Pixel
     - 周辺の歌
@@ -61,8 +65,10 @@ created_at: 2023-11-08
 - 音量ボタン押したときの挙動をシャッターに割り当てる（ズームとかになってるはず
 
 # Google
-- ニアバイシェア？
-- ロケーション履歴？
+- ニアバイシェア
+    - 自分のアカウントのみ
+- ロケーション履歴
+    - マップアプリから他の端末のバックアップをインポートする
 - Google Pay
     - チャージなどの初回支払い時はセキュリティコードを打ち込む必要あり
 
@@ -82,6 +88,7 @@ created_at: 2023-11-08
 - Xplore
 - VLC
 - Shizuku
+- DeployGate
 - Play Console (リジェクトの時に通知くる)
 - Google Keep
 - Google 翻訳（文字選択時に翻訳出来るように）
@@ -99,12 +106,13 @@ created_at: 2023-11-08
 自作アプリは apk 作ってないのでビルドする必要あり  
 ついでに targetSdk / Kotlin / AGP / Gradle / ライブラリ の更新も必要なら上げておいてくれ
 
-- NewRadioSupporter
-- TelephoneyManagerAPI
 - OneLock
 - MobileStatusWidget
+- NewRadioSupporter
+- TelephoneyManagerAPI
+- GalakeeWidget (いらんかも)
 
 お好みで
 
-- PhoTransfer
-- DeveloperHide
+- MyMusicControlWidget
+- MaterialBatteryWidget
