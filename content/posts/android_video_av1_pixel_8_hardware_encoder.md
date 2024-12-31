@@ -1572,13 +1572,16 @@ class CameraController(
 
 ## カメラ画面
 ↑で作った`CameraController`を使う画面です。  
-カメラのプレビューを表示する`SurfaceView`は、正方形じゃない表示が歪んでしまうのですが（正方形のソースはどこだか忘れてしまった...）  
-https://qiita.com/nakker1218/items/b9a592c93bde33de52aa
+~~カメラのプレビューを表示する`SurfaceView`は、正方形じゃない表示が歪んでしまうのですが（正方形のソースはどこだか忘れてしまった...）  ~~  
+~~https://qiita.com/nakker1218/items/b9a592c93bde33de52aa~~
 
-`Jetpack Compose`の`Modifier`をいくつか組み合わせるだけで解消されます。  
-おそらくこういう感じの、`SurfaceView（カメラのプレビュー）`を縦横同じ正方形にして、端末の画面サイズよりも大きくするようなことを、をやってくれているんだと思います。  
+~~`Jetpack Compose`の`Modifier`をいくつか組み合わせるだけで解消されます。~~  
+~~おそらくこういう感じの、`SurfaceView（カメラのプレビュー）`を縦横同じ正方形にして、端末の画面サイズよりも大きくするようなことを、をやってくれているんだと思います。~~  
 
 ![Imgur](https://imgur.com/zEyHjfy.png)
+
+これは嘘で、以下のドキュメントに書かれている通り、`SurfaceView`のコールバック内で、`SurfaceHolder#setFixedSize`を呼び出すことで解像度を設定することが出来ます。  
+https://developer.android.com/reference/android/hardware/camera2/CameraDevice#createCaptureSession(android.hardware.camera2.params.SessionConfiguration)
 
 ```kotlin
 @Composable

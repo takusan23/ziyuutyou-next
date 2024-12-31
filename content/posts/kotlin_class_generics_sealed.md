@@ -12,7 +12,7 @@ tags:
 `Jetpack Compose`を使うときによく、以下のような画面の値を持っておくステートクラスみたいなのを作ると思うんですけど  
 多分、参考：https://github.com/android/nowinandroid/blob/main/feature/foryou/src/main/kotlin/com/google/samples/apps/nowinandroid/feature/foryou/OnboardingUiState.kt
 
-```
+```kotlin
 // HomeScreen の ステート
 sealed interface HomeScreenUiState {
     // ロード
@@ -332,6 +332,29 @@ val list2: List<Any> = listOf<Any>() + listOf<String>()
 てかこれ考えたん賢くない？？？頭めっちゃいいと思う  
 で、これを次の`<out T>`と組み合わせることで、`Jetpack Compose`の`UiState`クラスが共通化できちゃうわけ
 
+### どこで使われてるの
+たとえばエルビス演算子（`?:`）は、`null 以外`なら左側の値、`null`なら右側の値を返すという便利な演算子がありますが、  
+これ`throw`を右側に置くことも出来ます。これは`null`の場合は例外を投げる。
+
+```kotlin
+val responseOrNull: String? = "hello world"
+val responseOrThrow: String = responseOrNull ?: throw RuntimeException("null です！")
+```
+
+一見すると、`Kotlin`のコンパイラが`?:`の右側に`throw`が来た場合は`NonNull`として返すという処理が特別に入っているのかと思ってしまいますが、  
+そうではなく、`throw`は`Nothing`を返すため、先述の通り`String`が選ばれるというわけです。
+
+これは`TODO()`とかいう~~初見殺し~~関数でも使われている技で、`TODO()`を入れると、とりあえずコンパイルが通るようになるのは、  
+`TODO()`はまだ未実装だよって例外を投げる。すると`Nothing`を返すため、すべてを継承している`Nothing`で型が解決できているという話なだけです。
+
+```kotlin
+// これでコンパイルが通ってしまうのは
+// TODO() は例外を投げる。
+// Kotlin は例外を投げると Nothing を返す。
+// Nothing 型はすべてのクラスを継承しているためとりあえずエラーが消える。
+val text: String = TODO()
+```
+
 # ジェネリクス
 ジェネリックなのかジェネリクスなのか、どっちなんだろう
 
@@ -465,6 +488,33 @@ sealed interface BaseUiState<out T> {
         - 先述の通り`Nothing`という特殊な型により、自動的に成功時の型が使われるようになる
 
 ・・・ってことで合ってる？
+
+## 使われている所
+`emptyList()`という空の配列を返す関数があります。  
+こんな感じに、`List`自体が`nullable`の場合にエルビス演算子と合わせて使うと`NonNull`になるので便利。  
+
+```kotlin
+val responseListOrNull: List<String>? = listOf("Hello World")
+val responseListOrEmpty = responseListOrNull ?: emptyList()
+```
+
+これは一見`emptyList()`が中で`new List<T>`しているのかな？と思いきやここでも`Nothing`が活用されています。  
+`EmptyList`と呼ばれる`List<Nothing>`型の配列を返しています。  
+
+この関数はジェネリクスで`<T>`を取って**は**いますが、実際には使っておらず、シングルトンで作られた、中身のない配列、`List<Nothing>`を返しています。  
+
+```kotlin
+internal object EmptyList : List<Nothing>, Serializable, RandomAccess {
+    // 興味があれば Kotlin のコード見てきてください
+}
+
+public fun <T> emptyList(): List<T> = EmptyList
+```
+
+https://github.com/JetBrains/kotlin/blob/c6f337283d59fcede75954eebaa589ad1b479aea/libraries/stdlib/src/kotlin/collections/Collections.kt#L72
+
+また、`Kotlin`の`List`は`out T`（今見たら`E`だった）といった感じで`out`が付いています。  
+これにより、`List`のジェネリクスの型`<T>`に`T`と`T`を継承した型を入れられるようになっています。そして`Nothing`は先述の通りすべての子なのでこの`T`にいれることが出来ているわけです。  
 
 # おわりに
 間違ってたらすいません

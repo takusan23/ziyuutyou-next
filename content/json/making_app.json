@@ -29,6 +29,13 @@
             "image": "/portfolio/dougaundroid.jpg"
         },
         {
+            "name": "ひまりどろいど",
+            "description": "再エンコードアプリ。H.264 / H.265 / VP9 / AV1 等のコーデックが使えます。",
+            "link": "https://play.google.com/store/apps/details?id=io.github.takusan23.himaridroid",
+            "github": "https://github.com/takusan23/HimariDroid",
+            "image": "/portfolio/himaridroid.jpg"
+        },
+        {
             "name": "こまどろいど",
             "description": "前後カメラを重ねて保存できるカメラアプリ",
             "link": "https://play.google.com/store/apps/details?id=io.github.takusan23.komadroid",
