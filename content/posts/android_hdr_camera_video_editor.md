@@ -1,6 +1,6 @@
 ---
 title: Android で HDR 動画の撮影、動画編集アプリを作る
-created_at: 2024-12-30
+created_at: 2024-12-31
 tags:
 - Android
 - MediaCodec
@@ -296,7 +296,7 @@ https://developer.android.com/media/camera/camera2/hdr-video-capture
 ![Imgur](https://imgur.com/VcIl5Zw.png)
 
 `Oppo`と`一部の Xiaomi`、あと`AQUOS R9 pro (!?)`は`ドルビービジョン`でした。  
-あと Android 関係ないけど`iPhone`もこれ。  
+あと Android 関係ないけど`iPhone`もこれ。（`iPhone`はデフォルトで`HDR`動画撮影が有効らしい、強気だ）  
 が、が、が、後述しますが、ドルビービジョンはドルビービジョンでも`Dolby Vision profile 8.4`ってやつな気がします。
 
 ![Imgur](https://imgur.com/UV91HJ6.png)
