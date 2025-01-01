@@ -83,6 +83,11 @@ PayPayでついにQRコード決済に入門しようとしたらだめだった
 年末年始の休みももう折り返しか、  
 `自作 MOD の Minecraft 1.21.4 移行`も`Next.js 15 移行`もなにもやっていない・・・
 
+# ついき（2025/01/01）
+アイコン書いたんだった。差し替えておきます
+
+![Imgur](https://imgur.com/2eF1l2I.png)
+
 # 今年書いた記事
 [Android で HDR 動画の撮影、動画編集アプリを作る](/posts/android_hdr_camera_video_editor/)  
 [D.C.5 Plus Happiness の深夜販売行ってきた](/posts/sinya_hanbai_dc5_ph/)  

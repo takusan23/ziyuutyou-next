@@ -53,7 +53,7 @@ The CJS build of Vite's Node API is deprecated. See https://vitejs.dev/guide/tro
 ```
 
 # 環境
-このプロジェクトは`Figma`のプラグインなんですが、`Figma`関係ないところの作業なのでまあ役に立つかも。  
+このプロジェクトは`Figma`のプラグインなんですが、`Figma`関係ないところの作業なんですよね。  
 https://www.figma.com/community/plugin/1344710416431362546
 
 ライブラリ。重要そうなところを抜粋  
