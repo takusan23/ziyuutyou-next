@@ -14,11 +14,12 @@ import "../../../styles/css/content.css"
 
 /** 動的ルーティング */
 type PageProps = {
-    params: { blog: string }
+    params: Promise<{ blog: string }>
 }
 
 /** head に値を入れる */
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata(props: PageProps): Promise<Metadata> {
+    const params = await props.params;
     const markdownData = await ContentFolderManager.getBlogItem(params.blog)
     const ogpTitle = `${markdownData.title} - ${EnvironmentTool.SITE_NAME}`
     const ogpUrl = `${EnvironmentTool.BASE_URL}${markdownData.link}`
@@ -41,7 +42,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
  * 記事本文。
  * 反映されない場合はスーパーリロードしてみてください。
  */
-export default async function BlogDetailPage({ params }: PageProps) {
+export default async function BlogDetailPage(props: PageProps) {
+    const params = await props.params;
     // サーバー側でロードする
     const markdownData = await ContentFolderManager.getBlogItem(params.blog)
 

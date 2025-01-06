@@ -14,11 +14,12 @@ import "../../../styles/css/content.css"
 
 /** 動的ルーティング */
 type PageProps = {
-    params: { page: string }
+    params: Promise<{ page: string }>
 }
 
 /** head に値を入れる */
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata(props: PageProps): Promise<Metadata> {
+    const params = await props.params;
     const markdownData = await ContentFolderManager.getPageItem(params.page)
     const ogpTitle = `${markdownData.title} - ${EnvironmentTool.SITE_NAME}`
     const ogpUrl = `${EnvironmentTool.BASE_URL}${markdownData.link}`
@@ -36,7 +37,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 /** 固定ページの記事本文 */
-export default async function PageDetailPage({ params }: PageProps) {
+export default async function PageDetailPage(props: PageProps) {
+    const params = await props.params;
     // サーバー側でロードする
     const markdownData = await ContentFolderManager.getPageItem(params.page)
 

@@ -11,7 +11,7 @@ const BLOG_SIZE_LIMIT = 10
 
 /** 動的ルーティング */
 type PageProps = {
-    params: { page: string }
+    params: Promise<{ page: string }>
 }
 
 /** head に値を入れる */
@@ -20,7 +20,8 @@ export const metadata: Metadata = {
 }
 
 /** 記事一覧ページ */
-export default async function BlogListPage({ params }: PageProps) {
+export default async function BlogListPage(props: PageProps) {
+    const params = await props.params;
     // posts/page/<ここ> を取得
     const pageId = Number(params.page)
     // 記事一覧を取得する。async なので待つ。-1してるのは1ページ目はskip:0にしたいため
