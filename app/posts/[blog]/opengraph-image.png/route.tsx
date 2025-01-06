@@ -33,9 +33,10 @@ export async function GET(_: Request, props: PageProps) {
         // アバター画像。/app/icon.png
         FileReadTool.readBase64('app', 'icon.png'),
         // ナビゲーションドロワーのアイコン
-        FileReadTool.readTextFile('public', 'icon', 'home.svg'),
-        FileReadTool.readTextFile('public', 'icon', 'book.svg'),
-        FileReadTool.readTextFile('public', 'icon', 'sell.svg')
+        // URL エンコードした状態で、<img> の src="" に指定しないとエラーになりそう？
+        FileReadTool.readTextFile('public', 'icon', 'home.svg').then(svgText => encodeURIComponent(svgText)),
+        FileReadTool.readTextFile('public', 'icon', 'book.svg').then(svgText => encodeURIComponent(svgText)),
+        FileReadTool.readTextFile('public', 'icon', 'sell.svg').then(svgText => encodeURIComponent(svgText))
     ])
 
     // フォントファイル
