@@ -11,7 +11,7 @@ class FileReadTool {
     static BASE64_PREFIX_PNG = 'data:image/png;base64,'
 
     /** {@link BASE64_PREFIX_PNG}の svg 版。 */
-    static BASE64_PREFIX_SVG = 'data:image/svg+xml;,'
+    static BASE64_PREFIX_SVG = 'data:image/svg+xml;charset=utf8,'
 
     /**
      * 引数に渡したファイルパスのデータを base64 形式で読み出して返す
