@@ -6,11 +6,12 @@ import BlogListItem from "../../../../components/BlogListItem"
 
 /** 動的ルーティング */
 type PageProps = {
-    params: { tag: string }
+    params: Promise<{ tag: string }>
 }
 
 /** head に値を入れる */
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata(props: PageProps): Promise<Metadata> {
+    const params = await props.params;
     const unEscapeText = decodeURIComponent(params.tag)
     return {
         title: `タグ名:${unEscapeText} - ${EnvironmentTool.SITE_NAME}`,
@@ -22,7 +23,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 /** タグがついてる記事一覧ページ */
-export default async function TagListPage({ params }: PageProps) {
+export default async function TagListPage(props: PageProps) {
+    const params = await props.params;
     // パーセントエンコーディングされているため戻す
     const unEscapeText = decodeURIComponent(params.tag)
     // ページネーションは後で

@@ -7,7 +7,7 @@ import FileReadTool from "../../../../src/FileReadTool"
 
 /** 動的ルーティング */
 type PageProps = {
-    params: { blog: string }
+    params: Promise<{ blog: string }>
 }
 
 /**
@@ -17,7 +17,8 @@ type PageProps = {
  * 使える CSS は以下参照：
  * https://github.com/vercel/satori
  */
-export async function GET(_: Request, { params }: PageProps) {
+export async function GET(_: Request, props: PageProps) {
+    const params = await props.params;
     // 記事を取得
     const markdownData = await ContentFolderManager.getBlogItem(params.blog)
 
