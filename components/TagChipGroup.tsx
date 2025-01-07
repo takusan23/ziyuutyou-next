@@ -13,15 +13,13 @@ export default function TagChipGroup({ tagList }: TagChipGroupProps) {
         <div className="flex flex-row flex-wrap gap-2">
             {
                 tagList.map(tagName => (
-                    <>
-                        <NextLinkButton
-                            size="small"
-                            key={tagName}
-                            href={`/posts/tag/${tagName}/`}
-                            startIcon={<SellIcon />}
-                            text={tagName}
-                        />
-                    </>
+                    <NextLinkButton
+                        size="small"
+                        key={tagName}
+                        href={`/posts/tag/${tagName}/`}
+                        startIcon={<SellIcon />}
+                        text={tagName}
+                    />
                 ))
             }
         </div>
