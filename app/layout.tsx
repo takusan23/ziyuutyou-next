@@ -14,9 +14,7 @@ const koruriFont = localFont({
     // CSS 変数として使う
     variable: '--koruri-font',
     src: [
-        { path: '../styles/css/fonts/Koruri-Regular-sub.eot' },
-        { path: '../styles/css/fonts/Koruri-Regular-sub.ttf' },
-        { path: '../styles/css/fonts/Koruri-Regular-sub.woff' },
+        { path: '../styles/css/fonts/Koruri-Regular.ttf' }
     ]
 })
 

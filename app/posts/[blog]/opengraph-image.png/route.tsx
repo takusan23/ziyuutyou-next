@@ -40,7 +40,7 @@ export async function GET(_: Request, props: PageProps) {
 
     // フォントファイル
     // styles/css/fonts にある ttf を見に行く
-    const fontFileBuffer = await FileReadTool.readByteArray('styles', 'css', 'fonts', 'Koruri-Regular-sub.ttf')
+    const fontFileBuffer = await FileReadTool.readByteArray('styles', 'css', 'fonts', 'Koruri-Regular.ttf')
 
     return new ImageResponse(
         (
