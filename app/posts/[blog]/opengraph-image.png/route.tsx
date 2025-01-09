@@ -29,18 +29,17 @@ export async function GET(_: Request, props: PageProps) {
     const contentColor = colors['content']['primary']['light']
 
     // 表示するアイコン。base64 とかで直接渡すのがいいらしい（相対 URL 無理だった）
-    const [iconBase64, homeIconBase64, blogIconBase64, tagIconBase64] = await Promise.all([
+    const [iconBase64, homeIconBase64, blogIconBase64, tagIconBase64, fontFileBuffer] = await Promise.all([
         // アバター画像。/app/icon.png
         FileReadTool.readBase64('app', 'icon.png'),
         // ナビゲーションドロワーのアイコン
         FileReadTool.readTextFile('public', 'icon', 'home.svg'),
         FileReadTool.readTextFile('public', 'icon', 'book.svg'),
-        FileReadTool.readTextFile('public', 'icon', 'sell.svg')
+        FileReadTool.readTextFile('public', 'icon', 'sell.svg'),
+        // フォントファイル
+        // styles/css/fonts にある ttf を見に行く
+        FileReadTool.readByteArray('styles', 'css', 'fonts', 'Koruri-Regular.ttf')
     ])
-
-    // フォントファイル
-    // styles/css/fonts にある ttf を見に行く
-    const fontFileBuffer = await FileReadTool.readByteArray('styles', 'css', 'fonts', 'Koruri-Regular.ttf')
 
     return new ImageResponse(
         (

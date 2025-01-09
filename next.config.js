@@ -20,5 +20,6 @@ module.exports = {
                 },
             },
         }
-    }
+    },
+    staticPageGenerationTimeout: 60 * 10 // 10分。Next.js 15 にしてから伸ばさないと怪しい
 }
