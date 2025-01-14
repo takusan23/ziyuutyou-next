@@ -79,7 +79,8 @@ https://nextjs.org/docs/canary/app/building-your-application/upgrading/version-1
 
 ![Imgur](https://imgur.com/h1ZN106.png)
 
-// todo github compare はる
+// todo github compare はる  
+https://github.com/takusan23/ziyuutyou-next/commit/008f234a9ecc215f5d2afc43b469cbac40bc2f04
 
 # package.json
 `codemod`を叩いた際に`Turbopack`有効を選んだので、開発時は`Turbopack`が有効になるオプションが指定されています。
@@ -98,7 +99,7 @@ https://nextjs.org/docs/canary/app/building-your-application/upgrading/version-1
 ```
 
 # props が Promise 経由で渡される
-ページの`URL`パスとかを`JSX`を返す関数の引数に`Props`としてつけていましたが、この`Props`が`Promise<Props>`のように、非同期で`URL`のパラメータとかが返ってくるようになりました。
+ページの`URL パス`（動的ルーティングのあれ）とかを関数の引数に`Props`としてつけていましたが、この`Props`が`Promise<Props>`のように、非同期で`URL`のパラメータとかが渡ってくるようになりました。
 
 手動で直す場合は、まず各ページの引数の型を`Promise<>`でかこって、  
 
@@ -141,7 +142,7 @@ index 228d44e..d6cc1a7 100644
      const markdownData = await ContentFolderManager.getBlogItem(params.blog)
 ```
 
-`API Routes`の`route.ts (.tsx)`に関しても同様に`Promise`で`Props`を返してくれる設計だそうです。  
+`Route Handlers (API Routes)`の`route.ts (.tsx)`に関しても同様に`Promise`で`Props`を渡してくれる設計だそうです。  
 このサイトでは`OGP画像`の生成で使ってて、静的書き出し時に`GET`リクエストされ`OGP画像`も静的書き出しされます。
 
 ```diff
@@ -188,7 +189,7 @@ React.jsx: type is invalid -- expected a string (for built-in components) or a c
 ## SVGR で webpack を使っていたので修正する
 https://nextjs.org/docs/app/api-reference/turbopack
 
-`SVGR`は`SVG`のファイルを`React`でコンポーネントとして表示できるやつで、  
+`SVGR`は`SVG`のファイルを`React`のコンポーネントとして表示できるやつで、  
 `import Icon from 'icon.svg'`みたいに`svg`を`import`するだけで、`React`のコンポーネントとして`<Icon />`みたいに使えるあれ。便利。
 
 `Turbopack`は`webpack`使えないものだと思ってたんですが、`Turbopack`でも`@svgr/webpack`は動くって言ってる。ん？  
@@ -228,7 +229,7 @@ module.exports = {
 ```
 
 # 開発モードで動いた
-速い。。と思う。私の作りが悪い可能性も十分あるけど。
+`Turbopack`、速い。。と思う。私の作りが悪い可能性も十分あるけど。
 
 ![Imgur](https://imgur.com/Jm1biay.png)
 
@@ -281,7 +282,7 @@ Error: SVG data parsing failed cause invalid attribute at 1:44192 cause expected
     at imports.wbg.__wbg_new_15d3966e9981a196 (file:///C:/Users/takusan23/Desktop/Dev/NextJS/ziyuutyou-next/node_modules/next/dist/compiled/@vercel/og/index.node.js:18406:17)
 ```
 
-ちなみにこれは開発時でも同じエラーがでました。開発時よりも↑の本番のほうがまだわかりやすいエラーなの、開発時に`Turbopack`とかが影響してんのかな。  
+ちなみにこれは開発時でも同じエラーがでました。開発時よりも↑の本番のほうがまだわかりやすいエラーなの、開発時は`Turbopack`とかが影響してんのかな。  
 まあ今まで動いてたので分かんないんだけど。
 
 ```plaintext
@@ -293,15 +294,15 @@ Error: SVG data parsing failed cause invalid attribute at 1:44192 cause expected
 
 ![Imgur](https://imgur.com/ZGGgwZ1.png)
 
-そもそも`静的書き出し`モードで`OGP画像`の生成はドキュメント通りに作るとダメで（`Issue`ある）、代わりに`OGP画像`を返す`API Routes`を作ることで`静的書き出し`時に`HTML`とともに画像が生成されるようになります。  
-その`API Routes`機能も本当は`静的書き出し`モードでは利用できないのですが、条件を満たした（`GET`リクエストのみ + `Request`の引数を使わない）場合は静的書き出しに一緒に呼び出され書き出されるようです。
+そもそも`静的書き出し`モードで`OGP画像`の生成はドキュメント通りに作るとダメで（`Issue`ある）、代わりに`OGP画像`を返す`Route Handlers`を作ることで`静的書き出し`時に`HTML`とともに画像が生成されるようになります。  
+その`Route Handlers`機能も本当は`静的書き出し`モードでは利用できないのですが、条件を満たした（`GET`リクエストのみ + `Request`の引数を使わない）場合は静的書き出し時に一緒に呼び出され書き出されるようです。
 
 本題に戻して、`OGP`画像に`SVG`を`<img>`経由で表示しているのですが、これがなんかエラーになってしまっている。  
 かなり端折っていますが、こんな感じに`<img>`で`SVG`を表示させてた。`<img>`を経由してたのは`public/`にあるアイコンを読み出したく、ファイルパスより直接渡したほうが良いらしいので。  
 
 ```ts
 // 本当は opengraph-image.tsx を作って使います
-// ImageResponse を返すことで OGP 画像を返せる API Routes が作れる。静的書き出し時はこっちで作る必要がある
+// ImageResponse を返すことで OGP 画像を返せる Route Handlers が作れる。静的書き出し時はこっちで作る必要がある
 export async function GET(_: Request, props: PageProps) {
     const params = await props.params;
 
@@ -535,7 +536,7 @@ NODE_OPTIONS='--dns-result-order=ipv4first' npm run build
 これ**一時的に**`IPv6`がダメだったり、`Node.js`の**バージョン**が関与してたり（？）でかなり複雑そう雰囲気。。。
 
 # おわりに
-ちなみに`React`側の修正はないはずです。
+ちなみに`React`側の修正は ~~ないはずです。~~ 私の場合はありませんでした
 
 # おわりに2
 - `React 19`の`use() Hook`と`<Suspense>`で`useEffect()`を消し飛ばしたい
@@ -548,3 +549,6 @@ NODE_OPTIONS='--dns-result-order=ipv4first' npm run build
 `Tailwind CSS`も次のバージョンが控えてるそうなので今じゃなくていいか。
 
 フロントエンド、むずかしい。
+
+# おわりに3
+せいてきがえっちな方の漢字になってないか`grep`したけど大丈夫そう
