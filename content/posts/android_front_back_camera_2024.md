@@ -11,31 +11,31 @@ tags:
 どうもこんばんわ。  
 アスカさんはなびかない 攻略しました。アスカさんめっちゃかわいんだけど！？！？！？
 
-![Imgur](https://imgur.com/XLQivJY.png)
+![Imgur](https://i.imgur.com/XLQivJY.png)
 
 ！！！
 
-![Imgur](https://imgur.com/tbcR5zY.png)
+![Imgur](https://i.imgur.com/tbcR5zY.png)
 
 ここの話いい！
 
-![Imgur](https://imgur.com/yxVo25l.png)
+![Imgur](https://i.imgur.com/yxVo25l.png)
 
 ちゃんとなびいてない！  
 丁寧に書かれていてよかったと思います。とくになびくまで！！
 
-![Imgur](https://imgur.com/ESRogri.png)
+![Imgur](https://i.imgur.com/ESRogri.png)
 
 それから声優さんの声がめっちゃよかった、また出てくれないかな
 
-![Imgur](https://imgur.com/D6dsx3W.png)
+![Imgur](https://i.imgur.com/D6dsx3W.png)
 
 おすすめです、かわいかったです
 
 # 本題
 前面と背面のカメラを同時に利用して一つの`View（SurfaceView）`にカメラ映像を表示させようというやつです。  
 
-![Imgur](https://imgur.com/3B3eZdg.png)
+![Imgur](https://i.imgur.com/3B3eZdg.png)
 
 https://takusan.negitoro.dev/posts/android_front_back_camera/
 
@@ -78,7 +78,7 @@ https://android-developers.googleblog.com/2024/10/camerax-update-makes-dual-conc
 
 逆に`OpenGL ES`で描画した内容を`SurfaceView`や`MediaRecorder`で使う方法ですが、これも`AOSP`で使われている`InputSurface`クラスを使います。  
 
-![Imgur](https://imgur.com/tHrEQGy.png)
+![Imgur](https://i.imgur.com/tHrEQGy.png)
 
 私はカメラ周りの用意と、フラグメントシェーダーで2つの映像を重ねて描画する処理を書くのと、録画とプレビューの繋ぎこみ。くらいしかやっていないことがわかりますね。
 
@@ -92,11 +92,11 @@ https://youtu.be/98QtLRrwyt8?si=yM8qtBMDXJ6EgEle
 https://developer.android.com/jetpack/androidx/releases/camera#1.3.0
 
 `CameraX`も同時にカメラを開けるようになったらしい、前回記事書いた時はダメだったのですごい！  
-![Imgur](https://imgur.com/bcSmjFh.png)
+![Imgur](https://i.imgur.com/bcSmjFh.png)
 
 ただ、この後に出てくるコードでプレビューを作ってるのですが、プレビューは多分`SurfaceView`？にあたるものを2個重ねてるだけっぽい？  
 静止画撮影や録画はどうすればいいのかまでは話してくれなかった。  
-![Imgur](https://imgur.com/UTfsZjy.png)
+![Imgur](https://i.imgur.com/UTfsZjy.png)
 
 多分撮影、録画したい場合は結局`OpenGL ES`とかを書かないといけない雰囲気がして、  
 そうなると`Camera2 API`叩くのと変わらないというか、`CameraX`入れても享受出来る機能あんまりなさそうなんだけどどうなんだろう？。  
@@ -129,7 +129,7 @@ https://developer.android.com/jetpack/androidx/releases/camera#1.3.0
 
 名前ですがいい感じのを付けてください。今回は自分側のカメラ映像が小窓で映るので→こまどろいど
 
-![Imgur](https://imgur.com/AMSm0Mq.png)
+![Imgur](https://i.imgur.com/AMSm0Mq.png)
 
 ## AndroidManifest
 カメラ権限と、動画撮影でマイクを使うならマイク権限も。
@@ -236,7 +236,7 @@ private fun CameraOrPermissionScreen() {
 }
 ```
 
-![Imgur](https://imgur.com/LuVnkBS.png)
+![Imgur](https://i.imgur.com/LuVnkBS.png)
 
 ## AOSP からコードをお借りしてくる
 次は`Camera 2 API`でカメラの用意、、、の前に`OpenGL ES`周りを終わらせてしまいます。  
@@ -1484,7 +1484,7 @@ fun CameraScreen() {
 そして実行してみる、、、、  
 どうでしょう？？？プレビューでた？
 
-![Imgur](https://imgur.com/3B3eZdg.png)
+![Imgur](https://i.imgur.com/3B3eZdg.png)
 
 ## 静止画撮影を追加
 ### ImageReader から画像を取る
@@ -1609,7 +1609,7 @@ Button(
 `Camera2 API`と`ImageReader`の組み合わせなら、`CaptureRequest.JPEG_ORIENTATION`で回転できるらしい（使ったこと無い）ですが、  
 今回は`OpenGL ES`で描画した内容を`ImageReader`で撮影しているのでその方法は使えないと思います。愚直に`Bitmap`を回転させないとダメそう。
 
-![Imgur](https://imgur.com/8CKqVCf.png)
+![Imgur](https://i.imgur.com/8CKqVCf.png)
 
 ## 動画撮影も付ける
 ### 引数追加
@@ -1986,7 +1986,7 @@ private fun VideoModeScreen() {
 こんな感じに切り替えボタンが出て、切り替えた後に録画ボタンを押せば撮影されるはず。  
 保存先は動画フォルダです。これも`Google フォト`とかで見れるはず。
 
-![Imgur](https://imgur.com/d5YBj5N.png)
+![Imgur](https://i.imgur.com/d5YBj5N.png)
 
 `Material3`の`SegmentedButton`、いい感じ
 

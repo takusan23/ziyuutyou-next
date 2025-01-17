@@ -15,7 +15,7 @@ Gitよくわからんからやらかすとまじで焦る
 # .gitignore に書き足す
 `.gitignore`を開き、`/.idea/`を足します。
 
-![Imgur](https://imgur.com/NlexAey.png)
+![Imgur](https://i.imgur.com/NlexAey.png)
 
 # キャッシュを消します
 ここで**どーせキャッシュなんだし全部消してしまえｗ**ってやって消すと後で、  

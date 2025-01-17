@@ -12,7 +12,7 @@ tags:
 # （よく）聞いたエロゲソング
 なんだかんだCD集めてました
 
-![Imgur](https://imgur.com/iuDE8vI.png)
+![Imgur](https://i.imgur.com/iuDE8vI.png)
 
 # すまほ
 手持ちXperiaがSIMフリーのになった  

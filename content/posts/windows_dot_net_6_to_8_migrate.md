@@ -8,7 +8,7 @@ tags:
 `Windows サンドボックス`にファイルをコピーしたくて、どうすれば良いのかなって調べたら、ファイルをコピーしてサンドボックスで貼り付ければいいらしい。  
 https://www.reddit.com/r/Windows10/comments/bwcgrd/how_do_i_move_files_between_windows_and_windows/
 
-![Imgur](https://imgur.com/PBLNVIJ.png)
+![Imgur](https://i.imgur.com/PBLNVIJ.png)
 
 たしかに、別にテキスト以外も送れたのか・・・
 
@@ -32,74 +32,74 @@ https://www.reddit.com/r/Windows10/comments/bwcgrd/how_do_i_move_files_between_w
 
 https://learn.microsoft.com/ja-jp/dotnet/core/porting/upgrade-assistant-install#install-the-visual-studio-extension
 
-![Imgur](https://imgur.com/jlWDvOO.png)
+![Imgur](https://i.imgur.com/jlWDvOO.png)
 
 ダウンロードします
 
-![Imgur](https://imgur.com/rR8YUmG.png)
+![Imgur](https://i.imgur.com/rR8YUmG.png)
 
 パッケージがダウンロードできるので、Visual Studio へインストールします。  
 もしかしたら`Visual Studio`の拡張から直接入れられたかも知れない。
 
-![Imgur](https://imgur.com/xcMOXtz.png)
+![Imgur](https://i.imgur.com/xcMOXtz.png)
 
 ダブルクリックするとなんか始まる
 
-![Imgur](https://imgur.com/pFbGsUZ.png)
+![Imgur](https://i.imgur.com/pFbGsUZ.png)
 
 `Visual Studio`起動中だと進まないので閉じます
 
-![Imgur](https://imgur.com/Wbag8dr.png)
+![Imgur](https://i.imgur.com/Wbag8dr.png)
 
-![Imgur](https://imgur.com/iHSh8uB.png)
+![Imgur](https://i.imgur.com/iHSh8uB.png)
 
 # アップグレードアシスタントを起動してみた
 さっきと同じようにアップグレードを押すとこんな画面に。  
 `.NET バージョン`の方を選ぶ
 
-![Imgur](https://imgur.com/LDaEMlS.png)
+![Imgur](https://i.imgur.com/LDaEMlS.png)
 
 `.NET 8`を選んで次へ。  
 
-![Imgur](https://imgur.com/QvTlhsy.png)
+![Imgur](https://i.imgur.com/QvTlhsy.png)
 
 よくわかんないし、最悪戻せるのでこのまま`アップグレードの選択`を押します
 
-![Imgur](https://imgur.com/qvbkj6D.png)
+![Imgur](https://i.imgur.com/qvbkj6D.png)
 
 はじまりました。と思ったらほとんどスキップで終わった。
 
-![Imgur](https://imgur.com/AvkbbmR.png)
+![Imgur](https://i.imgur.com/AvkbbmR.png)
 
 差分を`git`で見てみたけど、`<TargetFramework>`が変わったくらい？
 
-![Imgur](https://imgur.com/nLN6sM7.png)
+![Imgur](https://i.imgur.com/nLN6sM7.png)
 
 # ライブラリ更新もしておく
 ソリューションから、プロジェクト選んで、`Nugetパッケージの管理`を押して、更新があれば更新しておきます。  
 
-![Imgur](https://imgur.com/7kenjbY.png)
+![Imgur](https://i.imgur.com/7kenjbY.png)
 
-![Imgur](https://imgur.com/11M4mzM.png)
+![Imgur](https://i.imgur.com/11M4mzM.png)
 
 # .NET 8 にあげたのに 6 を使っているから互換性がないと言われた
 いやさっき`.NET 8`にしたんですけど、なんでまだ`6`使ってると思われてるの？
 
-![Imgur](https://imgur.com/3VxVSLd.png)
+![Imgur](https://i.imgur.com/3VxVSLd.png)
 
 というわけで色々見てみた感じ、どうやらまだ設定しないとダメらしい？  
 まずはプロパティを開きます
 
-![Imgur](https://imgur.com/deout2C.png)
+![Imgur](https://i.imgur.com/deout2C.png)
 
 つぎに、上げたはずの`ターゲットフレームワーク`を`.NET 8`にします。**、、、、む、押しても戻ってしまいます**  
 
-![Imgur](https://imgur.com/0kOHZyd.png)
+![Imgur](https://i.imgur.com/0kOHZyd.png)
 
 # PublishProfiles の TargetFramework が 6 のままだった
 もしプロジェクト内に`Properties`があって、その中に`PublishProfiles`がある場合、その傘下にあるファイルの`.NET`バージョンも変更する必要があります。  
 
-![Imgur](https://imgur.com/wvoIPt7.png)
+![Imgur](https://i.imgur.com/wvoIPt7.png)
 
 多分値は、アップグレードアシスタントの値と同じものを入れておけば良さそう。
 
@@ -129,7 +129,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 
 これで晴れて`.NET 8`に更新することができました。
 
-![Imgur](https://imgur.com/nCj8dHo.png)
+![Imgur](https://i.imgur.com/nCj8dHo.png)
 
 # 実行できない
 ありがとうございます：https://zenn.dev/shinta0806/articles/dotnet8-netsdk1083
@@ -143,7 +143,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 
 プロジェクトをダブルクリックすると、`xml`が開くはずで、その中から`<RuntimeIdentifiers>`の行を探します。
 
-![Imgur](https://imgur.com/wnAkTWH.png)
+![Imgur](https://i.imgur.com/wnAkTWH.png)
 
 わたしの場合はこうなってて、これをまずは以下のようにします。`win10`を`win`だけにする。
 
@@ -157,7 +157,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 
 つぎに、`Properties`の`PublishProfiles`にあるファイルにも`<RuntimeIdentifiers>`があるので、同様に`win10`を`win`だけにしていきます。
 
-![Imgur](https://imgur.com/izU8lzM.png)
+![Imgur](https://i.imgur.com/izU8lzM.png)
 
 `Properties\PublishProfiles\win10-arm64.pubxml`  
 ```xml
@@ -213,24 +213,24 @@ https://github.com/microsoft/WindowsAppSDK/issues/4698
 # うごいた！
 やったぜ
 
-![Imgur](https://imgur.com/GaeWp2j.png)
+![Imgur](https://i.imgur.com/GaeWp2j.png)
 
 # 発行できるかも試す
 `zip`に`Windows App SDK`吐き出せるか試します。プロジェクトを右クリックで発行を押します。  
 
-![Imgur](https://imgur.com/dL9n7jg.png)
+![Imgur](https://i.imgur.com/dL9n7jg.png)
 
 一回も押したことがない場合は違う画面が開くと思う？。既存のプロジェクトなのでそのまま`発行`を押します。  
-![Imgur](https://imgur.com/t6ANOKy.png)
+![Imgur](https://i.imgur.com/t6ANOKy.png)
 
 成功したぽい！！  
 
-![Imgur](https://imgur.com/EnLrkgl.png)
+![Imgur](https://i.imgur.com/EnLrkgl.png)
 
 おおお  
 ちゃんと起動できた。
 
-![Imgur](https://imgur.com/SE7xt3y.png)
+![Imgur](https://i.imgur.com/SE7xt3y.png)
 
 # WinForm は？
 多分`<TargetFramework>`が`net8`になるだけ？  

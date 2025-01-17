@@ -13,18 +13,18 @@ tags:
 **バックグラウンドで位置情報を取得する権限**を使う場合は、追加で申告をしないといけないらしい。  
 まぁそこそこ危険な権限だよな。。。
 
-![Imgur](https://imgur.com/G8z5jtf.png)
+![Imgur](https://i.imgur.com/G8z5jtf.png)
 
 どうやらバックグラウンド状態で位置情報にアクセスするには、アプリの審査で追加の申告をしないといけないらしい。のでメモ
 
-![Imgur](https://imgur.com/y02GXIf.png)
+![Imgur](https://i.imgur.com/y02GXIf.png)
 
 ## 文字で書く部分
 アプリが何なのか、とバックグラウンドで位置情報を取得する機能が何なのかを書きます。
 
-![Imgur](https://imgur.com/zL781Yc.png)
+![Imgur](https://i.imgur.com/zL781Yc.png)
 
-![Imgur](https://imgur.com/3pxyDeD.png)
+![Imgur](https://i.imgur.com/3pxyDeD.png)
 
 ## 動画
 
@@ -35,20 +35,20 @@ https://support.google.com/googleplay/android-developer/answer/9799150?hl=ja#Vid
 `動画の中で機能やその影響～` ← なんか動画の中に説明も入れろ、みたいな言い方をしてるので、  
 バックグラウンド位置情報取得をする流れを画面録画をした上で、`AviUtl`で文字を入れて適当に作りました。~~数年前はよくニコニコ動画に投稿してたので動画作る環境はあるっちゃある~~
 
-![Imgur](https://imgur.com/FIQYmyT.png)
+![Imgur](https://i.imgur.com/FIQYmyT.png)
 
 `YouTube`に上げるのを推奨しているらしいのでそうした。別に`Google Drive`の共有でも良いらしい。  
 限定公開なので動画説明欄とかは適当でいいはず。
 
-![Imgur](https://imgur.com/DzcMGZv.png)
+![Imgur](https://i.imgur.com/DzcMGZv.png)
 
 限定公開で公開して  
 
-![Imgur](https://imgur.com/UdAfwq0.png)
+![Imgur](https://i.imgur.com/UdAfwq0.png)
 
 PlayConsole へ戻り申告フォームに URL を貼ります。
 
-![Imgur](https://imgur.com/ZARjWfy.png)
+![Imgur](https://i.imgur.com/ZARjWfy.png)
 
 ## プライバシーポリシー
 元々ありましたが、プライバシーポリシーもこれに合わせて更新しました。  
@@ -61,11 +61,11 @@ https://github.com/takusan23/NewRadioSupporter/blob/master/PRIVACY_POLICY.md
 # 審査出しする・・・！
 おねがいします
 
-![Imgur](https://imgur.com/2cdTKvC.png)
+![Imgur](https://i.imgur.com/2cdTKvC.png)
 
 ## リジェクトされる 1回目
 
-![Imgur](https://imgur.com/86QiK36.png)
+![Imgur](https://i.imgur.com/86QiK36.png)
 
 プライバシーポリシーが甘いと判断されたらしい。`収集する項目 / 利用目的 / 共有の有無`をそれぞれ書きました。  
 あとプライバシーポリシーにアプリの名前をちゃんと書くようにした。  
@@ -74,7 +74,7 @@ https://github.com/takusan23/NewRadioSupporter/blob/master/PRIVACY_POLICY.md
 
 ## リジェクトされる 2回目
 
-![Imgur](https://imgur.com/Mn3J415.png)
+![Imgur](https://i.imgur.com/Mn3J415.png)
 
 <p style="color:red;font-size:40px">？？？？？？？？</p>
 
@@ -87,7 +87,7 @@ https://github.com/takusan23/NewRadioSupporter/blob/master/PRIVACY_POLICY.md
 
 ## とおりました
 
-![Imgur](https://imgur.com/8mVv36Y.png)
+![Imgur](https://i.imgur.com/8mVv36Y.png)
 
 # これ書いてる時に気付いた
 `フォアグラウンドサービス`で利用する場合、`AndroidManifest`で`<service>`の`foregroundServiceType`属性を`location`にすることで、アプリがフォアグラウンド（外アプリ利用中）でなくても位置情報が取得できるはずです。  
@@ -132,12 +132,12 @@ class BackgroundLocationService : Service() {
 `バックグラウンド 5G 通知機能`の修正のついでに。  
 `WearOS`側に通知が行くようにしました。デフォルトだと通知はサイレントなので、デフォルトにしないといけないかもしれない。
 
-![Imgur](https://imgur.com/knYSsYl.png)
+![Imgur](https://i.imgur.com/knYSsYl.png)
 
 ちなみに、フォアグラウンドサービス起動中通知が、別で出るようになってしまったのですが、これは通知チャンネルの設定から個別に消せるようにしてあります。  
 実行中の方をオフにしても電波状態の通知は来るようになります。
 
-![Imgur](https://imgur.com/aliGiWC.png)
+![Imgur](https://i.imgur.com/aliGiWC.png)
 
 ちなみに今までなんで来なかったかというと、フォアグラウンドサービスの起動には通知を出さないといけないのですが、この通知に電波状態を表示させてたからでした。  
 この通知、サービスが動いている間は消せないんですよね。  

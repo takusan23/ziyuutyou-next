@@ -67,11 +67,11 @@ OnePlus7TPro:/ $ su
 OnePlus7TPro:/ #
 ```
 
-![Imgur](https://imgur.com/r461jpt.png)
+![Imgur](https://i.imgur.com/r461jpt.png)
 
 あ、`Magisk`に許可するか聞かれたら許可してあげてください。  
 
-![Imgur](https://imgur.com/lLxIe7H.png)
+![Imgur](https://i.imgur.com/lLxIe7H.png)
 
 # AT コマンドを叩く
 にはもう一個手間が必要で、`AT コマンドを叩く先`を探す必要があります。  
@@ -221,7 +221,7 @@ lifecycleScope.launch(Dispatchers.IO) {
 
 `Magisk`で許可するか聞かれるので許可してあげてください。
 
-![Imgur](https://imgur.com/MSVjiaQ.png)
+![Imgur](https://i.imgur.com/MSVjiaQ.png)
 
 ## 適当に UI を作る
 最低限で。  
@@ -327,7 +327,7 @@ private fun MainScreen() {
 こんな感じです。  
 下に積まれていくのでスクロールしないといけない。
 
-![Imgur](https://imgur.com/LCN3cIz.png)
+![Imgur](https://i.imgur.com/LCN3cIz.png)
 
 # ソースコード
 https://github.com/takusan23/AndroidAtCommandUI

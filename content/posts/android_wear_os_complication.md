@@ -20,7 +20,7 @@ Pixel Watch、予想より**かなり、めっちゃいいですね**。USB Type
 というか デジタルクラウン？りゅうず？ あの横の回せるやつを押さずに、タッチだけでアプリ一覧画面を開きたい！！！  
 （物理ボタンあんまり押したくない...押したくない？）
 
-![Imgur](https://imgur.com/tk1nwae.png)
+![Imgur](https://i.imgur.com/tk1nwae.png)
 
 押したらアプリ一覧画面に行くようなアプリを作りたい
 
@@ -28,7 +28,7 @@ Pixel Watch、予想より**かなり、めっちゃいいですね**。USB Type
 
 天気とか、曜日とか電池マークが書いてある部分。  
 
-![Imgur](https://imgur.com/4MemA9U.png)
+![Imgur](https://i.imgur.com/4MemA9U.png)
 
 
 公式でも作り方書いてあるけど、なんか非推奨になってた...  
@@ -80,16 +80,16 @@ adb connect IPアドレスとポート番号
 
 `connected to 192.168.0.0:0000`がターミナルに表示されれば完了です！
 
-![Imgur](https://imgur.com/87nqO8x.png)
+![Imgur](https://i.imgur.com/87nqO8x.png)
 
 # 適当にプロジェクトを作って下さい
 `Wear OS`の`No Activity`で良いんじゃない。アプリの画面いらないし。
 
-![Imgur](https://imgur.com/rL3xV01.png)
+![Imgur](https://i.imgur.com/rL3xV01.png)
 
 名前は適当に、SDKバージョンは後で`build.gradle`書き換えるのでなんでもいいです
 
-![Imgur](https://imgur.com/Qwg7oXC.png)
+![Imgur](https://i.imgur.com/Qwg7oXC.png)
 
 ## app/build.gradle
 `app`フォルダに有る`build.gradle`を開いて、直します  
@@ -196,7 +196,7 @@ class BatteryAppLauncherComplication : SuspendingComplicationDataSourceService()
 
 アイコンはこの辺から拝借しました。アウトラインのアイコンすき
 
-![Imgur](https://imgur.com/zesuYSM.png)
+![Imgur](https://i.imgur.com/zesuYSM.png)
 
 ## onComplicationRequest
 これは実際の値を返す必要があります。
@@ -329,12 +329,12 @@ when(request.complicationType){
 `Activity`が無いと実行ボタンすら表示されないのね、  
 `Add Configuration...`を押して、`+`をおして`Android App`を選びます。
 
-![Imgur](https://imgur.com/vajZiez.png)
+![Imgur](https://i.imgur.com/vajZiez.png)
 
 `Activity`ないので、`Launch`は`Nothing`になると思います。  
 `Module`は多分一個しか表示されないと思うのでそれを選べばおｋです。
 
-![Imgur](https://imgur.com/2oq3Vkw.png)
+![Imgur](https://i.imgur.com/2oq3Vkw.png)
 
 実行すると、なんか赤い文字で怖いメッセージが出ますが、アプリがインストールできてるのでOKです。  
 
@@ -352,12 +352,12 @@ https://support.google.com/wearos/answer/6140435?hl=ja
 
 おお？
 
-![Imgur](https://imgur.com/0iH51lM.png)
+![Imgur](https://i.imgur.com/0iH51lM.png)
 
 
 動いてま！す！（最初から入ってるやつとほぼ一緒だから出来てるのか分からんね）
 
-![Imgur](https://imgur.com/RbXEIkI.png)
+![Imgur](https://i.imgur.com/RbXEIkI.png)
 
 # 押したときにアプリランチャーを開いてほしい！！
 多分ランチャーの`Activity`を直接`Intent`で指定して`startActivity`しても無理だと思うので、別の方法を取る必要があります。  
@@ -484,16 +484,16 @@ override suspend fun onComplicationRequest(request: ComplicationRequest): Compli
 
 設定を開いて、ユーザー補助の項目へ行き、さっき作ったやつを有効にします。
 
-![Imgur](https://imgur.com/K8fEKlQ.png)
+![Imgur](https://i.imgur.com/K8fEKlQ.png)
 
-![Imgur](https://imgur.com/DegI7dB.png)
+![Imgur](https://i.imgur.com/DegI7dB.png)
 
 あと最後に、コンプリケーションを再度置き直す必要があるかもしれないです。  
 これで、コンプリケーションを押したらアプリランチャーが開くようになりました。やったぜ！！！
 
 なんか`Android Studio`で録画したせいか重い...
 
-![Imgur](https://imgur.com/16BAh1s.gif)
+![Imgur](https://i.imgur.com/16BAh1s.gif)
 
 # ソースコード
 https://github.com/takusan23/BatteryAppLauncherComplication
@@ -502,24 +502,24 @@ https://github.com/takusan23/BatteryAppLauncherComplication
 ガジェット買うよりよりメイン機のSSD増設するのが先かもしれない...  
 いやでもガチのまじで円安で時期が悪いやろ...  
 
-![Imgur](https://imgur.com/KgFDjOf.png)
+![Imgur](https://i.imgur.com/KgFDjOf.png)
 
-![Imgur](https://imgur.com/fD3nP9Z.png)
+![Imgur](https://i.imgur.com/fD3nP9Z.png)
 
 そんな円安の中お財布に優しいレートで売ってくれるあたりGoogleガチなのかもしれない。  
 349ドルを39,800円で販売したら大赤字なのでは
 
-![Imgur](https://imgur.com/47Ydxq6.png)
+![Imgur](https://i.imgur.com/47Ydxq6.png)
 
 # おまけ Wear OS でスクリーンショットの取り方
 `Android Studio`が起動中の場合は、`Wear OS デバイス`とADBで接続した後、`Logcat`を開いて、カメラマークを押すことで撮ることが出来ます。
 
-![Imgur](https://imgur.com/9QCpkia.png)
+![Imgur](https://i.imgur.com/9QCpkia.png)
 
 もし手元にPCがなければ、`Pixel Watch`アプリから撮ることができます。  
 （もしかしたら WearOS で開発者向けオプションを有効にしないと出来ないかも）
 
-![Imgur](https://imgur.com/cr6Ddg7.png)
+![Imgur](https://i.imgur.com/cr6Ddg7.png)
 
 # 追記 2022/10/23
 もしかしたら、これ有効にすると `りゅうず` 回したときの感触フィードバックが無効になるかもしれないです。  

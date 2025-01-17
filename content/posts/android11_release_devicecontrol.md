@@ -13,17 +13,17 @@ Android 11の正式版が出ましたね。おめでとうございます
 # Device Control #とは
 家電操作用クイック設定パネル。電源長押しで開ける。  
 
-![Imgur](https://imgur.com/w0IUBYW.png)
+![Imgur](https://i.imgur.com/w0IUBYW.png)
 
 ↑こんなやつ。
 
 なお、**Reactive Stream**が何なのかわからんのでそこはコピペで頼む
 
 # 環境
-|なまえ|あたい|
-|---|---|
-|Android|11|
-|言語|Kotlin|
+| なまえ  | あたい |
+|---------|--------|
+| Android | 11     |
+| 言語    | Kotlin |
 
 
 # つくる
@@ -161,7 +161,7 @@ override fun performControlAction(p0: String, p1: ControlAction, p2: Consumer<In
 
 追加するとこのように表示されるはずです。  
 
-![Imgur](https://imgur.com/1aE1SX4.png)
+![Imgur](https://i.imgur.com/1aE1SX4.png)
 
 お疲れ様です。8888888888
 

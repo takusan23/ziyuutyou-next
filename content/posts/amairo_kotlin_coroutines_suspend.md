@@ -14,36 +14,36 @@ tags:
 
 みくりちゃん！！！ところどころにあるやりとりがおもしろかった
 
-![Imgur](https://imgur.com/BSOqoO6.png)
+![Imgur](https://i.imgur.com/BSOqoO6.png)
 
-![Imgur](https://imgur.com/N1GNFtI.png)
+![Imgur](https://i.imgur.com/N1GNFtI.png)
 
 ↑じとめすち
 
 むくれてるのかわい～
 
-![Imgur](https://imgur.com/iLaQDYp.png)
+![Imgur](https://i.imgur.com/iLaQDYp.png)
 
-![Imgur](https://imgur.com/HGdpYFV.png)
+![Imgur](https://i.imgur.com/HGdpYFV.png)
 
 英語分からん分かる、英語が第一言語だとやっぱドキュメントもエラーメッセージもそのまま分かるのでしょうか。  
 直でドキュメント読めるのずるいとおもう（？）
 
-![Imgur](https://imgur.com/6ZfPHp3.png)
+![Imgur](https://i.imgur.com/6ZfPHp3.png)
 
 `><`  
 それはそうと服が似合ってていい
 
-![Imgur](https://imgur.com/U74mT9k.png)
+![Imgur](https://i.imgur.com/U74mT9k.png)
 
 あとあんまり関係ないけど無印版のエンディング曲がシリーズの中で一番好きかもしれません、  
 
-![Imgur](https://imgur.com/D5mMP92.png)
+![Imgur](https://i.imgur.com/D5mMP92.png)
 
 あ！！！！！これ  
 このブログの土日祝日のアクセス数のこと言ってますか！？？！？！？！
 
-![Imgur](https://imgur.com/RbleuSx.png)
+![Imgur](https://i.imgur.com/RbleuSx.png)
 
 技術（？）ブログ、休みの日はあんまりお客さん来てない。  
 `CloudFront`の転送量を`CloudWatch`で見てみたけど、明らかに休みの日だけ折れ線グラフがガタ落ちしてる。面白い。
@@ -307,7 +307,7 @@ class MainActivity : ComponentActivity() {
 やがて行き着く先はこのダイアログ、`「アプリ名」は応答していません`。これはメインスレッドで行われている処理に時間かかった際に出ます。  
 `Android 4.x`あたりまではよく見た記憶がある。今でもメインスレッドを止めればいつでもこのダイアログに会えます。
 
-![Imgur](https://imgur.com/JiTAWsp.png)
+![Imgur](https://i.imgur.com/JiTAWsp.png)
 
 これを回避するためにスレッドを使ったり、コールバックを使い、時間がかかる処理をメインスレッドで行わないようにしていたわけです。  
 **まあそれ以前に Android ではメインスレッドでインターネット通信できない（例外が投げられる）ので、そもそもやりたくても出来ません。**
@@ -569,7 +569,7 @@ println("起動した")
 これにより、`launch { }`した回数よりも遥かに少ないスレッドで処理できちゃうわけ。  
 一時停止と再開という単語がでてきますがおそらくこれです。
 
-![Imgur](https://imgur.com/Vzr4q9Q.png)
+![Imgur](https://i.imgur.com/Vzr4q9Q.png)
 
 ### 付録 譲るところを見てみる
 実際に譲っているか見てみましょう。`println`を追加して、どのスレッドで処理しているかを出力するように書き換えました。  
@@ -608,7 +608,7 @@ class MainActivity : ComponentActivity() {
 [launch 1] 5 秒待った DefaultDispatcher-worker-1
 ```
 
-![Imgur](https://imgur.com/LAjgS9Y.png)
+![Imgur](https://i.imgur.com/LAjgS9Y.png)
 
 また、この結果を見るに、`delay()` **する前と、した後では違うスレッドが使われる場合がある。** ということも分かりましたね。  
 `メインスレッド`の場合は 1 つしか無いので有りえませんが、このサンプルでは`Dispatchers.Default`を指定したためにこうなりました。  
@@ -638,7 +638,7 @@ class MainActivity : ComponentActivity() {
 }
 ```
 
-![Imgur](https://imgur.com/MBG4Pby.png)
+![Imgur](https://i.imgur.com/MBG4Pby.png)
 
 たとえ無限に`delay`したとしても、上記の理由によりびくともしないと思います。
 
@@ -669,7 +669,7 @@ https://stackoverflow.com/questions/63719766/
 それぞれ**1000個**（！？）作ってみます。`Pixel 8 Pro / Android 15 Beta`で試しました。**デバッグビルドなのであんまりあてにならないかも。**  
 
 開発中のアプリであれば、`Android Studio`の`Profiler`でメモリ使用量を見ることが出来ます。  
-![Imgur](https://imgur.com/agCwUvH.png)
+![Imgur](https://i.imgur.com/agCwUvH.png)
 
 #### スレッドでテスト
 ボタンを押したらスレッドを作って`Thread.sleep(60秒)`するコードを書きました。  
@@ -711,7 +711,7 @@ private fun MainScreen() {
 結果がコレです。  
 ボタンを押したら赤い丸ポチが付くわけですが、まあ確かに増えてますね。
 
-![Imgur](https://imgur.com/618w8kX.png)
+![Imgur](https://i.imgur.com/618w8kX.png)
 
 #### コルーチンでテスト
 ボタンを押したら、コルーチンを起動（`launch { }`）して、`delay(60秒)`するコードを書きました。みなさんも試してみてください。
@@ -755,11 +755,11 @@ private fun MainScreen() {
 結果がコレで、赤い丸ポチが出ているときがボタンを押したときです。  
 最初ちょっと増えましたが、2回目以降は押しても得には、目に見えるレベルで増えたりはしてなさそう。
 
-![Imgur](https://imgur.com/ZZP0Sop.png)
+![Imgur](https://i.imgur.com/ZZP0Sop.png)
 
 実際に`Java`のスレッドを作っているわけじゃないだけあって、いっぱい押しても特に起きない  
 
-![Imgur](https://imgur.com/oAX7Clb.png)
+![Imgur](https://i.imgur.com/oAX7Clb.png)
 
 # 構造化された並行性
 https://kotlinlang.org/docs/coroutines-basics.html#structured-concurrency
@@ -801,7 +801,7 @@ private suspend fun downloadFile() {
 }
 ```
 
-![Imgur](https://imgur.com/h3otQlk.png)
+![Imgur](https://i.imgur.com/h3otQlk.png)
 
 反省して`GlobalScope`のドキュメントを見に行きましょう。  
 https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-global-scope/
@@ -857,7 +857,7 @@ private suspend fun CoroutineScope.downloadFile2() {
 }
 ```
 
-![Imgur](https://imgur.com/zDwqwjJ.png)
+![Imgur](https://i.imgur.com/zDwqwjJ.png)
 
 ただ、引数に`コルーチンスコープ`を取る場合は教えてくれないので注意。  
 
@@ -883,8 +883,8 @@ https://elizarov.medium.com/structured-concurrency-722d765aa952
 コールバックは`goto`文と何ら変わらないという話  
 https://vorpus.org/blog/notes-on-structured-concurrency-or-go-statement-considered-harmful/
 
-![Imgur](https://imgur.com/wCectH1.png)  
-![Imgur](https://imgur.com/LNLNjP3.png)
+![Imgur](https://i.imgur.com/wCectH1.png)  
+![Imgur](https://i.imgur.com/LNLNjP3.png)
 ちな`D.C.5`  
 
 
@@ -895,7 +895,7 @@ https://vorpus.org/blog/notes-on-structured-concurrency-or-go-statement-consider
 おおむね、プログラミングの世界でも、起動した並列処理がどこか行方不明にならないよう待ち合わせしたり、  
 時にはエラーになったら他の並列処理を終了に倒したいときがあります。分割ダウンロードを作るとか。
 
-![Imgur](https://imgur.com/RnqzhGd.png)
+![Imgur](https://i.imgur.com/RnqzhGd.png)
 
 `JavaScript`の`Promise`では、`Promise.all`を使うことで全ての`Promise`が終わるまで待つ事ができます。  
 しかし、特に待ち合わせとか何もしない場合は独立して`Promise`が動きます。これは`スレッド`や`Future`にも言えますが。  
@@ -1189,7 +1189,7 @@ private fun MainScreen() {
 }
 ```
 
-![Imgur](https://imgur.com/5iFwR1k.png)
+![Imgur](https://i.imgur.com/5iFwR1k.png)
 
 ### コルーチンスコープを利用したキャンセル
 他にも`CoroutineScope#cancel`や`CoroutineContext#cancelChildren`を使って、子のコルーチンを全てキャンセルさせる事もできます。  

@@ -103,7 +103,7 @@ tags:
         - というかこれしかない
             - 似たような`Issue`がないの、私のお一人様は`Ubuntu 20 / Node.js 16`で古いバージョンを使ってる説がある
 - **Node.js を 18 にしたら通るようになった！**
-    - ![Imgur](https://imgur.com/tuetWqI.png)
+    - ![Imgur](https://i.imgur.com/tuetWqI.png)
     - `IP アドレス`が狙い撃ちされてるとか`AWS`だからダメとか`Cloudflare`に嫌われているとかではなく、**単に私のサーバーのバージョンが古いから**（`Ubuntu 20 / Node.js 16`）一部のサーバーのリクエストが`403`になるみたいでした。
         - ごめんなさい
 

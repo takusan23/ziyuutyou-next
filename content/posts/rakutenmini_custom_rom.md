@@ -7,7 +7,7 @@ tags:
 どうもこんばんわ。  
 `Rakuten Mini`ほしいなあって思いつつ、`サンキュッパ`かあ、もう一声安くならんかなあと覗いてみたらから更に値下げされてて買っちゃった。何に使おかな  
 
-![Imgur](https://imgur.com/ZVyeewC.png)
+![Imgur](https://i.imgur.com/ZVyeewC.png)
 
 # 本題
 今回はこれに`カスタムROM`を焼いて`Android 14 系`にします。。。  
@@ -44,7 +44,7 @@ Installed as C:\Users\takusan23\AppData\Local\Android\Sdk\platform-tools\adb.exe
 Running on Windows 10.0.19045
 ```
 
-![Imgur](https://imgur.com/dJOS3WJ.png)
+![Imgur](https://i.imgur.com/dJOS3WJ.png)
 
 # 開発者向けオプションを出す
 `設定`→`端末情報`→`ビルド番号`を連打することで、開発者向けオプションが開放されます。  
@@ -56,12 +56,12 @@ Running on Windows 10.0.19045
 
 `*636865625#`
 
-![Imgur](https://imgur.com/D7EO9zU.png)
+![Imgur](https://i.imgur.com/D7EO9zU.png)
 
 最後のシャープ（ハッシュ、井げた）を打ち込むとテキストフィールドがまっさらになります。  
 特に何もおきませんがこれで`OEM ロック解除`の設定項目が開放されるらしいです。
 
-![Imgur](https://imgur.com/JYjWNRT.png)
+![Imgur](https://i.imgur.com/JYjWNRT.png)
 
 # データを逃がす（あれば）
 なにか残しておきたいデータがあれば他の端末に`Nearby Share`するなり母艦に転送するなりしてください。  
@@ -71,19 +71,19 @@ Running on Windows 10.0.19045
 `adb`で認識されているか見ておきましょう。`コマンドプロンプト`へ`adb devices`と入力してエンター。  
 こんな感じに認識されていれば`OK`、もし違ったら`USB デバッグ`を許可したかとかを確認してください。
 
-![Imgur](https://imgur.com/XVNQAdG.png)
+![Imgur](https://i.imgur.com/XVNQAdG.png)
 
 そしたら`adb reboot bootloader`と入力しエンター。`Rakuten Mini`の画面に`START`って文字が出ているはず。
 
-![Imgur](https://imgur.com/nRcuu83.png)
+![Imgur](https://i.imgur.com/nRcuu83.png)
 
 そしたら`fastboot flashing unlock`と入力しエンター。`Rakuten Mini`の画面が変化し、本当に`BLU`するか聞かれます。  
 
-![Imgur](https://imgur.com/U4Trp1H.png)
+![Imgur](https://i.imgur.com/U4Trp1H.png)
 
 音量ボタンを使い、`UNLOCK THE BOOTLOADER`に合わせます。合わせたら電源ボタンを押します。初期化される。
 
-![Imgur](https://imgur.com/Q5ztNkx.png)
+![Imgur](https://i.imgur.com/Q5ztNkx.png)
 
 このあと初期設定を進めます。また`adb`コマンドが使えるように`USB デバッグ`を有効にする必要があるためです。  
 `adb devices`で返ってくる状態になりまで進めてください。
@@ -129,9 +129,9 @@ https://note.com/realryo1/n/n7b0c129bfddd#c36aa6f2-5e42-41e4-a04d-4b2a495ad951
 `downgrade72_SS.zip`を解凍し、解凍したフォルダ内で`PowerShell`を開きます（`Shift+右クリック`のコンテキストメニューから）。コマンドプロンプトでも良いです。  
 `adb devices`で認識されていることを確認したら、`adb reboot bootloader`を叩きさっきの黒い画面を出します。
 
-![Imgur](https://imgur.com/E5AgA9r.png)
+![Imgur](https://i.imgur.com/E5AgA9r.png)
 
-![Imgur](https://imgur.com/5YvxXIh.png)
+![Imgur](https://i.imgur.com/5YvxXIh.png)
 
 そしたら、先駆け者さんの記事のとおりにコマンドを叩いていきます。
 
@@ -215,7 +215,7 @@ Finished. Total time: 0.018s
 PS D:\rakuten_mini_customrom\downgrade72_SS>
 ```
 
-![Imgur](https://imgur.com/5x9nCbL.png)
+![Imgur](https://i.imgur.com/5x9nCbL.png)
 
 次に、`カスタムROM`本体を焼いてきます。  
 ダウンロードした拡張子が`.img.xz`と`xz`で圧縮されているので、これも解凍します。`7zip`で解凍できるはず。みんなはアーカイバー何使ってるのかな。
@@ -226,7 +226,7 @@ PS D:\rakuten_mini_customrom\downgrade72_SS>
 その後、`fastboot flash system {解凍したカスタムROMのパス}`を叩きます。各自ダウンロードした`ROM`の`img`のパスを`fastboot flash system `の後に入れてください。  
 しばらく時間がかかるので待ちます。
 
-![Imgur](https://imgur.com/DzHHbkC.png)
+![Imgur](https://i.imgur.com/DzHHbkC.png)
 
 終わりました。
 
@@ -239,13 +239,13 @@ Finished. Total time: 138.610s
 最後に`fastboot flash vendor vendor_72_mod.img`を入力してエンターし、  
 `Android`の`AVB`とか言う機能を無効にするための`fastboot --disable-verity --disable-verification flash vbmeta vbmeta.img`も入力してエンターします。  
 
-![Imgur](https://imgur.com/0OEX5em.png)
+![Imgur](https://i.imgur.com/0OEX5em.png)
 
 # 起動する
 `START`って書いてある画面のままだと思うので、音量ボタンを使い`Recovery mode`に合わせて電源ボタンを押します。  
 そしたらドロイド君が横たわってるアイコンが出てくるので、**電源ボタンを押しながら音量アップボタンを押す**ことで`Android Recovery`とか言う画面に遷移します。  
 
-![Imgur](https://imgur.com/2u4z4h9,png)
+![Imgur](https://i.imgur.com/2u4z4h9,png)
 
 音量ボタンを使い、`Wipe data/factory reset`に合わせて電源ボタンを押し、その後`Yes`か`No`か聞かれるので音量ボタンを使って`YES`を選びまた電源ボタンを押します。  
 
@@ -275,11 +275,11 @@ https://androplus.jp/Entry/15189/
 今回はバージョンを最新に上げました。  
 新しい更新がないことを確認して再チャレンジします。
 
-![Imgur](https://imgur.com/avjz1sw.png)
+![Imgur](https://i.imgur.com/avjz1sw.png)
 
 # 動いた ROM
 
-![Imgur](https://imgur.com/x1mY8NF.png)
+![Imgur](https://i.imgur.com/x1mY8NF.png)
 
 - SparkOS（`SparkOS-13.4-arm64_bgN-slim-Unofficial.img`）
     - 起動した
@@ -297,15 +297,15 @@ https://androplus.jp/Entry/15189/
 `Magisk Manager`を`GitHub`からダウンロードします。  
 https://github.com/topjohnwu/Magisk/releases
 
-![Imgur](https://imgur.com/4EkhH6x.png)
+![Imgur](https://i.imgur.com/4EkhH6x.png)
 
 あとは画面に従えばセットアップが終わります。  
 
-![Imgur](https://imgur.com/ph9jc4t.png)
+![Imgur](https://i.imgur.com/ph9jc4t.png)
 
 実際に`root`を必要とするアプリを使おうとするとダイアログが出ることを確認しました。
 
-![Imgur](https://imgur.com/HD79N9z.png)
+![Imgur](https://i.imgur.com/HD79N9z.png)
 
 # おわりに
 まだあんまり触れてないけど設定項目見てるだけで楽しい。  

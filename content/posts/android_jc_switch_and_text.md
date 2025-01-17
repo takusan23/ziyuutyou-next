@@ -67,11 +67,11 @@ Row(
 }
 ```
 
-![Imgur](https://imgur.com/wCXJqja.png)
+![Imgur](https://i.imgur.com/wCXJqja.png)
 
 ちゃんとキーボード入力でも操作ができます！！
 
-![Imgur](https://imgur.com/ziDGfIk.png)
+![Imgur](https://i.imgur.com/ziDGfIk.png)
 
 # 本題
 `Jetpack Compose`の`Switch()`、本当にスイッチだけなので隣に`Text()`を置いてラベルも一緒に表示するかなと思いますが
@@ -103,9 +103,9 @@ Row(
 
 これだとスイッチの部分だけで、**ラベルの部分を押しても**スイッチが反映されません。
 
-![Imgur](https://imgur.com/a0CPpXz.png)
+![Imgur](https://i.imgur.com/a0CPpXz.png)
 
-![Imgur](https://imgur.com/kKX606U.png)
+![Imgur](https://i.imgur.com/kKX606U.png)
 
 ブッブー  
 これではいけませんね
@@ -141,6 +141,6 @@ Row(
 }
 ```
 
-![Imgur](https://imgur.com/crclGgw.png)
+![Imgur](https://i.imgur.com/crclGgw.png)
 
 というわけで答えが冒頭のあれです。これだけです。

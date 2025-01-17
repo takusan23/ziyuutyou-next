@@ -28,7 +28,7 @@ tags:
 最近はエロゲの豪華版買わないと付いてこないパターンが増えてきてお高い。  
 `CD`単品で出して；；
 
-![Imgur](https://imgur.com/9R8WswI.png)
+![Imgur](https://i.imgur.com/9R8WswI.png)
 
 ガジェット系以外だと以上です、あんまり買ってないというか覚えてないかも。
 
@@ -41,12 +41,12 @@ tags:
 どっちも要らなければ`SIM フリー版`を買うと良いと思います。私は`NewRadioSupporter`で必要だったので、、、、お高い！！  
 ドコモの場合は`5G SA`申し込むと必要なら無料で新しい`SIMカード`を送ってくれるみたい（端末料金しか支払ってない気がする）。オンラインじゃなくて店舗の場合は知らないです。  
 
-![Imgur](https://imgur.com/XO4VLzQ.png)
+![Imgur](https://i.imgur.com/XO4VLzQ.png)
 
 本機から？ついに**持ち上げてスリープ解除**が実装されて、これだけでも買ってよかった。  
 （ハイエンドモデルなのに無くて困ってたんですよね、ついに実装されたみたい）
 
-![Imgur](https://imgur.com/SrmiPWO.png)
+![Imgur](https://i.imgur.com/SrmiPWO.png)
 
 カメラはすごくなってる。  
 `Xperia`のカメラって何も設定しない状態だとホワイトバランスが変になりがちなので、マニュアルにしてホワイトバランスくらいは一番近いのを選んだほうが良い気がしたんですが、  
@@ -70,9 +70,9 @@ tags:
 `Ultra HDR`用の`API`があるので遊べそうです。  
 https://github.com/takusan23/AndroidUltraHdrApi
 
-![Imgur](https://imgur.com/KbTDyMC.png)
+![Imgur](https://i.imgur.com/KbTDyMC.png)
 
-![Imgur](https://imgur.com/NySkDxe.png)
+![Imgur](https://i.imgur.com/NySkDxe.png)
 
 `Pixel 6 Pro`よりは電波マシになった気がする、けど相変わらず`5G`に積極的に繋ぎに行ってくれない気がする（↑の`Xperia`あるし気にしてないです）。  
 スマホでゲームしないので特に不満無いです。[^1]
@@ -100,7 +100,7 @@ https://github.com/takusan23/TweetReader
 `1.1 API`のまま放置してたらついに動かなくなりました、ついでにコンシューマキーも`SUSPENDED`状態になりました。  
 `1.1 API`を使ってるからなのか、そもそも規約違反（クライアントを作ったらBAN）のどちらかで`SUSPENDED`になるらしいですが、おそらく後者でしょう（？）。
 
-![Imgur](https://imgur.com/4vO1tvM.png)
+![Imgur](https://i.imgur.com/4vO1tvM.png)
 
 `TweetDeck`も無くなっちゃった、、、もう誰も`334`なんてしてないよね？  
 そういえば新しい`TweetDeck`には`Activity`のカラムが無いらしいですね、メリット更に無くなって笑う
@@ -127,9 +127,9 @@ https://developer.android.com/reference/android/telephony/PhysicalChannelConfig
 これがあると多分`LTEのキャリアアグリゲーション`の表示や、`EN-DC`のプライマリセルの`バンド`の表示、`Sub6-CA`の表示が出来るはず？なので何とかなりませんか・・・  
 特に`Sub6-CA`の表示機能欲しいんで付けたいんですけど公開してくれないかな
 
-![Imgur](https://imgur.com/HxwiGNm.png)
+![Imgur](https://i.imgur.com/HxwiGNm.png)
 
-![Imgur](https://imgur.com/BQ7kJGj.png)
+![Imgur](https://i.imgur.com/BQ7kJGj.png)
 
 ## PlayStore
 今年なんか審査厳しいなって思ってたら、新規で開発アカウントを作る際の条件がくっそ厳しくなりましたね。  
@@ -141,7 +141,7 @@ https://www.reddit.com/r/androiddev/comments/17rjgqh/
 # 聞いた曲
 あんまり変化無いかな思ってたけどそんな事なかった  
 
-![Imgur](https://imgur.com/6tfYSuQ.png)
+![Imgur](https://i.imgur.com/6tfYSuQ.png)
 
 # 記事
 2023 年書いた記事です

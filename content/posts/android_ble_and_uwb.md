@@ -11,64 +11,64 @@ tags:
 シークレットラブ（仮） 攻略しました。涼しそうな制服ですねって言おうとしたらもう寒い時期。  
 それはそれとして今作の HOOK 結構おもしろかった。セーブ枠が足りない。あとえちえちだった。
 
-![Imgur](https://imgur.com/AMgt8sa.png)
+![Imgur](https://i.imgur.com/AMgt8sa.png)
 
 今作は特にみんなかわいい、しかもきれい。買う前と共通やった後で誰から攻略するか変わった。  
 
-![Imgur](https://imgur.com/w6dNJJu.png)
+![Imgur](https://i.imgur.com/w6dNJJu.png)
 
-![Imgur](https://imgur.com/DNK4xAB.png)
+![Imgur](https://i.imgur.com/DNK4xAB.png)
 
 ハルちゃんのここのシナリオすき、>< かわいい  
 
-![Imgur](https://imgur.com/BL5WXMy.png)
+![Imgur](https://i.imgur.com/BL5WXMy.png)
 
-![Imgur](https://imgur.com/A3pbrk4.png)
+![Imgur](https://i.imgur.com/A3pbrk4.png)
 
 顔が良すぎる
 
 こちら後輩ちゃんです。売り文句どおりえちえちだった。。  
 
-![Imgur](https://imgur.com/FLsYRbu.png)
+![Imgur](https://i.imgur.com/FLsYRbu.png)
 
 楓ちゃんルートが一番おもしろいかもしれん！
 
-![Imgur](https://imgur.com/Yn3xXTx.png)
+![Imgur](https://i.imgur.com/Yn3xXTx.png)
 
-![Imgur](https://imgur.com/21vPKZt.png)
+![Imgur](https://i.imgur.com/21vPKZt.png)
 
-![Imgur](https://imgur.com/Sgvmcgm.png)
+![Imgur](https://i.imgur.com/Sgvmcgm.png)
 
 でもやっぱちあきちゃんが一番良かったかも  
 ！？！？
 
-![Imgur](https://imgur.com/hMivHap.png)
+![Imgur](https://i.imgur.com/hMivHap.png)
 
 ん～
 
-![Imgur](https://imgur.com/qswxNxq.png)
+![Imgur](https://i.imgur.com/qswxNxq.png)
 
-![Imgur](https://imgur.com/UojM6gl.png)
+![Imgur](https://i.imgur.com/UojM6gl.png)
 
 それはそれとして、他のヒロイン選んだときに真っ先にちあきちゃん飛んでくるのが心に来る
 
-![Imgur](https://imgur.com/I1YDTrA.png)
+![Imgur](https://i.imgur.com/I1YDTrA.png)
 
 だから最後にするといいのかな、ﾖｶｯﾀ
 
-![Imgur](https://imgur.com/PRtvrDL.png)
+![Imgur](https://i.imgur.com/PRtvrDL.png)
 
 あとはオープンルートのが掛け合いがあるので面白かったけどクローズドの方にも好きなシナリオあるから一概に言えない！！
 
-![Imgur](https://imgur.com/VUQ0s1h.png)
+![Imgur](https://i.imgur.com/VUQ0s1h.png)
 
-![Imgur](https://imgur.com/sPyf4fZ.png)
+![Imgur](https://i.imgur.com/sPyf4fZ.png)
 
 ↑ここすき
 
 いい！！とてもいいです。おすすすすめです
 
-![Imgur](https://imgur.com/6xq6YLf.png)
+![Imgur](https://i.imgur.com/6xq6YLf.png)
 
 # 本題
 `Pixel 6 Pro`以降の`Pro`モデルには`UWB アンテナ`が搭載されていて？、`API`も用意されているわけですがあんまり情報がないので、  
@@ -143,7 +143,7 @@ https://github.com/android/connectivity-samples/tree/main/UwbRanging
 - お互い相手の情報を知ったうえで`UWB`を開始する
 
 後述しますが、親→子は複数の値を渡す必要がある、逆に子→親は自分のアドレス（`ByteArray`）を渡すだけなので楽。  
-![Imgur](https://imgur.com/uL9Mg0s.png)
+![Imgur](https://i.imgur.com/uL9Mg0s.png)
 
 # つくる
 `Jetpack Compose`で適当にプロジェクトを作ってください。
@@ -284,9 +284,9 @@ fun HomeScreen(
 }
 ```
 
-![Imgur](https://imgur.com/38eotVr.png)
+![Imgur](https://i.imgur.com/38eotVr.png)
 
-![Imgur](https://imgur.com/Kf1NdE4.png)
+![Imgur](https://i.imgur.com/Kf1NdE4.png)
 
 ## BLE 周りを作る
 さて、先に`BLE`で`UWB`開始に必要なパラメーター交換周りを作ります。  
@@ -799,16 +799,16 @@ fun ControleeScreen() {
 こんな感じ。手元で見る感じ誤差はざっくり`プラマイ10cm`くらいかな？  
 すごい
 
-![Imgur](https://imgur.com/HIqneoY.png)
+![Imgur](https://i.imgur.com/HIqneoY.png)
 
-![Imgur](https://imgur.com/zDAQpen.png)
+![Imgur](https://i.imgur.com/zDAQpen.png)
 
 # アクセサリの位置を探す矢印みたいなやつは？
 `YouTube`の動画を見た感じ、距離に加えて`azimuth`ってので角度を取得できるらしい。  
 
-![Imgur](https://imgur.com/TyCPLEX.png)
+![Imgur](https://i.imgur.com/TyCPLEX.png)
 
-![Imgur](https://imgur.com/s1tK0Hw.png)
+![Imgur](https://i.imgur.com/s1tK0Hw.png)
 
 ところで試したところ、なんかドキュメントだと`90, -90`の範囲って書いてあって、  
 でも画面に表示されてるのは`-148`で普通に超えてる気がするんだけどどういうことなの？  
@@ -856,9 +856,9 @@ UwbArrow(
 こんな感じに矢印が出て、この矢印がまっすぐになった方向に歩くと見つかります。  
 結構正確です。
 
-![Imgur](https://imgur.com/LOIg19k.png)
+![Imgur](https://i.imgur.com/LOIg19k.png)
 
-![Imgur](https://imgur.com/Dl9rREZ.png)
+![Imgur](https://i.imgur.com/Dl9rREZ.png)
 
 # 相手の位置を表示する Canvas
 サンプルアプリでは、自分の位置を中心に、どのへんに`UWB`接続相手がいるかをレーダーみたいに表示する`UI`があるっぽいです。  
@@ -942,9 +942,9 @@ UwbPointCanvas(
 こんな感じに自分と相手の位置が点で表示される。上から見た図ですね。  
 `Jetpack Compose`数年使ってる気がするけど始めて`Canvas`使ったかもしれない。
 
-![Imgur](https://imgur.com/ivZVSIn.png)
+![Imgur](https://i.imgur.com/ivZVSIn.png)
 
-![Imgur](https://imgur.com/IxdLjh5.png)
+![Imgur](https://i.imgur.com/IxdLjh5.png)
 
 # おまけ UWB デバイスを動かして軌跡を描く
 点の動きを記録して、線を書いてみる。数が多くなるので適当に捨てます。  
@@ -1015,7 +1015,7 @@ fun UwbRecordPointCanvas(
 あとは片方の端末で記録ボタンを押し、もう一方の`UWB`端末に動いてもらえばいいはず。  
 でもあんまりうまく取れてない。
 
-![Imgur](https://imgur.com/6EEXoLe.png)
+![Imgur](https://i.imgur.com/6EEXoLe.png)
 
 # そーすこーど
 どーぞ  

@@ -10,13 +10,13 @@ tags:
 どうもこんばんわ。  
 姫宮さんはかまいたい 攻略しました。こういうのでいいんだよ。
 
-![Imgur](https://imgur.com/cI9ldMy.jpg)
+![Imgur](https://i.imgur.com/cI9ldMy.jpg)
 
 それな
 
-![Imgur](https://imgur.com/bglBKYa.jpg)
+![Imgur](https://i.imgur.com/bglBKYa.jpg)
 
-![Imgur](https://imgur.com/wNwRC4D.jpg)
+![Imgur](https://i.imgur.com/wNwRC4D.jpg)
 
 かわいい！
 
@@ -33,7 +33,7 @@ https://www.xda-developers.com/android-13-flashlight-brightness-adjustment/
 Galaxy S7 Edge にはフラッシュライトの明るさ調整が存在する。Samsung Experience 懐かしい。  
 あの時はSDカードが刺さるって宣伝してたのに今は...  
 
-![Imgur](https://imgur.com/dw93hKy.png)
+![Imgur](https://i.imgur.com/dw93hKy.png)
 
 ## 環境
 
@@ -46,7 +46,7 @@ Galaxy S7 Edge にはフラッシュライトの明るさ調整が存在する�
 ## 作る
 Android 13 (ティラミス) 以上が必要です。  
 SDK Manager から入れましょう。
-![Imgur](https://imgur.com/FDV0zju.png)
+![Imgur](https://i.imgur.com/FDV0zju.png)
 
 ## 公式
 
@@ -129,7 +129,7 @@ class MainActivity : AppCompatActivity() {
 
 明るさの変化がわかりにくいのでシークバーで可変出来るようにする。
 
-![Imgur](https://imgur.com/MdeB5Bp.png)
+![Imgur](https://i.imgur.com/MdeB5Bp.png)
 
 ### activity_main.xml
 適当にレイアウトを作りましょう。

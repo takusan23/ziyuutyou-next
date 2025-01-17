@@ -40,7 +40,7 @@ added 1 package from 1 contributor, removed 2 packages, updated 124 packages and
 
 はい！動かなくなりました！
 
-![Imgur](https://imgur.com/j6iRaTB.png)
+![Imgur](https://i.imgur.com/j6iRaTB.png)
 
 # ついでに Material UI のアップデート
 
@@ -172,7 +172,7 @@ const NavigationLink = () => {
 `Netlify`の`Build image`が古くてコケてました。  
 `Ubuntu`のバージョンアップ？どうやら警告が来ていたそうですが見落としてました。すいません
 
-![Imgur](https://imgur.com/k5yYXC4.png)
+![Imgur](https://i.imgur.com/k5yYXC4.png)
 
 ## テストする
 多分動くと思うのですが、一応ちゃんと見れるか確認したいです。  
@@ -180,18 +180,18 @@ const NavigationLink = () => {
 
 `Lock to stop auto publishing` を押します。
 
-![Imgur](https://imgur.com/fy4lEKx.png)
+![Imgur](https://i.imgur.com/fy4lEKx.png)
 
 そのあと`Site setting`へ進み`Build & Deploy`の`Build image`を新しいのにします。
 
-![Imgur](https://imgur.com/WdiYnJg.png)
+![Imgur](https://i.imgur.com/WdiYnJg.png)
 
 出来たら`Deploys`に戻り、手動デプロイをします。  
 
-![Imgur](https://imgur.com/206PDDO.png)
+![Imgur](https://i.imgur.com/206PDDO.png)
 
 ロックされているのでまだ古いままの成果物がホスティングされています。
 
-![Imgur](https://imgur.com/VDRodqk.png)
+![Imgur](https://i.imgur.com/VDRodqk.png)
 
 ちなみに今回は特に何事もなくデプロイされていました。以上です。

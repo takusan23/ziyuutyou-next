@@ -27,7 +27,7 @@ JavaScriptを無効にすると（めったにないけど）真っ白になっ�
 そうすればHTMLファイルにちゃんと内容がまんま入ってるはずです。
 
 こんな感じに↓  
-![Imgur](https://imgur.com/WkV9GT2.png)
+![Imgur](https://i.imgur.com/WkV9GT2.png)
 
 (ちなみにVSCode、`Ctrlと+`で拡大、`Ctrlと-`で縮小ができます。間違えて押した時に覚えておけば良いかも？)
 

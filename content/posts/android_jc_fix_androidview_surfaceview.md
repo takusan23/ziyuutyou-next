@@ -13,9 +13,9 @@ tags:
 # 本題
 `Android 12`以上と未満で表示が崩れてしまった。  
 
-| Android 11                              | Android 12                              |
-|-----------------------------------------|-----------------------------------------|
-| ![Imgur](https://imgur.com/bi4Jjun.png) | ![Imgur](https://imgur.com/rkL6Kxm.png) |
+| Android 11                                | Android 12                                |
+|-------------------------------------------|-------------------------------------------|
+| ![Imgur](https://i.imgur.com/bi4Jjun.png) | ![Imgur](https://i.imgur.com/rkL6Kxm.png) |
 
 # なおしかた
 `AndroidView`に`Modifier.clipToBounds`をつければ終わり。  

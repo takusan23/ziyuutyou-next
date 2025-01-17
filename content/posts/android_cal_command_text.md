@@ -14,7 +14,7 @@ tags:
 
 これ
 
-![Imgur](https://imgur.com/J8arIyY.png)
+![Imgur](https://i.imgur.com/J8arIyY.png)
 
 # 環境
 攻略の鍵は等幅フォントです
@@ -69,7 +69,7 @@ private fun MainScreen() {
 }
 ```
 
-![Imgur](https://imgur.com/guRhfEB.png)
+![Imgur](https://i.imgur.com/guRhfEB.png)
 
 # View
 `<TextView>`を好きなところにおいて、等幅フォントを指定します。これも`fontFamily`で`monospace`を指定することで等幅フォントです。  
@@ -114,7 +114,7 @@ private fun execCalenderCommand(): String {
 }
 ```
 
-![Imgur](https://imgur.com/QUNnrP4.png)
+![Imgur](https://i.imgur.com/QUNnrP4.png)
 
 # おわりに
 テキストが表示てきて、かつ等幅フォントが使える箇所なら割とどこでも使えそうこの技。  

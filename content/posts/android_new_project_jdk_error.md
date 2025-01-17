@@ -15,7 +15,7 @@ The consumer was configured to find a runtime of a library compatible with Java 
 
 そして、`Gradle JDK`の部分を`11`以上の`Java`にします。  
 
-![Imgur](https://imgur.com/3AT260T.png)
+![Imgur](https://i.imgur.com/3AT260T.png)
 
 ## 11 以上の Java がない
 入れましょう。  
@@ -25,16 +25,16 @@ The consumer was configured to find a runtime of a library compatible with Java 
 実は `Java (JDK)` は `Oracle` 以外のベンダーも作っていて（マイクロソフトやアマゾンなど）、好きな`11 以降のJDK`を入れて↑の設定を完了させれば解決します。  
 おすすめは`Eclipse Temurin （旧 AdoptOpenJDK）`です。別に`Oracle JDK / OpenJDK`でもいいですが
 
-![Imgur](https://imgur.com/p8I1NTw.png)
+![Imgur](https://i.imgur.com/p8I1NTw.png)
 
 https://adoptium.net/download/
 
 ダウンロードしたらインストールして、さっきの`Android Studio`の設定画面を開いて、さっき入れたJavaを選択して閉じます。
 
-![Imgur](https://imgur.com/KtIdNeW.png)
+![Imgur](https://i.imgur.com/KtIdNeW.png)
 
 あとは `Try Again` を押して完了
 
-![Imgur](https://imgur.com/VDYTzU3.png)
+![Imgur](https://i.imgur.com/VDYTzU3.png)
 
 以上でつ、お疲れ様でした。  

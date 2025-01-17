@@ -10,7 +10,7 @@ tags:
 どうもこんばんわ。  
 パイセンの犯人捕まったそうですね。全然関係ない枠で知った。  
 
-![Imgur](https://imgur.com/6FlCXG9.png)
+![Imgur](https://i.imgur.com/6FlCXG9.png)
 
 （テレビにパイセン映し出されたの普通に面白すぎる）
 
@@ -26,17 +26,17 @@ tags:
 2018 年ってもう 6 年も前になるの・・・えぇ  
 懐かしすぎる、
 
-![Imgur](https://imgur.com/V9FIeEn.png)
+![Imgur](https://i.imgur.com/V9FIeEn.png)
 
 ニコ生年齢あんけ in パイセンの枠  
 2018 年くらいらしい
 
-![Imgur](https://imgur.com/XpNahpZ.png)
+![Imgur](https://i.imgur.com/XpNahpZ.png)
 
 2020 年にニコ生戻ってきて？やってたそうだけど、生前どこでやってたかはわからん。  
 `FC2`とかも`BAN`とかなんとか。
 
-![Imgur](https://imgur.com/I9ZIFVL.png)
+![Imgur](https://i.imgur.com/I9ZIFVL.png)
 
 # 本題
 それとこれとは関係ないのですが、  
@@ -277,20 +277,20 @@ val callback = remember {
 テキストボックスに適当に文字を入れて、「長押し！」を押すとドラッグアンドドロップが始まって、  
 それと同時に、受信先のコンポーネントの背景色が変化して、受信先で指を離すと中身が表示されるはずです。どうだろ？？？
 
-![Imgur](https://imgur.com/ALZOTq8.png)
+![Imgur](https://i.imgur.com/ALZOTq8.png)
 
 <video src="https://github.com/takusan23/JetpackComposeFileDragAndDrop/assets/32033405/50cdbf7e-4160-4362-9985-9daf61f5be54" width="300" controls></video>
 
 また、アプリを超えても利用できることがこれで分かるはず。  
 おんなじアプリを2つ作って、アプリを超えてドラッグアンドドロップしてみましたが、これもちゃんと動きます。
 
-![Imgur](https://imgur.com/8lhhBtR.png)
+![Imgur](https://i.imgur.com/8lhhBtR.png)
 
 <video src="https://github.com/takusan23/JetpackComposeFileDragAndDrop/assets/32033405/4a8230a9-fab2-464e-a82b-263b872276ce" width="300" controls></video>
 
 **もちろん**、ドラッグアンドドロップに対応したアプリへの送信、受信も出来ます。  
 
-![Imgur](https://imgur.com/hae1Uvx.png)
+![Imgur](https://i.imgur.com/hae1Uvx.png)
 
 <video src="https://github.com/takusan23/JetpackComposeFileDragAndDrop/assets/32033405/00109db2-b7ba-4490-9a7d-0d8282d3b195" width="300" controls></video>
 
@@ -307,7 +307,7 @@ https://9to5google.com/2023/05/19/android-14-drag-and-drop/
 画面分割するほど画面が大きくない場合に便利そう。  
 もちろんコード上でなにかする必要はありません。
 
-![Imgur](https://imgur.com/1vr6SnF.png)
+![Imgur](https://i.imgur.com/1vr6SnF.png)
 
 <video src="https://github.com/takusan23/JetpackComposeFileDragAndDrop/assets/32033405/5d3c28cd-0757-49d9-afa8-c5b1ecda84bf" width="300" controls></video>
 
@@ -318,7 +318,7 @@ https://9to5google.com/2023/05/19/android-14-drag-and-drop/
 大雑把にこんな感じ。  
 `Android`の`Intent`のサイズ上限が出来たあたり（私は知らない）で、この`FileProvider`の知見が結構あるので助かる。。。
 
-![Imgur](https://imgur.com/2KvoFzl.png)
+![Imgur](https://i.imgur.com/2KvoFzl.png)
 
 ## FileProvider
 https://developer.android.com/reference/androidx/core/content/FileProvider
@@ -364,7 +364,7 @@ https://developer.android.com/reference/androidx/core/content/FileProvider
 まずは`res/xml`の中に、`file_path.xml`を作ります。  
 多分名前は何でもいいんですけど、ドキュメント通りに行こうと思います。
 
-![Imgur](https://imgur.com/hs9ORkI.png)
+![Imgur](https://i.imgur.com/hs9ORkI.png)
 
 中身です。  
 `<external-files-path`は`Context#getExternalFileDir()`の中にあるファイルを共有するためですね。  
@@ -474,7 +474,7 @@ fun MainScreen() {
 
 どうでしょう？
 
-![Imgur](https://imgur.com/NrKULwU.png)
+![Imgur](https://i.imgur.com/NrKULwU.png)
 
 ### Uri を取得する
 次は`Bitmap`を`getExternalFileDir`に保存して、`Uri`を取得します。  
@@ -544,9 +544,9 @@ Image(
 これで、送信側は完成のはずです。  
 `Google Keep`とかにドラッグアンドドロップ出来るはず！！！！！できた！？！？！？！？
 
-![Imgur](https://imgur.com/c2KPHoY.png)
+![Imgur](https://i.imgur.com/c2KPHoY.png)
 
-![Imgur](https://imgur.com/45BQipo.png)
+![Imgur](https://i.imgur.com/45BQipo.png)
 
 <video src="https://github.com/takusan23/JetpackComposeFileDragAndDrop/assets/32033405/2b26cbe8-ac76-437c-8507-513483bd0869" width="300" controls></video>
 
@@ -688,7 +688,7 @@ fun MainScreen() {
 どうだろ？？？  
 画像も受け取れるアプリが出来ましたか？？？
 
-![Imgur](https://imgur.com/ZdZTins.png)
+![Imgur](https://i.imgur.com/ZdZTins.png)
 
 <video src="https://github.com/takusan23/JetpackComposeFileDragAndDrop/assets/32033405/f4aaf49d-e561-4302-abb6-c8b626ec6275" width="300" controls></video>
 

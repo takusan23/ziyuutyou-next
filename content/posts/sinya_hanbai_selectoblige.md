@@ -12,7 +12,7 @@ tags:
 
 これです。  
 
-![Imgur](https://imgur.com/ELNbX1G.png)
+![Imgur](https://i.imgur.com/ELNbX1G.png)
 
 `UltraHDR`で撮影してきので表示に対応している`Android`スマートフォンだと写真が眩しいかもしれません。  
 `UltraHDR`を保持したままの写真のぼかし編集が面倒だった。。。。  
@@ -27,7 +27,7 @@ tags:
 ちなみにこの時点でもう帰れません。どこかで夜を明かす必要があります、、  
 夜だけど暑い
 
-![Imgur](https://imgur.com/eFNujqT.png)
+![Imgur](https://i.imgur.com/eFNujqT.png)
 
 ちなみに既に10人くらい並んでた、終電で帰る組かな。  
 どうやらシャッターにポスターが張ってあったそうですが取りそこねました。

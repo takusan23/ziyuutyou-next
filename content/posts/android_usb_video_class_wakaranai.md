@@ -34,13 +34,13 @@ https://github.com/takusan23/AndroidKotlinUsbVideoClass/blob/master/app/src/main
 一応繋いで、権限を付与した後ボタンを押すと、こんな感じのぐちゃぐちゃな画像ができます。  
 本当はぐちゃぐちゃにならないはずですが。。
 
-![Imgur](https://imgur.com/sUJYbC1.png)
+![Imgur](https://i.imgur.com/sUJYbC1.png)
 
-![Imgur](https://imgur.com/7CbPh4q.png)
+![Imgur](https://i.imgur.com/7CbPh4q.png)
 
 `Xperia`の外部モニターだときれいに出ている。解像度が変なのは私があれこれいじったせい。  
 
-![Imgur](https://imgur.com/HKjDS1i.png)
+![Imgur](https://i.imgur.com/HKjDS1i.png)
 
 # 先駆け者さんを調べる
 ぶっちゃけパクリです。すいません

@@ -7,7 +7,7 @@ tags:
 どうもこんばんわ。  
 `satellite`な`iPhone`です。ちなヨドバシ。  
 
-![Imgur](https://imgur.com/I71wyPv.png)
+![Imgur](https://i.imgur.com/I71wyPv.png)
 
 ところでカメラコントロールって`無印 iPhone`にもあったんですね。  
 `Dynamic Island`といい`Lightning 廃止`といいまずは`Pro`から投入されてたので、今回も無印は後回しだと思ってた。
@@ -35,11 +35,11 @@ https://takusan.negitoro.dev/posts/minecraft_mod_1_20_6_migration/
 これがタイムライン、  
 大体パソコンの`YMM3`とかもこんな感じだと思う。
 
-![Imgur](https://imgur.com/jCT4yM9.png)
+![Imgur](https://i.imgur.com/jCT4yM9.png)
 
-![Imgur](https://imgur.com/FQOOKKG.png)
+![Imgur](https://i.imgur.com/FQOOKKG.png)
 
-![Imgur](https://imgur.com/tsbBAAh.png)
+![Imgur](https://i.imgur.com/tsbBAAh.png)
 
 ただ、このアプリにはゆっくり音声を生成する機能がないので、上にゆっくり音声を生成できるアプリを**ポップアップで表示**させている。  
 この手のポップアップで上に重ねて表示する機能、`Xperia`以外にもあったりするけどいまいち使い道が分からんかった。けどここで使うのかって気持ちになった。
@@ -49,9 +49,9 @@ https://takusan.negitoro.dev/posts/minecraft_mod_1_20_6_migration/
 へへへ、アップロードします。  
 いつもはパソコンで作るのでなんか新鮮
 
-![Imgur](https://imgur.com/OAT3Hs1.png)
+![Imgur](https://i.imgur.com/OAT3Hs1.png)
 
-![Imgur](https://imgur.com/W90Y5lz.png)
+![Imgur](https://i.imgur.com/W90Y5lz.png)
 
 # エンコード時間
 `1080p`、`60fps`で、`27分`くらいの動画ですが、エンコードにかかった時間は**6、7時間**くらいでした。（！！！？）  
@@ -118,9 +118,9 @@ https://github.com/android/camera-samples/blob/a07d5f1667b1c022dac2538d1f553df20
 ちなみにこの通知は実装してないです。  
 失敗し続けてて調査のため付け焼き刃的な感じでエラー通知を出すようにしただけで、機能としては存在してないです、、
 
-![Imgur](https://imgur.com/R2fSZ6Z.png)
+![Imgur](https://i.imgur.com/R2fSZ6Z.png)
 
-![Imgur](https://imgur.com/QmefCKj.png)
+![Imgur](https://i.imgur.com/QmefCKj.png)
 
 ベンチマークのために、`Pixel 8 Pro`でも同じ動画のエンコードをやってみたんだけど、エンコーダーにフレームを渡す`OpenGL ES`の部分でときたま落ちてしまい、数回試してみたけどだめだった。しかも失敗してる箇所が毎回違って謎。  
 `Snapdragon`搭載の`Xperia`だと普通に成功したので、よく分からん、、、こっちでも落ちるんだったら私のコードが悪いんだけどさ。
@@ -176,7 +176,7 @@ https://github.com/android/camera-samples/blob/a07d5f1667b1c022dac2538d1f553df20
 タイムラインはデータクラスになってて、編集するたびにデータクラスがコピーされるので、直近のタイムライン操作履歴みたいなのは作れそう？どこを編集したかはわからんか。
 
 ## 音量スライダーの選択で段階を踏みたい
-![Imgur](https://imgur.com/q7M9INK.png)
+![Imgur](https://i.imgur.com/q7M9INK.png)
 
 段階を踏めるようにするべきだった。やります。  
 微調整すぎる。狙った位置にするのがむずい。
@@ -196,7 +196,7 @@ https://github.com/android/camera-samples/blob/a07d5f1667b1c022dac2538d1f553df20
 ## 電池
 前回の充電から`26%`消費しました。って普通なの？
 
-![Imgur](https://imgur.com/MZNTUhC.png)
+![Imgur](https://i.imgur.com/MZNTUhC.png)
 
 ## クリップボード機能が欲しい
 複製とは別に、コピーしてタイムラインの好きな位置に貼り付け出来る機能がほしい。作ろうかな。

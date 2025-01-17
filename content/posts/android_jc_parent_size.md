@@ -12,7 +12,7 @@ tags:
 # 本題
 一番大きいコンポーネントにすべて合わせたい。
 
-![Imgur](https://imgur.com/cXiFrne.png)
+![Imgur](https://i.imgur.com/cXiFrne.png)
 
 # 作り方
 
@@ -44,7 +44,7 @@ fun ParentDynamicWidth() {
 
 親要素に`Modifier.width(IntrinsicSize.Max)`を付けて、子要素には`Modifier.fillMaxWidth()`を付けてあげます。
 
-![Imgur](https://imgur.com/GAwVnRH.png)
+![Imgur](https://i.imgur.com/GAwVnRH.png)
 
 # 終わりに
 そろそろ寝たいのでここらへんで失礼します。

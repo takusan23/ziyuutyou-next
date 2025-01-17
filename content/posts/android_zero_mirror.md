@@ -13,19 +13,19 @@ D.C.4 Sweet Harmony ～ダ・カーポ4～ スイートハーモニー 攻略し
 
 ここの話ほんとかわいい  
 
-![Imgur](https://imgur.com/iBWxbJI.png)
+![Imgur](https://i.imgur.com/iBWxbJI.png)
 
 ここほんとすき  
 
-![Imgur](https://imgur.com/7IlRZEE.png)
+![Imgur](https://i.imgur.com/7IlRZEE.png)
 
 あぁぁぁ  
 
-![Imgur](https://imgur.com/B36lbxb.png)
+![Imgur](https://i.imgur.com/B36lbxb.png)
 
 本編では焦点があまり当てられなかったヒロインたちのストーリーが本作でちゃんとしてていい！  
 
-![Imgur](https://imgur.com/RKCEJn9.png)
+![Imgur](https://i.imgur.com/RKCEJn9.png)
 
 ~~実用性もあるとおもう~~
 
@@ -33,7 +33,7 @@ D.C.4 Sweet Harmony ～ダ・カーポ4～ スイートハーモニー 攻略し
 ぜろみらーを作りました。ミラーリングアプリです。  
 とりあえずリリースしましたが、多分動く端末のほうが少ないと思う←！？
 
-![Imgur](https://imgur.com/FwtzpvV.png)
+![Imgur](https://i.imgur.com/FwtzpvV.png)
 
 ニコ生のコミュの名前にありそうですが関係ないです。  
 
@@ -61,7 +61,7 @@ D.C.4 Sweet Harmony ～ダ・カーポ4～ スイートハーモニー 攻略し
 端末の画面録画と(あれば)端末内音声を集めて、動画を細切れにして、ブラウザへWebSocketで送信してます。  
 もっといい方法があったかもしれない...
 
-![Imgur](https://imgur.com/czpAHGx.png)
+![Imgur](https://i.imgur.com/czpAHGx.png)
 
 ## 真面目に仕組み
 Androidの画面録画、端末内音声の内容を`MediaProjection`で受け取ります。  
@@ -144,11 +144,11 @@ $ ffmpeg -v trace -i  publish74.mp4  2>&1 | grep -e type:\'mdat\' -e type:\'moov
 
 ちなみにブラウザでもストリーミング再生なのでバッファリングの表示がされるようになります。
 
-![Imgur](https://imgur.com/JnQyJg9.png)
+![Imgur](https://i.imgur.com/JnQyJg9.png)
 
 なお`WebM`の場合は特に何もせずともストリーミング可能なファイルにしてくれるみたい
 
-![Imgur](https://imgur.com/9sI9oHv.png)
+![Imgur](https://i.imgur.com/9sI9oHv.png)
 
 # よくわからない
 
@@ -170,4 +170,4 @@ Pixel 6 Pro のディスプレイちょっとだけ画面傷入っちゃって�
 
 D.C.5 ！？
 
-![Imgur](https://imgur.com/7d4KIrc.png)
+![Imgur](https://i.imgur.com/7d4KIrc.png)

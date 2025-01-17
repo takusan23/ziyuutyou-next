@@ -9,20 +9,20 @@ tags:
 どうもこんにちは。  
 花鐘カナデ＊グラム Chapter:2 花ノ香澄玲 攻略しました。（前作やってないので本筋あんまり分かってないけど）とにかくかわいかったです！
 
-![Imgur](https://imgur.com/oIcv8qt.png)
+![Imgur](https://i.imgur.com/oIcv8qt.png)
 
 ハイスペックでいい子すぎる
 
-![Imgur](https://imgur.com/BzYSRno.png)
+![Imgur](https://i.imgur.com/BzYSRno.png)
 
 ↑ ここのシナリオすき、表情がころころ変わるのがいい
 
-![Imgur](https://imgur.com/L4YIfSg.png)
+![Imgur](https://i.imgur.com/L4YIfSg.png)
 
 そういえば最後の最後にあったあの意味深な文章は何だったんだろう、  
 3と4で回収するのかな（本筋もあんまり進まずに Chapter:2 終わってしまった）、、  
 
-![Imgur](https://imgur.com/CjbezIq.png)
+![Imgur](https://i.imgur.com/CjbezIq.png)
 
 # 本題
 Android 12 で入ったこのスプラッシュスクリーン、アニメーション付きのアイコンが使えるのですが、  
@@ -72,7 +72,7 @@ https://developer.android.com/develop/ui/views/launch/splash-screen#dimensions
 | `<svg>` の属性   | `width="8.73mm"` |
 
 `Inkscape`だと`ドキュメントのプロパティ`からサイズを変更できます。これ  
-![Imgur](https://imgur.com/0SnjT5n.png)
+![Imgur](https://i.imgur.com/0SnjT5n.png)
 
 次にアイコンのサイズです、`SVG（Drawable）`のサイズと何が違うんだって話ですが、アイコン全体が表示されるわけではなく、真ん中を円形にくり抜いた分だけが表示されます。以下のドキュメントの画像がわかりやすいです。
 
@@ -83,15 +83,15 @@ https://developer.android.com/develop/ui/views/launch/splash-screen?#dimensions
 
 数値でいうと、`Inkscape`の場合は縦横`2.115 mm ～ 6.615 mm`の範囲内にアイコンを書けば、丸く切り抜かれても見切れたりしないはずです。
 
-![Imgur](https://imgur.com/0jZc9BG.png)
+![Imgur](https://i.imgur.com/0jZc9BG.png)
 
 実際に四角形を置いてみるとこう  
-![Imgur](https://imgur.com/XCxpSD1.png)
+![Imgur](https://i.imgur.com/XCxpSD1.png)
 
 上記のように、わかりやすく四角形を置きたい場合、`Inkscape`の場合は縦横`4.500 mm`の四角形を作って、それをページの真ん中に置くことで、その四角形の中なら見切れない、境界線代わりになります。  
 `LibreOffice Draw`でやりたい場合は`0.45 cm`の四角形を真ん中に置くと同様にできます。
 
-![Imgur](https://imgur.com/RTIW3iF.png)
+![Imgur](https://i.imgur.com/RTIW3iF.png)
 
 この四角形の中にアイコンを書いていきましょう。
 
@@ -99,7 +99,7 @@ https://developer.android.com/develop/ui/views/launch/splash-screen?#dimensions
 あらかじめ時間によって表示したい（出し分けたい）図形は`SVG`上に存在させておく必要があります。多分。  
 いや、`SVG`のパスの変形が出来るっぽいんだけど難しそうで使ったことがない。
 
-![Imgur](https://imgur.com/awjbF1q.png)
+![Imgur](https://i.imgur.com/awjbF1q.png)
 
 保存する際は補助線としていた四角い図形を消しましょうね（まあこの後でも消せるけどここで消しちゃうで良い気がする）。
 
@@ -107,11 +107,11 @@ https://developer.android.com/develop/ui/views/launch/splash-screen?#dimensions
 `Inkscape`で書いた`SVG`を保存したら、今度は`LibreOffice Draw`で開きます。  
 で、開いたら何もせずエクスポートを選び、`SVG`として保存します。一応別名保存のがいいでしょう。
 
-![Imgur](https://imgur.com/pGXjx7c.png)
+![Imgur](https://i.imgur.com/pGXjx7c.png)
 
 なぜかこの`LibreOffice Draw`でエクスポートする工程をスキップするとうまく`VectorDrawable`に変換できません、、、
 
-![Imgur](https://imgur.com/0YOGBT2.png)
+![Imgur](https://i.imgur.com/0YOGBT2.png)
 
 また、このとき作った`SVG`、`Android 11`以下はスプラッシュスクリーンに`AnimatedVectorDrawable`が使えないので代わりにこれを使います。
 
@@ -122,22 +122,22 @@ https://shapeshifter.design/
 
 開いたらさっき別名保存した`SVG`をインポートしましょう、ここです。ドラッグアンドドロップでもいいかもしれません。
 
-![Imgur](https://imgur.com/siHECz5.png)
+![Imgur](https://i.imgur.com/siHECz5.png)
 
 ## とりあえず時間経過で表示させてみる
 というか私はこれしか使ったこと無いです。  
 適当な`path`を選んで、ストップウォッチのアイコンを押して、`strokeAlpha`を選びます。
 
-![Imgur](https://imgur.com/UPmyBKc.png)
+![Imgur](https://i.imgur.com/UPmyBKc.png)
 
 次に`fromValue`を`0`にしておきます。
 
-![Imgur](https://imgur.com/P47yLW7.png)
+![Imgur](https://i.imgur.com/P47yLW7.png)
 
 これで再生ボタンを押すと、、、？  
 時間経過で`fromt`から`to`に`alpha`が変化します！
 
-![Imgur](https://imgur.com/qCLLL1q.png)
+![Imgur](https://i.imgur.com/qCLLL1q.png)
 
 私が作ってきたスプラッシュスクリーンのアニメーションはこれの組み合わせがほとんどです、、
 
@@ -147,18 +147,18 @@ https://shapeshifter.design/
 
 サーバー等の通信等でスプラッシュスクリーンを意図的に長く表示させる場合（ドキュメントにある`ViewTreeObserver.OnPreDrawListener`を使う方法）を除き、`500ms`ぐらいが限界な気がする。あんまり長いとアニメーションの終了より先に`Activity`が起動しちゃう。
 
-![Imgur](https://imgur.com/z91nfSn.png)
+![Imgur](https://i.imgur.com/z91nfSn.png)
 
 また、これは`AnimatedVectorDrawable`の話ではなく、スプラッシュスクリーン都合の話だと思いますが、  
 `0ms`から`200ms`の間にアニメーションで変化させても認知できないです。（`200ms`より前のアニメーションが何だったのか分からない）  
 アニメーションさせる場合は`200ms`から`500ms`に収めると良い気がします。
 
-![Imgur](https://imgur.com/UVNSXQz.png)
+![Imgur](https://i.imgur.com/UVNSXQz.png)
 
 ### アニメーションさせるまで消したい
 線（`stroke`）の場合は`strokeAlpha`、塗りつぶし（`fill`）の場合は`fillAlpha`を`0`にしておくと、`strokeAlpha`のアニメーションまでは消しておくことが出来ます。
 
-![Imgur](https://imgur.com/o2JkT2Q.png)
+![Imgur](https://i.imgur.com/o2JkT2Q.png)
 
 アニメーション経過後はそのままアニメーションで変化した状態のが適用されます（手元で試している限り）
 
@@ -166,33 +166,33 @@ https://shapeshifter.design/
 `translateX`のようなものはありませんね。  
 これは`path`だからで、`group`を作り、その中に`path`を入れることで`translateX`や`rotate`が使えるようになります。
 
-![Imgur](https://imgur.com/UPmyBKc.png)
+![Imgur](https://i.imgur.com/UPmyBKc.png)
 
 というわけで`group`を作りますか、ここの`New group layer`です。
 
-![Imgur](https://imgur.com/F1OBV2D.png)
+![Imgur](https://i.imgur.com/F1OBV2D.png)
 
 動かしたい図形たちを`group`の中に入れて、、、
 
-![Imgur](https://imgur.com/GzF8dQs.png)
+![Imgur](https://i.imgur.com/GzF8dQs.png)
 
 あとはお好きなものを。  
 移動させたいなら`translate`、回転なら`rotate`、サイズ変更なら`scale`です。
 
-![Imgur](https://imgur.com/NzeUV4v.png)
+![Imgur](https://i.imgur.com/NzeUV4v.png)
 
 ### 保存する
 `shapeshifter`の`webアプリ`で開けるように保存しましょう。  
 ここの`Save`を押すと、`.shapeshifter`でプロジェクトを保存できます。これを他の人に渡せば、他の人が開いた`shapeshifter`で続きの作業ができるわけです。  
 もし`F5`でリロードしたとしてもこのファイルで保存しておけば良いわけです。
 
-![Imgur](https://imgur.com/tnXY7En.png)
+![Imgur](https://i.imgur.com/tnXY7En.png)
 
 ## AnimatedVectorDrawable で吐き出す
 それとは別にスプラッシュスクリーン用に`AnimatedVectorDrawable`が必要なので吐き出します。  
 これです。
 
-![Imgur](https://imgur.com/46CSvuk.png)
+![Imgur](https://i.imgur.com/46CSvuk.png)
 
 ## スプラッシュスクリーンを表示する準備をする
 `Android 12`未満向けに、サポートライブラリがあります。  
@@ -216,11 +216,11 @@ dependencies {
 `drawable`にアニメーションアイコンを格納するのですが、先述の通りアニメーションアイコンは`Android 12（API 31）`以降だけで、それ以前には動かないアイコンを置く必要があります。  
 バージョンによって分けるために`v31`を作った感じです。
 
-![Imgur](https://imgur.com/b04LJC8.png)
+![Imgur](https://i.imgur.com/b04LJC8.png)
 
 後はそのフォルダに`drawble`を入れます。名前は合わせましょうね。
 
-![Imgur](https://imgur.com/qOZBEfl.png)
+![Imgur](https://i.imgur.com/qOZBEfl.png)
 
 ### themes.xml を書く
 スプラッシュスクリーン用のテーマを書きます。  

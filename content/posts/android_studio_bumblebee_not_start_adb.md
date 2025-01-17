@@ -9,7 +9,7 @@ tags:
 
 高かったけどさくらんぼキッスが収録されてるアルバム買っちゃった
 
-![Imgur](https://imgur.com/VFf1oEs.png)
+![Imgur](https://i.imgur.com/VFf1oEs.png)
 
 
 # 本題
@@ -18,7 +18,7 @@ tags:
 
 ターミナルにコマンド打ち込んでもなんか受け付けない
 
-![Imgur](https://imgur.com/lcOrjgc.png)
+![Imgur](https://i.imgur.com/lcOrjgc.png)
 
 # 環境
 
@@ -39,7 +39,7 @@ AndroidStudioの左上の`File`から`Settings...`へ進み、`Build, Execution,
 `Android Debug Bridge (adb)`の項目の`Enable adb mDNS for wireless debugging`のチェックを外して、  
 `Apply`を押して`OK`を押します。  
 
-![Imgur](https://imgur.com/ajgSTI2.png)
+![Imgur](https://i.imgur.com/ajgSTI2.png)
 
 最後にプロジェクトを開き直すか、AndroidStudioを再起動すると直りました！！！
 
@@ -47,7 +47,7 @@ AndroidStudioの左上の`File`から`Settings...`へ進み、`Build, Execution,
 
 (電源未接続時の挙動とか、AC充電器で高速に充電しながら実機で確認したい際に便利そうだよねこれ)
 
-![Imgur](https://imgur.com/kQ3WcoW.png)
+![Imgur](https://i.imgur.com/kQ3WcoW.png)
 
 ## もう一度ADBコマンドを叩く
 
@@ -55,7 +55,7 @@ AndroidStudioの左上の`File`から`Settings...`へ進み、`Build, Execution,
 
 `adb devices`とか入力して叩けばいいと思います。
 
-![Imgur](https://imgur.com/nIlXTWO.png)
+![Imgur](https://i.imgur.com/nIlXTWO.png)
 
 **ちなみに別プロジェクトを開くとまたADBが起動しなくなります (？？？)**
 

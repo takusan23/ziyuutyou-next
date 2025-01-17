@@ -10,11 +10,11 @@ tags:
 どうもこんばんわ。  
 友だちから恋びとへ 攻略しました。
 
-![Imgur](https://imgur.com/fIZi2Wu.png)
+![Imgur](https://i.imgur.com/fIZi2Wu.png)
 
 この手のゲームは`ヒロイン+サブヒロイン`とかで大体サブヒロインは攻略できない系が多いんだけど今回はふたりとも攻略できる！！！
 
-![Imgur](https://imgur.com/JsGTljv.png)
+![Imgur](https://i.imgur.com/JsGTljv.png)
 
 # 本題
 Android 13 Developer Preview が出てた！  
@@ -24,7 +24,7 @@ Android 13 Developer Preview が出てた！
 一部のシステムアイコンはアイコンの色に壁紙の色をつけてくれるのですが、これがサードパーティーアプリにも開放されました。  
 (なんでこれAndroid 12に入れなかったんだ？monetがAOSP入りしなかったから？)
 
-![Imgur](https://imgur.com/4Q3em8N.png)
+![Imgur](https://i.imgur.com/4Q3em8N.png)
 
 EZWebが終わる今、きせかえツールのような機能が追加されるとは
 
@@ -39,7 +39,7 @@ https://developer.android.com/about/versions/13/features#themed-app-icons
 `Tiramisu`を指定します。お菓子のコードネームだ！！  
 SDK入っていない場合は右上にある`SDK Manager`から入れましょう。
 
-![Imgur](https://imgur.com/JWDLgmJ.png)
+![Imgur](https://i.imgur.com/JWDLgmJ.png)
 
 そしてこうです
 
@@ -123,7 +123,7 @@ https://qiita.com/temoki/items/3fa4acc0a897bbbbbc8f
 </adaptive-icon>
 ```
 
-![Imgur](https://imgur.com/BYkzZUP.png)
+![Imgur](https://i.imgur.com/BYkzZUP.png)
 
 また、`@drawable/ic_launcher_foreground_dynamic_color`が無いので作ります。  
 `drawable`の中に`ic_launcher_foreground_dynamic_color.xml`で作りましょう。  
@@ -276,9 +276,9 @@ class MainActivity : AppCompatActivity() {
 
 これで動くはず
 
-![Imgur](https://imgur.com/BGCaO9e.png)
+![Imgur](https://i.imgur.com/BGCaO9e.png)
 
-![Imgur](https://imgur.com/UtfBON1.png)
+![Imgur](https://i.imgur.com/UtfBON1.png)
 
 ### メモ
 有効状態だと`MainActivity`を指したIntentを解決出来なくなり、Android Studioから実行してもActivityが存在しないエラーが発生します。  

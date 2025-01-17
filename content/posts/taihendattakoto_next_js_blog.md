@@ -280,7 +280,7 @@ GA4 設定アシスタント ウィザードでは、作成した GA4 プロパ�
 
 というわけで、今のところは`GA4`と`UA`の両方で集計するようにしてあります。
 
-![Imgur](https://imgur.com/4bkbzPv.png)
+![Imgur](https://i.imgur.com/4bkbzPv.png)
 
 `head`内に`GA4`のJavaScriptを差し込むようにすればいいです。
 `GA_TRACKING_ID`には**GA4の測定ID**、`UA_TRACKING_ID`には**UAのトラッキングコード**を変数に入れておいて下さい。  
@@ -357,7 +357,7 @@ SSGモードの場合はプラグインをOFFにする必要があります。
 
 Netlifyのサイトの設定から、Build & Deployを開いて、環境変数に追加します。
 
-![Imgur](https://imgur.com/9u5rplE.png)
+![Imgur](https://i.imgur.com/9u5rplE.png)
 
 ちなみにビルドコマンドと公開するフォルダは
 

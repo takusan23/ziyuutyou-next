@@ -13,7 +13,7 @@ tags:
 # 本題
 こういうのを作ります。  
 
-![Imgur](https://imgur.com/u1b56Rr.png)
+![Imgur](https://i.imgur.com/u1b56Rr.png)
 
 # 環境
 | なまえ  | あたい                            |
@@ -79,7 +79,7 @@ Android Studio 4.0 からアイコンを選ぶ際に、Outlinedなアイコン�
 `Vector Asset`を開いて、好きなアイコンを取ってきてください。  
 起動方法は、`Shiftキーを3連続`押して`Vector Asset`って入力すれば多分出ると思います。`macOSのSpotlight的ななにか（macOS触ったこと無いけど）`
 
-![Imgur](https://imgur.com/EIxL4JP.png)
+![Imgur](https://i.imgur.com/EIxL4JP.png)
 
 ## bottom_fragment_menu.xml を書く
 以下のように。  

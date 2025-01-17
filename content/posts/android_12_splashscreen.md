@@ -74,7 +74,7 @@ android {
 適当に中身のないDrawableを作ればいいと思います。  
 こっから作成できます
 
-![Imgur](https://imgur.com/8oSywlA.png)
+![Imgur](https://i.imgur.com/8oSywlA.png)
 
 中身は空っぽで
 

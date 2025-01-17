@@ -121,7 +121,7 @@ class MainActivity : ComponentActivity() {
 }
 ```
 
-![Imgur](https://imgur.com/XUHFn8t.png)
+![Imgur](https://i.imgur.com/XUHFn8t.png)
 
 ### ソースコード
 

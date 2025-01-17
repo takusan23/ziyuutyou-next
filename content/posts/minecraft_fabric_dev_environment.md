@@ -58,7 +58,7 @@ TwitterでForgeより快適と聞いて。
 今回は`AdoptOpenJDK`を入れます。  
 https://adoptopenjdk.net/ を開いて、`OpenJDK 16 (Latest)`と、`HotSpot`のラジオボタンを選んで`Latest release`を押してダウンロードしましょう。
 
-![Imgur](https://imgur.com/IilPXDc.png)
+![Imgur](https://i.imgur.com/IilPXDc.png)
 
 インストールはまあ適当に進めてください。（画像ない）
 
@@ -77,7 +77,7 @@ javac 16.0.1
 
 環境変数の設定開いて、システム環境変数の中から`JAVA_HOME`を選んで、`AdoptOpenJDK`のパスを設定します。
 
-![Imgur](https://imgur.com/qna3UJ5.png)
+![Imgur](https://i.imgur.com/qna3UJ5.png)
 
 
 # IDEAを入れる
@@ -87,7 +87,7 @@ javac 16.0.1
 
 IDEAのスタート画面から、`Get from VCS`を押して、いかのURLを指定して`Clone`します。
 
-![Imgur](https://imgur.com/j5tEO0u.png)
+![Imgur](https://i.imgur.com/j5tEO0u.png)
 
 | なまえ | あたい                                                  |
 |--------|---------------------------------------------------------|
@@ -101,22 +101,22 @@ IDEAのスタート画面から、`Get from VCS`を押して、いかのURLを�
 
 `gradle.properties`を開いて、`loom_version`を`0.8`にします
 
-![Imgur](https://imgur.com/NmjERlf.png)
+![Imgur](https://i.imgur.com/NmjERlf.png)
 
 ## You are using an outdated version of Java (8). Java 16 or higher is required
 
 ### プロジェクトの設定
 右上の`File`から`Project Structure`を選択して、`Project SDK`を`16`に、`Project language level`も`16`にします。
 
-![Imgur](https://imgur.com/6sn3TEy.png)
+![Imgur](https://i.imgur.com/6sn3TEy.png)
 
 適用したら、このボタンを探して押します。
 
-![Imgur](https://imgur.com/Q7hdIIO.png)
+![Imgur](https://i.imgur.com/Q7hdIIO.png)
 
 ボタンが見つからない場合は`IDEA`の右上にある？`Gradle`を押して、`Sync`ボタンを押してもいいです。
 
-![Imgur](https://imgur.com/0ra6jbW.png)
+![Imgur](https://i.imgur.com/0ra6jbW.png)
 
 これで終わればいいんですが、これでも同じエラーで進めないときがあります。
 
@@ -124,19 +124,19 @@ IDEAのスタート画面から、`Get from VCS`を押して、いかのURLを�
 右上の`File`から`Settings`を選択して、`Build,Execution,Deployment`を押し、`Build Tools`を押し、`Gradle`へ進み、  
 `Gradle JVM`を`16`にしてみてください。できたらさっきみたいにボタンを押します。
 
-![Imgur](https://imgur.com/ejjN51l.png)
+![Imgur](https://i.imgur.com/ejjN51l.png)
 
 うまく行けば処理が進みます。私の環境では10分ちょっとかかった。  
 `Gradle Build`が終わったら一旦IDEAを閉じます。その後もう一度起動するとマイクラのクライアントが起動できるようになります。  
 
-![Imgur](https://imgur.com/NhEtyaF.png)
+![Imgur](https://i.imgur.com/NhEtyaF.png)
 
 早速再生ボタンみたいなやつを押して起動してみましょう。
 
 # 1.17 Fabric
 （私だったら）起動直後設定へ進みBGMを0にします。うるさいし
 
-![Imgur](https://imgur.com/rS1ziQj.png)
+![Imgur](https://i.imgur.com/rS1ziQj.png)
 
 # MOD情報の変更
 `gradle.properties`を開いて、以下の内容を変えます
@@ -168,7 +168,7 @@ https://fabricmc.net/versions.html
 IDEAのProject(ファイルが表示されてるところ)から`net.fabricmc.example`を選択状態にして、`Shift押しながらF6を押します`。  
 押したら`Rename Package`を選び、ドメイン名(逆から)+MOD名小文字 を入力します
 
-![Imgur](https://imgur.com/JAPuJUz.png)
+![Imgur](https://i.imgur.com/JAPuJUz.png)
 
 続いて`resources`の方も修正します。同じように`assets.modid`を選択状態にして、`Shift押しながらF6を押します`。 
 そしたら先程入力したMODのIDを入力すればいいです。
@@ -177,12 +177,12 @@ IDEAのProject(ファイルが表示されてるところ)から`net.fabricmc.ex
 
 こうなっていればおｋ
 
-![Imgur](https://imgur.com/jZ7odV0.png)
+![Imgur](https://i.imgur.com/jZ7odV0.png)
 
 # ExampleMod.kt のファイル名修正
 味気ないので`MOD名.kt`とでもしておきましょう。名前変更は先程と同じです。
 
-![Imgur](https://imgur.com/DQvTCV5.png)
+![Imgur](https://i.imgur.com/DQvTCV5.png)
 
 # MOD情報の修正
 `resources`の中にある`fabric.mod.json`を開きます。  
@@ -289,7 +289,7 @@ object ClickManaitaItem {
 }
 ```
 
-![Imgur](https://imgur.com/ap6YcZj.png)
+![Imgur](https://i.imgur.com/ap6YcZj.png)
 
 そしたら`ExampleModKt`だったファイルを開いて、`init`関数内でアイテムを登録します。
 
@@ -309,12 +309,12 @@ fun init() {
 そしたら起動してみましょう。  
 画面のようにアイテムが追加できていれば成功。
 
-![Imgur](https://imgur.com/5ZrM8r6.png)
+![Imgur](https://i.imgur.com/5ZrM8r6.png)
 
 # テクスチャ
 画像ファイルを用意します。用意できたら、`resources/assets/MODのID/textures/item/アイテムID.png`って感じで置きます。
 
-![Imgur](https://imgur.com/ezwosDY.png)
+![Imgur](https://i.imgur.com/ezwosDY.png)
 
 そしたら今度は、`resources/assets/MODのID/models/item/アイテムID.json`って感じでJSONファイルを作成します。  
 中身はこうです。
@@ -333,7 +333,7 @@ fun init() {
 
 成功してました。失敗してたらまじでつらい
 
-![Imgur](https://imgur.com/4M5ParB.png)
+![Imgur](https://i.imgur.com/4M5ParB.png)
 
 ### おまけ　クリックまな板みたいにクリックしたら増えるように
 
@@ -382,22 +382,22 @@ object ClickManaitaItem {
 
 増えます。まだチェストの中身とかは増えないのでまだまだって感じですかね。
 
-![Imgur](https://imgur.com/xsXFHrp.png)
+![Imgur](https://i.imgur.com/xsXFHrp.png)
 
 # ソースを読めるようにする
 Minecraftのソースを読めるようにします。IDEAには逆コンパイラーが搭載されているのでなくても最悪いいですが、検索機能が使えないのでソースを生成しといたほうがいいと思います。
 
 IDEAの`Gradle`を押して、`Tasks` > `fabric` > `genSources` をダブルクリックすることで生成されます。
 
-![Imgur](https://imgur.com/U0U2TCL.png)
+![Imgur](https://i.imgur.com/U0U2TCL.png)
 
 その後、適当にBlockクラスとかを参照した際に、上に出てくる`Choose Sources...`を押して、`なんとか-sources.jar`を選択することで生成したソースを読むことができるようになります。
 
-![Imgur](https://imgur.com/qHRSVnB.png)
+![Imgur](https://i.imgur.com/qHRSVnB.png)
 
 `Shift`+`Ctrl`+`F`の検索機能も開放されました。
 
-![Imgur](https://imgur.com/PCDBcwG.png)
+![Imgur](https://i.imgur.com/PCDBcwG.png)
 
 # 配布可能ファイルを生成する
 
@@ -405,7 +405,7 @@ IDEA右上の`Gradle`から、`Tasks`>`build`へ進み`build`を選択するこ�
 成功すると、`build/libs/`に生成したファイルが有るはずです。（dev、sources、sources-dev じゃない方）  
 あとはこのJarファイルをCurseForgeとかで公開すればいいんじゃない？
 
-![Imgur](https://imgur.com/6J6OyJb.png)
+![Imgur](https://i.imgur.com/6J6OyJb.png)
 
 # エンドユーザー向けの説明とか
 このModは`Fabric`導入後、`mods`フォルダに以下のファイルをダウンロードして放り込んでおく必要があります。

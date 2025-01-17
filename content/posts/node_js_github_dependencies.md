@@ -16,7 +16,7 @@ We found potential security vulnerabilities in your dependencies.
 Only the owner of this repository can see this message.
 ```
 
-![Imgur](https://imgur.com/9yLmNje.png)
+![Imgur](https://i.imgur.com/9yLmNje.png)
 
 ## 自分で入れたライブラリの場合は
 
@@ -89,7 +89,7 @@ found 0 vulnerabilities
 
 GitHubへPushし、数十秒後にちゃんと消えていました。よかった
 
-![Imgur](https://imgur.com/zAKmxGs.png)
+![Imgur](https://i.imgur.com/zAKmxGs.png)
 
 # おわりに
 

@@ -10,15 +10,15 @@ tags:
 どうもこんにちは。  
 これは超会議でもらってきたお菓子です。
 
-![Imgur](https://imgur.com/NhiRLN6.png)
+![Imgur](https://i.imgur.com/NhiRLN6.png)
 
 # 本題
 `Minecraft 1.20.6`向けに自作 MOD を更新しました。  
 なんか、ここ最近で一番でかい変更だった気がする、、、
 
-![Imgur](https://imgur.com/wD01PRY.png)
+![Imgur](https://i.imgur.com/wD01PRY.png)
 
-![Imgur](https://imgur.com/fFiwzkw.png)
+![Imgur](https://i.imgur.com/fFiwzkw.png)
 
 今回も`Fabric`の方々が差分を書いてくれているので（まじ助かる）、それを見るといいです。  
 https://fabricmc.net/2024/04/19/1205.html

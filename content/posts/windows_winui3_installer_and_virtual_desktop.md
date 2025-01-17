@@ -21,7 +21,7 @@ tags:
 というわけで仮想デスクトップの切り替えショートカットキーを押してくれるアプリを作りました。  
 `Windowsキー`長押しするとすりガラスなウィンドウが出てきて、トラックパッドのように線を描くと描いた向きに切り替わります（？）
 
-![Imgur](https://imgur.com/7XOcwZf.png)
+![Imgur](https://i.imgur.com/7XOcwZf.png)
 
 で、今気付いたのですが、長押しだと`Windowsキー`を使うショートカットキーが**動かなくなってしまった**ので、`Win+Ctrl`長押しで起動するように直しました。  
 `スクリーンショット`が取れなくなったのが一番でかい・・・
@@ -60,12 +60,12 @@ zipファイルをばらまく場合は配布が楽ですね。インストー�
 ごめんなさい。。。覚えてないです。  
 `Visual Studio Installer`で、`.NET`のところの`Windows アプリSDK`のところにチェックマークをいれてダウンロードすればいいのかなあ。。。
 
-![Imgur](https://imgur.com/LvLMmX1.png)
+![Imgur](https://i.imgur.com/LvLMmX1.png)
 
 # Visual Studio 2022 で新しいプロジェクトを作る
 多分、これを選べばいいと思います。
 
-![Imgur](https://imgur.com/wpJhCk6.png)
+![Imgur](https://i.imgur.com/wpJhCk6.png)
 
 で、保存先とかをお好みで変更したあと、一番下の`ソリューションとプロジェクトを同じディレクトリに配置する`のチェックを外しておきます。  
 こうしておくことで以下のようなファイル構成で行くことが出来ます。  
@@ -85,11 +85,11 @@ zipファイルをばらまく場合は配布が楽ですね。インストー�
 
 （zip で配信したい場合は逆にチェックマークを入れたほうがシンプルな構成になるかも？？）
 
-![Imgur](https://imgur.com/5IB4MMp.png)
+![Imgur](https://i.imgur.com/5IB4MMp.png)
 
 あとはこれで作って、実行ボタンを押せば起動できるはず
 
-![Imgur](https://imgur.com/KEal94T.png)
+![Imgur](https://i.imgur.com/KEal94T.png)
 
 # MainWindow.xaml にワナがある （文字コード変更）
 `WinUI 3 Gallery`を見てもらえるとわかるのですが、最初からきれいなコンポーネントがあるんですよね。  
@@ -129,24 +129,24 @@ zipファイルをばらまく場合は配布が楽ですね。インストー�
 
 なんですけど、設定を変えないと日本語が文字化けしてしまいます・・・
 
-![Imgur](https://imgur.com/FqAaL6S.png)
+![Imgur](https://i.imgur.com/FqAaL6S.png)
 
 修正方法は前にも書いたのですが、`MainWindow.xaml`を`BOM付き UTF-8`にすれば修正可能です。  
 名前をつけて保存を選んで
 
-![Imgur](https://imgur.com/xjXabZk.png)
+![Imgur](https://i.imgur.com/xjXabZk.png)
 
 エンコード付きで保存を押します
 
-![Imgur](https://imgur.com/zvD3bXm.png)
+![Imgur](https://i.imgur.com/zvD3bXm.png)
 
 `UTF-8 シグネチャ付き`を選びます
 
-![Imgur](https://imgur.com/dww7gDo.png)
+![Imgur](https://i.imgur.com/dww7gDo.png)
 
 これで治りました。やったー
 
-![Imgur](https://imgur.com/G28D8dh.png)
+![Imgur](https://i.imgur.com/G28D8dh.png)
 
 # インストーラー / zipファイル を作る
 配布する前まで頑張って作ってください。。  
@@ -173,13 +173,13 @@ P1: ExampleWinUI3.exe
 ...
 ```
 
-![Imgur](https://imgur.com/MS2hqyu.png)
+![Imgur](https://i.imgur.com/MS2hqyu.png)
 
 （`Windows`だとアプリが起動できないログが`イベントビューアー`というアプリに保存されます。）
 
 これを治すためには、プロジェクトを押して、`プロジェクト ファイルの編集`を押します。
 
-![Imgur](https://imgur.com/04nGhnM.png)
+![Imgur](https://i.imgur.com/04nGhnM.png)
 
 そしたら、以下の二行を`<PropertyGroup>`の中に足します。以下のように
 
@@ -188,41 +188,41 @@ P1: ExampleWinUI3.exe
 <WindowsPackageType>None</WindowsPackageType>
 ```
 
-![Imgur](https://imgur.com/JnyEk77.png)
+![Imgur](https://i.imgur.com/JnyEk77.png)
 
 また、これを記述したあとは、以下の`Unpackaged`の方を実行する必要があります。
 
-![Imgur](https://imgur.com/8d1lZOc.png)
+![Imgur](https://i.imgur.com/8d1lZOc.png)
 
 ## zip で配布する
 お手軽ですが、スタートメニューに自動で追加とかは出来ません。（インストーラーが必要です。）  
 ソリューションを右クリックして、発行を押します。
 
-![Imgur](https://imgur.com/vIOvS6i.png)
+![Imgur](https://i.imgur.com/vIOvS6i.png)
 
 `x64`でいいはず。
 
-![Imgur](https://imgur.com/krNSydi.png)
+![Imgur](https://i.imgur.com/krNSydi.png)
 
 `すべての設定を表示`を押して、構成を `Release | x64`、配置モードを`フレームワーク依存`、ファイルの公開オプションを開き、`単一ファイルの作成`へチェックマークを入れるといいと思います。  
 自己完結だと`.NET`が`exe`の中に入るため、`.NET`がインストールされてなくても起動できる一方、バイナリサイズがとても大きくなってしまいます。  
 `単一ファイル`にチェックすることで、`WPF`の時は`exe一個`にまとめることが出来たのですが、`WindowsAppSDK`ではなんか出来ないっぽいです。。。が一応チェックを入れています。
 
-![Imgur](https://imgur.com/vxJUHwY.png)
+![Imgur](https://i.imgur.com/vxJUHwY.png)
 
 あとは`発行を押します`
 
-![Imgur](https://imgur.com/x3VuimK.png)
+![Imgur](https://i.imgur.com/x3VuimK.png)
 
 終わったら開いてみましょう。どうですか？開けましたか！？！？！？
 
-![Imgur](https://imgur.com/uBW8rkA.png)
+![Imgur](https://i.imgur.com/uBW8rkA.png)
 
 わーい 🎉🎉🎉
 
 `zip`ファイルで配布する場合は、`exe`があるフォルダを全部圧縮して、適当なところで公開すればいいと思います。  
 
-![Imgur](https://imgur.com/6NQwLow.png)
+![Imgur](https://i.imgur.com/6NQwLow.png)
 
 ## インストーラーで配布する
 `WPF`版もあります : https://takusan.negitoro.dev/posts/windows_dot_net5_wpf_making_installer/
@@ -230,34 +230,34 @@ P1: ExampleWinUI3.exe
 `Visual Studio`に拡張機能を入れます。  
 https://marketplace.visualstudio.com/items?itemName=VisualStudioClient.MicrosoftVisualStudio2022InstallerProjects  
 
-![Imgur](https://imgur.com/fyrpu84.png)
+![Imgur](https://i.imgur.com/fyrpu84.png)
 
 ### インストーラーを作ります
 ソリューションを右クリックしてプロジェクトを追加します。
 
-![Imgur](https://imgur.com/WkmA5P8.png)
+![Imgur](https://i.imgur.com/WkmA5P8.png)
 
 `Setup Project`を押します
 
-![Imgur](https://imgur.com/Orx43SZ.png)
+![Imgur](https://i.imgur.com/Orx43SZ.png)
 
 名前をよしなに変えて done
 
-![Imgur](https://imgur.com/PHXDCzf.png)
+![Imgur](https://i.imgur.com/PHXDCzf.png)
 
 こんな感じになるはず
 
-![Imgur](https://imgur.com/ZKho35D.png)
+![Imgur](https://i.imgur.com/ZKho35D.png)
 
 ### 配布設定をする
 ここの手順は`zipファイル`で配布するのと同じですね。  
 `WinUI 3`プロジェクトを右クリックして`発行`を押します。
 
-![Imgur](https://imgur.com/lbXgO7x.png)
+![Imgur](https://i.imgur.com/lbXgO7x.png)
 
 `x64`にします（最近はほとんど`x64`でいいはず）
 
-![Imgur](https://imgur.com/HmD4hpN.png)
+![Imgur](https://i.imgur.com/HmD4hpN.png)
 
 `すべての設定を表示`から、以下のように変更します。
 
@@ -269,7 +269,7 @@ https://marketplace.visualstudio.com/items?itemName=VisualStudioClient.Microsoft
 - ファイルの構成オプション の 単一ファイルの作成
     - どっちでもいいはず？
 
-![Imgur](https://imgur.com/eH7On5E.png)
+![Imgur](https://i.imgur.com/eH7On5E.png)
 
 出来たら`保存`してください。
 
@@ -278,31 +278,31 @@ https://marketplace.visualstudio.com/items?itemName=VisualStudioClient.Microsoft
 
 ソリューションエクスプローラーから、さっきつくったインストーラーを右クリックして、`File System`を開きます。
 
-![Imgur](https://imgur.com/ZajMDN9.png)
+![Imgur](https://i.imgur.com/ZajMDN9.png)
 
 `Application Folder`を選び、`プロジェクト出力`を押します。
 
-![Imgur](https://imgur.com/hd4UGFL.png)
+![Imgur](https://i.imgur.com/hd4UGFL.png)
 
 `項目の公開`、を選んで`OK`します
 
-![Imgur](https://imgur.com/JRzkQ1W.png)
+![Imgur](https://i.imgur.com/JRzkQ1W.png)
 
 ### 項目の公開と WinUI 3 の成果物を紐付ける
 ソリューションエクスプローラーから、さっきつくった`項目の公開`を右クリックして`プロパティ`を押します。
 
-![Imgur](https://imgur.com/O4IOuOp.png)
+![Imgur](https://i.imgur.com/O4IOuOp.png)
 
 `プロパティ`の中の`PublishProperties`のドロップダウンメニューを押すと、なんか3つくらいでてくると思うので、`x64`と書いてある方を選びます。
 
-![Imgur](https://imgur.com/xTWghXF.png)
+![Imgur](https://i.imgur.com/xTWghXF.png)
 
 
 ### その他の値もセットする
 ソリューションエクスプローラーで、インストーラープロジェクトをクリックし、下のプロパティから、  
 `TargetPlatform`を`x64`にします。
 
-![Imgur](https://imgur.com/Zr71CAO.png)
+![Imgur](https://i.imgur.com/Zr71CAO.png)
 
 また、以下の値も変えておくと良いでしょう。
 - ProductName
@@ -314,110 +314,110 @@ https://marketplace.visualstudio.com/items?itemName=VisualStudioClient.Microsoft
 - Manufactor
     - 作者？
 
-![Imgur](https://imgur.com/b9f5lva.png)
+![Imgur](https://i.imgur.com/b9f5lva.png)
 
 ### インストーラーをつくる
 やる必要があるのか知りませんが、実行ボタンの隣りにあるドロップダウンメニュー、`Release`と`x64`にしておきました。
 
-![Imgur](https://imgur.com/mZnQnBB.png)
+![Imgur](https://i.imgur.com/mZnQnBB.png)
 
 あとは、ソリューションエクスプローラーのインストーラープロジェクトを右クリックして、`ビルド`を押すことで開始できます。
 
-![Imgur](https://imgur.com/rbTE2Do.png)
+![Imgur](https://i.imgur.com/rbTE2Do.png)
 
 はい！！！
 
-![Imgur](https://imgur.com/5ILfBZx.png)
+![Imgur](https://i.imgur.com/5ILfBZx.png)
 
 こんな感じにインストーラーが出来ているはず  
 
-![Imgur](https://imgur.com/qekx5gU.png)
+![Imgur](https://i.imgur.com/qekx5gU.png)
 
 `UAC`たまによく気付かないんだけど私だけ？
 
-![Imgur](https://imgur.com/B16QsQt.png)
+![Imgur](https://i.imgur.com/B16QsQt.png)
 
 ちゃんとアンインストールもできます。
 
-![Imgur](https://imgur.com/IQqIjOT.png)
+![Imgur](https://i.imgur.com/IQqIjOT.png)
 
 ### スタートメニューに表示させる
 `File System`から、`User's Programs Menu`を押し右クリックして`新しいショートカットの作成`を押します。  
 
-![Imgur](https://imgur.com/clwg7Je.png)
+![Imgur](https://i.imgur.com/clwg7Je.png)
 
 `Application Folder`から、`項目の公開`を選び`OK`します。
 
-![Imgur](https://imgur.com/OHIRIP2.png)
+![Imgur](https://i.imgur.com/OHIRIP2.png)
 
 名前はプロジェクトから変えることが出来ます。
 
-![Imgur](https://imgur.com/wg5lRo8.png)
+![Imgur](https://i.imgur.com/wg5lRo8.png)
 
 これでスタートメニューに出てくるはず
 
-![Imgur](https://imgur.com/8cmpOjR.png)
+![Imgur](https://i.imgur.com/8cmpOjR.png)
 
 ### アイコン変更
 `WPF`のときとほぼ同じですが・・・  
 `GIMP`とかを使って`128x128`の`ico`ファイルを作ってください。
 
-![Imgur](https://imgur.com/cDPEUYA.png)
+![Imgur](https://i.imgur.com/cDPEUYA.png)
 
 `WinUI 3`のプロジェクトを右クリックして、`プロパティ`に進みます。  
 
-![Imgur](https://imgur.com/KCKXOsQ.png)
+![Imgur](https://i.imgur.com/KCKXOsQ.png)
 
 リソースを押して、まだ作っていない場合は`作成する/開く`を押します
 
-![Imgur](https://imgur.com/YEWbgAl.png)
+![Imgur](https://i.imgur.com/YEWbgAl.png)
 
 そしたらここに`.ico`を投げ込みます。
 
-![Imgur](https://imgur.com/X0gNVt9.png)
+![Imgur](https://i.imgur.com/X0gNVt9.png)
 
-![Imgur](https://imgur.com/ZwthLDj.png)
+![Imgur](https://i.imgur.com/ZwthLDj.png)
 
 また、ソリューションエクスプローラーから、先程追加した`ico`のプロパティを開き、`ビルドアクション`を`リソース`にします。
 
-![Imgur](https://imgur.com/6lwQMAv.png)
+![Imgur](https://i.imgur.com/6lwQMAv.png)
 
 #### アプリ自体のアイコン
 
 アプリのアイコンの設定は、さっきの`WinUI 3`のプロパティのここです。
 
-![Imgur](https://imgur.com/20ir0jH.png)
+![Imgur](https://i.imgur.com/20ir0jH.png)
 
 変わってるはず？
 
-![Imgur](https://imgur.com/PKdTDUs.png)
+![Imgur](https://i.imgur.com/PKdTDUs.png)
 
 こっちを変更するのはまた別に `C#` コードを書かないといけないそうです・・・  
 参考 : https://github.com/microsoft/WindowsAppSDK/issues/1914
 
-![Imgur](https://imgur.com/8IsyRHI.png)
+![Imgur](https://i.imgur.com/8IsyRHI.png)
 
 #### ショートカットのアイコン
 インストーラープロジェクトの`File System`より、`Application Folder`を右クリックして、`ファイル`を押します。
 
-![Imgur](https://imgur.com/W6meUvY.png)
+![Imgur](https://i.imgur.com/W6meUvY.png)
 
 あとはさっき追加した`ico`を探して追加します。
 
-![Imgur](https://imgur.com/7RNmmUA.png)
+![Imgur](https://i.imgur.com/7RNmmUA.png)
 
 そのあと、`User's Programs Menu`より先程作ったショートカットを選び、プロパティの`Icon`にあるドロップダウンメニューをおし、`Browse...`を押します。
 
-![Imgur](https://imgur.com/LbhjU4e.png)
+![Imgur](https://i.imgur.com/LbhjU4e.png)
 
 でてきたら、`Application Folder`にさっき追加した`ico`があると思うので、それを選べばOKです！
 
-![Imgur](https://imgur.com/UVG2J8a.png)
+![Imgur](https://i.imgur.com/UVG2J8a.png)
 
 これで再度ビルドしてみて、実際にインストールするとこうなるはず！  
 どうでしょう？？？？
 
-![Imgur](https://imgur.com/FjY3IWb.png)
+![Imgur](https://i.imgur.com/FjY3IWb.png)
 
 # おわりに
 ここまでのソースコードです。  
@@ -427,7 +427,7 @@ https://github.com/takusan23/ExampleWinUI3Installer
 
 と、、思ったんですけど`.pubxm`が追跡対象外だった...
 
-![Imgur](https://imgur.com/GXxdRWt.png)
+![Imgur](https://i.imgur.com/GXxdRWt.png)
 
 # おわりに
 マウスのショートカットキー割り当て機能でよくない？？？？ってインストーラー作ってるときに思いました。

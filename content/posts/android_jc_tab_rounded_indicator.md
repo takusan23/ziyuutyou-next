@@ -13,7 +13,7 @@ tags:
 最近のマテリアルデザインにあるタブの下の選択中を示す棒の端っこが丸いやつをやりたい。  
 ちなみにこれはPlayStore。オープンソースライセンス見るとComposeの文字が...？
 
-![Imgur](https://imgur.com/DS6aAR4.png)
+![Imgur](https://i.imgur.com/DS6aAR4.png)
 
 # コード
 
@@ -75,4 +75,4 @@ fun RoundedIndicatorTabRow() {
 
 以上です。お疲れさまでした。
 
-![Imgur](https://imgur.com/ibFilId.png)
+![Imgur](https://i.imgur.com/ibFilId.png)

@@ -7,54 +7,54 @@ tags:
 ---
 どうもこんばんわ。セレクトオブリージュ 攻略しました。深夜販売で買ってきたげーむ。  
 
-![Imgur](https://imgur.com/mTb9wBO.png)
+![Imgur](https://i.imgur.com/mTb9wBO.png)
 
 くくるちゃん目的！！！だったけど  
 会長さんルートも結構良かった。てか買うまで分からんかった・・って気持ちになった。
 
-![Imgur](https://imgur.com/k0AqFDY.png)
+![Imgur](https://i.imgur.com/k0AqFDY.png)
 
 そのうえ側近ちゃんがまたかわいい。うおおお  
 ちびきゃらイベントCGがかわいかった。
 
-![Imgur](https://imgur.com/ki4ZH7C.png)
+![Imgur](https://i.imgur.com/ki4ZH7C.png)
 
 ！！！！！！？！？！！
 
-![Imgur](https://imgur.com/Vhz2iNc.png)
+![Imgur](https://i.imgur.com/Vhz2iNc.png)
 
 これすち
 
-![Imgur](https://imgur.com/eLhWofW.png)
+![Imgur](https://i.imgur.com/eLhWofW.png)
 
 妹ちゃんルートは別に妹ちゃんルートでやんなくても、、みたいなシナリオだったかな。  
 
-![Imgur](https://imgur.com/ZBHncYK.png)
+![Imgur](https://i.imgur.com/ZBHncYK.png)
 
 ぴしゃん・・・
 
-![Imgur](https://imgur.com/A7kHXld.png)
+![Imgur](https://i.imgur.com/A7kHXld.png)
 
 ！！！！！！  
 くくるちゃんルートが一番良かった。です
 
-![Imgur](https://imgur.com/y5b59LT.png)
+![Imgur](https://i.imgur.com/y5b59LT.png)
 
 食べキャラかわいいわね
 
-![Imgur](https://imgur.com/xFUncUy.png)
+![Imgur](https://i.imgur.com/xFUncUy.png)
 
-![Imgur](https://imgur.com/OqA2Y0B.png)
+![Imgur](https://i.imgur.com/OqA2Y0B.png)
 
 これです。これこれ
 
-![Imgur](https://imgur.com/OWEyi5m.png)
+![Imgur](https://i.imgur.com/OWEyi5m.png)
 
-![Imgur](https://imgur.com/bukAJr3.png)
+![Imgur](https://i.imgur.com/bukAJr3.png)
 
 ぜひくくるちゃんルートを！
 
-![Imgur](https://imgur.com/Cmc23bR.png)
+![Imgur](https://i.imgur.com/Cmc23bR.png)
 
 # 本題
 写真管理アプリによくある、 **似ている画像や重複している画像を消しますか？** ってやつ。あれってどうやって動いてるんだろう？。  
@@ -73,7 +73,7 @@ tags:
 
 とか言ってもよく分からんと思うので`Figma`で書いてきました。  
 
-![Imgur](https://imgur.com/Au1edd8.png)
+![Imgur](https://i.imgur.com/Au1edd8.png)
 
 ## dHash
 くわしくは  
@@ -87,7 +87,7 @@ https://www.hackerfactor.com/blog/index.php?/archives/529-Kind-of-Like-That.html
 
 とか言ってもやっぱり分からんと思うので、これもついでに書いてきました。  
 
-![Imgur](https://imgur.com/rrm8FdN.png)
+![Imgur](https://i.imgur.com/rrm8FdN.png)
 
 ## pHash
 説明を読んだけど難しくて断念。知らない言葉だらけだ。。。
@@ -100,7 +100,7 @@ https://www.hackerfactor.com/blog/index.php?/archives/529-Kind-of-Like-That.html
 どう並べるかは人それぞれだと思いますが、大抵は、左上（`x=0, y=0`）から始まり、一番左（`x=0, y=7`）まで来たら、1個下に下がって、左から右へ。  
 ビッグエンディアンで入れていこうと思うので、2進数から見て一番左が `x=0, y=0`、一番右が `x=7, y=7` の比較結果になるようにしたいと思います。
 
-![Imgur](https://imgur.com/2aNusa6.png)
+![Imgur](https://i.imgur.com/2aNusa6.png)
 
 まあ`long`に押し込めるという理由で`8x8`になっているはずで、押し込める理由がなければ`16x16`とかでもできると思います。  
 でもビット演算がやりにくいと思うので`long`に押し込めておけばいいと思った。
@@ -354,7 +354,7 @@ private fun MainScreen() {
 これで実行すると、こんな感じにボタンと`000...`の羅列を表示してる`Text()`があるはず。  
 ボタンを押して画像を選ぶと、`aHash / dHash`が計算されます。比較できるわけじゃないので、だから何？感がある。
 
-![Imgur](https://imgur.com/rZF76U4.png)
+![Imgur](https://i.imgur.com/rZF76U4.png)
 
 ## 比較機能をつける
 `MainScreen()`にボタンを増やして、二枚目の画像を選ぶボタンと、計算するボタンを置きました。  
@@ -454,7 +454,7 @@ private fun MainScreen() {
 できた！！！！！  
 似ていれば`1.0`に近い値が出てくるはずです！！！
 
-![Imgur](https://imgur.com/58r7X84.png)
+![Imgur](https://i.imgur.com/58r7X84.png)
 
 ## ここまでのソースコード
 https://github.com/takusan23/AndroidCalcImageHash
@@ -464,19 +464,19 @@ https://github.com/takusan23/AndroidCalcImageHash
 
 ### 半分同じ
 
-![Imgur](https://imgur.com/wrF0tZV.png)
+![Imgur](https://i.imgur.com/wrF0tZV.png)
 
 ### 回転
 
-![Imgur](https://imgur.com/lRpXkmS.png)
+![Imgur](https://i.imgur.com/lRpXkmS.png)
 
 ### モノクロにした
 
-![Imgur](https://imgur.com/E2uo3qj.png)
+![Imgur](https://i.imgur.com/E2uo3qj.png)
 
 ### 正方形に切り抜いた
 
-![Imgur](https://imgur.com/Czxl1lD.png)
+![Imgur](https://i.imgur.com/Czxl1lD.png)
 
 # 写真フォルダを走査して重複画像を探したい
 せっかくなので重複画像があれば見つけてくれるアプリを作ってみる。  
@@ -842,9 +842,9 @@ private fun UriImagePreview(
 うーん、スクリーンショットの中にカメラ越しの写真が含まれちゃってるんだけど、そういうものなのかはたまた正しいのか、よく分からんな。。。  
 スクリーンショットも似ているレイアウトのアプリを見つけてくれるときが大半なんだけど、なんかぜんぜん違うのも混じってて、なにか間違えた可能性がある。。。
 
-![Imgur](https://imgur.com/JDRZsmg.png)
+![Imgur](https://i.imgur.com/JDRZsmg.png)
 
-![Imgur](https://imgur.com/k74dffq.png)  
+![Imgur](https://i.imgur.com/k74dffq.png)  
 
 ↑ スクショなのに普通の写真が出てきている？なんか間違えたかな、、、
 
@@ -1186,7 +1186,7 @@ fun analyze() {
 つかってみた。先頭`10`秒までしか見ていないんだけど、解析がちょっとかかる。  
 うまく動いてるっちゃ動いている気がする、、、
 
-![Imgur](https://imgur.com/sEblgLM.png)
+![Imgur](https://i.imgur.com/sEblgLM.png)
 
 ## 削除機能が欲しい
 さて、これは画像ハッシュとか全然関係なく、`Android`の話になります。。  
@@ -1289,13 +1289,13 @@ TextButton(
 というわけで削除機能もつけました！やった！  
 ゴミ箱に移動なので戻せます！
 
-![Imgur](https://imgur.com/pNMYu7T.png)
+![Imgur](https://i.imgur.com/pNMYu7T.png)
 
 ちゃんと`Google フォト`アプリと`Files by Google`アプリのゴミ箱に入ってました。  
 
-![Imgur](https://imgur.com/EczEgI4.png)
+![Imgur](https://i.imgur.com/EczEgI4.png)
 
-![Imgur](https://imgur.com/gj8ZtRP.png)
+![Imgur](https://i.imgur.com/gj8ZtRP.png)
 
 ## データベースにいれるようにしてアプリの再起動に耐えれるように
 ハッシュを求めた結果を`Android`のデータベースに入れました。`Room`、かわらぬ使いやすさ。`Flow<T>`が返せるの、どういう仕組みなんだろう？  

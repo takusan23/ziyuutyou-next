@@ -13,7 +13,7 @@ tags:
 自作`MOD`の`Minecraft 1.21.4`移行記録です。  
 ネタバレしますが今回は特に難しいところはないはず。というかあっさり終わって **これで良いの？** 感がある。一応遊んでみたけど動いてそうなんだよな。
 
-![Imgur](https://imgur.com/fuiRyI6.png)
+![Imgur](https://i.imgur.com/fuiRyI6.png)
 
 今回も今回とて`Fabric`の方々が差分を書いてくれているので、それにのっかります。ありざいす。  
 https://fabricmc.net/2024/12/02/1214.html
@@ -28,7 +28,7 @@ https://takusan.negitoro.dev/posts/minecraft_mod_1_21_2_migration/
 # アイテムのテクスチャ指定が変更
 ブロックのテクスチャで`assets/{mod_id}/blockstates`を作るのと同じように、アイテムでも`assets/{mod_id}/items`を作るようです。  
 
-![Imgur](https://imgur.com/Wescj9U.png)
+![Imgur](https://i.imgur.com/Wescj9U.png)
 
 ファイル名は多分`{アイテムID}.json`で、内容は多分こんな感じ。
 

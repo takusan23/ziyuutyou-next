@@ -11,33 +11,33 @@ tags:
 どうもこんばんわ。  
 FLIP＊FLOP 〜INNOCENCE OVERCLOCK〜 攻略しました。  
 
-![Imgur](https://imgur.com/EitoG0c.png)
+![Imgur](https://i.imgur.com/EitoG0c.png)
 
 めっちゃ あまあまなシナリオ + かわいいヒロイン がいる神ゲーです。ほんとにあまあまでした  
 おじいちゃん何者なの（（？））続編で明かされるんかな  
 
-![Imgur](https://imgur.com/MfIPCOM.png)
+![Imgur](https://i.imgur.com/MfIPCOM.png)
 
-![Imgur](https://imgur.com/pETHOMu.png)
+![Imgur](https://i.imgur.com/pETHOMu.png)
 
 ボクっ娘だ！  
 
-![Imgur](https://imgur.com/058KJPn.png)
+![Imgur](https://i.imgur.com/058KJPn.png)
 
 元気いっぱいイオちゃんかわいい！！  
 
-![Imgur](https://imgur.com/pNBa7tK.png)
+![Imgur](https://i.imgur.com/pNBa7tK.png)
 
 サブヒロインも可愛いけど攻略できない、そんな・・・  
 
-![Imgur](https://imgur.com/y3IH8rp.png)
+![Imgur](https://i.imgur.com/y3IH8rp.png)
 
-![Imgur](https://imgur.com/Bs9JKOg.png)
+![Imgur](https://i.imgur.com/Bs9JKOg.png)
 
 というわけで`OP`の`CD`、開け、、ます！  
 `OP`曲めっちゃいい！
 
-![Imgur](https://imgur.com/NTDg8p2.png)
+![Imgur](https://i.imgur.com/NTDg8p2.png)
 
 # 本題
 `Android`で動画の1コマ1コマを画像として取り出す処理を`Android`でやりたい。  
@@ -290,7 +290,7 @@ val mediaPlayer = MediaPlayer().apply {
 動画というのはほとんど変わらない部分も含まれているわけで、それらは前のフレームを参照してねとすれば、動画ファイルは小さく出来ます。  
 前のフレームに依存する代わりにファイルを小さく出来ました。  
 
-![Imgur](https://imgur.com/bxdpjgF.png)
+![Imgur](https://i.imgur.com/bxdpjgF.png)
 
 ただ、すべてのフレームを前のフレームに依存させてしまうと、今度は巻き戻しができなくなってしまいます。  
 ドロイドくん3つのフレームを表示させたい場合、フレーム単体では表示できないので、それよりも前（上の絵では最初）に戻る必要があります。
@@ -298,7 +298,7 @@ val mediaPlayer = MediaPlayer().apply {
 でも毎回最初に戻っていてはシークがとんでもなく遅くなってしまうので、定期的に**キーフレーム**という、前のフレームに依存しない完全な状態の画像を差し込んでいます。  
 1秒に一回くらいとかですかね。これなら、大幅に戻ったりする必要がなくなるのでシークも早くなります。
 
-![Imgur](https://imgur.com/41S5X2o.png)
+![Imgur](https://i.imgur.com/41S5X2o.png)
 
 もちろん、動画のコーデックはこれ以外の技術を使って動画のファイルサイズを縮小していますが、今回の高速でフレームを取り出す話しには多分関係ないので飛ばします。
 
@@ -319,17 +319,17 @@ val mediaPlayer = MediaPlayer().apply {
 `OPTION_PREVIOUS_SYNC / OPTION_NEXT_SYNC / OPTION_CLOSEST_SYNC`はキーフレームを探すのに対して（フレーム単体で画像になっている）、  
 `OPTION_CLOSEST`はキーフレームからの差分までも見る必要があるため、キーフレームまで移動した後指定時間になるまで進める必要があり、時間がかかるわけです。
 
-![Imgur](https://imgur.com/xUbl57V.png)
+![Imgur](https://i.imgur.com/xUbl57V.png)
 
 そして、`OPTION_CLOSEST`の場合、**おそらく毎回キーフレームまで戻っている？ために遅くなっている？**  
 `MediaMetadataRetriever`も`MediaPlayer`も多分そう。  
 
-![Imgur](https://imgur.com/VaKTjN4.png)
+![Imgur](https://i.imgur.com/VaKTjN4.png)
 
 ## なぜ高速に取り出せると思っているのか
 **キーフレームまで戻るから遅いのでは。巻き戻すわけじゃないから戻らないように時前で書けばいいのでは？？？**  
 
-![Imgur](https://imgur.com/IWrtmJB.png)
+![Imgur](https://i.imgur.com/IWrtmJB.png)
 
 絶対戻らないという前提があれば、連続したフレームを取り出すのも早いんじゃないかという話です。
 
@@ -368,7 +368,7 @@ getVideoFrameBitmap(ms = 99)
 前回の位置から、巻き戻っていない場合は、コンテナから次のデータを取り出してデコーダーに渡すようにします。  
 これをするため、フレームが取得し終わっても`MediaCodec / MediaExtractor`はそのままにしておく必要があります（待機状態というのでしょうか・・）
 
-![Imgur](https://imgur.com/i0ycoYF.png)
+![Imgur](https://i.imgur.com/i0ycoYF.png)
 
 ### MediaCodec とゆかいな仲間たち
 - MediaCodec
@@ -399,7 +399,7 @@ getVideoFrameBitmap(ms = 99)
 - https://github.com/takusan23/AndroidVideoFrameFastNextExtractor/blob/master/app/src/main/java/io/github/takusan23/androidvideoframefastnextextractor/gl/TextureRenderer.kt
 - https://github.com/takusan23/AndroidVideoFrameFastNextExtractor/blob/master/app/src/main/java/io/github/takusan23/androidvideoframefastnextextractor/gl/InputSurface.kt
 
-![Imgur](https://imgur.com/HM50HvO.png)
+![Imgur](https://i.imgur.com/HM50HvO.png)
 
 ## VideoFrameBitmapExtractor.kt
 適当にクラスを作って、以下の関数を用意します。  
@@ -995,7 +995,7 @@ class MainActivity : ComponentActivity() {
 ちゃんと`Image()`に映像のフレームが写っています。  
 ちょっとずつだけど`進める`を押せば動画も進んでいそう。
 
-![Imgur](https://imgur.com/chqM8U2.png)
+![Imgur](https://i.imgur.com/chqM8U2.png)
 
 # ベンチマーク
 頑張って作ったので、`MediaMetadataRetriever#getFrameAtTime`よりも早くないと困るぞ・・・！  
@@ -1142,33 +1142,33 @@ fun startMediaMetadataRetrieverBenchMark(uri: Uri?) {
 
 https://github.com/takusan23/AndroidVideoFrameFastNextExtractor/blob/875cf02a003a6d186f5b0f695d5ee08e9d895360/app/src/main/java/io/github/takusan23/androidvideoframefastnextextractor/ui/screen/VideoFrameExtractAndSaveScreen.kt#L121
 
-![Imgur](https://imgur.com/26wpmIo.png)
+![Imgur](https://i.imgur.com/26wpmIo.png)
 
 ## 連続して取り出すのは得意
 巻き戻ししなければキーフレームまで戻らないので、次のフレームの取得は早くなります。（コンテナから次のデータ取ってデコーダーに入れてでてくるのを待てば良い）  
 試した感じかなりいい成績ですよ。
 
 自前↓  
-![Imgur](https://imgur.com/26wpmIo.png)
+![Imgur](https://i.imgur.com/26wpmIo.png)
 
 MediaMetadataRetriever↓  
-![Imgur](https://imgur.com/XjQHv1E.png)
+![Imgur](https://i.imgur.com/XjQHv1E.png)
 
 自前↓  
-![Imgur](https://imgur.com/Q7uPn8K.png)
+![Imgur](https://i.imgur.com/Q7uPn8K.png)
 
 MediaMetadataRetriever↓  
-![Imgur](https://imgur.com/DOO21Pl.png)
+![Imgur](https://i.imgur.com/DOO21Pl.png)
 
 ## 苦手なのもある
 連続して取り出さない場合は`MediaMetadataRetriever`の方が早くなることがあります。（1秒で1フレームずつ取り出すとか）  
 あと巻き戻す場合は完敗だとおもいます。
 
 自前↓  
-![Imgur](https://imgur.com/tMKHO7W.png)
+![Imgur](https://i.imgur.com/tMKHO7W.png)
 
 MediaMetadataRetriever↓  
-![Imgur](https://imgur.com/ugXa0dA.png)
+![Imgur](https://i.imgur.com/ugXa0dA.png)
 
 # ソースコードです
 https://github.com/takusan23/AndroidVideoFrameFastNextExtractor
@@ -1237,16 +1237,16 @@ decodeMediaCodec!!.start()
 画像がぶっ壊れている。ちゃんと出てくる画像もあるけど大体失敗してる。  
 ちなみに`Pixel`でも失敗したので`MediaCodec`とか`ImageReader`何もわからない。
 
-![Imgur](https://imgur.com/TKH0WFY.png)  
+![Imgur](https://i.imgur.com/TKH0WFY.png)  
 ↑ 謎の緑の線
 
-![Imgur](https://imgur.com/v17PlQC.png)  
+![Imgur](https://i.imgur.com/v17PlQC.png)  
 ↑ 砂嵐のように何も見えない
 
-![Imgur](https://imgur.com/rO4nnRG.png)  
+![Imgur](https://i.imgur.com/rO4nnRG.png)  
 ↑ Pixel でもだめだった
 
-![Imgur](https://imgur.com/ZPJMzk2.png)  
+![Imgur](https://i.imgur.com/ZPJMzk2.png)  
 ↑ なぜかこれだけ動いた
 
 解決策があるのか不明ですが、、、結局`OpenGL`を一枚噛ませたら直ったのでもうそれで。  
@@ -1364,15 +1364,15 @@ val resultBitmap = bitmap.scale(originWidth, originHeight)
 これが乱れた動画フレーム。  
 デコーダーに入れるべきデータがずれてしまったのが多分原因。
 
-![Imgur](https://imgur.com/Ei09qdC.png)
+![Imgur](https://i.imgur.com/Ei09qdC.png)
 
 `TIMEOUT_US`が`0`になったので、さらに速くなった？リトライが多くなってるとは思うけどコード間違って無ければ問題ないはず。
 
-![Imgur](https://imgur.com/eq7wo7g.png)
+![Imgur](https://i.imgur.com/eq7wo7g.png)
 
 ちなみにこれが`TIMEOUT_US`が`10_000L`だった頃。↑が改善後なので速くなった。  
 
-![Imgur](https://imgur.com/FvPI0Xo.png)
+![Imgur](https://i.imgur.com/FvPI0Xo.png)
 
 修正コミットはこちらです。  
 - https://github.com/takusan23/AndroidVideoFrameFastNextExtractor/commit/0965aa2504377c18b9faafd7b1a18d41f04d73c5

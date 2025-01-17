@@ -34,7 +34,7 @@ Android 11 Beta 1 来ました。
 
 ## Android 11 Beta入れようとしている各位
 Google Pay 使えなくなるらしいよ。DP4の段階では使えたんだけどまた使えなくなった。  
-![Imgur](https://imgur.com/r914HON.png)  
+![Imgur](https://i.imgur.com/r914HON.png)  
 Suica使えるんかな？  
 
 # Device Control API を試す
@@ -43,11 +43,11 @@ Suica使えるんかな？
 [ドキュメント](https://developer.android.com/preview/features/device-control)
 
 # 環境
-|なまえ|あたい|
-|---|---|
-|言語|Kotlin|
-|Android|11 Beta 1|
-|端末|Pixel 3 XL|
+| なまえ  | あたい     |
+|---------|------------|
+| 言語    | Kotlin     |
+| Android | 11 Beta 1  |
+| 端末    | Pixel 3 XL |
 
 ## Android R Betaの環境を揃えます。
 SDK Manager開いて、SDK Platformsタブを押して、**Android 10.0+(R)**にチェックを入れて**Apply**押してダウンロードしましょう。
@@ -199,7 +199,7 @@ override fun createPublisherFor(p0: MutableList<String>): Flow.Publisher<Control
 押すと、コントローラーが提供されているアプリ一覧画面が表示されるので、今作っているアプリを選びましょう。  
 すると、さっき作ったコントローラーが現れるのでチェックを入れて、右下の保存ボタンを押しましょう。  
 
-![Imgur](https://imgur.com/r2Wyog1.png)
+![Imgur](https://i.imgur.com/r2Wyog1.png)
 
 するとコントローラーが追加されているはずです。  
 ですがこの段階では押してもなにも変わらないのでこれから押した時に`ON/OFF`を切り替える処理を書いていきたいと思います。
@@ -249,7 +249,7 @@ override fun performControlAction(p0: String, p1: ControlAction, p2: Consumer<In
 `DeviceType#TYPE_LIGHT`見た目いい感じ。  
 スマートホームやってみたい（金ないけど）
 
-![Imgur](https://imgur.com/2TNFYZz.png)
+![Imgur](https://i.imgur.com/2TNFYZz.png)
 
 # おわりに
 ソースコードです。https://github.com/takusan23/DeviceControlsTest

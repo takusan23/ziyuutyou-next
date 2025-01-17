@@ -17,23 +17,23 @@ tags:
 
 何が悪いのか書いて
 
-![Imgur](https://imgur.com/Bmhd1o6.png)
+![Imgur](https://i.imgur.com/Bmhd1o6.png)
 
 保証を選びます。  
 よく見てなかったけどここにちゃんと交換機と交換って書いてあるじゃん。
 
-![Imgur](https://imgur.com/8mbGPQ5.png)
+![Imgur](https://i.imgur.com/8mbGPQ5.png)
 
 今回はゆうパックで送ります。
 
-![Imgur](https://imgur.com/QDbjtMv.png)
+![Imgur](https://i.imgur.com/QDbjtMv.png)
 
 数十分後にアカウントのデバイス画面から修理の進捗と、メールが届きます。  
 
-![Imgur](https://imgur.com/unjDtYs.png)
+![Imgur](https://i.imgur.com/unjDtYs.png)
 
 
-![Imgur](https://imgur.com/q5P9qcL.png)
+![Imgur](https://i.imgur.com/q5P9qcL.png)
 
 ## Surfaceのデータを消す
 消します。  
@@ -46,7 +46,7 @@ tags:
 
 ↓ 法人向けモデルのせいなのかダンボールに入っていたのでそのまましまって送った。
 
-![Imgur](https://imgur.com/LZQfv2m.png)
+![Imgur](https://i.imgur.com/LZQfv2m.png)
 
 ## 郵便局ヘ行く
 窓口で**着払いのゆうパックで送りたいんですけど**って言えば伝票をくれますので、台で必須項目を書きます。  
@@ -63,16 +63,16 @@ tags:
 ## 交換機到着
 日本郵便で送ってくれます。
 
-![Imgur](https://imgur.com/VPbKjZM.png)
+![Imgur](https://i.imgur.com/VPbKjZM.png)
 
-![Imgur](https://imgur.com/v9nnkNx.png)
+![Imgur](https://i.imgur.com/v9nnkNx.png)
 
-![Imgur](https://imgur.com/BtfEQQq.png)
+![Imgur](https://i.imgur.com/BtfEQQq.png)
 
 Windows 10が入ってました。  
 ひたすらWindows Update (反射やば)
 
-![Imgur](https://imgur.com/FaWnEyj.png)
+![Imgur](https://i.imgur.com/FaWnEyj.png)
 
 以上です。  
 ファンがないのでエロゲやるのに便利ですね。

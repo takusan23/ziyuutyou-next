@@ -53,7 +53,7 @@ akashic export html --bundle --magnify --minify --output export
 `--minify`を指定して必要なファイルを極限まで減らします。
 
 これでHTMLを用意できました。  
-![Imgur](https://imgur.com/f4QhGBO.png)
+![Imgur](https://i.imgur.com/f4QhGBO.png)
 
 **あとは生成されたHTMLファイルの`<title>`を書き換えて名前を変えましょう**
 
@@ -126,7 +126,7 @@ index.htmlのあるところに`sw.js`を作成します。
 
 # ここまででできたファイル
 `image`フォルダ以外はみんなあるよね？  
-![Imgur](https://imgur.com/ffmuHM6.png)
+![Imgur](https://i.imgur.com/ffmuHM6.png)
 
 # sw.jsを書く
 sw.js白紙だとインストールのためのバナー（ホーム画面に {アプリ名} を追加）すら出ない模様。  

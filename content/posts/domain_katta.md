@@ -22,17 +22,17 @@ tags:
 
 ## 買い方（いる？）
 1:ほしいの選ぶ。  
-![Imgur](https://imgur.com/SkLuylR.png)
+![Imgur](https://i.imgur.com/SkLuylR.png)
 
 スイッチとかはそのままにして次へ
 
 2:自分の情報入れる。  
-![Imgur](https://imgur.com/TLrH5Gb.png)
+![Imgur](https://i.imgur.com/TLrH5Gb.png)
 
 Whoisって言うドメイン所有者を検索できる機能があるそうですが、ここに入力した情報は表示されないそうです。てかそうじゃないと困る
 
 3:支払い  
-![Imgur](https://imgur.com/r18xLqi.png)
+![Imgur](https://i.imgur.com/r18xLqi.png)
 
 ~~消費税怖い~~
 
@@ -59,15 +59,15 @@ Registry Tech ID: REDACTED FOR PRIVACY
 
 そしたらこんな感じに買ったドメインを入れて（今回はサブドメインにした）  
 
-![Imgur](https://imgur.com/xqMeXJO.png)
+![Imgur](https://i.imgur.com/xqMeXJO.png)
 
 DNSがなんとかって出るので押すと、この画面が出ると思います。  
 この値は使うのでChrome二窓しましょう。  
-![Imgur](https://imgur.com/Whn3UvK.png)
+![Imgur](https://i.imgur.com/Whn3UvK.png)
 
 そしたら、**Google Domains**のナビゲーションドロワーにある**DNS**を押して、一番下に有る（編集時現在）**カスタム リソースレコード**にスクショのように情報を入れます（入力する内容は人それぞれ違いますからね！）。
 
-![Imgur](https://imgur.com/mg8hT6S.png)
+![Imgur](https://i.imgur.com/mg8hT6S.png)
 
 以上です。後は待つだけです。私は一時間しない間位に買ったドメインでNetlifyのページを開くことができました。わーい
 
@@ -76,13 +76,13 @@ DNSがなんとかって出るので押すと、この画面が出ると思い�
 # Google Analytics 直す
 を開いて、**管理**を押して、**プロパティ設定**選んで、**デフォルトのURL**を直してあげます。`https://`はドロップダウンメニューにすでにあるので、`https://`抜いたURLを書きましょう。
 
-![Imgur](https://imgur.com/ILmGn11.png)
+![Imgur](https://i.imgur.com/ILmGn11.png)
 
 ~~まあAnalytics置いたところで検索エンジンに乗らない(なんで？)ので意味ない~~
 
 # おわりに
 Google Domainsで購入する際に`営利目的もしくは商用利用で利用する場合のみ利用できる`みたいなことが書いてあったんだけど大丈夫かな（？）  
-![Imgur](https://imgur.com/RtQKKEj.png)
+![Imgur](https://i.imgur.com/RtQKKEj.png)
 
 # 参考にしました
 ありがとうございます

@@ -14,7 +14,7 @@ tags:
 自作 MOD の`Minecraft 1.21.2`への移行メモです。  
 移行メモ振り返ってみたけど、`1.20.6`から全部今年なの・・・
 
-![Imgur](https://imgur.com/HxnQHhK.png)
+![Imgur](https://i.imgur.com/HxnQHhK.png)
 
 今回も地味に大変だった。前回のエンチャント作り直しよりはマシかな？  
 レシピ周り（`ServerWorld#getRecipeManager`とか）触ってなければ多分今回のアップデートは怖くない。はず。

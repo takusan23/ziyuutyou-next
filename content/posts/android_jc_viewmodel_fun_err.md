@@ -13,13 +13,13 @@ WWDCも夜勤で見れません。あとまいてつがセール中なんだっ�
 
 `viewModel()`関数がなんか赤くなってる。別にバージョンもいじってないのに
 
-![Imgur](https://imgur.com/Nt8YeKE.png)
+![Imgur](https://i.imgur.com/Nt8YeKE.png)
 
 # 直し方
 
 左上の`File`から`Invalidate Caches/ Restart...`を選んで、`Invalidate and Restart`を押せば勝手にAndroid Studioが再起動する。
 
-![Imgur](https://imgur.com/alXmBnd.png)
+![Imgur](https://i.imgur.com/alXmBnd.png)
 
 # 終わりに
 `Jetpack Compose`では`ViewModel`を使わないみたいなのを観測したけどどういうことなの？  

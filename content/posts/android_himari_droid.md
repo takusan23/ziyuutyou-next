@@ -17,17 +17,17 @@ tags:
 `mp4`だと勘違いしてどこでも再生できると思われてしまうから嫌な場合、`WebM`に書き込む処理を自前で実装して追加したので使ってね。  
 そんな事あるのか知らないけど、考え過ぎか？
 
-![Imgur](https://imgur.com/d48c4Iu.png)
+![Imgur](https://i.imgur.com/d48c4Iu.png)
 
 何回か`webm`のバイナリ触ったので何となくは分かってたんですが、それでもめっちゃ大変でした。  
 
 - https://github.com/takusan23/HimariDroid/blob/master/himari-webm/src/main/java/io/github/takusan23/himariwebm/HimariWebm.kt
 - https://takusan.negitoro.dev/posts/tag/WebM/
 
-![Imgur](https://imgur.com/wjH8mi1.png)
+![Imgur](https://i.imgur.com/wjH8mi1.png)
 
 `AV1`エンコーダーが`targetSdk 34 (Android 14)`からっぽいので、`最低 Android バージョン`は`14`です。  
-![Imgur](https://imgur.com/dECAUna.png)
+![Imgur](https://i.imgur.com/dECAUna.png)
 
 以上です。
 

@@ -26,7 +26,7 @@ https://search.google.com/search-console/welcome?hl=ja
 
 で、本来は認証のためにいくつか作業が必要そうですが、**なんかGoogle Domainsでドメインを取ったおかげか自動で認証されました。**
 
-![Imgur](https://imgur.com/DFjFW8r.png)
+![Imgur](https://i.imgur.com/DFjFW8r.png)
 
 # サイトマップを書き出す
 ## Nuxt.js での作業
@@ -126,14 +126,14 @@ export default {
 
 ナビゲーションドロワーの中から`サイトマップ`を選んで、`新しいサイトマップの追加`にURLを入れます。
 
-![Imgur](https://imgur.com/szoUpIE.png)
+![Imgur](https://i.imgur.com/szoUpIE.png)
 
 あとは数日待てばいいらしい。
 
 # URL 検査 # とは
 URLを入れるとoogle検索で見つけることができるか(登録済みかどうか)を確認できる機能です。
 
-![Imgur](https://imgur.com/7PXFURn.png)
+![Imgur](https://i.imgur.com/7PXFURn.png)
 
 でもなんか見つからなかった
 
@@ -141,13 +141,13 @@ URLを入れるとoogle検索で見つけることができるか(登録済み�
 
 こんな感じに
 
-![Imgur](https://imgur.com/sr3hFm3.png)
+![Imgur](https://i.imgur.com/sr3hFm3.png)
 
 # なんかリンクがおかしい
 
 `URL 検査`のカバレッジを眺めてみると、なんかURLが違うんですよね
 
-![Imgur](https://imgur.com/N7eo5oE.png)
+![Imgur](https://i.imgur.com/N7eo5oE.png)
 
 これどうやら`<link data-n-head="ssr" rel="canonical" href="">`が悪さをしているっぽいですね。  
 

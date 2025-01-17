@@ -12,11 +12,11 @@ tags:
 
 いいね！次回作も予約した
 
-![Imgur](https://imgur.com/kBGvFeJ.png)
+![Imgur](https://i.imgur.com/kBGvFeJ.png)
 
 丁寧に書かれてて？良かったと思います
 
-![Imgur](https://imgur.com/gZpbJXu.png)
+![Imgur](https://i.imgur.com/gZpbJXu.png)
 
 # 本題
 
@@ -60,30 +60,30 @@ https://panda-program.com/posts/nextjs-google-analytics
 # 既存のユニバーサルアナリティクスでGA4を有効にする
 ブラウザでUAの方の設定画面を開いて、`Google アナリティクス 4 プロパティの設定アシスタント`を選んで、始めます
 
-![Imgur](https://imgur.com/FPOrU2F.png)
+![Imgur](https://i.imgur.com/FPOrU2F.png)
 
 こんな画面が出るけど、今回は UA → GA4 へイベントの転送は行わずに、それぞれ対応するのでチェックマークはそのままにして、プロパティを作成をおします。  
 (自分でHTMLを書き換えることが出来ない場合のための処置だと思う)
 
-![Imgur](https://imgur.com/pv04NvW.png)
+![Imgur](https://i.imgur.com/pv04NvW.png)
 
 作成できるとGA4の管理ページへ移動できるボタンが現れるのでそのままおします。
 
-![Imgur](https://imgur.com/FB4Gd2Y.png)
+![Imgur](https://i.imgur.com/FB4Gd2Y.png)
 
 移動したら、`タグの設定`を押して、一つだけデータストリームがあると思うのでそれを選択します。
 
-![Imgur](https://imgur.com/hpg4USI.png)
+![Imgur](https://i.imgur.com/hpg4USI.png)
 
 そしたら、表示されている`測定 ID`を控えます。`G-`から始まるやつですね。
 
-![Imgur](https://imgur.com/pTpOTPf.png)
+![Imgur](https://i.imgur.com/pTpOTPf.png)
 
 ## Next.js(のnext/router)でも動くように対応する
 `測定 ID`を控えた画面にある歯車マーク⚙を押して、拡張計測機能の設定をします。  
 ここの`ページビュー数`の`詳細設定`を押して、**ブラウザの履歴イベントに基づくページの変更**のチェックマークを外して、保存を押します。
 
-![Imgur](https://imgur.com/SciZSld.png)
+![Imgur](https://i.imgur.com/SciZSld.png)
 
 ### なぜ？
 
@@ -349,4 +349,4 @@ npm run start
 
 すれば本番環境のビルド成果物をホストした開発サーバーが立ち上がります。
 
-![Imgur](https://imgur.com/DwEizfq.png)
+![Imgur](https://i.imgur.com/DwEizfq.png)

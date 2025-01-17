@@ -15,10 +15,10 @@ Android 11でメディアの再開ってのができたので、~~真面目に~~
 # 環境
 これを書かないと（記事書いた後に）仕様変更があるかもしれんしな。
 
-|なまえ|あたい|
-|---|---|
-|Android|11 Beta 3|
-|Kotlin|1.4 ←JSみたいに配列の最後に「,」入れても怒られなくなった！|
+| なまえ  | あたい                                                     |
+|---------|------------------------------------------------------------|
+| Android | 11 Beta 3                                                  |
+| Kotlin  | 1.4 ←JSみたいに配列の最後に「,」入れても怒られなくなった！ |
 
 # そもそも MediaSession て何？
 **Always on Display** っていうずっっっと時計を表示できたりする機能があるんですけど、音楽を再生しているとそこに曲名が出るんですよね。  
@@ -46,7 +46,7 @@ https://android-developers.googleblog.com/2020/08/playing-nicely-with-media-cont
 詳しくはここらへん読んで。  
 まあ何ができるようになるかって言うと、**デバイス再起動後に最後に聞いていた曲を再生できる**って機能だと思います。  
 
-![Imgur](https://imgur.com/IpX69hG.png)
+![Imgur](https://i.imgur.com/IpX69hG.png)
 
 このMediaSession通知が表示されるまでに、  
 - `onGetRoot`が呼ばれる（実装で詳しく）
@@ -482,7 +482,7 @@ Activityでも同じようにできると思います。
 ところで`requireContext()`っていつの間にできたの？
 
 # `mediaControllerCompat.transportControls.play()`の結果
-![Imgur](https://imgur.com/9BWwp5X.png)
+![Imgur](https://i.imgur.com/9BWwp5X.png)
 
 いかがでしょうか！！こんな感じになりましたか！？！？
 
@@ -497,7 +497,7 @@ Activityでも同じようにできると思います。
 # 果たして再起動後も音楽の再開ができるのか
 できました。onLoadChildrenで返してる内容が表示されてますね。
 
-![Imgur](https://imgur.com/blfcxsI.png)
+![Imgur](https://i.imgur.com/blfcxsI.png)
 
 # 全コード
 ```kotlin

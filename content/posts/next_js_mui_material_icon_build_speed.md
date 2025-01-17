@@ -69,13 +69,13 @@ export default Home
 
 3.1 MB
 
-![Imgur](https://imgur.com/z4ZXCC2.png)
+![Imgur](https://i.imgur.com/z4ZXCC2.png)
 
 ## import AndroidOutlined from '@mui/icons-material/AndroidOutlined'
 
 965 kB
 
-![Imgur](https://imgur.com/ojVnl0z.png)
+![Imgur](https://i.imgur.com/ojVnl0z.png)
 
 まじ？
 
@@ -186,7 +186,7 @@ npm install babel-plugin-import --save-dev
 
 以上です。これで有効になるはずです。
 
-![Imgur](https://imgur.com/wGoVOy8.png)
+![Imgur](https://i.imgur.com/wGoVOy8.png)
 
 ## ソースコード
 ほい

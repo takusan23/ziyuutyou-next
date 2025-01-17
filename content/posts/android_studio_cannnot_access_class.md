@@ -17,6 +17,6 @@ Cannot access class 'okhttp3.ResponseBody'. Check your module classpath for miss
 
 左上の`File`から、`Invalidate Caches / Restart...`を押せば直った
 
-![Imgur](https://imgur.com/jYKBHg3.png)
+![Imgur](https://i.imgur.com/jYKBHg3.png)
 
 （関係ない話）あとどうでもいいんですけど、このサイト200を返してるし中身もあるのに `ソフト404` 判定を食らってます。はぁ～

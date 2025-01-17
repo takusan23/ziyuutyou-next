@@ -14,19 +14,19 @@ tags:
 
 3人並ぶといいな...まぶしい
 
-![Imgur](https://imgur.com/mzyBGfn.png)
+![Imgur](https://i.imgur.com/mzyBGfn.png)
 
 かわいい！
 
-![Imgur](https://imgur.com/7RoYMk7.png)
+![Imgur](https://i.imgur.com/7RoYMk7.png)
 
 この子が特に可愛かったです
 
-![Imgur](https://imgur.com/acwibMI.png)
+![Imgur](https://i.imgur.com/acwibMI.png)
 
 ↑この目すき
 
-![Imgur](https://imgur.com/cKU7FPr.png)
+![Imgur](https://i.imgur.com/cKU7FPr.png)
 
 
 どうやらルート分岐で選んだ回数によって 告白される or する のどちらかになるっぽいです。すごい
@@ -39,7 +39,7 @@ tags:
 `GitHub Skyline`っていうGitHubの草を3Dモデルで表示できるサービスがあるのですが、これARで見れたら面白いのではと思ったのでやります。  
 3Dプリンターで印刷するためのものなんでしょうが持ってないので...
 
-![Imgur](https://imgur.com/x2Kih8U.png)
+![Imgur](https://i.imgur.com/x2Kih8U.png)
 
 # ARCore の Sceneform ...
 `AR Core`といえば、簡単に使える`Sceneform`ってライブラリがあったと思います！  
@@ -50,7 +50,7 @@ https://takusan23.github.io/Bibouroku/2020/04/06/ARCore/
 それを使いたい、、、のですが、  
 なんと！使えなくなっていました！数年前は使えてたのですが...！おいGoogle！
 
-![Imgur](https://imgur.com/2nBm31S.png)
+![Imgur](https://i.imgur.com/2nBm31S.png)
 
 うーんしゃあない最新の`AR Core`調べるか...  → https://github.com/google-ar/arcore-android-sdk/tree/master/samples/hello_ar_kotlin
 
@@ -91,36 +91,36 @@ Kotlinのサンプルコード、とりあえず実行できたけどどこで�
 
 使う機会なければ`Portable`の方でも良いんじゃないでしょうか（よく分からん）
 
-![Imgur](https://imgur.com/xFNIsKw.png)
+![Imgur](https://i.imgur.com/xFNIsKw.png)
 
 ## GitHub Skyline のオブジェクトを読み込む
 
 `GitHub Skyline`のデータはここからダウンロードできます。
 
-![Imgur](https://imgur.com/Vu7t4lf.png)
+![Imgur](https://i.imgur.com/Vu7t4lf.png)
 
 `Blender`を開き、最初からある立方体はいらないので選んで`Deleteキー`押して消しちゃいましょう。
 
-![Imgur](https://imgur.com/JE0RUTz.png)
+![Imgur](https://i.imgur.com/JE0RUTz.png)
 
 ファイル > インポート > STL を選び、ダウンロードしたオブジェクトを選んで取り込みます。
 
-![Imgur](https://imgur.com/XbuK8O7.png)
+![Imgur](https://i.imgur.com/XbuK8O7.png)
 
 で、これそのまま使うとクソデカいので直します。
 
-![Imgur](https://imgur.com/sRLPLdN.png)
+![Imgur](https://i.imgur.com/sRLPLdN.png)
 
 ちなみにどれぐらいクソデカいかというと、サンプルコードで使われているオブジェクトがこのくらい小さいです。
 
-![Imgur](https://imgur.com/xnBViJF.png)
+![Imgur](https://i.imgur.com/xnBViJF.png)
 
 ### サイズを小さくする
 
 キーボードの`N`を押すことで、`トランスフォーム`を表示させる事ができます。  
 で、`スケール`の部分を全部`0.005`ぐらいにします。
 
-![Imgur](https://imgur.com/IhuLOgX.png)
+![Imgur](https://i.imgur.com/IhuLOgX.png)
 
 これでサンプルと同じぐらいの大きさぐらいに出来ました。保存しましょう。
 
@@ -128,11 +128,11 @@ Kotlinのサンプルコード、とりあえず実行できたけどどこで�
 オブジェクトを選択した状態で、  
 ファイル > エクスポート > Wavefront OBJ を選びます。
 
-![Imgur](https://imgur.com/nYfKgpU.png)
+![Imgur](https://i.imgur.com/nYfKgpU.png)
 
 選択物のみにして、適当な場所に保存します。
 
-![Imgur](https://imgur.com/EVLA3l6.png)
+![Imgur](https://i.imgur.com/EVLA3l6.png)
 
 これでファイルの用意は終わりです。
 
@@ -148,7 +148,7 @@ Android Studio を開きます。
 # 適当なプロジェクトを作成
 `minSdk`は`24`です。
 
-![Imgur](https://imgur.com/MHytvCH.png)
+![Imgur](https://i.imgur.com/MHytvCH.png)
 
 # AndroidManifest.xml
 `カメラ権限`が必要です。また、`uses-feature`をサンプル通り書いておきましたが無くても動くかもしれないです。
@@ -239,7 +239,7 @@ android {
 `hello_ar_kotlin`の`app/src/main/java/com/google/ar/core/examples/java`の中にある`common`をAndroid Studioの`MainActivity.kt`と同じフォルダにコピーします。  
 はい。`import`の部分でエラーが出ると思いますので、エラーの部分を消して`Alt+Enter`してインポートし直せば治ると思います。
 
-![Imgur](https://imgur.com/FtlBwSU.png)
+![Imgur](https://i.imgur.com/FtlBwSU.png)
 
 # 公式のアセットをコピペする
 今回は`OpenGL`の`GLSL言語`で書かれた`シェーダー`もパクることにします。まあ後で少し手直しをしますが。  
@@ -247,7 +247,7 @@ android {
 
 `assets`フォルダを作成して
 
-![Imgur](https://imgur.com/njIeQPa.png)
+![Imgur](https://i.imgur.com/njIeQPa.png)
 
 `hello_ar_kotlin`の`app/src/main/assets`の`models`、`shaders`から以下のファイルをコピーしてきます。
 
@@ -269,12 +269,12 @@ android {
 
 こうなってれば良いはず
 
-![Imgur](https://imgur.com/afuGMoj.png)
+![Imgur](https://i.imgur.com/afuGMoj.png)
 
 # オブジェクトファイルを入れる
 さっき作った`models`に`Blender`で保存した`objファイル`をコピーします。
 
-![Imgur](https://imgur.com/SRaUnkt.png)
+![Imgur](https://i.imgur.com/SRaUnkt.png)
 
 これでアセット編は終わりなはず..
 
@@ -748,14 +748,14 @@ class ARCoreOpenGlRenderer(
 
 後は実行してカメラ映像が描画されていれば成功です！
 
-![Imgur](https://imgur.com/02T1zOV.png)
+![Imgur](https://i.imgur.com/02T1zOV.png)
 
 ## 平面とクラウドポイントを描画する
 
 平面はこの白色の三角形のタイルみたいなやつです。  
 クラウドポイントってのはこの青いてんてんのことです。
 
-![Imgur](https://imgur.com/sWGK2wA.png)
+![Imgur](https://i.imgur.com/sWGK2wA.png)
 
 オブジェクトの描画の際に使う`FloatArray`も今回まとめて書いちゃいます。
 
@@ -1687,7 +1687,7 @@ void main() {
 # 完成品
 スクショ下手くそ選手権
 
-![Imgur](https://imgur.com/R15xfnf.png)
+![Imgur](https://i.imgur.com/R15xfnf.png)
 
 ## ざっくり OpenGL
 それぞれの関数がなんか`Win32 API`みたいでなんか慣れない (-1を返したら失敗とか)
@@ -1757,7 +1757,7 @@ GLES30.glDrawArrays(primitiveMode.glesEnum, 0, numberOfVertices);
 GLError.maybeThrowGLException("Failed to draw vertex array object", "glDrawArrays");
 ```
 
-![Imgur](https://imgur.com/jIQrGQL.png)
+![Imgur](https://i.imgur.com/jIQrGQL.png)
 
 # ソースコード
 多分動く。コミット一応分けておきました。
@@ -1772,7 +1772,7 @@ https://github.com/takusan23/ARCoreGitHubSkyline/releases/tag/1.0.0
 
 近くで見るとちゃんと凸凹してる
 
-![Imgur](https://imgur.com/JGt9BvS.png)
+![Imgur](https://i.imgur.com/JGt9BvS.png)
 
 ## Depth API
 写真下手くそですがちゃんと物を検知するようになってます。  
@@ -1792,9 +1792,9 @@ https://github.com/takusan23/ARCoreGitHubSkyline/releases/tag/1.0.0
 
 そういえば、今無き とらのあな秋葉原店A でやってたこれ、行ってきました
 
-![Imgur](https://imgur.com/xQWMb7r.png)
+![Imgur](https://i.imgur.com/xQWMb7r.png)
 
-![Imgur](https://imgur.com/3ALfT8A.png)
+![Imgur](https://i.imgur.com/3ALfT8A.png)
 
 以上です。お疲れ様でした ﾉｼ 888
 

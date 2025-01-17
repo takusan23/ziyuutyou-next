@@ -17,7 +17,7 @@ https://nec-ir-pattern-hex.netlify.app/
 
 ソースコード(`Kotlin/JS製Webアプリ`)：https://github.com/takusan23/IRPatternHex
 
-![Imgur](https://imgur.com/cs6t3lv.png)
+![Imgur](https://i.imgur.com/cs6t3lv.png)
 
 ## 赤外線のパターンを16進数に変換する
 

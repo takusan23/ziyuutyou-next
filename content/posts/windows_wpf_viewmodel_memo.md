@@ -266,7 +266,7 @@ namespace WPFViewModel
 
 以上です。
 
-![Imgur](https://imgur.com/1ybF5lI.png)
+![Imgur](https://i.imgur.com/1ybF5lI.png)
 
 # おわりに
 ソースコード置いておきます。  

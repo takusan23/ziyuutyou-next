@@ -11,7 +11,7 @@ tags:
 # 本題
 コロナカレンダーできました。  
 
-<a href="https://tokyo-covid19-calendar.netlify.app/">![Imgur](https://imgur.com/hm8jXlf.png)
+<a href="https://tokyo-covid19-calendar.netlify.app/">![Imgur](https://i.imgur.com/hm8jXlf.png)
 </a>
 
 
@@ -57,20 +57,20 @@ Netlifyにどうやって**ビルドしてくれ**って頼むかって言うと
 
 **Actions**を見つけてください。
 
-![Imgur](https://imgur.com/jif7sE3.png)
+![Imgur](https://i.imgur.com/jif7sE3.png)
 
 開いたら、`Set up this workflow`を押してみましょう。  
 
-![Imgur](https://imgur.com/8JrO3j1.png)
+![Imgur](https://i.imgur.com/8JrO3j1.png)
 
 もしない場合は `set up a workflow yourself` を押せばいいと思います
 
-![Imgur](https://imgur.com/jMFb5o8.png)
+![Imgur](https://i.imgur.com/jMFb5o8.png)
 
 するとこんな感じのエディタが開きます。  
 ここにコマンドを書いたりするわけですね。  
 
-![Imgur](https://imgur.com/LXLmyZi.png)
+![Imgur](https://i.imgur.com/LXLmyZi.png)
 
 # 実行ボタンを付ける
 今現在（2020/08/24）、初期状態ではGitHub Actionsを実行するボタンは有りません。  
@@ -106,7 +106,7 @@ on:
 今のままだと`blank.yml`ってなってるので、何をするのワークフローなのか名前を変えてあげましょう。  
 今回は`interval_netlify_webhook.yml`とかにしておきますか
 
-![Imgur](https://imgur.com/kiWSwTB.png)
+![Imgur](https://i.imgur.com/kiWSwTB.png)
 
 それとは別に、ワークフローの名前ってのがあります。  
 これはGitHub Actionsの方で使われる名前になります（ファイル名とは別になってる）。  
@@ -120,7 +120,7 @@ name: IntervalNetlifyWebHook
 ```
 
 こういうところで使われている。まあ触ってみるのが一番早い  
-![Imgur](https://imgur.com/xqivVgN.png)
+![Imgur](https://i.imgur.com/xqivVgN.png)
 
 # 書いていく
 ## `on` (トリガー)
@@ -153,7 +153,7 @@ on:
 ### WebHookのURLを生成する
 Netlifyのサイトの設定画面へ入って、  
 `Build & Deploy`を押し、`Build hooks`まで進みます。
-![Imgur](https://imgur.com/eSQp9Bu.png)
+![Imgur](https://i.imgur.com/eSQp9Bu.png)
 
 そしたら`Add build hook`をおして、適当な名前をつけて、URLを生成してもらいましょう。
 
@@ -170,7 +170,7 @@ Netlifyのサイトの設定画面へ入って、
 ## WebHook URLの保存場所
 privateなリポジトリじゃない場合はGitHub Actionsの中身も見れてしまうので(WebHook URL見られるとやばい)、WebHookのURLを別の場所に隠しておきましょう。  
 リポジトリの設定画面へ進んで、`Secrets`を選び、`New Secrets`を押しましょう。  
-![Imgur](https://imgur.com/WZeVJAN.png)
+![Imgur](https://i.imgur.com/WZeVJAN.png)
 
 nameに`WEBHOOK_URL`、valueにNetlifyから生成されたWebHook URLを入れます。
 
@@ -207,26 +207,26 @@ jobs:
 # 早速動かしてみる
 `Start Commit`を押して保存しましょう。  
 
-![Imgur](https://imgur.com/OrYpuL3.png)
+![Imgur](https://i.imgur.com/OrYpuL3.png)
 
 できたらまた`Actions`を開いてください。名前が増えていると思います。
 
 名前を押して`Run workflow`をおして<span style="border: solid 2px green;background-color:green;color:#fff;padding:2px;border-radius:5px"> Run workflow </span>を押しましょう
 
-![Imgur](https://imgur.com/oY70nww.png)
+![Imgur](https://i.imgur.com/oY70nww.png)
 
 # 動いたか
 再読み込み？すると新しくなんかできるので押します。  
-![Imgur](https://imgur.com/4HK9rXd.png)
+![Imgur](https://i.imgur.com/4HK9rXd.png)
 
 そしたら横の`build`を選びます。  
-![Imgur](https://imgur.com/Q254eH2.png)
+![Imgur](https://i.imgur.com/Q254eH2.png)
 
 ちゃんとできてるみたいですね！
 
 そしてNetlifyの方でもビルドが走ってることが確認できました。
 
-![Imgur](https://imgur.com/433LX6W.png)
+![Imgur](https://i.imgur.com/433LX6W.png)
 
 これで自動で指定した時間にNetlifyのビルドをさせることができました。やったぜ  
 コードはここです：[すべてくっつけたコード](#すべてくっつけたコード)

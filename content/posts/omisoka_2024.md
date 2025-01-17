@@ -7,7 +7,7 @@ tags:
 今年の冬寒すぎじゃん？  
 とおもって`Google フォト`見返してたら普通に体温超えの夏だった。
 
-![Imgur](https://imgur.com/fLZUau5.png)
+![Imgur](https://i.imgur.com/fLZUau5.png)
 
 それはそうと、`AWS マネジメントコンソール`がリニューアルしたそうなんですが、あいかわらず横文字でわからん。。。  
 そして円安で`AWS`高いよ～～～～（といってもお一人様`Misskey`が高くて、このサイトはほぼ常時無料枠内）
@@ -28,26 +28,26 @@ tags:
 スマホは買ってない、`Pixel Fold`がずっっっっと売り切れで人気だなーって見てた。  
 母数がなかったのかよほど人気なのかわからん！
 
-![Imgur](https://imgur.com/5ofFRkF.png)
+![Imgur](https://i.imgur.com/5ofFRkF.png)
 
 # えろげしょっぷ
 げっちゅ屋のリアル店舗がなくなってしまった。  
 いくつか写真があるので後で貼ります。そして記事更新できてなくてすいません、、
 
-![Imgur](https://imgur.com/nhxj5Nw.png)
+![Imgur](https://i.imgur.com/nhxj5Nw.png)
 
-![Imgur](https://imgur.com/U9reV9a.png)
+![Imgur](https://i.imgur.com/U9reV9a.png)
 
 あとトレーダー1号店が建て替え工事で、前の3号店が本店になりましたね。2号店は引き続きあります。  
 
-![Imgur](https://imgur.com/Qch5X2R.png)
+![Imgur](https://i.imgur.com/Qch5X2R.png)
 
-![Imgur](https://imgur.com/NdmvhiF.png)
+![Imgur](https://i.imgur.com/NdmvhiF.png)
 
 # 超会議
 いきました
 
-![Imgur](https://imgur.com/76PL8Qq.png)
+![Imgur](https://i.imgur.com/76PL8Qq.png)
 
 # Minecraft
 今年何回アップデートあんねん！！！  
@@ -62,14 +62,14 @@ https://www.nicovideo.jp/watch/sm44212192
 # QRコード決済に入門できなかった
 PayPayでついにQRコード決済に入門しようとしたらだめだった、利用を制限とか言われた。
 
-![Imgur](https://imgur.com/TI490zo.png)
+![Imgur](https://i.imgur.com/TI490zo.png)
 
 使えんのならお前入金の段階で弾いてくれや
 
 # Princess Bride!
 ニコニコが落ちてたときずっとこれ見てた
 
-![Imgur](https://imgur.com/4McbC9a.png)
+![Imgur](https://i.imgur.com/4McbC9a.png)
 
 # Surface 4 んだ
 こわれた
@@ -77,7 +77,7 @@ PayPayでついにQRコード決済に入門しようとしたらだめだった
 # 聞いた曲
 変わったかな
 
-![Imgur](https://imgur.com/JDpIaoU.png)
+![Imgur](https://i.imgur.com/JDpIaoU.png)
 
 # また来年
 年末年始の休みももう折り返しか、  
@@ -86,7 +86,7 @@ PayPayでついにQRコード決済に入門しようとしたらだめだった
 # ついき（2025/01/01）
 アイコン書いたんだった。差し替えておきます
 
-![Imgur](https://imgur.com/2eF1l2I.png)
+![Imgur](https://i.imgur.com/2eF1l2I.png)
 
 # 今年書いた記事
 [Android で HDR 動画の撮影、動画編集アプリを作る](/posts/android_hdr_camera_video_editor/)  

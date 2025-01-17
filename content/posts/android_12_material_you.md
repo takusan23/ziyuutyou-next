@@ -12,7 +12,7 @@ tags:
 どうもこんばんわ。  
 この青空に約束を― 攻略しました。  
 
-![Imgur](https://imgur.com/pbgKYnB.png)
+![Imgur](https://i.imgur.com/pbgKYnB.png)
 
 オープニング曲聞いて気になってたのでやりました。  
 海己ちゃんルートを最後にとっておいてよかった。結ばれるまでのお話が好き。  
@@ -335,7 +335,7 @@ class MainActivity : AppCompatActivity() {
 
 # おわりに
 
-![Imgur](https://imgur.com/rF6V5LB.png)
+![Imgur](https://i.imgur.com/rF6V5LB.png)
 
 サンプルコード置いておきますね。
 

@@ -9,7 +9,7 @@ tags:
 どうもこんばんわ。  
 特に書くことがないのでお正月に`WSL 2`で遊んでた時の画像でもおいておきます。いつか`WSL 2`の記事も書きたい！
 
-![Imgur](https://imgur.com/wOR9dsl.png)
+![Imgur](https://i.imgur.com/wOR9dsl.png)
 
 # 本題
 
@@ -40,7 +40,7 @@ Ok to proceed? (y) y
 
 複数の修正をやってくれるそう。矢印上下キーで移動、スペースでチェックの`ON/OFF`、`A キー`ですべて選択、`Enter キー`で`codemod`実行。
 
-![Imgur](https://imgur.com/SnvCXSv.png)
+![Imgur](https://i.imgur.com/SnvCXSv.png)
 
 `React 19`側の`codemod`もやるか？。やるか。
 
@@ -77,7 +77,7 @@ https://nextjs.org/docs/canary/app/building-your-application/upgrading/version-1
 # 差分
 `page.tsx`と`route.tsx`が
 
-![Imgur](https://imgur.com/h1ZN106.png)
+![Imgur](https://i.imgur.com/h1ZN106.png)
 
 // todo github compare はる  
 https://github.com/takusan23/ziyuutyou-next/commit/008f234a9ecc215f5d2afc43b469cbac40bc2f04
@@ -184,7 +184,7 @@ React.jsx: type is invalid -- expected a string (for built-in components) or a c
 }
 ```
 
-![Imgur](https://imgur.com/a22QZPq.png)
+![Imgur](https://i.imgur.com/a22QZPq.png)
 
 ## SVGR で webpack を使っていたので修正する
 https://nextjs.org/docs/app/api-reference/turbopack
@@ -231,7 +231,7 @@ module.exports = {
 # 開発モードで動いた
 `Turbopack`、速い。。と思う。私の作りが悪い可能性も十分あるけど。
 
-![Imgur](https://imgur.com/Jm1biay.png)
+![Imgur](https://i.imgur.com/Jm1biay.png)
 
 # 静的書き出し出来ない
 このサイトは`Next.js`の` output: 'export'`で動いています。  
@@ -292,7 +292,7 @@ Error: SVG data parsing failed cause invalid attribute at 1:44192 cause expected
 }
 ```
 
-![Imgur](https://imgur.com/ZGGgwZ1.png)
+![Imgur](https://i.imgur.com/ZGGgwZ1.png)
 
 そもそも`静的書き出し`モードで`OGP画像`の生成はドキュメント通りに作るとダメで（`Issue`ある）、代わりに`OGP画像`を返す`Route Handlers`を作ることで`静的書き出し`時に`HTML`とともに画像が生成されるようになります。  
 その`Route Handlers`機能も本当は`静的書き出し`モードでは利用できないのですが、条件を満たした（`GET`リクエストのみ + `Request`の引数を使わない）場合は静的書き出し時に一緒に呼び出され書き出されるようです。
@@ -345,7 +345,7 @@ https://github.com/vercel/satori/blob/57a89ea6b1a4fdf3c273b4f6d4f384fa02cacc5c/s
 てか`Google`で調べたら`utf-8`まで入れてたわ。  
 ちなみにこの`data:`から始まるやつ、`Data URI (URL ?)`とかいう名前がついているらしい。
 
-![Imgur](https://imgur.com/HH8M6bY.png)
+![Imgur](https://i.imgur.com/HH8M6bY.png)
 
 ```tsx
 export async function GET(_: Request, props: PageProps) {
@@ -394,7 +394,7 @@ Failed to build /posts/page/[page]/page: /posts/page/4 (attempt 1 of 3) because 
 Failed to build /posts/page/[page]/page: /posts/page/5 (attempt 1 of 3) because it took more than 60 seconds. Retrying again shortly.
 ```
 
-![Imgur](https://imgur.com/egmNyPv.png)
+![Imgur](https://i.imgur.com/egmNyPv.png)
 
 ただ、後述しますが`GitHub Actions`の環境だとこれがよく出てしまってそうなので、タイムアウトを伸ばすようにしました。。
 
@@ -412,24 +412,24 @@ https://nextjs.org/blog/next-15#advanced-static-generation-control-experimental
 
 # 静的書き出し出来た
 
-![Imgur](https://imgur.com/7ZlLXLf.png)
+![Imgur](https://i.imgur.com/7ZlLXLf.png)
 
 # 本番更新
 `PR`作った、マージします  
 https://github.com/takusan23/ziyuutyou-next/pull/4
 
-![Imgur](https://imgur.com/bJ4h4z4.png)
+![Imgur](https://i.imgur.com/bJ4h4z4.png)
 
 `GitHub Actions`が走っています
 
-![Imgur](https://imgur.com/gdIDt1o.png)
+![Imgur](https://i.imgur.com/gdIDt1o.png)
 
 ## ローカルと同じエラーが出たけどリトライしたら直った話
 ローカルと同じエラーが出てしまった。タイムアウトを伸ばさないから、、、
 
-![Imgur](https://imgur.com/gntj6N7.png)
+![Imgur](https://i.imgur.com/gntj6N7.png)
 
-![Imgur](https://imgur.com/bZkaPx2.png)
+![Imgur](https://i.imgur.com/bZkaPx2.png)
 
 とりあえず今までの`CI`が`5分`以内で終わってたので`5分`、、、と思ったんですけどさっきの`CI`が`4分`かかってるので2倍にした。
 
@@ -444,7 +444,7 @@ module.exports = {
 
 で、伸ばした後リトライしたら逆にいつもの時間で終わった、どういうことなの
 
-![Imgur](https://imgur.com/1uhHkcL.png)
+![Imgur](https://i.imgur.com/1uhHkcL.png)
 
 でも何回か`GitHub Actions`やってるけどやっぱりこのエラーが**出る時は出てしまう**ので伸ばしておくことにしようと思う。  
 
@@ -470,9 +470,9 @@ Failed to build /posts/page/[page]/page: /posts/page/2 (attempt 2 of 3) because 
 ## OGP 画像が一部壊れている
 なんでこんな部分的に壊れるの...？
 
-![Imgur](https://imgur.com/AEvcPDF.png)
+![Imgur](https://i.imgur.com/AEvcPDF.png)
 
-![Imgur](https://imgur.com/DZGyXku.png)
+![Imgur](https://i.imgur.com/DZGyXku.png)
 
 ちなみにエラー。分からん、、
 
@@ -493,7 +493,7 @@ Failed to load dynamic font for 自由帳作直際大変 . Error: [TypeError: fe
 なんかまたタイムアウト系なのでもう一回試したら動いた。  
 ~~なんかすごい`静的書き出しモード`の調子悪い？~~ →うそです。`OGP画像`の件に関しては**私が悪かった**です。
 
-![Imgur](https://imgur.com/wnAeloA.png)
+![Imgur](https://i.imgur.com/wnAeloA.png)
 
 ```plaintext
    Generating static pages
@@ -508,7 +508,7 @@ Failed to load dynamic font for 自由帳作直際大変 . Error: [TypeError: fe
 ~~これ次回以降もなにかの拍子に失敗する可能性があるってこと？~~  
 ~~どうしたものか~~
 
-![Imgur](https://imgur.com/vViq91v.png)
+![Imgur](https://i.imgur.com/vViq91v.png)
 
 **これに関しては私が悪かったです**、原因はフォントファイルが**Web 向けの軽量版**を使ってて、必要な文字が網羅されていないのが原因だった、  
 今まで気付かなかった。。。全部入りの方を使うようにしました。

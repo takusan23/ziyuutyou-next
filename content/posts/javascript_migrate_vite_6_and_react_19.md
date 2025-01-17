@@ -259,7 +259,7 @@ npx codemod@latest react/19/migration-recipe
 
 https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-5.html#isolated-declarations
 
-![Imgur](https://imgur.com/a6HojJg.png)
+![Imgur](https://i.imgur.com/a6HojJg.png)
 
 ```plaintext
 グローバル値と競合するため、'isolatedModules' が有効な場合は、型のみのインポートで宣言する必要があります。ts(2865)

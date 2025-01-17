@@ -40,11 +40,11 @@ PlayConsoleを使い、PlayStoreへアプリを公開する方法を書きます
 # 署名鍵を作成する - Android Studioでの作業
 メニューバーのここです。
 
-![Imgur](https://imgur.com/SbJfYuR.png)
+![Imgur](https://i.imgur.com/SbJfYuR.png)
 
 そしたら、aabの方を選んでください。  
 
-![Imgur](https://imgur.com/AdgEBP6.png)
+![Imgur](https://i.imgur.com/AdgEBP6.png)
 
 ## 署名鍵があれば
 KeyStore作成時に設定した値
@@ -53,18 +53,18 @@ KeyStore作成時に設定した値
 - Key password
 を入れて、
 
-![Imgur](https://imgur.com/9Ax3dPK.png)
+![Imgur](https://i.imgur.com/9Ax3dPK.png)
 
 <span style="padding:2px;border-radius:5px;background:dodgerblue;color:white;">Next</span>を押して次へ進みます。
 
 ## 署名鍵が無い時は作成
 <span style="border: solid 1px gray;padding:2px;border-radius:5px">Create new...</span>を押してください。
 
-![Imgur](https://imgur.com/k67IYmO.png)
+![Imgur](https://i.imgur.com/k67IYmO.png)
 
 こんな画面が出るので、項目を埋めていきましょう。
 
-![Imgur](https://imgur.com/d8FPCip.png)
+![Imgur](https://i.imgur.com/d8FPCip.png)
 
 必須項目は以下です。
 
@@ -85,17 +85,17 @@ KeyStore作成時に設定した値
 
 忘れると二回目以降公開できなくなるので十分気をつけましょう。
 
-![Imgur](https://imgur.com/gX7vYDI.png)
+![Imgur](https://i.imgur.com/gX7vYDI.png)
 
 入力できたら、OKを押しましょう。なんか<span style="color:red">推奨していません</span>みたいなメッセージが出るけど、そのまま閉じればおｋです。
 
 <span style="padding:2px;border-radius:5px;background:dodgerblue;color:white;">Next</span>を押して次へ進みます。
 
-![Imgur](https://imgur.com/9Ax3dPK.png)
+![Imgur](https://i.imgur.com/9Ax3dPK.png)
 
 最後、releaseを選択して、<span style="padding:2px;border-radius:5px;background:dodgerblue;color:white;">Finish</span>を押して.aabを生成します。
 
-![Imgur](https://imgur.com/UPqzNgi.png)
+![Imgur](https://i.imgur.com/UPqzNgi.png)
 
 これでaabファイルを用意できました。次はブラウザでの作業です。
 
@@ -105,11 +105,11 @@ UIが変わりましたね（）
 ## アプリを作成
 を押します。
 
-![Imgur](https://imgur.com/4MVCOH6.png)
+![Imgur](https://i.imgur.com/4MVCOH6.png)
 
 そしたら項目を埋めていきましょう。
 
-![Imgur](https://imgur.com/CodMVOr.png)
+![Imgur](https://i.imgur.com/CodMVOr.png)
 
 ## 米国輸出法 #とは
 よく知らないけど、  
@@ -172,13 +172,13 @@ AndroidでもHTTPSを利用したなら書かないといけないっぽいで�
 
 とりあえずチェックをいれてアプリを作成しましょう(今回のアプリではインターネット使ってない)
 
-![Imgur](https://imgur.com/9XNAAk7.png)
+![Imgur](https://i.imgur.com/9XNAAk7.png)
 
 # 初期設定
 
 ~~前のUIだと入力が終わるとナビゲーションドロワーにチェックマークがついたんだけど新UIには引き継がれなかったか~~昔の話は置いておいて手順を踏んでいきましょう。
 
-![Imgur](https://imgur.com/McE3Wxk.png)
+![Imgur](https://i.imgur.com/McE3Wxk.png)
 
 ## ストアの設定
 で、PlayStoreで公開されるメアドを入力する必要があるので、公開されてもいいメアドを用意しておきましょう。
@@ -192,7 +192,7 @@ Playストアに表示する情報ですね。ここに売り文句を書いて�
 ### フィーチャー グラフィック
 はどこで使ってるのかよくわかりません。少し前のPlayストアならTwitterのヘッダーみたいに表示されてた気がしますが、いつの間にかなくなってたので私は適当に作って入れてます。
 
-![Imgur](https://imgur.com/et7Q7WJ.png)
+![Imgur](https://i.imgur.com/et7Q7WJ.png)
 
 ### スクリーンショット
 私はAndroid StudioのAndroidエミュレータを使ってます。  
@@ -205,7 +205,7 @@ Playストアに表示する情報ですね。ここに売り文句を書いて�
 # アプリ公開
 早速製品版として公開しましょう！。ナビゲーションドロワーの中から製品版を探して選んでください。
 
-![Imgur](https://imgur.com/7NQDgPs.png)
+![Imgur](https://i.imgur.com/7NQDgPs.png)
 
 <span style="padding:2px;border-radius:5px;background:dodgerblue;color:white;">新しいリリースを作成</span>をえらんでaabをアップロードする画面へ進みます。  
 
@@ -220,11 +220,11 @@ Playストアに表示する情報ですね。ここに売り文句を書いて�
     - aab提出時に使う署名とアプリをダウンロードする際の署名がそれぞれ違うので、万が一`KeyStore`を紛失してもGoogle先生と相談すればリセットしてもらえるし、既存ユーザーはそのままアップデートを受け取れる。
     - (多分こんな感じだと思う)
 
-![Imgur](https://imgur.com/jTJaRTX.png)
+![Imgur](https://i.imgur.com/jTJaRTX.png)
 
 そしたら、**App Bundle と APK**の欄に`app-release.aab`をドラッグアンドドロップさせます。
 
-![Imgur](https://imgur.com/MBEp94q.png)
+![Imgur](https://i.imgur.com/MBEp94q.png)
 
 
 ### もしバージョンアップ(二回目以降の提出)させる場合は
@@ -253,18 +253,18 @@ defaultConfig {
 ### リリースノート
 更新内容ですね。最初のバージョンなのでとりあえず初回版とか書いておけばいいと思います。
 
-![Imgur](https://imgur.com/cV2PKiJ.png)
+![Imgur](https://i.imgur.com/cV2PKiJ.png)
 
 できたら 保存 → リリースのレビュー を押します。
 
-![Imgur](https://imgur.com/xmZcl8M.png)
+![Imgur](https://i.imgur.com/xmZcl8M.png)
 
 なんか設定忘れてたっぽいので設定しましょう。
 
 # 国/地域
 製品版の中にあります。
 
-![Imgur](https://imgur.com/Au6CsEq.png)
+![Imgur](https://i.imgur.com/Au6CsEq.png)
 
 `国 / 地域を追加`を押して、一覧の中の一番上に有る`国 / 地域`にチェックを入れることですべての国で使えるようになります。多分大丈夫だと思います。(実は他の国でアプリが公開できなくなった事がある)
 
@@ -274,7 +274,7 @@ defaultConfig {
 <span style="padding:2px;border-radius:5px;background:dodgerblue;color:white;">製品版として公開を開始</span>を押して出てきたダイアログの<span style="padding:2px;border-radius:5px;background:dodgerblue;color:white;">公開</span>を押すことで審査が始まります。  
 スマホに`PlayConsole`アプリを入れておくことで公開された際にプッシュ通知が行きますよーいくいく。
 
-![Imgur](https://imgur.com/6lr58tu.png)
+![Imgur](https://i.imgur.com/6lr58tu.png)
 
 あとは公開されるのを待つだけです。たのしみ～  
 

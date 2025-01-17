@@ -14,9 +14,9 @@ tags:
 自作`MOD`の`Minecraft 1.21`移行記録です。  
 今回も今回とて変更が多かった
 
-![Imgur](https://imgur.com/kTfjOYB.png)
+![Imgur](https://i.imgur.com/kTfjOYB.png)
 
-![Imgur](https://imgur.com/KoqVwLu.png)
+![Imgur](https://i.imgur.com/KoqVwLu.png)
 
 今回も`Fabric`の方々が差分を書いてくれているので、それにのっかります。ありざいす。  
 https://fabricmc.net/2024/05/31/121.html

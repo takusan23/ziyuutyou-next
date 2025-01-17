@@ -9,9 +9,9 @@ tags:
 `Pixel Watch 3`に朝起こしてもらってますが、起こしてくれない時があった！！  
 どうしたんかなって見てみたら、**オーバーヒート**でシャットダウンしてたらしい。腕を怪我する前に守ってくれた模様、ありがと～～
 
-![Imgur](https://imgur.com/HmChxf0.png)
+![Imgur](https://i.imgur.com/HmChxf0.png)
 
-![Imgur](https://imgur.com/1gVdCMF.png)
+![Imgur](https://i.imgur.com/1gVdCMF.png)
 
 # 本題
 `Android`では`HTTP`クライアントライブラリに`OkHttp`をよく使うのですが、**私の家の回線環境のせいなのか**、  
@@ -151,51 +151,51 @@ https://github.com/square/okhttp/issues/506#issuecomment-1024256588
 ### S3
 適当にバケットを作ります。  
 
-![Imgur](https://imgur.com/e7ndSjM.png)
+![Imgur](https://i.imgur.com/e7ndSjM.png)
 
 できたら、開いて、適当にファイルをバケットに入れておきます。  
 このファイルを`Happy Eyeballs`を有効にした`OkHttp`からダウンロード出来るか試します。
 
-![Imgur](https://imgur.com/LOHZ9Pn.png)
+![Imgur](https://i.imgur.com/LOHZ9Pn.png)
 
 ### CloudFront
 ディストリビューションを作成します。  
 オリジンには、さっき作った`S3`を選びます。  
 
-![Imgur](https://imgur.com/wKuwxK8.png)
+![Imgur](https://i.imgur.com/wKuwxK8.png)
 
 オリジンアクセスには`OAC`を使います。  
 `Origin access control settings (recommended)`を選んで、`Create new OAC`を押し、そのままにして作成します。  
 
-![Imgur](https://imgur.com/WudsEd0,png)
+![Imgur](https://i.imgur.com/WudsEd0,png)
 
-![Imgur](https://imgur.com/1odPpiJ.png)
+![Imgur](https://i.imgur.com/1odPpiJ.png)
 
 こんな警告が出るので、後で対応します。
 
-![Imgur](https://imgur.com/S5c0Ji4.png)
+![Imgur](https://i.imgur.com/S5c0Ji4.png)
 
 あとここを選んで、作成すれば良いはず。
 
-![Imgur](https://imgur.com/UFm8chD.png)
+![Imgur](https://i.imgur.com/UFm8chD.png)
 
 作成後、`S3`の設定を変更するよう言われるので、コピーボタンを押して、リンクを押します。
 
-![Imgur](https://imgur.com/KYCtgFn.png)
+![Imgur](https://i.imgur.com/KYCtgFn.png)
 
 アクセス許可を選び
 
-![Imgur](https://imgur.com/3olfd1V.png)
+![Imgur](https://i.imgur.com/3olfd1V.png)
 
 バケットポリシーを押し、貼り付けます（コピーボタンを押したらクリップボードにコピーされるので、あとは貼り付ければ良い）。
 
-![Imgur](https://imgur.com/QvWpU32.png)
+![Imgur](https://i.imgur.com/QvWpU32.png)
 
 ## 疎通確認
 `CloudFront`のディストリビューションに戻って、`ディストリビューションドメイン名`をコピーし、ブラウザのアドレス欄に打ち込みます。  
 そのあと、スラッシュ入れて、アップロードしたファイルの名前（今回は`takusan23_icon.png`）を入れて Enter
 
-![Imgur](https://imgur.com/SKBUxxC.png)
+![Imgur](https://i.imgur.com/SKBUxxC.png)
 
 できた！！！
 
@@ -354,15 +354,15 @@ private fun MainScreen() {
 タイミング良く回線ハズレを引き当てました！！！  
 `Happy Eyeballs`なしの場合はコールバックが一向に呼ばれないので、`Kotlin Coroutines`の`withTimeout { }`のタイムアウトが作動して、タイムアウトになっています。  
 
-![Imgur](https://imgur.com/93WG6Fp.png)
+![Imgur](https://i.imgur.com/93WG6Fp.png)
 
-![Imgur](https://imgur.com/to2d8vy.png)
+![Imgur](https://i.imgur.com/to2d8vy.png)
 
 一方回線ハズレを引いている状態でも、`Happy Eyeballs`が有効だとちゃんとダウンロードできました。  
 
-![Imgur](https://imgur.com/6G3t9fs.png)
+![Imgur](https://i.imgur.com/6G3t9fs.png)
 
-![Imgur](https://imgur.com/0YN7gnS.png)
+![Imgur](https://i.imgur.com/0YN7gnS.png)
 
 # OkHttp アップデート以外で修正したい
 アルファ版だからアップデートは心配という場合は、`DNS`部分をカスタマイズすれば一応は回避できるらしい。
@@ -496,7 +496,7 @@ private fun MainScreen() {
 }
 ```
 
-![Imgur](https://imgur.com/zliyX4M.png)
+![Imgur](https://i.imgur.com/zliyX4M.png)
 
 これでも一応動きますが、多分`Happy Eyeballs`を使えるアルファ版を使うほうが良いような気がする。  
 というのも`Reddit`チームいわく、よく動いているみたい。なので

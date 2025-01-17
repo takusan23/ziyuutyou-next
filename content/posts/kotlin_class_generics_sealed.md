@@ -288,7 +288,7 @@ https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/
 
 試しにさっき作ったクラスをインスタンス化し`is Any`してみますがもちろん`true`になります
 
-![Imgur](https://imgur.com/Bhpg4nM.png)
+![Imgur](https://i.imgur.com/Bhpg4nM.png)
 
 ## Nothing
 https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-nothing.html
@@ -386,7 +386,7 @@ fun main() {
 
 `String`は`Any`を継承しているので、アップキャストにより入れられるはず・・・が入れようとするとエラーになる。継承してるのになぜ？  
 
-![Imgur](https://imgur.com/k8oDSJf.png)
+![Imgur](https://i.imgur.com/k8oDSJf.png)
 
 これは訳あってそうしているらしく、以下のようにダウンキャストの可能性が捨てきれないんですね。（詳しくは `Java ジェネリクス 共変`とかで調べてみてください）  
 参考： https://kotlinlang.org/docs/generics.html#variance

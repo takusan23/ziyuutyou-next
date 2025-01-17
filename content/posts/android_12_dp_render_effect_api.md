@@ -12,7 +12,7 @@ tags:
 
 `Android 12 DP2`に、Viewをぼかしたりできる`RenderEffect API`が追加されたので試してみる
 
-![Imgur](https://imgur.com/aW11fUG.png)
+![Imgur](https://i.imgur.com/aW11fUG.png)
 
 ## 環境
 

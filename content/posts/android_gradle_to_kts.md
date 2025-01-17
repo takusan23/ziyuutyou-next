@@ -257,7 +257,7 @@ android {
 せっかくKotlinで`Gradle`かけるようになったんだし`Gradle Task`に入門してみた。  
 
 ## どういうこと？
-![Imgur](https://imgur.com/sEs48Eb.png)
+![Imgur](https://i.imgur.com/sEs48Eb.png)
 
 を押したときの処理が、`build.gradle.kts`の一番下に書いてある内容なんだけど、  
 
@@ -286,7 +286,7 @@ tasks.register("helloWorld"){
 これではろーわーるどしてくれるタスクが完成です。`Sync now`しますかって上の方に出てると思うので、`Sync now`して、  
 早速実行してみましょう。右上にある`Gradle`を押して、🐘のアイコンを押してmacOSのSpotlightみたいな入力欄が出たら、`gradle helloWorld`と打ちます。これで出るはず。
 
-![Imgur](https://imgur.com/D2KXZ6q.png)
+![Imgur](https://i.imgur.com/D2KXZ6q.png)
 
 これで挨拶してくれれば成功
 
@@ -324,18 +324,18 @@ tasks.register("exportDependency") {
 
 かけたら`Sync now`して実行してみます。
 
-![Imgur](https://imgur.com/pnfG0CG.png)
+![Imgur](https://i.imgur.com/pnfG0CG.png)
 
 実行すると、ファイルが出来ているはずです。
 
-![Imgur](https://imgur.com/kH4LTbg.png)
+![Imgur](https://i.imgur.com/kH4LTbg.png)
 
 オープンソースライブラリ一覧画面を作るときに役に立ちそうですね！
 
 # おまけ 2021/11/23
 `build.gradle.kts`後に謎のエラーが出る場合（文法とかはあってるのに）
 
-![Imgur](https://imgur.com/pZA4RPN.png)
+![Imgur](https://i.imgur.com/pZA4RPN.png)
 
 まずプロジェクトを閉じるかAndroid Studio自体を閉じます。  
 その後、プロジェクトをエクスプローラー（macOSならあの顔のやつ。Finderだっけ？）で開いて、`.idea`を消すか、適当に名前を変えます。  

@@ -13,24 +13,24 @@ tags:
 コイバナ恋愛 攻略しました。めっちゃおもろかったです  
 特に共通ルート面白い！！男友達とバカやってるのがいい。
 
-![Imgur](https://imgur.com/A3ICcod.png)
+![Imgur](https://i.imgur.com/A3ICcod.png)
 
 髪下ろしてるのかわいい
 
-![Imgur](https://imgur.com/iSCoiXi.png)
+![Imgur](https://i.imgur.com/iSCoiXi.png)
 
-![Imgur](https://imgur.com/PIKA4gF.png)
+![Imgur](https://i.imgur.com/PIKA4gF.png)
 
 個別みじかい！！！ただでさえ短い個別がサブカプに取られてて更に短くなってる気がする；；  
 （でもサブカプの話も面白かった）
 
-![Imgur](https://imgur.com/OOWE1Tm.png)
+![Imgur](https://i.imgur.com/OOWE1Tm.png)
 
-![Imgur](https://imgur.com/BGdW24P.png)
+![Imgur](https://i.imgur.com/BGdW24P.png)
 
 （ところでこの手の途中下車パターン（？）ってセーブして先に共通全部見るのがいいのかな、どうなんだろう）
 
-![Imgur](https://imgur.com/5NSCFSh.png)
+![Imgur](https://i.imgur.com/5NSCFSh.png)
 
 おすすめです！
 
@@ -103,11 +103,11 @@ tags:
 - `S3`の静的サイトホスティングは利用しないで、`CloudFront`からリクエストが来たら`S3`から取り出す
     - `CloudFront Functions`を利用する必要があります
 
-![Imgur](https://imgur.com/vFiSanr.png)
+![Imgur](https://i.imgur.com/vFiSanr.png)
 
 ### S3 の静的ホスティング機能を使う
 
-![Imgur](https://imgur.com/j6jUZzv.png)
+![Imgur](https://i.imgur.com/j6jUZzv.png)
 
 前者の`S3 静的サイトホスティング`の方法が簡単ですが、アクセスを`CloudFront`限定にすることが出来ません。  
 `S3`の静的サイトホスティング用のURLがバレた（あるのかな・・）場合、`S3`にアクセスできてしまいます。  
@@ -115,7 +115,7 @@ tags:
 
 ### S3 の静的ホスティング機能を使わない
 
-![Imgur](https://imgur.com/ILoU23a.png)
+![Imgur](https://i.imgur.com/ILoU23a.png)
 
 後者は`S3`からとってくるのは`CloudFront`しか出来ないので、アクセスを`CloudFront`だけに出来ます。  
 一方、`S3の静的サイトホスティング`機能の一つに、**インデックスドキュメント機能**というのが存在し、これは`/`や`/about`等にアクセスが来た際に自動的に`index.html`をレスポンスとして返してくれるのですが、  
@@ -153,7 +153,7 @@ https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/userguide/HostingWebsiteOnS3Se
 `S3`のバケットを作ります、名前はおまかせします。  
 東京リージョンでいいはずですが、`CloudFront`を経由させるので本当に金払いたくなければ安いところでいいんじゃね？知らんけど
 
-![Imgur](https://imgur.com/lNokaFR.png)
+![Imgur](https://i.imgur.com/lNokaFR.png)
 
 その他の設定は変えずに、作ります！
 
@@ -161,9 +161,9 @@ https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/userguide/HostingWebsiteOnS3Se
 が、この時点で`Next.js`の`SSG`をして公開するファイルを生成するのは面倒なので、適当に確認用の`index.html`を書いてアップロードします  
 ところで`VSCode`で`!`を書いた後にエンターを押すと`html`のひな形みたいなのが出てくるんですけど、これ`VSCode`の標準機能なんですかね？
 
-![Imgur](https://imgur.com/ODqYWk9.png)
+![Imgur](https://i.imgur.com/ODqYWk9.png)
 
-![Imgur](https://imgur.com/7xzU4C1.png)
+![Imgur](https://i.imgur.com/7xzU4C1.png)
 
 ```html
 <!DOCTYPE html>
@@ -184,59 +184,59 @@ https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/userguide/HostingWebsiteOnS3Se
 
 `S3`の画面へドラッグアンドドロップすればアップロード出来ます  
 
-![Imgur](https://imgur.com/bg5ZKYt.png)
+![Imgur](https://i.imgur.com/bg5ZKYt.png)
 
-![Imgur](https://imgur.com/8GyMKpQ.png)
+![Imgur](https://i.imgur.com/8GyMKpQ.png)
 
 ## CloudFront のディストリビューションを作る
 さんこう：https://repost.aws/ja/knowledge-center/cloudfront-serve-static-website
 
 `CloudFront`に移動して、`ディストリビューションを作成`を押します  
 
-![Imgur](https://imgur.com/n0H8LPK.png)
+![Imgur](https://i.imgur.com/n0H8LPK.png)
 
 オリジンはさっき作った`S3`のバケットを選びます。  
 ドロップダウンメニューで選べるので入力しなくて済むはず
 
-![Imgur](https://imgur.com/rNqTBCj.png)
+![Imgur](https://i.imgur.com/rNqTBCj.png)
 
 次は`オリジンアクセス`、これは`Origin access control settings (recommended)`を選び、
 
-![Imgur](https://imgur.com/lXj95Ax.png)
+![Imgur](https://i.imgur.com/lXj95Ax.png)
 
 `コントロール設定を作成`を押して作成画面を開きます  
 多分デフォルトで作成すればいいはず、説明とかはおまかせします。
 
-![Imgur](https://imgur.com/LtrEgVJ.png)
+![Imgur](https://i.imgur.com/LtrEgVJ.png)
 
 この警告はディストリビューション作成後に対応するので一旦飛ばします。
 
-![Imgur](https://imgur.com/g0vO4jI.png)
+![Imgur](https://i.imgur.com/g0vO4jI.png)
 
 次は`WAF`ですが、よくわからないので無効にしておきました。
 
-![Imgur](https://imgur.com/HLpM7ip.png)
+![Imgur](https://i.imgur.com/HLpM7ip.png)
 
 これで作成を行います！
 
 そしたら上の方に案内が出ているので、`ポリシーをコピー`して`S3 バケット～`のリンクを開きます。
 
-![Imgur](https://imgur.com/uIDsZst.png)
+![Imgur](https://i.imgur.com/uIDsZst.png)
 
 そしたら、`バケットポリシー`の項目までスクロールして、`編集`を押します
 
-![Imgur](https://imgur.com/lSd7ujJ.png)
+![Imgur](https://i.imgur.com/lSd7ujJ.png)
 
 エディターが表示されるので、さっきコピーした内容を貼り付けて`変更の保存`を押します。
 
 そしたら`CloudFront`に戻ってきてください。アクセスできるか確認します  
 `ディストリビューションドメイン名`をコピーして、後ろに`/index.html`をつけてリクエストしてみます。
 
-![Imgur](https://imgur.com/pE9Kcqj.png)
+![Imgur](https://i.imgur.com/pE9Kcqj.png)
 
 どうでしょう？`index.html`が表示されましたか？
 
-![Imgur](https://imgur.com/yzBH9pn.png)
+![Imgur](https://i.imgur.com/yzBH9pn.png)
 
 ちょっとそれますが`CloudFront`から帰ってきた場合、`CloudFront`側のキャッシュが帰ってきたのか、キャッシュもなく`S3`からとってきたのかはレスポンスヘッダーから見ることが出来ます。  
 一回目は`Miss from cloudfront`、二回目以降は`Hit from cloudfront`が帰ってくるはず。
@@ -262,19 +262,19 @@ X-Cache: Hit from cloudfront
 
 `CloudFront`のディストリビューションを開いて、`編集`を押します。
 
-![Imgur](https://imgur.com/KlyMbGu.png)
+![Imgur](https://i.imgur.com/KlyMbGu.png)
 
 代替ドメイン名という項目があるので、`項目を追加`を押します
 
-![Imgur](https://imgur.com/UY8YeEk.png)
+![Imgur](https://i.imgur.com/UY8YeEk.png)
 
 はい
 
-![Imgur](https://imgur.com/P1egbom.png)
+![Imgur](https://i.imgur.com/P1egbom.png)
 
 これで`変更を保存`しようとすると、、、出来ません。
 
-![Imgur](https://imgur.com/btTeJsA.png)
+![Imgur](https://i.imgur.com/btTeJsA.png)
 
 ```plaintext
 To add an alternate domain name (CNAME) to a CloudFront distribution, you must attach a trusted certificate that validates your authorization to use the domain name. For more details, see: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-requirements
@@ -283,31 +283,31 @@ To add an alternate domain name (CNAME) to a CloudFront distribution, you must a
 `カスタム SSL 証明書 - オプション`の項目もやらないといけないようです。  
 というわけでスクロールして戻って、`証明書をリクエスト`を押します
 
-![Imgur](https://imgur.com/seUSf9U.png)
+![Imgur](https://i.imgur.com/seUSf9U.png)
 
 `AWS Certificate Manager (ACM)`が開くはず、  
 `CloudFront`で使う証明書は**リージョンが**`バージニア北部`である必要があるのでちゃんと確認しましょう。
 
-![Imgur](https://imgur.com/3SRt3iD.png)
+![Imgur](https://i.imgur.com/3SRt3iD.png)
 
 `パブリック証明書をリクエスト`で`次へ`
 
-![Imgur](https://imgur.com/OEjRy9J.png)
+![Imgur](https://i.imgur.com/OEjRy9J.png)
 
 `完全修飾ドメイン名`は`https://こ↑こ↓/index.html`の部分です、`FQDN`とかかっこいい名前がついてる  
 サブドメインじゃない場合はどうなんだろう・・・
 
-![Imgur](https://imgur.com/IaRbDe7.png)
+![Imgur](https://i.imgur.com/IaRbDe7.png)
 
 検証方法は`DNS`でいいはず
 
-![Imgur](https://imgur.com/ckLuPwh.png)
+![Imgur](https://i.imgur.com/ckLuPwh.png)
 
 その他の項目はそのままにして、`リクエスト`を押します
 
 すると上の方に、追加のアクションが必要ですみたいなのが出てくるので、`証明書を表示`を押します。
 
-![Imgur](https://imgur.com/PDBs3kr.png)
+![Imgur](https://i.imgur.com/PDBs3kr.png)
 
 ちょっとスクロールすると、`ドメイン`の項目で`CNAME 名`、`CNAME 値`が表示されているはず。  
 この値を使ってドメインを持っていることを証明します。
@@ -322,25 +322,25 @@ To add an alternate domain name (CNAME) to a CloudFront distribution, you must a
 
 `Cloudflare`の場合は追加で`Proxy`するか選べますが、別にユーザー公開するやつじゃないので`Proxy`するまでもないはずなのでチェックを外して`DNS Only`にします。
 
-![Imgur](https://imgur.com/XItCxB1.png)
+![Imgur](https://i.imgur.com/XItCxB1.png)
 
-![Imgur](https://imgur.com/Z0i2wli.png)
+![Imgur](https://i.imgur.com/Z0i2wli.png)
 
 あとは`AWS`側で証明が終わるまで待ちます。
 
-![Imgur](https://imgur.com/wGa0Dy1.png)
+![Imgur](https://i.imgur.com/wGa0Dy1.png)
 
 終わるとこんな感じにチェックマークが付きます
 
-![Imgur](https://imgur.com/gyYxHX4.png)
+![Imgur](https://i.imgur.com/gyYxHX4.png)
 
 あとは`CloudFront`のディストリビューション設定に戻って、さっき作った証明書を設定します。  
 
-![Imgur](https://imgur.com/RFmtkGx.png)
+![Imgur](https://i.imgur.com/RFmtkGx.png)
 
 これでようやく設定が変更できました。
 
-![Imgur](https://imgur.com/wTqlpd4.png)
+![Imgur](https://i.imgur.com/wTqlpd4.png)
 
 あ、あとリージョンを元の（多分？東京）に戻しておいてね、多分戻ってると思うけど
 
@@ -351,32 +351,32 @@ To add an alternate domain name (CNAME) to a CloudFront distribution, you must a
 
 ↓ 以下現状
 
-![Imgur](https://imgur.com/xSTpY55.png)
+![Imgur](https://i.imgur.com/xSTpY55.png)
 
 `CloudFront`から`関数`を選び、`関数を作成`を押します。  
 
-![Imgur](https://imgur.com/oDbRcgT.png)
+![Imgur](https://i.imgur.com/oDbRcgT.png)
 
-![Imgur](https://imgur.com/B9nRaN2.png)
+![Imgur](https://i.imgur.com/B9nRaN2.png)
 
 いい感じの名前をつけます、説明はお任せ
 
-![Imgur](https://imgur.com/qUbI8q0.png)
+![Imgur](https://i.imgur.com/qUbI8q0.png)
 
 `JavaScript`のコードは以下のものを使うことにします。  
 https://docs.aws.amazon.com/ja_jp/AmazonCloudFront/latest/DeveloperGuide/example-function-add-index.html
 
 書いたら`変更の保存`して、
 
-![Imgur](https://imgur.com/yHePqVR.png)
+![Imgur](https://i.imgur.com/yHePqVR.png)
 
 `発行`を押します
 
-![Imgur](https://imgur.com/iIT1w38.png)
+![Imgur](https://i.imgur.com/iIT1w38.png)
 
 そしたら`関連付けを追加`を押して
 
-![Imgur](https://imgur.com/vz77Ivu.png)
+![Imgur](https://i.imgur.com/vz77Ivu.png)
 
 埋めます。  
 
@@ -384,17 +384,17 @@ https://docs.aws.amazon.com/ja_jp/AmazonCloudFront/latest/DeveloperGuide/example
 - イベントタイプ は`Viewer request`を選ぶ
 - キャッシュビヘイビア は多分`default`？
 
-![Imgur](https://imgur.com/72YY6lN.png)
+![Imgur](https://i.imgur.com/72YY6lN.png)
 
 `関連付けを追加`を押します。
 
 なんか時間かかってるけど待ちます
 
-![Imgur](https://imgur.com/99TDbjq.png)
+![Imgur](https://i.imgur.com/99TDbjq.png)
 
 成功していれば、`index.html`無しで開けるようになっているはずです！
 
-![Imgur](https://imgur.com/TPxfjnN.png)
+![Imgur](https://i.imgur.com/TPxfjnN.png)
 
 ## GitHub Actions で S3 へアップロードし、CloudFront のキャッシュを消す
 
@@ -411,7 +411,7 @@ https://docs.aws.amazon.com/ja_jp/AmazonCloudFront/latest/DeveloperGuide/example
 
 まずは`IAM`の管理画面へ進み、`ID プロバイダ`を押して、`プロバイダを追加を押す`
 
-![Imgur](https://imgur.com/UF4dhWm.png)
+![Imgur](https://i.imgur.com/UF4dhWm.png)
 
 そしたら以下の項目を埋めます
 
@@ -422,20 +422,20 @@ https://docs.aws.amazon.com/ja_jp/AmazonCloudFront/latest/DeveloperGuide/example
 - 対象者
     - `sts.amazonaws.com`
 
-![Imgur](https://imgur.com/gmCr9WM.png)
+![Imgur](https://i.imgur.com/gmCr9WM.png)
 
 埋めたら`サムプリントを取得`を押します、押したらなんか出ます、、がそのままスクロールして`プロバイダを追加`を押して閉じます
 
-![Imgur](https://imgur.com/urqinjn.png)
+![Imgur](https://i.imgur.com/urqinjn.png)
 
 完了したら、上の方に`IAM ロール`を追加しろと出るので、追加します。  
 `ロールの割り当て`を押しましょう
 
-![Imgur](https://imgur.com/b445E8m.png)
+![Imgur](https://i.imgur.com/b445E8m.png)
 
 `新しいロールの作成`、でいいはず
 
-![Imgur](https://imgur.com/GpFnDVp.png)
+![Imgur](https://i.imgur.com/GpFnDVp.png)
 
 ラジオボタンは`ウェブアイデンティティ`を選びます。  
 以下を埋めます（各自違うはず）
@@ -449,22 +449,22 @@ https://docs.aws.amazon.com/ja_jp/AmazonCloudFront/latest/DeveloperGuide/example
 
 ブランチも制限出来るらしいですがとりあえずこれで。
 
-![Imgur](https://imgur.com/sIYD0Ij.png)
+![Imgur](https://i.imgur.com/sIYD0Ij.png)
 
 次は許可する権限を設定する画面です。  
 
-![Imgur](https://imgur.com/9hYBnLL.png)
+![Imgur](https://i.imgur.com/9hYBnLL.png)
 
 多分独自のポリシーを作らないといけないはず・・（読み取り権限を指定した`S3 バケット`に付与、みたいな）  
 がとりあえず今回は`AmazonS3FullAccess`と`CloudFrontFullAccess`を付けました、多分指定したリソース（`S3バケット`、`CloudFront ディストリビューション`）だけにアクセスできるようにするのがお作法な気がする
 
-![Imgur](https://imgur.com/sSTmOuW.png)
+![Imgur](https://i.imgur.com/sSTmOuW.png)
 
-![Imgur](https://imgur.com/7ZJh5Nb.png)
+![Imgur](https://i.imgur.com/7ZJh5Nb.png)
 
 そしたら次へ進み、名前と説明をいい感じに入れて`ロールを作成`を押します
 
-![Imgur](https://imgur.com/JNqcEgo.png)
+![Imgur](https://i.imgur.com/JNqcEgo.png)
 
 これで完了。次は`GitHub Actions`を書いていきます。  
 
@@ -477,35 +477,35 @@ https://docs.aws.amazon.com/ja_jp/AmazonCloudFront/latest/DeveloperGuide/example
 `GitHub`のリポジトリの設定画面から、`Secrets and variables`を押して、`Actions`を押す  
 `New repository secret`を押して、追加画面を出します
 
-![Imgur](https://imgur.com/ZqBwoBs.png)
+![Imgur](https://i.imgur.com/ZqBwoBs.png)
 
-![Imgur](https://imgur.com/dMnmNOL.png)
+![Imgur](https://i.imgur.com/dMnmNOL.png)
 
-![Imgur](https://imgur.com/m2NWHX0.png)
+![Imgur](https://i.imgur.com/m2NWHX0.png)
 
 シークレットに登録する値は以下の4つです。  
 （後述する`GitHub Actions`の`yml`をまるまるコピーする場合）
 
-| なまえ                      | あたい                                                                          |
-|-----------------------------|---------------------------------------------------------------------------------|
-| AWS_ROLE                    | IAM ロールの ARN の値です。コピーしてね ![Imgur](https://imgur.com/VCEf3SQ.png) |
-| AWS_REGION                  | リージョンです、多分東京 `ap-northeast-1` でいいはず？                          |
-| AWS_S3_BACKET               | ビルド成果物を保存する`S3 バケット`の名前です                                   |
-| AWS_CLOUDFRONT_DISTRIBUTION | `CloudFront`のディストリビューションIDです、ID の列に出てるやつ                 |
+| なまえ                      | あたい                                                                            |
+|-----------------------------|-----------------------------------------------------------------------------------|
+| AWS_ROLE                    | IAM ロールの ARN の値です。コピーしてね ![Imgur](https://i.imgur.com/VCEf3SQ.png) |
+| AWS_REGION                  | リージョンです、多分東京 `ap-northeast-1` でいいはず？                            |
+| AWS_S3_BACKET               | ビルド成果物を保存する`S3 バケット`の名前です                                     |
+| AWS_CLOUDFRONT_DISTRIBUTION | `CloudFront`のディストリビューションIDです、ID の列に出てるやつ                   |
 
 出来ました！
 
-![Imgur](https://imgur.com/oPrmpCf.png)
+![Imgur](https://i.imgur.com/oPrmpCf.png)
 
 次は`GitHub Actions`を書いていきます、  
 `Actions`を開きます。既に一個あるので、ここから追加します
 
-![Imgur](https://imgur.com/54DRJCu.png)
+![Imgur](https://i.imgur.com/54DRJCu.png)
 
 一個もない場合は多分こっちの画面が最初から出ると思う。  
 `set up a workflow yourself`を選びます
 
-![Imgur](https://imgur.com/v7ioE15.png)
+![Imgur](https://i.imgur.com/v7ioE15.png)
 
 そして以下のような`yml`を書きます。  
 ビルド成果物のフォルダが`./out`じゃない場合は直してください。
@@ -579,11 +579,11 @@ jobs:
 
 無事一発で通りました、逆に心配で草
 
-![Imgur](https://imgur.com/G2D2W6H.png)
+![Imgur](https://i.imgur.com/G2D2W6H.png)
 
 `S3 のバケット`もみてみましたが、ちゃんと中身あります！
 
-![Imgur](https://imgur.com/Z0DS0EH.png)
+![Imgur](https://i.imgur.com/Z0DS0EH.png)
 
 開いてみましたが、めっちゃ早い気がする！いや気がするじゃなくて実際早い！！！なにこれ！！！  
 `CloudFront`まじ早くない？`Next.js`ももちろん早いんだけど
@@ -592,7 +592,7 @@ jobs:
 さんこう：https://docs.aws.amazon.com/ja_jp/AmazonCloudFront/latest/DeveloperGuide/GeneratingCustomErrorResponses.html  
 
 このままだと存在しない`URL`にアクセスされた際に、`/404/index.html`ではなく`AWS`側のエラー画面が出てしまいます。  
-![Imgur](https://imgur.com/cnFFXfa.png)
+![Imgur](https://i.imgur.com/cnFFXfa.png)
 
 というわけで、`S3`にもなかった場合は`404`ページをブラウザに返してあげるように`CloudFront`を設定します。
 
@@ -605,32 +605,32 @@ https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html
 話を戻して、エラー画面を返す方法ですが、  
 `CloudFront`のディストリビューションを開いて、エラーページを開き、`カスタムエラーレスポンス`を押します。  
 
-![Imgur](https://imgur.com/YG0U6Ht.png)
+![Imgur](https://i.imgur.com/YG0U6Ht.png)
 
 先述の通り、存在しない場合に`S3`側は`403`を返すので、`HTTP エラーコード`は`403`を選びます。  
 `Next.js`の場合、`trailingSlash: true`の場合は`/404/index.html`、`false`の場合は多分`/404.html`で`404 画面`に飛ばせるはず。  
 ステータスコードは`404`で返しておきます。
 
-![Imgur](https://imgur.com/biY2mOA.png)
+![Imgur](https://i.imgur.com/biY2mOA.png)
 
 しばらく待ちます
 
-![Imgur](https://imgur.com/tg1comJ.png)
+![Imgur](https://i.imgur.com/tg1comJ.png)
 
 これで、エラーページが返ってくるようになりました。  
 私も勘違いしてましたが、これはリダイレクトではなく、エラー内容を`CloudFront`側で変更しているだけなので、ブラウザのアドレス欄はそのままになります。
 
-![Imgur](https://imgur.com/Wd8GWFD.png)
+![Imgur](https://i.imgur.com/Wd8GWFD.png)
 
 ## DNS の向き先をホスティングサービスから CloudFront に直す
 まず`CloudFront`のディストリビューションを開いて`ディストリビューションドメイン名`をコピーします
 
-![Imgur](https://imgur.com/N4KZ2Fb.png)
+![Imgur](https://i.imgur.com/N4KZ2Fb.png)
 
 そのあと、使ってるドメインの`DNS`の管理画面で、向き先を変えます（新規サイトの場合は追加します）  
 `CNAME`で、`名前`は使いたいサブドメインを入れて（`APEX`ドメインは知らない）、値にはさっきの`ディストリビューションドメイン名`を入れます
 
-![Imgur](https://imgur.com/4LPwTre.png)
+![Imgur](https://i.imgur.com/4LPwTre.png)
 
 後は暫く待つと、サブドメインでアクセスできるようになってるはずです。  
 `https`なのでちゃんと鍵マークも付いてるはず！
@@ -647,10 +647,10 @@ https://github.com/takusan23/ziyuutyou-next/blob/main/.github/workflows/aws-depl
 早くなってる！
 
 CloudFront  
-![Imgur](https://imgur.com/Aa4VZHf.png)
+![Imgur](https://i.imgur.com/Aa4VZHf.png)
 
 Netlify  
-![Imgur](https://imgur.com/rALu0T5.png)
+![Imgur](https://i.imgur.com/rALu0T5.png)
 
 ## お金がかかるポイント？
 - `S3 - CloudFront` の間のリクエスト回数
@@ -676,7 +676,7 @@ Netlify
 ## おわりに2
 もう誰も読んでないと思うけど
 
-![Imgur](https://imgur.com/m1FiXi4.png)
+![Imgur](https://i.imgur.com/m1FiXi4.png)
 
 冒頭のゲームの話なんですけど（本題関係ない）、デフォルトのフォントが`モトヤマルベリ`で、なんかすごい懐かしい気分になった。丸い感じすき  
 というのも`Android 4 ~ 5`の標準日本語フォントがモトヤマルベリだったんですよね、なんでも`AOSP`のために`Apache License`の元使えるようにしたとかなんとか  
@@ -689,7 +689,7 @@ Netlify
 ## おわりに3 2023/12/26 追記
 2023年 12月 から試しに`CloudFront`からこのブログを配信しています。特に問題は無さそう感。  
 
-![Imgur](https://imgur.com/KUWiRQV.png)
+![Imgur](https://i.imgur.com/KUWiRQV.png)
 
 ```bash
 C:\Users\takusan23>curl -I https://takusan.negitoro.dev/

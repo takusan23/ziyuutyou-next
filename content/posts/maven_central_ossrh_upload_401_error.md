@@ -10,9 +10,9 @@ tags:
 `GitHub Actions`を使ってボタンを押すだけでライブラリのリリース、今日も使おうと思ったら失敗してしまった。  
 その調査です。
 
-![Imgur](https://imgur.com/jPY6u4r.png)
+![Imgur](https://i.imgur.com/jPY6u4r.png)
 
-![Imgur](https://imgur.com/T6cHzV3.png)
+![Imgur](https://i.imgur.com/T6cHzV3.png)
 
 ```plaintext
 Received status code 401 from server: Content access is protected by token
@@ -37,18 +37,18 @@ https://central.sonatype.org/publish/generate-token/
 
 ログインしたら、名前のところのドロップダウンメニューを開いて、`Profile`を押します。  
 
-![Imgur](https://imgur.com/OtbqxgB.png)
+![Imgur](https://i.imgur.com/OtbqxgB.png)
 
 そしたらドロップダウンメニューが出るので、`User Token`を選びます。
 
-![Imgur](https://imgur.com/lRZ7zoW.png)
+![Imgur](https://i.imgur.com/lRZ7zoW.png)
 
 そしたら、`Access User Token`ボタンを押します。  
 ダイアログが出るのでログイン情報を再度入力します。
 
-![Imgur](https://imgur.com/0xv6cDA.png)
+![Imgur](https://i.imgur.com/0xv6cDA.png)
 
-![Imgur](https://imgur.com/AeINvdg.png)
+![Imgur](https://i.imgur.com/AeINvdg.png)
 
 すると、2つの値が生成されます。  
 これを急いでコピーします。どうやら1分で勝手にウィンドウが消えるらしいです（）。  
@@ -82,13 +82,13 @@ nexusPublishing.repositories.sonatype {
 一応ローカルで試して、成功しました。  
 `GitHub Actions`のシークレットの方も更新します。
 
-![Imgur](https://imgur.com/y85zKvC.png)
+![Imgur](https://i.imgur.com/y85zKvC.png)
 
 # GitHub Actions
 ユーザー名、パスワードが変わっただけなので、シークレットを更新して、`GitHub Actions`を起動すれば良いはず。  
 環境変数から取ってる場合`yml`は特に変えるところ無いはず。
 
 きたきた  
-![Imgur](https://imgur.com/8F5BOpK.png)
+![Imgur](https://i.imgur.com/8F5BOpK.png)
 
 以上です。お疲れさまでした

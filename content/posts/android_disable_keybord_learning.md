@@ -9,7 +9,7 @@ tags:
 どうもこんばんわ。  
 これは D.C.4 の 白河ひより ちゃん ↘
 
-![Imgur](https://imgur.com/8dvXL9p.png)
+![Imgur](https://i.imgur.com/8dvXL9p.png)
 
 # 本題
 アプリ側でIMEの学習機能をOFFに出来ます。  
@@ -62,10 +62,10 @@ ChromeとかFirefoxのプライベートモードで~~やましい事を~~検索
 上のEditTextでは何回同じキーワードを入れても学習しない（入力候補に出るが優先順位が変わらない）が、下のEditTextでは特に指定していないため、  
 2回目以降は入力候補に優先的に表示されていると思います。
 
-![Imgur](https://imgur.com/7jRK3ff.png)
+![Imgur](https://i.imgur.com/7jRK3ff.png)
 若干キーボードのUIが変わる。
 
-![Imgur](https://imgur.com/TmbubM2.png)
+![Imgur](https://i.imgur.com/TmbubM2.png)
 
 以上です。
 

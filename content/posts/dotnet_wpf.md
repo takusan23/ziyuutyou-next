@@ -14,10 +14,10 @@ WPFなんてめったに触らんから未来の私がWPFやる時に見に来�
 [WPFアプリ作ったので](../../posts/mousecursor_wpf/)その時に躓いたこ
 
 # 環境
-|なまえ|あたい|
-|---|---|
-|OS|Windows 10 Pro 2004|
-|Visual Studio|Community 2019|
+| なまえ        | あたい              |
+|---------------|---------------------|
+| OS            | Windows 10 Pro 2004 |
+| Visual Studio | Community 2019      |
 
 # .NET Coreってなに
 しらない。なんかよくわからんけど使う。  
@@ -32,7 +32,7 @@ WPFなんてめったに触らんから未来の私がWPFやる時に見に来�
 # プロジェクト作成
 検索ボックスに`wpf`って入れれば出ます。  
 `.NET Framework`じゃないほうを選びましょうね。
-![Imgur](https://imgur.com/BHxIloY.png)
+![Imgur](https://i.imgur.com/BHxIloY.png)
 
 
 その後の`プロジェクト名`とかは各自決めてね。
@@ -102,7 +102,7 @@ namespace DotNetCoreWPF
 
 これでデジタル時計の完成です。はっっや
 
-![Imgur](https://imgur.com/ZmZzxBb.png)
+![Imgur](https://i.imgur.com/ZmZzxBb.png)
 
 # exeにする
 `.NET Framework`時代ではどうやってexeを配布してたのかよくわかりませんが、  
@@ -118,19 +118,19 @@ namespace DotNetCoreWPF
 ## ソリューションエクスプローラー開いて
 名前のところを押して**発行**を押します。
 
-![Imgur](https://imgur.com/xjXxEdu.png)
+![Imgur](https://i.imgur.com/xjXxEdu.png)
 
 **フォルダー**を選んで次へ
 
-![Imgur](https://imgur.com/WBZdhUB.png)
+![Imgur](https://i.imgur.com/WBZdhUB.png)
 
 そのまま**完了**押して良いと思います。
 
-![Imgur](https://imgur.com/gZPdL5D.png)
+![Imgur](https://i.imgur.com/gZPdL5D.png)
 
 そしたら後ろのVS 2019の内容が画像のように変わるので、**構成**のところの鉛筆マークを押します。
 
-![Imgur](https://imgur.com/dGv9U3Z.png)
+![Imgur](https://i.imgur.com/dGv9U3Z.png)
 
 そしてこの先は作りたいexeファイルによって操作が変わります。
 
@@ -139,20 +139,20 @@ namespace DotNetCoreWPF
 プロファイル設定で、**配置モード**を**自己完結**にします。  
 それから、下の**ファイルの公開オプション**を押して、**単一ファイルの作成**にチェックを入れます。
 
-![Imgur](https://imgur.com/ARUKDNH.png)
+![Imgur](https://i.imgur.com/ARUKDNH.png)
 
 そしたら保存して、**発行**ボタンを押せば作成されます。
 作成された`exeファイル`は`bin/Release/netcoreapp3.1/publish`の中にあると思います。
 
 実際に起動してみたの図。これだけなのにファイルサイズでけえ。
-![Imgur](https://imgur.com/hN2DDg4.png)
+![Imgur](https://i.imgur.com/hN2DDg4.png)
 
 # .NET Core ランタイム無しのexeファイルを作成する
 
 プロファイル設定で、**配置モード**を**フレームワーク依存**にします。  
 それから、下の**ファイルの公開オプション**を押して、**単一ファイルの作成**にチェックを入れます。
 
-![Imgur](https://imgur.com/sRKKtZN.png)
+![Imgur](https://i.imgur.com/sRKKtZN.png)
 
 そしたら保存して、**発行**ボタンを押せば作成されます。
 作成された`exeファイル`は`bin/Release/netcoreapp3.1/publish`の中にあると思います。
@@ -160,7 +160,7 @@ namespace DotNetCoreWPF
 
 実際に起動してみたの図。ファイルサイズは小さい。
 
-![Imgur](https://imgur.com/byF4X4v.png)
+![Imgur](https://i.imgur.com/byF4X4v.png)
 
 
 # おわりに

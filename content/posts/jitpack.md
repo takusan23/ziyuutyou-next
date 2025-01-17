@@ -17,7 +17,7 @@ tags:
 上の`File`を押して、`New`を押して、`New Module...`を選択して、  
 `Android Library`を選択して、ライブラリ名をつけます。
 
-![Imgur](https://imgur.com/tQF3cW2.png)
+![Imgur](https://i.imgur.com/tQF3cW2.png)
 
 ## 最初に作ったプロジェクトでライブラリを参照できるようにする
 `app`フォルダにある`build.gradle`(`app/build.gradle`)を開き、`dependencies { }`に書き足します。

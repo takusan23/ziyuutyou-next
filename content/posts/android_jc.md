@@ -54,7 +54,7 @@ if (icon != null) {
 
 多分右下にアップデートする？みたいな通知が出てると思うのでそこから
 
-![Imgur](https://imgur.com/PzEdNV0.png)
+![Imgur](https://i.imgur.com/PzEdNV0.png)
 
 ## Kotlinのアップデート
 `app`フォルダじゃない方の`build.gradle`を開いて、書き換えていきます。
@@ -271,7 +271,7 @@ fun TestComposePreview() {
 
 実行結果
 
-![Imgur](https://imgur.com/MHExL7O.png)
+![Imgur](https://i.imgur.com/MHExL7O.png)
 
 
 ## 好きなUIにクリックイベントを置きたい（`Button { }`以外で押せるようにしたい）
@@ -309,13 +309,13 @@ fun ClickableCompose() {
 ```
 実行結果
 
-![Imgur](https://imgur.com/dHQELFC.png)
+![Imgur](https://i.imgur.com/dHQELFC.png)
 
 ## アイコンを表示 + 押せるようにする
 
 今まで、マテリアルアイコンを使う際は`Asset Studio`からアイコンを持ってくると思うんですが、  
 
-![Imgur](https://imgur.com/QEgIZ6J.png)
+![Imgur](https://i.imgur.com/QEgIZ6J.png)
 
 なんと！`Jetpack Compose`を使うことでコード一行でアイコンを用意できます。`Outlined`以外も用意できます。
 
@@ -364,7 +364,7 @@ fun TestComposePreview() {
 
 実行結果
 
-![Imgur](https://imgur.com/srZwt5e.png)
+![Imgur](https://i.imgur.com/srZwt5e.png)
 
 ## 動画説明文見え隠れするやつ
 
@@ -413,7 +413,7 @@ fun VideoInfo() {
 
 実行結果
 
-![Imgur](https://imgur.com/wwflXdr.png)
+![Imgur](https://i.imgur.com/wwflXdr.png)
 
 ## リスト表示
 
@@ -505,7 +505,7 @@ fun TestComposePreview() {
 こんな感じになると思う。`RecyclerView`より一覧表示がかんたんで嬉しい。  
 (Vue.jsの`v-for`みたいで使いやすい)
 
-![Imgur](https://imgur.com/gh2VjIL.png)
+![Imgur](https://i.imgur.com/gh2VjIL.png)
 
 # Fragment に設置する
 
@@ -644,7 +644,7 @@ fun CardCenterText() {
 
 こんな感じ
 
-![Imgur](https://imgur.com/ejw6EYv.png)
+![Imgur](https://i.imgur.com/ejw6EYv.png)
 
 
 # 遭遇したエラー
@@ -669,7 +669,7 @@ class MainActivity : AppCompatActivity() {
 
 `Make Project`した後に実行させるとうまくいく？
 
-![Imgur](https://imgur.com/QwiEqH5.png)
+![Imgur](https://i.imgur.com/QwiEqH5.png)
 
 ## Type 'TypeVariable(T)' has no method 'getValue(Nothing?, KProperty<*>)' and thus it cannot serve as a delegate
 
@@ -715,7 +715,7 @@ import androidx.compose.ui.unit.dp
 
 `@Preview`のついた関数を消してそのまま実行すると出る。切り替えてあげよう
 
-![Imgur](https://imgur.com/VXetpSK.png)
+![Imgur](https://i.imgur.com/VXetpSK.png)
 
 
 ## java.lang.NoSuchMethodError: No static method ~
@@ -724,13 +724,13 @@ import androidx.compose.ui.unit.dp
 
 ツールバーの`Build`から`Clean Project`を実行した後に再度実行すると直るんじゃないかな
 
-![Imgur](https://imgur.com/O8goR2b.png)
+![Imgur](https://i.imgur.com/O8goR2b.png)
 
 ## なんか真っ赤になった。Importしてもなんか別なのがImportされるんだけど？
 
 `Sync Project`したらなんかアップデートしませんか？(Android Gradle Pluginだと思われ)って聞かれたのでアプデしたらなんか治った。難しいね
 
-![Imgur](https://imgur.com/ZSiRS9T.png)
+![Imgur](https://i.imgur.com/ZSiRS9T.png)
 
 # ソースコード
 `Android Studio Arctic Fox | 2020.3.1 Canary 3`で動作確認済です。  

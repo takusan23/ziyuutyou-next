@@ -64,7 +64,7 @@ tags:
 # Netlify側のビルドを止める
 これはサイトの詳細ページへ進み、`Site settings`を押して、`Build & deploy`を押し、`Stopped builds`を押します。
 
-![Imgur](https://imgur.com/H67TVrn.png)
+![Imgur](https://i.imgur.com/H67TVrn.png)
 
 # 必要な値を集める
 GitHub Actions で利用する環境変数（アクセストークンみたいなやつ）を用意します。
@@ -72,24 +72,24 @@ GitHub Actions で利用する環境変数（アクセストークンみたい�
 ## NETLIFY_AUTH_TOKEN
 アカウントページの`Applications`へ進み、`New access token`を押します
 
-![Imgur](https://imgur.com/fFKKdKT.png)
+![Imgur](https://i.imgur.com/fFKKdKT.png)
 
 コピペして適当な場所に控えておきます。（メモ帳とか）
 
 ## NETLIFY_SITE_ID
 これはサイトの詳細ページへ進み、`Site settings`を押して、`Site ID:`の値をコピーします。ちょうどコピーボタンが出てますね。
 
-![Imgur](https://imgur.com/QrOEe6z.png)
+![Imgur](https://i.imgur.com/QrOEe6z.png)
 
 ## GitHub Actions から参照できるように 環境変数 に追加する
 **Secrets**の中にある**Actions**を押します。
 
-![Imgur](https://imgur.com/FLHXe3c.png)
+![Imgur](https://i.imgur.com/FLHXe3c.png)
 
 そしたら、以下の名前で環境変数を作成します。  
 <span style="border: solid 2px green;background-color:green;color:#fff;padding:2px;border-radius:5px"> New repository secret </span>を押すことで環境変数の追加ができます。
 
-![Imgur](https://imgur.com/oDkdXDx.png)
+![Imgur](https://i.imgur.com/oDkdXDx.png)
 
 | なまえ             | あたい                  |
 |--------------------|-------------------------|
@@ -99,7 +99,7 @@ GitHub Actions で利用する環境変数（アクセストークンみたい�
 # GitHub Actions を組む
 ここから空の`yaml`ファイルが作成できるので
 
-![Imgur](https://imgur.com/nb1dvD4.png)
+![Imgur](https://i.imgur.com/nb1dvD4.png)
 
 あとは以下を参考に作ってください。  
 以下の値は環境によっては違うので、`yaml`調整してください！
@@ -157,24 +157,24 @@ jobs:
 # コミットして実行する
 コミットします。`push`がトリガー？されるので`GitHub Actions`も動くと思います。
 
-![Imgur](https://imgur.com/kWVSwcB.png)
+![Imgur](https://i.imgur.com/kWVSwcB.png)
 
 成功しました。やったぜ～～～  
 それにしても長いな、、、どうしようこれ
 
-![Imgur](https://imgur.com/vCeXSpb.png)
+![Imgur](https://i.imgur.com/vCeXSpb.png)
 
 # おまけ
 
 ## 手動実行ボタン
 ここ
 
-![Imgur](https://imgur.com/S52InIw.png)
+![Imgur](https://i.imgur.com/S52InIw.png)
 
 ## Markdownに貼り付けるステータスバッジ？バッヂ？
 `Create status badge`から`Markdown`をコピーできます
 
-![Imgur](https://imgur.com/3oL1BLX.png)
+![Imgur](https://i.imgur.com/3oL1BLX.png)
 
 # おわりに1
 もしかしたら記事が多すぎたせいかもしれないです。少ない場合は以前通り`Netlify`でビルドできるかもしれないです。

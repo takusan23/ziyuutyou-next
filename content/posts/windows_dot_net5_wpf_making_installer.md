@@ -46,44 +46,44 @@ WPFなアプリの配布用にインストーラーを作成します。
 # 拡張機能を入れる
 こっから入れられます。  
 
-![Imgur](https://imgur.com/Rnu4RDm.png)
+![Imgur](https://i.imgur.com/Rnu4RDm.png)
 
 そしたら、これを入れます。
 
-![Imgur](https://imgur.com/B2g8gdN.png)
+![Imgur](https://i.imgur.com/B2g8gdN.png)
 
 # インストーラープロジェクトを追加する
 ここから追加できます。
 
-![Imgur](https://imgur.com/aLKGMS4.png)
+![Imgur](https://i.imgur.com/aLKGMS4.png)
 
 開いたら、検索ボックスに`setup`とか入れて出てくる、`Setup Project`を選択します。  
 名前とかは各自
 
-![Imgur](https://imgur.com/E9BHzvU.png)
+![Imgur](https://i.imgur.com/E9BHzvU.png)
 
-![Imgur](https://imgur.com/rhQkKNR.png)
+![Imgur](https://i.imgur.com/rhQkKNR.png)
 
 この画面が開けてればおｋ
 
-![Imgur](https://imgur.com/p8lJmcT.png)
+![Imgur](https://i.imgur.com/p8lJmcT.png)
 
 ## .NET 5 で出来たWPFアプリを配布対象にする
 
 そのためにはまず、ソリューションエクスプローラーの、配布したいWPFアプリを選んで右クリックして、発行を押します。  
 
-![Imgur](https://imgur.com/UgmCf4M.png)
+![Imgur](https://i.imgur.com/UgmCf4M.png)
 
 開いたら、フォルダーに発行するようにします。
 
-![Imgur](https://imgur.com/QAJaykP.png)
+![Imgur](https://i.imgur.com/QAJaykP.png)
 
 設定とかはそのままで完了を押せばいいです。
 
 そうしたら、一応配布するexeを一つにまとめるため、`すべての設定を表示`から、ターゲットランタイムを`win-x64`へ、ファイルの公開オプションから、`単一ファイルの作成`にチェックを入れます。  
 これでインストール先に置くファイルの数を減らせます。（まぁインストール先なんてどうでもいいが）
 
-![Imgur](https://imgur.com/QLd15ZC.png)
+![Imgur](https://i.imgur.com/QLd15ZC.png)
 
 # インストーラーで.NET 5なアプリを配布するには
 
@@ -92,44 +92,44 @@ WPFなアプリの配布用にインストーラーを作成します。
 まずはさっきのインストーラープロジェクト作成直後の画面を出します。  
 `File System`ってタブのやつですね。こっから出せます。
 
-![Imgur](https://imgur.com/Ds6RPPp.png)
+![Imgur](https://i.imgur.com/Ds6RPPp.png)
 
 そしたら、ソリューションエクスプローラーのレンチマークを押してプロパティも開きます。  
 
-![Imgur](https://imgur.com/oULsYpT.png)
+![Imgur](https://i.imgur.com/oULsYpT.png)
 
 そうしたら、`File System`の`Application Folder`を右クリックして、`Add` -> `プロジェクト出力`へ進みます。
 
-![Imgur](https://imgur.com/Rbk7i3M.png)
+![Imgur](https://i.imgur.com/Rbk7i3M.png)
 
 そうしたら、プロジェクトのところが配布したいWPFプロジェクトになっているか確認して、`項目の公開`を選択して、構成をそのままにして、`OK`を押します。
 
-![Imgur](https://imgur.com/HIlAKOJ.png)
+![Imgur](https://i.imgur.com/HIlAKOJ.png)
 
 ## 項目の公開 の プロパティ を開きます
 ソリューションエクスプローラーから、項目の公開 (ry を右クリックしてプロパティを開きます。
 
-![Imgur](https://imgur.com/fvFI1ep.png)
+![Imgur](https://i.imgur.com/fvFI1ep.png)
 
 そしたら、`公開するWPFプロジェクト`の、`Properties > PublishProperties > FolderProfile.pubxml`を右クリックして、完全パスをコピーします。
 
-![Imgur](https://imgur.com/q4zscnz.png)
+![Imgur](https://i.imgur.com/q4zscnz.png)
 
 そうしたら、メモ帳とかに貼り付けて、`Properties/PublishProperties/...`の部分をコピーします。
 
-![Imgur](https://imgur.com/B5fc2pV.png)
+![Imgur](https://i.imgur.com/B5fc2pV.png)
 
 そうしたら、Visual Studioへ戻り、項目の公開のプロパティの、`PublishProfilePath`にさっきコピーした値を入れます。
 
-![Imgur](https://imgur.com/Ted2UBZ.png)
+![Imgur](https://i.imgur.com/Ted2UBZ.png)
 
 以上です。ソリューションエクスプローラーからインストーラープロジェクトを右クリックして、`ビルド`を選択しましょう。
 
-![Imgur](https://imgur.com/qOKgwn5.png)
+![Imgur](https://i.imgur.com/qOKgwn5.png)
 
 これで生成できる..はず？
 
-![Imgur](https://imgur.com/de47Xx4.png)
+![Imgur](https://i.imgur.com/de47Xx4.png)
 
 ## 生成できない
 
@@ -150,32 +150,32 @@ regsvr32 ole32.dll
 
 インストーラープロジェクトから変更可能です。`Another`、`ProductName`、`Title`、`Manufactor`あたりを変更すればいいと思います。
 
-![Imgur](https://imgur.com/uvnRSwV.png)
+![Imgur](https://i.imgur.com/uvnRSwV.png)
 
 しっかりアンインストールも出来ます。
 
-![Imgur](https://imgur.com/5p67hQ4.png)
+![Imgur](https://i.imgur.com/5p67hQ4.png)
 
 ## スタートメニューに追加
 インストーラーの利点といえばこれか？
 
 `File System`から、`User's Programs Menu`を選択して、`新しいショートカットを作成`を押します。
 
-![Imgur](https://imgur.com/yGi6hgN.png)
+![Imgur](https://i.imgur.com/yGi6hgN.png)
 
 そしたら、`Application Folder`を選択して、`項目の公開 (以下略`を押して`OK`を押します。
 
-![Imgur](https://imgur.com/0I1uXxU.png)
+![Imgur](https://i.imgur.com/0I1uXxU.png)
 
 そしたら、プロパティを選んで、`(Name)`をアプリ名に変更します。
 
-![Imgur](https://imgur.com/Usk7A9x.png)
+![Imgur](https://i.imgur.com/Usk7A9x.png)
 
 できたら再度ビルドします。
 
 これでスタートに登録も出来ましたね。
 
-![Imgur](https://imgur.com/tgdofmk.png)
+![Imgur](https://i.imgur.com/tgdofmk.png)
 
 以上です。
 
@@ -185,41 +185,41 @@ regsvr32 ole32.dll
 
 ただ、これと別に生まれ変わった`Win11`の`Microsoft Store`では`1080 x 1080`のサイズのアイコンが必要なので、`svg`で作っておくと幸せになれると思います。
 
-![Imgur](https://imgur.com/KXDs6Ws.png)
+![Imgur](https://i.imgur.com/KXDs6Ws.png)
 
 今回は`InkScape`で作りました。`128 x 128`で`png`に書き出して、`GIMP`で`ico`形式に変更します。
 
 ## アイコンを追加
 プロジェクトのプロパティから、リソースを開いて、`ico`ファイルをドラッグアンドドロップします。
 
-![Imgur](https://imgur.com/6t2Weuj.png)
+![Imgur](https://i.imgur.com/6t2Weuj.png)
 
 できたら、`Resources`フォルダに追加されるので、`Resources`フォルダ内にある`ico`のプロパティを開いて、`ビルドアクション`を`リソース`にします。必要かどうかはわかりませんが。
 
-![Imgur](https://imgur.com/vGsX36c.png)
+![Imgur](https://i.imgur.com/vGsX36c.png)
 
 ## WPFのアイコンを設定
 プロジェクトのプロパティを開いて、アプリケーションを押して、`リソース`の中の`アイコン`を変更します。
 
-![Imgur](https://imgur.com/ofWqAxV.png)
+![Imgur](https://i.imgur.com/ofWqAxV.png)
 
 ## インストーラーにアイコンを追加
 インストーラープロジェクトを開いて、ここから追加できます。
 
-![Imgur](https://imgur.com/VkyAMB5.png)
+![Imgur](https://i.imgur.com/VkyAMB5.png)
 
 ## スタートのショートカットのアイコンを設定
 `User's Programs Menu`にあるショートカットのプロパティを開いて、Iconを選んで`Browse`を押します。
 
-![Imgur](https://imgur.com/KAw566a.png)
+![Imgur](https://i.imgur.com/KAw566a.png)
 
 そしたら、`Browse`を押して
 
-![Imgur](https://imgur.com/TxgRhwN.png)
+![Imgur](https://i.imgur.com/TxgRhwN.png)
 
 さっき追加したアイコンを選びます。
 
-![Imgur](https://imgur.com/5X0Guhe.png)
+![Imgur](https://i.imgur.com/5X0Guhe.png)
 
 そしたら、`Current icon`に追加されるので、選択して`OK`を押せば終了です。  
 あとはビルドして完成。
@@ -228,7 +228,7 @@ regsvr32 ole32.dll
 バージョンの番号をあげます。インストーラーとWPFのアプリそれぞれ変更する必要があります。   
 インストーラーの方はバージョンを変更すると`ProductCode`も生成し直すか聞かれるので生成し直します。
 
-![Imgur](https://imgur.com/aZmk39I.png)
+![Imgur](https://i.imgur.com/aZmk39I.png)
 
 それから、`RemovePreviousVersions`を`True`にすると既存のバージョンをアンインストールしてくれるようになります。
 

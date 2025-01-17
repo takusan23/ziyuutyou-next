@@ -7,14 +7,14 @@ tags:
 - JetpackCompose
 ---
 
-<img src="https://imgur.com/fQzaLrQ.png" width=400>
+<img src="https://i.imgur.com/fQzaLrQ.png" width=400>
 
 かわいい（曲もいい）
 
 # 本題
 JetpackComposeで折り返すレイアウトがほしいので作った。 
 
-<img src="https://imgur.com/AgAFKs6.png" width=300>
+<img src="https://i.imgur.com/AgAFKs6.png" width=300>
 
 # 完成品（ライブラリ）はこちら
 
@@ -27,10 +27,10 @@ https://github.com/takusan23/ComposeOrigamiLayout
 ## 環境
 最新の開発環境を使おう
 
-|なまえ|あたい|
-|---|---|
-|Android Studio|Android Studio Arctic Fox 2020.3.1 Canary 9|
-|JetpackCompose|1.0.0-beta01|
+| なまえ         | あたい                                      |
+|----------------|---------------------------------------------|
+| Android Studio | Android Studio Arctic Fox 2020.3.1 Canary 9 |
+| JetpackCompose | 1.0.0-beta01                                |
 
 ## JetpackCompose 導入
 
@@ -330,7 +330,7 @@ class MainActivity : ComponentActivity() {
 
 説明すっとばちゃったけどこんな感じになります。
 
-![Imgur](https://imgur.com/OnLimT7.png)
+![Imgur](https://i.imgur.com/OnLimT7.png)
 
 ## 短い順にしてスペースを有効活用させる
 **並び替えしても問題ないなら**の話ですが  
@@ -456,7 +456,7 @@ fun HomeScreen() {
 
 これで短い順に上から入っていきます。  
 
-![Imgur](https://imgur.com/AgAFKs6.png)
+![Imgur](https://i.imgur.com/AgAFKs6.png)
 
 # おわりに
 ソースコードです。  

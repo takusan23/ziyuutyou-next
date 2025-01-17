@@ -30,7 +30,7 @@ https://takusan.negitoro.dev/posts/surface_pro7_repair/
 `USB メモリ`を抜いたあと再度電源ボタンを押し`Windows`を立ち上げることで、`msconfig`の`セーフモード`地獄から脱出。
 
 # 事の発端
-![Imgur](https://imgur.com/WBpclpf.png)
+![Imgur](https://i.imgur.com/WBpclpf.png)
 
 ↑複製を押しても変わらんしそもそも戻ってしまう。
 
@@ -106,13 +106,13 @@ https://www.microsoft.com/en-us/software-download/windows11
 
 あとは画面に従って`USB メモリ`に入れてください。
 
-![Imgur](https://imgur.com/lLQJ5ex.png)
+![Imgur](https://i.imgur.com/lLQJ5ex.png)
 
 ## インストールを自動化できる AutoUnattend.xml を作成する
 これを作ると、インストールを自動で行えるそうですが、今回は`Windows PE`起動とともにコマンドを叩きたいだけなので、最小限です。  
 `USB メモリ`のルートフォルダに`AutoUnattend.xml`を作り、以下の`xml`を貼り付けます。
 
-![Imgur](https://imgur.com/SKHwhCR.png)
+![Imgur](https://i.imgur.com/SKHwhCR.png)
 
 ```xml
 <unattend xmlns="urn:schemas-microsoft-com:unattend" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State">

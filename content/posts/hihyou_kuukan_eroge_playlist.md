@@ -9,7 +9,7 @@ tags:
 初夢は悪夢でした。いや普段は起きたら忘れちゃうんですけどなんか覚えてた（？）
 
 # 本題
-![Imgur](https://imgur.com/wLn4BDt.png)
+![Imgur](https://i.imgur.com/wLn4BDt.png)
 
 持ってるエロゲソング、いつもアルバムか歌手のプレイリストなので、もっとなんかいい感じのプレイリストを作りたい！！  
 メーカー別とか、年代別とか、OP / 挿入歌 / ED 別とかのプレイリストが欲しい！！！
@@ -113,7 +113,7 @@ fun getFileList(filePath: String): List<File> {
 
 `C:\Users\{ユーザー名}\AppData\Roaming\Sony\Music Center\db`
 
-![Imgur](https://imgur.com/Uaz0tRH.png)
+![Imgur](https://i.imgur.com/Uaz0tRH.png)
 
 テキストの構造ですが、1行ごとが`JSON`になっているみたいなので、1行取り出して、`JSON`パーサーにかけると良いと思います。  
 `kotlinx.serialization`だとこんな感じ？
@@ -141,7 +141,7 @@ fun main(args: Array<String>) {
 
 いいかんじ！！に出力されています！
 
-![Imgur](https://imgur.com/BNJsNGq.png)
+![Imgur](https://i.imgur.com/BNJsNGq.png)
 
 ### Android から取り出す
 `Android`端末が音楽プレイヤーで`Android`の開発環境があれば、曲一覧の取得は多分コレが一番早いかもしれない。  
@@ -395,7 +395,7 @@ private fun generatePlaylistFromHihyoukuukanJson() {
 
 ほい！
 
-![Imgur](https://imgur.com/73hCnYX.png)
+![Imgur](https://i.imgur.com/73hCnYX.png)
 
 あとはプレイリストを作るだけですね！  
 
@@ -438,15 +438,15 @@ private fun generatePlaylistFromHihyoukuukanJson() {
 
 出来てる出来てる
 
-![Imgur](https://imgur.com/VzOIiqy.png)
+![Imgur](https://i.imgur.com/VzOIiqy.png)
 
 `Music Center`のここから、生成した`.m3u8`を取り込めば良いはず！
 
-![Imgur](https://imgur.com/1yVMMwk.png)
+![Imgur](https://i.imgur.com/1yVMMwk.png)
 
 はい！できたああああ
 
-![Imgur](https://imgur.com/XrAqnTe.png)
+![Imgur](https://i.imgur.com/XrAqnTe.png)
 
 ## いろいろ作ってみた
 ブランド別
@@ -498,7 +498,7 @@ musicCategory.forEach { (category, dataList) ->
 
 いい感じ！！
 
-![Imgur](https://imgur.com/45asO1p.png)
+![Imgur](https://i.imgur.com/45asO1p.png)
 
 # もっと頑張らないとダメそう
 次やるならこの点にも気をつけたい

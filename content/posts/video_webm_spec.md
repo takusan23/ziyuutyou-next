@@ -31,7 +31,7 @@ DLしたら mkvtoolnix-gui.exe を起動して、`infoツール`にして`webm`�
 
 https://mkvtoolnix.download/
 
-![Imgur](https://imgur.com/mJvsTSm.png)
+![Imgur](https://i.imgur.com/mJvsTSm.png)
 
 ## ざっくり EBML
 よく `xml` と言われてますが、`xml`にはある終了タグや属性などはないのでどっちかというと `yml (yaml)` が近いと思います。  
@@ -148,7 +148,7 @@ IDの一覧はこれです：https://www.matroska.org/technical/elements.html
 
 こうなりますね？（変換後は`1 1111 0100 0011 1011 0110 0111 0101`になりますが、4桁揃えにするため `0001 1111 0100 0011 1011 0110 0111 0101`にしてます）
 
-![Imgur](https://imgur.com/1Snu6co.png)
+![Imgur](https://i.imgur.com/1Snu6co.png)
 
 で、`1`が左から4番目に立ってますので、IDは**4バイト分**と判断できるわけです。  
 4バイト取り出した `0x1F 0x43 0xB6 0x75` をID一覧から探すと `Cluster` であるとわかりますね。
@@ -189,7 +189,7 @@ https://www.matroska.org/technical/notes.html#ebml-lacing
 
 Element type でわかるはず
 
-![Imgur](https://imgur.com/GrMHZLY.png)
+![Imgur](https://i.imgur.com/GrMHZLY.png)
 
 #### 番外編 なんで賢いのか
 なんで賢いのかというと、IDが知らない/対応していない場合にスキップして次のデータを読み取れるからなんですね。  
@@ -333,7 +333,7 @@ https://www.rfc-editor.org/rfc/rfc7845#section-5
 
 リトルエンディアンなので電卓にそのまま突っ込んでも多分変な値になります。ちなみに正解は10進数で`48000`になるべきです。
 
-![Imgur](https://imgur.com/I14Pec7.png)
+![Imgur](https://i.imgur.com/I14Pec7.png)
 
 さらに`Java (JVM で動く Kotlin も)`もビッグエンディアンなのでおかしくなると思います。
 
@@ -341,7 +341,7 @@ https://www.rfc-editor.org/rfc/rfc7845#section-5
 
 `0x80 0xBB 0x00 0x00` を `0x00 0x00 0xBB 0x80` にした後に電卓に入れると正しい値になると思います。
 
-![Imgur](https://imgur.com/g8UjMba.png)
+![Imgur](https://i.imgur.com/g8UjMba.png)
 
 最後の3バイトはわからん、使わなそうなので`0x00`で埋めてます
 
@@ -981,7 +981,7 @@ private fun String.toAscii() = this.toByteArray(charset = Charsets.US_ASCII)
 
 ちゃんとパーサーに認識されてました
 
-![Imgur](https://imgur.com/lAcMljf.png)
+![Imgur](https://i.imgur.com/lAcMljf.png)
 
 ## 他の要素も作ろう
 
@@ -1184,7 +1184,7 @@ private fun Int.to4ByteArray() = byteArrayOf(
 まぁ動いているのでヨシ！  
 `writing app`好きな文字列にできるのいいな（すごくどうでもいい）
 
-![Imgur](https://imgur.com/Od6yGsP.png)
+![Imgur](https://i.imgur.com/Od6yGsP.png)
 
 # ソースコード
 再掲

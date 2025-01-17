@@ -10,22 +10,22 @@ tags:
 神。  
 冬華さま～
 
-![Imgur](https://imgur.com/fiuZ0TW.png)
+![Imgur](https://i.imgur.com/fiuZ0TW.png)
 
 # 本題
 
 Android 12 のコンセプト画像？にあるこの電池残量ウイジェットってどこにあるの？  
 これほしいんだが
 
-![Imgur](https://imgur.com/BiVH4Zz.png)
+![Imgur](https://i.imgur.com/BiVH4Zz.png)
 
 # 作った
 スマホの電池残量とBluetoothデバイス（一台だけ）の電池残量が見れます。  
 Bluetoothデバイスの方は10%刻みですが仕様です（後述）
 
-![Imgur](https://imgur.com/SAtNPAa.png)
+![Imgur](https://i.imgur.com/SAtNPAa.png)
 
-![Imgur](https://imgur.com/rlr7nd6.png)
+![Imgur](https://i.imgur.com/rlr7nd6.png)
 
 ↑ 友愛進化論のフルありがとうfeng
 

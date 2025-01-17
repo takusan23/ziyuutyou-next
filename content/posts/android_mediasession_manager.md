@@ -27,7 +27,7 @@ Root権限とかなしで再生中の音楽アプリから楽曲情報取得と�
 
 など。
 
-![Imgur](https://imgur.com/8oYASKU.png)
+![Imgur](https://i.imgur.com/8oYASKU.png)
 
 ↑ [そう言えばSMEEが新作出すっぽいですよ？](http://www.hook-net.jp/smee/smee13th/)。いやこれ以上手を出したらまじで詰んでるゲーム終わらなくなる。
 

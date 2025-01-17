@@ -319,4 +319,4 @@ https://github.com/takusan23/FlowLatest
 `Latest`系のオペレーターはなぜか`@OptIn`しないと`Lint`で怒られます...  
 早く安定になって欲しい
 
-![Imgur](https://imgur.com/PQgRznT.png)
+![Imgur](https://i.imgur.com/PQgRznT.png)

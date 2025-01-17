@@ -10,11 +10,11 @@ tags:
 アイカギ2 攻略しました。<span style="font-size:10px">声優買いだったけど</span>予想以上で面白かったです。  
 ずーーーっとかわいかった。
 
-![Imgur](https://imgur.com/SBK2sis.png)
+![Imgur](https://i.imgur.com/SBK2sis.png)
 
-![Imgur](https://imgur.com/PC8tXYN.png)
+![Imgur](https://i.imgur.com/PC8tXYN.png)
 
-![Imgur](https://imgur.com/wPFTJ6b.png)
+![Imgur](https://i.imgur.com/wPFTJ6b.png)
 
 かわいい
 
@@ -227,7 +227,7 @@ while (true) {
 
 あと割と時間がかかりますこれ...
 
-![Imgur](https://imgur.com/qCxBbMW.png)
+![Imgur](https://i.imgur.com/qCxBbMW.png)
 
 ## 映像
 映像の場合、音声のように一時的に生（意味深）データを外出し（意味深）しておく方法が使えないと思います。映像の生データとかデカすぎでヤバそう。  
@@ -240,14 +240,14 @@ while (true) {
 それで`Surface`へ映像が流れてくるので、エンコーダーで受け取り`MediaMuxer`へ渡します。  
 本来は`Surface`を指定する部分に`SurfaceView`の`Surface`を入れて映像を出力するんだと思う。
 
-![Imgur](https://imgur.com/BlWU5jP.png)
+![Imgur](https://i.imgur.com/BlWU5jP.png)
 
 ちなみに形式が異なる場合は無理だと思います。OpenGLとかが出来れば別だと思う
 
 ## 音声と映像をコンテナフォーマットへ格納
 `MediaExtractor`で取り出して、`MediaMuxer`に入れればOK
 
-![Imgur](https://imgur.com/QV1cYdL.png)
+![Imgur](https://i.imgur.com/QV1cYdL.png)
 
 # 実際に作ってみた！
 攻略のカギは、`presentationTime`にあります！(フレームの時間をセットするやつ)  
@@ -262,7 +262,7 @@ HLSを想定して、`FFmpeg`で`.ts`ファイルへ変換して転送します�
 
 `io.github.takusan23.～`の部分は各自違うと思う...
 
-![Imgur](https://imgur.com/qLPsuYH.png)
+![Imgur](https://i.imgur.com/qLPsuYH.png)
 
 ### ちなみに
 Android標準のファイラーだと、`Android/data`が端末でも見れます。
@@ -1259,4 +1259,4 @@ Dreamin'Her -僕は、彼女の夢を見る。-
 
 かった、パッケージ版高いよぉ
 
-![Imgur](https://imgur.com/oiBU1KT.png)
+![Imgur](https://i.imgur.com/oiBU1KT.png)

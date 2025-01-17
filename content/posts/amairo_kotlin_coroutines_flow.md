@@ -10,34 +10,34 @@ tags:
 
 どうもこんばんわ。  
 あまいろショコラータ2 攻略しました。かぐやちゃんがかわいくてよかった。（振り返り程度の説明だけなので）前作もやろう！！！。  
-![Imgur](https://imgur.com/NfA9Mki.png)
+![Imgur](https://i.imgur.com/NfA9Mki.png)
 
 ここのシナリオよすぎる  
-![Imgur](https://imgur.com/1q99rr3.png)
+![Imgur](https://i.imgur.com/1q99rr3.png)
 
-![Imgur](https://imgur.com/InmiDNs.png)
+![Imgur](https://i.imgur.com/InmiDNs.png)
 
 ここすき。  
-![Imgur](https://imgur.com/Q8RfhIM.png)
+![Imgur](https://i.imgur.com/Q8RfhIM.png)
 
 みつきさんには辛辣なかぐやちゃん！！！！？！？！？  
-![Imgur](https://imgur.com/PiD7nya.png)
+![Imgur](https://i.imgur.com/PiD7nya.png)
 
 ななちゃん性格のわりに制服かわいいのいい  
-![Imgur](https://imgur.com/btQjfCO.png)
+![Imgur](https://i.imgur.com/btQjfCO.png)
 
-![Imgur](https://imgur.com/jyFZfwv.png)
+![Imgur](https://i.imgur.com/jyFZfwv.png)
 
 いちかちゃんルートは必見です！！。ぜひ買って見てみてね  
-![Imgur](https://imgur.com/9JDi6oI.png)
+![Imgur](https://i.imgur.com/9JDi6oI.png)
 
-![Imgur](https://imgur.com/cUyeNve.png)
+![Imgur](https://i.imgur.com/cUyeNve.png)
 
 前作ヒロインがいい味出しててほんといい  
 
-![Imgur](https://imgur.com/WOESDV7.png)
+![Imgur](https://i.imgur.com/WOESDV7.png)
 
-![Imgur](https://imgur.com/3Qx06Z3.png)  
+![Imgur](https://i.imgur.com/3Qx06Z3.png)  
 心の中にちえりちゃんほしい
 
 よかった。おすすすすすめです
@@ -68,7 +68,7 @@ https://kotlinlang.org/docs/flow.html
 例えば、センサーの値を返すとか。センサーなら加速度でも気圧でも明るさでも何でもいいんですが、連続して値が来るため、複数回返せる`Flow`の出番ですね。  
 それから`WebSocket`でなにかメッセージを受け取るとか。これも複数回にわたってデータを受信するため、これも`Flow`の出番です。
 
-![Imgur](https://imgur.com/F89Ao7j.png)
+![Imgur](https://i.imgur.com/F89Ao7j.png)
 
 ## Android と Flow
 `Android`でもよく既に使われていて、例えば`Room`でリアルタイムに値を取得する方法に`Flow`が使えます。  
@@ -307,7 +307,7 @@ https://kotlinlang.org/docs/flow.html#flow-builders
 例えば`listOf()`のように`flowOf()`があります。  
 配列と変わらないと思うじゃん？後述しますが変換用の演算子（`map { }`とか）がサスペンド関数対応なんですよ、、、  
 
-![Imgur](https://imgur.com/T6449dF.png)
+![Imgur](https://i.imgur.com/T6449dF.png)
 
 あとは`asFlow()`で配列等から`Flow`に出来ます。
 
@@ -1220,7 +1220,7 @@ totalTime = 11091 ms
 
 クソ雑な絵です。`buffer()`でコレクター側とエミッター側が同時に動くよってことが分かれば。  
 
-![Imgur](https://imgur.com/JCE8L9s.png)
+![Imgur](https://i.imgur.com/JCE8L9s.png)
 
 # 途中の値は消す
 https://kotlinlang.org/docs/flow.html#conflation
@@ -1595,7 +1595,7 @@ class MainActivity : ComponentActivity() {
 
 ### 付録 図解
 `zip()`と`combine()`、もう何人もの人が図解化してるので今更書くまでもないと思いますが一応。  
-![Imgur](https://imgur.com/grNyjPS.png)
+![Imgur](https://i.imgur.com/grNyjPS.png)
 
 ### 付録 combine() と初期値
 上記の絵を描いている時に思ったんですが、例え`combine()`だとしても、`Flow`から全て出揃ってないと最初の値は流れてこないんですよね。  

@@ -37,11 +37,11 @@ mediaRecorder.start(100)
 `Firefox`は**超優秀**ですね、シークが出来ます。  
 `Firefox`は動画の長さを解析する機能があるのでしょうか。
 
-![Imgur](https://imgur.com/ge3rYla.png)
+![Imgur](https://i.imgur.com/ge3rYla.png)
 
 一方、`Chrome`とか`Windows`の標準プレイヤーとか、その他の動画プレイヤーも再生中ではありますがシークバーが進みません。
 
-![Imgur](https://imgur.com/36Ehgez.png)
+![Imgur](https://i.imgur.com/36Ehgez.png)
 
 # シークできるようにしてみる
 というわけで、今回はこのシークできない`webm`をシークできるようにしてみようと思います。  
@@ -124,14 +124,14 @@ https://www.matroska.org/technical/elements.html
 まず`ID`を解析します。（これは動画の時間を表しているって答えを言っていますが聞かなかったことに）  
 `44` は2進数にすると`0100 0100`ですね。  
 
-![Imgur](https://imgur.com/fqN5tTJ.png)
+![Imgur](https://i.imgur.com/fqN5tTJ.png)
 
 `1`の位置は左から2番目なので、`VINT`の表と照らし合わせて`ID`は2バイト分あることになります。  
 `2バイト`取り出して、`ID`は`44 89`であることが分かりました。
 
 `4489`を`ID一覧`から探します！ありました！  
 このデータは`Duration`ですね！
-![Imgur](https://imgur.com/3uWdy5V.png)
+![Imgur](https://i.imgur.com/3uWdy5V.png)
 
 次に`DataSize`です。`84`を2進数にすると`1000 0100`ですね。同様に表から探すと`1`バイト分だということが分かります。  
 `DataSize`は`1バイト`分だとわかったので`84`です。なんですが、左から最初の`1`は`VINT`用のやつなので無視する必要があります。  
@@ -141,17 +141,17 @@ https://www.matroska.org/technical/elements.html
 というわけで`Data`は`48 b6 c8 60`。これが動画の長さです。  
 なんか動画の時間にしては変に見えますが、整数じゃないんですよね。`ID`一覧をよく見ると`Float`って書いてあります。なのでそれはまたおいおい
 
-![Imgur](https://imgur.com/z0qNM6n.png)
+![Imgur](https://i.imgur.com/z0qNM6n.png)
 
-![Imgur](https://imgur.com/DRzW7Qn.png)
+![Imgur](https://i.imgur.com/DRzW7Qn.png)
 
-![Imgur](https://imgur.com/yVh9pwG.png)
+![Imgur](https://i.imgur.com/yVh9pwG.png)
 
 ### その他の話
 親要素（`Segment`/`Info`/`Tracks`/`Cluster`等）は`Data`にデータではなく`EBML`が入っているので、子要素を解析するようにする必要があります。  
 それも`ID`の表に書いてあるので見て
 
-![Imgur](https://imgur.com/wFmjUky.png)
+![Imgur](https://i.imgur.com/wFmjUky.png)
 
 それと、`DataSize`には長さ不明というのが既に予約されています。（`0x01FFFFFFFFFFFFFF`）  
 もし長さが不明な場合は、子要素の`DataSize`を足していけば分かるはず。  
@@ -159,7 +159,7 @@ https://www.matroska.org/technical/elements.html
 なので、**長さ不明を受け付けないようなコードを書いてはいけません。**
 
 出現すると言っても、出現箇所は決まってて（多分）`Segment`と`Cluster`が長さ不明になるはずです。気をつけましょう（？）  
-![Imgur](https://imgur.com/jkJGRKK.png)
+![Imgur](https://i.imgur.com/jkJGRKK.png)
 
 コレを繰り返すことで、解析することが出来ます。  
 （他にも`CodecPrivate`とかは別途説明が必要ですがそれは前書いた記事見て。シークしたいだけなら関係ないので。）
@@ -244,9 +244,9 @@ https://mkvtoolnix.download/
 確かに動画の長さが`JavaScript`の`MediaRecorder`が吐き出したファイルには存在しないですね。  
 シークできる動画には動画の長さが記録されていそうです。
 
-![Imgur](https://imgur.com/e9L3ZV8.png)
+![Imgur](https://i.imgur.com/e9L3ZV8.png)
 
-![Imgur](https://imgur.com/IBXFLqX.png)
+![Imgur](https://i.imgur.com/IBXFLqX.png)
 
 というわけでまずは動画の長さを`WebM ファイル`に書き込む必要があるわけですね。
 
@@ -887,12 +887,12 @@ fun main(args: Array<String>) {
 あんまり関係ないですが、`Windows`でファイルパスのコピーはファイルを選んで`Shift + 右クリック`するとコンテキストメニューに`パスのコピー`というメニューが出てきます。それを押せば簡単にできます。  
 何故か`Shiftキー`を押しながら右クリックしないと出てきません。
 
-![Imgur](https://imgur.com/U6pN57q.png)
+![Imgur](https://i.imgur.com/U6pN57q.png)
 
 適当に動かしてみました、  
 `println`で`WebM`の中身が出力されていれば成功です！！
 
-![Imgur](https://imgur.com/fro1z83.png)
+![Imgur](https://i.imgur.com/fro1z83.png)
 
 ## WebM をシークできるように組み立て直す
 `WebM`をそれぞれの要素に分解出来たので、シークのために必要な要素を追加して、`WebM`を完成させます。  
@@ -1126,17 +1126,17 @@ fun main(args: Array<String>) {
 どうでしょう？  
 シークバー、進んでますか？シークも出来ますか？
 
-![Imgur](https://imgur.com/0MXSnkZ.png)
+![Imgur](https://i.imgur.com/0MXSnkZ.png)
 
 ブラウザでももちろん見れます。やった～～～
 
-![Imgur](https://imgur.com/jkQcxHR.png)
+![Imgur](https://i.imgur.com/jkQcxHR.png)
 
 `mkvtoolnix`で見てみます。こんな感じ  
 `SeekHead`、`Cue`がそれぞれありますね。  
 また、要素を入れ直している関係で、長さ不明だった`DataSize`が**確定していますね**。パーサーに優しくなった
 
-![Imgur](https://imgur.com/GLQSNV2.png)
+![Imgur](https://i.imgur.com/GLQSNV2.png)
 
 ## 動画の時間だけ入れればシークできるかも（プレイヤー次第、多分良くない）
 動画の長さ、`Duration`さえ入っていればシークできるプレイヤー実装があるらしいです。  
@@ -1179,7 +1179,7 @@ https://kotlinlang.org/docs/js-project-setup.html
 とりあえずは`Kotlin/JVM`なプロジェクトを作った後に、`Kotlin/JS`で動くように直そうと思います。  
 てな感じで`New Project`で作っていきます。`Gradle`は`build.gradle.kts`の方にします。（ほんとに無いの？）
 
-![Imgur](https://imgur.com/AfOnVTb.png)
+![Imgur](https://i.imgur.com/AfOnVTb.png)
 
 次に`build.gradle.kts`を開いて、`Kotlin/JS` 用に直します。  
 `jvm`用の設定が消えた
@@ -1209,7 +1209,7 @@ kotlin {
 多分コピペ直後は赤くなってるので、`Gradle Sync`しましょう。  
 これです
 
-![Imgur](https://imgur.com/Aw8cXGz.png)
+![Imgur](https://i.imgur.com/Aw8cXGz.png)
 
 ここに置けば良いって書いてあるのでそうします。  
 https://kotlinlang.org/docs/running-kotlin-js.html
@@ -1217,23 +1217,23 @@ https://kotlinlang.org/docs/running-kotlin-js.html
 `src`を右クリックして、ディレクトリを作ります。  
 `jsMain/kotlin`です。
 
-![Imgur](https://imgur.com/elKf65k.png)
+![Imgur](https://i.imgur.com/elKf65k.png)
 
 出来たら`src/jsMain/kotlin`へ移動して、`App.kt`を作ります。  
-![Imgur](https://imgur.com/3XNhb0r.png)
+![Imgur](https://i.imgur.com/3XNhb0r.png)
 
 適当に`console.log`するコードを置いておきます。  
-![Imgur](https://imgur.com/tvnxjV6.png)
+![Imgur](https://i.imgur.com/tvnxjV6.png)
 
 そしたらもう`jvm`の方はいらないので、この2つは消して良いはず。  
-![Imgur](https://imgur.com/zMgr5pm.png)
+![Imgur](https://i.imgur.com/zMgr5pm.png)
 
 次に`index.html`を置きます。  
 さっきと同じ用にディレクトリを作る画面を出して、今度は`jsMain/resources`を選びます。  
-![Imgur](https://imgur.com/e4EguS1.png)
+![Imgur](https://i.imgur.com/e4EguS1.png)
 
 そしたら`src/jsMain/resources`に`index.html`を作ります。  
-![Imgur](https://imgur.com/WUrm6tc.png)
+![Imgur](https://i.imgur.com/WUrm6tc.png)
 
 `index.html`の中身はそれぞれ調整しないといけないので注意してね。  
 調整しないといけない項目は、
@@ -1241,7 +1241,7 @@ https://kotlinlang.org/docs/running-kotlin-js.html
     - すきな文字に
 - `<script>`の`src`属性の値
     - `{こ↑こ↓}.js`のここの名前は、プロジェクト名にする必要があります。
-    - ![Imgur](https://imgur.com/DLY24XJ.png)
+    - ![Imgur](https://i.imgur.com/DLY24XJ.png)
     - 多分`build.gradle.kts`の`webpack`の設定で好きに変えられるとは思います
 
 ```html
@@ -1269,10 +1269,10 @@ https://kotlinlang.org/docs/dev-server-continuous-compilation.html
 
 `Gradle`のコマンドを実行できる`Execute Gradle Task`を開きます。  
 `IDEA`の右側に🐘さんのマークがあるはずなので押してこれ押す。  
-![Imgur](https://imgur.com/K29OXzf.png)
+![Imgur](https://i.imgur.com/K29OXzf.png)
 
 もし見つけられなかったら、`View`から`Tool Windows`から`Gradle`を押してもいいです。  
-![Imgur](https://imgur.com/lQziDR4.png)
+![Imgur](https://i.imgur.com/lQziDR4.png)
 
 そしたら以下を打ち込んで実行です！
 
@@ -1281,12 +1281,12 @@ gradle jsRun --continuous
 ```
 
 どうでしょう？勝手にブラウザが開いて`localhost:8080`が開くはず？  
-![Imgur](https://imgur.com/G8yu6j5.png)
+![Imgur](https://i.imgur.com/G8yu6j5.png)
 
 `index.html`に何も無いので真っ白ですが、`F12`を押して`Console`を押すと・・・  
 ありました！`Hello`！
 
-![Imgur](https://imgur.com/s1RQRT5.png)
+![Imgur](https://i.imgur.com/s1RQRT5.png)
 
 多分ちゃんとホットリロードになってるはず。
 
@@ -1298,7 +1298,7 @@ gradle jsRun --continuous
 それ以外のファイルでは`import java.xxx`等は出てきていません。また`Kotlin/JVM`でしか動かない拡張関数も使っていないので、そのままコピペできるわけです。
 
 というわけで持ってきました。  
-![Imgur](https://imgur.com/SmVMhXS.png)
+![Imgur](https://i.imgur.com/SmVMhXS.png)
 
 ## 画面を作る（html を書く）
 適当に画面を作ります。  
@@ -1341,7 +1341,7 @@ gradle jsRun --continuous
 ```
 
 つくりました、`CSS`何も分からん、、  
-![Imgur](https://imgur.com/ep1BalM.png)
+![Imgur](https://i.imgur.com/ep1BalM.png)
 
 ## Kotlin/JS を書く
 `Kotlin/JS`なので、もちろん`DOM`操作や、`alert`、`fetch`なんかも出来ます。  
@@ -1408,7 +1408,7 @@ fun main() {
 これでとりあえず`WebM`のロード処理ができました。  
 適当に選ぶと`ロード完了`って出るはず
 
-![Imgur](https://imgur.com/omQRwbK.png)
+![Imgur](https://i.imgur.com/omQRwbK.png)
 
 ## WebM をシーク可能にする処理
 `JavaScript`の`FileReader`はバイト配列の表現に`ArrayBuffer`を使います。`JS`のですね。  
@@ -1490,29 +1490,29 @@ private fun ByteArray.downloadFromByteArray() {
 どうでしょうか？  
 ちゃんとシークできる`WebM`がダウンロード出来ましたか？
 
-![Imgur](https://imgur.com/HxmWZJf.png)
+![Imgur](https://i.imgur.com/HxmWZJf.png)
 
 うおおおおお～  
 ブラウザで録画して、ブラウザでシークできる`WebM`が出来るようになった！！！
 
-![Imgur](https://imgur.com/NvyR4Ia.png)
+![Imgur](https://i.imgur.com/NvyR4Ia.png)
 
 `Firefox`でも動いた  
-![Imgur](https://imgur.com/GgnIPbo.png)
+![Imgur](https://i.imgur.com/GgnIPbo.png)
 
 # 公開する
 `index.html`と`Kotlin/JS`の`js`ファイルは`Gradle`の`Build`で出来るはず？  
 ドキュメント見たけど無さそうでよくわからない。とりあえず出来ているので良いのかな？
 
-![Imgur](https://imgur.com/PAT0AbL.png)
+![Imgur](https://i.imgur.com/PAT0AbL.png)
 
 もしくは
 
-![Imgur](https://imgur.com/Dn2fRxg.png)
+![Imgur](https://i.imgur.com/Dn2fRxg.png)
 
 保存先はここのはず。
 
-![Imgur](https://imgur.com/13ZNvzy.png)
+![Imgur](https://i.imgur.com/13ZNvzy.png)
 
 インターネットで公開したい！！
 
@@ -1546,7 +1546,7 @@ https://webm.negitoro.dev
 せっかくなので画面録画機能も合体させました。  
 `JavaScript`で出来た画面録画のコードをそのまま`Kotlin/JS`で呼べるようにしただけです。
 
-![Imgur](https://imgur.com/Z9HjESP.png)
+![Imgur](https://i.imgur.com/Z9HjESP.png)
 
 `Kotlin/JS`の定義に`MediaRecorder`が無くてなんか`JavaScript`コードを埋め込む感じになっちゃった。
 

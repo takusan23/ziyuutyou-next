@@ -9,7 +9,7 @@ tags:
 どうもこんばんわ。  
 めちゃどうでもいいですが気になってた`SHARGE Retro 35`がセールでやすくなってたので買いました。かわいい！！！です。`Type-C`させる充電器が欲しかったんですよね。
 
-![Imgur](https://imgur.com/SuJRM48.png)
+![Imgur](https://i.imgur.com/SuJRM48.png)
 
 充電器から外すと白く光るモードになる。そのうち消える。
 
@@ -20,7 +20,7 @@ tags:
 Unable to find Gradle tasks to build: [:app]. Build mode: ASSEMBLE.
 ```
 
-![Imgur](https://imgur.com/GuNH8TU.png)
+![Imgur](https://i.imgur.com/GuNH8TU.png)
 
 これを直します。
 
@@ -32,18 +32,18 @@ Unable to find Gradle tasks to build: [:app]. Build mode: ASSEMBLE.
 | Android Studio | Android Studio Ladybug 2024.2.1 Patch 3 |
 
 # 設定を開く
-![Imgur](https://imgur.com/k4JnV7A.png)
+![Imgur](https://i.imgur.com/k4JnV7A.png)
 
 # Gradle の設定を開く
 `Build, Execution, Deployment` → `Build Tools` → `Gradle` から、`JVM`のバージョンを`21`（`Gradle`が必要とするバージョン）のものにします。  
-![Imgur](https://imgur.com/2DIrzdD.png)
+![Imgur](https://i.imgur.com/2DIrzdD.png)
 
 多分`Android Studio`に最初から入っている`JVM`を選べばいいはずなので、`jdr-21 Jetbrains Runtime`みたいなのを選べばいいはず。  
-![Imgur](https://imgur.com/xkxTCVO.png)
+![Imgur](https://i.imgur.com/xkxTCVO.png)
 
 # もう一回ビルドしてみる
 `Gradle Sync`するよう言われるので`sync`押します。  
-![Imgur](https://imgur.com/RjHdiZ0.png)
+![Imgur](https://i.imgur.com/RjHdiZ0.png)
 
 終わったら実行ボタンを押します。これでビルドできるはず。めでたしめでたし。  
-![Imgur](https://imgur.com/whZrfbS.png)
+![Imgur](https://i.imgur.com/whZrfbS.png)

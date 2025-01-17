@@ -20,11 +20,11 @@ Android 12 DP1 が公開されたので、国内版Pixel 3 XLに入れて見る�
 https://www.google.com/android/beta?hl=ja
 
 # 環境
-|なまえ|あたい|
-|---|---|
-|端末|Pixel 3 XL (docomoで購入)|
-|Android|Android 11|
-|PC|Windows 10 Pro / ADBセットアップ済み（コマンドプロンプト、PowerShell等で`adb`って入力して英語の説明が返ってくればおｋ）|
+| なまえ  | あたい                                                                                                                  |
+|---------|-------------------------------------------------------------------------------------------------------------------------|
+| 端末    | Pixel 3 XL (docomoで購入)                                                                                               |
+| Android | Android 11                                                                                                              |
+| PC      | Windows 10 Pro / ADBセットアップ済み（コマンドプロンプト、PowerShell等で`adb`って入力して英語の説明が返ってくればおｋ） |
 
 adbは各自セットアップしといてください（私はAndroid Studio入れてあるのでここでは省略）
 
@@ -40,10 +40,10 @@ adb backup パッケージ名
 # やりかた
 多分二通りあります。`adb sideload`で`OTA`を適用する方法と、データを全部消して（工場出荷状態）`Android Flash Tool`を使う方法（`fastboot`）ですね。
 
-||OTA|Android Flash Tool|
-|---|---|---|
-|ブートローダーアンロックが必要|☓|○|
-|データを残してアップデートが可能|○|☓|
+|                                  | OTA | Android Flash Tool |
+|----------------------------------|-----|--------------------|
+| ブートローダーアンロックが必要   | ☓   | ○                  |
+| データを残してアップデートが可能 | ○   | ☓                  |
 
 今回は`OTA`ファイルを利用してアップデートしてみます。
 
@@ -104,11 +104,11 @@ adb sideload <ダウンロードしたzipファイル>
 ```
 あとは待ちます。
 
-![Imgur](https://imgur.com/kevfdt6.png)
+![Imgur](https://i.imgur.com/kevfdt6.png)
 
 終わったら、さっきの画面に戻るので、一番上の`Reboot system now`を選べばおｋです。
 
-![Imgur](https://imgur.com/ZtGTSLG.png)
+![Imgur](https://i.imgur.com/ZtGTSLG.png)
 
 データを消さずにアップデートできた。
 

@@ -14,10 +14,10 @@ tags:
 ので検証してみる
 
 # 環境
-|なまえ|あたい|
-|---|---|
-|Android|12 DP 1|
-|スマホ|Pixel 3 XL|
+| なまえ  | あたい     |
+|---------|------------|
+| Android | 12 DP 1    |
+| スマホ  | Pixel 3 XL |
 
 # フォアグラウンドサービスの開始制限 #とは
 アプリがバックグラウンドな状態の時に`Context#startForegroundService()`が呼べなくなった模様。  
@@ -172,7 +172,7 @@ java.lang.IllegalStateException: startForegroundService() not allowed due to mAl
 
 起動しない。あと通知も飛んでくる
 
-![Imgur](https://imgur.com/lM5rVxJ.png)
+![Imgur](https://i.imgur.com/lM5rVxJ.png)
 
 # その他、フォアグラウンドサービスの仕様変更
 `Context#startForeground()`を呼んでも10秒間は通知を出さずにサービスを起動しておけるらしい。  

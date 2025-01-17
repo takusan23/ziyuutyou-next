@@ -35,37 +35,37 @@ CONFLICT (content): Merge conflict in app/src/main/res/values-ja/strings.xml
 
 ちなみにAndroid Studioでは赤く表示されます
 
-![Imgur](https://imgur.com/5rx8pRF.png)
+![Imgur](https://i.imgur.com/5rx8pRF.png)
 
 該当のファイルを開いて（もしかしたら何でもいいかもしれない）、右クリック→Git→`Resolve Conflicts...`を選びます。
 
-![Imgur](https://imgur.com/IRe64dn.png)
+![Imgur](https://i.imgur.com/IRe64dn.png)
 
 そしたらこんな感じになるので、どっちを取るか、もしくはマージするか選びます。  
 今回は両方取るマージを押しますが、プログラムによっては`}`とか終了タグが足りなくなったりするかもしれないので気をつけて。
 
-![Imgur](https://imgur.com/R7N8v0k.png)
+![Imgur](https://i.imgur.com/R7N8v0k.png)
 
 するとこんな感じになる。真ん中がマージ結果。左が今のブランチ、右が取り込んだブランチになってます。
 
-![Imgur](https://imgur.com/qYE2nLl.png)
+![Imgur](https://i.imgur.com/qYE2nLl.png)
 
 まずは今のブランチの内容を結果へ取り込みます。`>>`ってところを押せば取り込めます。
 
-![Imgur](https://imgur.com/ras2mpG.png)
+![Imgur](https://i.imgur.com/ras2mpG.png)
 
 これで結果へ取り込めました。
 
-![Imgur](https://imgur.com/XXUHBAc.png)
+![Imgur](https://i.imgur.com/XXUHBAc.png)
 
 次は、取り込んだブランチ先の変更も取り込みます。  
 右側のところにある`└└`みたいなところを押します。
 
-![Imgur](https://imgur.com/Nd9wqFn.png)
+![Imgur](https://i.imgur.com/Nd9wqFn.png)
 
 これで両方を取り込む事ができました。  
 `Apply`を押して閉じましょう。
 
-![Imgur](https://imgur.com/LICxKod.png)
+![Imgur](https://i.imgur.com/LICxKod.png)
 
 他のファイルも同じ手順で直して行きましょう。（直せれば）

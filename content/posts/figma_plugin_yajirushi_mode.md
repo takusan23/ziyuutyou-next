@@ -11,7 +11,7 @@ tags:
 どうもこんばんわ。  
 届きました。こちら
 
-![Imgur](https://imgur.com/JtDlZHJ.png)
+![Imgur](https://i.imgur.com/JtDlZHJ.png)
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">Rin&#39;ca、待望のアルバム<br>2ndアルバム『Piece of Rin&#39;ca~Pleasant~』全12曲<br>3rdアルバム『Piece of Rin&#39;ca~natural ~』全13曲<br>2月23日2枚同時リリース！<a href="https://t.co/GwkbMU2ZNh">https://t.co/GwkbMU2ZNh</a><a href="https://t.co/Va7oo3QbLa">https://t.co/Va7oo3QbLa</a><br>収録曲は↓<br>宜しくお願いします。<a href="https://twitter.com/hashtag/%E3%83%94%E3%83%BC%E3%82%B9%E3%82%AA%E3%83%96%E3%82%8A%E3%82%93%E3%81%8B?src=hash&amp;ref_src=twsrc%5Etfw">#ピースオブりんか</a> <a href="https://t.co/lgOAIwAVU3">pic.twitter.com/lgOAIwAVU3</a></p>&mdash; Peak A Soul+ (@PAS_STAFF) <a href="https://twitter.com/PAS_STAFF/status/1758829382133788953?ref_src=twsrc%5Etfw">February 17, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -21,7 +21,7 @@ tags:
 
 <script type="application/javascript" src="https://embed.nicovideo.jp/watch/so35013448/script?w=640&h=360"></script><noscript><a href="https://www.nicovideo.jp/watch/so35013448">D.C.4 ～ダ・カーポ4～ 中間ルートオープニングムービー：「恋するMODE」</a></noscript>
 
-![Imgur](https://imgur.com/BN14etA.png)
+![Imgur](https://i.imgur.com/BN14etA.png)
 
 # 本題
 `Figma`で矢印を引くプラグイン、どれがいいんだろう？  
@@ -33,7 +33,7 @@ tags:
 
 https://www.figma.com/community/plugin/1344710416431362546
 
-![Imgur](https://imgur.com/7ZRQr93.png)
+![Imgur](https://i.imgur.com/7ZRQr93.png)
 
 今回はこの話です。
 
@@ -103,31 +103,31 @@ https://www.figma.com/plugin-docs/plugin-quickstart-guide/
 
 なにか適当なプロジェクトを開いて（なければ作ります）  
 ↓ デザインの方を押す
-![Imgur](https://imgur.com/fuN9PLX.png)
+![Imgur](https://i.imgur.com/fuN9PLX.png)
 
 次に、左上のロゴを押して、`プラグイン`→`開発`→`プラグインの新規作成`を押します。  
 
-![Imgur](https://imgur.com/ee1GuiD.png)
+![Imgur](https://i.imgur.com/ee1GuiD.png)
 
 名前は適当につけて、今回は`Figma`のデザインの方だけで動けばいいので、`デザインの方`を選びます。
 
-![Imgur](https://imgur.com/c15NZP9.png)
+![Imgur](https://i.imgur.com/c15NZP9.png)
 
 矢印を作るプラグインを作るわけですが、矢印の設定とかをするための画面が必要なので、`カスタムUI`を選びます。
 
-![Imgur](https://imgur.com/HfK7atn.png)
+![Imgur](https://i.imgur.com/HfK7atn.png)
 
 あとは保存先を尋ねてくるので、適当に選びます。  
 
-![Imgur](https://imgur.com/qE9aD0f.png)
+![Imgur](https://i.imgur.com/qE9aD0f.png)
 
 これで最小限のプラグインのコードが出来たらしいです。  
 
-![Imgur](https://imgur.com/xuNdjM9.png)
+![Imgur](https://i.imgur.com/xuNdjM9.png)
 
 完了を押すとプラグインにありました！
 
-![Imgur](https://imgur.com/p7HdNjb.png)
+![Imgur](https://i.imgur.com/p7HdNjb.png)
 
 ## VSCode で開く
 https://www.figma.com/plugin-docs/plugin-quickstart-guide/#install-project-dependencies
@@ -135,7 +135,7 @@ https://www.figma.com/plugin-docs/plugin-quickstart-guide/#install-project-depen
 保存先を`VSCode`で開きます。  
 ファイルの中身はこうなってるでしょうか？
 
-![Imgur](https://imgur.com/iY3kk4A.png)
+![Imgur](https://i.imgur.com/iY3kk4A.png)
 
 `Node.js`を使ったことがあれば気付くかもしれませんが、`node_modules`とか言うのがいませんね。  
 というわけで`npm i`します。
@@ -143,12 +143,12 @@ https://www.figma.com/plugin-docs/plugin-quickstart-guide/#install-project-depen
 まあ`コマンドプロンプト`とか`GitBash`でも何でも良いんですが、`VSCode`から起動できるのでもうそれで、  
 `ターミナル`を`VSCode`で開きます。`Windows`以外はしらんけど多分おんなじ感じだと思う。
 
-![Imgur](https://imgur.com/SPCqKYG.png)
+![Imgur](https://i.imgur.com/SPCqKYG.png)
 
 そこで`npm i`を打ち込んでエンターです。  
 ながい。`gradle`のそれと違ってライブラリはプロジェクト毎にダウンロードするので長いです。
 
-![Imgur](https://imgur.com/O4YmJNl.png)
+![Imgur](https://i.imgur.com/O4YmJNl.png)
 
 これで依存関係もおっけー
 
@@ -162,7 +162,7 @@ https://www.figma.com/plugin-docs/plugin-quickstart-guide/#install-project-depen
 git init
 ```
 
-![Imgur](https://imgur.com/SGsA2US.png)
+![Imgur](https://i.imgur.com/SGsA2US.png)
 
 ## Vite + React で UI 部分を開発できるようにする
 `Next.js`とかはこの`Webpack`とかのバンドラーの設定をいい感じにやってくれてたから。。。いざ自分がやろうとするときついな。  
@@ -272,7 +272,7 @@ https://ja.react.dev/learn/start-a-new-react-project
 
 ここまでのファイル構成と、`manifest.json`です。  
 
-![Imgur](https://imgur.com/O697g5k.png)
+![Imgur](https://i.imgur.com/O697g5k.png)
 
 ### esbuild
 https://esbuild.github.io/getting-started/
@@ -346,7 +346,7 @@ export default defineConfig({
 
 現時点のファイル構成
 
-![Imgur](https://imgur.com/r5RN6TB.png)
+![Imgur](https://i.imgur.com/r5RN6TB.png)
 
 ### package.json の編集
 `Figma`の方は`esbuild`で`JavaScript`に、`React`で作る`UI`の方は`Vite`で`JavaScript`にできるようにします。  
@@ -490,33 +490,33 @@ https://github.com/figma/plugin-samples/blob/master/esbuild-react/ui-src/tsconfi
 ```
 
 ここまでのファイル構成です。  
-![Imgur](https://imgur.com/2JEIWJQ.png)
+![Imgur](https://i.imgur.com/2JEIWJQ.png)
 
 ### ビルドしてみる
 `npm run build`をターミナルで叩くことで、`UI`側とプラグイン側の`JavaScript`吐き出しが行われます。  
 
-![Imgur](https://imgur.com/8SnlFTz.png)
+![Imgur](https://i.imgur.com/8SnlFTz.png)
 
 `dist`フォルダが出来て、`code.js`と`index.html`があれば成功！！！  
 おっめでと～～～～🎉🎉🎉  
 まだ設定が終わったところなんですけどね初見さん。あとホットリロードとかは`scripts`で書いてないので無いです。
 
-![Imgur](https://imgur.com/8J94vDV.png)
+![Imgur](https://i.imgur.com/8J94vDV.png)
 
 ## Figma 側で読み込んでみる
 `Figma`のデスクトップアプリを開いて、作ってるやつを押してみれば良いはず。
 
-![Imgur](https://imgur.com/lInUTPO.png)
+![Imgur](https://i.imgur.com/lInUTPO.png)
 
 はえ～最初に書いてあった`ui.html`はこんな姿だったんですね～  
 （`React`で書くため速攻で消したので知らなかった）
 
-![Imgur](https://imgur.com/o2P2Kgm.png)
+![Imgur](https://i.imgur.com/o2P2Kgm.png)
 
 ボタンを押してみる。えいっ  
 オレンジの四角形が5個並びました！おお～
 
-![Imgur](https://imgur.com/R4CYwcG.png)
+![Imgur](https://i.imgur.com/R4CYwcG.png)
 
 とりあえず`esbuild`で`Figma プラグイン側`、`Vite`で`Figma UI側`両方がちゃんと設定されてうまく動いていそうです。  
 よかったよかった。
@@ -630,7 +630,7 @@ export default App
 ```
 
 センスが無いのであれですが、とりあえず`Tailwind CSS`のセットアップも出来ました。  
-![Imgur](https://imgur.com/W5CcvNx.png)
+![Imgur](https://i.imgur.com/W5CcvNx.png)
 
 # Figma Plugin API になれよう
 本題の矢印を書く前に、手始めに`四角形`じゃなくて`矢印`を出せるようにしてみましょう。
@@ -680,7 +680,7 @@ figma.ui.onmessage =  (msg: {type: string, count: number}) => {
 こんな感じ。  
 なるほど。。。
 
-![Imgur](https://imgur.com/aIGORnn.png)
+![Imgur](https://i.imgur.com/aIGORnn.png)
 
 ## 座標系
 `Figma`は上に向けてマイナスになる。（WebGL のそれと違うのか...）  
@@ -691,9 +691,9 @@ figma.ui.onmessage =  (msg: {type: string, count: number}) => {
 ここの`コンソールを表示/非表示`を選ぶことで、見慣れた画面が出てきます。  
 `console`タブに移動すれば、`console.log()`の内容が出力されます。これは`UI`側（`React`）も`Figma で動く側`（`code.ts`）もここに出てきます。
 
-![Imgur](https://imgur.com/p6wLejr.png)
+![Imgur](https://i.imgur.com/p6wLejr.png)
 
-![Imgur](https://imgur.com/5H56gd4.png)
+![Imgur](https://i.imgur.com/5H56gd4.png)
 
 ## アイテム（ノード）の選択イベント
 
@@ -717,7 +717,7 @@ https://www.figma.com/plugin-docs/api/properties/PageNode-selection/
 別に両方矢印は要らない。片方ついてたらそれでいい。
 
 ↓これ。こんな感じに右側だけ矢印をつけたい。  
-![Imgur](https://imgur.com/nVgWhg1.png)
+![Imgur](https://i.imgur.com/nVgWhg1.png)
 
 というわけで調査してみた。`Figma`で矢印を引いて`Node`を`console.log`して色々見てみた。  
 結果、あれは`線（createLine()）`ではなく、ベクターで出来てて（`createVector()`）、  
@@ -767,7 +767,7 @@ figma.currentPage.appendChild(lineVector)
 が一番いいのかなと思いました。
 
 こんな感じにかたっぽだけ矢印が付きます。  
-![Imgur](https://imgur.com/fSbhb09.png)
+![Imgur](https://i.imgur.com/fSbhb09.png)
 
 ## PluginAPI['mixed'] ←こいつ何？
 たまにこの、`number`と`PluginAPI['mixed']`の`union`で定義されているプロパティーがあります。  
@@ -850,7 +850,7 @@ figma.currentPage.appendChild(lineVector)
 線が引ける。  
 これをいい感じにすれば良さそうね。
 
-![Imgur](https://imgur.com/KPE3BRb.png)
+![Imgur](https://i.imgur.com/KPE3BRb.png)
 
 ちなみに、この`SVG`のパス（`M 5501 -9064 L 5829 -8772 L 5829 -8772`）は何を表しているかと言うと、1行毎に分解するとわかりやすいかも。  
 ```svg
@@ -907,9 +907,9 @@ https://github.com/takusan23/yajirushi-mode/blob/master/src-ui/hooks/useArrowSet
 ちょっと頑張ったので、縦並びを選択したら縦になるし、横並びで選択したら横になるようにした。  
 https://github.com/takusan23/yajirushi-mode/blob/master/src-ui/hooks/useArrowSetting.ts#L85
 
-![Imgur](https://imgur.com/ExYjO4Q.png)
+![Imgur](https://i.imgur.com/ExYjO4Q.png)
 
-![Imgur](https://imgur.com/xNrAuhJ.png)
+![Imgur](https://i.imgur.com/xNrAuhJ.png)
 
 # 公開
 以下を参考に
@@ -919,7 +919,7 @@ https://github.com/takusan23/yajirushi-mode/blob/master/src-ui/hooks/useArrowSet
 
 プラグイン一覧を開くと、開発中のも表示されるので、ここから公開を押す。
 
-![Imgur](https://imgur.com/a6WrM6g.png)
+![Imgur](https://i.imgur.com/a6WrM6g.png)
 
 ## リリースビルドする
 もし`webpack`とか`vite`等のバンドラーが開発モードだった場合は本番にしてビルドしましょう。
@@ -927,7 +927,7 @@ https://github.com/takusan23/yajirushi-mode/blob/master/src-ui/hooks/useArrowSet
 ## 二段階認証を有効にする
 `Figma`アカウントを二段階認証できるようにしないとだめらしい
 
-![Imgur](https://imgur.com/GJfZEE0.png)
+![Imgur](https://i.imgur.com/GJfZEE0.png)
 
 ## 公開に必要なもの
 https://help.figma.com/hc/en-us/articles/360042293394-Publish-plugins-to-the-Figma-Community#Creators_and_contributors
@@ -937,38 +937,38 @@ https://help.figma.com/hc/en-us/articles/360042293394-Publish-plugins-to-the-Fig
 - 一番上にでる画像（`1920x1080`）
 - アイコン（`128x128`）
 
-![Imgur](https://imgur.com/gcsexY9.png)
+![Imgur](https://i.imgur.com/gcsexY9.png)
 
 説明とかは、まあ一応それっぽい英語と日本語で書いておきました。
 
-![Imgur](https://imgur.com/FUL26wN.png)
+![Imgur](https://i.imgur.com/FUL26wN.png)
 
 連絡先とか、誰かと一緒に作った場合はここで追加できます。
 
-![Imgur](https://imgur.com/pxvk5YW.png)
+![Imgur](https://i.imgur.com/pxvk5YW.png)
 
 次にプライバシー？の質問があるけど、これはスキップできるらしい。  
 サーバーにデータ送るか、ログイン機能があるか、インターネット経由でアセット（Webフォントとか）ダウンロードするか等。  
 今回作ったプラグインはインターネット切り離しても動くと思う（必要なものは全てバンドルした）からほぼ`No`だと思う。
 
-![Imgur](https://imgur.com/5TyxcPb.png)
+![Imgur](https://i.imgur.com/5TyxcPb.png)
 
 これで公開できます。  
 公開ボタンを押しましょう。
 
-![Imgur](https://imgur.com/fDBXqHU.png)
+![Imgur](https://i.imgur.com/fDBXqHU.png)
 
 できた
 
-![Imgur](https://imgur.com/slKSKZ1.png)
+![Imgur](https://i.imgur.com/slKSKZ1.png)
 
 アプリストアみたいに、審査があるらしい。わくてか
 
-![Imgur](https://imgur.com/zivwcGY.png)
+![Imgur](https://i.imgur.com/zivwcGY.png)
 
 なんかプライバシーについての質問に答えると、ご協力ありがとうねって言ってくれます。
 
-![Imgur](https://imgur.com/jAecZko.png)
+![Imgur](https://i.imgur.com/jAecZko.png)
 
 # 審査通った
 はやい。その日のうちに通ってない？  

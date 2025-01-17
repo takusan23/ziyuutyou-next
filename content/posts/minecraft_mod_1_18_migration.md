@@ -13,11 +13,11 @@ https://whirlpool.co.jp/kemonomichi-gs/
 
 かわいい。
 
-![Imgur](https://imgur.com/Ms6q4Ag.png)
+![Imgur](https://i.imgur.com/Ms6q4Ag.png)
 
 一本道のハーレムルート！誰も不幸にならない幸せルートでいいね
 
-![Imgur](https://imgur.com/thklLcG.png)
+![Imgur](https://i.imgur.com/thklLcG.png)
 
 # 本題
 クリックまな板を**Minecraft 1.18**に更新したときに遭遇したエラーなど(ほぼFabricの話)
@@ -159,7 +159,7 @@ Caused by: java.lang.RuntimeException: Unsupported access widener format (v2)
 - IDEAのキャッシュを消したら治りました。
     - ここから消せます
 
-![Imgur](https://imgur.com/Qb0Db6s.png)
+![Imgur](https://i.imgur.com/Qb0Db6s.png)
 
 ### Failed to read accessWidener file from mod fabric-content-registries-v0
 
@@ -169,7 +169,7 @@ Caused by: java.lang.RuntimeException: Unsupported access widener format (v2)
 gradlew --refresh-dependencies
 ```
 
-![Imgur](https://imgur.com/NhDFypB.png)
+![Imgur](https://i.imgur.com/NhDFypB.png)
 
 ### There is insufficient memory for the Java Runtime Environment to continue
 
@@ -198,7 +198,7 @@ Fabricと同じ？
 
 IDEAのFileから、`Project Strcture`を開き、`Project SDK`にJava 17を指定します。
 
-![Imgur](https://imgur.com/dTueBHD.png)
+![Imgur](https://i.imgur.com/dTueBHD.png)
 
 影響あったのは、クリエイティブタブのローカライズがちょっとだけ変わってたって所かな。  
 (そもそもアップデートが大規模過ぎて1.18に分割したって話だっけ？そうなら影響あまりなさそう？)

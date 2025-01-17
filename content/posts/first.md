@@ -219,7 +219,7 @@ sourceFileNameToUrl()関数は`posts/${ファイル名}`の文字列を返す関
 **pagesフォルダ**に**posts**フォルダを作成して、  
 その中に **_slug.vue** ファイルを作成します。
 
-![Imgur](https://imgur.com/DSJ9WSc.png)
+![Imgur](https://i.imgur.com/DSJ9WSc.png)
 
 ## _slug.vueの中身
 **_slug.vue**は記事の表示に使います。  

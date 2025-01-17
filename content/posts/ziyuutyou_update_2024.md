@@ -10,31 +10,31 @@ tags:
 どうもこんにちわ。  
 コイバナ恋愛 ミニファンディスク アフターフェスティバル 攻略しました。  
 
-![Imgur](https://imgur.com/0y5h5Es.png)  
+![Imgur](https://i.imgur.com/0y5h5Es.png)  
 
 FD で FD 言及するのねｗ
 
 かわい～
 
-![Imgur](https://imgur.com/Eb8D7S5.png)
+![Imgur](https://i.imgur.com/Eb8D7S5.png)
 
-![Imgur](https://imgur.com/Cp850Ql.png)
+![Imgur](https://i.imgur.com/Cp850Ql.png)
 
 おもろい！！！！！！！！  
 いちいちおもろいのすごい
 
-![Imgur](https://imgur.com/gxq0t6x.png)
+![Imgur](https://i.imgur.com/gxq0t6x.png)
 
-![Imgur](https://imgur.com/UiRcENu.png)
+![Imgur](https://i.imgur.com/UiRcENu.png)
 
 サブカプも報われててよかったよかった。
 
-![Imgur](https://imgur.com/Ybx2yRd.png)
+![Imgur](https://i.imgur.com/Ybx2yRd.png)
 
 まぶしすぎるので（？）ぜひ  
 みじかい！！！
 
-![Imgur](https://imgur.com/jg2c1My.png)
+![Imgur](https://i.imgur.com/jg2c1My.png)
 
 # 本題
 修正したい点がまた増えてきた、、いい加減直します！  
@@ -76,12 +76,12 @@ https://nextjs.org/docs/app/building-your-application/optimizing/third-party-lib
 
 私の環境では`jsdom`の型がおかしくなってしまったので、`next/third-parties`は使わず、引き続き`<script>`を仕込むことにしました。  
 
-![Imgur](https://imgur.com/UuZu2lb.png)
+![Imgur](https://i.imgur.com/UuZu2lb.png)
 
 ただ、`hooks（useEffect）`でページ切り替えイベントを送るのはもうやめようと思いました。  
 `GA4`に`ブラウザの履歴イベントに基づくページの変更`ってやつがあるので、それにページ遷移イベントを送るのをお任せしようと思います。
 
-![Imgur](https://imgur.com/pv6d8X2.png)
+![Imgur](https://i.imgur.com/pv6d8X2.png)
 
 今までは`useEffect`で送ってましたが、`GA4`におまかせできるならお任せしようと思う。
 
@@ -105,11 +105,11 @@ https://takusan.negitoro.dev/posts/nuxt_universal/
 改修したかった一番の理由これ。  
 `SSG`する`GitHub Actions`が遅い。`2024`年になってから？`GitHub Actions`のマシンスペックが向上したらしく、ずいぶん早くなりましたが。それでも**15分**くらいかかってる。  
 
-![Imgur](https://imgur.com/e2Yf6pg.png)
+![Imgur](https://i.imgur.com/e2Yf6pg.png)
 
 （ちなみにスペックが上る前は30～40分くらいかかってた。小声。やばい）  
 
-![Imgur](https://imgur.com/VucT93a.png)
+![Imgur](https://i.imgur.com/VucT93a.png)
 
 理由はわかっていて、`Markdown`から`HTML`の変換が何度も何度も走っているから。  
 変換したらメモリに乗せておくとか、あると思うんですけど、ファイル更新の際にメモリに乗せた変換結果を破棄するのもめんどいなあ思ってやらなかった。  
@@ -433,7 +433,7 @@ https://tailwindcss.com/docs/dark-mode
 
 ↓こんなの
 
-![Imgur](https://imgur.com/7iIQbfA.png)
+![Imgur](https://i.imgur.com/7iIQbfA.png)
 
 次に、`Tailwind CSS`で見た目を調整したい（展開ボタンとか付けたい）  
 というわけでこちら→ https://tailwindcss.com/docs/hover-focus-and-other-states#styling-based-on-parent-state
@@ -455,7 +455,7 @@ https://tailwindcss.com/docs/dark-mode
 </details>
 ```
 
-![Imgur](https://imgur.com/GOwqEYz.png)
+![Imgur](https://i.imgur.com/GOwqEYz.png)
 
 展開アイコンも出したい？  
 これでどうだろう？
@@ -484,15 +484,15 @@ https://tailwindcss.com/docs/dark-mode
 どうだろう！？！？。  
 `React Server Component`だと`JavaScript`をギリギリまで使いたくないと思うから便利だと思う！！！  
 
-![Imgur](https://imgur.com/9K9hgjv.png)
+![Imgur](https://i.imgur.com/9K9hgjv.png)
 
-![Imgur](https://imgur.com/NtjoJEQ.png)
+![Imgur](https://i.imgur.com/NtjoJEQ.png)
 
 ## コードブロックにコピーボタンを置いた
 こんな感じに、コードブロックをマウスオーバーするとコピーボタンが出てくるようになりました。  
 欲しかったけど`unified`のプラグインとか絶対難しそうで、`useEffect`で動的に差し込むか～どうするかな～思ってたところで。
 
-![Imgur](https://imgur.com/Ln1YtQ5.png)
+![Imgur](https://i.imgur.com/Ln1YtQ5.png)
 
 仕組みとしては、`Markdown`にあるコードを色付けする`rehype-pretty-code`は、`shiki`で色付けしているわけですが、  
 これ任意のコードを差し込む`API`が用意されているんですね。`Transformers`ってやつ。
@@ -594,7 +594,7 @@ module.exports = {
 メニューを押して見ないと何があるか分からないので、選択中以外の項目も下に表示するようにしてみた。  
 マルチカラムです。
 
-![Imgur](https://imgur.com/V0PBTj0.png)
+![Imgur](https://i.imgur.com/V0PBTj0.png)
 
 ## OGP 画像
 リンクを共有したときに表示される、あの画像。  
@@ -705,19 +705,19 @@ export async function generateStaticParams() {
 こんな感じの`OGP 画像`が出来ます。  
 結構良さそう。すげ～～～
 
-![Imgur](https://imgur.com/g5b47jQ.png)
+![Imgur](https://i.imgur.com/g5b47jQ.png)
 
 使える`CSS`とかはこの辺が多分そう。  
 `flex`で作っていけば良さそう。長い文字入れても乱れないかは確認しておいたほうが良さそう。  
 https://github.com/vercel/satori
 
 というわけで作ってみました。  
-![Imgur](https://imgur.com/W9iXALZ.png)
+![Imgur](https://i.imgur.com/W9iXALZ.png)
 
 ちゃんと静的書き出し時に記事毎に生成されてますね！  
 これで共有したときイケてるサイトみたいに画像が出ます！
 
-![Imgur](https://imgur.com/vIYkieZ.png)
+![Imgur](https://i.imgur.com/vIYkieZ.png)
 
 #### metadata に入れる
 正規ルート？ではなく`Route Handlers`で作ったので自動では`<head>`に`og:image`を追加してくれません。  
@@ -745,7 +745,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 ```
 
-![Imgur](https://imgur.com/QFQsx7t.png)
+![Imgur](https://i.imgur.com/QFQsx7t.png)
 
 #### メモ
 画像は`base64`にしたあと`<img>`に入れるとデータの取り出し？操作の回数が減るからおすすめとのこと。  
@@ -1172,11 +1172,11 @@ https://github.com/takusan23/ziyuutyou-next/blob/main/app/search/PagefindSearch.
 ### 実際に動かしてみた結果
 英語だけかと思ったら日本語も結構出てきて感動した。すごい。なんだこれ？？？
 
-![Imgur](https://imgur.com/jkxYCqc.png)
+![Imgur](https://i.imgur.com/jkxYCqc.png)
 
-![Imgur](https://imgur.com/cReO6IB.png)
+![Imgur](https://i.imgur.com/cReO6IB.png)
 
-![Imgur](https://imgur.com/Yl5BGJP.png)
+![Imgur](https://i.imgur.com/Yl5BGJP.png)
 
 ## 文字数カウントからコードブロックの分を消す
 はい。
@@ -1200,17 +1200,17 @@ const textCount = rawMarkdownText.length - markdownCodeBlockLength
 今回も`PR`を作りました。  
 https://github.com/takusan23/ziyuutyou-next/pull/3
 
-![Imgur](https://imgur.com/4FfS2bF.png)
+![Imgur](https://i.imgur.com/4FfS2bF.png)
 
 `Markdown`のパース回数が減ったので、かかる時間もかなり短くなった（てか本当に今まで長すぎた）  
 `Windows Update`すら環境に配慮する時代やぞ
 
-![Imgur](https://imgur.com/Mbv0wVS.png)
+![Imgur](https://i.imgur.com/Mbv0wVS.png)
 
 本番（意味深）の`Amazon CloudFront`から見ていますがちゃんと反映されました。  
 2024/05/05 の午前3時くらいのことです。おはよう！朝4時に何してるんだい？
 
-![Imgur](https://imgur.com/s7uBB5L.png)
+![Imgur](https://i.imgur.com/s7uBB5L.png)
 
 ↑検索ボタンが出ていますねっ
 

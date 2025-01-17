@@ -103,7 +103,7 @@ https://developer.chrome.com/docs/extensions/develop/migrate/checklist?hl=ja
 
 リロードを押して、、やっぱエラーなりますよね
 
-![Imgur](https://imgur.com/Ydvdwh7.png)
+![Imgur](https://i.imgur.com/Ydvdwh7.png)
 
 # ダメだった
 ちゃんと`V3`で動くように直します。
@@ -199,7 +199,7 @@ https://developer.chrome.com/docs/extensions/develop/concepts/content-scripts
 
 次に`content-script.js`を`manifest.json`と同じフォルダへ追加します。  
 
-![Imgur](https://imgur.com/zyP5gZY.png)
+![Imgur](https://i.imgur.com/zyP5gZY.png)
 
 バックグラウンドスクリプトの`ServiceWorker`と、DOM を操作する`コンテンツスクリプト`のやり取りはこれです。  
 https://developer.chrome.com/docs/extensions/develop/concepts/messaging
@@ -256,7 +256,7 @@ Uncaught (in promise) Error: Could not establish connection. Receiving end does 
 なんか久しぶりに開いたら赤い文字でびっくり  
 プライバシーについて追加で聞かれる程度だった、とりあえず審査に出してみる。→通りました！！！
 
-![Imgur](https://imgur.com/bvOhON3.png)
+![Imgur](https://i.imgur.com/bvOhON3.png)
 
 # 差分
 https://github.com/takusan23/URLDecodeCopy

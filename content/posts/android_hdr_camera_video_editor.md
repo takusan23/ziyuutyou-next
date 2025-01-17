@@ -11,23 +11,23 @@ tags:
 [前にやった D.C.5 ](https://takusan.negitoro.dev/posts/android_canvas_to_video/)は全年齢版、今回のはそれにえちえちシーンが追加された版です。  
 ついにこの先が、~~全年齢版とかたかだかキスで恋仲を確かめて終わりだし。とか言ってる私が救われた、先が見れて嬉しいよ~~
 
-![Imgur](https://imgur.com/yxHvieF.png)
+![Imgur](https://i.imgur.com/yxHvieF.png)
 
 ちなみに`5`ってついてるけど別に前作知らなくても遊べます！！！やろう。  
 面白かったら`D.C.4`やると良いと思います。
 
 心なしか色っぽいみずはちゃんのパッケのやつ！！！  
 
-![Imgur](https://imgur.com/HcGB9YZ.png)
+![Imgur](https://i.imgur.com/HcGB9YZ.png)
 
 (せっかくなので一番高いやつ買ってみたよ～～)
 
-![Imgur](https://imgur.com/rwYOxdA.png)
+![Imgur](https://i.imgur.com/rwYOxdA.png)
 
 もうすでに`D.C.5`の全年齢版をやってるのでえちえちシーンだけ見ても良いんだけど、、、見たいお話あるから2周目やります！！  
 2周目だから気付けるところがあって良い。あーこれかー的な。あ～～～～
 
-![Imgur](https://imgur.com/ojgmjz6.png)
+![Imgur](https://i.imgur.com/ojgmjz6.png)
 
 !?!??!  
 まってえちえちシーン後付けじゃない！？、本編のシナリオに組み込まれてる。  
@@ -36,124 +36,124 @@ tags:
 かこちゃん！！  
 あとあんまり関係ないけど後ろ姿が`D.C.`やってるな～って感じでいい
 
-![Imgur](https://imgur.com/0GJeT27.png)
+![Imgur](https://i.imgur.com/0GJeT27.png)
 
-![Imgur](https://imgur.com/nJIYwNr.png)
+![Imgur](https://i.imgur.com/nJIYwNr.png)
 
 ここすき
 
-![Imgur](https://imgur.com/WDvtzsq.png)
+![Imgur](https://i.imgur.com/WDvtzsq.png)
 
-![Imgur](https://imgur.com/3DkTEmK.png)
+![Imgur](https://i.imgur.com/3DkTEmK.png)
 
 かこちゃん、他の子のルートでいい味してるんだよな。  
 
-![Imgur](https://imgur.com/U4lmAmC.png)
+![Imgur](https://i.imgur.com/U4lmAmC.png)
 
-![Imgur](https://imgur.com/O5UWx04.png)
+![Imgur](https://i.imgur.com/O5UWx04.png)
 
 姉には辛辣なのおもろい
 
-![Imgur](https://imgur.com/7X9Ftg0.png)
+![Imgur](https://i.imgur.com/7X9Ftg0.png)
 
 ゆきねえ！！  
 1周目だと見落としちゃいそうだけど、お互い心配してるのね、  
 
-![Imgur](https://imgur.com/qGctwa8.png)
+![Imgur](https://i.imgur.com/qGctwa8.png)
 
-![Imgur](https://imgur.com/eRDGkTi.png)
+![Imgur](https://i.imgur.com/eRDGkTi.png)
 
 自信満々な雪姉いい、それはそうと一回お話を知ってるので、要所要所にあるのが引っかかって辛いわね。  
 で一番最後は解決したからめにょあがいるのか。（2週目でわかった）  
 あと豪華版についてくる雪姉の歌うED曲のカバーが良い！。
 
-![Imgur](https://imgur.com/P768VEy.png)
+![Imgur](https://i.imgur.com/P768VEy.png)
 
-![Imgur](https://imgur.com/IiWoi5a.png)
+![Imgur](https://i.imgur.com/IiWoi5a.png)
 
 
 めにょあ！！  
 かこちゃんがいい味、姉妹だ。  
 
-![Imgur](https://imgur.com/G8OzZHH.png)
+![Imgur](https://i.imgur.com/G8OzZHH.png)
 
-![Imgur](https://imgur.com/qCqCT4i.png)
+![Imgur](https://i.imgur.com/qCqCT4i.png)
 
 かわいい
 
-![Imgur](https://imgur.com/E53BlO4.png)
+![Imgur](https://i.imgur.com/E53BlO4.png)
 
 タジタジめにょあ
 
-![Imgur](https://imgur.com/GEq0P4E.png)
+![Imgur](https://i.imgur.com/GEq0P4E.png)
 
 あとすでにキャラ崩壊きてないか？  
 いまからキャラ崩壊めにょあが楽しみすぎる！！！！！
 
-![Imgur](https://imgur.com/pgpbnjs.png)
+![Imgur](https://i.imgur.com/pgpbnjs.png)
 
 
 みずはちゃん！！！、キャラデザがよすぎる、かわいい。  
 
-![Imgur](https://imgur.com/Q00tjs2.png)
+![Imgur](https://i.imgur.com/Q00tjs2.png)
 
-![Imgur](https://imgur.com/58aVRiE.png)
+![Imgur](https://i.imgur.com/58aVRiE.png)
 
-![Imgur](https://imgur.com/G70Ujle.png)
+![Imgur](https://i.imgur.com/G70Ujle.png)
 
 それはそうとパン食い競争好きすぎるみずはちゃんかわいい。
 
-![Imgur](https://imgur.com/QZm6l8C.png)
+![Imgur](https://i.imgur.com/QZm6l8C.png)
 
-![Imgur](https://imgur.com/DBr0dru.png)
+![Imgur](https://i.imgur.com/DBr0dru.png)
 
-![Imgur](https://imgur.com/5YWUrQm,png)
+![Imgur](https://i.imgur.com/5YWUrQm,png)
 
 そんな子がいかがわしい知識を得たら。。。最強。最強だった  
 グイグイ来るみずはちゃん、つよい
 
-![Imgur](https://imgur.com/lVN4uKG.png)
+![Imgur](https://i.imgur.com/lVN4uKG.png)
 
-![Imgur](https://imgur.com/argI4qI.png)
+![Imgur](https://i.imgur.com/argI4qI.png)
 
 !?!?!?
 
-![Imgur](https://imgur.com/HTKDzF7.png)
+![Imgur](https://i.imgur.com/HTKDzF7.png)
 
 
 じゃあ一番楽しみのあかりちゃんルート見ますか！！！。  
 まって声かわいいんだけど！？
 
-![Imgur](https://imgur.com/gWkgF8K.png)
+![Imgur](https://i.imgur.com/gWkgF8K.png)
 
 ときたま引っかかるのも2週目でわかった、あーね。  
 
-![Imgur](https://imgur.com/ZekvjbJ.png)
+![Imgur](https://i.imgur.com/ZekvjbJ.png)
 
 それはそうとこの子のルートは唯一（！！）一緒に住んでるわけじゃないから丁寧に？書かれている感じがした。  
 いい！！！律儀だ
 
-![Imgur](https://imgur.com/Fe3Ir60.png)
+![Imgur](https://i.imgur.com/Fe3Ir60.png)
 
-![Imgur](https://imgur.com/vedQTu8.png)
+![Imgur](https://i.imgur.com/vedQTu8.png)
 
 かわいい！かわいい  
 （この辺から`surface`が壊れてスクショに手間取ってる）  
 
-![Imgur](https://imgur.com/j4HCy1O,png)
+![Imgur](https://i.imgur.com/j4HCy1O,png)
 
-![Imgur](https://imgur.com/csAzZr8.png)
+![Imgur](https://i.imgur.com/csAzZr8.png)
 
 まあ何でも良いのでとにかくこの子のルートにある、何が好きですか？の部分と、チケットいらないですよ？のお話を見てきてください、  
 まじでこのシナリオいい！！！！！！！
 
-![Imgur](https://imgur.com/iQk6xlo.png)
+![Imgur](https://i.imgur.com/iQk6xlo.png)
 
 !?!?!??  
 
-![Imgur](https://imgur.com/0jhrF0Q.png)
+![Imgur](https://i.imgur.com/0jhrF0Q.png)
 
-![Imgur](https://imgur.com/7WQJxlf.png)
+![Imgur](https://i.imgur.com/7WQJxlf.png)
 
 お話が良すぎる、キャラデザ、声全部いい！！、ぜひ！！！おすすめです  
 じゃあ私は全年齢版との差分探すから終わるね。
@@ -193,7 +193,7 @@ https://github.com/takusan23/AndroidMediaCodecHdrVideoCanvasOverlay/blob/master/
 # 自作アプリの対応状況
 サンタさんです（大遅刻）
 
-![Imgur](https://imgur.com/eEjL0By.png)
+![Imgur](https://i.imgur.com/eEjL0By.png)
 
 動画を扱う自作アプリでも`HDR`の動画を扱えるようにアップデートしました。  
 この成果としてこの記事があるわけですね。
@@ -287,23 +287,23 @@ https://developer.android.com/media/camera/camera2/hdr-video-capture
 `Pixel`と`Xperia`は`HLG`。  
 `Pixel`は記載ないですが、`Google フォト`を見る限り`HLG`です。`Pixel`も`60fps`で`10 ビット HDR`撮影できるようにしてほしい。
 
-![Imgur](https://imgur.com/0af8x8V.png)
+![Imgur](https://i.imgur.com/0af8x8V.png)
 
 `Galaxy`、`一部の Xiaomi`は`HDR10+`。
 
-![Imgur](https://imgur.com/CwbOvsv.png)
+![Imgur](https://i.imgur.com/CwbOvsv.png)
 
-![Imgur](https://imgur.com/VcIl5Zw.png)
+![Imgur](https://i.imgur.com/VcIl5Zw.png)
 
 `Oppo`と`一部の Xiaomi`、あと`AQUOS R9 pro (!?)`は`ドルビービジョン`でした。  
 あと Android 関係ないけど`iPhone`もこれ。（`iPhone`はデフォルトで`HDR`動画撮影が有効らしい、強気だ）  
 が、が、が、後述しますが、ドルビービジョンはドルビービジョンでも`Dolby Vision profile 8.4`ってやつな気がします。
 
-![Imgur](https://imgur.com/UV91HJ6.png)
+![Imgur](https://i.imgur.com/UV91HJ6.png)
 
-![Imgur](https://imgur.com/5F8Pfoo.png)
+![Imgur](https://i.imgur.com/5F8Pfoo.png)
 
-![Imgur](https://imgur.com/1GOVnmF.png)
+![Imgur](https://i.imgur.com/1GOVnmF.png)
 
 `Android`開発のお仕事の人は大変だろうね～、`HDR`3つあって（笑）  
 仕事ですからね。仕方ないですね。
@@ -430,7 +430,7 @@ private fun MainScreen() {
 }
 ```
 
-![Imgur](https://imgur.com/iFDiD5R.png)
+![Imgur](https://i.imgur.com/iFDiD5R.png)
 
 もしくは、`SDR`動画の場合は色空間が`BT.709`なはずなので、`SDR`かどうかを判定してもいいかもしれません。
 
@@ -464,7 +464,7 @@ private fun isSdrVideo(context: Context, uri: Uri): Boolean {
 # Camera2 API で HDR 動画撮影をやってみる
 動画撮影だけなら`OpenGL ES`はでてきません。安心！
 
-![Imgur](https://imgur.com/JNcozcD.png)
+![Imgur](https://i.imgur.com/JNcozcD.png)
 
 ## CameraX は
 `CameraX`だとすぐ作れるらしいです！！！。  
@@ -892,13 +892,13 @@ private fun MainScreen() {
 
 撮影風景です。スマホでスマホ取ってる意味不明な人
 
-![Imgur](https://imgur.com/TDdH0m4.png)
+![Imgur](https://i.imgur.com/TDdH0m4.png)
 
-![Imgur](https://imgur.com/Bgo263e.png)
+![Imgur](https://i.imgur.com/Bgo263e.png)
 
 ちゃんと`Camera2 API`で`10 ビット HDR`の撮影ができてそうです。`HDR`表示です。
 
-![Imgur](https://imgur.com/xvlSeJ9.png)
+![Imgur](https://i.imgur.com/xvlSeJ9.png)
 
 ## Camera2 API HDR のソースコード
 はい。  
@@ -949,7 +949,7 @@ https://github.com/android/camera-samples/blob/a07d5f1667b1c022dac2538d1f553df20
 # Camera2 API + OpenGL でカメラ映像のプレビューと動画撮影
 `OpenGL ES`にすれば多分プレビューも`HDR`で表示されます、ついでに`OpenGL ES`で描画するならってことで上に文字を重ねます。。  
 
-![Imgur](https://imgur.com/mj6jgEh.png)
+![Imgur](https://i.imgur.com/mj6jgEh.png)
 
 ## OpenGL ES 周りを揃えていく
 いつもの`AOSP`から借りてきている`InputSurface.java`を`10 ビット HDR`に対応させます。  
@@ -1982,7 +1982,7 @@ private suspend fun createOpenGlRendererAndSurfaceTexture(surface: Surface): Pai
 
 相変わらずスマホでスマホ取ってる意味不明な人
 
-![Imgur](https://imgur.com/sJ6vJlX.png)
+![Imgur](https://i.imgur.com/sJ6vJlX.png)
 
 ### 質問 文字がやけに眩しい
 `HDR`に無理やり`SDR`の画像を入れたからですかね、何かしら明るさを調整してあげたほうがいいかもしれません。てかそうです。  
@@ -2007,7 +2007,7 @@ https://github.com/takusan23/AndroidCamera2ApiHdrVideo
 カメラの動画撮影と違い、こちらは確実に`MediaRecorder`ではなく`MediaCodec`の方を使わないといけないので若干面倒ですね（フレームごと取り出してやらないといけないので...）。  
 （でもコピペで動きます）
 
-![Imgur](https://imgur.com/zHPS4Lz.png)
+![Imgur](https://i.imgur.com/zHPS4Lz.png)
 
 ## 付録 エンコーダーが 10 ビット HDR に対応しているか見る
 わかりにくいですが、対応しているプロファイルを見ると良さそうです。  
@@ -2119,7 +2119,7 @@ AV1 = SupportHdrEncoding(hlg=true, hdr10=false, hdr10plus=false)
 - https://github.com/takusan23/AndroidCamera2ApiHdrVideo/blob/opengl/app/src/main/java/io/github/takusan23/androidcamera2apihdrvideo/opengl/TextureRenderer.kt
 - https://github.com/takusan23/AndroidCamera2ApiHdrVideo/blob/opengl/app/src/main/java/io/github/takusan23/androidcamera2apihdrvideo/opengl/TextureRendererSurfaceTexture.kt
 
-![Imgur](https://imgur.com/klRCkhr.png)
+![Imgur](https://i.imgur.com/klRCkhr.png)
 
 ## MediaCodec でデコーダーを作る
 動画ファイルから映像トラックを取り出し渡して1枚1枚フレームを取り出して、`Surface`に描画するやつを作ります。コピペで動きます。  
@@ -2722,7 +2722,7 @@ fun start() {
 ## 10 ビット動画の編集
 動かしてみます。
 
-![Imgur](https://imgur.com/zJTbPMi.png)
+![Imgur](https://i.imgur.com/zJTbPMi.png)
 
 できた動画はこちらです  
 ちゃんと`10 ビット HDR`の動画の上に文字が出ています。しかも`HDR`を保持したまま動画編集したので**眩しさや色の鮮やかさは残っています。**  
@@ -2946,7 +2946,7 @@ https://github.com/takusan23/AndroidMediaCodecHdrVideoCanvasOverlay
 # おわりに3
 `YouTube`に`HDR`の動画アップしたのに画質一覧には`SDR`しかないんですけど？  
 
-![Imgur](https://imgur.com/a0qMl9H.png)
+![Imgur](https://i.imgur.com/a0qMl9H.png)
 
 って思って調べてみると`HDR`の画質が用意されるには**結構時間がかかるそう**。  
 「YouTube HDR 時間かかる」とかいうふわっふわな検索ワードですら引っかかる。  
@@ -2959,7 +2959,7 @@ https://github.com/takusan23/AndroidMediaCodecHdrVideoCanvasOverlay
 
 数時間後に反映された、`Android`の`API`はちゃんと`YouTube`側が分かるメタデータをつけてくれたようです。
 
-![Imgur](https://imgur.com/GG7XLmK.png)
+![Imgur](https://i.imgur.com/GG7XLmK.png)
 
 ところで、`Pixel 8 Pro`、カタログスペックでは`10 ビット HDR`撮影だと`60fps`無理なんだけど、なんか`Camera2 API`を叩くと`60fps`になってる？  
 `YouTube`にアップして気付いた。ただフレームを水増ししただけの`30fps`の可能性もある。

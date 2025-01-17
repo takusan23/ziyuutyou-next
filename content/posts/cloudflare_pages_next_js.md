@@ -19,36 +19,36 @@ tags:
 
 https://github.com/takusan23/color-code-brightness
 
-![Imgur](https://imgur.com/ye0JoqI.png)
+![Imgur](https://i.imgur.com/ye0JoqI.png)
 
 # アカウントを作る
 
 はい。言語設定から日本語が選べます。
 
-![Imgur](https://imgur.com/byJ4gRk.png)
+![Imgur](https://i.imgur.com/byJ4gRk.png)
 
 アカウントを作るとすぐにダッシュボードみたいな画面が開きます。
 
-![Imgur](https://imgur.com/oRe7you.png)
+![Imgur](https://i.imgur.com/oRe7you.png)
 
 # Pages を押す
 
 新しいプロジェクトを押すとこんなのが出る
 
-![Imgur](https://imgur.com/dzKHIwM.png)
+![Imgur](https://i.imgur.com/dzKHIwM.png)
 
 今回は`GitHub`にある`Next.js`プロジェクトをホスティングしようと思います。  
 他にもローカルで開発した`index.html / index.css / index.js`をアップロードして公開する方法もあります。お手軽ですね  
 
-![Imgur](https://imgur.com/NcfzvRF.png)
+![Imgur](https://i.imgur.com/NcfzvRF.png)
 
 `Next.js`を選んだらいい感じにビルドコマンドとかが埋まりました。楽だね
 
-![Imgur](https://imgur.com/KsTCiKf.png)
+![Imgur](https://i.imgur.com/KsTCiKf.png)
 
 ビルドが始まりました！こんな感じ  
 
-![Imgur](https://imgur.com/SUvq8G1.png)
+![Imgur](https://i.imgur.com/SUvq8G1.png)
 
 そしたらなんかコケた
 
@@ -61,21 +61,21 @@ https://developers.cloudflare.com/pages/platform/language-support-and-tools/
 
 手元の開発環境で`node -v`したら`v18.13.0`だったのでそうしました。
 
-![Imgur](https://imgur.com/AZriRlV.png)
+![Imgur](https://i.imgur.com/AZriRlV.png)
 
 これでコミットしてプッシュすると自動でビルドが試行されるはずです。無事ホスティングに成功しました。
 
-![Imgur](https://imgur.com/EOn6lS1.png)
+![Imgur](https://i.imgur.com/EOn6lS1.png)
 
 # 確かに早い気がする
 `Netlify`でも同じサイトをホスティングしてみたけど、ちょっとだけ`Cloudflare Pages`のほうが読み込み早い気がする。  
 良さそう！！！
 
-![Imgur](https://imgur.com/233hxD5.png)
+![Imgur](https://i.imgur.com/233hxD5.png)
 
 `PageSpeed Insights`（何使えばいいか知らないのでとりあえず）で測ってみましたが、やっぱ`Cloudflare`のほうが`Speed Index`の数値が良いですね。  
 
-![Imgur](https://imgur.com/N1q0Cnz.png)
+![Imgur](https://i.imgur.com/N1q0Cnz.png)
 
 # GitHub Actions からホスティングできるか確認
 別に`Cloudflare Pages`のビルド機能で十分なのですが、`GitHub Actions`を使ってたのを辞めるのは寂しいので（？？？）（なんか動いてたほうがおもろい←？？？）  
@@ -95,29 +95,29 @@ GitHub Actions で使う機密情報を作りに行きます。
 ### CLOUDFLARE_API_TOKEN
 アカウントページ？を開いた後、APIトークンから作成できます。
 
-![Imgur](https://imgur.com/WLLj5k1.png)
+![Imgur](https://i.imgur.com/WLLj5k1.png)
 
 多分これで良いはず。トークンは一度しか表示されないのでメモ帳とかにすぐにメモしておきましょう。
 
-![Imgur](https://imgur.com/Ysdgaec.png)
+![Imgur](https://i.imgur.com/Ysdgaec.png)
 
 ### CLOUDFLARE_ACCOUNT_ID
 ダッシュボードにログインしたときの、ドメインから後のURLについている(`dash.cloudflare.com/` から)値のことらしい。ドキュメントみるとなんか複雑なこと書いてあるけど  
 （↓ちょうど塗りつぶしたところ）
 
-![Imgur](https://imgur.com/RPXxh9i.png)
+![Imgur](https://i.imgur.com/RPXxh9i.png)
 
 ### GitHub に登録
 ここからできます。  
 `New repositroy secret`で追加することが出来ます。
 
-![Imgur](https://imgur.com/B6bR67y.png)
+![Imgur](https://i.imgur.com/B6bR67y.png)
 
 ## GitHub Actions を作る
 
 そのまえに、自動デプロイを止めておきます
 
-![Imgur](https://imgur.com/2VjGfKF.png)
+![Imgur](https://i.imgur.com/2VjGfKF.png)
 
 そしたら以下のような`yaml`を書きます。  
 `projectName`（Cloudflare Pages 上での名前）と`directory`（出力先のパス）は皆さんのプロジェクトごとに合わせて直してください。
@@ -166,7 +166,7 @@ jobs:
 
 あとは push すれば動くはずです。以下のように
 
-![Imgur](https://imgur.com/gwuOamY.png)
+![Imgur](https://i.imgur.com/gwuOamY.png)
 
 # ドメイン
 `Apexドメイン（サブドメイン以外）`を使う場合は`Cloudflare DNS ???`とか言うやつに登録しないといけないらしい。  
@@ -174,27 +174,27 @@ jobs:
 
 今回はサブドメインを使ってみます。サブドメインの場合はネームサーバーの変更は必要ないらしいです。
 
-![Imgur](https://imgur.com/t1ERNHe.png)
+![Imgur](https://i.imgur.com/t1ERNHe.png)
 
 こんな感じにドメインを入力して
 
-![Imgur](https://imgur.com/2pmxydu.png)
+![Imgur](https://i.imgur.com/2pmxydu.png)
 
 自分の DNS プロバイダー を選べば良さそうです。
 
-![Imgur](https://imgur.com/UMYADH0.png)
+![Imgur](https://i.imgur.com/UMYADH0.png)
 
 私は `Google Domains` を使っているので、 DNS の設定を開き、`Cloudflare Pages`の指示通りに入力します。
 
-![Imgur](https://imgur.com/Tcur1YT.png)
+![Imgur](https://i.imgur.com/Tcur1YT.png)
 
 ボタンを押した、多分これで待ってれば完了するはず。楽ですね
 
-![Imgur](https://imgur.com/ClLG1Fx.png)
+![Imgur](https://i.imgur.com/ClLG1Fx.png)
 
 歯磨きから戻ってきたら開けるようになってました！ちゃんと https です！
 
-![Imgur](https://imgur.com/cqhSn0D.png)
+![Imgur](https://i.imgur.com/cqhSn0D.png)
 
 # 終わりに
 よさそう！！！  

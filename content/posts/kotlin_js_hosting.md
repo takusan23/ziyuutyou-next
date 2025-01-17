@@ -25,11 +25,11 @@ https://takusan.negitoro.dev/posts/kotlin_js_fix_javascript_mediarecorder_webm_s
 
 `Gradle`を押して、`Kotlin DSL build script`にチェックを入れ、`Kotlin/JS for browser`を選択します。
 
-![Imgur](https://imgur.com/mjYwnR1.png)
+![Imgur](https://i.imgur.com/mjYwnR1.png)
 
 名前とかは適当に入れてください。
 
-![Imgur](https://imgur.com/hg9WgLW.png)
+![Imgur](https://i.imgur.com/hg9WgLW.png)
 
 生成後しばらく待ちます。
 
@@ -47,7 +47,7 @@ IDEA右下の`Terminal`をおして、以下のコマンドを入れます。
 
 無事ブラウザに`Hello World`が出てれば成功です。
 
-![Imgur](https://imgur.com/EihsdkV.png)
+![Imgur](https://i.imgur.com/EihsdkV.png)
 
 # index.html を書き換える
 
@@ -158,7 +158,7 @@ fun main() {
 
 日付を入れてボタンを押したらアラートが出ると思います。
 
-![Imgur](https://imgur.com/GckVewI.png)
+![Imgur](https://i.imgur.com/GckVewI.png)
 
 ## 日付計算ライブラリ
 別にJS標準の`Date`を使うって手もある。
@@ -242,7 +242,7 @@ fun main() {
 
 これで残りの日数を表示できます。やったね。
 
-![Imgur](https://imgur.com/gCc7Z3I.png)
+![Imgur](https://i.imgur.com/gCc7Z3I.png)
 
 # 書き出す(ビルド)
 
@@ -254,7 +254,7 @@ fun main() {
 
 `build/distributions`に書き出されます。
 
-![Imgur](https://imgur.com/zJ3U8Iw.png)
+![Imgur](https://i.imgur.com/zJ3U8Iw.png)
 
 # ホスティング
 今回は`Netlify`にホスティングして公開します。  
@@ -262,7 +262,7 @@ fun main() {
 ## とりあえずGitHubに公開する
 ここから出来ます。
 
-![Imgur](https://imgur.com/jJn3857.png)
+![Imgur](https://i.imgur.com/jJn3857.png)
 
 ## Netlifyで公開
 
@@ -271,7 +271,7 @@ fun main() {
 
 ビルドしないように設定を変更します。`Site settings`から`Build & deploy`をおし、`Stop builds`します。
 
-![Imgur](https://imgur.com/Bb945fO.png)
+![Imgur](https://i.imgur.com/Bb945fO.png)
 
 # GitHub Actions の前に
 リポジトリの設定を開いて、`Secrets`を開きます。  
@@ -285,12 +285,12 @@ Netlifyのアカウント設定へ進んで、`Applications`の中の`Personal a
 
 こんなふう
 
-![Imgur](https://imgur.com/LUm0oxZ.png)
+![Imgur](https://i.imgur.com/LUm0oxZ.png)
 
 # GitHub Actions を組む
 リポジトリの`Actions`を選択して、`set up a workflow yourself`を押して作成します。
 
-![Imgur](https://imgur.com/Pd2OpNz.png)
+![Imgur](https://i.imgur.com/Pd2OpNz.png)
 
 そしたら以下コピペ
 
@@ -330,7 +330,7 @@ jobs:
 
 作業進行中
 
-![Imgur](https://imgur.com/gwxC5in.png)
+![Imgur](https://i.imgur.com/gwxC5in.png)
 
 終わったらNetlifyで公開したサイトのURLを開いてます。無事開けたら成功です。
 

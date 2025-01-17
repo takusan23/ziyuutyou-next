@@ -39,22 +39,22 @@ https://forum.xda-developers.com/t/how-to-backup-restore-ta-partition-and-root-t
 ## ﾌﾗｯｼｭ!
 `FlashTool`を起動して、稲妻マークを押し
 
-![Imgur](https://imgur.com/oR720C9.png)
+![Imgur](https://i.imgur.com/oR720C9.png)
 
 `Flashmode`を選んで`Ok`を押します。
 
-![Imgur](https://imgur.com/UPAuB13.png)
+![Imgur](https://i.imgur.com/UPAuB13.png)
 
 そうするとこんなウィンドウが出るので、`Source folder`にはダウンロードした`tftファイル`が置いてあるフォルダを指定して、  
 あと`Wipe`には全部チェックを入れます。  
 
-![Imgur](https://imgur.com/rR8kPW9.png)
+![Imgur](https://i.imgur.com/rR8kPW9.png)
 
 できたら`Flash`をおして準備を始めます。
 
 この画面に進めたら、
 
-![Imgur](https://imgur.com/qPr31lK.png)
+![Imgur](https://i.imgur.com/qPr31lK.png)
 
 Xperia（Sony風に言うなら機器）の電源を切って、ボリュームダウンキーを押しながらUSBケーブルでPCとつなぎます。
 
@@ -63,7 +63,7 @@ Xperia（Sony風に言うなら機器）の電源を切って、ボリューム�
 `INFO  - Flashing finished.`と出れば成功です。  
 私は一回目はなんか失敗してデバイスを選ぶダイアログが出て、その後もう一度やると出来たのでまあよくわからん。
 
-![Imgur](https://imgur.com/zmAeUhj.png)
+![Imgur](https://i.imgur.com/zmAeUhj.png)
 
 成功したらUSBケーブルを外して起動して見ましょう。多分長い。
 
@@ -155,7 +155,7 @@ Magiskは https://github.com/topjohnwu/Magisk/releases からAPKをダウンロ�
 
 そうしたらWindowsのエクスプローラーからファイルを転送できるようになるので各Zipを転送します。
 
-![Imgur](https://imgur.com/EEH5Rfa.png)
+![Imgur](https://i.imgur.com/EEH5Rfa.png)
 
 終わったら最後、ホーム画面へ戻り、`Install`を押して、  
 - ROMのインストール

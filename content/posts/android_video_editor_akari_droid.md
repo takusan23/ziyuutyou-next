@@ -15,66 +15,66 @@ D.C.5 Future Link ～ダ・カーポ5～ フューチャーリンク 攻略し�
 
 あたしちゃん様！！！さすがファンディスクです  
 
-![Imgur](https://imgur.com/UcdYRWB.png)
+![Imgur](https://i.imgur.com/UcdYRWB.png)
 
-![Imgur](https://imgur.com/TQ9dPBV.png)
+![Imgur](https://i.imgur.com/TQ9dPBV.png)
 
 ↑妹と話してるシーンよすぎ
 
-![Imgur](https://imgur.com/eNeXwYf.png)
+![Imgur](https://i.imgur.com/eNeXwYf.png)
 
 ！！！ヒロイン昇格！！  
 バカやってるのおもろい。無印では見れないのでファンディスクやろう！！！
 
-![Imgur](https://imgur.com/461wagY.png)
+![Imgur](https://i.imgur.com/461wagY.png)
 
-![Imgur](https://imgur.com/n2GMb6x.png)
+![Imgur](https://i.imgur.com/n2GMb6x.png)
 
 ↑ここすき
 
-![Imgur](https://imgur.com/b2j71Uo.png)
+![Imgur](https://i.imgur.com/b2j71Uo.png)
 
 ファンディスクの割にフルプライスでお高いけどこのシナリオで元取った感ある！！  
 いい！
 
-![Imgur](https://imgur.com/EsgZDEG.png)
+![Imgur](https://i.imgur.com/EsgZDEG.png)
 
 むんむん  
 かわい～、イベントCGよすぎ
 
-![Imgur](https://imgur.com/dUa3GnA.png)
+![Imgur](https://i.imgur.com/dUa3GnA.png)
 
-![Imgur](https://imgur.com/dcXSbqD.png)
+![Imgur](https://i.imgur.com/dcXSbqD.png)
 
 でもみじか！！い！！もっと見たかった
 
-![Imgur](https://imgur.com/xS0uB8b.png)
+![Imgur](https://i.imgur.com/xS0uB8b.png)
 
 体操服！
 
 ！！！本編では語られなかった部分の話、、だ！  
 あまあま
 
-![Imgur](https://imgur.com/JHuA82C.png)
+![Imgur](https://i.imgur.com/JHuA82C.png)
 
-![Imgur](https://imgur.com/02DlMWL.png)
+![Imgur](https://i.imgur.com/02DlMWL.png)
 
 本編で書かれなかった部分、なかなか内容あるので見よう
 
-![Imgur](https://imgur.com/NSrNL4M.png)
+![Imgur](https://i.imgur.com/NSrNL4M.png)
 
-![Imgur](https://imgur.com/7y5E1yW.png)
+![Imgur](https://i.imgur.com/7y5E1yW.png)
 
 うどんの話ししてる時に時そばだ
 
 語られなかった部分の続きまで書いてくれるので結構ボリュームがある。  
 めっちゃ魔法の話でした
 
-![Imgur](https://imgur.com/o5XBoGP.png)
+![Imgur](https://i.imgur.com/o5XBoGP.png)
 
 ついぞこの子を攻略することは出来ませんでしたが・・・！！
 
-![Imgur](https://imgur.com/agX9c10.png)
+![Imgur](https://i.imgur.com/agX9c10.png)
 
 まだ謎が明かされてない箇所がありますが、`D.C.6`とかで明かされるんでしょうか。  
 何年後になるんだろう、、`R-18`版を出してからなのかな、どっちになるか分かんないけど楽しみ～
@@ -87,13 +87,13 @@ D.C.5 Future Link ～ダ・カーポ5～ フューチャーリンク 攻略し�
 世の動画アプリの仕組みは知りませんが（バックエンドなのか端末内なのか）、このアプリは後者、端末内の`MediaCodec`でエンコードしています。  
 触ったことある動画編集アプリが`AviUtil`くらいしかないので、スマホの動画編集`UI`がどんな感じなのかは知らない。電気屋の`Appleコーナー`で`iMovie`ちょっと触った程度ならあるよ。  
 
-![Imgur](https://imgur.com/RrwLOFf.png)
+![Imgur](https://i.imgur.com/RrwLOFf.png)
 
 元ネタは多分この辺です：https://www.youtube.com/watch?v=ExOT03rhCyU
 
-![Imgur](https://imgur.com/jrpbcq7.png)
+![Imgur](https://i.imgur.com/jrpbcq7.png)
 
-![Imgur](https://imgur.com/8Nht6zM.png)
+![Imgur](https://i.imgur.com/8Nht6zM.png)
 
 `MediaCodec`シリーズの記事を書いてきた知見を合わせて作ってみた。  
 今回の記事はこれの中身の話です。
@@ -112,7 +112,7 @@ https://takusan.negitoro.dev/posts/android_akari_droid_create_video/
 ~~審査が通れば以下の URL で開けるはず。~~ 通りました。記事書くの遅すぎて先越されました。  
 https://play.google.com/store/apps/details?id=io.github.takusan23.akaridroid
 
-![Imgur](https://imgur.com/jN3gZCG.png)
+![Imgur](https://i.imgur.com/jN3gZCG.png)
 
 ソースコードもあります。  
 最新の`Android Studio`でビルドできるんじゃないかな。  
@@ -121,7 +121,7 @@ https://github.com/takusan23/AkariDroid
 フォアグラウンドサービスの審査用の動画、実際にこのアプリで作りました。  
 画面録画して編集して書き出してアップロードまでスマホで完結して結構感動。
 
-![Imgur](https://imgur.com/uk9kwLp.png)
+![Imgur](https://i.imgur.com/uk9kwLp.png)
 
 （補足）  
 最近の`Play ストア`、`フォアグラウンドサービス`を使う場合は起動方法を説明した動画を渡す必要がある。（どこかインターネットから見れる場所に上げて`URL`を記入する）  
@@ -159,7 +159,7 @@ https://takusan.negitoro.dev/posts/android_foreground_service_permission_play_co
 あかりどろいどは、あかりこあとか言う`core`と、アプリのコードのふたつになっています。  
 なんで分かれてるかというと、`core`の方はライブラリとして`MavenCentral`にあるからなんですね。
 
-![Imgur](https://imgur.com/jSpEE1w.png)
+![Imgur](https://i.imgur.com/jSpEE1w.png)
 
 あかりこあ`:akari-core`は代わりに`MediaCodec`を叩いてくれるやつです。  
 叩いてくれるっても、このブログで扱ったことを集結させたくらいなので、地道にこれらを組み合わせていくしか無い。使用例はいつか書きます。
@@ -209,7 +209,7 @@ implementation("io.github.takusan23:akaricore:2.0.0-alpha01")
 一緒に格納したらどれがどれだか分からなくなりそうですが、トラックという概念があり、このデータは音声トラック、このデータは映像トラックと分かるようになっています。  
 ごくまれに、動画は流れるけど音量調整が出来ない動画がありますが、あれは映像トラックだけ再生できたパターンですね。音声トラックが無いのかエラーになったか。その逆もあると思う。
 
-![Imgur](https://imgur.com/MxdNOCX.png)
+![Imgur](https://i.imgur.com/MxdNOCX.png)
 
 `mp4`は知りませんが、`webm`ならこんな感じの構造だと思います。  
 `Cluster`に音声と映像がそれぞれ書き込まれていくわけですね。多分映像データのが大きくなるのでこんな感じじゃないかな...
@@ -304,7 +304,7 @@ mediaMuxer.writeSampleData(videoTrackIndex, byteBuffer, bufferInfo)
 で、で、で、動画はパラパラ漫画みたいになっていますが、パラパラ漫画のようにすべての画像を持っているといくら容量があっても足りません。  
 てか容量だけじゃなくて通信量が先に終わってしまいます。  
 
-![Imgur](https://imgur.com/bmMRThW.png)  
+![Imgur](https://i.imgur.com/bmMRThW.png)  
 ↑ 手元で見たら 1920x1080 の1フレームが 1MB だった。30fps なら1秒で 30MB になりますね。1分で・・・うっ  
 
 そこで、コーデックが圧縮をするわけですね。例えば、前のフレームと比較して、変化している箇所のみをファイルに保存する。とか。  
@@ -312,7 +312,7 @@ mediaMuxer.writeSampleData(videoTrackIndex, byteBuffer, bufferInfo)
 なので、前のフレームに依存しない、完全なフレームを定期的に入れるわけですね。1秒毎とか。これをキーフレームといい、間隔のことをキーフレーム間隔とかなんとか。  
 （キーフレーム。別名同期フレーム、Iフレーム）
 
-![Imgur](https://imgur.com/Uynkqke.png)  
+![Imgur](https://i.imgur.com/Uynkqke.png)  
 ↑ 前使ったやつを再利用。
 
 （話はそれるけど）`Firefox`の自動再生がデフォルトONになる話で、仮にデフォルトOFFにしちゃうとパラパラ漫画を実装されて、かえって通信量が増えるからONにしてるって見た気がする。  
@@ -401,7 +401,7 @@ https://hacks.mozilla.org/2019/02/firefox-66-to-block-automatically-playing-audi
 # 今回の戦略
 どうやって動画を作るか。編集するか。  
 
-![Imgur](https://imgur.com/0Oq1Tyv.png)
+![Imgur](https://i.imgur.com/0Oq1Tyv.png)
 
 というわけで今回の戦略。`Canvas`で動画のフレームを作って渡す。音声はデコードして合成する。  
 
@@ -638,17 +638,17 @@ viewModelScope.launch {
 コーデック、いくつか選べるようにしました。せっかくハードウェアエンコーダーが乗ってるなら選べるようにしたら面白いかなって思った。  
 `Pixel 8`から`AV1 ハードウェアエンコーダー`が乗ってるので、`AV1 コーデック`も選べるようにしました。Android 14 からは`AV1 ソフトウェアエンコード`もできます。  
 
-![Imgur](https://imgur.com/cwKPMBY.png)
+![Imgur](https://i.imgur.com/cwKPMBY.png)
 
 ## 外部連携機能
 
-![Imgur](https://imgur.com/hUUXLdR.png)
+![Imgur](https://i.imgur.com/hUUXLdR.png)
 
 外部連携機能があります。あかりんく。  
 これは外部アプリで素材を作成（写真とか）して、その素材をタイムラインに追加できる機能で、  
 標準では作れない、なんか特殊な素材（例えば`QRコード画像生成機能`とか）を外部アプリで作成して、あかりどろいど側で受け取る事ができます。  
 
-![Imgur](https://imgur.com/QOsN5Kk.png)
+![Imgur](https://i.imgur.com/QOsN5Kk.png)
 
 技術的には、`Android`には`Intent`で他のアプリと連携できる仕組みがあります。それこそ大昔（？）のキーボードアプリのマッシュルーム機能とかはこの`Intent`で出来ていたはず。  
 これを使ってます。  
@@ -712,7 +712,7 @@ https://github.com/takusan23/AkariDroid/blob/master/AKALINK_README.md
 ちなみに`あかりどろいど`自体はちょっと直さないと動かなそう。（超小声）  
 エンコード部分はちゃんと動きました。それ以外の部分がちょっと壊れてた。。  
 
-![Imgur](https://imgur.com/tr71Ciz.png)
+![Imgur](https://i.imgur.com/tr71Ciz.png)
 
 - `MediaMetadataRetriever`、`AutoCloseable`を実装してるの新しい`Android`だけなのか、、罠すぎる
     - https://stackoverflow.com/questions/65398759/

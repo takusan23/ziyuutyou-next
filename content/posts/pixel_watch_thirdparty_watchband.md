@@ -9,7 +9,7 @@ tags:
 どうもこんばんわ。  
 `Pixel Watch`のサードパーティ製バンドを買ってみました。アマゾンで`1400円`くらい。
 
-![Imgur](https://imgur.com/tM7pOcV.png)
+![Imgur](https://i.imgur.com/tM7pOcV.png)
 
 この磁石で長さ調整できるやつ、`Apple Watch`ユーザーがよく付けてていいなー思って気になってた、  
 あと最初からついてるやつが夏だと暑くて違うの試してみたかった。

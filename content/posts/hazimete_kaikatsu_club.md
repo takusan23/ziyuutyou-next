@@ -18,14 +18,14 @@ https://www.kaikatsu.jp/guide/?letrotab=6367
 
 # 店舗についた
 
-![Imgur](https://imgur.com/MjMoWLW.png)
+![Imgur](https://i.imgur.com/MjMoWLW.png)
 
 初回用の機械があるので、そこに向かい、指示に従う。  
 仮登録の`QRコード`を提示し、機械で身分証明書を読み取らせたり、なんやかんやすると登録が終わります。
 
 そしたら、部屋を選ぶ機械へ向かいます。2回目以降はこの機械に向かえばいいはず。  
 
-![Imgur](https://imgur.com/lVHoHjw.png)
+![Imgur](https://i.imgur.com/lVHoHjw.png)
 
 部屋を選びます。  
 完全個室ってのが個室、ちゃんとお部屋らしい。  
@@ -36,18 +36,18 @@ https://www.kaikatsu.jp/guide/?letrotab=6367
 部屋を選ぶと、レシートとカードキーが払い出されます。  
 カードキーを通すことで、共用部（ドリンクバーとかがあるエリア）と専用部（お部屋）の行き来ができます。専用部で言い方があってんのか知らんけど。  
 
-![Imgur](https://imgur.com/0BgTdIE.png)
+![Imgur](https://i.imgur.com/0BgTdIE.png)
 
 首から下げるネックストラップが借りられるので、カードが払い出されたら一緒にもらっておくとよさそう。  
 ちなみに今回は空いてなかったのでブースで、ま、まあ日が登るまでだから。
 
 # ブース
-![Imgur](https://imgur.com/o42GInp.png)
+![Imgur](https://i.imgur.com/o42GInp.png)
 
 店によって違うのかよく知らないのですが、内側からかけられる鍵がありました。  
 内側からはかけれるので、部屋に籠もってる分には問題なさそう、部屋から出たら知らん。
 
-![Imgur](https://imgur.com/po3OJoh.png)
+![Imgur](https://i.imgur.com/po3OJoh.png)
 
 パソコンがまぶしいが、デスクトップパソコンなので、パソコンの設定ではなく直接ディスプレイを操作する必要があるはず。  
 適当に電源ボタン近くのボタンを押せばメニューが出てくるはずで、そこで照度（表記ゆれはあると思う）を選べば明るさ調整ができるはず。
@@ -57,16 +57,16 @@ https://www.kaikatsu.jp/guide/?letrotab=6367
 
 何時間利用しているかと料金は、部屋のパソコンから見ることが出来ます。
 
-![Imgur](https://imgur.com/ANJG8Vt.png)
+![Imgur](https://i.imgur.com/ANJG8Vt.png)
 
 先述の通り、それぞれの個室には天井は無く、見上げると店の天井が見えます。  
 また、仕切りになってる壁は天井までは届いてないので、こんな感じです。
 
-![Imgur](https://imgur.com/juudJTU.png)
+![Imgur](https://i.imgur.com/juudJTU.png)
 
 ライトもありました。
 
-![Imgur](https://imgur.com/CDdOHqC.png)
+![Imgur](https://i.imgur.com/CDdOHqC.png)
 
 ## ブース内
 完全個室じゃないのがブースなので、店内`BGM`が普通に聞こえるし、照明の光が入ってくる。  
@@ -75,16 +75,16 @@ https://www.kaikatsu.jp/guide/?letrotab=6367
 # 設備
 ドリンクバーあります。確かに飲み放題っぽい。  
 
-![Imgur](https://imgur.com/dplrV9p.png)
+![Imgur](https://i.imgur.com/dplrV9p.png)
 
-![Imgur](https://imgur.com/OxTsiN0.png)
+![Imgur](https://i.imgur.com/OxTsiN0.png)
 
 朝になったのでコーヒーを飲んでみたけど、選んだ種類が悪かったのか（多分そう）、醤油の味がした。もはや快活関係ない。
 
 あとは毛布？がレンタルできるそうですが夜見たときはなかった。。。  
 朝になったら返却されててあったんだ！ってなった。
 
-![Imgur](https://imgur.com/qxubIsz.png)
+![Imgur](https://i.imgur.com/qxubIsz.png)
 
 # 退出する
 身支度をしたら、機械へ向かい、支払いをします。レシートにあるバーコードをかざして払うだけ。  

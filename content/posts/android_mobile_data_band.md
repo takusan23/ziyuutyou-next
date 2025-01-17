@@ -7,7 +7,7 @@ tags:
 ---
 どうもこんばんわ
 
-<img src="https://imgur.com/31rkY0c.png" width="300">
+<img src="https://i.imgur.com/31rkY0c.png" width="300">
 
 店員ちゃんのセイイキ、、、どこ？
 
@@ -439,7 +439,7 @@ class MainActivity : AppCompatActivity() {
 
 動かすとこんなかんじ
 
-![Imgur](https://imgur.com/FIzgY7v.png)
+![Imgur](https://i.imgur.com/FIzgY7v.png)
 
 ## 番外編：5G（NR）に対応する
 New Radioの略らしい。  

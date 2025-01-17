@@ -31,10 +31,10 @@ https://docs.microsoft.com/ja-jp/dotnet/core/porting/#overview-of-the-porting-pr
 
 # 環境
 
-|なまえ|あたい|
-|--|---|
-|今回使うソースコード|https://github.com/takusan23/RunCat_for_windows_nicomoba_ver|
-|Visual Studio|2019 Community|
+| なまえ               | あたい                                                       |
+|----------------------|--------------------------------------------------------------|
+| 今回使うソースコード | https://github.com/takusan23/RunCat_for_windows_nicomoba_ver |
+| Visual Studio        | 2019 Community                                               |
 
 
 # 移行方法を確認する
@@ -44,17 +44,17 @@ https://docs.microsoft.com/ja-jp/dotnet/core/porting/#overview-of-the-porting-pr
 .NET Coreではプロジェクトファイル(.csproj)の中身が簡素化されていて、全然別のことが書いてある模様。私も何に使ってるのかわからん。    
 
 まず`ソリューションエクスプローラー`のプロジェクト名のところを右クリックして、`プロジェクトのアンロード`を押します。  
-![Imgur](https://imgur.com/m90BD8l.png)
+![Imgur](https://i.imgur.com/m90BD8l.png)
 
 そしたらもう一回プロジェクト名のところを右クリックして、`編集 なんとか.csproj`を押します
 
-![Imgur](https://imgur.com/nrumkVX.png)
+![Imgur](https://i.imgur.com/nrumkVX.png)
 
 押すと謎のXMLファイルみたいなのが開くので、`project`要素（`<Project ToolsVersion なんとか～`のところ）に、`Sdk`属性（`Sdk="なんとか"`）があれば簡単に移行できます。
 
 以下は`Sdk属性`が無い例です。よって以降はめんどいです
 
-![Imgur](https://imgur.com/F1fR6hP.png)
+![Imgur](https://i.imgur.com/F1fR6hP.png)
 
 
 ```xml
@@ -109,22 +109,22 @@ WPFの場合は **WPF App(.NET Core)** を選べばいいと思います。
 
 ソリューションエクスプローラーのプロジェクト名(`.NET Core`で作成した方)の部分を右クリックして、`プロパティ`を選びます。
 
-![Imgur](https://imgur.com/uADCQCe.png)
+![Imgur](https://i.imgur.com/uADCQCe.png)
 
 プロパティが開けたら、`リソース`を押します。
 
-![Imgur](https://imgur.com/6ZUL6Cd.png)
+![Imgur](https://i.imgur.com/6ZUL6Cd.png)
 
 するとこんな画面になるので、`このプロジェクトには既定のリソース～`って書いてある部分を押します。
 
 あとはこの画面に使う画像をドラッグアンドドロップすると画像が登録されます。  
 Resourcesフォルダも生成されてることがわかりますね。
 
-![Imgur](https://imgur.com/9qy2cK3.png)
+![Imgur](https://i.imgur.com/9qy2cK3.png)
 
 あとはC#の方でusingを追加したら触れるようになります。
 
-![Imgur](https://imgur.com/BLkZMVJ.png)
+![Imgur](https://i.imgur.com/BLkZMVJ.png)
 
 ## ブラウザ起動できない
 こうすればいいです。`.NET Core`の問題っぽい？
@@ -142,7 +142,7 @@ Process.Start(psi);
 [自己完結exeの作り方はここ](dotnet_wpf)。これを読めばexeを生成してばらまく事ができます。
 
 ニコモバちゃんかわいい[^1]  
-![Imgur](https://imgur.com/ghhYzL3.png)
+![Imgur](https://i.imgur.com/ghhYzL3.png)
 
 ダウンロード置いときますね。  
 https://github.com/takusan23/RunCat_for_windows_nicomoba_chan_ver/releases/tag/NicomobaChanVar_1.0

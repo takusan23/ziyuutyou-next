@@ -12,22 +12,22 @@ tags:
 
 ジュエリー・ハーツ・アカデミア -We will wing wonder world- 攻略しました。  
 
-![Imgur](https://imgur.com/vR1AfMu.png)
+![Imgur](https://i.imgur.com/vR1AfMu.png)
 
 序盤の頃が懐かしくなるぐらいにはぜんぜん違う方向に話が進むのね、、評判がよさそうだったので予約してたんですがめちゃよかったです。  
 次々と新事実が、、、！伏線回収すごい、、色んな方向に話が進んでいくけど最後はちゃんとしてました。
 
-![Imgur](https://imgur.com/trnJxyg.png)
+![Imgur](https://i.imgur.com/trnJxyg.png)
 
 戦闘シーンは毎回ラスボスかよって勢いなので毎回ハラハラさせられる、、、
 
-![Imgur](https://imgur.com/4gdKxtp.png)
+![Imgur](https://i.imgur.com/4gdKxtp.png)
 
 ヒロインみんなめっちゃかわいい！！！。おすすめです。
 
-![Imgur](https://imgur.com/RbcdPR7.png)
+![Imgur](https://i.imgur.com/RbcdPR7.png)
 
-![Imgur](https://imgur.com/wR807Ro.png)
+![Imgur](https://i.imgur.com/wR807Ro.png)
 
 ↑アリアンナちゃんがかわいいのでぜひ
 
@@ -45,13 +45,13 @@ tags:
 
 `Xperia`で動いたのは確認した。`Pixel`でも多分動くと思います。
 
-![Imgur](https://imgur.com/VZuEFBS.png)
+![Imgur](https://i.imgur.com/VZuEFBS.png)
 
-![Imgur](https://imgur.com/liyNL0w.png)
+![Imgur](https://i.imgur.com/liyNL0w.png)
 
 ## 転用5G の検出
 `3.6GHz`未満の周波数の場合に転用5Gと表示するようにしました。  
-![Imgur](https://imgur.com/BHuAk07.png)
+![Imgur](https://i.imgur.com/BHuAk07.png)
 
 ## Snapdragon 端末で動くように
 あともう一つ、私もXperiaで使うまで知らなかったのですが **Snapdragon 搭載端末で動いてませんでした。**  
@@ -59,7 +59,7 @@ tags:
 
 アプリを出してから一年ぐらい経ちますが気づきませんでしたごめんなさい。
 
-![Imgur](https://imgur.com/rXrsd6A.png)
+![Imgur](https://i.imgur.com/rXrsd6A.png)
 
 今回はこれらの実装方法でもつらつらと
 
@@ -74,7 +74,7 @@ tags:
     - → 通知されるが、`5G`基地局の電波は届かず`4G`にのみ接続される。
     - → しかし、`4G`基地局から`5G`の存在が通知されているため、**RAT表示が5G**になる。（実際は`4G`に繋がっているのに！）
     - 雑な絵です
-        - ![Imgur](https://imgur.com/eCoXDPD.png)
+        - ![Imgur](https://i.imgur.com/eCoXDPD.png)
     - なんで判定がサードパーティレベルでできるんだって話ですが、どうやら内部では`4G`扱いだが、RAT表示だけ`5G`に上書きする処理のようです。
 - Sub-6
     - 4Gの延長線上の周波数を使う5Gです。
@@ -506,7 +506,7 @@ https://github.com/takusan23/NewRadioSupporter
 
 審査提出！  
 
-![Imgur](https://imgur.com/JY0Itt0.png)
+![Imgur](https://i.imgur.com/JY0Itt0.png)
 
 # おわりに1
 電測APIはAOSPがどうこう、よりもモデムのベンダー次第なところがあるので、`Issue Tracker`に書いても多分無理って言われるだけだと思います；；

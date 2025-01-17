@@ -14,13 +14,13 @@ http://www.cuffs.co.jp/products/enking/
 みんな可愛かったです。  
 シナリオなら未来ちゃんかなー
 
-![Imgur](https://imgur.com/gn5s67t.png)
-![Imgur](https://imgur.com/ofeHzOf.png)
+![Imgur](https://i.imgur.com/gn5s67t.png)
+![Imgur](https://i.imgur.com/ofeHzOf.png)
 
 でもやっぱ千紗さんが可愛かったです。
 
-![Imgur](https://imgur.com/QfWM9eI.png)
-![Imgur](https://imgur.com/fmBl3jo.png)
+![Imgur](https://i.imgur.com/QfWM9eI.png)
+![Imgur](https://i.imgur.com/fmBl3jo.png)
 
 とりあえずオープニング見てほしい、テンポ良くて良き
 
@@ -30,7 +30,7 @@ Pixel 6 Pro を更新したらついにdocomoの5Gを掴むようになった。
 
 そーす：https://9to5google.com/2021/12/30/pixel-6-december-update-delay/
 
-<img width="200" src="https://imgur.com/Mg1qpT3.png">
+<img width="200" src="https://i.imgur.com/Mg1qpT3.png">
 
 というわけで、Android 11から追加された 5G（NR / New Radio）向けのAPIを試してみる
 
@@ -354,10 +354,10 @@ class MainActivity : AppCompatActivity() {
 
 寒い中ドコモショップの近くをフラフラして5Gの電波を感じてきました。(ドコモショップには貴重な5Gミリ波アンテナがある。すべての店舗には無いっぽい？)
 
-<img width="200" src="https://imgur.com/Mg1qpT3.png">
-<img width="200" src="https://imgur.com/J2BomtM.png">
-<img width="200" src="https://imgur.com/TcmirVd.png">
-<img width="200" src="https://imgur.com/PhYA35b.png">
+<img width="200" src="https://i.imgur.com/Mg1qpT3.png">
+<img width="200" src="https://i.imgur.com/J2BomtM.png">
+<img width="200" src="https://i.imgur.com/TcmirVd.png">
+<img width="200" src="https://i.imgur.com/PhYA35b.png">
 
 - `ConnectivityManager#registerDefaultNetworkCallback()`
     - モバイルデータ接続中は常に従量制ネットワーク判定だった

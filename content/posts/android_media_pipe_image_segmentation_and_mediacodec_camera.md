@@ -77,12 +77,12 @@ https://ai.google.dev/edge/mediapipe/solutions/vision/image_segmenter#deeplab-v3
 
 `src/app/main/assets/`にダウンロードしたファイルを配置します。  
 
-![Imgur](https://imgur.com/zFVhNBd.png)
+![Imgur](https://i.imgur.com/zFVhNBd.png)
 
 ファイルが表示される部分、`Project`表示にすることでそのままのファイル構造が出るようになります。  
 普段は`Android`表示がアクセスしやすいんですけどね
 
-![Imgur](https://imgur.com/jGf4Aex.png)
+![Imgur](https://i.imgur.com/jGf4Aex.png)
 
 ## MediaPipe を使うクラスを作る
 といっても`MediaPipe`がほぼやってくれたので、モデルのパスを指定したり、入力`Bitmap`を受け付ける部分しか書いてない。  
@@ -215,7 +215,7 @@ private fun ImageSegmentationScreen() {
 おお～  
 それっぽい、背景が青だからなんか`BB 素材`が作れそう雰囲気がある。
 
-![Imgur](https://imgur.com/GV786Pn.png)
+![Imgur](https://i.imgur.com/GV786Pn.png)
 
 ### セグメンテーションのベンチマーク
 ```kotlin
@@ -446,7 +446,7 @@ private fun ImageSegmentationScreen() {
 動画を選ぶを押して人物が写っている動画を選ぶ。  
 選ぶと処理が始まるので、数分待つ。
 
-![Imgur](https://imgur.com/RbgvG9X.png)
+![Imgur](https://i.imgur.com/RbgvG9X.png)
 
 ## 出力結果
 `MediaPipe`すげ～  
@@ -462,9 +462,9 @@ private fun ImageSegmentationScreen() {
 青色をくり抜くようにすれば BB 素材です。  
 他の動画編集アプリでも使えるはず。
 
-![Imgur](https://imgur.com/ljp9Qry.png)
+![Imgur](https://i.imgur.com/ljp9Qry.png)
 
-![Imgur](https://imgur.com/A5Ghj8P.png)
+![Imgur](https://i.imgur.com/A5Ghj8P.png)
 
 ### BB素材作成ベンチマーク
 #### 時間測る関数
@@ -827,7 +827,7 @@ private suspend fun Image.toJpegBitmap() = withContext(Dispatchers.IO) {
 いまいち過ぎるので`git revert`しました。多分安定しているのがテクスチャを描画するだけの`OpenGL ES`を経由するのが一番いい気がする。これから話します。  
 もしくは解析のユースケースがサポートされてる（らしい）`CameraX`に乗り換えるか。解析用に`Image`がもらえるらしいです。
 
-![Imgur](https://imgur.com/8wlyAbn.png)
+![Imgur](https://i.imgur.com/8wlyAbn.png)
 
 `git revert`してしまったのでもしイマイチ具合を見たい場合は、  
 ブランチが`image_segmentation`、コミットハッシュが`a7742f2f863b3ffbff40ddddc0b88d87b67f17c3`なので、`git clone`したら`git checkout`でコミットハッシュを入れてください。  
@@ -838,7 +838,7 @@ https://github.com/takusan23/KomaDroid
 `OpenGL ES`を間に挟むと安定して動いてる気がします。`Stackoverflow`の回答でも`glReadPixels`しているくらいだし（今でもそっちのが速いかは不明）。  
 というか、間に`OpenGL ES`を挟むと`glReadPixels`なんかせずとも、`ImageReader`を`PixelFormat.RGBA_8888`のモードで利用できるので。今のところ`RGBA_8888`なら安定して動いてる気がします。
 
-![Imgur](https://imgur.com/RiQEAOG.png)
+![Imgur](https://i.imgur.com/RiQEAOG.png)
 
 こんな感じに、カメラ映像が一旦`OpenGL ES`の描画を経由するようになります。ただカメラ映像のテクスチャをそのまま描画しているだけ（手間が増えただけ）。なんでこっちのほうが安定しているのかは謎です。  
 `ImageReader`を入れるだけでガクガクになるプレビュー問題も直るし、`Snapdragon`で動画撮影が出来ないのも直った。

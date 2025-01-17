@@ -10,7 +10,7 @@ tags:
 どうもこんばんわ。  
 ゆびさきコネクション、攻略しました。  
 
-![Imgur](https://imgur.com/LAo5lKO.png)
+![Imgur](https://i.imgur.com/LAo5lKO.png)
 
 この子かわいい（お酒の話分からんかったけど）
 
@@ -72,7 +72,7 @@ Box(
 }
 ```
 
-![Imgur](https://imgur.com/WS0R8dv.png)
+![Imgur](https://i.imgur.com/WS0R8dv.png)
 
 ## Column
 縦積みLinearLayout
@@ -89,7 +89,7 @@ Column(
 }
 ```
 
-![Imgur](https://imgur.com/SvrEPky.png)
+![Imgur](https://i.imgur.com/SvrEPky.png)
 
 
 ## Row
@@ -108,7 +108,7 @@ Row(
 }
 ```
 
-![Imgur](https://imgur.com/43hkYm7.png)
+![Imgur](https://i.imgur.com/43hkYm7.png)
 
 # 全部真ん中である必要はないときのための
 `Box`、`Column`、`Row`の子供のときだけ使える`Modifier`の関数があります。
@@ -123,7 +123,7 @@ Box(modifier = Modifier.fillMaxSize()) {
 }
 ```
 
-![Imgur](https://imgur.com/u8sk2nm.png)
+![Imgur](https://i.imgur.com/u8sk2nm.png)
 
 ## Column
 
@@ -137,7 +137,7 @@ Column(
 }
 ```
 
-![Imgur](https://imgur.com/UYfAYOz.png)
+![Imgur](https://i.imgur.com/UYfAYOz.png)
 
 ## Row
 
@@ -151,7 +151,7 @@ Row(
 }
 ```
 
-![Imgur](https://imgur.com/cEHpKIy.png)
+![Imgur](https://i.imgur.com/cEHpKIy.png)
 
 なお、上記の方法は`Modifier`が引数に取ってあることが必須なため、  
 オリジナル`@Composable`な関数の場合は引数に`Modifier`を取るようにしよう。
@@ -207,8 +207,8 @@ fun RowScope.ComposeHelloWorldText2() {
 # 終わりに
 `comp`まで入力すれば`@Composable`な関数を一瞬で作れます。
 
-![Imgur](https://imgur.com/GbDP9rT.png)
+![Imgur](https://i.imgur.com/GbDP9rT.png)
 
-![Imgur](https://imgur.com/LJZx5Wq.png)
+![Imgur](https://i.imgur.com/LJZx5Wq.png)
 
 あとクソどうでもいいんだけど、エロゲをリモートデスクトップでスマホから遊ぶときは`Steam Link`を使うといいかも。ルーターを超えられる(同じネットワークにいる必要がない)ので外からでも出来るのが強い。  

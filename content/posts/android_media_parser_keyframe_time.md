@@ -35,7 +35,7 @@ https://takusan.negitoro.dev/posts/android_get_video_frame_mediacodec/
 1 の場所のフレームが欲しい場合、一番近い 2 のキーフレームまで戻らないといけないんですよね。  
 1 の場所のフレームは不完全なフレームでキーフレームから変化している箇所のみが記録されているため、完全なフレームにするためには一番近いキーフレーム（2 の地点）まで戻り、 1 の位置まで待つ必要があります。
 
-![Imgur](https://imgur.com/mrJU171.png)
+![Imgur](https://i.imgur.com/mrJU171.png)
 
 すべてがキーフレームなら戻る必要なく最高なのですが、すべてキーフレームにすると動画サイズがべらぼうに大きくなってしまいます。ので定期的にキーフレームを入れるようにしたらしい。  
 
@@ -46,7 +46,7 @@ https://takusan.negitoro.dev/posts/android_get_video_frame_mediacodec/
 で、この自前で作った動画フレームを`Bitmap`にしてくれるやつ、実は連続アクセス前提で作ったので、動画編集中とかは向いてないんですね。  
 現状は、欲しい時間のフレームが来る前に、キーフレームが来た場合のみシークをしています。  
 
-![Imgur](https://imgur.com/8f8sifW.png)
+![Imgur](https://i.imgur.com/8f8sifW.png)
 
 （つまり、いま`1`の位置にいて、`4`のフレームが欲しい場合でも、まず`2`のキーフレームまでデコードが進み（無駄）、そこで`3`のキーフレームへシークする判断になる）
 
@@ -68,7 +68,7 @@ https://github.com/takusan23/AkariDroid/blob/master/akari-core/src/main/java/io/
 キーフレームが来る前にシークすれば速い。。。のですが、`Android`の`MediaExtractor（コンテナフォーマットからデータを取り出すやつ）`に、キーフレームがどこに入っているかを問い合わせる`API`がない。  
 さっきの図を使いまわしますが、このキーフレームの再生位置を取得する方法があればいいんですけど、、、
 
-![Imgur](https://imgur.com/8f8sifW.png)
+![Imgur](https://i.imgur.com/8f8sifW.png)
 
 # MediaParser クラス
 ありました！！！！  
@@ -314,7 +314,7 @@ fun MainScreen() {
 ```
 
 # 使ってみる
-![Imgur](https://imgur.com/NT7aJaZ.png)
+![Imgur](https://i.imgur.com/NT7aJaZ.png)
 
 ほとんどの人からすれば、動画のキーフレームの位置なんて超絶どうでもいいと思うので、、、、はい。  
 一応`ffprobe get keyframe position`とかで調べて出てきたコマンドを叩いた結果と、今作ったアプリで同じ時間が出てきたので、多分合ってる！

@@ -10,14 +10,14 @@ tags:
 どうもこんばんわ。  
 容量足りんくてパソコンのスクショ整理してたら見覚えある風景あったから見てきた。
 
-![Imgur](https://imgur.com/RBSR4Qt.png)
+![Imgur](https://i.imgur.com/RBSR4Qt.png)
 
 時期が時期なだけあってキラキラしている。  
 作中は反転してるっぽいので反転してください。
 
-![Imgur](https://imgur.com/ZC7kl0w.png)
+![Imgur](https://i.imgur.com/ZC7kl0w.png)
 
-![Imgur](https://imgur.com/VcayN1X.png)
+![Imgur](https://i.imgur.com/VcayN1X.png)
 
 # 本題
 `Android`端末同士を`Bluetooth Low Energy（以降 BLE）`を使って小さなデータをやり取りできるようにしたい。  
@@ -26,7 +26,7 @@ tags:
 今回は`BLE`の**ペリフェラル、セントラル側**を`Android`で作ってみて実際にデータのやり取りをしてみる。  
 お試しにテキストを送ってみます。バイト配列にシリアライズできればなんでも良いはず？`Java`の`Serializable`とか。`Protocol Buffers`は使ったことなくわからないです。。  
 
-![Imgur](https://imgur.com/pWk2EuQ.png)
+![Imgur](https://i.imgur.com/pWk2EuQ.png)
 
 ところで雲行きが怪しい。  
 
@@ -90,7 +90,7 @@ https://developer.android.com/develop/connectivity/bluetooth/ble/ble-overview
 ## 作成
 `Jetpack Compose`のテンプレで
 
-![Imgur](https://imgur.com/XJGVfDa.png)
+![Imgur](https://i.imgur.com/XJGVfDa.png)
 
 ## AndroidManifest
 ペリフェラル、セントラル両方を1つのアプリでやるので権限が多い  
@@ -338,7 +338,7 @@ fun main() {
 }
 ```
 
-![Imgur](https://imgur.com/jQBbNYv.png)
+![Imgur](https://i.imgur.com/jQBbNYv.png)
 
 2つの値が出てくれば良いはず。  
 上を`サービスの UUID`、下を`キャラクタリスティックの UUID`にします。
@@ -1112,16 +1112,16 @@ fun CentralScreen() {
 1台をペリフェラル、もう1台をセントラルにして、接続できるまで待ちます。（デバイス数が増えていること、くるくるが消えていること）  
 接続すると、セントラル側からペリフェラルの値を`read`したり、ペリフェラル側に`write`出来るようになるはずです。
 
-![Imgur](https://imgur.com/B7IxEjX.png)
+![Imgur](https://i.imgur.com/B7IxEjX.png)
 
-![Imgur](https://imgur.com/xnfDAhW.png)
+![Imgur](https://i.imgur.com/xnfDAhW.png)
 
 動いたかな。  
 
 **手持ちのまともに動く端末を総動員させた画像がこれです。**  
 1台のペリフェラルのキャラクタリスティック対して`read / write`出来てそうです。
 
-![Imgur](https://imgur.com/KhX2eVq.png)
+![Imgur](https://i.imgur.com/KhX2eVq.png)
 
 冒頭で話した通り、今回は文字列を`read / write`しているわけですが別に文字列に限ったことはなく、バイト配列にエンコードデコードできる場合はやり取りできるはずです、  
 `BLE`なので小さいデータしか送れないとは思いますが。

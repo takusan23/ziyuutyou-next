@@ -23,18 +23,18 @@ Node.jsからLINE公式アカウントと友達になっている人全員に送
 https://developers.line.biz/ja/services/messaging-api/  
 を開いて、`今すぐはじめよう`を選びます。
 
-![Imgur](https://imgur.com/4Wm5Iu7.png)
+![Imgur](https://i.imgur.com/4Wm5Iu7.png)
 
 ### なんか英語なんだけど？
 右下のところから日本語選べます。
 
-![Imgur](https://imgur.com/MDNDRzS.png)
+![Imgur](https://i.imgur.com/MDNDRzS.png)
 
 ### プロバイダー
 まあ開発者の名前とか入れておけばいいんじゃないですかね。  
 [ドキュメントによると](https://developers.line.biz/ja/docs/messaging-api/getting-started/#_4-%E3%83%81%E3%83%A3%E3%83%8D%E3%83%AB%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B)この項目は表示されないそうです。
 
-![Imgur](https://imgur.com/T1lOCmP.png)
+![Imgur](https://i.imgur.com/T1lOCmP.png)
 
 ### チャンネル名、説明文
 名前ですね。
@@ -42,7 +42,7 @@ https://developers.line.biz/ja/services/messaging-api/
 [ドキュメントによると](https://developers.line.biz/ja/docs/messaging-api/getting-started/#_4-%E3%83%81%E3%83%A3%E3%83%8D%E3%83%AB%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B)名前はユーザーに表示されるそうです。（まあ当たり前）  
 説明はLINE Botを作る分には表示されない模様。
 
-![Imgur](https://imgur.com/7NgoM0x.png)
+![Imgur](https://i.imgur.com/7NgoM0x.png)
 
 ### チャンネルアイコン
 めんどいので飛ばします。任意ですので
@@ -50,7 +50,7 @@ https://developers.line.biz/ja/services/messaging-api/
 ### 職種
 適当に
 
-![Imgur](https://imgur.com/KautfJe.png)
+![Imgur](https://i.imgur.com/KautfJe.png)
 
 あとはメアドとかを入力して同意すれば作成できます。
 
@@ -64,7 +64,7 @@ Googleレンズなり、LINEのQRコード読み取りなんかで友達登録�
 `Messaging API設定`の一番下に、チャンネルアクセストークンってのが有るので、そこで発行してください。  
 他の人に教えちゃだめなやつです。
 
-![Imgur](https://imgur.com/66q8qv4.png)
+![Imgur](https://i.imgur.com/66q8qv4.png)
 
 # Node.jsから叩く
 

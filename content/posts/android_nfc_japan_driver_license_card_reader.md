@@ -11,7 +11,7 @@ tags:
 `feng`がなんと！サウンドトラックを発売するみたいじゃないですか！！！。もう手に入らないと思ってたのにまじ？   
 一瞬本当か疑ったけど`fengの上様がRTしてた`のと`ちゃんと予約開始日に予約できた`あたりマジだと思う。値段が安く見える謎  
 
-![Imgur](https://imgur.com/r1OXk0z.png)
+![Imgur](https://i.imgur.com/r1OXk0z.png)
 
 http://fengva.com/
 
@@ -348,7 +348,7 @@ if (mfSelectCommandResult[0] == 0x90.toByte()) {
 今回は、`P1`は`カレントDFの直下のEF`、`P2`は`最初又は唯一のファイルを選択`を指定しました。
 2進数を16進数にして渡すだけです。
 
-![Imgur](https://imgur.com/vJKuTN2.png)
+![Imgur](https://i.imgur.com/vJKuTN2.png)
 
 `Le`は、この後続くデータフィールドの長さです。今回は`0x2F, 0x01`で2バイトなので、2を16進数にした`0x02`(先頭`0x`つけて1桁なら`0`で埋める)を渡します。
 
@@ -395,7 +395,7 @@ if (mfEf01SelectCommandResult[0] == 0x90.toByte()) {
 `P1 / P2`に関しては、カレントディレクトリの中身を見るので`0x00, 0x00`でいいです。  
 最後の`Le`ですが、共通データ要素の長さは17なので、16進数に変換した`0x11`を渡せばいいです。
 
-![Imgur](https://imgur.com/dXHZinj.png)
+![Imgur](https://i.imgur.com/dXHZinj.png)
 
 ```plaintext
 0x00, 0xB0, 0x00, 0x00, 0x11

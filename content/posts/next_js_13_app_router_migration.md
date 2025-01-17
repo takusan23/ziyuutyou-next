@@ -13,28 +13,28 @@ tags:
 
 この子のBルートの最後のイベントCGがめっちゃ好みです。
 
-![Imgur](https://imgur.com/KvcE0Gh.png)
+![Imgur](https://i.imgur.com/KvcE0Gh.png)
 
-![Imgur](https://imgur.com/tB5j7YX.png)
+![Imgur](https://i.imgur.com/tB5j7YX.png)
 
 個人的には 満留さん と 千羽ちゃん のルートが好きです、  
 Aルートのほうが好みでした。
 
-![Imgur](https://imgur.com/UTyFiFD.png)
+![Imgur](https://i.imgur.com/UTyFiFD.png)
 
-![Imgur](https://imgur.com/62BW6gS.png)
+![Imgur](https://i.imgur.com/62BW6gS.png)
 
 かわいい
 
-![Imgur](https://imgur.com/bOC7SP1.png)
+![Imgur](https://i.imgur.com/bOC7SP1.png)
 
 ↑ ヒロイン視点がめっちゃいい
 
-![Imgur](https://imgur.com/PYaEeQ2.png)
+![Imgur](https://i.imgur.com/PYaEeQ2.png)
 
 ルート選択、妹ちゃんルートはちゃんと午後からしか出現しないようになってた（それはそうか
 
-![Imgur](https://imgur.com/d4bVeUR.png)
+![Imgur](https://i.imgur.com/d4bVeUR.png)
 
 あつい・・・あついね  
 予想よりもめっちゃよかったです！！おすすめ（様子見しようかと思ってたけど予約してよかった）
@@ -177,7 +177,7 @@ npm install next@latest react@latest react-dom@latest
 ## _app.tsx を layout.tsx にする
 `_app.tsx`を使って共通レイアウトを作ってましたが、`App Router`では`layout.tsx`を作ることで共通レイアウトを作れるようになりました。  
 
-![Imgur](https://imgur.com/msvtbZg.png)
+![Imgur](https://i.imgur.com/msvtbZg.png)
 
 `app/layout.tsx`  
 ```tsx
@@ -280,7 +280,7 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
 ```
 
 `icon`、`favicon`は、`appフォルダ`内に入れておくことで自動で認識して追加してくれるそうです。  
-![Imgur](https://imgur.com/J4KEWCE.png)
+![Imgur](https://i.imgur.com/J4KEWCE.png)
 
 https://nextjs.org/docs/app/api-reference/file-conventions/metadata/app-icons#image-files-ico-jpg-png
 
@@ -368,7 +368,7 @@ const linkList = await JsonFolderManager.getLinkList()
 最後に、`pages/index.tsx`、`pages/_app.tsx`、`pages/_document.tsx`を消します。残しておくと、`app`なのか`pages`なのかどっちなんだい！ってなっちゃうので  
 
 どうだろう、これで見れるはず？  
-![Imgur](https://imgur.com/5p4dvJN.png)
+![Imgur](https://i.imgur.com/5p4dvJN.png)
 
 ## ひたすら pages を app にする作業をする
 これを繰り返します。  
@@ -438,7 +438,7 @@ https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes
 
 どうでしょう、`CSS`が当たってなかったりしますが、、、、とりあえずは出るようになりましたか？
 
-![Imgur](https://imgur.com/hC0jLrc.png)
+![Imgur](https://i.imgur.com/hC0jLrc.png)
 
 もし`Conflicting app and page file found`がでてしまったら、一度開発サーバーを起動し直すといいかもしれないです。  
 `npm run dev`
@@ -700,7 +700,7 @@ npx serve@latest out
 うーんなんか全然動いて無くないか？  
 ~~`/posts/page/1/`を押してもなんかパスが中途半端なんですけど？~~ → `generateStaticParams`間違ってました。ごめんなさい
 
-![Imgur](https://imgur.com/Kfoniwd.png)
+![Imgur](https://i.imgur.com/Kfoniwd.png)
 
 # ついでに直したいところ
 他に直したい部分が何個かあるんですよね...
@@ -903,7 +903,7 @@ createTheme({
 ```
 
 はい  
-![Imgur](https://imgur.com/fiMT1nU.png)
+![Imgur](https://i.imgur.com/fiMT1nU.png)
 
 ## next/head が無くなってしまったので、クライアントコンポーネントで head が操作できない？
 唯一困ったかもしれない。  

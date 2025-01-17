@@ -49,7 +49,7 @@ https://developer.android.com/about/versions/16/get
 ## 事前設定
 `Pixel`側で開発者向けオプションを有効にし、`USB デバッグ`と`OEM ロック解除`を有効にします。
 
-![Imgur](https://imgur.com/yb03ksM.png)
+![Imgur](https://i.imgur.com/yb03ksM.png)
 
 ## Android Flash Tool を開く
 端末とパソコンを接続します。
@@ -58,38 +58,38 @@ https://developer.android.com/about/versions/16/get
 https://flash.android.com/preview/baklava-dp1
 
 するとこんな感じの小さい小窓が出てくるので許可。  
-![Imgur](https://imgur.com/0ZKk6dz.png)
+![Imgur](https://i.imgur.com/0ZKk6dz.png)
 
 `Pixel`端末に`ADB`許可ダイアログが出ていれば許可してあげてください。
 
 そうすると多分端末が選べるようになってるはず？  
-![Imgur](https://imgur.com/XGVX2DP.png)
+![Imgur](https://i.imgur.com/XGVX2DP.png)
 
 端末が選べない場合は`Add new device`を押し、接続中の`Pixel`を選ぶ。  
 `Android Studio`みたいな`adb`使うようなアプリは閉じておいたほうがいいのかも。  
-![Imgur](https://imgur.com/a5nIlrX.png)
+![Imgur](https://i.imgur.com/a5nIlrX.png)
 
-![Imgur](https://imgur.com/9I0n3b2.png)
+![Imgur](https://i.imgur.com/9I0n3b2.png)
 
 端末を選ぶと`Install build`ボタンが押せるようになってるはず。  
 いざ`Android 16`  
-![Imgur](https://imgur.com/Ti2y6a2.png)
+![Imgur](https://i.imgur.com/Ti2y6a2.png)
 
 インストールを開始するとこんな感じでデータが消えるけどいいか？って聞かれるので`Confirm`を押す。  
-![Imgur](https://imgur.com/GHddhiE.png)
+![Imgur](https://i.imgur.com/GHddhiE.png)
 
 しばらく待ちます  
-![Imgur](https://imgur.com/FfCd0c9.png)
+![Imgur](https://i.imgur.com/FfCd0c9.png)
 
 途中で`Bootloader Unlock`するよう言われるので、`Pixel`の画面に従う。  
 ちなみに`OEM ロック解除`を`OFF`の状態でやるとこの画面になります。一回起動して`ON`にしてリトライしましょう。  
-![Imgur](https://imgur.com/MXGM43F.png)
+![Imgur](https://i.imgur.com/MXGM43F.png)
 
 パソコンの画面もスマホの画面も取りそこねたのですが、  
 画面には音量ボタンで選択肢を変更できる、電源ボタンで確定が出来ると書かれているので、音量アップボタンを押し`Unlock the bootloader`という文字に切り替えて、電源ボタンを押す。  
 
 あとは勝手に進むので待つ。  
-![Imgur](https://imgur.com/Ezzd4st.png)
+![Imgur](https://i.imgur.com/Ezzd4st.png)
 
 最後に`Bootloader`を再度ロックするよう言われるので、ボリュームボタンで今度は`Lock the bootloader`にして電源ボタンを押す。これで終わりのはず。  
 以上です。

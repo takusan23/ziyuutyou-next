@@ -11,17 +11,17 @@ tags:
 Dreamin'Her -僕は、彼女の夢を見る。- 攻略しました。(全年齢)  
 
 声優さんが良かったです（詳しくないので分からないですが）
-![Imgur](https://imgur.com/70hd72N.png)
+![Imgur](https://i.imgur.com/70hd72N.png)
 
 中盤がけっこう？重いのですがエンディングはよく出来てていいと思います。
 
 タイトル通りだ...
 
-![Imgur](https://imgur.com/qFAMtAP.png)
+![Imgur](https://i.imgur.com/qFAMtAP.png)
 
-![Imgur](https://imgur.com/sPKP4BO.png)
+![Imgur](https://i.imgur.com/sPKP4BO.png)
 
-![Imgur](https://imgur.com/FYY4Cyy.png)
+![Imgur](https://i.imgur.com/FYY4Cyy.png)
 
 あとOP曲がめっちゃいい。  
 作品とリンクしてる！！！
@@ -59,11 +59,11 @@ OP曲の`おやすみモノクローム`、めっちゃいい
 ## ブラウザでパソコンの画面を取得する（ミラーリング）
 `<video>`でパソコンの画面をミラーするだけならこれだけで動きます、何やこれ一体...
 
-![Imgur](https://imgur.com/wrmpuFZ.png)
+![Imgur](https://i.imgur.com/wrmpuFZ.png)
 
 これだけ（Promiseがリジェクトされた場合などは見てないですが）でパソコンの画面がvideo要素内で再生できています！
 
-![Imgur](https://imgur.com/aCMWFR9.png)
+![Imgur](https://i.imgur.com/aCMWFR9.png)
 
 ```html
 <!DOCTYPE html>
@@ -121,7 +121,7 @@ https://qiita.com/miyataku/items/6ed855a7fb7507ccc244
 
 ちゃんとダウンロードできる
 
-![Imgur](https://imgur.com/3wnkTpl.png)
+![Imgur](https://i.imgur.com/3wnkTpl.png)
 
 ```html
 <!DOCTYPE html>
@@ -268,7 +268,7 @@ https://github.com/takusan23/browser-screen-record
 適当に`IDEA`でプロジェクトを作ります。  
 `Ktor`、簡単にWebサーバーが立てれていい感じ。バックエンドよく分からんけど；；
 
-![Imgur](https://imgur.com/5PXwH3j.png)
+![Imgur](https://i.imgur.com/5PXwH3j.png)
 
 ## ライブラリを入れる
 `build.gradle.kts`に書き足します。
@@ -291,7 +291,7 @@ dependencies {
 
 `ドメイン名.アプリ名`みたいな感じのパッケージを作って移動させました。`io.github.takusan23.browserdashmirroring`
 
-![Imgur](https://imgur.com/WasHxwe.png)
+![Imgur](https://i.imgur.com/WasHxwe.png)
 
 
 ```kotlin
@@ -359,12 +359,12 @@ fun main(args: Array<String>) {
 
 フロントが投げてきたデータは上記の例だとここに保存されます。  
 
-![Imgur](https://imgur.com/xlqra1d.png)
+![Imgur](https://i.imgur.com/xlqra1d.png)
 
 ## index.html
 `resources`に置きます。こ↑こ↓です
 
-![Imgur](https://imgur.com/cHSV5Oi.png)
+![Imgur](https://i.imgur.com/cHSV5Oi.png)
 
 ```html
 <!DOCTYPE html>
@@ -476,14 +476,14 @@ fun main(args: Array<String>) {
 `main関数`の再生ボタンみたいなのを押すと起動できます。  
 <span style="color:green">▶</span> ←これ
 
-![Imgur](https://imgur.com/lalzp0P.png)
+![Imgur](https://i.imgur.com/lalzp0P.png)
 
 `http://localhost:8080`を開き、`配信開始`を押します。配信でもプレビューが流れます。  
 数秒後にもう一つブラウザで`http://localhost:8080`を開き、今度は`視聴開始`を押します。これで配信側の映像が流れてくると思います。
 
 スマホでも視聴なら出来るはず。
 
-![Imgur](https://imgur.com/dRvd2Rg.png)
+![Imgur](https://i.imgur.com/dRvd2Rg.png)
 
 **すごい！！サーバー側は仲介しかして無いのになんちゃってライブ配信が完成しました！**
 

@@ -13,34 +13,34 @@ D.C.5 攻略しました（ぜんねんれい作品）
 
 (顔つきが大人っぽくなりましたね..!)
 
-![Imgur](https://imgur.com/pxfMlhZ.png)
+![Imgur](https://i.imgur.com/pxfMlhZ.png)
 
 今回の主人公、白河灯莉ちゃん以外のヒロインが同じ家にいるだと
 
 灯莉ちゃん√がめっちゃ可愛かったのでおすすめです。
 (自前のスクショをとるアプリの調子がわるく普通に写り込んでますが気にせず...)
 
-![Imgur](https://imgur.com/GNSMgxB.png)
+![Imgur](https://i.imgur.com/GNSMgxB.png)
 
 かわいい
 
-![Imgur](https://imgur.com/6Bldigw.png)
+![Imgur](https://i.imgur.com/6Bldigw.png)
 
 ここのお話がお気に入りです
 
-![Imgur](https://imgur.com/9ZdJGh7.png)
+![Imgur](https://i.imgur.com/9ZdJGh7.png)
 
-![Imgur](https://imgur.com/UCNiB3v.png)
+![Imgur](https://i.imgur.com/UCNiB3v.png)
 
 あと個別ルートで愛乃亜ちゃんかわいいくなっていくのでぜひ。いいなあ...
 
-![Imgur](https://imgur.com/Phon90s.png)
+![Imgur](https://i.imgur.com/Phon90s.png)
 
-![Imgur](https://imgur.com/iNsB5sW.png)
+![Imgur](https://i.imgur.com/iNsB5sW.png)
 
 D.C.4 をやってなくても楽しめると思うのでぜひ！
 
-![Imgur](https://imgur.com/QlX9XGN.png)
+![Imgur](https://i.imgur.com/QlX9XGN.png)
 
 いくつか謎が残っていますがFDとか6とかで明かされるのでしょうか、楽しみです！  
 (瑞花verのめぐり逢えたね、単品でほしい)
@@ -784,11 +784,11 @@ fun MainScreen() {
 （ただホーム画面にアイコンがないので、`Intent`を投げるアプリが別途必要（ショートカットを作れるアプリなど））  
 また`X-plore`でも権限を渡すことで見れます。
 
-![Imgur](https://imgur.com/lZsG3in.png)
+![Imgur](https://i.imgur.com/lZsG3in.png)
 
 どうでしょう、動画ちゃんと出来ていますか！？
 
-![Imgur](https://imgur.com/ZMv4zcq.png)
+![Imgur](https://i.imgur.com/ZMv4zcq.png)
 
 
 # もう一つの MediaRecorder + lockHardwareCanvas を利用する方法
@@ -1034,7 +1034,7 @@ fun MainScreen() {
 これで動画フォルダーに保存されるようになったはず。
 というかこれ前も書いた気がする
 
-![Imgur](https://imgur.com/03vHmPf.png)
+![Imgur](https://i.imgur.com/03vHmPf.png)
 
 # ベンチマーク（動作確認）
 時間測ってみます。三回くらい試しました。リリースビルドではないので正しくは無いかも？  
@@ -1055,15 +1055,15 @@ OpenGL -> lockHardwareCanvas を三回繰り返したので、偶数がOpenGL、
 うーん、`OpenGL 版`のほうが若干ファイルサイズが小さい？
 
 - Xperia Pro-I
-    - ![Imgur](https://imgur.com/e9iA6gJ.png)
+    - ![Imgur](https://i.imgur.com/e9iA6gJ.png)
 - Google Pixel 6 Pro
-    - ![Imgur](https://imgur.com/pstJVP9.png)
+    - ![Imgur](https://i.imgur.com/pstJVP9.png)
 - Google Pixel 3 XL
-    - ![Imgur](https://imgur.com/WkQ0P0x.png)
+    - ![Imgur](https://i.imgur.com/WkQ0P0x.png)
 - Xperia XZ1 Compact
-    - ![Imgur](https://imgur.com/oczGiJk.png)
+    - ![Imgur](https://i.imgur.com/oczGiJk.png)
 - Xperia Z3 Compact
-    - ![Imgur](https://imgur.com/TOHnqZQ.png)
+    - ![Imgur](https://i.imgur.com/TOHnqZQ.png)
 
 他にも Xiaomi とかでも見てみましたが特に問題なくどっちでも動いていそうです。（Issueの件再現せず）
 
@@ -1185,7 +1185,7 @@ private fun createBitmapFromUri(context: Context, uri: Uri): Bitmap {
         .toBitmap()
 }
 ```
-![Imgur](https://imgur.com/SFXmTmb.png)
+![Imgur](https://i.imgur.com/SFXmTmb.png)
 
 まぁ切り替えアニメーションがないんで、見た目があれですが面倒そうなので、、、  
 （今思ったけどアニメーションなくてもスライドショーって呼んで良いのか・・・？）  
@@ -1332,15 +1332,15 @@ private fun createBitmapFromUri(context: Context, uri: Uri): Bitmap {
 
 こんな感じのUIになるはず
 
-![Imgur](https://imgur.com/wzlAcX0.png)
+![Imgur](https://i.imgur.com/wzlAcX0.png)
 
 実際に作るとこんな感じです。
 
 <video src="https://user-images.githubusercontent.com/32033405/235225944-748106f4-89a0-48c0-b14d-7edfd2698b96.mp4" width="80%" controls ></video>
 
-![Imgur](https://imgur.com/h7fPexc.png)
+![Imgur](https://i.imgur.com/h7fPexc.png)
 
-![Imgur](https://imgur.com/oaGiDld.png)
+![Imgur](https://i.imgur.com/oaGiDld.png)
 
 # そーすこーど
 最低限のUIを作りました、スライドショーとエンドロールを作成する画面を開くことができるはずです。

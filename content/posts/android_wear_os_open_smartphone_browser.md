@@ -48,12 +48,12 @@ Box(
 }
 ```
 
-![Imgur](https://imgur.com/5xMHMlr.png)
+![Imgur](https://i.imgur.com/5xMHMlr.png)
 
 ## 利用例
 
 ソースコードに飛ばすなど
 
-![Imgur](https://imgur.com/pOVWDbG.png)
+![Imgur](https://i.imgur.com/pOVWDbG.png)
 
 以上です、お疲れ様でした 8888

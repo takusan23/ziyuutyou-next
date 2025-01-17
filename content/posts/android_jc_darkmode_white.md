@@ -12,7 +12,7 @@ tags:
 # 本題
 ダークモード時に黒くならない
 
-![Imgur](https://imgur.com/tHm9Hog.png)
+![Imgur](https://i.imgur.com/tHm9Hog.png)
 
 # 直し方
 
@@ -41,6 +41,6 @@ Surface {
 }
 ```
 
-![Imgur](https://imgur.com/EnBTZRz.png)
+![Imgur](https://i.imgur.com/EnBTZRz.png)
 
 以上です。お疲れさまでした。

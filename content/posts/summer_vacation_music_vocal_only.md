@@ -71,7 +71,7 @@ tags:
 
 音声ファイルは、通常版とカラオケ版で、サンプリング周波数（ビットレートも？？）が同じじゃないとダメだと思う（CDから入れれば同じ設定だと思いますが...）
 
-![Imgur](https://imgur.com/taTzKxx.png)
+![Imgur](https://i.imgur.com/taTzKxx.png)
 
 # 作る
 
@@ -83,7 +83,7 @@ tags:
 ついに！`build.gradle.kts`がデフォルトで作れるようになりましたね！！！  
 長かったけどまぁ旨味あんまりないから`build.gradle`から移行するほどではなさそう
 
-![Imgur](https://imgur.com/FWVEz3f.png)
+![Imgur](https://i.imgur.com/FWVEz3f.png)
 
 ## 音楽を選ぶためのUI
 ファイルピッカーを開いて、音声ファイルを選ぶ処理を書きます。  
@@ -148,7 +148,7 @@ fun HomeScreen() {
 
 選んだら`normalTrackUri / instrumentalTrackUri`にそれぞれ入れます。
 
-![Imgur](https://imgur.com/91Z4HfD.png)
+![Imgur](https://i.imgur.com/91Z4HfD.png)
 
 ## 実行ボタンともろもろを書く
 
@@ -1008,13 +1008,13 @@ private enum class ProgressStatus {
 多分実行できるはず。  
 起動したらそれぞれファイルを選んで処理を開始します
 
-![Imgur](https://imgur.com/9A2ASVs.png)
+![Imgur](https://i.imgur.com/9A2ASVs.png)
 
-![Imgur](https://imgur.com/HRmVKQ8.png)
+![Imgur](https://i.imgur.com/HRmVKQ8.png)
 
 保存先はここになります！！
 
-![Imgur](https://imgur.com/gRoaKrP.png)
+![Imgur](https://i.imgur.com/gRoaKrP.png)
 
 # 感想
 
@@ -1040,8 +1040,8 @@ https://github.com/takusan23/VocalOnlyDroid
 
 全然話変わるんだけど、三井住友銀行さんさあ...メール普通にビビるからやめてほしい
 
-![Imgur](https://imgur.com/eWb136O.png)
+![Imgur](https://i.imgur.com/eWb136O.png)
 
 展開するとちゃんとウソであることが書いてある
 
-![Imgur](https://imgur.com/GGsYLqt.png)
+![Imgur](https://i.imgur.com/GGsYLqt.png)

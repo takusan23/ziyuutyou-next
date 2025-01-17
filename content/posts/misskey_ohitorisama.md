@@ -59,13 +59,13 @@ thx!!!!!!!!!!
 
 ## 構成図？
 
-![Imgur](https://imgur.com/A4ruvgv.png)
+![Imgur](https://i.imgur.com/A4ruvgv.png)
 
 ## 一部のサーバーと繋がらない話
 `Cloudflare`が使えないせいなのか、はたまた`AWS の Lightsail（VPS）`のせいなのかよく分からないのですが、  
 一部のMisskeyサーバーと接続できません（知ってる限り2つくらいあります）
 
-![Imgur](https://imgur.com/mwNyT7m.png)
+![Imgur](https://i.imgur.com/mwNyT7m.png)
 
 おそらく相手側のサーバーが`Cloudflare`で保護されていて、なんか私側の`IP アドレス`がブラックリスト入りしているっぽいんですよね？  
 こちらも`Cloudflare`で保護すれば良いのかなと思いましたが、`.dev`ドメインが対応していないんですよね。`Google Domains`終了するし頼みますよ・・・！  
@@ -80,7 +80,7 @@ thx!!!!!!!!!!
 これはカスタマイズしない場合はスキップで良いはず。  
 私はフロントエンドくらいはいじりたいなと思ったのでフォークすることにしました
 
-![Imgur](https://imgur.com/umfOvtv.png)
+![Imgur](https://i.imgur.com/umfOvtv.png)
 
 ## AWS のアカウントを用意する
 
@@ -90,15 +90,15 @@ thx!!!!!!!!!!
 ## AWS Lightsail で VPS を借りる
 `Linux`で`Ubuntu 20.04`で行きます
 
-![Imgur](https://imgur.com/6jdbpjr.png)
+![Imgur](https://i.imgur.com/6jdbpjr.png)
 
-![Imgur](https://imgur.com/9M5P43F.png)
+![Imgur](https://i.imgur.com/9M5P43F.png)
 
 ## パブリック IP アドレスを固定化する
 すでに固定化した状態ですが・・・  
 ここから固定化が出来ます。
 
-![Imgur](https://imgur.com/8dee2EE.png)
+![Imgur](https://i.imgur.com/8dee2EE.png)
 
 アタッチしている場合は追加費用はかからないそう
 
@@ -106,20 +106,20 @@ thx!!!!!!!!!!
 `https`は`TCP`の`443`番を使うので、受け入れられるようにします。  
 `Misskey`は`https`でないと接続できないです
 
-![Imgur](https://imgur.com/jEAY8Et.png)
+![Imgur](https://i.imgur.com/jEAY8Et.png)
 
 ## 鍵ファイルを使ってSSHでログインする
 ここから鍵ファイルをダウンロード出来ます。
 
-![Imgur](https://imgur.com/0vT2JX4.png)
+![Imgur](https://i.imgur.com/0vT2JX4.png)
 
 まず`Tera Term`でIPアドレスを入れて...
 
-![Imgur](https://imgur.com/bpSOxRC.png)
+![Imgur](https://i.imgur.com/bpSOxRC.png)
 
 `Lightsail`に表示されているユーザー名と、先ほどダウンロードした鍵ファイルのパスをそれぞれ入れます。
 
-![Imgur](https://imgur.com/d0Ix1qv.png)
+![Imgur](https://i.imgur.com/d0Ix1qv.png)
 
 ## VPS の設定
 テキストエディタに`vim`を使いますが（それしか分からん）、他のエディタが好きな場合はその都度読み替えてください。
@@ -384,11 +384,11 @@ IPアドレスとサブドメインを紐付けます
 `Google Domains`なら`DNS`の項目で、新しいレコードを追加します。  
 `IPv4`なので`Aレコード`で、使いたいサブドメインと、`VPS`の`IPv4`アドレスを指定します。
 
-![Imgur](https://imgur.com/cc5Ajf7.png)
+![Imgur](https://i.imgur.com/cc5Ajf7.png)
 
 こんな感じです。
 
-![Imgur](https://imgur.com/KOd6RpP.png)
+![Imgur](https://i.imgur.com/KOd6RpP.png)
 
 ### 反映されるのを待つ
 `nslookup`とかして、サブドメインから`IPアドレス`を引けるようになるまで待ちます  
@@ -402,7 +402,7 @@ IPアドレスとサブドメインを紐付けます
 
 https://certbot.eff.org/
 
-![Imgur](https://imgur.com/i6DlDJR.png)
+![Imgur](https://i.imgur.com/i6DlDJR.png)
 
 もし内容がおかしかったら↑が正しいです
 
@@ -444,9 +444,9 @@ sudo certbot --nginx
 - ニュースレターを希望するか（No でいいはず）
 - `https`にしたいドメインの最終確認（`nginx`のコンフィグファイルからドメインを探してくれるそう）
 
-![Imgur](https://imgur.com/ry5LjDy.png)
+![Imgur](https://i.imgur.com/ry5LjDy.png)
 
-![Imgur](https://imgur.com/DFgIOOh.png)
+![Imgur](https://i.imgur.com/DFgIOOh.png)
 
 キーボードぽちぽちしてたら`https`化作業終わった。神だろこれ
 
@@ -460,20 +460,20 @@ sudo certbot renew --dry-run
 
 `--dry-run`しないと更新されてしまう（そもそも有効期限が十分残っていると更新できない）
 
-![Imgur](https://imgur.com/J8E7lYf.png)
+![Imgur](https://i.imgur.com/J8E7lYf.png)
 
 成功するとこんな感じになるはず。
 
 ## Misskey 開ける？
 `https://ドメイン`で開けるはず。  
 
-![Imgur](https://imgur.com/ZiolQ3B.png)
+![Imgur](https://i.imgur.com/ZiolQ3B.png)
 
 ちゃんと`https`で、鍵マークも付いています！！！！  
 
 一番乗りでアカウントを作ると管理者ユーザーとしてマークされ（コンフィグで変更可能？）、管理画面に入れます。
 
-![Imgur](https://imgur.com/pHi7FqG.png)
+![Imgur](https://i.imgur.com/pHi7FqG.png)
 
 ## オブジェクトストレージの設定
 `Misskey`の投稿のメディアは、後からURLを変更できないため、やるなら建てた今しかない！  
@@ -489,19 +489,19 @@ https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/userguide/HostingWebsiteOnS3Se
 というわけで`S3`のバケットを作ります。  
 名前とかはよしなに...
 
-![Imgur](https://imgur.com/9Wlwx4A.png)
+![Imgur](https://i.imgur.com/9Wlwx4A.png)
 
 下にスクロールして、パブリックアクセスの項目で外からアクセスできるようにします。  
 まだバケットポリシーを書いていないのでアクセスは出来ないと思いますが...
 
-![Imgur](https://imgur.com/ogrkowi.png)
+![Imgur](https://i.imgur.com/ogrkowi.png)
 
 これで作成します。
 
 ### バケットポリシー を書く
 作ったバケットを開いて、`アクセス許可`に進み、`バケットポリシー`を編集します
 
-![Imgur](https://imgur.com/6mF1MxS.png)
+![Imgur](https://i.imgur.com/6mF1MxS.png)
 
 
 ```json
@@ -530,25 +530,25 @@ https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/userguide/HostingWebsiteOnS3Se
 
 `IAM`の画面を開いて、適当にユーザーを作ります、
 
-![Imgur](https://imgur.com/xSjT5HT.png)
+![Imgur](https://i.imgur.com/xSjT5HT.png)
 
 次の画面で出てくる権限のところでは、`AmazonS3FullAccess`をつけておけば良さそう
 
-![Imgur](https://imgur.com/1gRN1XG.png)
+![Imgur](https://i.imgur.com/1gRN1XG.png)
 
 ### アクセスキーを払い出してもらう
 
 作った`IAM ユーザー`の詳細を開いて、`アクセスキー`の作成をします
 
-![Imgur](https://imgur.com/qXAayIK.png)
+![Imgur](https://i.imgur.com/qXAayIK.png)
 
 `Misskey`で必要なのは一番下の`その他`の項目のやつです。
 
-![Imgur](https://imgur.com/XRymShw.png)
+![Imgur](https://i.imgur.com/XRymShw.png)
 
 2つ出てくると思います。
 
-![Imgur](https://imgur.com/7r828eY.png)
+![Imgur](https://i.imgur.com/7r828eY.png)
 
 ### オブジェクトストレージの設定をコンフィグに記述する
 **v13 では Web UI からオブジェクトストレージの設定ができます**  
@@ -664,7 +664,7 @@ location / {
     proxy_set_header Host $host;
 ```
 
-![Imgur](https://imgur.com/FNcgOxb.png)
+![Imgur](https://i.imgur.com/FNcgOxb.png)
 
 そしたら保存してターミナルに戻って、`nginx`へ適用します。
 
@@ -676,11 +676,11 @@ sudo systemctl restart nginx
 実際に`Misskey`のドライブにファイルを投げて、`S3`に上がっていれば成功です。  
 URL が `/objectstorage`で始まっていればうまく行ってます！！！
 
-![Imgur](https://imgur.com/1JfWkc5.png)
+![Imgur](https://i.imgur.com/1JfWkc5.png)
 
-![Imgur](https://imgur.com/T4a1855.png)
+![Imgur](https://i.imgur.com/T4a1855.png)
 
-![Imgur](https://imgur.com/QykrHbN.png)
+![Imgur](https://i.imgur.com/QykrHbN.png)
 
 ## お疲れ様でした！！！
 多分これで構築は良いはず。
@@ -758,7 +758,7 @@ https://github.com/takusan23/misskey#手元の開発環境構築
 まずは`Cloudflare ダッシュボード`から`Webサイト`を選び、稼働しているドメインを選びます。  
 そして`SSL/TLS`を押して、`概要`の`暗号化モード`を`フル`にします。不具合の原因になるみたい。
 
-![Imgur](https://imgur.com/H6Kgw28.png)
+![Imgur](https://i.imgur.com/H6Kgw28.png)
 
 次に、`DNS`>`レコード`と進み、`Misskey`の`IPアドレス`のレコードが`プロキシ済み`かどうか確認します。  
 `プロキシ済み`じゃない場合はしてください。雲のアイコンがオレンジ色になれば良いはず。  
@@ -807,7 +807,7 @@ sudo systemctl start misskey
 ```
 
 成功していれば、リクエストのレスポンスヘッダーに`Cloudflare`関連の値が入るようになっているはずです。  
-![Imgur](https://imgur.com/7AUss7f.png)
+![Imgur](https://i.imgur.com/7AUss7f.png)
 
 そしたらもう、今使っている`Let's Encrypt`の証明書は不要になるので、消してしまいます。  
 

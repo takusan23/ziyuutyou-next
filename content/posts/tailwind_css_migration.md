@@ -10,24 +10,24 @@ tags:
 どうもこんばんわ。  
 最近ずっとこれ聞いてる  
 
-![Imgur](https://imgur.com/2MaMBpB.png)
+![Imgur](https://i.imgur.com/2MaMBpB.png)
 
 *「偶然」で片付けたくない 運命にしたい*
 
 ゲームやってないけどCDだけ買った。！！！
 
-![Imgur](https://imgur.com/9DUoKCH.png)
+![Imgur](https://i.imgur.com/9DUoKCH.png)
 
 # 本題
 `Material-UI`をやめて、`Tailwind CSS`にしようと思います...
 
-![Imgur](https://imgur.com/ZgnivHu.png)
+![Imgur](https://i.imgur.com/ZgnivHu.png)
 
-![Imgur](https://imgur.com/MSVr7MU.png)
+![Imgur](https://i.imgur.com/MSVr7MU.png)
 
-![Imgur](https://imgur.com/mcZbOGN.png)
+![Imgur](https://i.imgur.com/mcZbOGN.png)
 
-![Imgur](https://imgur.com/9iXlLFM.png)
+![Imgur](https://i.imgur.com/9iXlLFM.png)
 
 最近の`Android`というか、`Material 3`というかを真似てみました。  
 角を結構丸くしたり、リストとか。
@@ -139,7 +139,7 @@ https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss
 
 快適すぎて草、クラス名の補充や、自前で定義したプライマリカラーとかの色まで見れるの強すぎやろ
 
-![Imgur](https://imgur.com/ZOB8AxT.png)
+![Imgur](https://i.imgur.com/ZOB8AxT.png)
 
 最終的な`CSS`も見れる。すごい
 
@@ -237,11 +237,11 @@ switch (rounded ?? 'small') {
 `Twitter`の代わりに`Mastodon / Misskey`でシェアできるボタンを置きました。  
 `TweetDeck`なくなってから`Twitter`あんまり見なくなっちゃった、、、  
 
-![Imgur](https://imgur.com/UAZIBg8.png)
+![Imgur](https://i.imgur.com/UAZIBg8.png)
 
-![Imgur](https://imgur.com/XSabwQI.png)
+![Imgur](https://i.imgur.com/XSabwQI.png)
 
-![Imgur](https://imgur.com/uKDj4hr.png)
+![Imgur](https://i.imgur.com/uKDj4hr.png)
 
 `Misskey`も`Mastodon`も以下のような`URL`でそれぞれのインスタンスの共有画面を出せるので、それを使っています。  
 
@@ -262,9 +262,9 @@ window.open(shareUrl, '__blank')
 `Nuxt.js`のときは置いてたんですが、、、、`Next.js`に移行した際に`Twitter`に置き換えちゃったんですよね。  
 `Twitter`改悪により`Mastodon / Misskey シェア`再実装です
 
-![Imgur](https://imgur.com/YXwrVJt.png)
+![Imgur](https://i.imgur.com/YXwrVJt.png)
 
-![Imgur](https://imgur.com/cAh2Ntz.png)
+![Imgur](https://i.imgur.com/cAh2Ntz.png)
 
 （奇跡的に`Nuxt.js`のときのビルド成果物が残ってたので起動してみた）
 
@@ -272,7 +272,7 @@ window.open(shareUrl, '__blank')
 
 きたきた
 
-![Imgur](https://imgur.com/A5v58C4.png)
+![Imgur](https://i.imgur.com/A5v58C4.png)
 
 今回も差分大きいというか影響大きいので`Pull Request`作ってみました。  
 
@@ -280,15 +280,15 @@ https://github.com/takusan23/ziyuutyou-next/pull/2
 
 差分ですが、`npm install`した時とかに自動で更新される`package-lock.json`とかも差分に入ってしまったので、私が書き足したのはそこまでではないと思う・・・
 
-![Imgur](https://imgur.com/Gx7fnFn.png)
+![Imgur](https://i.imgur.com/Gx7fnFn.png)
 
 まーじします！うおおおお！
 
-![Imgur](https://imgur.com/dvWOWHn.png)
+![Imgur](https://i.imgur.com/dvWOWHn.png)
 
 `GitHub Actions`が終わるのを見守ります
 
-![Imgur](https://imgur.com/G8nI44X.png)
+![Imgur](https://i.imgur.com/G8nI44X.png)
 
 
 ## Material-UI → Tailwind CSS

@@ -228,7 +228,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
 実行結果
 
-![Imgur](https://imgur.com/T2NNPnK.png)
+![Imgur](https://i.imgur.com/T2NNPnK.png)
 
 参考にしました：https://gist.github.com/gildor/82ec960cc0c5873453f024870495eab3
 
@@ -429,7 +429,7 @@ class MainActivity : AppCompatActivity() {
 
 ちゃんと動けばダークモードのときは真っ暗になると思います。AOD
 
-![Imgur](https://imgur.com/pMaRzgc.png)
+![Imgur](https://i.imgur.com/pMaRzgc.png)
 
 ちなみに黒基調にすると`Icon()`等が勝手に検知してアイコンの色を白色に変更してくれるそうです。ダークモード対応の手間が減る
 
@@ -507,7 +507,7 @@ fun TabLayout(selectTabIndex: Int, tabClick: (Int) -> Unit) {
 
 動作結果
 
-![Imgur](https://imgur.com/nXfFeG5.png)
+![Imgur](https://i.imgur.com/nXfFeG5.png)
 
 ## 動的にテーマを変える
 
@@ -647,9 +647,9 @@ fun DynamicThemeButtons(
 
 ボタンを押すと色が切り替わると思います。
 
-![Imgur](https://imgur.com/cijIOts.png)
+![Imgur](https://i.imgur.com/cijIOts.png)
 
-![Imgur](https://imgur.com/Xr8lRaT.png)
+![Imgur](https://i.imgur.com/Xr8lRaT.png)
 
 ## 表示、非表示をアニメーションしてほしい
 
@@ -710,7 +710,7 @@ fun VisibilityAnimationSample() {
 
 画像じゃわからんけど、ちゃんとアニメーションされてます。
 
-![Imgur](https://imgur.com/VFFCZR9.png)
+![Imgur](https://i.imgur.com/VFFCZR9.png)
 
 
 ## 右寄せ
@@ -756,7 +756,7 @@ fun GravityRight() {
 
 こうなるはず
 
-![Imgur](https://imgur.com/38Uu9zz.png)
+![Imgur](https://i.imgur.com/38Uu9zz.png)
 
 
 ## 均等に並べる
@@ -792,7 +792,7 @@ fun WeightSample() {
 
 こうなるはず
 
-![Imgur](https://imgur.com/6YRtu3S.png)
+![Imgur](https://i.imgur.com/6YRtu3S.png)
 
 ## 余りのスペースを埋める
 埋めたい部品に対して`weight(1f)`を足してあげることで、他の部品の事を考えながら埋めたい部品で埋めてくれます。  
@@ -835,7 +835,7 @@ fun MessageSendUI() {
 
 こうなるはず
 
-![Imgur](https://imgur.com/dcxKhg3.png)
+![Imgur](https://i.imgur.com/dcxKhg3.png)
 
 ## もっとサンプル書け！
 
@@ -847,7 +847,7 @@ fun MessageSendUI() {
 
 こんなのが出ると思う
 
-![Imgur](https://imgur.com/PovnHgF.png)
+![Imgur](https://i.imgur.com/PovnHgF.png)
 
 #### 2.ブラウザで
 
@@ -878,7 +878,7 @@ https://cs.android.com/
 
 早速検索欄に入れましょう
 
-![Imgur](https://imgur.com/zUlBhLR.png)
+![Imgur](https://i.imgur.com/zUlBhLR.png)
 
 #### 5.コードを読み解く
 
@@ -886,7 +886,7 @@ https://cs.android.com/
 
 あとは読んでいくしか無いです。
 
-![Imgur](https://imgur.com/7dM94mY.png)
+![Imgur](https://i.imgur.com/7dM94mY.png)
 
 
 ## サンプルアプリ

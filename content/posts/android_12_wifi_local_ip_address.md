@@ -12,7 +12,7 @@ Chromeくんがたまによく固まるんだけどどうした？
 Android 12からローカルIPアドレスを取得する際に`WifiManager`を利用するほうが非推奨になり、  
 `ConnectivityManager`を使うのが正規ルートになったみたいなのでメモ  
 
-![Imgur](https://imgur.com/Rpjusp8.png)
+![Imgur](https://i.imgur.com/Rpjusp8.png)
 
 # 公式リファレンス
 

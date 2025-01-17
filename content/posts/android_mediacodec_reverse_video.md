@@ -16,7 +16,7 @@ tags:
 はい。  
 審査中なので、通っていれば以下の`URL`で開けるようになるはずです。
 
-![Imgur](https://imgur.com/Kqv04XN.png)
+![Imgur](https://i.imgur.com/Kqv04XN.png)
 
 https://play.google.com/store/apps/details?id=io.github.takusan23.dougaundroid
 
@@ -63,7 +63,7 @@ https://github.com/takusan23/DougaUnDroid
 一個前の写真と今の写真を**見比べて、変わっている部分**のみをファイルに保存します。  
 変わっていない部分は一個前の写真を引き続き参照するようにしたわけですね。  
 
-![Imgur](https://imgur.com/jYIyLRx.png)
+![Imgur](https://i.imgur.com/jYIyLRx.png)
 
 ↑ 雑な絵ですが、、、  
 こんな感じに2枚目には猫が増えた場合、増えた分だけを保存するようなことをしているらしい。
@@ -71,7 +71,7 @@ https://github.com/takusan23/DougaUnDroid
 この、今の写真と比較している一個前の写真のことをキーフレームといいます。  
 実際は一個前の写真と比較するわけではなく、一定間隔でこのキーフレームが生成され、間はすべてキーフレームからの差分のみが保存されるってわけです。  
 
-![Imgur](https://imgur.com/D7lpjAO.png)
+![Imgur](https://i.imgur.com/D7lpjAO.png)
 
 これにより、1秒間に30枚写真が来た（`30fps`）としても、変わっている部分のみを記録することでファイルサイズを小さくすることに成功するわけですね。  
 しかし、これには欠点があり、**時間が増える方向にしか再生できない**ということです。  
@@ -135,7 +135,7 @@ https://developer.android.com/reference/android/media/MediaMetadataRetriever
 映像は↑の感じで、逆から取り出して`Canvas`に書く方法で。  
 音声は、`PCM`にして配列を反転させればいいので映像ほぞ難しくないです。
 
-![Imgur](https://imgur.com/mIXeRK0.png)
+![Imgur](https://i.imgur.com/mIXeRK0.png)
 
 # 動画を支える技術
 `MediaCodec`とかが何なのかは他の記事で書いたので、そっちを見て。  
@@ -168,7 +168,7 @@ https://developer.android.com/reference/android/media/MediaMetadataRetriever
 `Jetpack Compose`使うけど、別に`View`でもいいです。  
 どうせ主役は`MediaCodec`周りなのだから
 
-![Imgur](https://imgur.com/pD7b5Ny.png)
+![Imgur](https://i.imgur.com/pD7b5Ny.png)
 
 ## 適当にレイアウトを用意
 動画を選ぶボタンと、処理を開始するボタンを`MainActivity`におきます。
@@ -1684,11 +1684,11 @@ fun HomeScreen() {
 # 動作確認
 動画を選んで開始を押せばいいはず。  
 
-![Imgur](https://imgur.com/280dywh.png)
+![Imgur](https://i.imgur.com/280dywh.png)
 
 終わると終わりって出ます。  
 
-![Imgur](https://imgur.com/U13gsW6.png)
+![Imgur](https://i.imgur.com/U13gsW6.png)
 
 検証動画ですが、ニコ動で逆再生タグの付いた動画を動画撮影してみて、このアプリで変換して、逆再生が元に戻っていれば成功じゃないでしょうか？  
 

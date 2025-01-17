@@ -23,7 +23,7 @@ tags:
 | Android                   | 11                                                                   |
 | 端末                      | Sony Xperia 5 mk 2 （念願の高リフレッシュレート + SDカード対応端末） |
 | 言語                      | Kotlin                                                               |
-| 最低Android SDKバージョン | 28 (Android 9 以降)                                                |
+| 最低Android SDKバージョン | 28 (Android 9 以降)                                                  |
 
 # 作り方
 
@@ -282,7 +282,7 @@ class MainActivity : AppCompatActivity() {
 
 実行するとこんな感じ
 
-![Imgur](https://imgur.com/cE33GZT.png)
+![Imgur](https://i.imgur.com/cE33GZT.png)
 
 # ソースコードです
 

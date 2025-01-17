@@ -18,19 +18,19 @@ OP曲が良すぎ。ぜひ聞いてみてね
 ヒロインみんなかわいいので置いておきますね。  
 イベントCGがめっちゃいいのでやってみてね。
 
-![Imgur](https://imgur.com/qUF7Dcr.png)  
+![Imgur](https://i.imgur.com/qUF7Dcr.png)  
 声がふわふわしててかわいい
 
-![Imgur](https://imgur.com/IY6kJjj.png)  
+![Imgur](https://i.imgur.com/IY6kJjj.png)  
 ここ何回でも聞ける
 
-![Imgur](https://imgur.com/TPRc8vg.png)  
+![Imgur](https://i.imgur.com/TPRc8vg.png)  
 オンオフ合ったほうがいいよね
 
-![Imgur](https://imgur.com/jpRWjaJ.png)  
+![Imgur](https://i.imgur.com/jpRWjaJ.png)  
 姉さん女房！！！
 
-![Imgur](https://imgur.com/nOW8MqM.png)  
+![Imgur](https://i.imgur.com/nOW8MqM.png)  
 ファンディスクに期待、、！
 
 どうやらファンディスクの方ではデフォルトネームを呼んでくれるらしい？ので気になっております  
@@ -42,7 +42,7 @@ OP曲が良すぎ。ぜひ聞いてみてね
 
 <video src="https://user-images.githubusercontent.com/32033405/219969962-999f71a9-2b55-484e-adfd-ad6f597431b9.mp4" width="80%" controls></video>
 
-![Imgur](https://imgur.com/vw7176n.png)
+![Imgur](https://i.imgur.com/vw7176n.png)
 
 https://github.com/takusan23/AkariDroid
 
@@ -1383,7 +1383,7 @@ class MainActivity : AppCompatActivity() {
 
 どうでしょう、動画の上にCanvasで落書きした画像が重なってエンコードされていますでしょうか？  
 
-![Imgur](https://imgur.com/efE7zna.png)
+![Imgur](https://i.imgur.com/efE7zna.png)
 
 しかし音声がなくなってしまいました。  
 この修正を次やります。
@@ -1557,7 +1557,7 @@ companion object {
 これで音声が追加されているはずです！いかがでしょう！
 `VLC`で見るとオーディオについての項目が増えています！
 
-![Imgur](https://imgur.com/SqzaqGd.png)
+![Imgur](https://i.imgur.com/SqzaqGd.png)
 
 # MediaStoreを利用して、端末の動画フォルダに保存する
 これで`Google フォト`アプリや他のギャラリーに見つけてもらうことができます。  
@@ -1621,7 +1621,7 @@ viewBinding.encodeStatusTextView.text = "エンコード終了"
 
 これで `Google フォト` アプリの`デバイス内の写真`に表示されているはずです、どうでしょう？
 
-![Imgur](https://imgur.com/nCzp0hz.png)
+![Imgur](https://i.imgur.com/nCzp0hz.png)
 
 # 以上です。
 ソースコードです。  

@@ -10,28 +10,28 @@ tags:
 どうもこんばんわ。  
 D.C.4 Plus Harmony ～ダ・カーポ4～ プラスハーモニー 攻略しました。ちよ子ちゃんかわいいかったです。ぜひ本校Verの制服姿を...！
 
-![Imgur](https://imgur.com/7qdoxiM.png)
+![Imgur](https://i.imgur.com/7qdoxiM.png)
 
 この子の個別ルート短かった気がするんだけど多分気のせいだよね。きっと時間がすぎるのが早かっただけや ~~（サブヒロインだからとか言わない）~~
 
-![Imgur](https://imgur.com/VovF7Lj.png)
+![Imgur](https://i.imgur.com/VovF7Lj.png)
 
 ↑髪の毛おろしてるのかわいい
 
 ちなみにこの子、`生主`なんですね。`配信者`じゃなくて`生主`って表現してる。購入決定では？  
 
-![Imgur](https://imgur.com/eeRt9fl.png)
+![Imgur](https://i.imgur.com/eeRt9fl.png)
 
 あとしいしい先輩ルートも良かったです。リードされてえなあ私もなあ
 
-![Imgur](https://imgur.com/VMQ4WAU.png)
+![Imgur](https://i.imgur.com/VMQ4WAU.png)
 
 ↑このボイスほんとすき
 
 ちなみに過去作はやってないです（直接的には繋がってないって噂だったから予約した）。やってないけど過去作のCDだけ買った。  
 Windowsはまともな音楽アプリ作ってくれ。
 
-![Imgur](https://imgur.com/bfuXRTl.png)
+![Imgur](https://i.imgur.com/bfuXRTl.png)
 
 今作の`恋するMODE`とか名曲なのでCD欲しいなと思ったんだけど、全年齢版の続編（しかもお高い豪華版）にしかついてないっぽいね？。CIRCUSだから多分続編もR18版で出るんだろうしそのときに期待してもいいんだけどそうすっかなー
 
@@ -43,14 +43,14 @@ Windows 11おめでとうございます。
 ウィンドウの角が丸くなったり、スタートボタンが真ん中に移動したり（変更可能）、そもそもスタートメニューがシンプルになったりしました。  
 個人的にはWindows 10のタイルでグループ分けしてたのでそれが使えないのはちょっと困った？（まぁ開発で使ってるPCはストレージの空きがない（それ以外は満たしてる）ので当分はWin11にしないと思う。）  
 
-![Imgur](https://imgur.com/VllzUu6.png)
+![Imgur](https://i.imgur.com/VllzUu6.png)
 
 ついにタスクバーのDeskBand APIがついに廃止？になったので、BatteryBarとか使ってる方は困るかも。  
 タスクバーにPC情報を表示する`zhongyang219/TrafficMonitor`ってのがあるけどあれは対応済みの模様。C++とかMFCの知識が無いので動いてる理由はわからんかった。けどあれ多分DeskBand API使ってなさそう。
 
 ちなみにWindows 10にあった隠しテーマ`Aero Lite`、Windows 11にもありました。やっぱ閉じるボタンは赤くないとね！  
 
-![Imgur](https://imgur.com/NIVge7P.png)
+![Imgur](https://i.imgur.com/NIVge7P.png)
 
 あとなんか問題になってた`TPM 2.0`が必須もなんか公式がバイパス手段を公開してるみたいですね。  
 あとでやってみようかな。
@@ -77,7 +77,7 @@ Windows 11おめでとうございます。
 **Windows 11から仮想トラックパッドが追加されたのでわざわざ入れる必要はないと思います。**  
 おまけとして音量コントローラーとスクリーンショットボタンを追加しました。
 
-![Imgur](https://imgur.com/FpFLBXC.png)
+![Imgur](https://i.imgur.com/FpFLBXC.png)
 
 ↑ちなみにWindowsタブレット買った。
 
@@ -99,7 +99,7 @@ https://developer.microsoft.com/ja-jp/microsoft-store/register/
 
 19ドル払います。クレカ持ってない人はどうすればいいんだろ。私の場合は`Kyash Card`が何故か通った。
 
-![Imgur](https://imgur.com/v6hnFJt.png)
+![Imgur](https://i.imgur.com/v6hnFJt.png)
 
 # Win32アプリの公開プレビュープログラムに申請する
 こっからです。  
@@ -152,7 +152,7 @@ https://youtu.be/0Oks2zpolGU?t=8299
 `Microsoft Store Preview program`みたいな件名のメールが来ます。  
 公開ページから`EXE または MSI アプリ`が選べるようになってます。
 
-![Imgur](https://imgur.com/IWPnvlz.png)
+![Imgur](https://i.imgur.com/IWPnvlz.png)
 
 # Win32アプリを公開する
 
@@ -167,32 +167,32 @@ https://youtu.be/0Oks2zpolGU?t=8299
 アプリの値段と配布する国を決めます。  
 記入が終わったら保存して次へ行きます。勝手に保存してくれるわけではない模様。
 
-![Imgur](https://imgur.com/KrTOLMN.png)
+![Imgur](https://i.imgur.com/KrTOLMN.png)
 
 ## プロパティ
 アプリのカテゴリなど
 
-![Imgur](https://imgur.com/KiSIjHa.png)
+![Imgur](https://i.imgur.com/KiSIjHa.png)
 
 ### テスターに提供する情報
 `製品の公表`と`認定の注意書き`には、アプリの動作に必要なフレームワークと、必要な条件を書く必要があります。
 ちなみにスクリーンショットには**Microsoft 以外のドライバーまたは**のところにチェックが入っていますが、ドライバーに依存してないので外しました。  
 このアプリはタブレット端末と、`.NET 5以上`が必要なのでそう書きました。
 
-![Imgur](https://imgur.com/opucXfI.png)
+![Imgur](https://i.imgur.com/opucXfI.png)
 
 下にも`システム要件`の項目があるのでそこでもタッチスクリーンが必要にチェック <input type="checkbox" checked="true"/> を入れておきます。
 
 ## 年齢
 Google Playと似たようなことが聞かれます。
 
-![Imgur](https://imgur.com/keQEUIU.png)
+![Imgur](https://i.imgur.com/keQEUIU.png)
 
 ## パッケージ
 ここでアプリのインストーラーを設定します。  
 インストーラーの作成は前書いので参考にしてね。→[.NET 5で出来たWPFアプリを配布するインストーラーを作成する](/posts/windows_dot_net5_wpf_making_installer/)  
 
-![Imgur](https://imgur.com/0MzXa9d.png)
+![Imgur](https://i.imgur.com/0MzXa9d.png)
 
 ### パッケージURL
 インストーラーは、`Microsoft Store`にアップロードする方式ではなく、`ダウンロードリンク`を開発者が用意する形になってます。    
@@ -200,33 +200,33 @@ Google Playと似たようなことが聞かれます。
 `msi`のインストーラーなら、`/passive`をつけることでサイレントインストール（インストーラーGUIが出ない）が出来ます。
 なので、`インストーラー パラメータ`に`/passive`を入れます
 
-![Imgur](https://imgur.com/OvNoC3V.png)
+![Imgur](https://i.imgur.com/OvNoC3V.png)
 
 あとなんか日本語が2つあるんだけど、よくわからん（多分英語の`en-us`と同じ流れで`ja-jp`を作ったんだと思うけどどうなんだろう）
 
 ## ストアの公開情報
 
-![Imgur](https://imgur.com/1fz1VOj.png)
+![Imgur](https://i.imgur.com/1fz1VOj.png)
 
 書いていきます。  
 アイコンサイズは`1080 x 1080`なので気をつけてください。
 
-![Imgur](https://imgur.com/HNUlAgR.png)
+![Imgur](https://i.imgur.com/HNUlAgR.png)
 
 ### ライセンス条項
 これは...ソースコードのライセンスと同じでいいんかな。
 
-![Imgur](https://imgur.com/sbyUcQe.png)
+![Imgur](https://i.imgur.com/sbyUcQe.png)
 
 ## ここまで終わると
 公開ボタンが押せるようになります。  
 というわけで公開ポチッと
 
-![Imgur](https://imgur.com/OygFoG5.png)
+![Imgur](https://i.imgur.com/OygFoG5.png)
 
 あとは待つだけ。楽しみですね
 
-![Imgur](https://imgur.com/K8fa4R7.png)
+![Imgur](https://i.imgur.com/K8fa4R7.png)
 
 ## リジェクト（却下された）
 審査が通っても、リジェクトされてもメールで通知が来ます。  
@@ -243,22 +243,22 @@ Google Playと似たようなことが聞かれます。
 
 いつの間にか検索でも見つかるようになってました。
 
-![Imgur](https://imgur.com/HF2g8tZ.png)
+![Imgur](https://i.imgur.com/HF2g8tZ.png)
 
 # インストールボタンを押して見る
 ちなみに、現状のMicrosoft Storeでは、インストール済みかどうかまでは見ていないので、インストールが終了したあと、再度ストアでアプリの詳細画面を開くとまた**インストールボタンが押せます**。こればっかりは仕方ないのかな。  
 
-![Imgur](https://imgur.com/ES3yXhJ.png)
+![Imgur](https://i.imgur.com/ES3yXhJ.png)
 
 # なんか Microsoft Store 以外に winget からも落とせる
 `winget search <アプリ名>`で検索すると見つかります。  
 公開直後は見つかりませんが、これもいつの間にか見つかるようになってました。
 
-![Imgur](https://imgur.com/Hr15yyH.png)
+![Imgur](https://i.imgur.com/Hr15yyH.png)
 
 wingetなら`Windows 10`でも落とせます。落とせるけど**アプリ名が日本語**なので入力めんどい
 
-![Imgur](https://imgur.com/6o6xqNK.png)
+![Imgur](https://i.imgur.com/6o6xqNK.png)
 
 # 終わりに
 ストア、流行るといいですね。  

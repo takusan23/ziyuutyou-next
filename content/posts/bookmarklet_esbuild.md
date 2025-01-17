@@ -11,19 +11,19 @@ tags:
 みじかい！！！もっと見たかった  
 一番最後が HOOK って感じがしてとてもよかった！！！
 
-![Imgur](https://imgur.com/LAkBHj7.png)
+![Imgur](https://i.imgur.com/LAkBHj7.png)
 
-![Imgur](https://imgur.com/2yIE0Zm.png)
+![Imgur](https://i.imgur.com/2yIE0Zm.png)
 
-![Imgur](https://imgur.com/KLbZRJu.png)
+![Imgur](https://i.imgur.com/KLbZRJu.png)
 
 おさげだ！！
 
-![Imgur](https://imgur.com/bJeLENp.png)
+![Imgur](https://i.imgur.com/bJeLENp.png)
 
 イベントCGが気になって結局両方買ってしまった。。。
 
-![Imgur](https://imgur.com/lCP47z5.png)
+![Imgur](https://i.imgur.com/lCP47z5.png)
 
 # 本題
 世の中には`ブックマークレット`と呼ばれてるものがあります。  
@@ -86,7 +86,7 @@ https://esbuild.github.io/getting-started/#your-first-bundle
 ## 適当にフォルダを作る
 適当にフォルダを作り、ターミナルを開いて、`npm init`します。
 
-![Imgur](https://imgur.com/yoaeuc1.png)
+![Imgur](https://i.imgur.com/yoaeuc1.png)
 
 ## esbuild を入れる
 以下を叩く
@@ -103,7 +103,7 @@ npm install --save-exact --save-dev esbuild
 document.documentElement.requestFullscreen()
 ```
 
-![Imgur](https://imgur.com/slEIPI0.png)
+![Imgur](https://i.imgur.com/slEIPI0.png)
 
 ## ブックマークレットとして登録できるようにビルドコマンドを書く
 前述の通り、以下のように`javascript:`を付けたりしないとブックマークレットとして登録できないので、そうなるように調整します。
@@ -158,32 +158,32 @@ javascript:(function(){ /* esbuild さん、ここにコード出して！ */ })
 npm run build
 ```
 
-![Imgur](https://imgur.com/NfbjAeB.png)
+![Imgur](https://i.imgur.com/NfbjAeB.png)
 
 出来ました、とっても速いですね。
 
-![Imgur](https://imgur.com/SuSxTkj.png)
+![Imgur](https://i.imgur.com/SuSxTkj.png)
 
 # 追加してみる
 `Chrome`なら`ブックマークとリスト > ブックマーク マネージャ`、`Firefox`なら`ブックマーク > ブックマークを管理`で開く画面で新しいブックマークが登録できるはず。  
 アドレス欄の☆を押して登録するから新規登録どこだか分かんなかった。
 
-![Imgur](https://imgur.com/AaqZpfL.png)
+![Imgur](https://i.imgur.com/AaqZpfL.png)
 
-![Imgur](https://imgur.com/3cOsNcs.png)
+![Imgur](https://i.imgur.com/3cOsNcs.png)
 
 名前は適当に、`URL`の欄にはさっき出てきた`bookmarklet.js`の中身を貼り付けます。改行があると思いますが気にせずコピーして貼り付けてオッケーなはず。  
 
-![Imgur](https://imgur.com/qCNMlCM.png)
+![Imgur](https://i.imgur.com/qCNMlCM.png)
 
 # 早速使ってみる
 押します・・！
 
-![Imgur](https://imgur.com/P53eVim.png)
+![Imgur](https://i.imgur.com/P53eVim.png)
 
 おお～
 
-![Imgur](https://imgur.com/LLp1APV.png)
+![Imgur](https://i.imgur.com/LLp1APV.png)
 
 ちなみに同期されれば他のスマホからでも使えるんじゃないでしょうか！？
 
@@ -234,7 +234,7 @@ QRCode.toCanvas(qrCodeCanvas, location.href, (error) => {
 これを`npm run build`して、`bookmarklet.js`をブックマークレットとして登録すれば・・・  
 動きました！やった～
 
-![Imgur](https://imgur.com/oXBhPiL.png)
+![Imgur](https://i.imgur.com/oXBhPiL.png)
 
 ちゃんとライブラリも`bookmarklet.js`の中に同梱されてそうですね。（動いているのを見る限り）  
 これで今日のフロントエンド開発の経験をブックマークレット開発でも活かせるようになりました。  
@@ -249,9 +249,9 @@ https://github.com/takusan23/qrcode-esbuild-bookmarklet
 ブックマーク一覧から選ぼうとすると失敗します。  
 アドレス欄からブックマークレットの名前を入力して、出てきたブックマークレットを選ぶことで起動できます。
 
-![Imgur](https://imgur.com/4MaIB3l.png)
+![Imgur](https://i.imgur.com/4MaIB3l.png)
 
-![Imgur](https://imgur.com/jATQaxI.png)
+![Imgur](https://i.imgur.com/jATQaxI.png)
 
 # おわりに
 もっと苦戦するはずだったんだけど`esbuild`とライブラリが全部やってくれました。

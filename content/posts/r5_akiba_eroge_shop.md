@@ -129,13 +129,13 @@ https://takusan.negitoro.dev/posts/summer_vacation_r3_akiba_used_eroge/
 工事をやってるらしく覆われてます。駅からすぐなので探すまでもないと思いますが。
 移転で駅から近くなったのもいいところ。きれいになったしすごい  
 
-![Imgur](https://imgur.com/PfSlrX0.png)
+![Imgur](https://i.imgur.com/PfSlrX0.png)
 
-![Imgur](https://imgur.com/Npzt2Mp.png)
+![Imgur](https://i.imgur.com/Npzt2Mp.png)
 
 覆われてなかった頃  
 
-![Imgur](https://imgur.com/eKoRHs5.png)
+![Imgur](https://i.imgur.com/eKoRHs5.png)
 
 新品・中古ともにいっぱいあります。新品なら一番の品揃えかも。お目当てのも見つかるんじゃないですかね  
 グッズとかもめっちゃ揃ってる。
@@ -143,37 +143,37 @@ https://takusan.negitoro.dev/posts/summer_vacation_r3_akiba_used_eroge/
 （工事中の）トレーダー 3 号店よりも広い気がする。てかこの中で多分一番広いと思う。  
 2フロア（新品・中古）使っているのすごい  
 
-![Imgur](https://imgur.com/3KmLLEZ.png)
+![Imgur](https://i.imgur.com/3KmLLEZ.png)
 
 移転前のあの外に見える形の広告は無くなってしまいましたが、エロゲフロアに原画の展示とかがあるのが良い！  
 
-![Imgur](https://imgur.com/ZKwSQff.png)
+![Imgur](https://i.imgur.com/ZKwSQff.png)
 
 エレベーターやエスカレーターにももちろんエロゲの広告があります！
 
-![Imgur](https://imgur.com/KAkgVgi.png)
+![Imgur](https://i.imgur.com/KAkgVgi.png)
 
-![Imgur](https://imgur.com/NItS0Zk.png)
+![Imgur](https://i.imgur.com/NItS0Zk.png)
 
-![Imgur](https://imgur.com/ZfIazCa.png)
+![Imgur](https://i.imgur.com/ZfIazCa.png)
 
-![Imgur](https://imgur.com/DA1iN9m.png)
+![Imgur](https://i.imgur.com/DA1iN9m.png)
 
 エロゲOPが流れているテレビが数台あるのもすごいなと思います。  
 （閉店近くなるとに店員さんがそれぞれ消しに回ってますね）
 
 4 階のあの階段前にある特設コーナーみたいなのすきだよ  
 
-![Imgur](https://imgur.com/ZoRlDfq.png)
+![Imgur](https://i.imgur.com/ZoRlDfq.png)
 
-![Imgur](https://imgur.com/clwd1N5.png)
+![Imgur](https://i.imgur.com/clwd1N5.png)
 
 予約の際は多分ポイントカードみたいなの作らなくてもいいはず、予約券を持っていけば予約できます。前金を払う必要があります。  
 ポイントカード作ると紐付いたメアドに予約商品の発売を教えてくれます。
 
 昔の話は知らないのですが、もしかしてソフマップのエロゲコーナー、何回か移転を繰り返して元に戻った？  
 
-![Imgur](https://imgur.com/kRc5jw6.png)
+![Imgur](https://i.imgur.com/kRc5jw6.png)
 
 (彼女のセイイキ より)
 
@@ -183,47 +183,47 @@ https://takusan.negitoro.dev/posts/summer_vacation_r3_akiba_used_eroge/
 新しくなった！！！！  
 元々 3 号店があったところが本店になったそうです。でけ～  
 
-![Imgur](https://imgur.com/W1Rk1BR.png)
+![Imgur](https://i.imgur.com/W1Rk1BR.png)
 
-![Imgur](https://imgur.com/XxULLnH.png)
+![Imgur](https://i.imgur.com/XxULLnH.png)
 
 めっちゃきれい。  
 エロゲコーナーは 6 階です、CD とかは 2 階の角っこの方にありました。
 
-![Imgur](https://imgur.com/xMMm5Fj.png)
+![Imgur](https://i.imgur.com/xMMm5Fj.png)
 
 在庫はかなりあると思う（写真ぶれた...）。  
 結構広い方です
 
-![Imgur](https://imgur.com/MqyzTnQ.png)
+![Imgur](https://i.imgur.com/MqyzTnQ.png)
 
-![Imgur](https://imgur.com/P6YE1HL.png)
+![Imgur](https://i.imgur.com/P6YE1HL.png)
 
 広告もちゃんと戻ってきています！！  
 地べたに広告貼らないのかな（）（）（）
 
-![Imgur](https://imgur.com/1DnkUws.png)
+![Imgur](https://i.imgur.com/1DnkUws.png)
 
-![Imgur](https://imgur.com/UU9Gaay.png)
+![Imgur](https://i.imgur.com/UU9Gaay.png)
 
-![Imgur](https://imgur.com/lwJrBoO.png)
+![Imgur](https://i.imgur.com/lwJrBoO.png)
 
 ## トレーダー2号店
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3240.1229465748465!2d139.77038!3d35.698592!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c1cfcf6ade7%3A0xd9fcac2ce87d746d!2z44OI44Os44O844OA44O8IOeni-iRieWOnzLlj7flupc!5e0!3m2!1sja!2sus!4v1703690701588!5m2!1sja!2sus" width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-![Imgur](https://imgur.com/2vzifpv.png)
+![Imgur](https://i.imgur.com/2vzifpv.png)
 
-![Imgur](https://imgur.com/MZFChCz.png)  
+![Imgur](https://i.imgur.com/MZFChCz.png)  
 めっちゃぶれた...
 
 新品・中古ともに 2 階、CD も 2 階のすみっこ。  
 
 本店よりも広い。POP とか凝ってるので見てみると良いかも。  
 
-![Imgur](https://imgur.com/XcCHzi4.png)
+![Imgur](https://i.imgur.com/XcCHzi4.png)
 
-![Imgur](https://imgur.com/1zcIM6j.png)
+![Imgur](https://i.imgur.com/1zcIM6j.png)
 
 本店に在庫なくても 2 号店にならあるかも・・？
 
@@ -231,14 +231,14 @@ https://takusan.negitoro.dev/posts/summer_vacation_r3_akiba_used_eroge/
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d202.50247991707525!2d139.77061809584671!3d35.700641177811306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d48c5c23c85%3A0x2b079e2f7e5a647d!2z6ae_5rKz5bGLIOeni-iRieWOn-acrOmkqA!5e0!3m2!1sja!2sjp!4v1703690820249!5m2!1sja!2sjp" width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-![Imgur](https://imgur.com/dbHLdHT.png)
+![Imgur](https://i.imgur.com/dbHLdHT.png)
 
-![Imgur](https://imgur.com/gzpbKLF.png)
+![Imgur](https://i.imgur.com/gzpbKLF.png)
 
 新品・中古ともに 7 階。エレベーターもなかなか来ないので多分階段を上るしか無い。  
 7 階まで階段で上がるのはかなり疲れる。在庫を探すなら他の店舗を回ってからのほうが良いかも？  
 
-![Imgur](https://imgur.com/PbXw1TT.png)
+![Imgur](https://i.imgur.com/PbXw1TT.png)
 
 7 階も上がったので、品揃えもある方だと思う。狭め。  
 タペストリーとかもある。
@@ -252,7 +252,7 @@ https://takusan.negitoro.dev/posts/summer_vacation_r3_akiba_used_eroge/
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d433.25417572428955!2d139.7721051845313!3d35.69777270686649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c1d4da05555%3A0x6222da3b1962b0eb!2z6ae_5rKz5bGLIOeni-iRieWOn-mnheWJjeW6lw!5e0!3m2!1sja!2sjp!4v1703690844464!5m2!1sja!2sjp" width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-![Imgur](https://imgur.com/hNiRWbh.png)
+![Imgur](https://i.imgur.com/hNiRWbh.png)
 
 エロゲの CD 等見てみたい方はこちら。2 階です。  
 駅前なので本館からは離れている、21 時までやってるそうなので最後に見るでいいと思う。
@@ -264,9 +264,9 @@ https://takusan.negitoro.dev/posts/summer_vacation_r3_akiba_used_eroge/
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d583.9071406234767!2d139.7701823463284!3d35.6994447983057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c1dacbd172f%3A0x6abc12977417ce04!2z44KJ44GX44KT44Gw44KT56eL6JGJ5Y6f5bqX5paw6aSo!5e0!3m2!1sja!2sjp!4v1703690970066!5m2!1sja!2sjp" width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-![Imgur](https://imgur.com/HEnclM2.png)
+![Imgur](https://i.imgur.com/HEnclM2.png)
 
-![Imgur](https://imgur.com/8N920m6.png)
+![Imgur](https://i.imgur.com/8N920m6.png)
 
 中古のみの扱いです。2 階にのれんが掛かっているエリアがそこです。  
 エリアも広くないので品揃えもそこまでではないです。タペストリーとか同人誌？が主な感じ。
@@ -278,9 +278,9 @@ CD コーナーにあります。毎回見ちゃう
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d520.1962129021806!2d139.770442314544!3d35.70035125804749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c1db588759b%3A0x8c537b9b72799bd3!2z44G-44KT44Gg44KJ44GR44Kz44Oz44OX44Os44OD44Kv44K5!5e0!3m2!1sja!2sjp!4v1703691088214!5m2!1sja!2sjp" width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-![Imgur](https://imgur.com/7R8Rzr4.png)
+![Imgur](https://i.imgur.com/7R8Rzr4.png)
 
-![Imgur](https://imgur.com/myT3jbf.png)
+![Imgur](https://i.imgur.com/myT3jbf.png)
 
 中古のみの扱いです、4 階。CD は 6 階です。  
 ドラマ CD はエロゲコーナーにあるので 4 階です。  
@@ -297,16 +297,16 @@ CD の品揃えは結構ある方だとおもう。
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d810.0339690654009!2d139.76972586963754!3d35.69827379828633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d6d3709790d%3A0x605e9acebfab457c!2z44Oh44Ot44Oz44OW44OD44Kv44K5IOeni-iRieWOn-W6l-iIl-WPl-WPlumkqA!5e0!3m2!1sja!2sjp!4v1703691179105!5m2!1sja!2sjp" width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-![Imgur](https://imgur.com/NucoEdn.png)
+![Imgur](https://i.imgur.com/NucoEdn.png)
 
-![Imgur](https://imgur.com/NGA81UY.png)
+![Imgur](https://i.imgur.com/NGA81UY.png)
 
 新品のみの扱いです。予約コーナーが 1 階で、2 階が新品在庫。  
 他にも秋葉原にメロンは出店してますがエロゲはここだけだと思う。
 
 たまに 3階、4階で原画を展示してたりする。
 
-![Imgur](https://imgur.com/8R42jLf.png)
+![Imgur](https://i.imgur.com/8R42jLf.png)
 
 予約の際は会員登録が必要で、前金の支払いは現金のみなので用意しましょう。
 
@@ -314,9 +314,9 @@ CD の品揃えは結構ある方だとおもう。
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d25920.087974240567!2d139.771258!3d35.701347!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c1ddc9fc753%3A0x79363c55cddac3c6!2z77yI5qCq77yJ5oG15YWJ44OT44Or!5e0!3m2!1sja!2sjp!4v1703691242024!5m2!1sja!2sjp" width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-![Imgur](https://imgur.com/Qgr1BrV.png)
+![Imgur](https://i.imgur.com/Qgr1BrV.png)
 
-![Imgur](https://imgur.com/z6brlYo.png)
+![Imgur](https://i.imgur.com/z6brlYo.png)
 
 ビルの中の 3 階です。ちょっと遠いのと営業時間が 19 時までなので注意してね。  
 新品のみです。いたるところにエロゲ広告があっていい。  
@@ -327,9 +327,9 @@ CD の品揃えは結構ある方だとおもう。
 
 階段にもエロゲ広告が貼ってあります。  
 
-![Imgur](https://imgur.com/8YIhdUZ.png)
+![Imgur](https://i.imgur.com/8YIhdUZ.png)
 
-![Imgur](https://imgur.com/7w3TSh4.png)
+![Imgur](https://i.imgur.com/7w3TSh4.png)
 
 めっちゃ関係ないけどげっちゅ屋のWebサイトの発売予定ページは見やすくてすき。
 
@@ -340,7 +340,7 @@ CD の品揃えは結構ある方だとおもう。
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d202.50938155812418!2d139.77149826203248!3d35.69792362557907!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c1d3793cae3%3A0x21db6914acec40f8!2z44Op44Og44K_44OpIOODoeODh-OCo-OCouODr-ODvOODq-ODiSDjgqLjgq3jg5A!5e0!3m2!1sja!2sjp!4v1703691315699!5m2!1sja!2sjp" width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-![Imgur](https://imgur.com/bA8aDOc.png)
+![Imgur](https://i.imgur.com/bA8aDOc.png)
 
 他のエロゲショップよりは離れたところにある、地下 1 階で、新品だけ？かな。  
 入り口入るとすぐに階段があり地下に行けます。
@@ -351,27 +351,27 @@ CD の品揃えは結構ある方だとおもう。
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.0857621944097!2d139.76641268885498!3d35.6995071!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d7f6df24395%3A0xe19c08b9c40bbcab!2z44K544O844OR44O844OT44Or!5e0!3m2!1sja!2sus!4v1703691403047!5m2!1sja!2sus" width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-![Imgur](https://imgur.com/NWNX0x9.png)
+![Imgur](https://i.imgur.com/NWNX0x9.png)
 
 すいません、こちらもほぼ行ったことがないのでわからないです。3 階か 4 階のどちらかですが、、、  
 エロゲの宣伝が入り口にあるので新作予約はあるんだと思います。
 
-![Imgur](https://imgur.com/Nk4tH4L.png)
+![Imgur](https://i.imgur.com/Nk4tH4L.png)
 
 ## ゲーマーズ
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d405.0168458680896!2d139.7714797579938!3d35.69830109885349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c1d4097a74b%3A0x76073b6493176df5!2zQUtJSEFCQVJB44Ky44O844Oe44O844K65pys5bqX!5e0!3m2!1sja!2sus!4v1703691424387!5m2!1sja!2sus" width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-![Imgur](https://imgur.com/KcQEVXn.png)
+![Imgur](https://i.imgur.com/KcQEVXn.png)
 
-![Imgur](https://imgur.com/z9IszPD.png)
+![Imgur](https://i.imgur.com/z9IszPD.png)
 
 新作の予約だけで、5 階のすみっこの方に予約券が置いてあります。  
 ぱっと見全年齢だけかなって思うけどちゃんと`R-18`ゲームの予約券もあります。
 
 たまにイベントの会場になってるらしい
 
-![Imgur](https://imgur.com/t2HMIF4.png)
+![Imgur](https://i.imgur.com/t2HMIF4.png)
 
 エロゲついでに見たいものがあれば行くと良いかも。
 
@@ -379,7 +379,7 @@ CD の品揃えは結構ある方だとおもう。
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1683.627385267701!2d139.77184381521454!3d35.70031632011621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c1d96fb5701%3A0x9276f70f9d512927!2z44Ki44OL44Oh44Kk44OI56eL6JGJ5Y6f!5e0!3m2!1sja!2sus!4v1703691491347!5m2!1sja!2sus" width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-![Imgur](https://imgur.com/VSzSraY.png)
+![Imgur](https://i.imgur.com/VSzSraY.png)
 
 **一部の新作予約**のみ出来るっぽいです。地下 1 階。  
 前の店舗はとらのあなでした。とらのあなの地下 1 階の時とは違い白基調の店内になってました。  
@@ -397,9 +397,9 @@ CD の品揃えは結構ある方だとおもう。
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3240.0285516532867!2d139.771307!3d35.700915!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c1dc59fff41%3A0xf44917d603081bf7!2z44OI44Os44O844OA44O8IOacrOW6lw!5e0!3m2!1sja!2sus!4v1703690634496!5m2!1sja!2sus" width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-![Imgur](https://imgur.com/ZYSVa1c.png)
+![Imgur](https://i.imgur.com/ZYSVa1c.png)
 
-![Imgur](https://imgur.com/kcVheuc.png)
+![Imgur](https://i.imgur.com/kcVheuc.png)
 
 新品・中古ともに 5 階、CD は 4 階です。  
 タペストリーとかも 5 階にあったかな、いたるところにエロゲの広告がある（柱とか）。
@@ -409,9 +409,9 @@ CD の品揃えは結構ある方だとおもう。
 階段で上がるとエロゲの広告が見られるので良いかも（いやエレベーターの中にもあるか）  
 天井裏とかにも貼ってあったりなかったり
 
-![Imgur](https://imgur.com/c8Q3S1p.png)
+![Imgur](https://i.imgur.com/c8Q3S1p.png)
 
-![Imgur](https://imgur.com/hd1gd8n.png)
+![Imgur](https://i.imgur.com/hd1gd8n.png)
 
 地べたに貼ってあるエロゲ広告、あんまり踏みたくないんだけどうまく避けれそうにもないなっていつも思ってる・・・
 
@@ -420,45 +420,45 @@ CD の品揃えは結構ある方だとおもう。
 そういえば、リアル店舗撤退だけじゃなく、エロゲの店舗特典も見かけなくなった気がする？  
 ~~とらのあな店舗特典とかあった気がするんだけど...~~ → そんな事無いかも、あるところはあるっぽいね
 
-![Imgur](https://imgur.com/xaSj2kM.png)
+![Imgur](https://i.imgur.com/xaSj2kM.png)
 
-![Imgur](https://imgur.com/zqvr4MA.png)
+![Imgur](https://i.imgur.com/zqvr4MA.png)
 
-![Imgur](https://imgur.com/1z2QoR2.png)
+![Imgur](https://i.imgur.com/1z2QoR2.png)
 
 ### 移転前のソフマップ
 ちなみに移転後は**中古PC**？を扱うソフマップが入ったみたいです。
 
-![Imgur](https://imgur.com/n9FQUj6.png)
+![Imgur](https://i.imgur.com/n9FQUj6.png)
 
 路地から見れる広告、こんな感じでした。
 
-![Imgur](https://imgur.com/Bqakf2S.png)
+![Imgur](https://i.imgur.com/Bqakf2S.png)
 
-![Imgur](https://imgur.com/oa6ZLZ1.png)
+![Imgur](https://i.imgur.com/oa6ZLZ1.png)
 
 階段も装飾されてたり
 
-![Imgur](https://imgur.com/omsxYiA.png)
+![Imgur](https://i.imgur.com/omsxYiA.png)
 
 ### トレーダー 3 号店
 建て替え工事前の写真がありました  
 大通りに向けてエロゲ広告を出してたお店でしたね。
 
-![Imgur](https://imgur.com/zmElDgu.png)
+![Imgur](https://i.imgur.com/zmElDgu.png)
 
-![Imgur](https://imgur.com/eboQrDR.png)
+![Imgur](https://i.imgur.com/eboQrDR.png)
 
 絶賛工事中のようです
 
-![Imgur](https://imgur.com/xKr2I69.png)
+![Imgur](https://i.imgur.com/xKr2I69.png)
 
-![Imgur](https://imgur.com/LcK4P4b.png)
+![Imgur](https://i.imgur.com/LcK4P4b.png)
 
 ### そのほか
 見かけたので
 
-![Imgur](https://imgur.com/gxHRqYO.png)
+![Imgur](https://i.imgur.com/gxHRqYO.png)
 
 # おわりに
 ソフマップ移転が一番でかい気がする。めっちゃ広くなってすげ～なってる  

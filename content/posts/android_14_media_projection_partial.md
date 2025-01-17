@@ -15,28 +15,28 @@ tags:
 久しぶりのシナリオゲー？かもしれない、OP 曲がいい！  
 共通が長いせいか、個別の最後の方は駆け足になってた気がするけど、引きずるよりかはいいのかも・・・？
 
-![Imgur](https://imgur.com/lTYI7fj.png)
+![Imgur](https://i.imgur.com/lTYI7fj.png)
 
 かわい～
 
-![Imgur](https://imgur.com/ySVpYjp.png)
+![Imgur](https://i.imgur.com/ySVpYjp.png)
 
 制服ちがうのってなんでだろう（言及してたのかもしれないけど私が見落としてただけ・・？）  
 
-![Imgur](https://imgur.com/be2TOOj.png)
+![Imgur](https://i.imgur.com/be2TOOj.png)
 
 すごいどうでもいいけど、プログラミング何も分からんときに`multipart/form-data`でバイナリデータ（写真）を送れたときの感動にを思い出したこれ ↑
 
 私は日輪ちゃんルートが一番かな  
 ↓ この後にあるイベントCGがいい！
 
-![Imgur](https://imgur.com/R2Iuypz.png)
+![Imgur](https://i.imgur.com/R2Iuypz.png)
 
-![Imgur](https://imgur.com/QVQxVrr.png)
+![Imgur](https://i.imgur.com/QVQxVrr.png)
 
 この子のルートの結末が読者次第というパターンのやつだった、ぐぬぬ、どっちなんだろう
 
-![Imgur](https://imgur.com/2Y5OpBW.png)
+![Imgur](https://i.imgur.com/2Y5OpBW.png)
 
 おすすめ、~~えちえちシーンもよかった~~
 
@@ -63,9 +63,9 @@ https://android-developers.googleblog.com/2024/02/first-developer-preview-androi
 - Google I/O
     - https://youtu.be/qXhjN66O7Bk?si=LsXPmE8B2vL2z0Ls&t=201
 
-![Imgur](https://imgur.com/6ctjVe4.png)
+![Imgur](https://i.imgur.com/6ctjVe4.png)
 
-![Imgur](https://imgur.com/DUlRd1q.png)
+![Imgur](https://i.imgur.com/DUlRd1q.png)
 
 画面共有をする際に、今までどおりの**画面全体**の画面共有に加えて、**指定したアプリの画面**だけの画面共有に対応しました。  
 画面分割中に、かたっぽのアプリだけ画面共有ができるようになりました。また画面分割をしないときも便利で、これだと**通知やステータスバーが写り込まない**んですよね  
@@ -109,7 +109,7 @@ val mediaProjectionResult = rememberLauncherForActivityResult(
 mediaProjectionResult.launch(mediaProjectionManager.createScreenCaptureIntent(MediaProjectionConfig.createConfigForDefaultDisplay()))
 ```
 
-![Imgur](https://imgur.com/pzOMg5G.png)
+![Imgur](https://i.imgur.com/pzOMg5G.png)
 
 #### 対応したほうがいい場合
 この記事の後半に書きますが、画面を録画してその映像を生配信したい場合は、別途対応が必要かもしれません。  
@@ -247,7 +247,7 @@ fun MainScreen() {
 どうでもいいですが、`Service`を作る時はコンテキストメニューから作ると良いと思います。  
 よく`AndroidManifest.xml`に書き忘れるんだよなあこれ
 
-![Imgur](https://imgur.com/WfgE4NX.png)
+![Imgur](https://i.imgur.com/WfgE4NX.png)
 
 一点、サービス作ったら`AndroidManifest.xml`を開いて、`<service>`を探して、`android:foregroundServiceType="mediaProjection"`を付けてあげる必要があります。  
 
@@ -487,7 +487,7 @@ override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
 どうでしょう。開始ボタンを押したら、ステータスバーにキャストアイコンが出て、終了を押したら消えましたか？  
 ファイルの確認ですが、`Android Studio`が使える場合は、`Device Explorer`を開いて、`sdcard/Android/data/{アプリケーションID}/files`に動画が保存されているはず
 
-![Imgur](https://imgur.com/MdI6w6r.png)
+![Imgur](https://i.imgur.com/MdI6w6r.png)
 
 `Android`端末しかない場合は、アプリケーションID`com.android.documentsui`を何らかの方法で開くことで、ファイルマネージャーが開くので、  
 そこで`Android/data/{アプリケーションID}/files`を確認すると良いと思います。
@@ -1110,11 +1110,11 @@ https://developer.android.com/about/versions/15/behavior-changes-all#media-proje
 あと通知領域を開いたとしても、詳しい内容は隠されるようになりました。  
 また、スマホをスリープにしたときにも、`MediaProjection.Callback`の`onStop()`が呼ばれるようになります。今までは`Always On Display`とかが写ってた？
 
-![Imgur](https://imgur.com/56nE9gL.png)
+![Imgur](https://i.imgur.com/56nE9gL.png)
 
-![Imgur](https://imgur.com/ZvB35yQ.png)
+![Imgur](https://i.imgur.com/ZvB35yQ.png)
 
-![Imgur](https://imgur.com/vk5xcmb.png)
+![Imgur](https://i.imgur.com/vk5xcmb.png)
 
 で、**この記事では onStop() が呼び出されても何もしていません、が、おそらくサービスや画面録画を終了するような処理を追加で書く必要があると思います。**  
 雑に対応してみた→ https://github.com/takusan23/ZeroMirror/commit/9d7cb51224c989e9e3342f7da6a8a462855a751e
@@ -1154,7 +1154,7 @@ mediaProjection.registerCallback(object : MediaProjection.Callback() {
 （・・・まあ画面外に有るのに出続けるのもおかしいか）
 
 ## 単一アプリが画面に映ってないときに代わりに映す
-![Imgur](https://imgur.com/RO0lLNn.png)
+![Imgur](https://i.imgur.com/RO0lLNn.png)
 
 というわけで、画面外に単一アプリが移動した場合、「今は映らないよ！アプリ戻ってきたら映るよ！」的な文字を動画に入れたいわけですが、  
 それをするにはおそらく`OpenGL`を使うしか無い・・・
@@ -1621,7 +1621,7 @@ https://github.com/takusan23/AndroidPartialScreenInternalAudioRecorder
 
 ## ぜろみらー も対応しました
 単一アプリ共有時に画面外に移動してもちゃんと動きます！  
-![Imgur](https://imgur.com/RO0lLNn.png)
+![Imgur](https://i.imgur.com/RO0lLNn.png)
 
 ついでに**安定性を向上させました**。んなアプリストアのリリースノートみたいなこと言うなよって言われるので話すと、セグメントの生成がちゃんと時間通りに配信出来るように調整しました。  
 記事書き終わったらリリースするので、読む頃にはリリースされてるんじゃないでしょうか？  

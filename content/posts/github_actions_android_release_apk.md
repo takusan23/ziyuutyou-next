@@ -12,17 +12,17 @@ tags:
 
 ゆめみちゃんが可愛かったです。アペンド配信まだですか！！！！
 
-![Imgur](https://imgur.com/cDsSfhl.png)
+![Imgur](https://i.imgur.com/cDsSfhl.png)
 
 表情いっぱいあるのかわいい。
 
-![Imgur](https://imgur.com/1uoWiaU.png)
+![Imgur](https://i.imgur.com/1uoWiaU.png)
 
-![Imgur](https://imgur.com/VaS7aQw.png)
+![Imgur](https://i.imgur.com/VaS7aQw.png)
 
 共通が長いのが好きな方はどうぞ、わたし的には個別長いほうが良いかな
 
-![Imgur](https://imgur.com/PBlokGv.png)
+![Imgur](https://i.imgur.com/PBlokGv.png)
 
 
 (え？グランドエンディング？...アペンド配信に期待)
@@ -55,7 +55,7 @@ releaseブランチへpushしたら勝手にAPK作ってくれるようにした
 今回は`release`ブランチを作成して、このブランチに対してpushがあった際に自動でAPKを作成するようにします。  
 APKを作成したい場合はこのブランチへmasterの中身をマージしてpushすれば良いわけなんですね。
 
-![Imgur](https://imgur.com/fcuuYib.png)
+![Imgur](https://i.imgur.com/fcuuYib.png)
 
 (もし最初からあるmasterブランチをpushするたびにapkを作りたい場合はこれの作業はいらない)
 
@@ -131,7 +131,7 @@ Windowsの標準機能でBase64に変換できるみたいなのでやってみ�
 
 適当なフォルダでPowerShellとかを開いてコマンドを叩きます
 
-![Imgur](https://imgur.com/EOXhnXm.png)
+![Imgur](https://i.imgur.com/EOXhnXm.png)
 
 ```
 certutil -encode {署名ファイルのパス} encode.txt
@@ -146,7 +146,7 @@ certutil -encode {署名ファイルのパス} encode.txt
 ## GitHub の Secret へ登録
 リポジトリの Secrets > Actions へ進みます。
 
-![Imgur](https://imgur.com/Z9Ok9ar.png)
+![Imgur](https://i.imgur.com/Z9Ok9ar.png)
 
 そしてこの中に署名で使うパスワード等を保存していくわけですが、  
 さっきの`build.gradle.kts`をパクった場合の名前と値の対応表です↓  
@@ -163,14 +163,14 @@ certutil -encode {署名ファイルのパス} encode.txt
 
 もしパクった場合はSecretはこうなります
 
-![Imgur](https://imgur.com/guaG8dc.png)
+![Imgur](https://i.imgur.com/guaG8dc.png)
 
 ## GitHub Actions を作成する
 
 GitHubのリポジトリにある`Actions`から新しいワークフローを作成します。  
 テンプレ置いておくので皆さんは Simple workflow を選んでいいですよ。
 
-![Imgur](https://imgur.com/DmOATvW.png)
+![Imgur](https://i.imgur.com/DmOATvW.png)
 
 そしてAPKを作成するワークフローはこちらです！！！
 
@@ -230,7 +230,7 @@ GitHubのSecretは勝手に環境変数にはならないので、`env`で定義
 
 出来たらコミット+プッシュしましょう。
 
-![Imgur](https://imgur.com/DTux7Rj.png)
+![Imgur](https://i.imgur.com/DTux7Rj.png)
 
 ## release ブランチを push してみる
 (releaseブランチをGitHub Actionsのトリガーにしていた場合)
@@ -238,24 +238,24 @@ GitHubのSecretは勝手に環境変数にはならないので、`env`で定義
 releaseブランチに切り替えて、pushしてみます。  
 これで動き始めるはず。Actionsタブへ移動します。
 
-![Imgur](https://imgur.com/YBBHkun.png)
+![Imgur](https://i.imgur.com/YBBHkun.png)
 
 ## 手動実行ボタンを使う
 pushせずに動かすことが出来ます。ここをポチッと
 
-![Imgur](https://imgur.com/7Wy1SaZ.png)
+![Imgur](https://i.imgur.com/7Wy1SaZ.png)
 
 APKもちゃんとアーティファクトの欄にありますね。  
 これで自分のPCへ負荷をかけずにAPKを作ることが出来ました。やったー
 
-![Imgur](https://imgur.com/IwyCZpc.png)
+![Imgur](https://i.imgur.com/IwyCZpc.png)
 
 ### おまけ 自分のPCで確認する編
 **Windows以外は知りません**
 
 Android Studioのターミナルを開きます。
 
-![Imgur](https://imgur.com/4knLAkM.png)
+![Imgur](https://i.imgur.com/4knLAkM.png)
 
 環境変数の設定をします。`{}`の部分は各自違うと思うのでそれぞれ入れてください
 

@@ -15,17 +15,17 @@ tags:
 魅力的な生徒かいちょーさんを攻略できる神ゲーです。前作と違い学園生活にフォーカスしてます。  
 声がヒロインにめっちゃ合ってていい！
 
-![Imgur](https://imgur.com/TDO2IL4.png)
+![Imgur](https://i.imgur.com/TDO2IL4.png)
 
 ；；
 
-![Imgur](https://imgur.com/ru8COek.png)
+![Imgur](https://i.imgur.com/ru8COek.png)
 
 ↓の展開前作と変わってるのかわいい
 
-![Imgur](https://imgur.com/kKdmoCP.png)
+![Imgur](https://i.imgur.com/kKdmoCP.png)
 
-![Imgur](https://imgur.com/WZPAADx.png)
+![Imgur](https://i.imgur.com/WZPAADx.png)
 
 ~~一緒にお風呂に入るシーンがめっちゃいい！！！かわいい！~~
 
@@ -140,7 +140,7 @@ WebMの最初の方に入っているデータが**初期化セグメント**に
 
 実際に`WebM`をバイナリエディタで開いてどこまでを指しているのかというと、最初の`Cluster`が始まる前までが初期化セグメントになるはずです。（雑）  
 
-![Imgur](https://imgur.com/ICMxT2U.png)
+![Imgur](https://i.imgur.com/ICMxT2U.png)
 
 `Cluster`の開始タグが`0x1F 0x43 0xB6 0x75`なので、多分こんな感じに分離できると思う。多分もっといい実装方法があるだろうけど...
 
@@ -284,7 +284,7 @@ dependencies {
 
 （Viewを変形させたい場合は`TextureView`一択になると思います、OpenGLとかできれば話は別かも）
 
-![Imgur](https://imgur.com/0d1xt3w.png)
+![Imgur](https://i.imgur.com/0d1xt3w.png)
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -1558,7 +1558,7 @@ class MainActivity : AppCompatActivity() {
 やっぱり遅延が出ちゃうけど、`WebSocket`で動画ファイルを受け取って切り替えるよりは快適だった。  
 **Android単体でライブ配信が出来て満足です。**
 
-![Imgur](https://imgur.com/4Fn5tRq.gif)
+![Imgur](https://i.imgur.com/4Fn5tRq.gif)
 
 4MBぐらいのGIFです、モバイルデータの方はすいません；；
 

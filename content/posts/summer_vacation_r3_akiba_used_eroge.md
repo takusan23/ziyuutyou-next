@@ -80,7 +80,7 @@ https://takusan.negitoro.dev/posts/r5_akiba_eroge_shop/
 ~~写真撮りそこねたので4月の写真を代わりに（次行ったとき取り直してくる）~~ 取り直してきました。ついでに予約してきた。かわいい  
 リニューアル前を知らないので少し残念。
 
-![Imgur](https://imgur.com/dYNQqBD.png)
+![Imgur](https://i.imgur.com/dYNQqBD.png)
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12960.043336936349!2d139.771178!3d35.701351!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xec9b4fc028069b57!2z44K944OV44Oe44OD44OXIEFLSUJBIOOCveODleODiOmkqA!5e0!3m2!1sja!2sjp!4v1627226250763!5m2!1sja!2sjp" width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 
@@ -95,7 +95,7 @@ Kyash使えました。
 # <span id="トレーダー本店">トレーダー 本店</span>
 写真はMi 11 Lite 5Gで撮影したけど、サイズがでかすぎたのでGIMPで品質を半分にした画像を貼ります。
 
-![Imgur](https://imgur.com/flkYYZp.png)
+![Imgur](https://i.imgur.com/flkYYZp.png)
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3240.029730098827!2d139.771296!3d35.700886!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf44917d603081bf7!2z44OI44Os44O844OA44O8IOacrOW6lw!5e0!3m2!1sja!2sjp!4v1627226235931!5m2!1sja!2sjp" width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 
@@ -111,7 +111,7 @@ Kyash使えました。
 
 ~~写真は取りそこねました。覚えていれば次行ったとき撮ってきます。~~ 撮ってきました。
 
-![Imgur](https://imgur.com/gClfuuz.png)
+![Imgur](https://i.imgur.com/gClfuuz.png)
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3240.1229465748465!2d139.77038!3d35.698592!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd9fcac2ce87d746d!2z44OI44Os44O844OA44O8IOeni-iRieWOnzLlj7flupc!5e0!3m2!1sja!2sjp!4v1627226930875!5m2!1sja!2sjp" width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 
@@ -121,7 +121,7 @@ Kyash使えました。
 
 # <span id="トレーダー3号店">トレーダー 3号店</span>
 
-![Imgur](https://imgur.com/xyZvjei.png)
+![Imgur](https://i.imgur.com/xyZvjei.png)
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3240.059963038522!2d139.771644!3d35.700142!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x72c850c866fa53e8!2z44OI44Os44O844OA44O8IOeni-iRieWOnzPlj7flupc!5e0!3m2!1sja!2sjp!4v1627227197765!5m2!1sja!2sjp" width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 
@@ -134,7 +134,7 @@ CDは1階においてありました。
 # <span id="駿河屋">駿河屋 秋葉原本店</span>
 写真取るの下手くそかよ
 
-![Imgur](https://imgur.com/vgjRTvc.png)
+![Imgur](https://i.imgur.com/vgjRTvc.png)
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1620.0201883535572!2d139.770562!3d35.700624!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c1dcb95431f%3A0x762fbb4675087d94!2z44CSMTAxLTAwMjEg5p2x5Lqs6YO95Y2D5Luj55Sw5Yy65aSW56We55Sw77yT5LiB55uu77yR77yR4oiS77yT!5e0!3m2!1sja!2sjp!4v1627227496352!5m2!1sja!2sjp" width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 
@@ -147,7 +147,7 @@ CDは1階においてありました。
 CDは駿河屋 秋葉原駅前店に置いてありました。  
 駅から近いけど（ラジオ会館のお隣）、他のエロゲショップからは遠い。
 
-![Imgur](https://imgur.com/nvF5bEf.png)
+![Imgur](https://i.imgur.com/nvF5bEf.png)
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d810.0393001366185!2d139.77159982922305!3d35.697748998761924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c1d4da05555%3A0x6222da3b1962b0eb!2z6ae_5rKz5bGLIOeni-iRieWOn-mnheWJjeW6lw!5e0!3m2!1sja!2sjp!4v1630768780832!5m2!1sja!2sjp" width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 
@@ -156,7 +156,7 @@ Kyash Card Lite使えました。
 
 # <span id="まんだらけ">まんだらけ コンプレックス</span>
 
-![Imgur](https://imgur.com/9AAeVOJ.png)
+![Imgur](https://i.imgur.com/9AAeVOJ.png)
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6480.101558869009!2d139.770513!3d35.700368!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8c537b9b72799bd3!2z44G-44KT44Gg44KJ44GR44Kz44Oz44OX44Os44OD44Kv44K5!5e0!3m2!1sja!2sjp!4v1627228337141!5m2!1sja!2sjp" width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 
@@ -177,7 +177,7 @@ iDとか代替決済手段があるので心配する必要はないと思う。
 
 # <span id="らしんばん">らしんばん</span>
 
-![Imgur](https://imgur.com/Uf2CEDE.png)
+![Imgur](https://i.imgur.com/Uf2CEDE.png)
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6480.1704760139655!2d139.770391!3d35.69952000000001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c1dacbd172f%3A0x6abc12977417ce04!2z44KJ44GX44KT44Gw44KT56eL6JGJ5Y6f5bqX5paw6aSo!5e0!3m2!1sja!2sus!4v1627228711576!5m2!1sja!2sus" width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 
@@ -194,7 +194,7 @@ Kyash使えました。
 # <span id="ムーラン本店">ムーラン 本店</span>
 写真もっとうまく撮れや
 
-![Imgur](https://imgur.com/ALzjSpH.png)
+![Imgur](https://i.imgur.com/ALzjSpH.png)
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d810.0300042318594!2d139.7692180292248!3d35.6986640987619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c1cf98b4049%3A0xe6fc2d9a47b85b6e!2z6LK35Y-W6LKp5aOy5biC5aC044Og44O844Op44OzQUtJQkHmnKzlupc!5e0!3m2!1sja!2sjp!4v1627229573133!5m2!1sja!2sjp" width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 
@@ -205,11 +205,11 @@ Kyash使えました。
 
 ここではOP、ED共に名曲の`ちいさな彼女の小夜曲`を買いました。**feng生き返れ...。** 値段が1800円で買う予定なかったけど安かったので購入した。  
 
-![Imgur](https://imgur.com/xbNjp65.png)
+![Imgur](https://i.imgur.com/xbNjp65.png)
 
 # <span id="ムーラン中央通り店">ムーラン 中央通り店</span>
 
-![Imgur](https://imgur.com/BXGqPQZ.png)
+![Imgur](https://i.imgur.com/BXGqPQZ.png)
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25920.96056003467!2d139.75225560007613!3d35.698662792538094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c1d08f1b007%3A0x85ae0041177e526a!2z6LK35Y-W6LKp5aOy5biC5aC044Og44O844Op44OzQUtJQkHkuK3lpK7pgJrjgorlupc!5e0!3m2!1sja!2sus!4v1627229846365!5m2!1sja!2sus" width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 
@@ -219,7 +219,7 @@ Kyash使えました。
 # <span id="K-Books">K-Books 秋葉原本店</span>  
 ↓この建物の3階
 
-![Imgur](https://imgur.com/qq3wdGa.png)
+![Imgur](https://i.imgur.com/qq3wdGa.png)
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.1504602823316!2d139.76976841526525!3d35.69791488019043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c1d4ec94be1%3A0xe8781a5ca3d62bed!2z44CSMTAxLTAwMjEg5p2x5Lqs6YO95Y2D5Luj55Sw5Yy65aSW56We55Sw77yR5LiB55uu77yR77yV4oiS77yR77yWIOODqeOCuOOCquS8mumkqA!5e0!3m2!1sja!2sjp!4v1627230502940!5m2!1sja!2sjp" width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 
@@ -228,7 +228,7 @@ CDもエロゲコーナーの隣にありました。他よりCDは多いと思�
 
 てかいつの間にかヤマダ電機なくなってた。ヤマダ電機跡地のとなりです。
 
-![Imgur](https://imgur.com/YVZ5gth.png)
+![Imgur](https://i.imgur.com/YVZ5gth.png)
 
 ちなみにヤマダ電機の前はサトームセンが入っていたらしい。知らんけど
 
@@ -258,4 +258,4 @@ CDもエロゲコーナーの隣にありました。他よりCDは多いと思�
 あと話変わるんだけど、`GitHub Copilot`君に結構助けられてる。GitHub、GJ  
 ↓補充が有能すぎる。なんでこれから入力しようとしてること分かんだよこえーよ  
 
-![Imgur](https://imgur.com/u0YKTxt.png)
+![Imgur](https://i.imgur.com/u0YKTxt.png)

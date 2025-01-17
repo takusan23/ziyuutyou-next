@@ -11,17 +11,17 @@ tags:
 保健室のセンセーとゴスロリの校医 攻略しました。前作はやってないです。  
 ロープライスだけどシナリオがちゃんとしていていいと思いました。おすすめ
 
-![Imgur](https://imgur.com/zgom8f4.png)
+![Imgur](https://i.imgur.com/zgom8f4.png)
 
-![Imgur](https://imgur.com/mS4S4ne.png)
+![Imgur](https://i.imgur.com/mS4S4ne.png)
 
 みんなかわいい
 
-![Imgur](https://imgur.com/roZOqlK.png)
+![Imgur](https://i.imgur.com/roZOqlK.png)
 
 鈴ルートも近々発売みたいなので楽しみですね。くー
 
-![Imgur](https://imgur.com/8PamPDe.png)
+![Imgur](https://i.imgur.com/8PamPDe.png)
 
 # 本題
 ちょっと前に書いたアプリのコア部分をライブラリに切り出した。
@@ -104,20 +104,20 @@ The password must contain at least 1 special character, such as &, %, ™, or É
 
 出来たらこうなる。作ったアカウントでログインして、適当に初期設定を進めます。
 
-![Imgur](https://imgur.com/4NYMvGD.png)
+![Imgur](https://i.imgur.com/4NYMvGD.png)
 
 Atlassian Jira 自体には日本語があります。なお日本語で対応してくれるとは言っていない。
 
-![Imgur](https://imgur.com/wHObSuK.png)
+![Imgur](https://i.imgur.com/wHObSuK.png)
 
 # リポジトリを作ってもらうJiraチケットを切る
 **作成**からチケットを切れます。
 
-![Imgur](https://imgur.com/UK5Aezu.png)
+![Imgur](https://i.imgur.com/UK5Aezu.png)
 
 プロジェクト、課題タイプ はそのままでおっけー
 
-![Imgur](https://imgur.com/K8YduK0.png)
+![Imgur](https://i.imgur.com/K8YduK0.png)
 
 そして以下の項目を埋めていきます。  
 Group Idってのは`io.github.takusan23`みたいなやつです。    
@@ -137,23 +137,23 @@ Group Idってのは`io.github.takusan23`みたいなやつです。
 
 以下例です。
 
-![Imgur](https://imgur.com/kanqUyx.png)
+![Imgur](https://i.imgur.com/kanqUyx.png)
 
 作成を押すと、こんな風になるのでチケットの詳細ページへ飛びましょう。
 
-![Imgur](https://imgur.com/Bnxb0zf.png)
+![Imgur](https://i.imgur.com/Bnxb0zf.png)
 
 ## 数十秒待っていると...
 チケットへコメントが付きます。（Botなんですけどね初見さん）  
 
-![Imgur](https://imgur.com/lljwjuq.png)
+![Imgur](https://i.imgur.com/lljwjuq.png)
 
 ここでグループIDの検証を行います、が特に難しいことをするわけでもなく、  
 自分のGitHubのリポジトリに作ったJiraチケットのチケット番号（OSSRH- から始まるやつ）の名前でリポジトリを作成しろって内容です。
 
 というわけで作成して
 
-![Imgur](https://imgur.com/VtlXUag.png)
+![Imgur](https://i.imgur.com/VtlXUag.png)
 
 チケットのコメントに作ったことを知らせます。  
 
@@ -161,25 +161,25 @@ Group Idってのは`io.github.takusan23`みたいなやつです。
 Created repository for https://github.com/takusan23/OSSRH-79851
 ```
 
-![Imgur](https://imgur.com/tSevFmy.png)
+![Imgur](https://i.imgur.com/tSevFmy.png)
 
 チケットをOpenにしろって言われてるんだけど勝手にOpenになってた
 
-![Imgur](https://imgur.com/396HM8B.png)
+![Imgur](https://i.imgur.com/396HM8B.png)
 
 ## 数分後に...
 
 MavenCentralで`io.github.takusan23`が使えるようになったぞ！ってメールが来ました。歯磨き終わったら仕事終わってた。有能かよ
 
-![Imgur](https://imgur.com/k01PjD8.png)
+![Imgur](https://i.imgur.com/k01PjD8.png)
 
 これで、https://s01.oss.sonatype.org/ にログインできるようになります。  
 ログインはここです。  
 Username、パスワードはさっきのJiraアカウントと同じものを使えばOKです。
 
-![Imgur](https://imgur.com/zyI6CQw.png)
+![Imgur](https://i.imgur.com/zyI6CQw.png)
 
-![Imgur](https://imgur.com/dqOgO67.png)
+![Imgur](https://i.imgur.com/dqOgO67.png)
 
 # 署名で使う鍵を作成する
 公式：https://central.sonatype.org/publish/requirements/gpg/
@@ -188,15 +188,15 @@ Username、パスワードはさっきのJiraアカウントと同じものを�
 
 https://gpg4win.org/index.html
 
-![Imgur](https://imgur.com/p2ekpeb.png)
+![Imgur](https://i.imgur.com/p2ekpeb.png)
 
 インストーラーの案内に従って入れましょう。
 
-![Imgur](https://imgur.com/xdPIIfD.png)
+![Imgur](https://i.imgur.com/xdPIIfD.png)
 
 インストールしたら開きます。GUIが付属してますので使っていきましょう。
 
-![Imgur](https://imgur.com/isJTqGm.png)
+![Imgur](https://i.imgur.com/isJTqGm.png)
 
 ## 署名の中身
 詳細設定は、`詳細設定`を押すと開きます。
@@ -209,31 +209,31 @@ https://gpg4win.org/index.html
 | 証明書の利用目的                            | 署名 （有効期限決めることも可能、今回はしない） |
 | Protect the generated key with a passphrase | チェックを入れる                                |
 
-![Imgur](https://imgur.com/YNdDU66.png)
+![Imgur](https://i.imgur.com/YNdDU66.png)
 
 パスワードを入力します。
 
-![Imgur](https://imgur.com/R2kALYR.png)
+![Imgur](https://i.imgur.com/R2kALYR.png)
 
 できました。
 
-![Imgur](https://imgur.com/N5svyQA.png)
+![Imgur](https://i.imgur.com/N5svyQA.png)
 
 ### バックアップと失効証明書の作成
 一応作成します。
 
 バックアップはキーを右クリックしてコンテキストメニューを出し、`Backup Secret Keys...`で出来ます。
 
-![Imgur](https://imgur.com/NprkeQg.png)
+![Imgur](https://i.imgur.com/NprkeQg.png)
 
 失効証明書を作っておくと、万が一秘密鍵が漏れた場合に無効にできます。  
 コンテキストメニューを開き、`詳細`を押します。
 
-![Imgur](https://imgur.com/12Qnqs7.png)
+![Imgur](https://i.imgur.com/12Qnqs7.png)
 
 そしたら`Generate revocation certificate`を押すことで発行できます。
 
-![Imgur](https://imgur.com/HVpCBv3.png)
+![Imgur](https://i.imgur.com/HVpCBv3.png)
 
 ## 公開鍵を鍵サーバーへアップロードする
 GUIでやる方法がわからんかったので、コマンドプロンプトでやります。  
@@ -249,7 +249,7 @@ GUIでやる方法がわからんかったので、コマンドプロンプト�
 gpg --keyserver keyserver.ubuntu.com --send-keys <コピーした16進数>
 ```
 
-![Imgur](https://imgur.com/PHk9DF8.png)
+![Imgur](https://i.imgur.com/PHk9DF8.png)
 
 ## 署名鍵をBase64にする
 最後にライブラリの署名で使うので、秘密鍵をBase64で書き出しておきます。  
@@ -679,7 +679,7 @@ https://s01.oss.sonatype.org
 そしたら、左側にある中から、`Staging Profiles`を押して、自分の名前の部分を押します。  
 押したら、ブラウザのアドレス欄を見ます。`stagingProfiles;`のあとの16進数が`ステージングプロファイルId`になります。
 
-![Imgur](https://imgur.com/z9PU7tD.png)
+![Imgur](https://i.imgur.com/z9PU7tD.png)
 
 # 公開するぞ！！！！
 といっても直接`MavenCentral`に公開されるわけではなく、一旦`Sonatype OSSRH`の`nexus repository manager`へアップロードされます。  
@@ -693,12 +693,12 @@ https://github.com/gradle-nexus/publish-plugin
 gradle :ライブラリ名(モジュール名):publishToSonatype
 ```
 
-![Imgur](https://imgur.com/d5Stw0C.png)
+![Imgur](https://i.imgur.com/d5Stw0C.png)
 
 数十秒後に終了しました。  
 プラグイン作ったやつすげえ！
 
-![Imgur](https://imgur.com/OCI1AHS.png)
+![Imgur](https://i.imgur.com/OCI1AHS.png)
 
 # Sonatype OSSRH nexus repository manager の ステージングリポジトリを見に行く
 
@@ -707,7 +707,7 @@ gradle :ライブラリ名(モジュール名):publishToSonatype
 
 どうですか？ありましたか！？
 
-![Imgur](https://imgur.com/QQk5ikQ.png)
+![Imgur](https://i.imgur.com/QQk5ikQ.png)
 
 問題がなければ**Close**を、やり直したい場合は**Drop**で消せます。  
 
@@ -715,16 +715,16 @@ gradle :ライブラリ名(モジュール名):publishToSonatype
 `Close`を押すと、MavenCentralへ公開する？準備が始まります。  
 自動で公開されるわけではないので、まだ安心できますね。
 
-![Imgur](https://imgur.com/omkAFZU.png)
+![Imgur](https://i.imgur.com/omkAFZU.png)
 
 しばらく待っていると**Release**が押せるようになっていました。  
 いくぞおおおおお、新曲！
 
-![Imgur](https://imgur.com/EdiIqLW.png)
+![Imgur](https://i.imgur.com/EdiIqLW.png)
 
 `Confirm`を押してリリースです！
 
-![Imgur](https://imgur.com/Ys8HBSc.png)
+![Imgur](https://i.imgur.com/Ys8HBSc.png)
 
 数時間後に https://repo1.maven.org/maven2/ から見れるようになるみたいなので楽しみですね。
 
@@ -732,21 +732,21 @@ gradle :ライブラリ名(モジュール名):publishToSonatype
 https://repo1.maven.org/maven2/ を開いて辿っていけばいいです。 
 あった！！！
 
-![Imgur](https://imgur.com/b38RD5W.png)
+![Imgur](https://i.imgur.com/b38RD5W.png)
 
 ## search.maven.org でも確認する
 さらに待ってると、 https://search.maven.org で検索出来るようになってます。
 
-![Imgur](https://imgur.com/v02mUI0.png)
+![Imgur](https://i.imgur.com/v02mUI0.png)
 
 
 うおおおお、なんかすごい
 
-![Imgur](https://imgur.com/0IIme8l.png)
+![Imgur](https://i.imgur.com/0IIme8l.png)
 
 ライブラリの詳細画面はこんな感じ、導入方法とか書いてある。
 
-![Imgur](https://imgur.com/KTPtKXR.png)
+![Imgur](https://i.imgur.com/KTPtKXR.png)
 
 # 使う側になる
 
@@ -768,17 +768,17 @@ implementation("io.github.takusan23:conecocore:1.0.0")
 
 これで他の大手ライブラリのように導入できます。くっそ大変だなこれ...
 
-![Imgur](https://imgur.com/qek6dbP.png)
+![Imgur](https://i.imgur.com/qek6dbP.png)
 
 ~~(なんか別にドキュメントを生成しないとダメみたいですね...)~~
 
 ライブラリを入れた際に一緒に`XXX-sources.jar`がダウンロードされるので、IDE上でもそのまま表示されるようになります。  
 
-![Imgur](https://imgur.com/AwCm0Oh.png)
+![Imgur](https://i.imgur.com/AwCm0Oh.png)
 
-![Imgur](https://imgur.com/RuVmcSf.png)
+![Imgur](https://i.imgur.com/RuVmcSf.png)
 
-![Imgur](https://imgur.com/iAM8juN.png)
+![Imgur](https://i.imgur.com/iAM8juN.png)
 
 # 他にライブラリを公開したい場合
 すでにリポジトリがある(Sonatype OSSRH nexus repository manager が使える)ので、`build.gradle.kts`のところからやればいいと思います。

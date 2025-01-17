@@ -81,7 +81,7 @@ fun HomeScreen() {
 }
 ```
 
-![Imgur](https://imgur.com/Or8W4or.png)
+![Imgur](https://i.imgur.com/Or8W4or.png)
 
 # 画面外にいると取れない？
 というわけで横に長い、スクロールするような画面を用意しました。  
@@ -183,15 +183,15 @@ fun HomeScreen() {
 横並びで文字を入れてあるので、ちゃんとスクロール出来ていることがわかります。  
 もちろん動かせますよ。
 
-![Imgur](https://imgur.com/Il4LVKd.png)
+![Imgur](https://i.imgur.com/Il4LVKd.png)
 
 で、ここからです。  
 赤い四角が画面外に行くようにスクロールすると・・・おや？座標が取れないですね。。。  
 なんなら画面外に赤い四角を追いやるでもダメですね。
 
-![Imgur](https://imgur.com/FnQw9Gh.png)
+![Imgur](https://i.imgur.com/FnQw9Gh.png)
 
-![Imgur](https://imgur.com/KgXRJUe.png)
+![Imgur](https://i.imgur.com/KgXRJUe.png)
 
 う～～～ん。  
 こまった。
@@ -242,7 +242,7 @@ Box(
 )
 ```
 
-![Imgur](https://imgur.com/VBoKakT.png)
+![Imgur](https://i.imgur.com/VBoKakT.png)
 
 # 最終手段
 先に答えを出すと、はみ出しているコンポーネントで`Modifier.onGloballyPositioned { }`を使って、`LayoutCoordinates`をもらいます。  
@@ -355,7 +355,7 @@ fun HomeScreen() {
 
 画面外にスクロールしましたが、ちゃんと座標が残ったままです！  
 
-![Imgur](https://imgur.com/hJ1ZVFU.png)
+![Imgur](https://i.imgur.com/hJ1ZVFU.png)
 
 ## 何をしているのか
 `boundsInRoot()`の中身をちょっと見てちょっとだけ分かった気がする。  

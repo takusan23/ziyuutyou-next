@@ -13,7 +13,7 @@ tags:
 ことねちゃんが可愛かったです。続きが気になるから後日談みたいなのが欲しいと思った。      
 BGMモードでOPの曲が聞けないので初回限定版を買えばよかったかなってちょっと後悔してたりもする。  
 
-<img src="https://imgur.com/CNT3gWS.png" width="500">
+<img src="https://i.imgur.com/CNT3gWS.png" width="500">
 
 # 本題
 JetpackComposeでErogameScapeの情報を表示するアプリを作ってみます。
@@ -30,7 +30,7 @@ JetpackComposeでErogameScapeの情報を表示するアプリを作ってみま
 SELECT * FROM gamelist WHERE gamename = '彼女のセイイキ'
 ```
 
-<img src="https://imgur.com/BfK6Eea.png" width="500">
+<img src="https://i.imgur.com/BfK6Eea.png" width="500">
 
 ### 使うテーブル
 - gamelist
@@ -643,8 +643,8 @@ class MainActivity : ComponentActivity() {
 
 動かすとこんな感じ
 
-<img src="https://imgur.com/SYlsfEY.png" width="300">
-<img src="https://imgur.com/pzYjBlU.png" width="300">
+<img src="https://i.imgur.com/SYlsfEY.png" width="300">
+<img src="https://i.imgur.com/pzYjBlU.png" width="300">
 
 UI作るのって難しいよな
 

@@ -179,12 +179,12 @@ cat /var/log/nginx/access.log
 
 携帯回線からも見れました
 
-![Imgur](https://imgur.com/4rzqtqH.png)
+![Imgur](https://i.imgur.com/4rzqtqH.png)
 
 # 移行前の VPS をお片付けする
 金ないのでさっさと止めます。
 
-![Imgur](https://imgur.com/qtZ8GP6.png)
+![Imgur](https://i.imgur.com/qtZ8GP6.png)
 
 以上です!!!!!!!!!
 

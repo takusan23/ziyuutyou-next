@@ -11,11 +11,11 @@ tags:
 どうもこんばんわ。  
 ハジラブ -Making*Lovers- 攻略しました。  
 桜子ちゃんが可愛かったです。無印版もやりたいと思います。    
-![Imgur](https://imgur.com/Dm9TXuI.png)　　
+![Imgur](https://i.imgur.com/Dm9TXuI.png)　　
 
 あと別にこのゲームに限った話じゃないけど他のヒロイン攻略するのしんどくなるやつわかる人いますかね？
 
-![Imgur](https://imgur.com/ZqkR7Qw.png)
+![Imgur](https://i.imgur.com/ZqkR7Qw.png)
 
 好きな娘からやればいいと思いますがおすすめは初穂さんを最後にやるといいかも？
 
@@ -90,7 +90,7 @@ https://qiita.com/takjg/items/e6b8af53421be54b62c9#%E8%B5%A4%E5%A4%96%E7%B7%9A%E
 
 以下結線例です。
 
-![Imgur](https://imgur.com/jmBtlwx.png)
+![Imgur](https://i.imgur.com/jmBtlwx.png)
 
 ## Raspberry PiにSSH接続する
 SSH接続ってのはラズパイにあるターミナル（Windowsでいうコマンドプロンプト）を他PCから操作するときに使うやつです。リモートデスクトップでコマンドプロンプト操作してるみたいな感じだと思う。
@@ -106,7 +106,7 @@ Wi-Fiの場合もLANの場合も`mDNS`？のおかげでホストの欄に`pi@ra
 
 ちなみに以下の画像は関係ないです。
 
-![Imgur](https://imgur.com/3sOhTFh.png)
+![Imgur](https://i.imgur.com/3sOhTFh.png)
 
 ## 赤外線パターンを手に入れる
 
@@ -157,7 +157,7 @@ Okay
 cat codes
 ```
 
-![Imgur](https://imgur.com/kvgL2CS.png)
+![Imgur](https://i.imgur.com/kvgL2CS.png)
 
 `[`から`]`で囲われてる数値を控えておきます。  
 画像の例では`8953`から`]`の前まで。以下例
@@ -175,7 +175,7 @@ cat codes
 
 赤外線のパターンを入れて送信できるか試せるアプリです。
 
-![Imgur](https://imgur.com/WaXQlJj.png)
+![Imgur](https://i.imgur.com/WaXQlJj.png)
 
 ソースコード：https://github.com/takusan23/IrSenDroid
 

@@ -46,7 +46,7 @@ zipStoreBase=GRADLE_USER_HOME
 
 このエラーの解決方法ですが、`IDEA`の設定を開き、`Build, Execution, Deployment`へ進み、`Build Tools`の中の`Gradle`を選び、`Gradle JDK`を`Java 11以降`にすればいいです。
 
-![Imgur](https://imgur.com/G3obZ0x.png)
+![Imgur](https://i.imgur.com/G3obZ0x.png)
 
 # Execution failed for task ':app:kaptDebugKotlin'.
 

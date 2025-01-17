@@ -19,7 +19,7 @@ https://github.com/Gurupreet/ComposeCookBook
 
 `Android Studio`左上の`File`から、`Project Structure...`を選び、`Gradle Version`をバージョンアップして、`Try Again`したあと、バージョンを戻したらビルドが通るようになった。
 
-![Imgur](https://imgur.com/WYJR2kZ.png)
+![Imgur](https://i.imgur.com/WYJR2kZ.png)
 
 # 第一関門
 
@@ -54,4 +54,4 @@ Multiple builders are available to build a model of type 'org.jetbrains.plugins.
 
 あとシステムドライブだけじゃなくてRAMも足りなくてしんどい。16GBで足りなくなるとかマジ？
 
-![Imgur](https://imgur.com/Jtqw95M.png)
+![Imgur](https://i.imgur.com/Jtqw95M.png)

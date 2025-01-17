@@ -12,7 +12,7 @@ tags:
 # 本題
 なんか一行目だけ空白がある
 
-![Imgur](https://imgur.com/4aTmscW.png)
+![Imgur](https://i.imgur.com/4aTmscW.png)
 
 # なおす
 `padding`、`margin`を`0px`にしたら直ったのでメモ  

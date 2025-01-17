@@ -12,7 +12,7 @@ tags:
 # 本題
 Android 12から最近のアプリ履歴画面からWebページのURLを共有できる機能が追加されて、ドキュメントに実装方法が追加されたので見てみる
 
-![Imgur](https://imgur.com/WxaAUa0.png)
+![Imgur](https://i.imgur.com/WxaAUa0.png)
 
 # ドキュメント
 https://developer.android.com/about/versions/12/features#recents-url-sharing

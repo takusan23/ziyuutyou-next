@@ -15,7 +15,7 @@ tags:
 ## おことわり
 本記事で言う`@NonNull`は`android.annotation`、`androidx.annotation`のことです。
 
-![Imgur](https://imgur.com/jbCinCs.png)
+![Imgur](https://i.imgur.com/jbCinCs.png)
 
 # 修正する
 多分2パターン存在します。
@@ -211,7 +211,7 @@ public class NonNullCheck {
 }
 ```
 
-![Imgur](https://imgur.com/wPkCSwj.png)
+![Imgur](https://i.imgur.com/wPkCSwj.png)
 
 ## 一方 Kotlin の NonNull
 `Kotlin`は`Null`を厳格にチェックするため、`?`がついていない引数はビルドも通らないし、実行時も落ちるようになっています。  

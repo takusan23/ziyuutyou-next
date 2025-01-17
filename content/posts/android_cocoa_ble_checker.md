@@ -8,7 +8,7 @@ tags:
 ---
 これ高校卒業前にやっとけば面白かったのでは
 
-<img src="https://imgur.com/6EC4Hng.png" width="200">
+<img src="https://i.imgur.com/6EC4Hng.png" width="200">
 
 テレビちゃんに卒業式でつける花（なんていうの？）をつけた
 
@@ -491,7 +491,7 @@ $singalText
 }
 ```
 
-<img src="https://imgur.com/YlcCf5d.png" width=300>
+<img src="https://i.imgur.com/YlcCf5d.png" width=300>
 
 # そーすこーど
 間違ってたらごめんね

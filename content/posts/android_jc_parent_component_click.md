@@ -9,9 +9,9 @@ tags:
 どうもこんばんわ。  
 どうでもいいんですけどNext.jsで作り直したこのサイト、Googleに無事嫌われている模様
 
-![Imgur](https://imgur.com/UD5eqeu.png)
+![Imgur](https://i.imgur.com/UD5eqeu.png)
 
-![Imgur](https://imgur.com/JQOKdAD.png)
+![Imgur](https://i.imgur.com/JQOKdAD.png)
 
 # 本題
 JetpackComposeで子コンポーネントでクリックされると親のコンポーネントではタッチイベントが貰えません。  
@@ -166,12 +166,12 @@ class MainActivity : ComponentActivity() {
 - 親要素(灰色の部分)だけクリックした場合
     - 親要素押したときの時間だけが更新される
 
-![Imgur](https://imgur.com/3eM10f8.png)
+![Imgur](https://i.imgur.com/3eM10f8.png)
 
 - ボタンも押した場合
     - 親要素押したとき、子要素押したとき両方の時間が更新される
 
-![Imgur](https://imgur.com/2V1N7ey.png)
+![Imgur](https://i.imgur.com/2V1N7ey.png)
 
 ## 仕組み的ななにか
 `PointerInputScope.detectTapGestures`をほぼパクって作りました

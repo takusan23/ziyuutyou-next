@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
 
 以上です。
 
-![Imgur](https://imgur.com/yJffXni.png)
+![Imgur](https://i.imgur.com/yJffXni.png)
 
 ### おまけ
 

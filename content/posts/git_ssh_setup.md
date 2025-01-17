@@ -38,12 +38,12 @@ https://docs.github.com/ja/authentication/connecting-to-github-with-ssh/adding-a
 
 `C:\Users\<ユーザー名>`に`.ssh`フォルダがあればいいのですが、ない場合は作ります。  
 
-![Imgur](https://imgur.com/b6e2Gdl.png)
+![Imgur](https://i.imgur.com/b6e2Gdl.png)
 
 `.ssh`を開いて、その中で右クリックをして、`Git Bash Here`を押して開きます。  
 ちなみになんかファイルがありますが気にしないでください。
 
-![Imgur](https://imgur.com/sd4iPRw.png)
+![Imgur](https://i.imgur.com/sd4iPRw.png)
 
 ## SSHキーを作成
 
@@ -66,7 +66,7 @@ ssh-keygen -t ed25519 -C "GitHubで使ってるメアド"
 これでさっきのフォルダに2つのファイルが出来ているはずです。  
 `.pub`の方をGitHubへ教えてあげることでSSHで入れるようになります。
 
-![Imgur](https://imgur.com/6bQnNan.png)
+![Imgur](https://i.imgur.com/6bQnNan.png)
 
 Git Bashはまだ使うので開いておいてください。
 
@@ -74,15 +74,15 @@ Git Bashはまだ使うので開いておいてください。
 
 ここです。  
 
-![Imgur](https://imgur.com/Txpfhgu.png)
+![Imgur](https://i.imgur.com/Txpfhgu.png)
 
 開いたら、横のメニューの`SSH and GPG keys`を押します。押したらSSH keysの隣りにある、`New SSH key`を選びます。
 
-![Imgur](https://imgur.com/fLgHxK3.png)
+![Imgur](https://i.imgur.com/fLgHxK3.png)
 
 こんな画面になるはずなので、項目を埋めていきます。
 
-![Imgur](https://imgur.com/atWouU8.png)
+![Imgur](https://i.imgur.com/atWouU8.png)
 
 - Title
     - 名前です。今使ってるパソコンの名前とか入れておけばいいでしょう（Windows とか）

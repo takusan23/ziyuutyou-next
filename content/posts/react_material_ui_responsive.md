@@ -59,7 +59,7 @@ const Home: NextPage = () => {
 export default Home
 ```
 
-![Imgur](https://imgur.com/ih47IOr.png)
+![Imgur](https://i.imgur.com/ih47IOr.png)
 
 `xs="auto"`を付けることで必要最低限は確保してくれます。  
 残りは`xs`を付けた要素が使ってくれます。
@@ -111,7 +111,7 @@ const Home: NextPage = () => {
 export default Home
 ```
 
-![Imgur](https://imgur.com/JBSInFU.png)
+![Imgur](https://i.imgur.com/JBSInFU.png)
 
 
 # 真ん中
@@ -159,7 +159,7 @@ const Home: NextPage = () => {
 export default Home
 ```
 
-![Imgur](https://imgur.com/PzIUYF0.png)
+![Imgur](https://i.imgur.com/PzIUYF0.png)
 
 ## 縦
 
@@ -201,4 +201,4 @@ const Home: NextPage = () => {
 export default Home
 ```
 
-![Imgur](https://imgur.com/b0aJ2Fd.png)
+![Imgur](https://i.imgur.com/b0aJ2Fd.png)

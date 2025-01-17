@@ -14,49 +14,49 @@ tags:
 D.S. i.F. -Dal Segno- in Future 攻略しました。なんと本作は名前を呼んでくれます。  
 イベントCGがどれも可愛いのがいい！浴衣姿！！だ！  
 
-![Imgur](https://imgur.com/7xN2gt7.png)
+![Imgur](https://i.imgur.com/7xN2gt7.png)
 
-![Imgur](https://imgur.com/rpOXzad.png)
+![Imgur](https://i.imgur.com/rpOXzad.png)
 
-![Imgur](https://imgur.com/nvm54y4.png)
+![Imgur](https://i.imgur.com/nvm54y4.png)
 
 前作とは打って変わった挑戦のお話、新鮮だった
 
-![Imgur](https://imgur.com/5pMrsLb.png)
+![Imgur](https://i.imgur.com/5pMrsLb.png)
 
 かわいい！！けど鳴ちゃんは攻略できない、かなしい
 
-![Imgur](https://imgur.com/bQnfKN9.png)
+![Imgur](https://i.imgur.com/bQnfKN9.png)
 
 二人並んでるのがかわいい！！この中なら一番のシナリオかも？
 
-![Imgur](https://imgur.com/vKKGFel.png)
+![Imgur](https://i.imgur.com/vKKGFel.png)
 
-![Imgur](https://imgur.com/n0AeGwL.png)
+![Imgur](https://i.imgur.com/n0AeGwL.png)
 
 この子のルートでクイズがあるんだけど全く分からんかった、、、むずかしい  
 いろんな服装が見れるので見ておくべきです
 
-![Imgur](https://imgur.com/nPeLQuA.png)
+![Imgur](https://i.imgur.com/nPeLQuA.png)
 
 あたふたしてるのかわいー
 
-![Imgur](https://imgur.com/VD1vtZI.png)
+![Imgur](https://i.imgur.com/VD1vtZI.png)
 
-![Imgur](https://imgur.com/YtAIGt3.png)
+![Imgur](https://i.imgur.com/YtAIGt3.png)
 
 ひまりちゃんが可愛かったです！！  
 おすすめ、イベントCGよかった  
 
-![Imgur](https://imgur.com/pk8mTxf.png)
+![Imgur](https://i.imgur.com/pk8mTxf.png)
 
 この服すき
 
-![Imgur](https://imgur.com/QsV5E6e.png)
+![Imgur](https://i.imgur.com/QsV5E6e.png)
 
-![Imgur](https://imgur.com/DLvxfSU.png)
+![Imgur](https://i.imgur.com/DLvxfSU.png)
 
-![Imgur](https://imgur.com/oXfXgN8.png)  
+![Imgur](https://i.imgur.com/oXfXgN8.png)  
 天ルート短くて悲しすぎる、、なにかあるのかと思ったら何もなかった；；
 
 えっちしーんもよかった、~~前作は寸止めばっかだったし、、~~  
@@ -204,12 +204,12 @@ mediaCodec.configure(videoMediaFormat, null, null, MediaCodec.CONFIGURE_FLAG_ENC
 
 ## 流れ
 
-![Imgur](https://imgur.com/AJHmmvr.png)
+![Imgur](https://i.imgur.com/AJHmmvr.png)
 
 映像はコレで良いはず。音声に関しては入力する動画のコーデックが`AAC`の場合は多分入れ直すだけでいいはず。  
 ただ、元データが`WebM（VP9 + Opus）`の場合は`AAC`に変換しないとダメですね。
 
-![Imgur](https://imgur.com/6YhFbgN.png)
+![Imgur](https://i.imgur.com/6YhFbgN.png)
 
 多分`OpenGL`をデコーダーとエンコーダーの間にかませる必要があります。  
 デコーダーの出力先`Surface`にエンコーダーの入力`Surface`をそのまま渡したんですが、なんかうまく動きませんでした。  
@@ -270,7 +270,7 @@ https://aviutl.info/ko-dekku-konntena/
 うーん、この辺の話をしてると、`ffmpeg`ってほんと良しなにやってくれてたんだなあって。  
 
 `.mp4`形式でちょうだいって言われて、中身`AVC`じゃなくて`HEVC`のコーデック入れたら大混乱になりそう。だってそのままだと`HEVC`再生出来ないんだもん  
-![Imgur](https://imgur.com/TXwPxOX.png)
+![Imgur](https://i.imgur.com/TXwPxOX.png)
 
 ### MediaExtractor
 コンテナフォーマット（`mp4`、`webm`）からメタデータや実際のエンコードされたデータを取り出すやつ
@@ -302,7 +302,7 @@ https://aviutl.info/ko-dekku-konntena/
 最低`Android`バージョンは`14 (SDK 34)`です。多分`AV1`エンコーダーがソフトウェアでも乗ってるのが`14`以降なはず？  
 手元の`14`系の端末が`Pixel`しかない...
 
-![Imgur](https://imgur.com/J1vw62s.png)
+![Imgur](https://i.imgur.com/J1vw62s.png)
 
 ~~アプリの名前は特に思いつかなかったのでエロゲヒロインから取りました~~
 
@@ -314,7 +314,7 @@ https://aviutl.info/ko-dekku-konntena/
 - https://cs.android.com/android/platform/superproject/main/+/main:cts/tests/tests/media/common/src/android/media/cts/TextureRender.java
 - https://cs.android.com/android/platform/superproject/main/+/main:cts/tests/tests/media/common/src/android/media/cts/InputSurface.java
 
-![Imgur](https://imgur.com/LMMtuzK.png)
+![Imgur](https://i.imgur.com/LMMtuzK.png)
 
 ```kotlin
 /*
@@ -1274,13 +1274,13 @@ fun HomeScreen() {
 # 使ってみる
 動画を選んで、処理を開始を押せば始まります。  
 
-![Imgur](https://imgur.com/4vDzyD4.png)
+![Imgur](https://i.imgur.com/4vDzyD4.png)
 
 できました！  
 試した感じ私の設計が変なのか知らないのですが、動画によっては短くてもすごく時間がかかるときがありますね。なんか私やらかしたか？  
 うーん、かかった時間が安定しないな
 
-![Imgur](https://imgur.com/JSCeBqs.png)
+![Imgur](https://i.imgur.com/JSCeBqs.png)
 
 # 再エンコード ソースコード
 ここまでのコードです！  
@@ -1316,25 +1316,25 @@ https://youtu.be/AC5oNvR23UU?si=Iu1buVsN7QvrOz5M&t=633
 `AV1 ソフトウェア`より`AV1 ハードウェア`もしくは`HEVC`かなあ。  
 `AV1 ハードウェア`と`HEVC`比較するとわずかに`HEVC`かも。
 
-| コーデック       | 切り抜き                                |
-|------------------|-----------------------------------------|
-| 元データ         | ![Imgur](https://imgur.com/HpxcA9d.png) |
-| AV1 ソフトウェア | ![Imgur](https://imgur.com/Icnc7Av.png) |
-| AV1 ハードウェア | ![Imgur](https://imgur.com/J7T9f1y.png) |
-| HEVC             | ![Imgur](https://imgur.com/NqZYR1n.png) |
-| AVC              | ![Imgur](https://imgur.com/N5QEkEm.png) |
+| コーデック       | 切り抜き                                  |
+|------------------|-------------------------------------------|
+| 元データ         | ![Imgur](https://i.imgur.com/HpxcA9d.png) |
+| AV1 ソフトウェア | ![Imgur](https://i.imgur.com/Icnc7Av.png) |
+| AV1 ハードウェア | ![Imgur](https://i.imgur.com/J7T9f1y.png) |
+| HEVC             | ![Imgur](https://i.imgur.com/NqZYR1n.png) |
+| AVC              | ![Imgur](https://i.imgur.com/N5QEkEm.png) |
 
 ### 700Kbps
 `AV1 ソフトウェア`の画質があんまりでなかった  
 ここは`AV1 ハードウェア`より`HEVC`かなあ...つよい
 
-| コーデック       | 切り抜き                                |
-|------------------|-----------------------------------------|
-| 元データ         | ![Imgur](https://imgur.com/HpxcA9d.png) |
-| AV1 ソフトウェア | ![Imgur](https://imgur.com/PQ23SpB.png) |
-| AV1 ハードウェア | ![Imgur](https://imgur.com/763pSTh.png) |
-| HEVC             | ![Imgur](https://imgur.com/GGqZoPD.png) |
-| AVC              | ![Imgur](https://imgur.com/gnuYy4y.png) |
+| コーデック       | 切り抜き                                  |
+|------------------|-------------------------------------------|
+| 元データ         | ![Imgur](https://i.imgur.com/HpxcA9d.png) |
+| AV1 ソフトウェア | ![Imgur](https://i.imgur.com/PQ23SpB.png) |
+| AV1 ハードウェア | ![Imgur](https://i.imgur.com/763pSTh.png) |
+| HEVC             | ![Imgur](https://i.imgur.com/GGqZoPD.png) |
+| AVC              | ![Imgur](https://i.imgur.com/gnuYy4y.png) |
 
 ### 500Kbps
 コレより下は多分エンコーダーのビットレート最低値に引っかかって下がらない（と思う）。  
@@ -1343,13 +1343,13 @@ https://youtu.be/AC5oNvR23UU?si=Iu1buVsN7QvrOz5M&t=633
 `HEVC`と`AV1`はかなりいい勝負な気がする。  
 `AV1`はソフトウェアよりハードウェアの方が境界線がきれいというか、シャープな気がする。
 
-| コーデック       | 切り抜き                                |
-|------------------|-----------------------------------------|
-| 元データ         | ![Imgur](https://imgur.com/HpxcA9d.png) |
-| AV1 ソフトウェア | ![Imgur](https://imgur.com/doUL7TA.png) |
-| AV1 ハードウェア | ![Imgur](https://imgur.com/pf3mcGR.png) |
-| HEVC             | ![Imgur](https://imgur.com/kHEyd8c.png) |
-| AVC              | ![Imgur](https://imgur.com/t13eL9e.png) |
+| コーデック       | 切り抜き                                  |
+|------------------|-------------------------------------------|
+| 元データ         | ![Imgur](https://i.imgur.com/HpxcA9d.png) |
+| AV1 ソフトウェア | ![Imgur](https://i.imgur.com/doUL7TA.png) |
+| AV1 ハードウェア | ![Imgur](https://i.imgur.com/pf3mcGR.png) |
+| HEVC             | ![Imgur](https://i.imgur.com/kHEyd8c.png) |
+| AVC              | ![Imgur](https://i.imgur.com/t13eL9e.png) |
 
 ### 感想
 ハードウェアエンコーダーのが綺麗な気がするけど、これ`Google Tensor`に入ってるやつなので、  
@@ -1578,7 +1578,7 @@ class CameraController(
 ~~`Jetpack Compose`の`Modifier`をいくつか組み合わせるだけで解消されます。~~  
 ~~おそらくこういう感じの、`SurfaceView（カメラのプレビュー）`を縦横同じ正方形にして、端末の画面サイズよりも大きくするようなことを、をやってくれているんだと思います。~~  
 
-![Imgur](https://imgur.com/zEyHjfy.png)
+![Imgur](https://i.imgur.com/zEyHjfy.png)
 
 これは嘘で、以下のドキュメントに書かれている通り、`SurfaceView`のコールバック内で、`SurfaceHolder#setFixedSize`を呼び出すことで解像度を設定することが出来ます。  
 https://developer.android.com/reference/android/hardware/camera2/CameraDevice#createCaptureSession(android.hardware.camera2.params.SessionConfiguration)

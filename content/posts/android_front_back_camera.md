@@ -21,9 +21,9 @@ tags:
 前面カメラと背面カメラを同時に開いて、ワイプカメラ？マルチカメラ？出来るアプリを作ってみようと思います。  
 すでにありそうだけど、、、
 
-![Imgur](https://imgur.com/PACr0Zx.png)
+![Imgur](https://i.imgur.com/PACr0Zx.png)
 
-![Imgur](https://imgur.com/2mjyEvn.png)
+![Imgur](https://i.imgur.com/2mjyEvn.png)
 
 # かんきょう
 
@@ -53,7 +53,7 @@ https://developer.android.com/reference/android/hardware/camera2/CameraManager#g
 その、カメラ映像を合成するために `OpenGL` を利用します。カメラ映像は `SurfaceTexture` を使うことで、フラグメントシェーダーからテクスチャ（画像）として利用できます。  
 `SurfaceTexture`のコールバックに新しいフレームが来たことを通知してくれるので、来たら`glDrawArrays`して描画します。
 
-![Imgur](https://imgur.com/s0Qtjhx.png)
+![Imgur](https://i.imgur.com/s0Qtjhx.png)
 
 今回もOpenGL周りはAOSPのコードをパクって来ようと思います、、、（Apache License 2.0）  
 また、今回も CameraX は使わずに Camera2 API をそのまま叩こうと思います、CameraX API めちゃモダンなAPIで気になるけど、SurfaceTexture + OpenGL みたいなことって出来るのかな、、、。
@@ -65,7 +65,7 @@ https://developer.android.com/reference/android/hardware/camera2/CameraManager#g
 Target SDK 30 以上で作ります  
 割と初めて真面目にカメラアプリを作るかもしれない、、、
 
-![Imgur](https://imgur.com/BsCga8R.png)
+![Imgur](https://i.imgur.com/BsCga8R.png)
 
 # AndroidManifest.xml
 カメラ権限と録画で使うマイク権限を
@@ -1095,7 +1095,7 @@ fun capture(width: Int, height: Int): Bitmap {
 なので、今回は`プレビュー用SurfaceView`とは別に`静止画撮影用Surface`を作ることにします。  
 絵にするとこんなイメージですね。
 
-![Imgur](https://imgur.com/IbiX9B3.png)
+![Imgur](https://i.imgur.com/IbiX9B3.png)
 
 #### ImageReader で撮影する
 
@@ -1378,7 +1378,7 @@ override fun onPause() {
 `ImageReader`のように、プレビュー用Surface以外に録画用Surfaceを用意することで利用できます。  
 録画用Surfaceは`MediaRecorder`から取得できるやつです。低レベルの`MediaCodec`でも録画できますがわざわざ難しい方使う必要もないと思います。  
 
-![Imgur](https://imgur.com/PsDLFGR.png)
+![Imgur](https://i.imgur.com/PsDLFGR.png)
 
 いか実装例。`MainActivity`に全部書きました。差分も多いので全部のせます。解説は後で  
 静止画撮影と動画撮影はどっちかしか利用できない用になってます（まぁええやろ）。  

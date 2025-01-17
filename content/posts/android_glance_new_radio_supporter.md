@@ -12,33 +12,33 @@ tags:
 
 スタディ§ステディ2 攻略しました、えちえちでした  
 
-![Imgur](https://imgur.com/QAZ5pFC.png)
+![Imgur](https://i.imgur.com/QAZ5pFC.png)
 
 E-mote 搭載だから立ち絵がめっちゃ動く、  
 本編関係ないけど UI もアニメーション頑張っててすごいと思った（こなみかん、大変そう
 
-![Imgur](https://imgur.com/b5hbK9R.png)
+![Imgur](https://i.imgur.com/b5hbK9R.png)
 
-![Imgur](https://imgur.com/5Mo4atS.png)
+![Imgur](https://i.imgur.com/5Mo4atS.png)
 
 やえちゃん！！  
 前作ヒロイン?とのやりとりがあったんですけどやえちゃんルートのが好み  
 なまりかわいい
 
-![Imgur](https://imgur.com/VqPDyZ2.png)
+![Imgur](https://i.imgur.com/VqPDyZ2.png)
 
 
 由乃ちゃんかわいいのでぜひ！！！
 
-![Imgur](https://imgur.com/oTgUbyj.png)
+![Imgur](https://i.imgur.com/oTgUbyj.png)
 
-![Imgur](https://imgur.com/yktGFri.png)
+![Imgur](https://i.imgur.com/yktGFri.png)
 
 この目すき
 
-![Imgur](https://imgur.com/lWfNy23.png)
+![Imgur](https://i.imgur.com/lWfNy23.png)
 
-![Imgur](https://imgur.com/Jb0694m.png)
+![Imgur](https://i.imgur.com/Jb0694m.png)
 
 イベントCG貼るわけには行かないけどヒロインも背景もめっちゃきれいでした、すごい  
 過去の話とかちょろっと出てくるので由乃ちゃんルートは最後が良いかも？
@@ -47,12 +47,12 @@ E-mote 搭載だから立ち絵がめっちゃ動く、
 `NewRadioSupporter` にウィジェットを追加しました！お待たせしちゃいました  
 ホーム画面からすぐ確認できます！！！
 
-![Imgur](https://imgur.com/NswvS41.png)
+![Imgur](https://i.imgur.com/NswvS41.png)
 
 大きいサイズも作りました、  
 後述しますが`Jetpack Glance`が面倒なことを全部肩代りしてくれたので大きいサイズも難しくないです。
 
-![Imgur](https://imgur.com/vpC9HXU.png)
+![Imgur](https://i.imgur.com/vpC9HXU.png)
 
 （小さいアプリみたいで結構気に入ってる）
 
@@ -248,7 +248,7 @@ class GlanceCountWidget : GlanceAppWidget() {
 完全なコード→ https://github.com/takusan23/GlanceCountWidget  
 最新の Android Studio でビルドできるはずです。  
 
-![Imgur](https://imgur.com/QuivkuX.png)
+![Imgur](https://i.imgur.com/QuivkuX.png)
 
 `Jetpack Glance`で`Flow#collectAsState`や`LaunchedEffect { }`が動くのは、この動的な間が存在するからなんですね。  
 ちなみに、数十秒間の間しか動かないので、もし状態を保持しておきたい（上の例だとカウントを引き継ぎたい）場合は`SharedPreferences`や`DataStore`等の保存するためのシステムを用意する必要があります。  
@@ -295,7 +295,7 @@ class GlanceCountWidget : GlanceAppWidget() {
 `Empty Compose Project`で、後は適当に、  
 `Android`最低バージョンは`6`が良いらしい（`Jetpack Glance`が`5`をサポートしてないとかなんとか）
 
-![Imgur](https://imgur.com/qPEIStn.png)
+![Imgur](https://i.imgur.com/qPEIStn.png)
 
 `kts`を使うかはおまかせします、新規で作るなら`kts`で良いかも、今あるプロジェクトを書き換えてまではメリットなさそう。
 
@@ -343,7 +343,7 @@ android {
 
 `res`の中に`xml`があるはずなので、そこに適当に`touch_photo_widget_info.xml`みたいなのを置く
 
-![Imgur](https://imgur.com/YcQfzr8.png)
+![Imgur](https://i.imgur.com/YcQfzr8.png)
 
 後は適当にコピペします。
 
@@ -394,7 +394,7 @@ class TouchPhotoWidgetReceiver : GlanceAppWidgetReceiver() {
 
 多分こうなってるはず。
 
-![Imgur](https://imgur.com/4uaG1JW.png)
+![Imgur](https://i.imgur.com/4uaG1JW.png)
 
 ## AndroidManifest を書く
 `<receiver>`を書きます。  
@@ -456,7 +456,7 @@ class TouchPhotoWidget : GlanceAppWidget() {
 前述の通り、`Glance`用のコンポーネントを呼び出す必要があるので、`import`の際は注意してください  
 （`GlanceModifier`が引数に入っているか、パッケージ名が`androidx.glance`で始まっているか）
 
-![Imgur](https://imgur.com/mWiqkEt.png)
+![Imgur](https://i.imgur.com/mWiqkEt.png)
 
 ```kotlin
 class TouchPhotoWidget : GlanceAppWidget() {
@@ -848,16 +848,16 @@ class TouchPhotoWidget : GlanceAppWidget() {
 ## 使ってみる
 こんな感じに一覧表示されてて、
 
-![Imgur](https://imgur.com/uPnmC3M.png)
+![Imgur](https://i.imgur.com/uPnmC3M.png)
 
 押すと一枚だけ表示されます！
 
-![Imgur](https://imgur.com/XuFaZJt.png)
+![Imgur](https://i.imgur.com/XuFaZJt.png)
 
 `戻る`ボタンを押すと戻れます。あと`開く`を押すとアプリを選択する画面が出ます！  
 `Intent(Intent.ACTION_VIEW, photoData.uri)`←この`第2引数`に`Uri`を入れるやつ
 
-![Imgur](https://imgur.com/WsHKYrd.png)
+![Imgur](https://i.imgur.com/WsHKYrd.png)
 
 ちな`Android 14`で押したら落ちた  
 `PendingIntent`の引数を`FLAG_IMMUTABLE`にしないといけないんだけど、現状は`Glance`が内部で`PendingIntent`を作っているので直せない。  
@@ -977,7 +977,7 @@ Row(
 
 こんな感じにしてみた。他のウィジェットも同じ感じの色使いしてそう！
 
-![Imgur](https://imgur.com/SZ2wqhi.png)
+![Imgur](https://i.imgur.com/SZ2wqhi.png)
 
 ちなみに、`primaryContainer`は実際には`Android`のカラーリソースの`ID`を指している（`android.R.color.xxxxx`みたいな）ので、以下の`colors.xml`を見ると実際の`ID`を見ることが出来ます。
 
@@ -1040,7 +1040,7 @@ fun PhotoGridList(
 これで、横幅が小さいときは横並びが2つになりました。  
 多分もっと刻むことができるはずです。いや～～楽ですねこれ
 
-![Imgur](https://imgur.com/l0X4b6s.png)
+![Imgur](https://i.imgur.com/l0X4b6s.png)
 
 ちなみに、普通にこーゆーこともできるので、レイアウト全体を変えることも出来ます。  
 本当になんで動いてるか不思議だ...
@@ -1241,4 +1241,4 @@ https://github.com/takusan23/TouchPhotoWidget
 # おわりに3
 `NewRadioSupporter` 審査出ししました
 
-![Imgur](https://imgur.com/XxAV4Y9.png)
+![Imgur](https://i.imgur.com/XxAV4Y9.png)

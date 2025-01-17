@@ -15,7 +15,7 @@ tags:
 なんか色々思うことはあるけど最後のタイトル回収とED曲で許した感ある。  
 あとこの子かわいい。
 
-![Imgur](https://imgur.com/u03dpx2.png)
+![Imgur](https://i.imgur.com/u03dpx2.png)
 
 サブヒロインの扱い雑すぎて悲しくなっちゃった
 
@@ -26,7 +26,7 @@ tags:
 アインシュタインより愛を込めて APOLLOCRISIS 攻略しました。  
 今月のエロゲの日から無料配信されるみたいなので**前作やった人は絶対やろう**。やってロミちゃんを助けてあげて、、、
 
-![Imgur](https://imgur.com/ilgmLD0.png)
+![Imgur](https://i.imgur.com/ilgmLD0.png)
 
 野上さんいい人
 
@@ -34,15 +34,15 @@ tags:
 `Jetpack Compose`にも`Material3`ライブラリがリリースされました。  
 ダイナミックカラーが使えるようになります。ちなみに`BottomNavigationBar`の高さは`56.dp`？から`80.dp`と大きくなりました。
 
-![Imgur](https://imgur.com/S1bWXYG.png)
+![Imgur](https://i.imgur.com/S1bWXYG.png)
 
 # 環境
 
-| なまえ         | あたい                             |
-|----------------|------------------------------------|
+| なまえ         | あたい                              |
+|----------------|-------------------------------------|
 | Android        | 12 (ダイナミックカラー使うなら必須) |
-| Android Stuido | Arctic Fox 2020.3.1 Patch 3        |
-| targetSdk      | 31                                 |
+| Android Stuido | Arctic Fox 2020.3.1 Patch 3         |
+| targetSdk      | 31                                  |
 
 # 公式ドキュメント
 
@@ -152,7 +152,7 @@ https://developer.android.com/jetpack/androidx/releases/compose-material3
 
 選ぶ際は`material3`って書いてある方を。  
 
-![Imgur](https://imgur.com/1CMjVPr.png)
+![Imgur](https://i.imgur.com/1CMjVPr.png)
 
 以下例です。  
 コピペする際は、`ic_android_black_24dp`を`Android Studio`の`Vector Asset`から追加してください。
@@ -202,7 +202,7 @@ class MainActivity : ComponentActivity() {
 
 よーこそMaterial3の世界へ...
 
-![Imgur](https://imgur.com/fa8uwGI.png)
+![Imgur](https://i.imgur.com/fa8uwGI.png)
 
 # つまずいた点
 
@@ -360,7 +360,7 @@ LaunchedEffect(key1 = bottomNavColor, block = {
 
 これでナビゲーションバーの色を設定できました。  
 
-![Imgur](https://imgur.com/F2wVIwz.png)
+![Imgur](https://i.imgur.com/F2wVIwz.png)
 
 # 終わりに
 
