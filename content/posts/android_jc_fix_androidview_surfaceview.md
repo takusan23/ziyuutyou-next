@@ -1,5 +1,5 @@
 ---
-title: Jetpack Compose の AndroidView で SurfaceView を使うと真っ暗になる
+title: Jetpack Compose の AndroidView で SurfaceView を使うとはみ出して真っ暗になる
 created_at: 2024-11-24
 tags:
 - Android
@@ -12,6 +12,7 @@ tags:
 
 # 本題
 `Android 12`以上と未満で表示が崩れてしまった。  
+はみ出して背景が真っ暗になってしまった。
 
 | Android 11                                | Android 12                                |
 |-------------------------------------------|-------------------------------------------|
