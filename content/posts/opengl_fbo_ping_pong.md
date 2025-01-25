@@ -1,5 +1,5 @@
 ---
-title: 一部の Android でフラグメントシェーダーの描画が崩れる調査
+title: 一部の Android 端末でフラグメントシェーダーの描画が崩れる調査
 created_at: 2025-01-24
 tags:
 - Android
