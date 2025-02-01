@@ -2792,6 +2792,14 @@ responseFlow.value
 まあ後は（オイいい加減にしろ）、コールバックの登録が一箇所しか出来ないやつも`callbackFlow { }`と`stateIn()`で変換して、複数個所から受信できるようにするやつ。これもすき  
 ライブラリによっては **set**Listener { } / **set**Callback { } じゃなくて、 **add**Listener { } / **add**Callback { } を用意してくれるライブラリもあるんですが、大体は`setListener { } / setCallback { }`で一箇所しかコールバックを登録できない。。。ので。
 
+### 付録 逆に HotFlow を ColdFlow にしたい
+逆に`HotFlow`を終わりのある`Flow`にしたいときがあります。  
+これは、`take()`や`takeWhile()`演算子を適用すると終わりのある`Flow`に変換できます。`take(5)`とすれば、ホットフローから`5個`取り出して終わりにすることが出来ます。  
+
+終わりが存在するようになるので、例えば上記のように`take(5)`とすれば、  
+`collect { }`は`5個`受け取ったらサスペンド関数は一時停止が終わり、これ以降の処理に進むことが出来ます。  
+`toList()`も同様に`5個`受け取ったら`List<>`に詰めて呼び出し元に返してくれます。
+
 # Channel
 https://kotlinlang.org/docs/channels.html
 

@@ -110,6 +110,8 @@ tags:
 - MobileStatusWidget
 - NewRadioSupporter
 - TelephoneyManagerAPI
+- RadioLogcat
+- ThirdpartyPhysicalChannelConfig
 - GalakeeWidget (いらんかも)
 
 お好みで
