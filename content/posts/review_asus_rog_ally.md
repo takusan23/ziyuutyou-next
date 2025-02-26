@@ -104,7 +104,7 @@ https://github.com/takusan23/NewRadioSupporter/commit/2fc00c8181ca7d9a8fe823154a
 - `47秒`
 - ![Imgur](https://i.imgur.com/yOoYdp2.png)
 
-`ASUS ROG ALLY`（`Ryzen Z1 Extream / 16GB`）  
+`ASUS ROG ALLY`（`Ryzen Z1 Extreme / 16GB`）  
 - `48秒`
 - ![Imgur](https://i.imgur.com/M2vr6QI.png)
 - ちなみにこれ電池持ち優先モード（`サイレントモード`）だったはず。。。

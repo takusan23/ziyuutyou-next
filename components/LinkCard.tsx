@@ -21,7 +21,7 @@ export default function LinkCard({ linkList }: LinkCardProps) {
                     リンク
                 </h2>
                 <p className="text-content-text-light dark:text-content-text-dark ">
-                    Misskey お一人様サーバーにいます。お住まいの Misskey / Mastodon サーバーから探せるはずです。
+                    Misskey お一人様サーバーにいます。お住まいの Misskey / Mastodon サーバーから探せるはずです。メールや Twitter はあんまり見てないです。
                 </p>
 
                 <RoundedCornerList
