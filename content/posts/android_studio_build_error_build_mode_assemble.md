@@ -47,3 +47,9 @@ Unable to find Gradle tasks to build: [:app]. Build mode: ASSEMBLE.
 
 終わったら実行ボタンを押します。これでビルドできるはず。めでたしめでたし。  
 ![Imgur](https://i.imgur.com/whZrfbS.png)
+
+# なおらない
+`.idea`フォルダを消してみてください。昨日ビルドできて今日出来なくなったときは大体これを消すと直る。  
+消すのが怖い場合は適当に名前変更してください。
+
+![Imgur](https://i.imgur.com/uPoYJN9.png)
