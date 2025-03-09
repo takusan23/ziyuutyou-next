@@ -976,7 +976,7 @@ https://takusan.negitoro.dev/posts/summer_vacation_music_vocal_only/
 
 # Q&A 16KB ページサイズに対応してないんですけど
 `.so`ファイルを`apk / aab`の中に入れることになるので**この問題にぶち当たります**。  
-が、この記事もう長いので次回にまわします。
+~~が、この記事もう長いので次回にまわします。~~ → 書きました： https://takusan.negitoro.dev/posts/android_15_16kb_page_size/
 
 ```shell
 takusan23@DESKTOP-ULEKIDB:~$ chmod +x check_elf_alignment.sh
