@@ -85,7 +85,7 @@
     "minecraft": [
         {
             "name": "ClickManaita",
-            "description": "チートMOD (Forge / Fabric)。1.12.2 / 1.16.x / 1.17.x / 1.18.x / 1.19.x / 1.20.x",
+            "description": "チートMOD (Forge / Fabric / NeoForge)。1.12.2 / 1.16.x / 1.17.x / 1.18.x / 1.19.x / 1.20.x / 1.21.x",
             "link": "https://www.curseforge.com/minecraft/mc-mods/clickmanaita",
             "github": "https://github.com/takusan23/ClickManaita2",
             "image": "/portfolio/clickmanaita.jpg"
