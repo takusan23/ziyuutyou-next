@@ -1,5 +1,5 @@
 ---
-title: NeoForge に自作 Mod を対応させた
+title: 自作 MOD を NeoForge でも遊べるようにした
 created_at: 2025-03-18
 tags:
 - Minecraft
