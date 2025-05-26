@@ -30,7 +30,7 @@ export default function SearchForm({ text, onChange, onExecure }: SearchFormProp
         >
 
             <input
-                className="grow focus:outline-none bg-transparent py-1 text-content-text-light dark:text-content-text-dark"
+                className="grow focus:outline-hidden bg-transparent py-1 text-content-text-light dark:text-content-text-dark"
                 type="input"
                 placeholder="検索ワード"
                 value={text}
