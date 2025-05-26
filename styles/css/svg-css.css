@@ -1,3 +1,5 @@
+@reference "../../styles/css/global.css";
+
 /* Tailwind CSS で SVG に色を当てるための CSS。<svg> の className に 'theme_color' を付与してください。 */
 
 /* fill:none のとき、ストロークへ色を付ける */

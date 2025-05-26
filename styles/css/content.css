@@ -10,6 +10,8 @@ React の dangerouslySetInnerHTML を使って既にある HTML を埋め込む�
 あと、dark:ユーティリティ で書いたあと、VSCode のフォーマットをかけると、dark: との間にスペースができるんだけど、スペースがあるとエラーが出ちゃうので注意してください。
 */
 
+@reference "../../styles/css/global.css";
+
 .content_div {
     /* リンクがはみ出るので */
     overflow-wrap: break-word;
@@ -66,8 +68,7 @@ React の dangerouslySetInnerHTML を使って既にある HTML を埋め込む�
 .content_div h4,
 .content_div h5,
 .content_div h6 {
-    @apply text-content-primary-light;
-    @apply dark:text-content-primary-dark;
+    @apply text-content-primary-light dark:text-content-primary-dark;
     @apply mt-6 mb-4;
     @apply font-medium;
     /* 目次には下線を引く */
