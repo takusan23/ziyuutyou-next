@@ -1,9 +1,9 @@
+import fs from "fs/promises"
 import { ImageResponse } from "next/og"
 import ContentFolderManager from "../../../../src/ContentFolderManager"
-import resolveConfig from "tailwindcss/resolveConfig"
-import tailwindConfig from "../../../../tailwind.config.js"
 import EnvironmentTool from "../../../../src/EnvironmentTool"
 import FileReadTool from "../../../../src/FileReadTool"
+import postcss from "postcss"
 
 /** 動的ルーティング */
 type PageProps = {
@@ -22,11 +22,24 @@ export async function GET(_: Request, props: PageProps) {
     // 記事を取得
     const markdownData = await ContentFolderManager.getBlogItem(params.blog)
 
-    // Tailwind CSS の色を取得
-    const colors = resolveConfig(tailwindConfig).theme?.colors
-    const backgroundColor = colors['background']['light']
-    const containerColor = colors['container']['primary']['light']
-    const contentColor = colors['content']['primary']['light']
+    // CSS 変数を取得する
+    const css = await fs.readFile('styles/css/global.css', { encoding: 'utf-8' })
+    // Tailwind CSS を入れると付いてくる PostCSS で CSS をパースする
+    const cssParse = await postcss().process(css)
+    // @thene { } を解析
+    const themeBlock = cssParse.root.nodes
+        .filter((node) => node.type === 'atrule')
+        .filter((node) => node.name === 'theme')[0]
+    // 各 CSS 変数を取得。object に css 変数の key がある
+    const cssVariableList = Object.fromEntries(
+        themeBlock.nodes
+            ?.filter((node) => node.type === 'decl')
+            ?.map((node) => ([node.prop, node.value])) || []
+    )
+
+    const backgroundColor = cssVariableList['--color-background-light']
+    const containerColor = cssVariableList['--color-container-primary-light']
+    const contentColor = cssVariableList['--color-content-primary-light']
 
     // 表示するアイコン。base64 とかで直接渡すのがいいらしい（相対 URL 無理だった）
     const [iconBase64, homeIconBase64, blogIconBase64, tagIconBase64, fontFileBuffer] = await Promise.all([
