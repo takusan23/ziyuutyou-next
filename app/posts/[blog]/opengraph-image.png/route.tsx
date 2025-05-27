@@ -29,10 +29,11 @@ export async function GET(_: Request, props: PageProps) {
     // @thene { } を解析
     const themeBlock = cssParse.root.nodes
         .filter((node) => node.type === 'atrule')
-        .filter((node) => node.name === 'theme')[0]
+        .find((node) => node.name === 'theme')
     // 各 CSS 変数を取得。object に css 変数の key がある
     const cssVariableList = Object.fromEntries(
-        themeBlock.nodes
+        themeBlock
+            ?.nodes
             ?.filter((node) => node.type === 'decl')
             ?.map((node) => ([node.prop, node.value])) || []
     )
