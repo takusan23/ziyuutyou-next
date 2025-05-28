@@ -1,4 +1,4 @@
-import { ShikiTransformer } from 'shiki/types.mjs'
+import { ShikiTransformer } from "shiki"
 
 /** コピーボタンにつける Tailwind CSS のユーティリティ名 */
 const className = 'hidden group-hover:flex p-2 m-2 absolute top-0 right-0 cursor-pointer rounded-md bg-background-dark border-2 border-content-primary-dark text-content-primary-dark fill-content-primary-dark'

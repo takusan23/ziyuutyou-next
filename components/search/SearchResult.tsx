@@ -1,6 +1,8 @@
+import { use } from "react"
 import Link from "next/link"
 import RoundedCornerList from "../RoundedCornerList"
 import { PagefindSearchFragment } from "../../src/data/PagefindData"
+import SearchLogoMessage from "../../app/search/SearchLogoMessage"
 
 /** SearchResultItem へ渡すデータ */
 type SearchResultItemProps = {
@@ -10,8 +12,8 @@ type SearchResultItemProps = {
 
 /** SearchResult へ渡すデータ */
 type SearchResultProps = {
-    /** 検索結果。await した結果を渡してね。 */
-    resultList: PagefindSearchFragment[]
+    /** 検索結果 */
+    resultListPromise: Promise<PagefindSearchFragment[]>
 }
 
 /** 検索結果一覧の各コンポーネント */
@@ -31,9 +33,18 @@ function SearchResultItem({ fragment }: SearchResultItemProps) {
 }
 
 /** 検索結果を表示する */
-export default function SearchResult({ resultList }: SearchResultProps) {
+export default function SearchResult({ resultListPromise }: SearchResultProps) {
+    // Promise を待つ
+    const resultList = use(resultListPromise)
+
+    // 検索したけど 0 件だった
+    if (resultList.length === 0) {
+        return <SearchLogoMessage message="検索結果がありませんでした" />
+    }
+
+    // 結果
     return (
-        <div className="flex flex-col items-center space-y-4">
+        <div className="flex w-full flex-col items-center space-y-4">
             <RoundedCornerList
                 list={resultList}
                 content={(className, fragment) => (
