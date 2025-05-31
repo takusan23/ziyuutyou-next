@@ -4,8 +4,9 @@ import matter from "gray-matter"
 import { unified } from "unified"
 import remarkParse from "remark-parse"
 import remarkRehype from "remark-rehype"
-import rehypeRaw from "rehype-raw"
 import remarkGfm from "remark-gfm"
+import rehypeParse from "rehype-parse"
+import rehypeRaw from "rehype-raw"
 import rehypeStringify from "rehype-stringify"
 import type { Root, RootContent, Element } from "hast"
 import { toString } from "hast-util-to-string"
@@ -86,7 +87,7 @@ class MarkdownParser {
     static findAllHeading(element: Root) {
         const headingElementList: Element[] = []
         const headingTagName = ["h1", "h2", "h3", "h4", "h5", "h6"]
-        visit(element, (node, _index, _parent) => {
+        visit(element, (node) => {
             if (node.type === "element" && headingTagName.includes(node.tagName)) {
                 headingElementList.push(node)
             }
@@ -111,6 +112,14 @@ class MarkdownParser {
         // mdast -> HTML AST (hast)
         const hast = await rephypeProsessor.run(mdast)
         return hast
+    }
+
+    static parseHtmlAstFromHtmlString(html: string) {
+        // fragment: true で html/head/body が生成されないように
+        const rephypeProsessor = unified()
+            .use(rehypeParse, { fragment: true })
+        const hast = rephypeProsessor.parse(html)
+        return hast.children
     }
 
     /**

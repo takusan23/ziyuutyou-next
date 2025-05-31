@@ -20,7 +20,7 @@ export default async function ShikiCodeBlockRender({ code, language }: ShikiCode
     )
     return (
         <div className="relative group">
-            <div className="[&>pre]:overflow-x-scroll [&>pre]:p-4" dangerouslySetInnerHTML={{ __html: syntaxHighlightingCode }} />
+            <div className="[&>pre]:overflow-x-scroll [&>pre]:p-4 [&>pre]:my-4" dangerouslySetInnerHTML={{ __html: syntaxHighlightingCode }} />
             <CopyButton text={code} />
         </div>
     )

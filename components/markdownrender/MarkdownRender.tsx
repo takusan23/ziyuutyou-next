@@ -1,17 +1,18 @@
-import MarkdownParser from "../../src/MarkdownParser"
+import Link from "next/link"
 import type { RootContent, Element } from "hast"
+import { whitespace } from "hast-util-whitespace"
+import MarkdownParser from "../../src/MarkdownParser"
 import { FallbackElement } from "./DefaultRenderer"
 import EnvironmentTool from "../../src/EnvironmentTool"
-import Link from "next/link"
 import ShikiCodeBlockRender from "./ShikiCodeBlockRender"
 import HeadingElement from "./HeadingRender"
-import { whitespace } from "hast-util-whitespace"
+import ClientScriptRender from "./ClientScriptRender"
 
 /**
  * 自前で描画するタグ <HtmlElementRender />
  * 自前で描画する場合、タグの中で使うタグも自前で描画する必要があります（table なら thead とか）
  */
-const ReBuildHtmlElementTagNames = ["br", "p", "a", "img", "strong", "ul", "li", "table", "thead", "tbody", "tr", "td", "th", "h1", "h2", "h3", "h4", "h5", "h6", "pre", "code"] as const
+const ReBuildHtmlElementTagNames = ["br", "p", "span", "a", "img", "strong", "ul", "li", "em", "del", "table", "thead", "tbody", "tr", "td", "th", "h1", "h2", "h3", "h4", "h5", "h6", "pre", "code", "script", "noscript"] as const
 
 /** ReBuildHtmlElementTagNames を union にしたもの */
 type ReBuildHtmlElementTypes = typeof ReBuildHtmlElementTagNames[number]
@@ -33,31 +34,56 @@ function HtmlElementRender({ element }: HtmlElementRenderProps) {
 
     // "element" 以外はここでふるい落とす
     // text は <p> の中身などで使っている
+    // raw は Markdown に html 直接書いたとき
     switch (element.type) {
         case "comment": return <></>
         case "doctype": return <></>
-        case "raw": return <></>
+
+        // HTML なので、AST に変換して、配列の各要素を再帰的に呼び出す
+        case "raw":
+            return MarkdownParser.parseHtmlAstFromHtmlString(element.value).map((child, index) => <HtmlElementRender key={index} element={child} />)
+
         // HTML 的に空白とかはむしろエラーになるので、空の文字列は return
         // 例: In HTML, whitespace text nodes cannot be a child of <table>.
-        case "text": return whitespace(element.value) ? <></> : <>{element.value}</>
+        case "text":
+            return whitespace(element.value) ? <></> : <>{element.value}</>
+
+        // 続行
         case "element": break
     }
 
-    // 子が居て、かつ子の中がすべて自分で描画できるもののみ。一つでも無理なら unified に投げる
-    // <p> の中で <div> を使うことが出来ないため
-    if (element.children.filter((node) => node.type === "element").every((element) => ReBuildHtmlElementTagNames.includes(element.tagName as any)) === false) {
+    // unifid に投げるか
+    // 自前で描画したはずなのに、unified にフォールバックしている場合
+    // 不具合を見つけやすくするため、console.log しておく
+    let isFallback = false
 
-        // 自前で描画したはずなのに、unified にフォールバックしている場合
-        // 不具合を見つけやすくするため、ここで原因を出力しておく
-        const parentTagName = element.tagName
+    // そもそも親が描画できない
+    if (ReBuildHtmlElementTagNames.includes(element.tagName as any) === false) {
+        console.log(`親のタグが描画できないため unified へフォールバックします。${element.tagName}`)
+        isFallback = true
+    }
+
+    // 子の中に自分で描画できない要素がある
+    if (element.children.filter((node) => node.type === "element").some((element) => ReBuildHtmlElementTagNames.includes(element.tagName as any) === false)) {
         const childTagNameList = element.children.filter((node) => node.type === "element").map((element) => element.tagName)
-        console.log(`HTML の作成を unified へフォールバックしました。親=${parentTagName} 子=${childTagNameList}`)
+        console.log(`子に描画できないタグがあるため unified へフォールバックします。${childTagNameList}`)
+        isFallback = true
+    }
 
+    // 子に raw（Markdown に HTML）を持つ
+    // <p> の中で <div> を使うことが出来ないため
+    if (element.children.some((node) => node.type === "raw")) {
+        console.log(`直接書いた HTML を子に持つため unified へフォールバックします`)
+        isFallback = true
+    }
+
+    // フォールバックする場合
+    if (isFallback) {
         // 自前で描画無理なので unified で HTML を作る
         return <FallbackElement content={element} />
     }
 
-    // 子を持つ場合は再帰
+    // 自分で描画する場合、子を children: ReactNode に入れる必要があるので、再帰で作っておく
     const childrenHtml = element.children.map((node, index) => <HtmlElementRender key={index} element={node} />)
 
     // 自前で作っている部分
@@ -71,6 +97,19 @@ function HtmlElementRender({ element }: HtmlElementRenderProps) {
         // p
         case "p":
             return <p className="my-4 text-content-text-light dark:text-content-text-dark wrap-break-word">{childrenHtml}</p>
+
+        case "span":
+            return <span>{childrenHtml}</span>
+
+        // em
+        // 斜め
+        case "em":
+            return <em>{childrenHtml}</em>
+
+        // del
+        // 打ち消し線
+        case "del":
+            return <del>{childrenHtml}</del>
 
         // img
         // 画像読み込みを遅延させたい
@@ -135,6 +174,15 @@ function HtmlElementRender({ element }: HtmlElementRenderProps) {
         // 複数行は pre で全部やるので、ここに来ない
         case "code":
             return <code className="px-2 rounded-md bg-gray-200">{childrenHtml}</code>
+
+        // script
+        // noscript もついでに
+        case "script":
+            const src = element.properties['src']?.toString()
+            const type = element.properties['type']?.toString()
+            return <ClientScriptRender src={src} type={type}>{childrenHtml}</ClientScriptRender>
+        case "noscript":
+            return <noscript>{childrenHtml}</noscript>
     }
 }
 
