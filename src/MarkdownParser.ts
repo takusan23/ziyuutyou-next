@@ -101,15 +101,15 @@ class MarkdownParser {
      * @returns hast (unified HTML AST)
      */
     static async parseMarkdownToHtmlAst(markdown: string) {
-        const remarkParser = unified()
+        const remarkProcessor = unified()
             .use(remarkParse)
             .use(remarkGfm)
-        const rephypeParser = unified()
+        const rephypeProsessor = unified()
             .use(remarkRehype, { allowDangerousHtml: true })
         // Markdown AST (mdast)
-        const mdast = remarkParser.parse(markdown)
+        const mdast = remarkProcessor.parse(markdown)
         // mdast -> HTML AST (hast)
-        const hast = await rephypeParser.run(mdast)
+        const hast = await rephypeProsessor.run(mdast)
         return hast
     }
 

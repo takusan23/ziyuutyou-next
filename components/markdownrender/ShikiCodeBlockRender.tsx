@@ -1,4 +1,5 @@
 import { codeToHtml } from "shiki"
+import CopyButton from "./CopyButton"
 
 /** ShikiCodeBlockRender へ渡す Props */
 type ShikiCodeBlockRenderProps = {
@@ -17,6 +18,10 @@ export default async function ShikiCodeBlockRender({ code, language }: ShikiCode
             theme: 'dark-plus'
         }
     )
-    // この pre にスクロールバーと padding
-    return <div className="[&>pre]:overflow-x-scroll [&>pre]:p-4" dangerouslySetInnerHTML={{ __html: syntaxHighlightingCode }} />
+    return (
+        <div className="relative group">
+            <div className="[&>pre]:overflow-x-scroll [&>pre]:p-4" dangerouslySetInnerHTML={{ __html: syntaxHighlightingCode }} />
+            <CopyButton text={code} />
+        </div>
+    )
 }
