@@ -9,6 +9,7 @@ import RoundedCornerBox from "../../../components/RoundedCornerBox";
 import IconParent from "../../../components/IconParent";
 import EditIcon from "../../../public/icon/edit.svg"
 import ActivityPubShare from "../../../components/ActivityPubShare";
+import MarkdownRender from "../../../components/markdownrender/MarkdownRender";
 // 部分的に修正した css
 import "../../../styles/css/content.css"
 
@@ -84,15 +85,13 @@ export default async function PageDetailPage(props: PageProps) {
             {shareOrHistoryButton}
 
             {/* 画面の幅が狭いときは記事始まる前に目次を置く */}
-            <ExpandTocList tocDataList={markdownData.tocDataList} />
+            <ExpandTocList markdown={markdownData.markdown} />
 
             {/* 画面の幅が広いときだけ目次を表示させる */}
-            <TocListLayout secondary={<LargeTocList tocDataList={markdownData.tocDataList} />}>
+            <TocListLayout secondary={<LargeTocList markdown={markdownData.markdown} />}>
                 <RoundedCornerBox rounded="large">
                     <div className="p-4">
-                        <div
-                            className="content_div"
-                            dangerouslySetInnerHTML={{ __html: markdownData.html }} />
+                        <MarkdownRender markdown={markdownData.markdown} />
                     </div>
                 </RoundedCornerBox>
             </TocListLayout>

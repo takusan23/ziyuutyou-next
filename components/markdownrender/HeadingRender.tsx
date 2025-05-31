@@ -14,7 +14,7 @@ type HeadingElementProps = {
 
 /** h1 から h6 までを描画する。見出しはこっちで付与します。rehype-slug 実装相当です。 */
 export default function HeadingElement({ tagName, element, children }: HeadingElementProps) {
-    const id = MarkdownParser.createHeadingIdAttribute(element)
+    const { id } = MarkdownParser.createHeadingData(element)
     switch (tagName) {
         case "h1":
             return <h1 id={id} className="text-2xl text-content-primary-light dark:text-content-primary-dark mt-6 mb-4 font-medium border-b-[1px] border-content-primary-light dark:border-content-primary-dark">{children}</h1>

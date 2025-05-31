@@ -1,41 +1,35 @@
 import fs from "fs/promises"
-import matter from "gray-matter"
-import MarkdownData from "./data/MarkdownData"
 import path from "path"
-import rehypePrettyCode from "rehype-pretty-code"
-import transformShikiCodeBlockCopyButton from "./transformShikiCodeBlockCopyButton"
-import remarkGfm from "remark-gfm"
+import matter from "gray-matter"
 import { unified } from "unified"
 import remarkParse from "remark-parse"
 import remarkRehype from "remark-rehype"
 import rehypeRaw from "rehype-raw"
+import remarkGfm from "remark-gfm"
 import rehypeStringify from "rehype-stringify"
-import rehypeSlug from "rehype-slug"
-import TocData from "./data/TocData"
-import { JSDOM } from "jsdom"
-import type { RootContent, Element } from "hast"
+import type { Root, RootContent, Element } from "hast"
 import { toString } from "hast-util-to-string"
 import GithubSlugger from "github-slugger"
+import { visit } from "unist-util-visit"
+import MarkdownData from "./data/MarkdownData"
+import HeadingData from "./data/HeadingData"
 
 /**
- * Markdownパーサー
- * 
- * - jsdom (HTML生成後、見出し (h1,h2...) を取り出すため利用)
+ * Markdown パーサー
  * 
  * - gray-matter (Markdown冒頭のメタデータをパースする)
- * 
  * - unified (Markdown / HTML 変換するためのシステム)
  * - remarkParse (Markdownパーサー)
  * - remarkRehype / rehypeStringify (HTML変換)
  * - rehypeRaw (Markdownに埋め込んだHTMLを利用する)
- * - rehypePrettyCode (シンタックスハイライト)
  * - remarkGfm (テーブル、打ち消し線、自動リンク機能)
- * - rehypeSlug (HTML生成後に h1, h2 等に id属性 をセットしてくれる。目次からスクロールするため)
+ * 
+ * 使い方としては、
+ * {@see parse}で、Markdown の本文とタグ等を取得。
+ * <MarkdownRender /> へ Markdown 本文を渡して描画。
+ * 見出しとかは {@see findAllHeading} や {@see createHeadingIdAttribute} を使う。
  */
 class MarkdownParser {
-
-    /** 見出しの id 属性作成 */
-    private static slugger = new GithubSlugger()
 
     /**
      * Markdown のコードブロックに一致する正規表現。正規表現リテラル。
@@ -71,77 +65,39 @@ class MarkdownParser {
         const markdownCodeBlockAllExtract = Array.from(markdownContent.matchAll(this.REGEX_MARKDOWN_CODE_BLOCK), (m) => m[0])
         const markdownCodeBlockLength = markdownCodeBlockAllExtract.reduce((accumulator, currentValue) => accumulator + currentValue.length, 0)
         const textCount = markdownContent.length - markdownCodeBlockLength
-        // マークダウン -> unified -> HTML 
-        const remarkParser = await unified()
-            .use(remarkParse)
-            .use(remarkRehype, { allowDangerousHtml: true })
-            .use(rehypeRaw)
-            .use(remarkGfm)
-            .use(rehypeStringify)
-            .use(rehypeSlug)
-            .use(rehypePrettyCode, {
-                theme: "dark-plus",
-                transformers: [
-                    // コピーボタンを差し込む
-                    transformShikiCodeBlockCopyButton()
-                ]
-            })
-            .process(markdownContent)
-        const markdownToHtml = remarkParser.toString()
-        // Markdown から生成した HTML から 目次だけを取り出す
-        const tocDataList = this.parseToc(markdownToHtml)
         const data: MarkdownData = {
             title: title,
             createdAt: createdAt,
             createdAtUnixTime: createdAtUnixTime,
             tags: tags,
-            html: markdownToHtml,
             markdown: markdownContent,
             description: markdownContent.substring(0, 100),
             link: `${baseUrl}/${fileName}/`,
             fileName: fileName,
-            textCount: textCount,
-            tocDataList: tocDataList
+            textCount: textCount
         }
         return data
     }
 
-    // todo 見出し解析も unified にする
     /**
-     * HTML を解析して 目次データを作成する。結構時間がかかる。
-     * 
-     * @param html HTML
-     * @returns 目次データの配列
+     * h1,h2... タグを捜索する
+     * @param element {@see parseMarkdownToHtmlAst} 参照
      */
-    static parseToc(html: string): TocData[] {
-        // HTML パーサー ライブラリを利用して h1 , h2 ... を取得する
-        // この関数は ブラウザ ではなく Node.js から呼び出されるため、document は使えない。
-        const window = (new JSDOM(html)).window
-        const document = window.document
-        const tocElementList = document.querySelectorAll('h1, h2, h3, h4, h5, h6')
-        // 目次データに変換して返す
-        const tocDataList: TocData[] = Array.from(tocElementList)
-            .map(element => {
-                if (element.textContent) {
-                    return {
-                        label: element.textContent,
-                        level: Number(element.tagName.charAt(1)), // h1 の 1 だけ取り出し数値型へ
-                        hashTag: `#${element.getAttribute('id')}` // id属性 を取り出し、先頭に#をつける
-                    }
-                } else {
-                    return null
-                }
-            })
-            // null を配列から消す技です
-            .flatMap(tocDataOrNull => tocDataOrNull ? [tocDataOrNull] : [])
-        window.close()
-        return tocDataList
+    static findAllHeading(element: Root) {
+        const headingElementList: Element[] = []
+        const headingTagName = ["h1", "h2", "h3", "h4", "h5", "h6"]
+        visit(element, (node, _index, _parent) => {
+            if (node.type === "element" && headingTagName.includes(node.tagName)) {
+                headingElementList.push(node)
+            }
+        })
+        return headingElementList
     }
 
     /**
      * Markdown から unified の HTML AST を取得する
      * 
-     * @param markdown Markdown
+     * @param markdown Markdown 本文
      * @returns hast (unified HTML AST)
      */
     static async parseMarkdownToHtmlAst(markdown: string) {
@@ -160,32 +116,31 @@ class MarkdownParser {
     /**
      * unified の HTML AST から html を作成する
      * 
-     * @param ast parseMarkdownToHtmlAst() の children
+     * @param ast {@see parseMarkdownToHtmlAst} の children
      * @returns HTML
      */
     static async buildHtmlFromHtmlAst(hast: RootContent) {
         const hastProcessor = unified()
             .use(rehypeRaw)
-            .use(rehypeSlug)
-            .use(rehypePrettyCode, {
-                theme: "dark-plus",
-                transformers: [
-                    // コピーボタンを差し込む
-                    transformShikiCodeBlockCopyButton()
-                ]
-            })
-        const htmlProcessor = unified().use(rehypeStringify)
+        const htmlProcessor = unified()
+            .use(rehypeStringify)
         const fixHast = await hastProcessor.run({ type: "root", children: [hast] })
         const html = htmlProcessor.stringify(fixHast)
         return html.toString()
     }
 
     /**
-     * h1,h2 等に付与する id 属性を返す
+     * h1,h2 等の名前と、付与する id 属性を返す
      * 見出しまでスクロール出来るように
+     * 
+     * @param hast {@see findAllHeading}の各あたい
      */
-    static createHeadingIdAttribute(hast: Element) {
-        return this.slugger.slug(toString(hast))
+    static createHeadingData(hast: Element) {
+        const headingData: HeadingData = {
+            id: (new GithubSlugger()).slug(toString(hast)),
+            name: toString(hast)
+        }
+        return headingData
     }
 }
 

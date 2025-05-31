@@ -1,5 +1,3 @@
-import TocData from "./TocData"
-
 /** Markdownを解析した結果を入れるデータクラスみたいなのを作りたかった */
 type MarkdownData = {
     /** タイトル */
@@ -12,8 +10,6 @@ type MarkdownData = {
     tags: string[]
     /** 見出し。100 文字まで */
     description: string
-    /** 本文 */
-    html: string
     /** Markdown */
     markdown: string
     /** URLの一部 */
@@ -22,8 +18,6 @@ type MarkdownData = {
     fileName: string
     /** マークダウンの時点での文字数 */
     textCount: number
-    /** 目次の配列 */
-    tocDataList: TocData[]
 }
 
 export default MarkdownData

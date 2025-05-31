@@ -90,10 +90,10 @@ export default async function BlogDetailPage(props: PageProps) {
             {shareOrHistoryButton}
 
             {/* 画面の幅が狭いときは記事始まる前に目次を置く */}
-            <ExpandTocList tocDataList={markdownData.tocDataList} />
+            <ExpandTocList markdown={markdownData.markdown} />
 
             {/* 画面の幅が広いときだけ目次を表示させる */}
-            <TocListLayout secondary={<LargeTocList tocDataList={markdownData.tocDataList} />}>
+            <TocListLayout secondary={<LargeTocList markdown={markdownData.markdown} />}>
                 <RoundedCornerBox rounded="large">
                     <div className="p-4">
                         <MarkdownRender markdown={markdownData.markdown} />
