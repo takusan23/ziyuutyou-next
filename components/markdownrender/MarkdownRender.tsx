@@ -12,7 +12,7 @@ import ClientScriptRender from "./ClientScriptRender"
  * 自前で描画するタグ <HtmlElementRender />
  * 自前で描画する場合、タグの中で使うタグも自前で描画する必要があります（table なら thead とか）
  */
-const ReBuildHtmlElementTagNames = ["br", "p", "span", "a", "img", "strong", "ul", "li", "em", "del", "table", "thead", "tbody", "tr", "td", "th", "h1", "h2", "h3", "h4", "h5", "h6", "pre", "code", "script", "noscript"] as const
+const ReBuildHtmlElementTagNames = ["br", "p", "span", "a", "img", "strong", "ul", "li", "em", "del", "table", "thead", "tbody", "tr", "td", "th", "h1", "h2", "h3", "h4", "h5", "h6", "pre", "code", "script", "noscript", "iframe"] as const
 
 /** ReBuildHtmlElementTagNames を union にしたもの */
 type ReBuildHtmlElementTypes = typeof ReBuildHtmlElementTagNames[number]
@@ -183,6 +183,11 @@ function HtmlElementRender({ element }: HtmlElementRenderProps) {
             return <ClientScriptRender src={src} type={type}>{childrenHtml}</ClientScriptRender>
         case "noscript":
             return <noscript>{childrenHtml}</noscript>
+
+        // iframe
+        // どのキーがあるか分からないので、スプレッドで
+        case "iframe":
+            return <iframe {...element.properties}>{childrenHtml}</iframe>
     }
 }
 
