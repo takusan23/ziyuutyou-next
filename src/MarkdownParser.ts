@@ -13,6 +13,9 @@ import rehypeStringify from "rehype-stringify"
 import rehypeSlug from "rehype-slug"
 import TocData from "./data/TocData"
 import { JSDOM } from "jsdom"
+import type { RootContent, Element } from "hast"
+import { toString } from "hast-util-to-string"
+import GithubSlugger from "github-slugger"
 
 /**
  * Markdownパーサー
@@ -30,6 +33,9 @@ import { JSDOM } from "jsdom"
  * - rehypeSlug (HTML生成後に h1, h2 等に id属性 をセットしてくれる。目次からスクロールするため)
  */
 class MarkdownParser {
+
+    /** 見出しの id 属性作成 */
+    private static slugger = new GithubSlugger()
 
     /**
      * Markdown のコードブロックに一致する正規表現。正規表現リテラル。
@@ -90,6 +96,7 @@ class MarkdownParser {
             createdAtUnixTime: createdAtUnixTime,
             tags: tags,
             html: markdownToHtml,
+            markdown: markdownContent,
             description: markdownContent.substring(0, 100),
             link: `${baseUrl}/${fileName}/`,
             fileName: fileName,
@@ -99,6 +106,7 @@ class MarkdownParser {
         return data
     }
 
+    // todo 見出し解析も unified にする
     /**
      * HTML を解析して 目次データを作成する。結構時間がかかる。
      * 
@@ -130,6 +138,55 @@ class MarkdownParser {
         return tocDataList
     }
 
+    /**
+     * Markdown から unified の HTML AST を取得する
+     * 
+     * @param markdown Markdown
+     * @returns hast (unified HTML AST)
+     */
+    static async parseMarkdownToHtmlAst(markdown: string) {
+        const remarkParser = unified()
+            .use(remarkParse)
+            .use(remarkGfm)
+        const rephypeParser = unified()
+            .use(remarkRehype, { allowDangerousHtml: true })
+        // Markdown AST (mdast)
+        const mdast = remarkParser.parse(markdown)
+        // mdast -> HTML AST (hast)
+        const hast = await rephypeParser.run(mdast)
+        return hast
+    }
+
+    /**
+     * unified の HTML AST から html を作成する
+     * 
+     * @param ast parseMarkdownToHtmlAst() の children
+     * @returns HTML
+     */
+    static async buildHtmlFromHtmlAst(hast: RootContent) {
+        const hastProcessor = unified()
+            .use(rehypeRaw)
+            .use(rehypeSlug)
+            .use(rehypePrettyCode, {
+                theme: "dark-plus",
+                transformers: [
+                    // コピーボタンを差し込む
+                    transformShikiCodeBlockCopyButton()
+                ]
+            })
+        const htmlProcessor = unified().use(rehypeStringify)
+        const fixHast = await hastProcessor.run({ type: "root", children: [hast] })
+        const html = htmlProcessor.stringify(fixHast)
+        return html.toString()
+    }
+
+    /**
+     * h1,h2 等に付与する id 属性を返す
+     * 見出しまでスクロール出来るように
+     */
+    static createHeadingIdAttribute(hast: Element) {
+        return this.slugger.slug(toString(hast))
+    }
 }
 
 export default MarkdownParser

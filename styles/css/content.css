@@ -10,83 +10,17 @@ React の dangerouslySetInnerHTML を使って既にある HTML を埋め込む�
 あと、dark:ユーティリティ で書いたあと、VSCode のフォーマットをかけると、dark: との間にスペースができるんだけど、スペースがあるとエラーが出ちゃうので注意してください。
 */
 
-@reference "../../styles/css/global.css";
-
-.content_div {
-    /* リンクがはみ出るので */
-    overflow-wrap: break-word;
-    /** 文字の色 */
-    @apply text-content-text-light dark:text-content-text-dark;
-}
-
-/* 画像が大きくなりすぎないように */
-.content_div img {
-    max-width: 80%;
-}
-
 /* コードブロック */
 .content_div code {
-    overflow-x: scroll;
     font-family: var(--koruri-font);
-}
-
-/* コードブロックに padding 欲しい */
-.content_div figure>pre>code {
-    padding: 1em;
-}
-
-/* バッククオート1つだけのコードブロック？、親が pre 要素以外の時に適用する */
-.content_div :not(pre) code {
-    background-color: rgba(0, 0, 0, 0.1);
-    @apply px-2;
-    @apply rounded-md;
 }
 
 /* Table（表）に線が入らないので調整 */
 .content_div table {
-    border-collapse: collapse;
+    /* border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
-    margin: 10px;
-}
-
-.content_div table,
-.content_div tr {
-    border-bottom: solid 1px #000;
-}
-
-.content_div table,
-.content_div td {
-    padding: 10px;
-    text-align: center;
-}
-
-/* h1 h2 ... などの見出しに Tailwind CSS の色を当てる。あとスペース開ける */
-.content_div h1,
-.content_div h2,
-.content_div h3,
-.content_div h4,
-.content_div h5,
-.content_div h6 {
-    @apply text-content-primary-light dark:text-content-primary-dark;
-    @apply mt-6 mb-4;
-    @apply font-medium;
-    /* 目次には下線を引く */
-    @apply border-b-[1px];
-    @apply border-content-primary-light dark:border-content-primary-dark;
-}
-
-/* Tailwind css では h1,h2... のタグがすべて同じ大きさになっているが、記事本文ではちゃんと大きくなって欲しい */
-.content_div h1 {
-    @apply text-2xl;
-}
-
-.content_div h2 {
-    @apply text-xl;
-}
-
-.content_div h3 {
-    @apply text-lg;
+    margin: 10px; */
 }
 
 /* Tailwind CSS で aタグ の色が消えてしまったので、もとに戻す */
@@ -97,13 +31,7 @@ React の dangerouslySetInnerHTML を使って既にある HTML を埋め込む�
 
 /* Tailwind CSS で ulタグ のポチが消えてしまったので、元に戻す */
 .content_div ul {
-    list-style: revert;
+    /* list-style: revert;
     margin: revert;
-    padding: revert;
-}
-
-/* 余白まで消えてしまったが、記事本文では元の余白が表示されていて欲しい */
-.content_div p,
-.content_div pre {
-    @apply my-4;
+    padding: revert; */
 }

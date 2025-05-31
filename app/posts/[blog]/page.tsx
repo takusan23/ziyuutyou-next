@@ -9,6 +9,7 @@ import DateCountText from "../../../components/DateCountText"
 import IconParent from "../../../components/IconParent"
 import EditIcon from "../../../public/icon/edit.svg"
 import ActivityPubShare from "../../../components/ActivityPubShare"
+import MarkdownRender from "../../../components/markdownrender/MarkdownRender"
 // 部分的に修正した css
 import "../../../styles/css/content.css"
 
@@ -95,10 +96,7 @@ export default async function BlogDetailPage(props: PageProps) {
             <TocListLayout secondary={<LargeTocList tocDataList={markdownData.tocDataList} />}>
                 <RoundedCornerBox rounded="large">
                     <div className="p-4">
-                        <div
-                            data-pagefind-body
-                            className="content_div"
-                            dangerouslySetInnerHTML={{ __html: markdownData.html }} />
+                        <MarkdownRender markdown={markdownData.markdown} />
                     </div>
                 </RoundedCornerBox>
             </TocListLayout>

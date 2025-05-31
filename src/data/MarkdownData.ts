@@ -14,6 +14,8 @@ type MarkdownData = {
     description: string
     /** 本文 */
     html: string
+    /** Markdown */
+    markdown: string
     /** URLの一部 */
     link: string
     /** ファイル名 */
