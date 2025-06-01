@@ -28,7 +28,6 @@
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
     "@tailwindcss/postcss": "^4.1.7",
-    "@types/jsdom": "^21.1.7",
     "@types/react": "19.0.2",
     "pagefind": "^1.1.1",
     "postcss": "^8.4.38",

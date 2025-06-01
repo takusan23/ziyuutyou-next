@@ -10,8 +10,6 @@ import IconParent from "../../../components/IconParent";
 import EditIcon from "../../../public/icon/edit.svg"
 import ActivityPubShare from "../../../components/ActivityPubShare";
 import MarkdownRender from "../../../components/markdownrender/MarkdownRender";
-// 部分的に修正した css
-import "../../../styles/css/content.css"
 
 /** 動的ルーティング */
 type PageProps = {

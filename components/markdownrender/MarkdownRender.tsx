@@ -12,7 +12,39 @@ import ClientScriptRender from "./ClientScriptRender"
  * 自前で描画するタグ <HtmlElementRender />
  * 自前で描画する場合、タグの中で使うタグも自前で描画する必要があります（table なら thead とか）
  */
-const ReBuildHtmlElementTagNames = ["br", "p", "span", "a", "img", "strong", "ul", "li", "em", "del", "table", "thead", "tbody", "tr", "td", "th", "h1", "h2", "h3", "h4", "h5", "h6", "pre", "code", "script", "noscript", "iframe"] as const
+const ReBuildHtmlElementTagNames = [
+    // グループ
+    "div",
+    // 改行
+    "br",
+    // 文字
+    // 文章、文字、太字、右上につける文字、斜め、打ち消し線
+    "p", "span", "strong", "sup", "em", "del",
+    // リンク
+    "a",
+    // セクション
+    "section",
+    // 引用
+    "blockquote",
+    // 折りたたみ要素
+    "details", "summary",
+    // 区切り線
+    "hr",
+    // 画像
+    "img",
+    // 箇条書き
+    "ol", "ul", "li",
+    // 表
+    "table", "thead", "tbody", "tr", "td", "th",
+    // 見出し
+    "h1", "h2", "h3", "h4", "h5", "h6",
+    // コード・コードブロック
+    "pre", "code",
+    // スクリプト
+    "script", "noscript",
+    // iframe
+    "iframe"
+] as const
 
 /** ReBuildHtmlElementTagNames を union にしたもの */
 type ReBuildHtmlElementTypes = typeof ReBuildHtmlElementTagNames[number]
@@ -40,6 +72,7 @@ function HtmlElementRender({ element }: HtmlElementRenderProps) {
         case "doctype": return <></>
 
         // HTML なので、AST に変換して、配列の各要素を再帰的に呼び出す
+        // raw が親のとき
         case "raw":
             return MarkdownParser.parseHtmlAstFromHtmlString(element.value).map((child, index) => <HtmlElementRender key={index} element={child} />)
 
@@ -77,6 +110,14 @@ function HtmlElementRender({ element }: HtmlElementRenderProps) {
         isFallback = true
     }
 
+    // Markdown に書いた HTML で style を当てていた場合もフォールバック
+    // JSX では style を object で渡す必要があり、
+    // HTML に書いた style は文字列だと渡せない
+    if ("style" in element.properties || element.children.some((element) => element.type === "element" && "style" in element.properties)) {
+        console.log(`親か子が Markdown に書いた HTML に style を指定しているため、unified へフォールバックします`)
+        isFallback = true
+    }
+
     // フォールバックする場合
     if (isFallback) {
         // 自前で描画無理なので unified で HTML を作る
@@ -90,26 +131,26 @@ function HtmlElementRender({ element }: HtmlElementRenderProps) {
     const tagName = element.tagName as ReBuildHtmlElementTypes
     switch (tagName) {
 
-        // br
+        case "div":
+            return <div>{childrenHtml}</div>
         case "br":
             return <br />
 
-        // p
+        // 文字系
         case "p":
-            return <p className="my-4 text-content-text-light dark:text-content-text-dark wrap-break-word">{childrenHtml}</p>
-
+            return <p className="my-4 text-content-text-light dark:text-content-text-dark">{childrenHtml}</p>
         case "span":
             return <span>{childrenHtml}</span>
-
-        // em
-        // 斜め
         case "em":
             return <em>{childrenHtml}</em>
-
-        // del
-        // 打ち消し線
         case "del":
             return <del>{childrenHtml}</del>
+        case "strong":
+            return <strong>{childrenHtml}</strong>
+        case "sup":
+            return <sup>{childrenHtml}</sup>
+        case "blockquote":
+            return <blockquote>{childrenHtml}</blockquote>
 
         // img
         // 画像読み込みを遅延させたい
@@ -118,23 +159,23 @@ function HtmlElementRender({ element }: HtmlElementRenderProps) {
 
         // a
         // サイト内の遷移の場合は next/link にする
+        // リセット CSS で色が消えてしまったので戻す TODO スタイリングしても良いかも
         case "a":
             const href = element.properties['href']?.toString()
             if (href?.startsWith(EnvironmentTool.BASE_URL)) {
-                return <Link href={href}>{childrenHtml}</Link>
+                return <Link className="text-[revert] underline" href={href}>{childrenHtml}</Link>
             } else {
-                return <a href={href}>{childrenHtml}</a>
+                return <a className="text-[revert] underline" href={href}>{childrenHtml}</a>
             }
 
-        // 太字
-        case "strong":
-            return <strong>{childrenHtml}</strong>
 
         // 箇条書き
         case "ul":
             return <ul className="list-disc m-[revert] p-[revert]">{childrenHtml}</ul>
         case "li":
             return <li>{childrenHtml}</li>
+        case "ol":
+            return <ol>{childrenHtml}</ol>
 
         // テーブル
         case "table":
@@ -173,7 +214,7 @@ function HtmlElementRender({ element }: HtmlElementRenderProps) {
         // 単発コード
         // 複数行は pre で全部やるので、ここに来ない
         case "code":
-            return <code className="px-2 rounded-md bg-gray-200">{childrenHtml}</code>
+            return <code className="px-2 font-(family-name:--koruri-font) rounded-md bg-gray-200">{childrenHtml}</code>
 
         // script
         // noscript もついでに
@@ -188,6 +229,20 @@ function HtmlElementRender({ element }: HtmlElementRenderProps) {
         // どのキーがあるか分からないので、スプレッドで
         case "iframe":
             return <iframe {...element.properties}>{childrenHtml}</iframe>
+
+        // セクション
+        case "section":
+            return <section>{childrenHtml}</section>
+
+        // 折りたたみ
+        case "details":
+            return <details>{childrenHtml}</details>
+        case "summary":
+            return <summary>{childrenHtml}</summary>
+
+        // 区切り線
+        case "hr":
+            return <hr />
     }
 }
 
@@ -204,7 +259,8 @@ export default async function MarkdownRender({ markdown }: MarkdownViewProps) {
     const nodeJsxList = htmlAst.children.map((node, index) => <HtmlElementRender key={index} element={node} />)
 
     return (
-        <div className="content_div">
+        // 文字がはみ出ないように
+        <div className="content_div wrap-break-word">
             {nodeJsxList}
         </div>
     )
