@@ -1,5 +1,15 @@
-import { codeToHtml } from "shiki"
+import { bundledLanguages, bundledThemes, createHighlighter } from "shiki"
 import CopyButton from "./CopyButton"
+
+/**
+ * シングルトンにする。
+ * よく分からないけど、明示的にすべて読み込むようにしないと、たまによくビルドがが成功しない。
+ * https://shiki.style/guide/install#highlighter-usage
+ */
+const highlighterPromise = createHighlighter({
+    themes: Object.keys(bundledThemes),
+    langs: Object.keys(bundledLanguages)
+})
 
 /** ShikiCodeBlockRender へ渡す Props */
 type ShikiCodeBlockRenderProps = {
@@ -16,13 +26,16 @@ export default async function ShikiCodeBlockRender({ code, language }: ShikiCode
         lang: language ?? 'plaintext',
         theme: 'dark-plus'
     }
+
+    const highlighter = await highlighterPromise
     let syntaxHighlightingCode: string
     try {
         // Markdown のコードブロックの言語を尊重する
-        syntaxHighlightingCode = await codeToHtml(trimCode, option)
+        syntaxHighlightingCode = highlighter.codeToHtml(trimCode, option)
     } catch (e) {
         // 失敗したら plaintext で再試行
-        syntaxHighlightingCode = await codeToHtml(trimCode, { ...option, lang: 'plaintext' })
+        console.log(`言語 ${option.lang} のシンタックスハイライトに失敗しました。plaintext にします。`)
+        syntaxHighlightingCode = highlighter.codeToHtml(trimCode, { ...option, lang: 'plaintext' })
     }
 
     return (
