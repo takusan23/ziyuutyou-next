@@ -162,10 +162,11 @@ function HtmlElementRender({ element }: HtmlElementRenderProps) {
         // リセット CSS で色が消えてしまったので戻す TODO スタイリングしても良いかも
         case "a":
             const href = element.properties['href']?.toString()
-            if (href?.startsWith(EnvironmentTool.BASE_URL)) {
-                return <Link className="text-[revert] underline" href={href}>{childrenHtml}</Link>
+            const anchorId = element.properties['id']?.toString()
+            if (href?.startsWith(EnvironmentTool.BASE_URL) || href?.startsWith('http') === false) {
+                return <Link id={anchorId} className="text-[revert] underline" href={href}>{childrenHtml}</Link>
             } else {
-                return <a className="text-[revert] underline" href={href}>{childrenHtml}</a>
+                return <a id={anchorId} className="text-[revert] underline" href={href}>{childrenHtml}</a>
             }
 
 
@@ -173,19 +174,20 @@ function HtmlElementRender({ element }: HtmlElementRenderProps) {
         case "ul":
             return <ul className="list-disc m-[revert] p-[revert]">{childrenHtml}</ul>
         case "li":
-            return <li>{childrenHtml}</li>
+            const liId = element.properties['id']?.toString()
+            return <li id={liId}>{childrenHtml}</li>
         case "ol":
             return <ol>{childrenHtml}</ol>
 
         // テーブル
         case "table":
-            return <table className="w-full p-3 border-collapse border-b-spacing-0 border-b-[1px] border-b-content-primary-light dark:border-content-primary-dark">{childrenHtml}</table>
+            return <table className="m-2 w-full p-3 border-collapse border-b-spacing-0 border-b-[1px] border-b-content-primary-light dark:border-content-primary-dark">{childrenHtml}</table>
         case "tr":
-            return <tr className="border-b-[1px] border-b-content-primary-light dark:border-b-content-primary-dark">{childrenHtml}</tr>
+            return <tr className="border-b-2 border-b-content-primary-light dark:border-b-content-primary-dark">{childrenHtml}</tr>
         case "td":
-            return <td className="p-3 text-center">{childrenHtml}</td>
+            return <td className="p-2 text-center">{childrenHtml}</td>
         case "th":
-            return <th className="p-3 text-center">{childrenHtml}</th>
+            return <th className="text-center">{childrenHtml}</th>
         case "thead":
             return <thead>{childrenHtml}</thead>
         case "tbody":
