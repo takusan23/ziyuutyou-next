@@ -46,24 +46,32 @@ class ContentFolderManager {
      * @returns ファイル名一覧
      */
     static async getBlogNameList() {
-        return this.getFileNameList(this.POSTS_FOLDER_PATH)
+        return await this.getFileNameList(this.POSTS_FOLDER_PATH)
     }
 
     /**
-     * 範囲を指定して記事一覧を取得する
+     * 書き出す必要のある記事一覧のファイル名配列を返す
+     * {@see getBlogNameList}と{@see chunkedPage}の合体版
      * 
-     * asyncです。
+     * @param pageSize 1ページに何件表示するか
+     * @returns ページ件数でまとめられた配列
+     */
+    static async getBlogNamePageList(pageSize: number) {
+        return this.chunkedPage(await this.getBlogNameList(), pageSize)
+    }
+
+    /**
+     * 記事一覧を取得する
      * 
-     * @param skip ページネーション用。どこまでスキップするか ((現在のページ - 1) * limit) を入れればいいと思う
-     * @param limit 一度にどれだけ取得するか
+     * @param pageSize 1ページに何件表示するか
      * @returns 合計記事数と取得した記事配列をまとめたものが返ってきます
      */
-    static async getBlogItemList(limit: number = 10, skip: number) {
+    static async getBlogItemList(pageSize: number) {
         // content/posts の中身を読み出す
         const blogList = await this.getItemList(this.POSTS_FOLDER_PATH, this.POSTS_BASE_URL)
         const result: BlogItemResult = {
             totalCount: blogList.length,
-            result: blogList.slice(skip, skip + limit)
+            pageList: this.chunkedPage(blogList, pageSize)
         }
         return result
     }
@@ -96,17 +104,17 @@ class ContentFolderManager {
      * 指定したタグが含まれた記事一覧配列を返す。
      * 
      * @param tagName タグ名
+     * @param pageSize 1ページに何件表示するか
      * @returns 含まれている記事一覧
      */
-    static async getTagFilterBlogItem(tagName: string) {
+    static async getTagFilterBlogItemList(tagName: string, pageSize: number) {
         // とりあえず全件取得
         const blogList = await this.getItemList(this.POSTS_FOLDER_PATH, this.POSTS_BASE_URL)
         // フィルターにかけて
-        const filteredList = blogList
-            .filter((blog) => blog.tags.includes(tagName))
+        const filteredList = blogList.filter((blog) => blog.tags.includes(tagName))
         const result: BlogItemResult = {
             totalCount: filteredList.length,
-            result: filteredList
+            pageList: this.chunkedPage(filteredList, pageSize)
         }
         return result
     }
@@ -128,6 +136,19 @@ class ContentFolderManager {
             }))
             .sort((a, b) => b.count - a.count)
         return tagDataList
+    }
+
+    /**
+     * 指定された数ごとに区切った配列にする。chunk
+     * 
+     * @param origin 区切りたい配列
+     * @param size 区切る数
+     * @returns [ [T,T,T] [T,T] ]
+     */
+    private static chunkedPage<T>(origin: T[], size: number) {
+        return origin
+            .map((_, i) => i % size === 0 ? origin.slice(i, i + size) : null)
+            .filter((nullabeList) => nullabeList !== null)
     }
 
     /**

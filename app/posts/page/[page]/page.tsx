@@ -22,15 +22,15 @@ export const metadata: Metadata = {
 /** 記事一覧ページ */
 export default async function BlogListPage(props: PageProps) {
     const params = await props.params;
-    // posts/page/<ここ> を取得
-    const pageId = Number(params.page)
-    // 記事一覧を取得する。async なので待つ。-1してるのは1ページ目はskip:0にしたいため
-    const blogListResult = await ContentFolderManager.getBlogItemList(BLOG_SIZE_LIMIT, BLOG_SIZE_LIMIT * (pageId - 1))
-    const blogList = blogListResult.result
-    const totalCount = blogListResult.totalCount
+    // posts/page/{ここ} を取得
+    const pageParam = Number(params.page)
+    // 記事一覧を取得する。async なので待つ
+    const { pageList } = await ContentFolderManager.getBlogItemList(BLOG_SIZE_LIMIT)
+    // -1 してるのは 1 ページ目は skip=0 にしたいため
+    const blogList = pageList[pageParam - 1]
     // 次のページ、前のページボタン
-    const nextPageId = ((BLOG_SIZE_LIMIT * pageId) <= totalCount) ? pageId + 1 : null
-    const prevPageId = (pageId > 1) ? pageId - 1 : null
+    const nextPageParam = (pageParam < pageList.length) ? pageParam + 1 : null
+    const prevPageParam = (pageParam > 1) ? pageParam - 1 : null
 
     return (
         <div className="max-w-6xl m-auto space-y-4 flex flex-col">
@@ -53,9 +53,9 @@ export default async function BlogListPage(props: PageProps) {
                 {
                     // 前のページボタンを出すか。
                     // 無い場合は Disabled なボタンを出す
-                    prevPageId ? <NextLinkButton
+                    prevPageParam ? <NextLinkButton
                         variant="contained"
-                        href={`/posts/page/${prevPageId}/`}
+                        href={`/posts/page/${prevPageParam}/`}
                         text="前のページ"
                     /> : <Button
                         isDisabled
@@ -65,13 +65,13 @@ export default async function BlogListPage(props: PageProps) {
 
                 <Button
                     variant="outlined"
-                    text={pageId.toString()} />
+                    text={pageParam.toString()} />
 
                 {
                     // 次のページを出すか。
-                    nextPageId ? <NextLinkButton
+                    nextPageParam ? <NextLinkButton
                         variant="contained"
-                        href={`/posts/page/${pageId + 1}/`}
+                        href={`/posts/page/${pageParam + 1}/`}
                         text="次のページ"
                     /> : <Button
                         isDisabled
@@ -92,14 +92,7 @@ export default async function BlogListPage(props: PageProps) {
  */
 export async function generateStaticParams() {
     // async なので待つ。合計数がほしいので名前だけの配列で
-    const nameList = await ContentFolderManager.getBlogNameList()
-    const totalCount = nameList.length
-    // 割り算をして必要な数用意する
-    const requirePageCount = (totalCount / BLOG_SIZE_LIMIT) + 1 // あまりのために +1
-    // 必要なURLを作成
-    // 配列を指定数nullで埋めてmapする
-    const pathIdList = new Array(Math.floor(requirePageCount))
-        .fill(null)
-        .map((_, index) => ({ page: (index + 1).toString() })) // 1ページ目から開始なので
-    return pathIdList
+    const nameList = await ContentFolderManager.getBlogNamePageList(BLOG_SIZE_LIMIT)
+    // 1ページ目から開始なので
+    return nameList.map((_, pageIndex) => ({ page: (pageIndex + 1).toString() }))
 }

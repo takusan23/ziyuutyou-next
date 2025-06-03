@@ -5,7 +5,7 @@ type BlogItemResult = {
     /** 合計記事数 */
     totalCount: number
     /** 取得した記事一覧 */
-    result: BlogItem[]
+    pageList: BlogItem[][]
 }
 
 export default BlogItemResult

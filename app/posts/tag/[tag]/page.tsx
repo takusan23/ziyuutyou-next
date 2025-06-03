@@ -28,7 +28,7 @@ export default async function TagListPage(props: PageProps) {
     // パーセントエンコーディングされているため戻す
     const unEscapeText = decodeURIComponent(params.tag)
     // ページネーションは後で
-    const tagFilterBlogList = await ContentFolderManager.getTagFilterBlogItem(unEscapeText)
+    const tagFilterBlogList = await ContentFolderManager.getTagFilterBlogItemList(unEscapeText, 0)
 
     return (
         <>
