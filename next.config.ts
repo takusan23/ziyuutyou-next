@@ -1,5 +1,6 @@
-/** @type {import('next').NextConfig} */
-module.exports = {
+import type { NextConfig } from 'next'
+
+const nextConfig: NextConfig = {
     output: 'export',
     trailingSlash: true,
     webpack(config) {
@@ -10,16 +11,18 @@ module.exports = {
         })
         return config
     },
-    experimental: {
-        scrollRestoration: true,
-        turbo: {
-            rules: {
-                '*.svg': {
-                    loaders: ['@svgr/webpack'],
-                    as: '*.js',
-                },
-            },
+    turbopack: {
+        rules: {
+            '*.svg': {
+                loaders: ['@svgr/webpack'],
+                as: '*.js',
+            }
         }
+    },
+    experimental: {
+        scrollRestoration: true
     },
     staticPageGenerationTimeout: 60 * 10 // 10分。Next.js 15 にしてから伸ばさないと怪しい
 }
+
+export default nextConfig
