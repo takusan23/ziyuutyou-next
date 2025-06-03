@@ -30,7 +30,7 @@ export default async function ClientAllTagPage() {
                     tagDataList.map(tagData => (
                         <NextLinkButton
                             key={tagData.name}
-                            href={`/posts/tag/${tagData.name}/`}
+                            href={`/posts/tag/${tagData.name}/1/`}
                             startIcon={<SellIcon className="w-5 h-5" />}
                             text={`${tagData.name} - ${tagData.count} 件`}
                         />

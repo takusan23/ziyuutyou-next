@@ -1,12 +1,15 @@
 import { Metadata } from "next"
-import EnvironmentTool from "../../../../src/EnvironmentTool"
-import ContentFolderManager from "../../../../src/ContentFolderManager"
-import RoundedCornerList from "../../../../components/RoundedCornerList"
-import BlogListItem from "../../../../components/BlogListItem"
+import EnvironmentTool from "../../../../../src/EnvironmentTool"
+import ContentFolderManager from "../../../../../src/ContentFolderManager"
+import RoundedCornerList from "../../../../../components/RoundedCornerList"
+import BlogListItem from "../../../../../components/BlogListItem"
+
+/** 一度に取得する件数 */
+const BLOG_SIZE_LIMIT = 10
 
 /** 動的ルーティング */
 type PageProps = {
-    params: Promise<{ tag: string }>
+    params: Promise<{ tag: string, page: string }>
 }
 
 /** head に値を入れる */
@@ -24,11 +27,14 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
 
 /** タグがついてる記事一覧ページ */
 export default async function TagListPage(props: PageProps) {
-    const params = await props.params;
+    const params = await props.params
+    // posts/page/{ここ} を取得
+    const pageParam = Number(params.page)
     // パーセントエンコーディングされているため戻す
     const unEscapeText = decodeURIComponent(params.tag)
-    // ページネーションは後で
-    const tagFilterBlogList = await ContentFolderManager.getTagFilterBlogItemList(unEscapeText, 0)
+    const { totalCount, pageList } = await ContentFolderManager.getTagFilterBlogItemList(unEscapeText, BLOG_SIZE_LIMIT)
+    // -1 してるのは 1 ページ目は skip=0 にしたいため
+    const blogList = pageList[pageParam - 1]
 
     return (
         <>
@@ -39,12 +45,12 @@ export default async function TagListPage(props: PageProps) {
                         {unEscapeText}
                     </h1>
                     <h3 className="text-content-primary-light dark:text-content-primary-dark text-lg">
-                        {`${tagFilterBlogList.totalCount} 件`}
+                        {`${totalCount} 件`}
                     </h3>
                 </div>
 
                 <RoundedCornerList
-                    list={tagFilterBlogList.result}
+                    list={blogList}
                     content={(className, item) => (
                         <div
                             className={`bg-container-primary-light dark:bg-container-primary-dark ${className}`}
@@ -65,6 +71,20 @@ export default async function TagListPage(props: PageProps) {
  * 静的書き出し時に呼ばれる
  */
 export async function generateStaticParams() {
+    const dynamicRoutePathList: {}[] = []
+
+    // タグの数だけ、ページングできるページを
     const tagNameList = await ContentFolderManager.getAllTagDataList()
-    return tagNameList.map((name) => ({ tag: name.name }))
+    for (const tagName of tagNameList) {
+        const tagFilterdResult = await ContentFolderManager.getTagFilterBlogItemList(tagName.name, BLOG_SIZE_LIMIT)
+        // 1 ページ目から開始なので
+        tagFilterdResult.pageList.forEach((_, pageIndex) => {
+            dynamicRoutePathList.push({
+                tag: tagName.name,
+                page: (pageIndex + 1).toString()
+            })
+        })
+    }
+
+    return dynamicRoutePathList
 }

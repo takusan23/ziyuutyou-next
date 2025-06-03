@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
 /** 記事一覧ページ */
 export default async function BlogListPage(props: PageProps) {
-    const params = await props.params;
+    const params = await props.params
     // posts/page/{ここ} を取得
     const pageParam = Number(params.page)
     // 記事一覧を取得する。async なので待つ
@@ -93,6 +93,6 @@ export default async function BlogListPage(props: PageProps) {
 export async function generateStaticParams() {
     // async なので待つ。合計数がほしいので名前だけの配列で
     const nameList = await ContentFolderManager.getBlogNamePageList(BLOG_SIZE_LIMIT)
-    // 1ページ目から開始なので
+    // 1 ページ目から開始なので
     return nameList.map((_, pageIndex) => ({ page: (pageIndex + 1).toString() }))
 }
