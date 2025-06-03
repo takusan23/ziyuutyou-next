@@ -32,7 +32,7 @@ export default async function TagListPage(props: PageProps) {
 
     return (
         <>
-            <div className="flex flex-col space-y-4">
+            <div className="max-w-6xl m-auto flex flex-col space-y-4">
 
                 <div>
                     <h1 className="text-content-primary-light dark:text-content-primary-dark text-3xl">

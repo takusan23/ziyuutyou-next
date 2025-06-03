@@ -70,7 +70,7 @@ export default function PagefindSearch() {
     const promiseObject = useMemo(() => executeSearchFromQueryParams(searchWord), [searchWord])
 
     return (
-        <div className="flex flex-col items-center w-full space-y-6">
+        <div className="max-w-6xl m-auto flex flex-col items-center w-full space-y-6">
 
             <SearchForm searchWord={searchWord} />
 

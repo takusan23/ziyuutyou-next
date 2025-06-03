@@ -33,7 +33,7 @@ export default async function BlogListPage(props: PageProps) {
     const prevPageId = (pageId > 1) ? pageId - 1 : null
 
     return (
-        <div className="flex flex-col">
+        <div className="max-w-6xl m-auto space-y-4 flex flex-col">
 
             {/* 記事一覧 */}
             <RoundedCornerList

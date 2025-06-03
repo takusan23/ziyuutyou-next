@@ -65,8 +65,9 @@ export default async function PageDetailPage(props: PageProps) {
         </div>
     )
 
+    // max-w-6xl m-auto で横幅上限+真ん中
     return (
-        <div className="flex flex-col space-y-4">
+        <article className="max-w-6xl m-auto flex flex-col space-y-4">
 
             <h1 className="text-content-primary-light dark:text-content-primary-dark text-3xl">
                 {markdownData.title}
@@ -93,7 +94,7 @@ export default async function PageDetailPage(props: PageProps) {
                     </div>
                 </RoundedCornerBox>
             </TocListLayout>
-        </div>
+        </article>
     )
 }
 

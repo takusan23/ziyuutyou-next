@@ -28,7 +28,7 @@ export default async function Home() {
     ])
 
     return (
-        <div className="flex flex-col space-y-5">
+        <div className="max-w-6xl m-auto flex flex-col space-y-5">
             <ProfileCard randomMessageList={randomMessageList} />
             <LinkCard linkList={linkList} />
             <PortfolioCard portPolioDataList={portPolioData} />
