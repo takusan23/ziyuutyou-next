@@ -69,9 +69,11 @@ class ContentFolderManager {
     static async getBlogItemList(pageSize: number) {
         // content/posts の中身を読み出す
         const blogList = await this.getItemList(this.POSTS_FOLDER_PATH, this.POSTS_BASE_URL)
+        const chunkedList = this.chunkedPage(blogList, pageSize)
         const result: BlogItemResult = {
             totalCount: blogList.length,
-            pageList: this.chunkedPage(blogList, pageSize)
+            pageList: chunkedList,
+            pageNumberList: chunkedList.map((_, index) => index + 1)
         }
         return result
     }
@@ -112,9 +114,11 @@ class ContentFolderManager {
         const blogList = await this.getItemList(this.POSTS_FOLDER_PATH, this.POSTS_BASE_URL)
         // フィルターにかけて
         const filteredList = blogList.filter((blog) => blog.tags.includes(tagName))
+        const chunkedList = this.chunkedPage(filteredList, pageSize)
         const result: BlogItemResult = {
             totalCount: filteredList.length,
-            pageList: this.chunkedPage(filteredList, pageSize)
+            pageList: chunkedList,
+            pageNumberList: chunkedList.map((_, index) => index + 1)
         }
         return result
     }

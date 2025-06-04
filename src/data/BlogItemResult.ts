@@ -6,6 +6,8 @@ type BlogItemResult = {
     totalCount: number
     /** 取得した記事一覧 */
     pageList: BlogItem[][]
+    /** ページネーションの番号の配列。1 始まり */
+    pageNumberList: number[]
 }
 
 export default BlogItemResult

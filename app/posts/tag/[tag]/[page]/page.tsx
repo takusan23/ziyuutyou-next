@@ -3,6 +3,7 @@ import EnvironmentTool from "../../../../../src/EnvironmentTool"
 import ContentFolderManager from "../../../../../src/ContentFolderManager"
 import RoundedCornerList from "../../../../../components/RoundedCornerList"
 import BlogListItem from "../../../../../components/BlogListItem"
+import PageButtonGruop from "../../../../../components/PageButtonGroup"
 
 /** 一度に取得する件数 */
 const BLOG_SIZE_LIMIT = 10
@@ -28,11 +29,12 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
 /** タグがついてる記事一覧ページ */
 export default async function TagListPage(props: PageProps) {
     const params = await props.params
-    // posts/page/{ここ} を取得
+    // /posts/tag/{tagName}/{pageParam} を取得
+    const tagNameParam = params.tag
     const pageParam = Number(params.page)
     // パーセントエンコーディングされているため戻す
     const unEscapeText = decodeURIComponent(params.tag)
-    const { totalCount, pageList } = await ContentFolderManager.getTagFilterBlogItemList(unEscapeText, BLOG_SIZE_LIMIT)
+    const { totalCount, pageList, pageNumberList } = await ContentFolderManager.getTagFilterBlogItemList(unEscapeText, BLOG_SIZE_LIMIT)
     // -1 してるのは 1 ページ目は skip=0 にしたいため
     const blogList = pageList[pageParam - 1]
 
@@ -60,6 +62,11 @@ export default async function TagListPage(props: PageProps) {
                         </div>
                     )}
                 />
+
+                <PageButtonGruop
+                    currentPage={pageParam}
+                    pageNumberList={pageNumberList}
+                    baseUrl={`/posts/tag/${tagNameParam}/`} />
             </div>
         </>
     )

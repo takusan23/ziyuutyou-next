@@ -8,7 +8,7 @@ type NextLinkButtonProps = {
 } & ButtonProps
 
 /** NextLink でラップした <Button> */
-export default function NextLinkButton({ href, text, startIcon, variant, isDisabled, size }: NextLinkButtonProps) {
+export default function NextLinkButton({ href, text, startIcon, variant, isDisabled, size, rounded }: NextLinkButtonProps) {
 
     return (
         <Link
@@ -20,7 +20,8 @@ export default function NextLinkButton({ href, text, startIcon, variant, isDisab
                 startIcon={startIcon}
                 variant={variant}
                 isDisabled={isDisabled}
-                size={size} />
+                size={size}
+                rounded={rounded} />
         </Link>
     )
 }

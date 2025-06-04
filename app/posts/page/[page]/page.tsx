@@ -5,6 +5,7 @@ import NextLinkButton from "../../../../components/NextLinkButton"
 import Button from "../../../../components/Button"
 import RoundedCornerList from "../../../../components/RoundedCornerList"
 import BlogListItem from "../../../../components/BlogListItem"
+import PageButtonGruop from "../../../../components/PageButtonGroup"
 
 /** 一度に取得する件数 */
 const BLOG_SIZE_LIMIT = 10
@@ -25,12 +26,9 @@ export default async function BlogListPage(props: PageProps) {
     // posts/page/{ここ} を取得
     const pageParam = Number(params.page)
     // 記事一覧を取得する。async なので待つ
-    const { pageList } = await ContentFolderManager.getBlogItemList(BLOG_SIZE_LIMIT)
+    const { pageList, pageNumberList } = await ContentFolderManager.getBlogItemList(BLOG_SIZE_LIMIT)
     // -1 してるのは 1 ページ目は skip=0 にしたいため
     const blogList = pageList[pageParam - 1]
-    // 次のページ、前のページボタン
-    const nextPageParam = (pageParam < pageList.length) ? pageParam + 1 : null
-    const prevPageParam = (pageParam > 1) ? pageParam - 1 : null
 
     return (
         <div className="max-w-6xl m-auto space-y-4 flex flex-col">
@@ -48,37 +46,10 @@ export default async function BlogListPage(props: PageProps) {
                 )}
             />
 
-            {/* ページネーション */}
-            <div className="flex flex-row py-4 items-center justify-center space-x-4">
-                {
-                    // 前のページボタンを出すか。
-                    // 無い場合は Disabled なボタンを出す
-                    prevPageParam ? <NextLinkButton
-                        variant="contained"
-                        href={`/posts/page/${prevPageParam}/`}
-                        text="前のページ"
-                    /> : <Button
-                        isDisabled
-                        text="ここだよ"
-                    />
-                }
-
-                <Button
-                    variant="outlined"
-                    text={pageParam.toString()} />
-
-                {
-                    // 次のページを出すか。
-                    nextPageParam ? <NextLinkButton
-                        variant="contained"
-                        href={`/posts/page/${pageParam + 1}/`}
-                        text="次のページ"
-                    /> : <Button
-                        isDisabled
-                        text="追いついた...!?"
-                    />
-                }
-            </div>
+            <PageButtonGruop
+                baseUrl="/posts/page/"
+                currentPage={pageParam}
+                pageNumberList={pageNumberList} />
         </div>
     )
 }
