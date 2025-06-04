@@ -4,6 +4,7 @@ import EnvironmentTool from "../../../../src/EnvironmentTool"
 import RoundedCornerList from "../../../../components/RoundedCornerList"
 import BlogListItem from "../../../../components/BlogListItem"
 import PageButtonGruop from "../../../../components/PageButtonGroup"
+import Title from "../../../../components/Title"
 
 /** 一度に取得する件数 */
 const BLOG_SIZE_LIMIT = 10
@@ -30,6 +31,8 @@ export default async function BlogListPage(props: PageProps) {
 
     return (
         <div className="max-w-6xl m-auto space-y-4 flex flex-col">
+
+            <Title title="記事一覧" />
 
             {/* 記事一覧 */}
             <RoundedCornerList

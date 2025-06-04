@@ -10,6 +10,7 @@ import IconParent from "../../../components/IconParent"
 import EditIcon from "../../../public/icon/edit.svg"
 import ActivityPubShare from "../../../components/ActivityPubShare"
 import MarkdownRender from "../../../components/markdownrender/MarkdownRender"
+import Title from "../../../components/Title"
 
 /** 動的ルーティング */
 type PageProps = {
@@ -74,9 +75,7 @@ export default async function BlogDetailPage(props: PageProps) {
     return (
         <article className="max-w-6xl m-auto flex flex-col space-y-4">
 
-            <h1 className="text-content-primary-light dark:text-content-primary-dark text-3xl">
-                {markdownData.title}
-            </h1>
+            <Title title={markdownData.title} />
             <div>
                 <DateCountText
                     timeTagTimeFormat={dateTimeFormat}

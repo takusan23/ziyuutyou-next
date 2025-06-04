@@ -7,6 +7,7 @@ import CircleLoading from "../../components/CircleLoading"
 import SearchLogoMessage from "./SearchLogoMessage"
 import { PagefindSearchResult, PagefindSearchResults } from "../../src/data/PagefindData"
 import SearchResult from "../../components/search/SearchResult"
+import Title from "../../components/Title"
 
 /** 開発時は適当な値を返す pagefind。UI の調整用。 */
 function pagefindInDevMock() {
@@ -70,7 +71,9 @@ export default function PagefindSearch() {
     const promiseObject = useMemo(() => executeSearchFromQueryParams(searchWord), [searchWord])
 
     return (
-        <div className="max-w-6xl m-auto flex flex-col items-center w-full space-y-6">
+        <div className="max-w-6xl m-auto flex flex-col w-full space-y-6">
+
+            <Title title="記事検索" />
 
             <SearchForm searchWord={searchWord} />
 

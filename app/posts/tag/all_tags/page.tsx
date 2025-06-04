@@ -3,6 +3,7 @@ import ContentFolderManager from "../../../../src/ContentFolderManager"
 import EnvironmentTool from "../../../../src/EnvironmentTool"
 import NextLinkButton from "../../../../components/NextLinkButton"
 import SellIcon from "../../../../public/icon/sell.svg"
+import Title from "../../../../components/Title"
 
 /** head に値を入れる */
 export const metadata: Metadata = {
@@ -16,14 +17,9 @@ export default async function ClientAllTagPage() {
     return (
         <div className="max-w-6xl m-auto flex flex-col space-y-4">
 
-            <div>
-                <h1 className="text-content-primary-light dark:text-content-primary-dark text-3xl">
-                    タグ一覧
-                </h1>
-                <h3 className="text-content-primary-light dark:text-content-primary-dark text-lg">
-                    {`${tagDataList.length} 件`}
-                </h3>
-            </div>
+            <Title
+                title="タグ一覧"
+                subTitle={`${tagDataList.length} 件`} />
 
             <div className="flex flex-row flex-wrap gap-2">
                 {

@@ -4,6 +4,7 @@ import ContentFolderManager from "../../../../../src/ContentFolderManager"
 import RoundedCornerList from "../../../../../components/RoundedCornerList"
 import BlogListItem from "../../../../../components/BlogListItem"
 import PageButtonGruop from "../../../../../components/PageButtonGroup"
+import Title from "../../../../../components/Title"
 
 /** 一度に取得する件数 */
 const BLOG_SIZE_LIMIT = 10
@@ -42,14 +43,9 @@ export default async function TagListPage(props: PageProps) {
         <>
             <div className="max-w-6xl m-auto flex flex-col space-y-4">
 
-                <div>
-                    <h1 className="text-content-primary-light dark:text-content-primary-dark text-3xl">
-                        {unEscapeText}
-                    </h1>
-                    <h3 className="text-content-primary-light dark:text-content-primary-dark text-lg">
-                        {`${totalCount} 件`}
-                    </h3>
-                </div>
+                <Title
+                    title={unEscapeText}
+                    subTitle={`${totalCount} 件`} />
 
                 <RoundedCornerList
                     list={blogList}
