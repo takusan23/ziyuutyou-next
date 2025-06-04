@@ -1,5 +1,14 @@
 import { bundledLanguages, bundledThemes, createHighlighter } from "shiki"
 import CopyButton from "./CopyButton"
+import localFont from "next/font/local"
+
+const kosugiMaru = localFont({
+    // CSS 変数として使う
+    variable: '--kosugi-maru-font',
+    src: [
+        { path: '../../styles/css/fonts/KosugiMaru-Regular.ttf' }
+    ]
+})
 
 /**
  * シングルトンにする。
@@ -39,9 +48,13 @@ export default async function ShikiCodeBlockRender({ code, language }: ShikiCode
     }
 
     return (
-        <div className="relative group">
-            <div className="[&>pre]:overflow-x-scroll [&>pre]:p-4 [&>pre]:my-4" dangerouslySetInnerHTML={{ __html: syntaxHighlightingCode }} />
-            <CopyButton text={code} />
+        <div className={kosugiMaru.variable}>
+            <div className="relative group">
+                <div
+                    className={`[&>pre]:overflow-x-scroll [&>pre]:p-4 [&>pre]:my-4 [&_code]:font-(family-name:--kosugi-maru-font)`}
+                    dangerouslySetInnerHTML={{ __html: syntaxHighlightingCode }} />
+                <CopyButton text={code} />
+            </div>
         </div>
     )
 }

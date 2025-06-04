@@ -71,9 +71,6 @@ thx!!!
 - next
     - MIT
     - https://github.com/vercel/next.js/blob/canary/license.md
-- autoprefixer
-    - MIT License
-    - https://github.com/postcss/autoprefixer/blob/main/LICENSE
 - postcss
     - MIT License
     - https://github.com/postcss/postcss/blob/main/LICENSE
@@ -98,18 +95,9 @@ thx!!!
 - remark-rehype
     - MIT License
     - https://github.com/remarkjs/remark-rehype/blob/main/license
-- rehype-slug
-    - MIT License
-    - https://github.com/rehypejs/rehype-slug/blob/main/license
 - unified
     - MIT License
     - https://github.com/unifiedjs/unified/blob/main/license
-- jsdom
-    - MIT License
-    - https://github.com/jsdom/jsdom/blob/master/LICENSE.txt
-- @types/jsdom
-    - MIT
-    - https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/LICENSE
 - @types/react
     - MIT
     - https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/LICENSE
@@ -119,18 +107,33 @@ thx!!!
 - typescript
     - Apache License 2.0
     - https://github.com/microsoft/TypeScript/blob/main/LICENSE.txt
-- rehype-pretty-code
-    - MIT
-    - https://github.com/rehype-pretty/rehype-pretty-code/blob/master/LICENSE
 - shiki
     - MIT
     - https://github.com/shikijs/shiki/blob/main/LICENSE
 - pagefind
     - MIT
     - https://github.com/CloudCannon/pagefind/blob/main/LICENSE
+- github-slugger
+    - ISC license
+    - https://github.com/Flet/github-slugger/blob/master/LICENSE
+- hast-util-to-string
+    - MIT
+    - https://github.com/rehypejs/rehype-minify/blob/main/license
+- hast-util-whitespace
+    - MIT
+    - https://github.com/syntax-tree/hast-util-whitespace/blob/main/license
+- rehype-parse
+    - MIT
+    - https://github.com/rehypejs/rehype/blob/main/license
+- unist-util-visit
+    - MIT
+    - https://github.com/syntax-tree/unist-util-visit/blob/main/license
 - Koruri Regular
     - Apache License 2.0
     - https://github.com/Koruri/Koruri/blob/master/LICENSE
+- Kosugi Maru
+    - Apache License, Version 2.0
+    - https://fonts.google.com/specimen/Kosugi+Maru/license
 - google/material-design-icons
     - Apache License 2.0
     - https://github.com/google/material-design-icons/blob/master/LICENSE
