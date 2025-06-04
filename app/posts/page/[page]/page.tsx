@@ -1,8 +1,6 @@
 import { Metadata } from "next"
 import ContentFolderManager from "../../../../src/ContentFolderManager"
 import EnvironmentTool from "../../../../src/EnvironmentTool"
-import NextLinkButton from "../../../../components/NextLinkButton"
-import Button from "../../../../components/Button"
 import RoundedCornerList from "../../../../components/RoundedCornerList"
 import BlogListItem from "../../../../components/BlogListItem"
 import PageButtonGruop from "../../../../components/PageButtonGroup"
@@ -63,7 +61,6 @@ export default async function BlogListPage(props: PageProps) {
  */
 export async function generateStaticParams() {
     // async なので待つ。合計数がほしいので名前だけの配列で
-    const nameList = await ContentFolderManager.getBlogNamePageList(BLOG_SIZE_LIMIT)
-    // 1 ページ目から開始なので
-    return nameList.map((_, pageIndex) => ({ page: (pageIndex + 1).toString() }))
+    const { pageNumberList } = await ContentFolderManager.getBlogNamePagination(BLOG_SIZE_LIMIT)
+    return pageNumberList.map((pageNumber) => ({ page: pageNumber.toString() }))
 }

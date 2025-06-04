@@ -1,5 +1,4 @@
-import { createElement, ReactNode } from "react"
-import type { RootContent, Element } from "hast"
+import type { RootContent } from "hast"
 import { whitespace } from "hast-util-whitespace"
 import MarkdownParser from "../../src/MarkdownParser"
 

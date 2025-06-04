@@ -83,12 +83,12 @@ export async function generateStaticParams() {
     // タグの数だけ、ページングできるページを
     const tagNameList = await ContentFolderManager.getAllTagDataList()
     for (const tagName of tagNameList) {
-        const tagFilterdResult = await ContentFolderManager.getTagFilterBlogItemList(tagName.name, BLOG_SIZE_LIMIT)
+        const { pageNumberList } = await ContentFolderManager.getTagFilterBlogItemList(tagName.name, BLOG_SIZE_LIMIT)
         // 1 ページ目から開始なので
-        tagFilterdResult.pageList.forEach((_, pageIndex) => {
+        pageNumberList.forEach((pageNumber) => {
             dynamicRoutePathList.push({
                 tag: tagName.name,
-                page: (pageIndex + 1).toString()
+                page: pageNumber.toString()
             })
         })
     }

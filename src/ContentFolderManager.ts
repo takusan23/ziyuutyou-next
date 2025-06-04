@@ -3,9 +3,9 @@ import fs from "fs/promises"
 import MarkdownParser from "./MarkdownParser"
 import path from "path"
 import TagData from "./data/TagData"
-import BlogItemResult from "./data/BlogItemResult"
 import { NextJsCacheStore } from "./NextJsCacheStore"
 import MarkdownData from "./data/MarkdownData"
+import Pagination from "./data/Pagination"
 
 /**
  * content/posts フォルダにあるマークダウンファイルを取得したり、HTML パース結果を返すやつ。
@@ -56,8 +56,15 @@ class ContentFolderManager {
      * @param pageSize 1ページに何件表示するか
      * @returns ページ件数でまとめられた配列
      */
-    static async getBlogNamePageList(pageSize: number) {
-        return this.chunkedPage(await this.getBlogNameList(), pageSize)
+    static async getBlogNamePagination(pageSize: number) {
+        const nameList = await this.getBlogNameList()
+        const chunkedList = this.chunkedPage(nameList, pageSize)
+        const result: Pagination<string> = {
+            totalCount: nameList.length,
+            pageList: chunkedList,
+            pageNumberList: chunkedList.map((_, index) => index + 1)
+        }
+        return result
     }
 
     /**
@@ -70,7 +77,7 @@ class ContentFolderManager {
         // content/posts の中身を読み出す
         const blogList = await this.getItemList(this.POSTS_FOLDER_PATH, this.POSTS_BASE_URL)
         const chunkedList = this.chunkedPage(blogList, pageSize)
-        const result: BlogItemResult = {
+        const result: Pagination<BlogItem> = {
             totalCount: blogList.length,
             pageList: chunkedList,
             pageNumberList: chunkedList.map((_, index) => index + 1)
@@ -115,7 +122,7 @@ class ContentFolderManager {
         // フィルターにかけて
         const filteredList = blogList.filter((blog) => blog.tags.includes(tagName))
         const chunkedList = this.chunkedPage(filteredList, pageSize)
-        const result: BlogItemResult = {
+        const result: Pagination<BlogItem> = {
             totalCount: filteredList.length,
             pageList: chunkedList,
             pageNumberList: chunkedList.map((_, index) => index + 1)
