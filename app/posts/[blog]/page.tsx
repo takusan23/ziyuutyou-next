@@ -11,6 +11,11 @@ import EditIcon from "../../../public/icon/edit.svg"
 import ActivityPubShare from "../../../components/ActivityPubShare"
 import MarkdownRender from "../../../components/markdownrender/MarkdownRender"
 import Title from "../../../components/Title"
+import NextLinkButton from "../../../components/NextLinkButton"
+import ArrowBackIcon from "../../../public/icon/arrow_back.svg"
+
+/** 一度に取得する件数 */
+const BLOG_SIZE_LIMIT = 10
 
 /** 動的ルーティング */
 type PageProps = {
@@ -46,6 +51,7 @@ export default async function BlogDetailPage(props: PageProps) {
     const params = await props.params;
     // サーバー側でロードする
     const markdownData = await ContentFolderManager.getBlogItem(params.blog)
+    const backPostsPageNumber = await ContentFolderManager.findPostsPageNumber(markdownData.link, BLOG_SIZE_LIMIT)
 
     const ogpTitle = `${markdownData.title} - ${EnvironmentTool.SITE_NAME}`
     const ogpUrl = `${EnvironmentTool.BASE_URL}${markdownData.link}`
@@ -75,7 +81,15 @@ export default async function BlogDetailPage(props: PageProps) {
     return (
         <article className="max-w-6xl m-auto flex flex-col space-y-4">
 
+            <NextLinkButton
+                size="small"
+                variant="outlined"
+                href={`/posts/page/${backPostsPageNumber}/`}
+                startIcon={<ArrowBackIcon />}
+                text="記事一覧に戻る" />
+
             <Title title={markdownData.title} />
+
             <div>
                 <DateCountText
                     timeTagTimeFormat={dateTimeFormat}

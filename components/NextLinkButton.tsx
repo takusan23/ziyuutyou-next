@@ -12,7 +12,7 @@ export default function NextLinkButton({ href, text, startIcon, variant, isDisab
 
     return (
         <Link
-            className="flex items-center no-underline text-inherit"
+            className="flex items-center self-start no-underline text-inherit"
             href={href}
         >
             <Button

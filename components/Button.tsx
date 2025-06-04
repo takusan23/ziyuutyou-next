@@ -49,11 +49,12 @@ export default function Button({ text, startIcon, endIcon, variant, isDisabled, 
     let iconColorClassName = ''
     switch (nonNullVariant) {
         case "text":
+        case "outlined":
             iconColorClassName = 'fill-content-primary-light dark:fill-content-primary-dark'
-            break;
+            break
         case "contained":
             iconColorClassName = 'fill-[#ffffff]'
-            break;
+            break
     }
 
     // 角丸。デフォルトは 100%
@@ -123,7 +124,7 @@ export default function Button({ text, startIcon, endIcon, variant, isDisabled, 
                 )
             case 'outlined':
                 return (
-                    <button className={`border-2 border-content-primary-light text-content-text-light dark:text-content-text-dark cursor-pointer  ${roundedClassName} ${buttonAlpha}`}>
+                    <button className={`border-2 border-content-primary-light text-content-primary-light dark:text-content-primary-dark cursor-pointer  ${roundedClassName} ${buttonAlpha}`}>
                         {createButtonContent}
                     </button>
                 )

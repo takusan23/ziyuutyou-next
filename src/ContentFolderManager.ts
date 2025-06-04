@@ -150,6 +150,24 @@ class ContentFolderManager {
     }
 
     /**
+     * 記事の URL が、記事一覧の何ページ目にあるかを探す。
+     * 問題があれば 1。
+     * 
+     * @param blogUrl URL
+     * @param pageSize {@see getBlogItemList} と同じもの
+     * @returns 1 始まりのページ番号
+     */
+    static async findPostsPageNumber(blogUrl: string, pageSize: number) {
+        const { pageList } = await this.getBlogItemList(pageSize)
+        // 探す。index 0 なので、+1 する
+        const index = pageList
+            .map((blogPage, index) => ({ blogPage, index }))
+            .find((pair) => pair.blogPage.some((blog) => blog.link === blogUrl))
+            ?.index ?? 0
+        return index + 1
+    }
+
+    /**
      * 指定された数ごとに区切った配列にする。chunk
      * 
      * @param origin 区切りたい配列
