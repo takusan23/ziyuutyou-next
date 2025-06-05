@@ -1,5 +1,6 @@
 "use client"
 
+import { ThemeTool } from "../../src/ThemeTool"
 import useTheme from "./useTheme"
 import { useEffect } from "react"
 
@@ -39,7 +40,12 @@ export default function ApplyThemeToTailwindCss() {
 
     // カスタムフックの値変更を拾って Tailwind CSS のクラス指定する
     useEffect(() => {
-        const isDarkMode = theme === 'dark'
+        let isDarkMode = false
+        if (theme === 'system') {
+            isDarkMode = ThemeTool.getSystemTheme() === 'dark'
+        } else {
+            isDarkMode = theme === 'dark'
+        }
         setTailwindThemeAndStatusBarColor(isDarkMode)
     }, [theme])
 
