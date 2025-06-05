@@ -70,12 +70,22 @@ class ContentFolderManager {
     /**
      * 記事一覧を取得する
      * 
+     * @return BlogItem[]
+     */
+    static async getBlogItemList() {
+        // content/posts の中身を読み出す
+        return await this.getItemList(this.POSTS_FOLDER_PATH, this.POSTS_BASE_URL)
+    }
+
+    /**
+     * 記事一覧を取得する
+     * {@see getBlogItemList}と{@see chunkedPage}の合体版
+     * 
      * @param pageSize 1ページに何件表示するか
      * @returns 合計記事数と取得した記事配列をまとめたものが返ってきます
      */
-    static async getBlogItemList(pageSize: number) {
-        // content/posts の中身を読み出す
-        const blogList = await this.getItemList(this.POSTS_FOLDER_PATH, this.POSTS_BASE_URL)
+    static async getBlogItemPagination(pageSize: number) {
+        const blogList = await this.getBlogItemList()
         const chunkedList = this.chunkedPage(blogList, pageSize)
         const result: Pagination<BlogItem> = {
             totalCount: blogList.length,
@@ -154,17 +164,48 @@ class ContentFolderManager {
      * 問題があれば 1。
      * 
      * @param blogUrl URL
-     * @param pageSize {@see getBlogItemList} と同じもの
+     * @param pageSize {@see getBlogItemPagination} と同じもの
      * @returns 1 始まりのページ番号
      */
     static async findPostsPageNumber(blogUrl: string, pageSize: number) {
-        const { pageList } = await this.getBlogItemList(pageSize)
+        const { pageList } = await this.getBlogItemPagination(pageSize)
         // 探す。index 0 なので、+1 する
         const index = pageList
             .map((blogPage, index) => ({ blogPage, index }))
             .find((pair) => pair.blogPage.some((blog) => blog.link === blogUrl))
             ?.index ?? 0
         return index + 1
+    }
+
+    /**
+     * 関連する記事を取得する
+     * タグを基準に、新しい順で。
+     * 
+     * @param excludeUrl 除外する URL。自分のこと。
+     * @param tagNameList タグの配列
+     * @param maxSize 最大件数
+     * @returns BlogItem[]
+     */
+    static async findRelatedBlogItemList(excludeUrl: string, tagNameList: string[], maxSize: number) {
+        const blogList = await this.getBlogItemList()
+        // 関連しているかの判断は、引数に渡したタグが、何個一致しているか
+        // 記事は新しい順
+        const relatedBlogItemList = blogList
+            // タグ無いとかは弾いておく
+            .filter((blogItem) => blogItem.link !== excludeUrl && blogItem.tags.length !== 0)
+            // 関係ない記事が出そうなので、2つ以上一致しているとき
+            // 一旦件数と Pair する
+            .map((blogItem) => {
+                const containsTagCount = blogItem.tags.filter((tagName) => tagNameList.includes(tagName)).length
+                return { containsTagCount, blogItem }
+            })
+            .filter((pair) => 2 <= pair.containsTagCount)
+            // 一致している順
+            .sort((a, b) => b.containsTagCount - a.containsTagCount)
+            // 返すときは BlogItem[] に戻す
+            .map((pair) => pair.blogItem)
+            .splice(0, maxSize)
+        return relatedBlogItemList
     }
 
     /**

@@ -25,7 +25,7 @@ export default async function BlogListPage(props: PageProps) {
     // posts/page/{ここ} を取得
     const pageParam = Number(params.page)
     // 記事一覧を取得する。async なので待つ
-    const { pageList, pageNumberList } = await ContentFolderManager.getBlogItemList(BLOG_SIZE_LIMIT)
+    const { pageList, pageNumberList } = await ContentFolderManager.getBlogItemPagination(BLOG_SIZE_LIMIT)
     // -1 してるのは 1 ページ目は skip=0 にしたいため
     const blogList = pageList[pageParam - 1]
 

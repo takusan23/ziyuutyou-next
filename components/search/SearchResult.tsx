@@ -1,35 +1,13 @@
 import { use } from "react"
-import Link from "next/link"
 import RoundedCornerList from "../RoundedCornerList"
 import { PagefindSearchFragment } from "../../src/data/PagefindData"
 import SearchLogoMessage from "../../app/search/SearchLogoMessage"
-
-/** SearchResultItem へ渡すデータ */
-type SearchResultItemProps = {
-    /** 検索結果 */
-    fragment: PagefindSearchFragment
-}
+import BlogListItem from "../BlogListItem"
 
 /** SearchResult へ渡すデータ */
 type SearchResultProps = {
     /** 検索結果 */
     resultListPromise: Promise<PagefindSearchFragment[]>
-}
-
-/** 検索結果一覧の各コンポーネント */
-function SearchResultItem({ fragment }: SearchResultItemProps) {
-    return (
-        <div className="flex flex-col p-5">
-            <Link href={fragment.url}>
-                <h2 className="text-2xl underline text-content-primary-light dark:text-content-primary-dark">
-                    {fragment.meta['title']}
-                </h2>
-            </Link>
-            <p className="py-2 text-sm text-content-primary-light dark:text-content-primary-dark">
-                {fragment.content}
-            </p>
-        </div>
-    )
 }
 
 /** 検索結果を表示する */
@@ -52,7 +30,12 @@ export default function SearchResult({ resultListPromise }: SearchResultProps) {
                         className={`bg-container-primary-light dark:bg-container-primary-dark ${className}`}
                         key={fragment.url}
                     >
-                        <SearchResultItem fragment={fragment} />
+                        <BlogListItem
+                            blogItem={{
+                                link: fragment.url,
+                                title: fragment.meta['title'],
+                                description: fragment.content
+                            }} />
                     </div>
                 )}
             />

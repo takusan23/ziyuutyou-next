@@ -71,27 +71,32 @@ export default function PagefindSearch() {
     const promiseObject = useMemo(() => executeSearchFromQueryParams(searchWord), [searchWord])
 
     return (
-        <div className="max-w-6xl m-auto flex flex-col w-full space-y-6">
+        <div className="flex flex-col max-w-6xl m-auto w-full space-y-6">
 
             <Title title="記事検索" />
 
-            <SearchForm searchWord={searchWord} />
+            {/* 真ん中にする */}
+            <div className="flex flex-col items-center space-y-6">
 
-            {
-                !searchWord
-                    // 検索ワードがない
-                    ? <SearchLogoMessage message="検索ワードを入力してください" />
-                    // React 19 の use() と <Suspense> を使う
-                    : (
-                        <Suspense fallback={<CircleLoading />}>
-                            <SearchResult resultListPromise={promiseObject} />
-                        </Suspense>
-                    )
-            }
+                <SearchForm searchWord={searchWord} />
 
-            <p className="text-content-primary-light dark:text-content-primary-dark">
-                pagefind ライブラリを利用した検索機能です。10 件まで表示されます。
-            </p>
+                {
+                    !searchWord
+                        // 検索ワードがない
+                        ? <SearchLogoMessage message="検索ワードを入力してください" />
+                        // React 19 の use() と <Suspense> を使う
+                        : (
+                            <Suspense fallback={<CircleLoading />}>
+                                <SearchResult resultListPromise={promiseObject} />
+                            </Suspense>
+                        )
+                }
+
+                <p className="text-content-primary-light dark:text-content-primary-dark">
+                    pagefind ライブラリを利用した検索機能です。10 件まで表示されます。
+                </p>
+
+            </div>
         </div >
     )
 }
