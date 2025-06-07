@@ -7,6 +7,7 @@ import EnvironmentTool from "../../src/EnvironmentTool"
 import ShikiCodeBlockRender from "./ShikiCodeBlockRender"
 import HeadingElement from "./HeadingRender"
 import ClientScriptRender from "./ClientScriptRender"
+import LinkCardRender from "./LinkCardRender"
 
 /**
  * 自前で描画するタグ <HtmlElementRender />
@@ -90,20 +91,26 @@ function HtmlElementRender({ element }: HtmlElementRenderProps) {
     // 不具合を見つけやすくするため、console.log しておく
     let isFallback = false
 
-    // そもそも親が描画できない
+    // そもそも親（自分）が描画できない
     if (ReBuildHtmlElementTagNames.includes(element.tagName as any) === false) {
         console.log(`親のタグが描画できないため unified へフォールバックします。${element.tagName}`)
         isFallback = true
     }
 
     // 子の中に自分で描画できない要素がある
-    if (element.children.filter((node) => node.type === "element").some((element) => ReBuildHtmlElementTagNames.includes(element.tagName as any) === false)) {
+    // todo いらんかも？
+    if (
+        element.children
+            .filter((node) => node.type === "element")
+            .some((element) => MarkdownParser.findNestedElement(element, [...ReBuildHtmlElementTagNames]).length === 0)
+    ) {
         const childTagNameList = element.children.filter((node) => node.type === "element").map((element) => element.tagName)
         console.log(`子に描画できないタグがあるため unified へフォールバックします。${childTagNameList}`)
         isFallback = true
     }
 
     // 子に raw（Markdown に HTML）を持つ
+    // HTML を div に dangerouslySetInnerHTML する
     // <p> の中で <div> を使うことが出来ないため
     if (element.children.some((node) => node.type === "raw")) {
         console.log(`直接書いた HTML を子に持つため unified へフォールバックします`)
@@ -136,9 +143,22 @@ function HtmlElementRender({ element }: HtmlElementRenderProps) {
         case "br":
             return <br />
 
-        // 文字系
+        // unified rehype が各要素を <p> でラップしようとする
+        // https://github.com/rehypejs/rehype/issues/160
+        // が、p の子に div はだめ → <p> <div/> <p>
+        // --- 閑話休題 ---
+        // div 作ってんのが、ここの switch と、
+        // <a> タグのリンクカード、<pre> のコードブロック
         case "p":
-            return <p className="my-4 text-content-text-light dark:text-content-text-dark">{childrenHtml}</p>
+            const pTagHasNotContainsElement = 1 <= MarkdownParser.findNestedElement(element, ["a", "pre"]).length
+            if (pTagHasNotContainsElement) {
+                console.log('<p> タグに <div> を入れることが出来ないため、<div> に差し替えました。')
+            }
+            return pTagHasNotContainsElement
+                ? <div className="my-4 text-content-text-light dark:text-content-text-dark">{childrenHtml}</div>
+                : <p className="my-4 text-content-text-light dark:text-content-text-dark">{childrenHtml}</p>
+
+        // 文字
         case "span":
             return <span>{childrenHtml}</span>
         case "em":
@@ -167,12 +187,7 @@ function HtmlElementRender({ element }: HtmlElementRenderProps) {
         case "a":
             const href = element.properties['href']?.toString()
             const anchorId = element.properties['id']?.toString()
-            if (href?.startsWith(EnvironmentTool.BASE_URL) || href?.startsWith('http') === false) {
-                return <Link id={anchorId} className="text-[revert] underline" href={href}>{childrenHtml}</Link>
-            } else {
-                return <a id={anchorId} className="text-[revert] underline" href={href}>{childrenHtml}</a>
-            }
-
+            return <LinkCardRender href={href} id={anchorId} />
 
         // 箇条書き
         case "ul":
@@ -220,7 +235,7 @@ function HtmlElementRender({ element }: HtmlElementRenderProps) {
         // 単発コード
         // 複数行は pre で全部やるので、ここに来ない
         case "code":
-            return <code className="px-2 font-(family-name:--koruri-font) rounded-md bg-gray-200">{childrenHtml}</code>
+            return <code className="px-2 font-(family-name:--koruri-font) rounded-md text-content-text-light dark:text-content-text-dark bg-gray-200 dark:bg-gray-800">{childrenHtml}</code>
 
         // script
         // noscript もついでに

@@ -81,18 +81,20 @@ class MarkdownParser {
     }
 
     /**
-     * h1,h2... タグを捜索する
-     * @param element {@see parseMarkdownToHtmlAst} 参照
+     * タグを探す
+     * ネストされていれば再帰的に探す
+     * 
+     * @param tagName タグ名。h1 など
+     * @return Element[]
      */
-    static findAllHeading(element: Root) {
-        const headingElementList: Element[] = []
-        const headingTagName = ["h1", "h2", "h3", "h4", "h5", "h6"]
+    static findNestedElement(element: Root | Element, tagName: string[]) {
+        const elementList: Element[] = []
         visit(element, (node) => {
-            if (node.type === "element" && headingTagName.includes(node.tagName)) {
-                headingElementList.push(node)
+            if (node.type === "element" && tagName.includes(node.tagName)) {
+                elementList.push(node)
             }
         })
-        return headingElementList
+        return elementList
     }
 
     /**
@@ -114,6 +116,12 @@ class MarkdownParser {
         return hast
     }
 
+    /**
+     * 文字列の HTML から unified HTML AST を作成する
+     * 
+     * @param html HTML
+     * @returns 要素の配列
+     */
     static parseHtmlAstFromHtmlString(html: string) {
         // fragment: true で html/head/body が生成されないように
         const rephypeProsessor = unified()

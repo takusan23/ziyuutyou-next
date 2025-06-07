@@ -16,6 +16,9 @@ type RelatedBlogListProps = {
 export default async function RelatedBlogList({ url, tags, maxSize }: RelatedBlogListProps) {
     const relatedBlogList = await ContentFolderManager.findRelatedBlogItemList(url, tags, maxSize)
 
+    // 空っぽなら早期 return
+    if (relatedBlogList.length === 0) return <></>
+
     return (
         <div className="flex-1 flex flex-col space-y-2">
             <p className="py-3 text-content-primary-light dark:text-content-primary-dark text-2xl">

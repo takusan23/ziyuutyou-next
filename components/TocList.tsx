@@ -58,7 +58,7 @@ export function ExpandTocList({ markdown }: TocListProps) {
             <details className="group" open={false}>
 
                 {/* 展開してない時に出る部分 */}
-                <summary className="p-4 list-none [&::-webkit-details-marker]:hidden">
+                <summary className="p-4 list-none [&::-webkit-details-marker]:hidden cursor-pointer">
                     <div className="flex flex-row items-center group-open:border-b-[1px] border-content-primary-light dark:border-content-primary-dark">
                         <p className="text-lg text-content-primary-light dark:text-content-primary-dark grow">
                             目次
@@ -97,7 +97,7 @@ export function LargeTocList({ markdown }: TocListProps) {
 
 async function TocList({ markdown }: TocListProps) {
     const mdast = await MarkdownParser.parseMarkdownToHtmlAst(markdown)
-    const headingList = MarkdownParser.findAllHeading(mdast)
+    const headingList = MarkdownParser.findNestedElement(mdast, ["h1", "h2", "h3", "h4", "h5", "h6"])
 
     // 目次の階層をわかりやすくするため、h1 ~ h6 に対応した className を出す
     const calcPaddingLeft = (index: number) => {
