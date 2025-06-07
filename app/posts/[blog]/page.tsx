@@ -15,6 +15,7 @@ import NextLinkButton from "../../../components/NextLinkButton"
 import ArrowBackIcon from "../../../public/icon/arrow_back.svg"
 import RoundedCornerList from "../../../components/RoundedCornerList"
 import BlogListItem from "../../../components/BlogListItem"
+import PrevNextNavigationCard from "../../../components/PrevNextNavigationCard"
 
 /** 一度に取得する件数 */
 const BLOG_SIZE_LIMIT = 10
@@ -58,6 +59,7 @@ export default async function BlogDetailPage(props: PageProps) {
     const markdownData = await ContentFolderManager.getBlogItem(params.blog)
     const backPostsPageNumber = await ContentFolderManager.findPostsPageNumber(markdownData.link, BLOG_SIZE_LIMIT)
     const relatedBlogList = await ContentFolderManager.findRelatedBlogItemList(markdownData.link, markdownData.tags, MAX_RELATED_SIZE)
+    const { next, prev } = await ContentFolderManager.getPrevNextBlogItem(markdownData.link)
 
     const ogpTitle = `${markdownData.title} - ${EnvironmentTool.SITE_NAME}`
     const ogpUrl = `${EnvironmentTool.BASE_URL}${markdownData.link}`
@@ -119,24 +121,51 @@ export default async function BlogDetailPage(props: PageProps) {
                 </RoundedCornerBox>
             </TocListLayout>
 
-            {/* 関連記事。回遊しやすいように */}
-            <p className="py-3 text-content-primary-light dark:text-content-primary-dark text-2xl">関連記事</p>
-            <RoundedCornerList
-                list={relatedBlogList}
-                content={(className, blogItem) => (
-                    <div
-                        className={`bg-container-primary-light dark:bg-container-primary-dark ${className}`}
-                        key={blogItem.link}
-                    >
-                        <BlogListItem
-                            blogItem={{
-                                link: blogItem.link,
-                                title: blogItem.title,
-                                createdAt: blogItem.createdAt
-                            }} />
-                    </div>
-                )}
-            />
+            {/* 前後の記事と関連記事。回遊しやすいように */}
+            <div className="flex flex-row space-x-2">
+
+                <div className="flex-1 flex flex-col space-y-2">
+                    <p className="py-3 text-content-primary-light dark:text-content-primary-dark text-2xl">
+                        ごあんない
+                    </p>
+                    {
+                        next && <PrevNextNavigationCard
+                            url={next.link}
+                            title={next.title}
+                            subTitle={next.createdAt}
+                            turn="left" />
+                    }
+                    {
+                        prev && <PrevNextNavigationCard
+                            url={prev.link}
+                            title={prev.title}
+                            subTitle={prev.createdAt}
+                            turn="right" />
+                    }
+                </div>
+
+                <div className="flex-1">
+                    <p className="py-3 text-content-primary-light dark:text-content-primary-dark text-2xl">
+                        関連記事
+                    </p>
+                    <RoundedCornerList
+                        list={relatedBlogList}
+                        content={(className, blogItem) => (
+                            <div
+                                className={`bg-container-primary-light dark:bg-container-primary-dark ${className}`}
+                                key={blogItem.link}
+                            >
+                                <BlogListItem
+                                    blogItem={{
+                                        link: blogItem.link,
+                                        title: blogItem.title,
+                                        createdAt: blogItem.createdAt
+                                    }} />
+                            </div>
+                        )}
+                    />
+                </div>
+            </div>
         </article>
     )
 }

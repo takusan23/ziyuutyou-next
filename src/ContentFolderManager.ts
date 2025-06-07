@@ -6,6 +6,7 @@ import TagData from "./data/TagData"
 import { NextJsCacheStore } from "./NextJsCacheStore"
 import MarkdownData from "./data/MarkdownData"
 import Pagination from "./data/Pagination"
+import PrevNextBlogItemData from "./data/PrevNextBlogItemData"
 
 /**
  * content/posts フォルダにあるマークダウンファイルを取得したり、HTML パース結果を返すやつ。
@@ -206,6 +207,23 @@ class ContentFolderManager {
             .map((pair) => pair.blogItem)
             .splice(0, maxSize)
         return relatedBlogItemList
+    }
+
+    /**
+     * 指定した記事の前後の記事を取得する
+     * 次・前の記事のリンクを置く用
+     * 
+     * @param blogUrl 指定した記事
+     * @returns PrevNextBlogItemData
+     */
+    static async getPrevNextBlogItem(blogUrl: string) {
+        const blogList = await this.getBlogItemList()
+        const currentIndex = blogList.findIndex((blogItem) => blogItem.link === blogUrl)
+        const result: PrevNextBlogItemData = {
+            next: blogList?.[currentIndex - 1],
+            prev: blogList?.[currentIndex + 1]
+        }
+        return result
     }
 
     /**
