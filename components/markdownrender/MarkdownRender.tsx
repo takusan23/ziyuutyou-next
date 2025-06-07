@@ -154,8 +154,12 @@ function HtmlElementRender({ element }: HtmlElementRenderProps) {
 
         // img
         // 画像読み込みを遅延させたい
+        // 押したら別タブで画像を開きたい
         case "img":
-            return <img className="max-w-[80%]" loading="lazy" src={element.properties['src']?.toString()} alt={element.properties['alt']?.toString()} />
+            const imgSrc = element.properties['src']?.toString()
+            return <a href={imgSrc} target="_blank" className="inline-block max-w-[80%]">
+                <img loading="lazy" src={element.properties['src']?.toString()} alt={element.properties['alt']?.toString()} />
+            </a>
 
         // a
         // サイト内の遷移の場合は next/link にする
