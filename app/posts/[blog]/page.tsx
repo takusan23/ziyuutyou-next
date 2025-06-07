@@ -13,9 +13,8 @@ import MarkdownRender from "../../../components/markdownrender/MarkdownRender"
 import Title from "../../../components/Title"
 import NextLinkButton from "../../../components/NextLinkButton"
 import ArrowBackIcon from "../../../public/icon/arrow_back.svg"
-import RoundedCornerList from "../../../components/RoundedCornerList"
-import BlogListItem from "../../../components/BlogListItem"
-import PrevNextNavigationCard from "../../../components/PrevNextNavigationCard"
+import PrevNextNavigation from "../../../components/PrevNextNavigation"
+import RelatedBlogList from "../../../components/RelatedBlogList"
 
 /** 一度に取得する件数 */
 const BLOG_SIZE_LIMIT = 10
@@ -58,8 +57,6 @@ export default async function BlogDetailPage(props: PageProps) {
     // サーバー側で（ブラウザじゃなく Node.js ）ロードする
     const markdownData = await ContentFolderManager.getBlogItem(params.blog)
     const backPostsPageNumber = await ContentFolderManager.findPostsPageNumber(markdownData.link, BLOG_SIZE_LIMIT)
-    const relatedBlogList = await ContentFolderManager.findRelatedBlogItemList(markdownData.link, markdownData.tags, MAX_RELATED_SIZE)
-    const { next, prev } = await ContentFolderManager.getPrevNextBlogItem(markdownData.link)
 
     const ogpTitle = `${markdownData.title} - ${EnvironmentTool.SITE_NAME}`
     const ogpUrl = `${EnvironmentTool.BASE_URL}${markdownData.link}`
@@ -122,49 +119,13 @@ export default async function BlogDetailPage(props: PageProps) {
             </TocListLayout>
 
             {/* 前後の記事と関連記事。回遊しやすいように */}
-            <div className="flex flex-row space-x-2">
-
-                <div className="flex-1 flex flex-col space-y-2">
-                    <p className="py-3 text-content-primary-light dark:text-content-primary-dark text-2xl">
-                        ごあんない
-                    </p>
-                    {
-                        next && <PrevNextNavigationCard
-                            url={next.link}
-                            title={next.title}
-                            subTitle={next.createdAt}
-                            turn="left" />
-                    }
-                    {
-                        prev && <PrevNextNavigationCard
-                            url={prev.link}
-                            title={prev.title}
-                            subTitle={prev.createdAt}
-                            turn="right" />
-                    }
-                </div>
-
-                <div className="flex-1">
-                    <p className="py-3 text-content-primary-light dark:text-content-primary-dark text-2xl">
-                        関連記事
-                    </p>
-                    <RoundedCornerList
-                        list={relatedBlogList}
-                        content={(className, blogItem) => (
-                            <div
-                                className={`bg-container-primary-light dark:bg-container-primary-dark ${className}`}
-                                key={blogItem.link}
-                            >
-                                <BlogListItem
-                                    blogItem={{
-                                        link: blogItem.link,
-                                        title: blogItem.title,
-                                        createdAt: blogItem.createdAt
-                                    }} />
-                            </div>
-                        )}
-                    />
-                </div>
+            <div className="flex space-x-2 space-y-4 flex-col lg:flex-row">
+                <PrevNextNavigation
+                    url={markdownData.link} />
+                <RelatedBlogList
+                    url={markdownData.link}
+                    tags={markdownData.tags}
+                    maxSize={MAX_RELATED_SIZE} />
             </div>
         </article>
     )
