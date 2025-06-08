@@ -17,7 +17,13 @@ class LinkCardTool {
         const baseUrl = `${urlObject.protocol}//${urlObject.host}/`
 
         // todo cache
-        const html = await fetch(url).then((res) => res.text())
+        let html: string
+        try {
+            html = await fetch(url).then((res) => res.text())
+        } catch (e) {
+            // 失敗したらすべての値が undefined になるよう
+            return {}
+        }
 
         // 王道は jsdom だと思うが、unified の HTML パーサーを持っているので
         const hast = MarkdownParser.parseHtmlAstFromHtmlString(html)
