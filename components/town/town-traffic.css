@@ -1,0 +1,40 @@
+@keyframes car_slide {
+    from {
+        transform: translate(-20px, 0px);
+    }
+
+    to {
+        transform: translate(20px, 0px);
+    }
+}
+
+@keyframes train_bar {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(-0.15turn);
+    }
+}
+
+#icon_parent>svg {
+    width: 80px;
+    height: 80px;
+    transform: rotate(0.75turn);
+}
+
+#g861,
+#g866 {
+    animation: car_slide 10s linear infinite normal;
+}
+
+#g33305 {
+    animation: car_slide 10s linear infinite normal;
+}
+
+#path33340-8-9-9 {
+    display: inline-block;
+    transform-origin: 10px 8px;
+    animation: train_bar 10s ease-in-out infinite alternate;
+}

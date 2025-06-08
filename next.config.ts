@@ -7,14 +7,54 @@ const nextConfig: NextConfig = {
         // SVG をコンポーネントにできる
         config.module.rules.push({
             test: /\.svg$/,
-            use: ['@svgr/webpack'],
+            use: [
+                {
+                    loader: '@svgr/webpack',
+                    options: {
+                        svgoConfig: {
+                            plugins: [
+                                {
+                                    name: 'preset-default',
+                                    params: {
+                                        overrides: {
+                                            collapseGroups: false,
+                                            cleanupIds: false
+                                        },
+                                    },
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
         })
         return config
     },
+    // https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack
+    // turbopack 用 svgr 設定
     turbopack: {
         rules: {
             '*.svg': {
-                loaders: ['@svgr/webpack'],
+                loaders: [
+                    {
+                        loader: '@svgr/webpack',
+                        options: {
+                            svgoConfig: {
+                                plugins: [
+                                    {
+                                        name: 'preset-default',
+                                        params: {
+                                            overrides: {
+                                                collapseGroups: false,
+                                                cleanupIds: false
+                                            },
+                                        },
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ],
                 as: '*.js',
             }
         }
