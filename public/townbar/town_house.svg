@@ -43,13 +43,19 @@
        id="g21339"
        transform="rotate(-90,10.6776,10.690067)">
       <path
-         style="color:#000000;fill:#ffffff;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:none;paint-order:stroke fill markers"
-         d="m 16.431641,3.8808594 a 0.26460996,0.26460996 0 0 0 -0.21875,0.1132812 l -1.386719,2.0039063 a 0.26460996,0.26460996 0 0 0 0.216797,0.4160156 h 0.998047 v 1.7089844 c 0,0.1865244 0.157226,0.34375 0.34375,0.34375 h 2.867187 c 0.186478,0 0.34375,-0.1573467 0.34375,-0.34375 V 6.4140625 H 20.59375 A 0.26460996,0.26460996 0 0 0 20.810547,5.9980469 L 19.423828,3.9941406 a 0.26460996,0.26460996 0 0 0 -0.21875,-0.1132812 z m 0.136718,0.5292968 h 2.498047 l 1.021485,1.4746094 h -0.75586 A 0.26460996,0.26460996 0 0 0 19.066406,6.1484375 V 7.9375 H 16.570312 V 6.1484375 A 0.26460996,0.26460996 0 0 0 16.304687,5.8847656 h -0.755859 z"
-         id="rect984-8" />
-      <path
-         style="color:#000000;fill:#ffffff;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:none;paint-order:stroke fill markers"
-         d="m 17.630859,6.3222656 c -0.185697,0 -0.34375,0.1580734 -0.34375,0.34375 v 0.3730469 c 0,0.1856766 0.158053,0.34375 0.34375,0.34375 h 0.375 c 0.185698,0 0.34375,-0.1580734 0.34375,-0.34375 V 6.6660156 c 0,-0.1856766 -0.158052,-0.34375 -0.34375,-0.34375 z m 0.185547,0.5292969 h 0.0039 v 0.00195 h -0.0039 z"
-         id="rect2038-8-4-3" />
+         id="rect984-8"
+         style="fill:none;fill-opacity:0;stroke:#ffffff;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+         d="m 16.430699,4.1450818 -1.387473,2.0038965 h 1.261904 v 1.9740399 c 0,0.043692 0.03538,0.079065 0.07906,0.079065 h 2.867963 c 0.0437,0 0.07905,-0.035373 0.07905,-0.079065 V 6.1489783 h 1.261904 L 19.205649,4.1450818 Z"
+         sodipodi:nodetypes="cccsssscccc" />
+      <rect
+         style="fill:none;fill-opacity:0;stroke:#ffffff;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="rect2038-8-4-3"
+         width="0.53201866"
+         height="0.53203338"
+         x="17.552166"
+         y="6.5865316"
+         rx="0.078864031"
+         ry="0.078866199" />
     </g>
     <g
        id="g21331"

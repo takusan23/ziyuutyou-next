@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="32"
+   height="80"
+   viewBox="0 0 8.4666664 21.166668"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="town_store.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#00ffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="1"
+     inkscape:pagecheckerboard="true"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="8"
+     inkscape:cx="31.625"
+     inkscape:cy="35.1875"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g25777"
+       transform="rotate(-90,10.588096,11.227096)">
+      <rect
+         style="fill:none;fill-opacity:0;stroke:#ffffff;stroke-width:0.529;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         id="rect21384"
+         width="8.1383572"
+         height="1.2394624"
+         x="11.846182"
+         y="3.8119316"
+         rx="0.084970392"
+         ry="0.078866199" />
+      <path
+         style="fill:none;fill-opacity:0;stroke:#ffffff;stroke-width:0.529;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+         d="M 12.536072,8.1998073 V 5.1302601 c 0,-0.043692 0.03517,-0.078866 0.07887,-0.078866 h 6.600845 c 0.04369,0 0.07887,0.035174 0.07887,0.078866 v 3.069547 l -3.988461,1e-7 V 6.7789791 c 0,-0.043692 -0.03517,-0.078866 -0.07887,-0.078866 h -1.338978 c -0.04369,0 -0.07887,0.035174 -0.07887,0.078866 V 8.199807 Z"
+         id="path22250"
+         sodipodi:nodetypes="cssssccsssscc" />
+    </g>
+    <path
+       id="rect22905"
+       style="fill:none;fill-opacity:0;stroke:#ffffff;stroke-width:0.529;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       d="m 0.9035,12.818609 c 0,0.0437 0.035373,0.07908 0.079065,0.07908 h 1.9233967 c 0.043692,0 0.079065,-0.03538 0.079065,-0.07908 V 10.89477 c 0,-0.0437 -0.035373,-0.07908 -0.079065,-0.07908 H 0.982565 c -0.043692,0 -0.079065,0.03538 -0.079065,0.07908 z M 3.1359219,11.857192 H 7.527385 Z"
+       sodipodi:nodetypes="sssssssssccc" />
+    <path
+       id="rect23976"
+       style="fill:none;fill-opacity:0;stroke:#ffffff;stroke-width:0.529;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       d="m 4.5777038,18.041295 c 0,0.04369 0.035373,0.07908 0.079065,0.07906 l 1.1736761,-2.91e-4 v 1.136881 c 0,0.04369 0.034856,0.07906 0.078548,0.07906 h 0.9880534 c 0.043692,0 0.079065,-0.03537 0.079065,-0.07906 v -4.297412 c 0,-0.04369 -0.035373,-0.07855 -0.079065,-0.07855 H 5.9089929 c -0.043692,0 -0.078548,0.03486 -0.078548,0.07855 v 1.137398 l -1.1736761,2.91e-4 c -0.043692,1.1e-5 -0.079065,0.03537 -0.079065,0.07906 z"
+       sodipodi:nodetypes="sscsssssssscsss" />
+    <g
+       id="g25767"
+       transform="matrix(0,-1.0000346,1,0,0.22925198,21.815355)"
+       style="stroke-width:0.999972">
+      <circle
+         style="fill:none;fill-opacity:0;stroke:#ffffff;stroke-width:0.528991;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         id="path25661"
+         cx="3.3610351"
+         cy="7.0652018"
+         r="0.26871744" />
+      <circle
+         style="fill:none;fill-opacity:0;stroke:#ffffff;stroke-width:0.528991;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         id="path25661-5"
+         cx="6.0523438"
+         cy="7.0652018"
+         r="0.26871744" />
+    </g>
+  </g>
+</svg>
