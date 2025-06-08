@@ -72,7 +72,7 @@ export default function ResponsiveLayout({ navigationDrawer, title, children }: 
                     </div>
                 </div>
                 {/* ページ切り替え */}
-                <div className="p-4">
+                <div>
                     {children}
                 </div>
             </main>

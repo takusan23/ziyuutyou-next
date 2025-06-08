@@ -18,10 +18,10 @@
     }
 }
 
+/* それぞれの svg。svg 回転しているので注意 */
 #icon_parent>svg {
-    width: 80px;
+    width: 40px;
     height: 80px;
-    transform: rotate(0.75turn);
 }
 
 #g861,

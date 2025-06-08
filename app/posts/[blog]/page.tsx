@@ -15,7 +15,7 @@ import NextLinkButton from "../../../components/NextLinkButton"
 import ArrowBackIcon from "../../../public/icon/arrow_back.svg"
 import PrevNextNavigation from "../../../components/PrevNextNavigation"
 import RelatedBlogList from "../../../components/RelatedBlogList"
-import TownBar from "../../../components/town/TownTraffic"
+import TownBar from "../../../components/townbar/TownBar"
 
 /** 一度に取得する件数 */
 const BLOG_SIZE_LIMIT = 10
@@ -86,7 +86,7 @@ export default async function BlogDetailPage(props: PageProps) {
     // max-w-6xl m-auto で横幅上限+真ん中
     return (
         <div className="flex flex-row">
-            <article className="flex flex-col max-w-6xl m-auto space-y-4">
+            <article className="flex flex-col p-4 max-w-6xl m-auto space-y-4">
 
                 <NextLinkButton
                     size="small"
@@ -131,7 +131,7 @@ export default async function BlogDetailPage(props: PageProps) {
                 </div>
             </article>
 
-            <div className="hidden xl:flex">
+            <div className="hidden 2xl:flex">
                 <TownBar />
             </div>
         </div>

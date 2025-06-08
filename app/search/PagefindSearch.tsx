@@ -71,7 +71,7 @@ export default function PagefindSearch() {
     const promiseObject = useMemo(() => executeSearchFromQueryParams(searchWord), [searchWord])
 
     return (
-        <div className="flex flex-col max-w-6xl m-auto w-full space-y-6">
+        <div className="flex flex-col p-4 max-w-6xl m-auto w-full space-y-6">
 
             <Title title="記事検索" />
 

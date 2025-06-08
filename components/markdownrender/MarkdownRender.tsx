@@ -194,7 +194,7 @@ function HtmlElementRender({ element }: HtmlElementRenderProps) {
             return <ul className="list-disc m-[revert] p-[revert]">{childrenHtml}</ul>
         case "li":
             const liId = element.properties['id']?.toString()
-            return <li id={liId}>{childrenHtml}</li>
+            return <li id={liId} className="text-content-text-light dark:text-content-text-dark">{childrenHtml}</li>
         case "ol":
             return <ol>{childrenHtml}</ol>
 

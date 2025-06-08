@@ -30,7 +30,7 @@ export default async function BlogListPage(props: PageProps) {
     const blogList = pageList[pageParam - 1]
 
     return (
-        <div className="max-w-6xl m-auto space-y-4 flex flex-col">
+        <div className="p-4 max-w-6xl m-auto space-y-4 flex flex-col">
 
             <Title title="記事一覧" />
 

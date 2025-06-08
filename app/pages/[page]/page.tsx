@@ -68,7 +68,7 @@ export default async function PageDetailPage(props: PageProps) {
 
     // max-w-6xl m-auto で横幅上限+真ん中
     return (
-        <article className="max-w-6xl m-auto flex flex-col space-y-4">
+        <article className="p-4 max-w-6xl m-auto flex flex-col space-y-4">
 
             <Title title={markdownData.title} />
 

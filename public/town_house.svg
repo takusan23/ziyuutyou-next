@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="80"
-   height="32"
-   viewBox="0 0 21.166666 8.4666671"
+   width="32"
+   height="80"
+   viewBox="0 0 8.4666668 21.166667"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
@@ -24,9 +24,9 @@
      inkscape:document-units="mm"
      showgrid="false"
      units="px"
-     inkscape:zoom="11.313709"
-     inkscape:cx="30.140426"
-     inkscape:cy="13.390835"
+     inkscape:zoom="5.6568545"
+     inkscape:cx="19.091882"
+     inkscape:cy="40.216696"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="-8"
@@ -41,7 +41,7 @@
      id="layer1">
     <g
        id="g21339"
-       transform="translate(-0.20113265)">
+       transform="rotate(-90,10.6776,10.690067)">
       <path
          id="rect984-8"
          style="fill:none;fill-opacity:0;stroke:#ffffff;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
@@ -59,7 +59,7 @@
     </g>
     <g
        id="g21331"
-       transform="translate(-0.20113265,0.07808368)">
+       transform="rotate(-90,10.716641,10.651025)">
       <rect
          style="fill:none;fill-opacity:0;stroke:#ffffff;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
          id="rect2038"
@@ -131,7 +131,7 @@
     </g>
     <g
        id="g21335"
-       transform="translate(0.03345918,0.13586917)">
+       transform="rotate(-90,10.628238,10.504836)">
       <rect
          style="fill:none;fill-opacity:0;stroke:#ffffff;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
          id="rect2038-8-4-3-6"
