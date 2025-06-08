@@ -1,4 +1,10 @@
-@keyframes car_slide {
+/*
+svg group に rotate が付いているため、X/Y が反転している... 
+横並びで group 化して、それを回転すれば親が rotate 、子はそのままになるはず
+*/
+
+/* 画面外まで行く */
+@keyframes car_end_to_end {
     from {
         transform: translate(-20px, 0px);
     }
@@ -8,6 +14,18 @@
     }
 }
 
+/* 端まで */
+@keyframes car_end {
+    from {
+            transform: translate(0px, 0px);
+        }
+    
+        to {
+            transform: translate(-10px, 0px);
+        }
+}
+
+/* 踏切の棒 */
 @keyframes train_bar {
     from {
         transform: rotate(0turn);
@@ -18,7 +36,6 @@
     }
 }
 
-/* それぞれの svg。svg 回転しているので注意 */
 #icon_parent>svg {
     width: 40px;
     height: 80px;
@@ -26,11 +43,15 @@
 
 #g861,
 #g866 {
-    animation: car_slide 10s linear infinite normal;
+    animation: car_end_to_end 10s linear infinite normal;
+}
+
+#g958 {
+    animation: car_end 5s linear infinite normal;
 }
 
 #g33305 {
-    animation: car_slide 10s linear infinite normal;
+    animation: car_end_to_end 10s linear infinite normal;
 }
 
 #path33340-8-9-9 {
