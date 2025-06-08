@@ -32,13 +32,15 @@ export default async function LinkCardRender({ href }: LinkCardRenderProps) {
                     loading="lazy" />
             }
             <div className="flex-1 flex flex-col p-2 space-y-1">
-                <p className="wrap-anywhere text-md line-clamp-2 text-content-text-light dark:text-content-text-dark">{title}</p>
+                <p className="wrap-anywhere text-md line-clamp-2 text-content-text-light dark:text-content-text-dark underline">{title}</p>
                 <p className="wrap-anywhere text-sm line-clamp-2 text-content-text-light dark:text-content-text-dark">{description}</p>
                 <p className="wrap-anywhere text-xs line-clamp-2 text-content-text-light dark:text-content-text-dark">{url}</p>
             </div>
         </div>
     ) : (
-        <p>{href}</p>
+        <span className="text-[revert] underline">
+            {href}
+        </span>
     )
 
     // 自分のサイトの遷移であれば next/link を使ってプリフェッチの恩恵を受ける

@@ -86,7 +86,7 @@ export default async function BlogDetailPage(props: PageProps) {
     // max-w-6xl m-auto で横幅上限+真ん中
     return (
         <div className="flex flex-row">
-            <article className="flex flex-col p-4 max-w-6xl m-auto space-y-4">
+            <article className="flex flex-col p-4 max-w-6xl w-full m-auto space-y-4">
 
                 <NextLinkButton
                     size="small"
@@ -114,7 +114,7 @@ export default async function BlogDetailPage(props: PageProps) {
                 {/* 画面の幅が広いときだけ目次を表示させる */}
                 <TocListLayout secondary={<LargeTocList markdown={markdownData.markdown} />}>
                     <RoundedCornerBox rounded="large">
-                        <div className="p-4">
+                        <div className="p-4" data-pagefind-body="true">
                             <MarkdownRender markdown={markdownData.markdown} />
                         </div>
                     </RoundedCornerBox>
