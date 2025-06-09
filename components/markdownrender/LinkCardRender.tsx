@@ -39,7 +39,7 @@ function LinkBox({ urlObject, className, children }: LinkBoxProps) {
     }
 }
 
-/** リンクカードが利用できるなら表示する。なければ <a> */
+/** リンクカードが利用できるなら表示する。なければ <a>。 TODO <a> の子要素よりもリンクカードが優先されている */
 export default async function LinkCardRender({ href }: LinkCardRenderProps) {
     // 存在しないなら empty
     if (!href) return <></>

@@ -36,14 +36,15 @@ export default async function ShikiCodeBlockRender({ code, language }: ShikiCode
         theme: 'dark-plus'
     }
 
-    const highlighter = await highlighterPromise
     let syntaxHighlightingCode: string
     try {
         // Markdown のコードブロックの言語を尊重する
+        const highlighter = await highlighterPromise
         syntaxHighlightingCode = highlighter.codeToHtml(trimCode, option)
     } catch (e) {
         // 失敗したら plaintext で再試行
         console.log(`言語 ${option.lang} のシンタックスハイライトに失敗しました。plaintext にします。`)
+        const highlighter = await highlighterPromise
         syntaxHighlightingCode = highlighter.codeToHtml(trimCode, { ...option, lang: 'plaintext' })
     }
 
@@ -53,7 +54,6 @@ export default async function ShikiCodeBlockRender({ code, language }: ShikiCode
                 <div
                     className={`[&>pre]:overflow-x-scroll [&>pre]:p-4 [&>pre]:my-4 [&_code]:font-(family-name:--kosugi-maru-font)`}
                     dangerouslySetInnerHTML={{ __html: syntaxHighlightingCode }} />
-                <CopyButton text={code} />
             </div>
         </div>
     )
