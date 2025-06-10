@@ -16,10 +16,9 @@ class LinkCardTool {
         const urlObject = new URL(url)
         const baseUrl = `${urlObject.protocol}//${urlObject.host}/`
 
-        // todo cache
         let html: string
         try {
-            html = await fetch(url).then((res) => res.text())
+            html = await fetch(url, { cache: 'force-cache', next: { revalidate: false } }).then((res) => res.text())
         } catch (e) {
             // 失敗したらすべての値が undefined になるよう
             return {}

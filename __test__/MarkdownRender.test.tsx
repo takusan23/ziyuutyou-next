@@ -115,6 +115,21 @@ describe('<MarkdownRender /> のテスト', () => {
         expect(container.querySelector('br')).toBeDefined()
     })
 
+    test('リンクが描画できる', async () => {
+        await act(async () => {
+            render(
+                <Suspense>
+                    <MarkdownRender markdown='[トップ](https://takusan.negitoro.dev/)' />
+                </Suspense>
+            )
+        })
+        expect(screen.getByRole('link')).toBeDefined()
+        expect(screen.getByRole('link').textContent).toBe('トップ')
+        expect(screen.getByRole('link')).toHaveProperty('href', 'https://takusan.negitoro.dev/')
+        // リンクカードがないこと
+        expect(screen.queryAllByRole('img').length).toBe(0)
+    })
+
     test('リンクカードの取得に失敗した', async () => {
         // fetch をわざと失敗させる
         const spy = vi
@@ -128,7 +143,7 @@ describe('<MarkdownRender /> のテスト', () => {
                 </Suspense>
             )
         })
-        expect(screen.getByText('https://takusan.negitoro.dev/')).toBeDefined()
+        expect(screen.getByRole('link').textContent).toBe('https://takusan.negitoro.dev/')
         expect(screen.getByRole('link')).toBeDefined()
         expect(screen.getByRole('link')).toHaveProperty('href', 'https://takusan.negitoro.dev/')
 
@@ -161,6 +176,8 @@ describe('<MarkdownRender /> のテスト', () => {
         expect(screen.getByText('Hello Android 15。16KB ページサイズ編 - たくさんの自由帳')).toBeDefined()
         expect(screen.getByRole('link')).toBeDefined()
         expect(screen.getByRole('link')).toHaveProperty('href', 'https://takusan.negitoro.dev/')
+        expect(screen.getByRole('img')).toBeDefined()
+        expect(screen.getByRole('img')).toHaveProperty('src', 'https://takusan.negitoro.dev/posts/android_15_16kb_page_size/opengraph-image.png')
 
         spy.mockRestore()
     })
@@ -187,22 +204,23 @@ describe('<MarkdownRender /> のテスト', () => {
         expect(screen.getByRole('blockquote')).toBeDefined()
     })
 
-    // test('折りたたみ要素が描画できる', async () => {
-    //     await act(async () => {
-    //         render(
-    //             <Suspense>
-    //                 <MarkdownRender markdown={`
-    //                     <details>
-    //                       <summary>展開</summary>
-    //                       折りたたみ
-    //                     </details>
-    //                 `} />
-    //             </Suspense>
-    //         )
-    //     })
-    //     expect(screen.getByText('details')).toBeDefined()
-    //     expect(screen.getByText('summary')).toBeDefined()
-    // })
+    test('折りたたみ要素が描画できる', async () => {
+        await act(async () => {
+            render(
+                <Suspense>
+                    <MarkdownRender markdown={`
+<details>
+<summary>展開</summary>
+折りたたみ
+</details>
+                    `} />
+                </Suspense>
+            )
+        })
+        expect(screen.getByRole('group')).toBeDefined()
+        expect(screen.getByText('展開')).toBeDefined()
+        expect(screen.getByText('折りたたみ')).toBeDefined()
+    })
 
     test('区切り線が描画出来る', async () => {
         await act(async () => {
@@ -352,6 +370,18 @@ describe('<MarkdownRender /> のテスト', () => {
             )
         })
         expect(container.querySelector('video')).toBeDefined()
+    })
+
+    test('HTML に style が書かれていたら自分で描画するのを辞める', async () => {
+        const { container } = await act(async () => {
+            return render(
+                <Suspense>
+                    <MarkdownRender markdown='<span style="color:red">styleを書いている<span/>' />
+                </Suspense>
+            )
+        })
+        // unified を使う場合 div でラップされる
+        expect(container.querySelector('div span')).toBeDefined()
     })
 
     /*

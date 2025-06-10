@@ -91,7 +91,9 @@ function HtmlElementRender({ element }: HtmlElementRenderProps) {
 
     // そもそも親（自分）が描画できない
     if (ReBuildHtmlElementTagNames.includes(element.tagName as any) === false) {
-        console.log(`親のタグが描画できないため unified へフォールバックします。${element.tagName}`)
+        if (process.env.NODE_ENV === "development") {
+            console.log(`親のタグが描画できないため unified へフォールバックします。${element.tagName}`)
+        }
         isFallback = true
     }
 
@@ -102,8 +104,10 @@ function HtmlElementRender({ element }: HtmlElementRenderProps) {
             .filter((node) => node.type === "element")
             .some((element) => MarkdownParser.findNestedElement(element, [...ReBuildHtmlElementTagNames]).length === 0)
     ) {
-        const childTagNameList = element.children.filter((node) => node.type === "element").map((element) => element.tagName)
-        console.log(`子に描画できないタグがあるため unified へフォールバックします。${childTagNameList}`)
+        if (process.env.NODE_ENV === "development") {
+            const childTagNameList = element.children.filter((node) => node.type === "element").map((element) => element.tagName)
+            console.log(`子に描画できないタグがあるため unified へフォールバックします。${childTagNameList}`)
+        }
         isFallback = true
     }
 
@@ -111,7 +115,9 @@ function HtmlElementRender({ element }: HtmlElementRenderProps) {
     // HTML を div に dangerouslySetInnerHTML する
     // <p> の中で <div> を使うことが出来ないため
     if (element.children.some((node) => node.type === "raw")) {
-        console.log(`直接書いた HTML を子に持つため unified へフォールバックします`)
+        if (process.env.NODE_ENV === "development") {
+            console.log(`直接書いた HTML を子に持つため unified へフォールバックします`)
+        }
         isFallback = true
     }
 
@@ -119,7 +125,9 @@ function HtmlElementRender({ element }: HtmlElementRenderProps) {
     // JSX では style を object で渡す必要があり、
     // HTML に書いた style は文字列だと渡せない
     if ("style" in element.properties || element.children.some((element) => element.type === "element" && "style" in element.properties)) {
-        console.log(`親か子が Markdown に書いた HTML に style を指定しているため、unified へフォールバックします`)
+        if (process.env.NODE_ENV === "development") {
+            console.log(`親か子が Markdown に書いた HTML に style を指定しているため、unified へフォールバックします`)
+        }
         isFallback = true
     }
 
@@ -149,7 +157,7 @@ function HtmlElementRender({ element }: HtmlElementRenderProps) {
         // <a> タグのリンクカード、<pre> のコードブロック
         case "p":
             const pTagHasNotContainsElement = 1 <= MarkdownParser.findNestedElement(element, ["a", "pre"]).length
-            if (pTagHasNotContainsElement) {
+            if (pTagHasNotContainsElement && process.env.NODE_ENV === "development") {
                 console.log('<p> タグに <div> を入れることが出来ないため、<div> に差し替えました。')
             }
             return pTagHasNotContainsElement
@@ -181,11 +189,19 @@ function HtmlElementRender({ element }: HtmlElementRenderProps) {
 
         // a
         // サイト内の遷移の場合は next/link にする
+        // URL が直書きの場合はリンクカード、リンクの説明があれば説明を優先する
         // リセット CSS で色が消えてしまったので戻す TODO スタイリングしても良いかも
         case "a":
             const href = element.properties['href']?.toString()
             const anchorId = element.properties['id']?.toString()
-            return <LinkCardRender href={href} id={anchorId} />
+            // TODO テキストノードがあって、URL だった場合は undefined。リンクカードにする。もうちょっと考えたほうが良いかな、、
+            return <LinkCardRender href={href} id={anchorId}>
+                {
+                    element.children.every((element) => element.type === "text" && element.value === href)
+                        ? undefined
+                        : <>{childrenHtml}</>
+                }
+            </LinkCardRender>
 
         // 箇条書き
         case "ul":

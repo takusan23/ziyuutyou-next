@@ -43,7 +43,9 @@ export default async function ShikiCodeBlockRender({ code, language }: ShikiCode
         syntaxHighlightingCode = highlighter.codeToHtml(trimCode, option)
     } catch (e) {
         // 失敗したら plaintext で再試行
-        console.log(`言語 ${option.lang} のシンタックスハイライトに失敗しました。plaintext にします。`)
+        if (process.env.NODE_ENV === "development") {
+            console.log(`言語 ${option.lang} のシンタックスハイライトに失敗しました。plaintext にします。`)
+        }
         const highlighter = await highlighterPromise
         syntaxHighlightingCode = highlighter.codeToHtml(trimCode, { ...option, lang: 'plaintext' })
     }
