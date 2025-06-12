@@ -1,46 +1,38 @@
-"use client"
-
+import Form from 'next/form'
 import IconParent from "../IconParent"
 import SearchIcon from "../../public/icon/search.svg"
 
 /** SearchForm に渡すデータ */
 type SearchFormProps = {
-    /** テキスト */
-    text: string
-    /** テキスト変更したら呼ばれる */
-    onChange: (text: string) => void
-    /** Enter / 検索 を押したときに呼ばれる */
-    onExecure: () => void
+    /** 検索ワード */
+    searchWord: string
 }
 
-/** 検索フォーム <form>  */
-export default function SearchForm({ text, onChange, onExecure }: SearchFormProps) {
-    // form でくくることで、Enter キー投下と検索ボタンの両方のイベントを onSubmit で受け取れる
+/**
+ * 検索フォーム <form>
+ * 検索するとクエリパラメータ付きで画面遷移します
+ */
+export default function SearchForm({ searchWord }: SearchFormProps) {
+    // method="get" なので
+    // form 確定したら /search/q={検索ワード} のページに遷移する
     return (
-        <form
+        <Form
             className="search-form flex flex-row w-full space-x-2 py-2 px-4 rounded-full bg-container-primary-light dark:bg-container-primary-dark"
-            onSubmit={(ev) => {
-                // preventDefault を使うことで、form に元からあるリクエスト機能を無効にできる
-                ev.preventDefault()
-                // 空文字以外
-                if (text) {
-                    onExecure()
-                }
-            }}
+            action="/search/"
         >
 
             <input
-                className="grow focus:outline-none bg-transparent py-1 text-content-text-light dark:text-content-text-dark"
+                className="grow focus:outline-hidden bg-transparent py-1 text-content-text-light dark:text-content-text-dark"
                 type="input"
                 placeholder="検索ワード"
-                value={text}
-                onChange={(ev) => onChange(ev.target.value)} />
+                name="q"
+                defaultValue={searchWord} />
 
             <button type="submit">
                 <IconParent>
                     <SearchIcon />
                 </IconParent>
             </button>
-        </form>
+        </Form>
     )
 }

@@ -1,5 +1,5 @@
-/** テーマ。ライトとダークどちらか。 */
-export type Theme = 'light' | 'dark'
+/** テーマ。ライト・ダーク・端末設定 */
+export type Theme = 'light' | 'dark' | 'system'
 
 /**
  * テーマ設定用ユーティリティクラス
@@ -9,12 +9,12 @@ export type Theme = 'light' | 'dark'
  */
 export class ThemeTool {
 
-    private static LOCAL_STORAGE_KEY_THEME = 'theme'
+    private static LOCAL_STORAGE_KEY_THEME = 'ziyuutyou-theme'
 
     /**
      * localStorage と、端末のダークモード設定からテーマ設定を取得する。
      * 
-     * @returns {@link ThemeType}。ダークかライト。
+     * @returns {@link Theme}
      */
     static readTheme(): Theme {
         const readValue = localStorage.getItem(this.LOCAL_STORAGE_KEY_THEME)
@@ -24,9 +24,7 @@ export class ThemeTool {
             return readValue as Theme
         } else {
             // なければ端末の設定を考慮
-            // メディアクエリでダークモードかチェック
-            const isDarkmodeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)').matches
-            return isDarkmodeMediaQuery ? 'dark' : 'light'
+            return 'system'
         }
     }
 
@@ -37,6 +35,17 @@ export class ThemeTool {
      */
     static saveTheme(theme: Theme) {
         localStorage.setItem(this.LOCAL_STORAGE_KEY_THEME, theme)
+    }
+
+    /**
+     * 端末の設定からテーマを解決する
+     * 
+     * @return dark / light
+     */
+    static getSystemTheme() {
+        // メディアクエリでダークモードかチェック
+        const isDarkmodeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)').matches
+        return isDarkmodeMediaQuery ? 'dark' : 'light'
     }
 
 }

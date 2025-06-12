@@ -3,9 +3,10 @@ import fs from "fs/promises"
 import MarkdownParser from "./MarkdownParser"
 import path from "path"
 import TagData from "./data/TagData"
-import BlogItemResult from "./data/BlogItemResult"
 import { NextJsCacheStore } from "./NextJsCacheStore"
 import MarkdownData from "./data/MarkdownData"
+import Pagination from "./data/Pagination"
+import PrevNextBlogItemData from "./data/PrevNextBlogItemData"
 
 /**
  * content/posts フォルダにあるマークダウンファイルを取得したり、HTML パース結果を返すやつ。
@@ -46,24 +47,51 @@ class ContentFolderManager {
      * @returns ファイル名一覧
      */
     static async getBlogNameList() {
-        return this.getFileNameList(this.POSTS_FOLDER_PATH)
+        return await this.getFileNameList(this.POSTS_FOLDER_PATH)
     }
 
     /**
-     * 範囲を指定して記事一覧を取得する
+     * 書き出す必要のある記事一覧のファイル名配列を返す
+     * {@see getBlogNameList}と{@see chunkedPage}の合体版
      * 
-     * asyncです。
+     * @param pageSize 1ページに何件表示するか
+     * @returns ページ件数でまとめられた配列
+     */
+    static async getBlogNamePagination(pageSize: number) {
+        const nameList = await this.getBlogNameList()
+        const chunkedList = this.chunkedPage(nameList, pageSize)
+        const result: Pagination<string> = {
+            totalCount: nameList.length,
+            pageList: chunkedList,
+            pageNumberList: chunkedList.map((_, index) => index + 1)
+        }
+        return result
+    }
+
+    /**
+     * 記事一覧を取得する
      * 
-     * @param skip ページネーション用。どこまでスキップするか ((現在のページ - 1) * limit) を入れればいいと思う
-     * @param limit 一度にどれだけ取得するか
+     * @return BlogItem[]
+     */
+    static async getBlogItemList() {
+        // content/posts の中身を読み出す
+        return await this.getItemList(this.POSTS_FOLDER_PATH, this.POSTS_BASE_URL)
+    }
+
+    /**
+     * 記事一覧を取得する
+     * {@see getBlogItemList}と{@see chunkedPage}の合体版
+     * 
+     * @param pageSize 1ページに何件表示するか
      * @returns 合計記事数と取得した記事配列をまとめたものが返ってきます
      */
-    static async getBlogItemList(limit: number = 10, skip: number) {
-        // content/posts の中身を読み出す
-        const blogList = await this.getItemList(this.POSTS_FOLDER_PATH, this.POSTS_BASE_URL)
-        const result: BlogItemResult = {
+    static async getBlogItemPagination(pageSize: number) {
+        const blogList = await this.getBlogItemList()
+        const chunkedList = this.chunkedPage(blogList, pageSize)
+        const result: Pagination<BlogItem> = {
             totalCount: blogList.length,
-            result: blogList.slice(skip, skip + limit)
+            pageList: chunkedList,
+            pageNumberList: chunkedList.map((_, index) => index + 1)
         }
         return result
     }
@@ -96,17 +124,19 @@ class ContentFolderManager {
      * 指定したタグが含まれた記事一覧配列を返す。
      * 
      * @param tagName タグ名
+     * @param pageSize 1ページに何件表示するか
      * @returns 含まれている記事一覧
      */
-    static async getTagFilterBlogItem(tagName: string) {
+    static async getTagFilterBlogItemList(tagName: string, pageSize: number) {
         // とりあえず全件取得
         const blogList = await this.getItemList(this.POSTS_FOLDER_PATH, this.POSTS_BASE_URL)
         // フィルターにかけて
-        const filteredList = blogList
-            .filter((blog) => blog.tags.includes(tagName))
-        const result: BlogItemResult = {
+        const filteredList = blogList.filter((blog) => blog.tags.includes(tagName))
+        const chunkedList = this.chunkedPage(filteredList, pageSize)
+        const result: Pagination<BlogItem> = {
             totalCount: filteredList.length,
-            result: filteredList
+            pageList: chunkedList,
+            pageNumberList: chunkedList.map((_, index) => index + 1)
         }
         return result
     }
@@ -128,6 +158,85 @@ class ContentFolderManager {
             }))
             .sort((a, b) => b.count - a.count)
         return tagDataList
+    }
+
+    /**
+     * 記事の URL が、記事一覧の何ページ目にあるかを探す。
+     * 問題があれば 1。
+     * 
+     * @param blogUrl URL
+     * @param pageSize {@see getBlogItemPagination} と同じもの
+     * @returns 1 始まりのページ番号
+     */
+    static async findPostsPageNumber(blogUrl: string, pageSize: number) {
+        const { pageList } = await this.getBlogItemPagination(pageSize)
+        // 探す。index 0 なので、+1 する
+        const index = pageList
+            .map((blogPage, index) => ({ blogPage, index }))
+            .find((pair) => pair.blogPage.some((blog) => blog.link === blogUrl))
+            ?.index ?? 0
+        return index + 1
+    }
+
+    /**
+     * 関連する記事を取得する
+     * タグを基準に、新しい順で。
+     * 
+     * @param excludeUrl 除外する URL。自分のこと。
+     * @param tagNameList タグの配列
+     * @param maxSize 最大件数
+     * @returns BlogItem[]
+     */
+    static async findRelatedBlogItemList(excludeUrl: string, tagNameList: string[], maxSize: number) {
+        const blogList = await this.getBlogItemList()
+        // 関連しているかの判断は、引数に渡したタグが、何個一致しているか
+        // 記事は新しい順
+        const relatedBlogItemList = blogList
+            // タグ無いとかは弾いておく
+            .filter((blogItem) => blogItem.link !== excludeUrl && blogItem.tags.length !== 0)
+            // 関係ない記事が出そうなので、2つ以上一致しているとき
+            // 一旦件数と Pair する
+            .map((blogItem) => {
+                const containsTagCount = blogItem.tags.filter((tagName) => tagNameList.includes(tagName)).length
+                return { containsTagCount, blogItem }
+            })
+            .filter((pair) => 2 <= pair.containsTagCount)
+            // 一致している順
+            .sort((a, b) => b.containsTagCount - a.containsTagCount)
+            // 返すときは BlogItem[] に戻す
+            .map((pair) => pair.blogItem)
+            .splice(0, maxSize)
+        return relatedBlogItemList
+    }
+
+    /**
+     * 指定した記事の前後の記事を取得する
+     * 次・前の記事のリンクを置く用
+     * 
+     * @param blogUrl 指定した記事
+     * @returns PrevNextBlogItemData
+     */
+    static async getPrevNextBlogItem(blogUrl: string) {
+        const blogList = await this.getBlogItemList()
+        const currentIndex = blogList.findIndex((blogItem) => blogItem.link === blogUrl)
+        const result: PrevNextBlogItemData = {
+            next: blogList?.[currentIndex - 1],
+            prev: blogList?.[currentIndex + 1]
+        }
+        return result
+    }
+
+    /**
+     * 指定された数ごとに区切った配列にする。chunk
+     * 
+     * @param origin 区切りたい配列
+     * @param size 区切る数
+     * @returns [ [T,T,T] [T,T] ]
+     */
+    private static chunkedPage<T>(origin: T[], size: number) {
+        return origin
+            .map((_, i) => i % size === 0 ? origin.slice(i, i + size) : null)
+            .filter((nullabeList) => nullabeList !== null)
     }
 
     /**

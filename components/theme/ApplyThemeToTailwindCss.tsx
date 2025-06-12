@@ -1,9 +1,8 @@
 "use client"
 
+import { ThemeTool } from "../../src/ThemeTool"
 import useTheme from "./useTheme"
 import { useEffect } from "react"
-import resolveConfig from "tailwindcss/resolveConfig"
-import tailwindConfig from "../../tailwind.config.js"
 
 /**
  * テーマ設定を監視して、Tailwind CSS のクラスを書き換えるやつ。
@@ -25,11 +24,9 @@ export default function ApplyThemeToTailwindCss() {
         }
         // 動的に Tailwind CSS のテーマを取得して
         // ステータスバーの色にする
-        const colors = resolveConfig(tailwindConfig).theme?.colors
-        if (colors) {
-            const backgroundColor = isDarkmode ? colors['background']['dark'] : colors['background']['light']
-            document.querySelector("meta[name='theme-color']")?.setAttribute('content', backgroundColor)
-        }
+        const styles = getComputedStyle(document.documentElement)
+        const backgroundColor = styles.getPropertyValue(isDarkmode ? "--color-background-dark" : "--color-background-light")
+        document.querySelector("meta[name='theme-color']")?.setAttribute('content', backgroundColor)
     }
 
     // Android のステータスバーの色をセットする <meta name="theme-color"> が初回時は無いので作る
@@ -43,7 +40,12 @@ export default function ApplyThemeToTailwindCss() {
 
     // カスタムフックの値変更を拾って Tailwind CSS のクラス指定する
     useEffect(() => {
-        const isDarkMode = theme === 'dark'
+        let isDarkMode = false
+        if (theme === 'system') {
+            isDarkMode = ThemeTool.getSystemTheme() === 'dark'
+        } else {
+            isDarkMode = theme === 'dark'
+        }
         setTailwindThemeAndStatusBarColor(isDarkMode)
     }, [theme])
 

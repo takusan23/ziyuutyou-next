@@ -15,10 +15,17 @@ export type ButtonProps = {
     isDisabled?: boolean
     /** サイズ */
     size?: 'small' | 'medium' | 'large'
+    /** 角の丸を個別に指定する場合。未指定で rounded-full */
+    rounded?: {
+        startTop?: 'small' | 'medium' | 'large'
+        startBottom?: 'small' | 'medium' | 'large'
+        endTop?: 'small' | 'medium' | 'large'
+        endBottom?: 'small' | 'medium' | 'large'
+    }
 }
 
 /** ボタン */
-export default function Button({ text, startIcon, endIcon, variant, isDisabled, size }: ButtonProps) {
+export default function Button({ text, startIcon, endIcon, variant, isDisabled, size, rounded }: ButtonProps) {
     // className をつくる
     const buttonAlpha = isDisabled ? 'opacity-50' : 'opacity-100'
     const commonClassName = `${buttonAlpha} select-none`
@@ -39,14 +46,39 @@ export default function Button({ text, startIcon, endIcon, variant, isDisabled, 
     }
 
     // アイコンの色
-    let iconColorClassName: string | undefined
+    let iconColorClassName = ''
     switch (nonNullVariant) {
         case "text":
+        case "outlined":
             iconColorClassName = 'fill-content-primary-light dark:fill-content-primary-dark'
-            break;
+            break
         case "contained":
             iconColorClassName = 'fill-[#ffffff]'
-            break;
+            break
+    }
+
+    // 角丸。デフォルトは 100%
+    // full ではなく 4xl を使っているのは https://github.com/tailwindlabs/tailwindcss/discussions/7402
+    let roundedClassName = ''
+    if (rounded?.startTop) {
+        roundedClassName += (rounded.startTop === 'small') ? 'rounded-ss-lg' : (rounded.startTop === 'medium') ? 'rounded-ss-xl' : 'rounded-ss-4xl'
+        roundedClassName += ' '
+    }
+    if (rounded?.startBottom) {
+        roundedClassName += (rounded.startBottom === 'small') ? 'rounded-es-lg' : (rounded.startBottom === 'medium') ? 'rounded-es-xl' : 'rounded-es-4xl'
+        roundedClassName += ' '
+    }
+    if (rounded?.endTop) {
+        roundedClassName += (rounded.endTop === 'small') ? 'rounded-se-lg' : (rounded.endTop === 'medium') ? 'rounded-se-xl' : 'rounded-se-4xl'
+        roundedClassName += ' '
+    }
+    if (rounded?.endBottom) {
+        roundedClassName += (rounded.endBottom === 'small') ? 'rounded-ee-lg' : (rounded.endBottom === 'medium') ? 'rounded-ee-xl' : 'rounded-ee-4xl'
+        roundedClassName += ' '
+    }
+    // 何も指定がなかった場合
+    if (!roundedClassName) {
+        roundedClassName = 'rounded-full'
     }
 
     /** ボタンの中身を作成する */
@@ -86,19 +118,19 @@ export default function Button({ text, startIcon, endIcon, variant, isDisabled, 
         switch (nonNullVariant) {
             case 'text':
                 return (
-                    <button className={`rounded-full text-content-primary-light dark:text-content-primary-dark cursor-pointer ${commonClassName}`}>
+                    <button className={`text-content-primary-light dark:text-content-primary-dark cursor-pointer ${roundedClassName} ${commonClassName}`}>
                         {createButtonContent}
                     </button>
                 )
             case 'outlined':
                 return (
-                    <button className={`rounded-full border-2 border-content-primary-light text-content-text-light dark:text-content-text-dark cursor-pointer ${buttonAlpha}`}>
+                    <button className={`border-2 border-content-primary-light text-content-primary-light dark:text-content-primary-dark cursor-pointer  ${roundedClassName} ${buttonAlpha}`}>
                         {createButtonContent}
                     </button>
                 )
             case 'contained':
                 return (
-                    <button className={`rounded-full bg-content-primary-light text-[#ffffff] cursor-pointer ${buttonAlpha}`}                    >
+                    <button className={`bg-content-primary-light text-[#ffffff] cursor-pointer  ${roundedClassName} ${buttonAlpha}`}>
                         {createButtonContent}
                     </button>
                 )

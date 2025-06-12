@@ -26,7 +26,7 @@ export default function NavigationDrawerItem({ title, icon, path }: NavigationDr
 
     return (
         <Link href={path}>
-            <div className={`flex flex-row p-3 items-center space-x-4 rounded-xl select-none cursor-pointer ${backgroundStyle}`}>
+            <div className={`flex flex-row p-3 items-center space-x-4 rounded-full select-none cursor-pointer ${backgroundStyle}`}>
                 <IconParent>
                     {icon}
                 </IconParent>

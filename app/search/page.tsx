@@ -1,6 +1,7 @@
+import { Suspense } from "react"
 import { Metadata } from "next"
-import EnvironmentTool from "../../src/EnvironmentTool"
 import PagefindSearch from "./PagefindSearch"
+import EnvironmentTool from "../../src/EnvironmentTool"
 
 // <head> を定義
 export const metadata: Metadata = {
@@ -10,6 +11,8 @@ export const metadata: Metadata = {
 /** 検索ページ */
 export default function SearchPage() {
     return (
-        <PagefindSearch />
+        <Suspense>
+            <PagefindSearch />
+        </Suspense>
     )
 }

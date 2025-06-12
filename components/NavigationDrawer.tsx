@@ -1,5 +1,5 @@
 import RoundedImage from "./RoundedImage"
-import DarkmodeSwitch from "./DarkmodeSwitch"
+import ThemeSettingMenu from "./ThemeSettingMenu"
 import NavigationDrawerItem from "./NavigationDrawerItem"
 import HomeIcon from "../public/icon/home.svg"
 import BookIcon from "../public/icon/book.svg"
@@ -53,8 +53,6 @@ export default function NavigationDrawer() {
                 </div>
             </div>
 
-            <DarkmodeSwitch />
-
             <nav>
                 {
                     DRAWER_LINK.map(menu => (
@@ -67,6 +65,12 @@ export default function NavigationDrawer() {
                     ))
                 }
             </nav>
+
+            {/* 区切り線 */}
+            <div className="border-b-2 my-2 mx-4 border-content-text-light dark:border-content-text-dark" />
+
+            <ThemeSettingMenu />
+
         </div>
     )
 }

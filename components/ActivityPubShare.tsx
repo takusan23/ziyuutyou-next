@@ -74,7 +74,7 @@ function ActivityPubInputForm({ onClose, onSubmit }: ActivityPubInputFormProps) 
                 </button>
 
                 <input
-                    className="grow focus:outline-none bg-transparent text-content-text-light dark:text-content-text-dark w-40 border-b-2 border-b-content-primary-light dark:border-b-content-primary-dark"
+                    className="grow focus:outline-hidden bg-transparent text-content-text-light dark:text-content-text-dark w-40 border-b-2 border-b-content-primary-light dark:border-b-content-primary-dark"
                     placeholder="サーバー名を入力"
                     onChange={(ev) => setServerName(ev.target.value)}
                     value={serverName} />

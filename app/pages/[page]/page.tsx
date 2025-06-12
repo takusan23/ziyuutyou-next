@@ -9,8 +9,8 @@ import RoundedCornerBox from "../../../components/RoundedCornerBox";
 import IconParent from "../../../components/IconParent";
 import EditIcon from "../../../public/icon/edit.svg"
 import ActivityPubShare from "../../../components/ActivityPubShare";
-// 部分的に修正した css
-import "../../../styles/css/content.css"
+import MarkdownRender from "../../../components/markdownrender/MarkdownRender";
+import Title from "../../../components/Title";
 
 /** 動的ルーティング */
 type PageProps = {
@@ -66,12 +66,12 @@ export default async function PageDetailPage(props: PageProps) {
         </div>
     )
 
+    // max-w-6xl m-auto で横幅上限+真ん中
     return (
-        <div className="flex flex-col space-y-4">
+        <article className="p-4 max-w-6xl w-full m-auto flex flex-col space-y-4">
 
-            <h1 className="text-content-primary-light dark:text-content-primary-dark text-3xl">
-                {markdownData.title}
-            </h1>
+            <Title title={markdownData.title} />
+
             <div>
                 <DateCountText
                     timeTagTimeFormat={dateTimeFormat}
@@ -84,19 +84,17 @@ export default async function PageDetailPage(props: PageProps) {
             {shareOrHistoryButton}
 
             {/* 画面の幅が狭いときは記事始まる前に目次を置く */}
-            <ExpandTocList tocDataList={markdownData.tocDataList} />
+            <ExpandTocList markdown={markdownData.markdown} />
 
             {/* 画面の幅が広いときだけ目次を表示させる */}
-            <TocListLayout secondary={<LargeTocList tocDataList={markdownData.tocDataList} />}>
+            <TocListLayout secondary={<LargeTocList markdown={markdownData.markdown} />}>
                 <RoundedCornerBox rounded="large">
                     <div className="p-4">
-                        <div
-                            className="content_div"
-                            dangerouslySetInnerHTML={{ __html: markdownData.html }} />
+                        <MarkdownRender markdown={markdownData.markdown} />
                     </div>
                 </RoundedCornerBox>
             </TocListLayout>
-        </div>
+        </article>
     )
 }
 
