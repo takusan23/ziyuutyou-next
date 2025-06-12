@@ -1,3 +1,4 @@
+import EnvironmentTool from "./EnvironmentTool"
 import MarkdownParser from "./MarkdownParser"
 import LinkCardData from "./data/LinkCardData"
 
@@ -18,7 +19,16 @@ class LinkCardTool {
 
         let html: string
         try {
-            html = await fetch(url, { cache: 'force-cache', next: { revalidate: false } }).then((res) => res.text())
+            html = await fetch(
+                url,
+                {
+                    headers: [
+                        ['User-Agent', `GET_LINKCARD_${EnvironmentTool.BASE_URL}`]
+                    ],
+                    cache: 'force-cache',
+                    next: { revalidate: false }
+                }
+            ).then((res) => res.text())
         } catch (e) {
             // 失敗したらすべての値が undefined になるよう
             return {}
