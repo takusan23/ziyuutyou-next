@@ -174,7 +174,7 @@ https://takusan.negitoro.dev/posts/aws_sitatic_site_hosting/
 
 ## ファイル構造
 
-- __test__
+- `__test__`
     - `vitest` + `testing-library/react` を使ったテストです
     - 今のところマークダウンが描画されるかくらいしか見ていません
 - .github/workflows

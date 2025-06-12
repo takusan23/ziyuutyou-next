@@ -13,9 +13,10 @@ export default function TownBar() {
     // スクロールしても追従するように sticky
     return (
         <div className="flex flex-col h-screen sticky top-0 space-y-5 py-2 justify-end [&_path]:fill-content-primary-light! [&_path]:dark:fill-content-primary-dark!" id="icon_parent">
-            <TownHouseImage />
-            <TownTrainImage />
-            <TownStoreImage />
+            {/* todo とりあえず２つにする */}
+            {/* <TownHouseImage /> */}
+            {/* <TownTrainImage /> */}
+            {/* <TownStoreImage /> */}
             <TownTrafficImage />
             <TownHouseImage />
         </div>
