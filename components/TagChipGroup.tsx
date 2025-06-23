@@ -16,7 +16,7 @@ export default function TagChipGroup({ tagList }: TagChipGroupProps) {
                     <NextLinkButton
                         size="small"
                         key={tagName}
-                        href={`/posts/tag/${tagName}/`}
+                        href={`/posts/tag/${tagName}/1/`}
                         startIcon={<SellIcon />}
                         text={tagName}
                     />

@@ -11,29 +11,33 @@ export const dynamic = "force-static"
  * Trailing Slash が有効なので最後にスラッシュ入れました。
  */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-    const currentTime = new Date()
 
     // 静的ページ
     const staticPathList: MetadataRoute.Sitemap = [
         {
-            url: `${EnvironmentTool.BASE_URL}/`,
-            lastModified: currentTime
+            url: `${EnvironmentTool.BASE_URL}/`
         }
     ]
 
     // ブログ記事
-    const blogPathList = (await ContentFolderManager.getBlogNameList())
-        .map(name => ({
-            url: `${EnvironmentTool.BASE_URL}/posts/${name}/`,
-            lastModified: currentTime
-        }))
+    const blogNameList = await ContentFolderManager.getBlogNameList()
+    const blogItemList = await Promise.all(blogNameList.map((name) => ContentFolderManager.getBlogItem(name)))
+    const blogPathList = blogItemList.map((markdownData) => (
+        {
+            url: `${EnvironmentTool.BASE_URL}${markdownData.link}`,
+            lastModified: new Date(markdownData.createdAtUnixTime).toISOString()
+        }
+    ))
 
     // 固定ページ
-    const pagePathList = (await ContentFolderManager.getPageNameList())
-        .map(name => ({
-            url: `${EnvironmentTool.BASE_URL}/pages/${name}/`,
-            lastModified: currentTime
-        }))
+    const pageNameList = await ContentFolderManager.getPageNameList()
+    const pageItemList = await Promise.all(pageNameList.map((name) => ContentFolderManager.getPageItem(name)))
+    const pagePathList = pageItemList.map((markdownData) => (
+        {
+            url: `${EnvironmentTool.BASE_URL}${markdownData.link}`,
+            lastModified: new Date(markdownData.createdAtUnixTime).toISOString()
+        }
+    ))
 
     return [...staticPathList, ...blogPathList, ...pagePathList]
 }

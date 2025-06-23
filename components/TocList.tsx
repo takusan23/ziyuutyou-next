@@ -1,10 +1,10 @@
 import { ReactNode } from "react"
 import Link from "next/link"
-import TocData from "../src/data/TocData"
 import RoundedCornerBox from "./RoundedCornerBox"
 import IconParent from "./IconParent"
 import ExpandMore from "../public/icon/expand_more.svg"
 import Spacer from "./Spacer"
+import MarkdownParser from "../src/MarkdownParser"
 
 // 定数
 const TOC_LIST_WIDTH = 'w-[300px]'
@@ -12,8 +12,8 @@ const MASTER_WIDTH = 'w-full lg:w-[calc(100%-300px)]'
 
 /** TocList へ渡すデータ */
 type TocListProps = {
-    /** 目次の配列 */
-    tocDataList: TocData[]
+    /** markdown 本文 */
+    markdown: string
 }
 
 /** TocListLayout へ渡すデータ */
@@ -49,16 +49,16 @@ export function TocListLayout({ children, secondary }: TocListLayoutProps) {
  * スマホ用の目次。
  * 記事の前に表示される。
  */
-export function ExpandTocList({ tocDataList }: TocListProps) {
+export function ExpandTocList({ markdown }: TocListProps) {
     return (
         <RoundedCornerBox
             className="lg:hidden select-none bg-container-secondary-light dark:bg-container-secondary-dark"
             rounded="large"
         >
-            <details className="group">
+            <details className="group" open={false}>
 
                 {/* 展開してない時に出る部分 */}
-                <summary className="p-4 list-none [&::-webkit-details-marker]:hidden">
+                <summary className="p-4 list-none [&::-webkit-details-marker]:hidden cursor-pointer">
                     <div className="flex flex-row items-center group-open:border-b-[1px] border-content-primary-light dark:border-content-primary-dark">
                         <p className="text-lg text-content-primary-light dark:text-content-primary-dark grow">
                             目次
@@ -69,7 +69,7 @@ export function ExpandTocList({ tocDataList }: TocListProps) {
                     </div>
                 </summary>
 
-                <TocList tocDataList={tocDataList} />
+                <TocList markdown={markdown} />
 
                 <Spacer space="medium" />
             </details>
@@ -82,20 +82,23 @@ export function ExpandTocList({ tocDataList }: TocListProps) {
  * 画面が広いとき用の目次。
  * 記事の隣に表示される。
  */
-export function LargeTocList({ tocDataList }: TocListProps) {
+export function LargeTocList({ markdown }: TocListProps) {
     return (
         <RoundedCornerBox
             rounded="large"
             className="ml-2 bg-container-secondary-light dark:bg-container-secondary-dark"
         >
             <div className="overflow-auto h-screen py-4">
-                <TocList tocDataList={tocDataList} />
+                <TocList markdown={markdown} />
             </div>
         </RoundedCornerBox>
     )
 }
 
-function TocList({ tocDataList }: TocListProps) {
+async function TocList({ markdown }: TocListProps) {
+    const mdast = await MarkdownParser.parseMarkdownToHtmlAst(markdown)
+    const headingList = MarkdownParser.findNestedElement(mdast, ["h1", "h2", "h3", "h4", "h5", "h6"])
+
     // 目次の階層をわかりやすくするため、h1 ~ h6 に対応した className を出す
     const calcPaddingLeft = (index: number) => {
         // tailwind css は名前が完成していないとダメ（変数埋め込みとかは申し訳ないが NG ）
@@ -114,21 +117,25 @@ function TocList({ tocDataList }: TocListProps) {
     return (
         <ul className="space-y-2">
             {
-                tocDataList.map((tocData, index) => (
-                    <li
-                        key={index}
-                        className={calcPaddingLeft(tocData.level)}
-                    >
-                        <Link
-                            className="no-underline text-content-primary-light dark:text-content-primary-dark"
-                            href={tocData.hashTag}
+                headingList.map((element, index) => {
+                    const { id, name } = MarkdownParser.createHeadingData(element)
+                    return (
+                        // h 抜きの番号を渡す
+                        <li
+                            key={index}
+                            className={calcPaddingLeft(Number(element.tagName.replace('h', '')))}
                         >
-                            <p className="text-content-primary-light dark:text-content-primary-dark ">
-                                {tocData.label}
-                            </p>
-                        </Link>
-                    </li>
-                ))
+                            <Link
+                                className="no-underline text-content-primary-light dark:text-content-primary-dark"
+                                href={`#${id}`}
+                            >
+                                <p className="text-content-primary-light dark:text-content-primary-dark ">
+                                    {name}
+                                </p>
+                            </Link>
+                        </li>
+                    )
+                })
             }
         </ul>
     )

@@ -61,11 +61,10 @@ export default function ResponsiveLayout({ navigationDrawer, title, children }: 
 
             {/* 各ページの CSS でパーセント指定できるように、ここで width:100% を指定する */}
             <main className={`flex flex-col grow ${MAIN_WIDTH}`}>
-                {/* タイトル部分 */}
-                <div className="flex flex-row items-center py-5">
-                    {/* デフォルトで出しておいて、それ以上のサイズのときにドロワー展開ボタンを出す */}
+                {/* タイトル部分。ナビゲーションドロワーが出る幅があれば出さない。 */}
+                <div className="flex sm:hidden flex-row items-center py-5">
                     <MenuIcon
-                        className="h-6 w-6 ml-4 block cursor-pointer fill-content-primary-light dark:fill-content-primary-dark sm:hidden"
+                        className="h-6 w-6 ml-4 cursor-pointer fill-content-primary-light dark:fill-content-primary-dark"
                         onClick={() => setDrawerOpen(!isDrawerOpen)}
                     />
                     <div className="ml-4">
@@ -73,7 +72,7 @@ export default function ResponsiveLayout({ navigationDrawer, title, children }: 
                     </div>
                 </div>
                 {/* ページ切り替え */}
-                <div className="p-4">
+                <div>
                     {children}
                 </div>
             </main>

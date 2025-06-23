@@ -5,9 +5,13 @@
 
 [![AWS Deploy](https://github.com/takusan23/ziyuutyou-next/actions/workflows/aws-deploy.yml/badge.svg?branch=main)](https://github.com/takusan23/ziyuutyou-next/actions/workflows/aws-deploy.yml)
 
-![Imgur](https://i.imgur.com/ceQ6UID.png)
+![top](https://oekakityou.negitoro.dev/original/4910cb3c-a80c-44d2-bce1-ffe30824f886.png)
 
-![Imgur](https://i.imgur.com/CaZ2lr0.png)
+![blog](https://oekakityou.negitoro.dev/original/a346866d-582b-4265-b668-525f8651c59b.png)
+
+![codeblock-linkcard](https://oekakityou.negitoro.dev/original/164f4786-9f94-4127-abdb-cfc5bf848a14.png)
+
+![darkmode](https://oekakityou.negitoro.dev/original/5bc8852c-2de3-4583-bbd8-c11827b8c19b.png)
 
 `Next.js` / `Tailwind CSS` / `unified` で出来ている。
 
@@ -40,17 +44,39 @@ npm run dev
 マークダウンで書きます。  
 `content`フォルダ内`posts`フォルダへマークダウンのファイルを作成することで、記事を作ることが出来ます。  
 
+また、`Next.js`のキャッシュ機能を利用し、できる限り`マークダウン→HTML`の変換回数が少なくなるようになっています。  
+**その影響で開発サーバーを立ち上げて記事を開いても、リロードしても反映されないことがあります。**  
+その場合は **スーパーリロード（force refresh / force reload）** を試してみてください。多分キャッシュが消えるはず。
+
 対応している記法は以下です
 - CommonMark
 - GitHub Flavored Markdown
     - CommonMark にはテーブル作れないので
 - HTML 埋め込み
 - シンタックスハイライト（shiki）
+
+追加で以下の機能を自前で実装しています
+- リンクカード
+    - `[]()`の場合はカッコの文字が優先されます
+    - URL を直接書いたらリンクカードになります
+- `<script>`の埋め込み
+- コードブロックのコピー
+- 画像の遅延読み込み（`loading="lazy"`）
 - 見出しに id 属性付与
 
-また、`Next.js`のキャッシュ機能を利用し、できる限り`マークダウン→HTML`の変換回数が少なくなるようになっています。  
-**その影響で開発サーバーを立ち上げて記事を開いても、リロードしても反映されないことがあります。**  
-その場合は **スーパーリロード（force refresh / force reload）** を試してみてください。多分キャッシュが消えるはず。
+#### Markdown を描画するコンポーネント
+`Markdown`から`HTML`にしたあと、できる限り自分で`JSX (HTML)`を描画するようになっています。  
+`<MarkdownRender/>`参照。
+
+期待通りに動いているか確認するテストコードが存在します。  
+`__test__`フォルダ参照。
+
+`vitest` + `testing-library/react` を利用しています。  
+以下のコマンドでテストコードを実行できます。
+
+```shell
+npm run test
+```
 
 ### 本番環境でビルドして動作確認をする
 本番環境でビルドして開発サーバーを立ち上げます。  
@@ -148,6 +174,9 @@ https://takusan.negitoro.dev/posts/aws_sitatic_site_hosting/
 
 ## ファイル構造
 
+- `__test__`
+    - `vitest` + `testing-library/react` を使ったテストです
+    - 今のところマークダウンが描画されるかくらいしか見ていません
 - .github/workflows
     - GitHub Actions にやらせる作業を書いたファイルです
     - GitHub の Web 上で編集することをおすすめします

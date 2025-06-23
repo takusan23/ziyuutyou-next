@@ -7,8 +7,8 @@ const subscribe = (onStoreChange: () => void) => {
         window.removeEventListener('storage', onStoreChange)
     }
 }
-const getSnapshot = () => ThemeTool.readTheme()
-const getServerSnapshot = () => 'light'
+const getSnapshot = (): Theme => ThemeTool.readTheme()
+const getServerSnapshot = (): Theme => 'system'
 
 /**
  * テーマ用カスタムフック。
@@ -16,7 +16,7 @@ const getServerSnapshot = () => 'light'
  */
 export default function useTheme() {
     // useSyncExternalStore で localStorage と React のステートをつなげる
-    const theme = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)
+    const theme = useSyncExternalStore<Theme>(subscribe, getSnapshot, getServerSnapshot)
 
     // 設定変更用関数
     function setTheme(theme: Theme) {
