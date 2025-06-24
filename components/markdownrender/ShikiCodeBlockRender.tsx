@@ -56,6 +56,7 @@ export default async function ShikiCodeBlockRender({ code, language }: ShikiCode
                 <div
                     className={`[&>pre]:overflow-x-scroll [&>pre]:p-4 [&>pre]:my-4 [&_code]:font-(family-name:--kosugi-maru-font)`}
                     dangerouslySetInnerHTML={{ __html: syntaxHighlightingCode }} />
+                <CopyButton text={code} />
             </div>
         </div>
     )
