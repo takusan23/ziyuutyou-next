@@ -85,6 +85,13 @@ https://imagemagick.org/script/formats.php
 
 # Ubuntu マシンの用意
 `WSL2`で用意しました。`sudo apt update`と`sudo apt upgrade`はやってね（お作法感ある）。  
+あと`build-essential`を入れます
+
+```shell
+sudo apt update
+sudo apt upgrade
+sudo apt install build-essential
+```
 
 # libultrahdr ビルド手順
 
