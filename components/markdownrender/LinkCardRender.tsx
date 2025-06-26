@@ -78,9 +78,7 @@ export default async function LinkCardRender({ href, id, children }: LinkCardRen
             <div className="flex flex-row items-center h-[128px] border rounded-md overflow-hidden border-content-primary-light dark:border-content-primary-dark">
                 {
                     img && <img
-                        className="object-cover h-full"
-                        width={227}
-                        height={128}
+                        className="object-cover h-full w-28 sm:w-56"
                         src={img}
                         loading="lazy" />
                 }
