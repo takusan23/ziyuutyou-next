@@ -10,6 +10,14 @@ tags:
 どうもこんばんわ。  
 忘年会でお酒飲まずにソフトドリンクだけ飲んでたんですけどやっぱ飲んだほうが得なんかな（？？）
 
+# 追記 2025-06-30
+https://takusan.negitoro.dev/posts/kotlin_multiplatform_create_npm_library_use_nextjs/#完成品
+
+**実験的に npm ライブラリにしました。**  
+`JavaScript`の`MediaRecorder`が生成する`.webm`ファイルをシークできるようにする関数を提供します。
+
+実験的ですが、`Next.js`や`React + Vite`から呼び出せるはずです。
+
 # 本題
 `JavaScript`に`MediaRecorder`とかいうやつがあるんですけど（`Android`のやつじゃないです）  
 これのおかげで`JavaScript`を少し書いてブラウザで開くだけで画面録画ができます！  
