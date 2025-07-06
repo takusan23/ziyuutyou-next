@@ -14,6 +14,6 @@ export async function FallbackElement({ content }: FallbackElementProps) {
     if (whitespace(content)) {
         return <></>
     } else {
-        return <div dangerouslySetInnerHTML={{ __html: await MarkdownParser.buildHtmlFromHtmlAst(content) }} />
+        return <div id="fallback" dangerouslySetInnerHTML={{ __html: await MarkdownParser.buildHtmlFromHtmlAst(content) }} />
     }
 }
