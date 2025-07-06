@@ -1,6 +1,6 @@
 import { bundledLanguages, bundledThemes, createHighlighter } from "shiki"
-import CopyButton from "./CopyButton"
 import localFont from "next/font/local"
+import dynamic from "next/dynamic"
 
 const kosugiMaru = localFont({
     // CSS 変数として使う
@@ -27,6 +27,9 @@ type ShikiCodeBlockRenderProps = {
     /** 言語。未指定の場合は plaintext */
     language?: string
 }
+
+/** テストが失敗するので、遅延ロードしている。 */
+const DynamicCopyButton = dynamic(() => import('./CopyButton'))
 
 /** shiki を使ってシンタックスハイライトした後描画するコードブロック */
 export default async function ShikiCodeBlockRender({ code, language }: ShikiCodeBlockRenderProps) {
@@ -56,7 +59,7 @@ export default async function ShikiCodeBlockRender({ code, language }: ShikiCode
                 <div
                     className={`[&>pre]:overflow-x-scroll [&>pre]:p-4 [&>pre]:my-4 [&_code]:font-(family-name:--kosugi-maru-font)`}
                     dangerouslySetInnerHTML={{ __html: syntaxHighlightingCode }} />
-                <CopyButton text={code} />
+                <DynamicCopyButton text={code} />
             </div>
         </div>
     )
