@@ -133,15 +133,25 @@ class MarkdownParser {
     /**
      * unified の HTML AST から html を作成する
      * 
-     * @param ast {@see parseMarkdownToHtmlAst} の children
+     * @param hast {@see parseMarkdownToHtmlAst} の children
      * @returns HTML
      */
     static async buildHtmlFromHtmlAst(hast: RootContent) {
+        return this.buildHtmlFromHtmlAstList([hast])
+    }
+
+    /**
+     * unified の HTML AST の配列から html を作成する
+     * 
+     * @param hastList {@see parseMarkdownToHtmlAst} の children
+     * @returns HTML
+     */
+    static async buildHtmlFromHtmlAstList(hastList: RootContent[]) {
         const hastProcessor = unified()
             .use(rehypeRaw)
         const htmlProcessor = unified()
             .use(rehypeStringify)
-        const fixHast = await hastProcessor.run({ type: "root", children: [hast] })
+        const fixHast = await hastProcessor.run({ type: "root", children: hastList })
         const html = htmlProcessor.stringify(fixHast)
         return html.toString()
     }

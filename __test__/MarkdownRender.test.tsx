@@ -398,22 +398,18 @@ describe('<MarkdownRender /> のテスト', () => {
         expect(container.querySelectorAll('#fallback').length).toBe(1)
     })
 
-    /*
-        test('Markdown の改行に HTML の <br> が使えること。br のみを利用している場合はフォールバックしないこと。', async () => {
-            const { container } = await act(async () => {
-                return render(
-                    <Suspense>
-                        <MarkdownRender markdown='改行<br>できた<br>みっつめ' />
-                    </Suspense>
-                )
-            })
-            expect(container.innerHTML).toContain('改行<br>できた<br>みっつめ')
-            // HTML 埋め込みではなく、改行するだけなので、文字の色が当ててあること
-            expect(container.querySelector('div')).toHaveProperty('style')
-            // フォールバックしないので 0
-            expect(container.querySelectorAll('#fallback').length).toBe(0)
+    test('Markdown の改行に HTML の <br> が使えること。br のみを利用している場合はフォールバックしないこと。', async () => {
+        const { container } = await act(async () => {
+            return render(
+                <Suspense>
+                    <MarkdownRender markdown='改行<br>できた<br>みっつめ' />
+                </Suspense>
+            )
         })
-    */
+        expect(container.innerHTML).toContain('改行<br>できた<br>みっつめ')
+        // フォールバックしないので 0
+        expect(container.querySelectorAll('#fallback').length).toBe(0)
+    })
 
     /*
         test('', async () => {

@@ -61,7 +61,7 @@ type HtmlElementRenderProps = {
 }
 
 /** HTML AST の element を受け取って、自前で描画する */
-function HtmlElementRender({ element }: HtmlElementRenderProps) {
+async function HtmlElementRender({ element }: HtmlElementRenderProps) {
 
     // "element" 以外はここでふるい落とす
     // text は <p> の中身などで使っている
@@ -97,30 +97,6 @@ function HtmlElementRender({ element }: HtmlElementRenderProps) {
         isFallback = true
     }
 
-    // 子の中に自分で描画できない要素がある
-    // todo いらんかも？
-    if (
-        element.children
-            .filter((node) => node.type === "element")
-            .some((element) => MarkdownParser.findNestedElement(element, [...ReBuildHtmlElementTagNames]).length === 0)
-    ) {
-        if (process.env.NODE_ENV === "development") {
-            const childTagNameList = element.children.filter((node) => node.type === "element").map((element) => element.tagName)
-            console.log(`子に描画できないタグがあるため unified へフォールバックします。${childTagNameList}`)
-        }
-        isFallback = true
-    }
-
-    // 子に raw（Markdown に HTML）を持つ
-    // HTML を div に dangerouslySetInnerHTML する
-    // <p> の中で <div> を使うことが出来ないため
-    if (element.children.some((node) => node.type === "raw")) {
-        if (process.env.NODE_ENV === "development") {
-            console.log(`直接書いた HTML を子に持つため unified へフォールバックします`)
-        }
-        isFallback = true
-    }
-
     // Markdown に書いた HTML で style を当てていた場合もフォールバック
     // JSX では style を object で渡す必要があり、
     // HTML に書いた style は文字列だと渡せない
@@ -132,52 +108,73 @@ function HtmlElementRender({ element }: HtmlElementRenderProps) {
     }
 
     // フォールバックする場合
-    // TODO <br> で改行する場合もここに来てしまう。
     if (isFallback) {
         // 自前で描画無理なので unified で HTML を作る
         return <FallbackElement content={element} />
     }
 
+    // TODO HTML を書いた場合はそのまま描画するべき、要素の属性がが消えてしまう
     // 自分で描画する場合、子を children: ReactNode に入れる必要があるので、再帰で作っておく
-    const childrenHtml = element.children.map((node, index) => <HtmlElementRender key={index} element={node} />)
+    // 一度 HTML にして HAST にしているのは、
+    // ['<span style="color:red">', 'TEXT', '</span>']
+    // のように HTML が element ではなく文字列になっていて、かつ、JSX で書くには扱いづらい。
+    // なので手間だが一旦変換している。
+    const childrenHtml = await MarkdownParser.buildHtmlFromHtmlAstList(element.children)
+    const childrenNodeList = MarkdownParser.parseHtmlAstFromHtmlString(childrenHtml)
+    const childrenJsx = childrenNodeList.map((node, index) => <HtmlElementRender key={index} element={node} />)
 
     // 自前で作っている部分
     const tagName = element.tagName as ReBuildHtmlElementTypes
     switch (tagName) {
 
         case "div":
-            return <div>{childrenHtml}</div>
+            return <div>{childrenJsx}</div>
         case "br":
             return <br />
 
         // unified rehype が各要素を <p> でラップしようとする
         // https://github.com/rehypejs/rehype/issues/160
         // が、p の子に div はだめ → <p> <div/> <p>
-        // --- 閑話休題 ---
-        // div 作ってんのが、ここの switch と、
-        // <a> タグのリンクカード、<pre> のコードブロック
+        // <p> に div を入れている処理が
+        // ここの switch と、
+        // <a> タグのリンクカード
+        // <pre> のコードブロック
+        // childrenNodeList（親が描画できない場合）
         case "p":
-            const pTagHasNotContainsElement = 1 <= MarkdownParser.findNestedElement(element, ["a", "pre"]).length
-            if (pTagHasNotContainsElement && process.env.NODE_ENV === "development") {
+            // <p> の中に入れてよいか判定
+            // <div> が 0 じゃないと <p> に入れない
+            const hasDiv = 0 != MarkdownParser.findNestedElement({ type: 'root', children: childrenNodeList }, ["a", "pre", "div"]).length
+            // フォールバックする予定の場合（div に入れる。）（childernJsx は JSX なのでそれ以上の情報がない）
+            // TODO 子の子までは見ていない
+            const isChildrenFallback = childrenNodeList
+                .filter((node) => node.type === "element")
+                .some((element) => !ReBuildHtmlElementTagNames.includes(element.tagName as any))
+            // style もみている
+            const isSetStyleAttribute = childrenNodeList
+                .filter((node) => node.type === "element")
+                .some((element) => "style" in element.properties)
+            // ok なら <p>
+            const isAvailablePTagContains = !hasDiv && !isChildrenFallback && !isSetStyleAttribute
+            if (!isAvailablePTagContains && process.env.NODE_ENV === "development") {
                 console.log('<p> タグに <div> を入れることが出来ないため、<div> に差し替えました。')
             }
-            return pTagHasNotContainsElement
-                ? <div className="my-4 text-content-text-light dark:text-content-text-dark">{childrenHtml}</div>
-                : <p className="my-4 text-content-text-light dark:text-content-text-dark">{childrenHtml}</p>
+            return isAvailablePTagContains
+                ? <p className="my-4 text-content-text-light dark:text-content-text-dark">{childrenJsx}</p>
+                : <div className="my-4 text-content-text-light dark:text-content-text-dark">{childrenJsx}</div>
 
         // 文字
         case "span":
-            return <span>{childrenHtml}</span>
+            return <span>{childrenJsx}</span>
         case "em":
-            return <em>{childrenHtml}</em>
+            return <em>{childrenJsx}</em>
         case "del":
-            return <del>{childrenHtml}</del>
+            return <del>{childrenJsx}</del>
         case "strong":
-            return <strong>{childrenHtml}</strong>
+            return <strong>{childrenJsx}</strong>
         case "sup":
-            return <sup>{childrenHtml}</sup>
+            return <sup>{childrenJsx}</sup>
         case "blockquote":
-            return <blockquote>{childrenHtml}</blockquote>
+            return <blockquote>{childrenJsx}</blockquote>
 
         // img
         // 画像読み込みを遅延させたい
@@ -200,32 +197,32 @@ function HtmlElementRender({ element }: HtmlElementRenderProps) {
                 {
                     element.children.every((element) => element.type === "text" && element.value === href)
                         ? undefined
-                        : <>{childrenHtml}</>
+                        : <>{childrenJsx}</>
                 }
             </LinkCardRender>
 
         // 箇条書き
         case "ul":
-            return <ul className="list-disc m-[revert] p-[revert]">{childrenHtml}</ul>
+            return <ul className="list-disc m-[revert] p-[revert]">{childrenJsx}</ul>
         case "li":
             const liId = element.properties['id']?.toString()
-            return <li id={liId} className="text-content-text-light dark:text-content-text-dark">{childrenHtml}</li>
+            return <li id={liId} className="text-content-text-light dark:text-content-text-dark">{childrenJsx}</li>
         case "ol":
-            return <ol>{childrenHtml}</ol>
+            return <ol>{childrenJsx}</ol>
 
         // テーブル
         case "table":
-            return <table className="m-2 w-full p-3 border-collapse border-b-spacing-0 border-b-[1px] border-b-content-primary-light dark:border-content-primary-dark">{childrenHtml}</table>
+            return <table className="m-2 w-full p-3 border-collapse border-b-spacing-0 border-b-[1px] border-b-content-primary-light dark:border-content-primary-dark">{childrenJsx}</table>
         case "tr":
-            return <tr className="border-b-2 border-b-content-primary-light dark:border-b-content-primary-dark">{childrenHtml}</tr>
+            return <tr className="border-b-2 border-b-content-primary-light dark:border-b-content-primary-dark">{childrenJsx}</tr>
         case "td":
-            return <td className="p-2 text-center">{childrenHtml}</td>
+            return <td className="p-2 text-center">{childrenJsx}</td>
         case "th":
-            return <th className="text-center">{childrenHtml}</th>
+            return <th className="text-center">{childrenJsx}</th>
         case "thead":
-            return <thead>{childrenHtml}</thead>
+            return <thead>{childrenJsx}</thead>
         case "tbody":
-            return <tbody>{childrenHtml}</tbody>
+            return <tbody>{childrenJsx}</tbody>
 
         // h1 h2 ...
         // Tailwind CSS で色付けをする
@@ -235,7 +232,7 @@ function HtmlElementRender({ element }: HtmlElementRenderProps) {
         case "h4":
         case "h5":
         case "h6":
-            return <HeadingElement tagName={tagName} element={element}>{childrenHtml}</HeadingElement>
+            return <HeadingElement tagName={tagName} element={element}>{childrenJsx}</HeadingElement>
 
         // コードブロック
         // pre の中の code を見る
@@ -250,31 +247,31 @@ function HtmlElementRender({ element }: HtmlElementRenderProps) {
         // 単発コード
         // 複数行は pre で全部やるので、ここに来ない
         case "code":
-            return <code className="px-2 font-(family-name:--koruri-font) rounded-md text-content-text-light dark:text-content-text-dark bg-gray-200 dark:bg-gray-800">{childrenHtml}</code>
+            return <code className="px-2 font-(family-name:--koruri-font) rounded-md text-content-text-light dark:text-content-text-dark bg-gray-200 dark:bg-gray-800">{childrenJsx}</code>
 
         // script
         // noscript もついでに
         case "script":
             const src = element.properties['src']?.toString()
             const type = element.properties['type']?.toString()
-            return <ClientScriptRender src={src} type={type}>{childrenHtml}</ClientScriptRender>
+            return <ClientScriptRender src={src} type={type}>{childrenJsx}</ClientScriptRender>
         case "noscript":
-            return <noscript>{childrenHtml}</noscript>
+            return <noscript>{childrenJsx}</noscript>
 
         // iframe
         // どのキーがあるか分からないので、スプレッドで
         case "iframe":
-            return <iframe {...element.properties}>{childrenHtml}</iframe>
+            return <iframe {...element.properties}>{childrenJsx}</iframe>
 
         // セクション
         case "section":
-            return <section>{childrenHtml}</section>
+            return <section>{childrenJsx}</section>
 
         // 折りたたみ
         case "details":
-            return <details>{childrenHtml}</details>
+            return <details>{childrenJsx}</details>
         case "summary":
-            return <summary>{childrenHtml}</summary>
+            return <summary>{childrenJsx}</summary>
 
         // 区切り線
         case "hr":
