@@ -297,18 +297,30 @@ describe('<MarkdownRender /> のテスト', () => {
                 </Suspense>
             )
         })
+
         expect(screen.getByRole('heading', { level: 1 })).toBeDefined()
         expect(screen.getByRole('heading', { level: 1 }).textContent).toBe('h1')
+        expect(screen.getByRole('heading', { level: 1 })).toHaveProperty('id', 'h1')
+
         expect(screen.getByRole('heading', { level: 2 })).toBeDefined()
         expect(screen.getByRole('heading', { level: 2 }).textContent).toBe('h2')
+        expect(screen.getByRole('heading', { level: 2 })).toHaveProperty('id', 'h2')
+
         expect(screen.getByRole('heading', { level: 3 })).toBeDefined()
         expect(screen.getByRole('heading', { level: 3 }).textContent).toBe('h3')
+        expect(screen.getByRole('heading', { level: 3 })).toHaveProperty('id', 'h3')
+
         expect(screen.getByRole('heading', { level: 4 })).toBeDefined()
         expect(screen.getByRole('heading', { level: 4 }).textContent).toBe('h4')
+        expect(screen.getByRole('heading', { level: 4 })).toHaveProperty('id', 'h4')
+
         expect(screen.getByRole('heading', { level: 5 })).toBeDefined()
         expect(screen.getByRole('heading', { level: 5 }).textContent).toBe('h5')
+        expect(screen.getByRole('heading', { level: 5 })).toHaveProperty('id', 'h5')
+
         expect(screen.getByRole('heading', { level: 6 })).toBeDefined()
         expect(screen.getByRole('heading', { level: 6 }).textContent).toBe('h6')
+        expect(screen.getByRole('heading', { level: 6 })).toHaveProperty('id', 'h6')
     })
 
     test('コードブロックが描画出来る', async () => {
