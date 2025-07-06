@@ -14,6 +14,7 @@ export async function FallbackElement({ content }: FallbackElementProps) {
     if (whitespace(content)) {
         return <></>
     } else {
-        return <div id="fallback" dangerouslySetInnerHTML={{ __html: await MarkdownParser.buildHtmlFromHtmlAst(content) }} />
+        // TODO <br> がここに来ないようになったら className を消す
+        return <div className="text-content-text-light dark:text-content-text-dark" id="fallback" dangerouslySetInnerHTML={{ __html: await MarkdownParser.buildHtmlFromHtmlAst(content) }} />
     }
 }

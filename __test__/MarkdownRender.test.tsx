@@ -373,7 +373,7 @@ describe('<MarkdownRender /> のテスト', () => {
         expect(container.querySelector('iframe')).toBeDefined()
     })
 
-    test('自前で描画しないタグも描画できる', async () => {
+    test('自前で描画しないタグもフォールバックして描画できる', async () => {
         const { container } = await act(async () => {
             return render(
                 <Suspense>
@@ -382,6 +382,7 @@ describe('<MarkdownRender /> のテスト', () => {
             )
         })
         expect(container.querySelector('video')).toBeDefined()
+        expect(container.querySelectorAll('#fallback').length).toBe(1)
     })
 
     test('HTML に style が書かれていたら自分で描画するのを辞める', async () => {
@@ -392,9 +393,27 @@ describe('<MarkdownRender /> のテスト', () => {
                 </Suspense>
             )
         })
-        // unified を使う場合 div でラップされる
+        // unified を使う場合 div(id = fallback) でラップされる
         expect(container.querySelector('div span')).toBeDefined()
+        expect(container.querySelectorAll('#fallback').length).toBe(1)
     })
+
+    /*
+        test('Markdown の改行に HTML の <br> が使えること。br のみを利用している場合はフォールバックしないこと。', async () => {
+            const { container } = await act(async () => {
+                return render(
+                    <Suspense>
+                        <MarkdownRender markdown='改行<br>できた<br>みっつめ' />
+                    </Suspense>
+                )
+            })
+            expect(container.innerHTML).toContain('改行<br>できた<br>みっつめ')
+            // HTML 埋め込みではなく、改行するだけなので、文字の色が当ててあること
+            expect(container.querySelector('div')).toHaveProperty('style')
+            // フォールバックしないので 0
+            expect(container.querySelectorAll('#fallback').length).toBe(0)
+        })
+    */
 
     /*
         test('', async () => {

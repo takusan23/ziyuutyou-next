@@ -1,7 +1,7 @@
 import type { RootContent, Element } from "hast"
 import { whitespace } from "hast-util-whitespace"
 import MarkdownParser from "../../src/MarkdownParser"
-import { FallbackElement } from "./DefaultRenderer"
+import { FallbackElement } from "./FallbackElement"
 import ShikiCodeBlockRender from "./ShikiCodeBlockRender"
 import HeadingElement from "./HeadingRender"
 import ClientScriptRender from "./ClientScriptRender"
@@ -132,6 +132,7 @@ function HtmlElementRender({ element }: HtmlElementRenderProps) {
     }
 
     // フォールバックする場合
+    // TODO <br> で改行する場合もここに来てしまう。
     if (isFallback) {
         // 自前で描画無理なので unified で HTML を作る
         return <FallbackElement content={element} />
