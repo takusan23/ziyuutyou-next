@@ -16,7 +16,7 @@ type LinkCardRenderProps = {
 /** LinkBox へ渡す Props */
 type LinkBoxProps = {
     /** URL */
-    urlObject: URL
+    href: string
     /** <a> につける ID */
     id?: string
     /** className 指定するなら */
@@ -26,17 +26,17 @@ type LinkBoxProps = {
 }
 
 /** <a> か <Link> でラップする */
-function LinkBox({ urlObject, id, className, children }: LinkBoxProps) {
+function LinkBox({ href, id, className, children }: LinkBoxProps) {
     // 自分のサイトの遷移であれば next/link を使ってプリフェッチの恩恵を受ける
-    if (`${urlObject.protocol}//${urlObject.host}` === EnvironmentTool.BASE_URL) {
+    if (href.startsWith(EnvironmentTool.BASE_URL)) {
         return (
-            <Link href={urlObject.pathname} className={className} id={id}>
+            <Link href={href} className={className} id={id}>
                 {children}
             </Link>
         )
     } else {
         return (
-            <a href={urlObject.href} className={className} id={id}>
+            <a href={href} className={className} id={id}>
                 {children}
             </a>
         )
@@ -50,12 +50,13 @@ export default async function LinkCardRender({ href, id, children }: LinkCardRen
 
     // 存在しないなら
     if (!href) return <>{childrenOrHref}</>
-    const urlObject = new URL(href, EnvironmentTool.BASE_URL)
 
     // 子要素があれば優先
-    if (children) {
+    // # から始まってる場合も優先
+    // TODO もうちょっとマシに
+    if (children || href.startsWith('#')) {
         return (
-            <LinkBox urlObject={urlObject} className="text-[revert] underline" id={id}>
+            <LinkBox href={href} className="text-[revert] underline" id={id}>
                 <>{children}</>
             </LinkBox>
         )
@@ -63,10 +64,11 @@ export default async function LinkCardRender({ href, id, children }: LinkCardRen
 
     // サイトにアクセスして OGP 情報を取得
     // 最低限 title がないと作らない
+    const urlObject = new URL(href, EnvironmentTool.BASE_URL)
     const { img, title, description, url } = await LinkCardTool.getLinkCardData(urlObject.href)
     if (!title) {
         return (
-            <LinkBox urlObject={urlObject} className="text-[revert] underline" id={id}>
+            <LinkBox href={urlObject.href} className="text-[revert] underline" id={id}>
                 <>{childrenOrHref}</>
             </LinkBox>
         )
@@ -74,7 +76,7 @@ export default async function LinkCardRender({ href, id, children }: LinkCardRen
 
     // リンクカードを作る
     return (
-        <LinkBox urlObject={urlObject} id={id}>
+        <LinkBox href={urlObject.href} id={id}>
             <div className="flex flex-row items-center h-[128px] border rounded-md overflow-hidden border-content-primary-light dark:border-content-primary-dark">
                 {
                     img && <img

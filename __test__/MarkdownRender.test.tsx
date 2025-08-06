@@ -130,6 +130,21 @@ describe('<MarkdownRender /> のテスト', () => {
         expect(screen.queryAllByRole('img').length).toBe(0)
     })
 
+    test('ハッシュ付きの URL が描画できる', async () => {
+        await act(async () => {
+            render(
+                <Suspense>
+                    <MarkdownRender markdown='[先頭へ](#first-id)' />
+                </Suspense>
+            )
+        })
+        expect(screen.getByRole('link')).toBeDefined()
+        expect(screen.getByRole('link').textContent).toBe('先頭へ')
+        expect(screen.getByRole('link').getAttribute('href')).toContain('#first-id')
+        // リンクカードがないこと
+        expect(screen.queryAllByRole('img').length).toBe(0)
+    })
+
     test('リンクカードの取得に失敗した', async () => {
         // fetch をわざと失敗させる
         const spy = vi
