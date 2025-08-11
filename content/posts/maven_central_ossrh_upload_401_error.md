@@ -6,6 +6,11 @@ tags:
 ---
 どうもこんばんわ。  
 
+# 追記 2025-08-12
+`OSSRH`→`Central Portal`はここ！
+
+https://takusan.negitoro.dev/posts/maven_central_ossrh_to_central_portal/
+
 # 本題
 `GitHub Actions`を使ってボタンを押すだけでライブラリのリリース、今日も使おうと思ったら失敗してしまった。  
 その調査です。
