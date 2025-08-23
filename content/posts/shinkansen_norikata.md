@@ -241,6 +241,19 @@ https://smart-ex.jp/reservation/reserve_smart/sp/
 別に取り忘れても大した事にはならないと思います。  
 記念に欲しいのはそう。
 
+# 乗り場を探す
+乗りたい新幹線（今回は東海道新幹線）の乗り場を案内にしたがって進みます。
+
+![乗り場探し矢印](https://oekakityou.negitoro.dev/resize/2c1d6de9-deae-43ec-907a-121c78293655.jpg)
+
+![乗り場探し数字](https://oekakityou.negitoro.dev/resize/0f48435a-51b3-4a5e-8fc1-cab6ef8d8809.jpg)
+
+乗り場です
+
+![方向の看板](https://oekakityou.negitoro.dev/resize/8ea9dbec-59fd-43d5-862d-672a0ca6186a.jpg)
+
+![時間](https://oekakityou.negitoro.dev/resize/3540f364-fa32-4143-b4ca-300ee59f555d.jpg)
+
 # アイス
 インターネットで有名なあのアイスは、新幹線のホームのどこかしらにあるはずです。  
 今は自販機で買うみたいで、なんやかんやしてたら溶け始めてた。
