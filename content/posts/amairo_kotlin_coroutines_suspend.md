@@ -3846,5 +3846,67 @@ while(var5.hasNext()) {
 }
 ```
 
+# 追記 2025/08/27 ファンディスク2
+サスペンド関数紹介ドラゴンやります。
+
+## awaitCancellation
+個人的好きな関数 awaitCencellalation()  
+これは、コルーチンが終了するまで一時停止する関数です。例えば、コールバックを`suspendCoroutine / callbackFlow { }`に変換するまでもないときに使えます。
+
+```kotlin
+lifecycleScope.launch {
+
+    val lifecycleObserver = object : DefaultLifecycleObserver {
+        override fun onStart(owner: LifecycleOwner) {
+            super.onStart(owner)
+        }
+
+        override fun onStop(owner: LifecycleOwner) {
+            super.onStop(owner)
+        }
+    }
+
+    try {
+        lifecycle.addObserver(lifecycleObserver) // コールバック登録
+        awaitCancellation() // 待つ
+    } finally {
+        lifecycle.removeObserver(lifecycleObserver) // コルーチン終了時（lifecycleScope 終了時）解除
+    }
+}
+```
+
+**例に出したところ申し訳ないですが、lifecycle ライブラリは自動でコールバックを解除してくれるらしいので、登録しっぱなしでいい。らしい**
+
+これをつかうと`DisposableEffect`相当の処理を`LaunchedEffect`で実現できます。メリットですが、後者だと`サスペンド関数`が呼べるおまけ付き
+
+```kotlin
+// DisposableEffect はサスペンド関数が呼べない
+DisposableEffect(key1 = Unit) {
+    onDispose { }
+}
+
+// LaunchedEffect はサスペンド関数が呼び出せる。ついでに終了昨日もつければ、onDispose 相当の処理にもなる
+LaunchedEffect(key1 = Unit) {
+    try {
+        // サスペンド関数を呼び出せる
+        awaitCancellation()
+    } finally {
+        // onDispose 相当の処理
+    }
+}
+```
+
+## invokeOnCompletion
+こっちは有名ですが、コルーチン終了時（`launch { }`の`Job`が終了した時）に呼び出されるコールバックです。  
+やっぱり最後はコールバックなんだって。
+
+```kotlin
+lifecycleScope.launch {
+    delay(1_000)
+}.invokeOnCompletion {
+    // コルーチン終了時
+}
+```
+
 # おわりに
 いやーーーーーー`Kotlin Coroutines`、頭が良い！よく考えられてるなと思いました。
