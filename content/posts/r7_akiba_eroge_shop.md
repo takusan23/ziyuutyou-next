@@ -92,12 +92,18 @@ tags:
         - レジの近く
     - 21:00 まで
     - 上下エスカレーターと階段とエレベーターがあるはず？
-- [まんだらけ コンプレックス](#まんだらけコンプレックス)
-    - [https://www.mandarake.co.jp/dir/cmp/](https://www.mandarake.co.jp/dir/cmp/)
-    - 中古だけです 4 階。奥の方
-    - CD は 6 階
-    - 20:00 まで
-    - エレベーターと階段があります
+- まんだらけ
+    - [まんだらけ コンプレックス](#まんだらけコンプレックス)
+        - [https://www.mandarake.co.jp/dir/cmp/](https://www.mandarake.co.jp/dir/cmp/)
+        - 中古だけです 4 階。奥の方
+        - ~~CD は 6 階~~
+        - 20:00 まで
+        - エレベーターと階段があります
+    - [まんだらけコンプレックス2](#まんだらけコンプレックス2)
+        - [https://www.mandarake.co.jp/dir/cmp2/](https://www.mandarake.co.jp/dir/cmp2/)
+        - CD はこちらに移動したみたいです。3階 にあります
+        - こっちの R-18 禁コーナーは AV っぽかった
+        - エレベーターと階段があります。高所恐怖症には階段厳しいかも？
 - [メロンブックス秋葉原店舗受取館](#メロンブックス秋葉原店舗受取館)
     - [https://www.melonbooks.co.jp/shop/shop.php?wp_id=58](https://www.melonbooks.co.jp/shop/shop.php?wp_id=58)
     - 新品だけです。2 階
@@ -410,7 +416,7 @@ CDコーナーは真ん中らへん、レジの近く
 ![まんだらけ2](https://oekakityou.negitoro.dev/resize/1b81f833-14cd-4bfa-a5ef-362fb31dabbe.jpg)
 
 中古のみの扱いです。エロゲコーナーは4階の、一番奥。レジの近く。
-`CD`は6階です。場所が変わってなければ、階段から入って真っ直ぐ。
+~~`CD`は6階です。場所が変わってなければ、階段から入って真っ直ぐ。~~
 
 品揃えは中以上くらい。  
 前書いたかもしれないですが、中野のまんだらけのが`CD`もエロゲもあるかなと思いました。。
@@ -422,6 +428,21 @@ CDコーナーは真ん中らへん、レジの近く
 ↑この奥の
 
 ![まんだらけ4](https://oekakityou.negitoro.dev/resize/bcb64e33-4858-4c50-a0af-8832515169a4.jpg)
+
+（追記：2025/09/08）見てきました!!!
+
+### まんだらけコンプレックス2
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1620.0322164580216!2d139.770481!3d35.700032!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d0064973ec5%3A0xf40924df23a6035f!2z44G-44KT44Gg44KJ44GR44Kz44Oz44OX44Os44OD44Kv44K5Mg!5e0!3m2!1sja!2sjp!4v1757342831938!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+![まんだらけコンプレックス2](https://oekakityou.negitoro.dev/resize/beaa9801-a58e-4bb3-a572-4c0238de2080.jpg)
+
+![まんだらけコンプレックス2](https://oekakityou.negitoro.dev/resize/747d3ba0-73a6-4043-aac4-fefe96e26f7a.jpg)
+
+`CD`はこちらに移動したみたい！！！
+階段もありますが、ちょっと高所恐怖症は怖いかも、
+
+![まんだらけコンプレックス2](https://oekakityou.negitoro.dev/resize/40475d4e-b8ce-47b4-b30b-6fccf883df4a.jpg)
 
 # 新作予約、新作在庫のみ
 新品予約、または新作在庫のみ取り扱っているお店です

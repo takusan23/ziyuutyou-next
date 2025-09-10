@@ -45,6 +45,7 @@ tags:
     - クイックタップをスクリーンショットに設定
     - ロック画面のショートカットボタン
     - ホーム画面下のアイコンは全部候補機能のために固定しない
+    - クイック設定のレコーダーを使いたいかも？
 
 - Xperia
     - サイドセンスをスクリーンショットに割り当て
@@ -67,6 +68,7 @@ tags:
 - 音量ボタン押したときの挙動をシャッターに割り当てる（ズームとかになってるはず
 - 動画は`HDR`で撮影
 - `Google Pixel`ならトップショットを常に ON
+- 位置情報も ON でいいかなあ
 
 # Google
 - ニアバイシェア
@@ -102,19 +104,21 @@ tags:
 - Xplore
 - VLC
 - Shizuku
-    - GitHub から APK 入れたほうが新しいかも
+    - GitHub から APK ダウンロードしたほうが新しいかも
+- aShellYou
 - DeployGate
 - Play Console (リジェクトの時に通知くる)
 - Google Keep
 - Google 翻訳（文字選択時に翻訳出来るように）
 - Yahoo 乗換案内
+    - ヤフー製アプリはすごく電池を消費するのでバックグラウンドでの動作を無効にする
 - Yahoo 天気
     - 雨雲レーダーのウィジェット
-- Twitter（情報収集用に）
+- Okta Verify
 - ポイントカード
     - ラクウル（ソフマップ）
     - dカード？
-- Nova Launcher (入れるなら)
+- Nova Launcher (入れるなら)(なんと終わってしまったので代替を探す...)
 - Pixel Watch (メインなら)
 - LINE (メインなら、引き継ぎに前端末が必要？)
 - モバイルSuica (メインなら)
@@ -129,9 +133,9 @@ tags:
 - NewRadioSupporter
 - TelephoneyManagerAPI
 - RadioLogcat
-- ThirdpartyPhysicalChannelConfig
+- ShizukuDensokuApiLogger
 - LogcatPhysicalChannelConfig
-- GalakeeWidget (いらんかも)
+- Iroenpitu
 
 お好みで
 
