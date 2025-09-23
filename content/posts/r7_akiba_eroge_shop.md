@@ -281,6 +281,7 @@ tags:
 
 ![トレーダー本店_階段_9](https://oekakityou.negitoro.dev/resize/4928c281-acd2-44cb-b9be-73e8fa454388.jpg)
 
+![トレーダー本店_なか](https://oekakityou.negitoro.dev/resize/9695f9ee-bdea-439f-8077-a8666303e5b2.jpg)
 
 店舗予約する場合は、入口近くにある壁に予約券が並んでいるので、これをレジに持っていく。  
 前金あり、前金は現金のみ
@@ -322,12 +323,14 @@ tags:
 
 ![トレーダー2号店_なか_2](https://oekakityou.negitoro.dev/resize/14dff0bf-46fc-4fec-9e79-db915a8b5a8e.jpg)
 
+![トレーダー2号店_なか_3](https://oekakityou.negitoro.dev/resize/a9e69ab1-05d8-4998-8e8b-42395dd564e8.jpg)
+
 本店と同様に中古在庫が多いです！！！  
 あとここよく HOOK 系列が貼ってある感、
 
-![トレーダー2号店_なか_3](https://oekakityou.negitoro.dev/resize/6cd381ef-3705-4937-888e-fd6e207d8688.jpg)
+![トレーダー2号店_そと_8](https://oekakityou.negitoro.dev/resize/6cd381ef-3705-4937-888e-fd6e207d8688.jpg)
 
-![トレーダー2号店_なか_4](https://oekakityou.negitoro.dev/resize/73e9081e-ac7c-4b9c-9384-be60361bd398.jpg)
+![トレーダー2号店_そと_9](https://oekakityou.negitoro.dev/resize/73e9081e-ac7c-4b9c-9384-be60361bd398.jpg)
 
 ## 駿河屋秋葉原本館
 
@@ -345,6 +348,8 @@ tags:
 ![駿河屋秋葉原本館4](https://oekakityou.negitoro.dev/resize/d2522119-d33c-4f30-8915-3c146c700e9b.jpg)
 
 ![駿河屋秋葉原本館5](https://oekakityou.negitoro.dev/resize/86c6d423-77fe-47e0-868b-f74d08ea3f9e.jpg)
+
+![駿河屋秋葉原本館6](https://oekakityou.negitoro.dev/resize/f29333a5-67da-4c5b-9b31-dc2c246a299b.jpg)
 
 階段は外にあるし、7階まで上がるのはかなり疲れる、、特に暑い日はなかなか大変...~~日本橋はエスカレータあるやん、、~~
 
@@ -485,6 +490,12 @@ PCゲームを予約するとたまにクリアファイル貰えたりする、
 ![ゲーマーズ1](https://oekakityou.negitoro.dev/resize/6acc4cb5-4c77-403a-a7bb-8e199233bd84.jpg)
 
 5階の奥の方、テレビがあって OP が流れてるところ。  
+店舗予約ですが、会員登録が必要になってて、すでに通販を使ったことあればあの会員証のバーコードのやつが提示できるのでそれを見せる。  
+無くてもスマホから名前とメアドとかを入れれば登録できるみたい？
+
+前金あり、現金のみで、けっこう支払う必要があります。（2万超えするゲーム予約したら前金1万だった）  
+レシートがもらえるので、引き換えのときに出せば良いはず。引き換えは発売日含めて7日間。
+
 ほぼ新作予約のために行く感じ。心なしか予約の締め切りが短いイメージ!!!  
 ほかのお店は今月発売のゲームが1ヶ月切っても予約受付中だけど、ここは1ヶ月切ったら切り上げてるイメージがあるようなないような。
 

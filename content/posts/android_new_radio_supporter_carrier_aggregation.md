@@ -70,7 +70,7 @@ adb shell pm grant io.github.takusan23.newradiosupporter android.permission.READ
 
 他にも関連しそうな`API`があるのですが、  
 信頼度がなかったり（`CellInfo#getCellConnectionStatus`）（これを正しく実装してない会社あり）、  
-欲しい情報がなかったりで（`ServiceInfo#getBandwidths`）（帯域幅でバンドが取れない）
+欲しい情報がなかったりで（`ServiceState#getBandwidths`）（帯域幅でバンドが取れない）
 
 # 物理チャンネル構成もサードパーティアプリは取得できない
 ちなみに今のオープンテスト版ではこれを無理やり取得してます。  
