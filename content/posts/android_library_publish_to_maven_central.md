@@ -272,6 +272,24 @@ certutil -f -encode export_secret export_secret_base64
 
 **2024/03/29 Android Gradle Plugin の更新でまた動かなくなってました。不要な箇所があるので追記読んでください。**
 
+**2025/09/30 OSSRH のままだったので CentralPortal 用の説明を追記しました。**  
+
+## CentralPortal に対応させる
+
+https://takusan.negitoro.dev/posts/maven_central_ossrh_to_central_portal/
+
+↑も見てください（なげやり）。  
+めんどい場合は令和最新版の`build.gradle.kts`と`ライブラリ/build.gradle.kts`のコードへのリンクを張っておきます。
+
+- AkariDroid
+    - https://github.com/takusan23/AkariDroid/blob/master/build.gradle.kts
+    - https://github.com/takusan23/AkariDroid/blob/master/akari-core/build.gradle.kts
+- andAicaroid
+    - https://github.com/takusan23/andAicaroid/blob/master/build.gradle.kts
+    - https://github.com/takusan23/AkariDroid/blob/master/akari-core/build.gradle.kts
+
+`local.properties`のキー名も変えちゃってますのですいません、
+
 ## ルート (.idea がある場所) の build.gradle.kts
 
 まずルートにある build.gradle.kts へ書き足します。  

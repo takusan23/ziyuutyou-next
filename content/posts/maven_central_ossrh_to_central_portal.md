@@ -4,6 +4,7 @@ created_at: 2025-08-12
 tags:
 - Kotlin
 - Gradle
+- MavenCentral
 ---
 どうもこんばんわ、あつくて特にはないです！！
 
