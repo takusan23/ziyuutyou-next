@@ -3,6 +3,7 @@ title: D.C.5 Plus Happiness の深夜販売行ってきた
 created_at: 2024-12-31
 tags:
 - エロゲ
+- 深夜販売
 ---
 
 ![Image](https://github.com/takusan23/UltraHdrBlurEdit/blob/master/result2/image1.jpg?raw=true)

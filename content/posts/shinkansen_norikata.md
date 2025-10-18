@@ -127,6 +127,8 @@ https://smart-ex.jp/reservation/reserve_smart/sp/
 トイレに行きやすいのは通路側です。多分隣は他人（しかも二人組率高め）ですので。  
 あと夜だと外見れないので、トイレをとってもいいと思いました。
 
+追記：座席表一覧を使うと、お隣さんがいないかどうかに使えるんだなと今気づきました。
+
 ### 複数人
 一人でしか乗ったこと無いので分からず、ですが補足。新幹線の座席の横一列の詳細ですが、  
 横3列の座席に、通路をまたいで、横2列の座席の、計5席で構成されています。
@@ -326,3 +328,55 @@ https://smart-ex.jp/reservation/change/
 お疲れ様でした 8888
 
 つかれた・・・
+
+# 追記 2025-10-18 静岡にも行った
+![surugaya](https://oekakityou.negitoro.dev/resize/11ea2cd3-5c31-4d78-9ca0-25b20b0eb389.jpg)
+
+どうやら遅延している？ときは予想時刻が表示されてる。この場合でも予約できるし多分払い戻しもできる。  
+時間通りに来ない予想なので、自分が乗る新幹線を間違えないようにしないとですね？
+
+![delay](https://oekakityou.negitoro.dev/resize/d8e63d14-6d2c-485a-90a6-a5b672de69bf.png)
+
+ちゃんと買えます。遅延してるぞって最終確認も入る。
+
+![delay_confirm](https://oekakityou.negitoro.dev/resize/b8704b07-aaf9-47da-a2e8-01899764aab4.png)
+
+## 新幹線のどこが遅延しているかを見る方法
+遅延しようが、しまいが、今どのへんを走ってるかWebサイトから見ることができなす！！！
+
+https://traininfo.jr-central.co.jp/shinkansen/pc/ja/index.html
+
+**私が乗ったときはこの表示でした**。
+
+![delay_website](https://oekakityou.negitoro.dev/resize/c7b7b6ea-2256-4236-8379-92d644ee1150.png)
+
+### 新幹線がいつ来るか見る方法
+ただこれだと乗る新幹線がとこを走っているかまではわかりません。  
+
+https://traininfo.jr-central.co.jp/shinkansen/pc/ja/index.html
+
+なので上記のサイトの、この下にある`個別列車案内`の`列車で検索`を押して、予約した乗る新幹線の名前と、同様に新幹線の番号？を入れます。
+
+![timetable](https://oekakityou.negitoro.dev/resize/8ecba389-a2ee-4c21-b46f-611ad62de63d.png)
+
+**私のときはこうでした**。何分遅れ予想か精度が高い。
+
+### 新幹線が今どこを走っているか見る方法
+上記とは別に、どの駅の間を走っているか視覚的に見ることが出来ます。
+
+https://traininfo.jr-central.co.jp/shinkansen/pc/ja/ti08.html
+
+↑開くことで、どのへんを走っているかを図で表示してくれます。
+
+![draw_position](https://oekakityou.negitoro.dev/resize/309efffa-bda2-428a-872f-b2b09edd1402.png)
+
+**私のときはこれでした**。すごい、作るのめっちゃ大変そう。`<canvas>`か何かで書いているんだと思っていたのですが、今見たら`<div>`を動かしてて**感動**した。  
+アクセシビリティ意識してるんかな。ブラウザの翻訳も、テキスト検索も使えるのでようやったと思います。
+
+## 乗り換えアプリで前後の新幹線を確認する
+ヤフー製の乗り換えアプリだと、乗り換え検索結果→詳細画面の、乗車駅の↕️みたいなボタンを押すことで、自分が乗る前後の新幹線の到着時間が表示されます。
+
+![yahoo](https://oekakityou.negitoro.dev/resize/383e544e-1a8a-4e6d-a027-8ed6a789a826.png)
+
+いま来ている新幹線と突き合わせることでホーム（乗り場）を間違えてないかの確認にも使えます。  
+ホームの左右で違う新幹線が来るので、**何番線**かどうかも追加で見る必要があります。

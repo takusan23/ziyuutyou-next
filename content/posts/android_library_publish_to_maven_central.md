@@ -282,11 +282,11 @@ https://takusan.negitoro.dev/posts/maven_central_ossrh_to_central_portal/
 めんどい場合は令和最新版の`build.gradle.kts`と`ライブラリ/build.gradle.kts`のコードへのリンクを張っておきます。
 
 - AkariDroid
-    - https://github.com/takusan23/AkariDroid/blob/master/build.gradle.kts
-    - https://github.com/takusan23/AkariDroid/blob/master/akari-core/build.gradle.kts
+    - [build.gradle.kts](https://github.com/takusan23/AkariDroid/blob/master/build.gradle.kts)
+    - [ライブラリ/build.gradle.kts](https://github.com/takusan23/AkariDroid/blob/master/akari-core/build.gradle.kts)
 - andAicaroid
-    - https://github.com/takusan23/andAicaroid/blob/master/build.gradle.kts
-    - https://github.com/takusan23/AkariDroid/blob/master/akari-core/build.gradle.kts
+    - [build.gradle.kts](https://github.com/takusan23/andAicaroid/blob/master/build.gradle.kts)            
+    - [ライブラリ/build.gradle.kts](https://github.com/takusan23/AkariDroid/blob/master/akari-core/build.gradle.kts)
 
 `local.properties`のキー名も変えちゃってますのですいません、
 
