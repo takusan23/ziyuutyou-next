@@ -51,7 +51,7 @@ npm run dev
 対応している記法は以下です
 - CommonMark
 - GitHub Flavored Markdown
-    - CommonMark にはテーブル作れないので
+    - CommonMark ではテーブル作れないので
 - HTML 埋め込み
 - シンタックスハイライト（shiki）
 
@@ -157,6 +157,8 @@ npm run deploy
 https://takusan.negitoro.dev/posts/github_actions_netlify/
 
 ### Amazon S3 + Amazon CloudFront で公開する
+
+#### 概要
 必要なシークレットはこの4つです。  
 `OpenID Connect`を使う方法で認証するのでちょっとややこしいです。（アクセスキー使うように直してもいいんじゃない？）
 
@@ -171,6 +173,34 @@ https://takusan.negitoro.dev/posts/github_actions_netlify/
 
 詳しくは書いたので見てください：  
 https://takusan.negitoro.dev/posts/aws_sitatic_site_hosting/
+
+#### インフラ
+試験的に`CloudFormation`を書きました。`cloudformation.yaml`ファイルがそれです。  
+`https://takusan.negitoro.dev/`と大体同じインフラで構築できるはずです。
+
+- `S3`を配信する`CloudFront`ディストリビューション
+- 成果物を入れる`S3`バケット
+- `S3`と`CloudFront`を繋ぐ`バケットポリシー`、`OriginAccessControl`
+- `URL`に`/index.html`が付いてなくてもアクセスできるようにする`CloudFrontFunction`
+
+パラメーターは
+
+- `BucketName`
+    - `S3`バケット名。命名規則は`S3`に準じます
+- `OriginAccessControlDescription`
+    - `OAC`の説明。名前はバケット名の`{バケット名}.s3.{リージョン}.amazonaws.com`になります
+- `CloudFrontComment`
+    - `CloudFront`のコメント欄
+- `CloudFrontFunctionCreateOrReuse`
+    - `Create`か`Reuse`
+    - `Create`なら新規作成
+    - `/index.html`を付与する`CloudFrontFunction`がすでにある場合は`Reuse`
+- `CloudFrontFunctionName`
+    - ↑で`Create`ならこれから作る`CloudFrontFunction`の名前
+    - ↑で`Reuse`ならすでにある`CloudFrontFunction`の名前
+- `CachePolicyCreatedOrManaged`
+    - `CloudFront`のキャッシュポリシー
+    - デフォルトは`キャッシュ最適化`
 
 ## ファイル構造
 

@@ -1,0 +1,167 @@
+Parameters:
+
+  BucketName:
+    Type: String
+    Description: WebSite Output S3 Bucket Name
+
+  OriginAccessControlDescription:
+    Type: String
+    Default: cloudfront-s3-oac
+    Description: Origin Access Control Description
+
+  CloudFrontComment:
+    Type: String
+    Default: s3-cloudfront
+    Description: CloudFront memo
+
+  CloudFrontFunctionCreateOrReuse:
+    Type: String
+    Default: Create
+    AllowedValues:
+      - Create
+      - Reuse
+    Description: Append index.html suffix CloudFront Function. If created some
+      function, Reuse. Don't have, Create
+
+  CloudFrontFunctionName:
+    Type: String
+    Default: function-add-index
+    Description: CloudFront Function Name. If Reuse, created function name.
+
+  CachePolicyCreatedOrManaged:
+    Type: String
+    Default: 658327ea-f89d-4fab-a63d-7e88639e58f6
+    Description: Cache Policy. Default is CachingOptimized.
+
+Conditions:
+
+  # CloudFront Functions を作るか
+  CreateCloudFrontFunction: !Equals
+    - !Ref CloudFrontFunctionCreateOrReuse
+    - Create
+
+Resources:
+
+  # Next.js の static exports した結果を入れる S3
+  WebSiteBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref BucketName
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - BucketKeyEnabled: true
+            ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+
+  # S3 - CloudFront をつなぐバケットポリシー
+  BucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref WebSiteBucket
+      PolicyDocument:
+        Id: PolicyForCloudFrontPrivateContent
+        Version: '2008-10-17'
+        Statement:
+          - Sid: AllowCloudFrontServicePrincipal
+            Effect: Allow
+            Principal:
+              Service: cloudfront.amazonaws.com
+            Action: s3:GetObject
+            Resource: !Sub arn:aws:s3:::${BucketName}/*
+            Condition:
+              StringEquals:
+                AWS:SourceArn: !Sub arn:aws:cloudfront::${AWS::AccountId}:distribution/${CloudFrontDistribution}
+
+  # S3 に入っている Web サイトを配信する CloudFront
+  CloudFrontDistribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Origins:
+          - Id: !GetAtt WebSiteBucket.RegionalDomainName # マネジメントコンソールで作ると DomainName と同じ文字列になってそう
+            DomainName: !GetAtt WebSiteBucket.RegionalDomainName # リージョンが入ってないとアクセスできなかった
+            OriginAccessControlId: !GetAtt OriginAccessControl.Id
+            S3OriginConfig:
+              OriginAccessIdentity: ''
+        DefaultCacheBehavior:
+          AllowedMethods:
+            - GET
+            - HEAD
+          TargetOriginId: !GetAtt WebSiteBucket.RegionalDomainName # Origins Id に合わせる
+          ViewerProtocolPolicy: allow-all
+          FunctionAssociations:
+            # CloudFront Functions を作成する場合は、CloudFrontAddIndexFunction に依存するように書いておく。これで CloudFormation は先に Function を作る順番になるはず
+            - EventType: viewer-request
+              FunctionARN: !If
+                - CreateCloudFrontFunction
+                - !GetAtt CloudFrontAddIndexFunction.FunctionMetadata.FunctionARN
+                - !Sub arn:aws:cloudfront::${AWS::AccountId}:function/${CloudFrontFunctionName}
+          CachePolicyId: !Ref CachePolicyCreatedOrManaged
+          Compress: true
+        HttpVersion: http2
+        Enabled: true
+        Comment: !Ref CloudFrontComment
+
+  # S3- CloudFront をつなぐ OAC
+  OriginAccessControl:
+    Type: AWS::CloudFront::OriginAccessControl
+    Properties:
+      OriginAccessControlConfig:
+        Description: !Ref OriginAccessControlDescription
+        Name: !GetAtt WebSiteBucket.RegionalDomainName
+        OriginAccessControlOriginType: s3
+        SigningBehavior: always
+        SigningProtocol: sigv4
+
+  # CloudFront Function を作成する場合
+  # index.html を付与する Function
+  # https://docs.aws.amazon.com/ja_jp/AmazonCloudFront/latest/DeveloperGuide/example_cloudfront_functions_url_rewrite_single_page_apps_section.html
+  CloudFrontAddIndexFunction:
+    Type: AWS::CloudFront::Function
+    Condition: CreateCloudFrontFunction
+    Properties:
+      Name: !Ref CloudFrontFunctionName
+      AutoPublish: true
+      FunctionConfig:
+        Comment: add index.html to url suffix
+        Runtime: cloudfront-js-2.0
+      FunctionCode: |
+        async function handler(event) {
+            var request = event.request;
+            var uri = request.uri;
+
+            // Check whether the URI is missing a file name.
+            if (uri.endsWith('/')) {
+                request.uri += 'index.html';
+            }
+            // Check whether the URI is missing a file extension.
+            else if (!uri.includes('.')) {
+                request.uri += '/index.html';
+            }
+
+            return request;
+        }
+
+Outputs:
+
+  WebSiteBucket:
+    Description: S3
+    Value: !Ref WebSiteBucket
+
+  CloudFrontDistribution:
+    Description: CloudFront
+    Value: !Ref CloudFrontDistribution
+
+  OriginAccessControl:
+    Description: CloudFront OAC
+    Value: !Ref OriginAccessControl
+
+  CloudFrontAddIndexFunction:
+    Condition: CreateCloudFrontFunction
+    Description: CloudFront Functions
+    Value: !Ref CloudFrontAddIndexFunction
