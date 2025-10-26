@@ -299,6 +299,8 @@ try {
 `CloudFront`+`S3`でサイトを公開したのですが、これからもこの構成で公開するとなると`CloudFormation`的なのを作っておこうと思い作ってたんですが**3日**ぐらいかかりました。  
 使うかわからんものに・・・
 
+https://takusan.negitoro.dev/posts/aws_cloudformation_create_ziyuutyou_infrastructure/
+
 あーあ、マネジメントコンソール（ブラウザ）をポチポチしてれば1時間くらいだったのに。
 
 # 開発者認証の文句

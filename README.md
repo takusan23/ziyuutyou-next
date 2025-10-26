@@ -183,24 +183,23 @@ https://takusan.negitoro.dev/posts/aws_sitatic_site_hosting/
 - `S3`と`CloudFront`を繋ぐ`バケットポリシー`、`OriginAccessControl`
 - `URL`に`/index.html`が付いてなくてもアクセスできるようにする`CloudFrontFunction`
 
-パラメーターは
+↑は全部`CloudFormation`がやってくれて、カスタムドメインだけ自分でやってください。
 
-- `BucketName`
-    - `S3`バケット名。命名規則は`S3`に準じます
-- `OriginAccessControlDescription`
-    - `OAC`の説明。名前はバケット名の`{バケット名}.s3.{リージョン}.amazonaws.com`になります
-- `CloudFrontComment`
-    - `CloudFront`のコメント欄
-- `CloudFrontFunctionCreateOrReuse`
-    - `Create`か`Reuse`
-    - `Create`なら新規作成
-    - `/index.html`を付与する`CloudFrontFunction`がすでにある場合は`Reuse`
-- `CloudFrontFunctionName`
-    - ↑で`Create`ならこれから作る`CloudFrontFunction`の名前
-    - ↑で`Reuse`ならすでにある`CloudFrontFunction`の名前
-- `CachePolicyCreatedOrManaged`
-    - `CloudFront`のキャッシュポリシー
-    - デフォルトは`キャッシュ最適化`
+パラメーターですが
+
+| パラメーター名                  | 説明                                                                                                        |
+|---------------------------------|-------------------------------------------------------------------------------------------------------------|
+| BucketName                      | S3バケット名。命名規則はS3に準拠します。                                                                    |
+| OriginAccessControlDescription  | `OAC`の説明。名前はバケット名の`{バケット名}.s3.{リージョン}.amazonaws.com`になります                       |
+| CloudFrontComment               | `CloudFront`のコメント欄                                                                                    |
+| CloudFrontFunctionCreateOrReuse | `Create`か`Reuse`。`Create`なら新規作成`/index.html`を付与する`CloudFrontFunction`がすでにある場合は`Reuse` |
+| CloudFrontFunctionName          | `Create`ならこれから作る`CloudFrontFunction`の名前。`Reuse`ならすでにある`CloudFrontFunction`の名前         |
+| CachePolicyCreatedOrManaged     | `CloudFront`のキャッシュポリシー。デフォルトは`キャッシュ最適化`                                            |
+
+### その他で公開する
+`out`フォルダを静的サイト公開サービスに渡すだけでよいはずです。
+
+https://takusan.negitoro.dev/posts/cloudflare_pages_next_js/
 
 ## ファイル構造
 
