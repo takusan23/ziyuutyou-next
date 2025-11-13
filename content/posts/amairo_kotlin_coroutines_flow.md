@@ -2844,5 +2844,60 @@ class MainActivity : ComponentActivity() {
 コルーチン間で処理が分かれていて、別のコルーチンに処理を投げたい場合に`Channel`は便利なんだと思います。受信が確実に分かるので。  
 ごめん、使ったことがなくどういう時に使えばいいかわかんないや
 
+# 追記 2025-11-14 ファンディスク
+`StateFlow`を状態保持に使うことで、いい感じに待ち合わせが出来るってことに気付いたのでこの技使っていいですよ。
+
+以下のコードみたいに、すべての処理が終わるのを待つ必要がある処理があるとします。  
+まあ`Channel()`とかでも出来ると思いますが、わたしてきには`StateFlow`で更新し、条件を満たすまで`first()`で一時停止する技が良いのかなと。
+
+`updateFlag()`関数で、デフォルト引数を今の値（`StateFlow#value`）で埋めておいて省略できるのがお気に入り。
+
+```kotlin
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+
+        // 状態定義
+        data class Flag(val api: Boolean, val db: Boolean, val ui: Boolean)
+
+        // 今の状態を持つ Flow
+        val flagStateFlow = MutableStateFlow(Flag(api = false, db = false, ui = false))
+
+        // 更新関数
+        fun updateFlag(
+            api: Boolean = flagStateFlow.value.api,
+            db: Boolean = flagStateFlow.value.db,
+            ui: Boolean = flagStateFlow.value.ui
+        ) = flagStateFlow.update { before ->
+            before.copy(api = api, db = db, ui = ui)
+        }
+
+        // API / DB / UI を模擬するために適当に delay()
+        lifecycleScope.launch {
+            launch {
+                delay(2_000)
+                updateFlag(api = true)
+            }
+            launch {
+                delay(1_00)
+                updateFlag(db = true)
+            }
+            launch {
+                delay(500)
+                updateFlag(ui = true)
+            }
+            launch {
+                // すべてが true の時に次に進む
+                // first() で条件を満たすまで一時停止
+                flagStateFlow.first { (api, db, ui) -> api && db && ui }
+                println("COMPLETE !!!")
+            }
+        }
+    }
+}
+```
+
+
 # おわりに
 以上です。おつかれさまでした。88888

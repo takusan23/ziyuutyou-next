@@ -136,6 +136,19 @@ https://docs.aws.amazon.com/ja_jp/AmazonCloudFront/latest/DeveloperGuide/example
 大体これとおなじ  
 https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/userguide/HostingWebsiteOnS3Setup.html
 
+# 追記 2025-11-14
+`S3 + CloudFront + CloudFront Function`の構成が作れる`CloudFormation テンプレート`を作りました。  
+このテンプレートを流せば（流す？）、このブログサイトと、この記事と、ほぼ同じ構成が作れます。  
+カスタムドメインと、`GitHub Actions`の部分は手動でお願いします。
+
+https://github.com/takusan23/ziyuutyou-next/blob/main/cloudformation.yaml
+
+パラメーター等は以下のブログ記事を読んでみてください。。。（宣伝）
+
+https://takusan.negitoro.dev/posts/aws_cloudformation_create_ziyuutyou_infrastructure/
+
+この記事のスクリーンショットとかが古くなってしまっているので、もうよくわからないという場合はとりあえずこれ流そう。
+
 ## ながれ
 
 - `S3`のバケットを作る
@@ -365,6 +378,8 @@ To add an alternate domain name (CNAME) to a CloudFront distribution, you must a
 
 `JavaScript`のコードは以下のものを使うことにします。  
 https://docs.aws.amazon.com/ja_jp/AmazonCloudFront/latest/DeveloperGuide/example-function-add-index.html
+
+2025-11-02 追記：`JavaScript ランタイム 2.0`のコード例になっているので登録時にも`2.0`を選ぶようにしてください。
 
 書いたら`変更の保存`して、
 
