@@ -1,7 +1,6 @@
-import React from "react"
 import NextLinkButton from "./NextLinkButton"
 import EnvironmentTool from "../src/EnvironmentTool"
-import OpenInBrowserIcon from "../public/icon/open_in_browser.svg"
+import Icon from "./Icon"
 
 /** GitHubHistoryButton へ渡すデータ */
 type GitHubHistoryButtonProps = {
@@ -16,7 +15,7 @@ export function GitHubHistoryButton({ fileName }: GitHubHistoryButtonProps) {
         <NextLinkButton
             variant="text"
             href={href}
-            startIcon={<OpenInBrowserIcon />}
+            startIcon={<Icon iconStyle="mask-[url('/icon/open_in_browser.svg')]" size="medium" color="currentColor" />}
             text="GitHubで開く" />
     )
 }

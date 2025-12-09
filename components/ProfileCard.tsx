@@ -1,11 +1,11 @@
 "use client"
 
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import profileCardJpegImg from "../public/profile_card_img.jpg"
 import RoundedCornerBox from "./RoundedCornerBox"
 import NextLinkButton from "./NextLinkButton"
 import RoundedImage from "./RoundedImage"
-import BookIcon from "../public/icon/book.svg"
+import Icon from "./Icon"
 
 /** ProfileCard へ渡すデータ */
 type ProfileCardProps = {
@@ -46,7 +46,7 @@ export default function ProfileCard({ randomMessageList }: ProfileCardProps) {
                 <NextLinkButton
                     href="/posts/page/1/"
                     text="記事一覧へ"
-                    startIcon={<BookIcon />}
+                    startIcon={<Icon iconStyle="mask-[url('/icon/book.svg')]" size="medium" color="currentColor" />}
                 />
             </div>
         </RoundedCornerBox>

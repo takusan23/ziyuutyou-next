@@ -1,6 +1,5 @@
 import Form from 'next/form'
-import IconParent from "../IconParent"
-import SearchIcon from "../../public/icon/search.svg"
+import Icon from '../Icon'
 
 /** SearchForm に渡すデータ */
 type SearchFormProps = {
@@ -29,9 +28,7 @@ export default function SearchForm({ searchWord }: SearchFormProps) {
                 defaultValue={searchWord} />
 
             <button type="submit">
-                <IconParent>
-                    <SearchIcon />
-                </IconParent>
+                <Icon iconStyle="mask-[url('/icon/search.svg')]" size='medium' color='theme' />
             </button>
         </Form>
     )

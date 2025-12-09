@@ -1,37 +1,33 @@
 import RoundedImage from "./RoundedImage"
 import ThemeSettingMenu from "./ThemeSettingMenu"
 import NavigationDrawerItem from "./NavigationDrawerItem"
-import HomeIcon from "../public/icon/home.svg"
-import BookIcon from "../public/icon/book.svg"
-import SellIcon from "../public/icon/sell.svg"
-import SearchIcon from "../public/icon/search.svg"
-import BubbleChart from "../public/icon/bubble_chart.svg"
+import Icon from "./Icon"
 
 /** ナビゲーションドロワーの表示先、パス、コンポーネント */
 const DRAWER_LINK = [
     {
         title: 'ホーム',
-        icon: <HomeIcon />,
+        icon: <Icon iconStyle="mask-[url('/icon/home.svg')]" size="medium" color="currentColor" />,
         path: '/'
     },
     {
         title: '記事一覧',
-        icon: <BookIcon />,
+        icon: <Icon iconStyle="mask-[url('/icon/book.svg')]" size="medium" color="currentColor" />,
         path: '/posts/page/1/'
     },
     {
         title: 'タグ一覧',
-        icon: <SellIcon />,
+        icon: <Icon iconStyle="mask-[url('/icon/sell.svg')]" size="medium" color="currentColor" />,
         path: '/posts/tag/all_tags/'
     },
     {
         title: '記事検索',
-        icon: <SearchIcon />,
+        icon: <Icon iconStyle="mask-[url('/icon/search.svg')]" size="medium" color="currentColor" />,
         path: '/search/'
     },
     {
         title: 'このサイトについて',
-        icon: <BubbleChart />,
+        icon: <Icon iconStyle="mask-[url('/icon/bubble_chart.svg')]" size="medium" color="currentColor" />,
         path: '/pages/about/'
     }
 ]

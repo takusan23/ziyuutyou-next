@@ -1,5 +1,5 @@
+import Icon from "./Icon"
 import NextLinkButton from "./NextLinkButton"
-import SellIcon from "../public/icon/sell.svg"
 
 /** TagChipGroup へ渡すデータ */
 type TagChipGroupProps = {
@@ -17,7 +17,7 @@ export default function TagChipGroup({ tagList }: TagChipGroupProps) {
                         size="small"
                         key={tagName}
                         href={`/posts/tag/${tagName}/1/`}
-                        startIcon={<SellIcon />}
+                        startIcon={<Icon iconStyle="mask-[url('/icon/sell.svg')]" size="small" color="currentColor" />}
                         text={tagName}
                     />
                 ))

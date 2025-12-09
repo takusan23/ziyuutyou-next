@@ -1,8 +1,8 @@
 "use client"
+
 import { useEffect, useState } from "react"
 import DateDiffTool from "../src/DateDiffTool"
-import IconParent from "./IconParent"
-import UploadFileIcon from "../public/icon/upload_file.svg"
+import Icon from "./Icon"
 
 /** DateCountText へ渡すデータ */
 type DateCountTextProps = {
@@ -24,16 +24,12 @@ export default function DateCountText({ timeTagTimeFormat, dateTimeFormat, creat
     }, [])
 
     return (
-        <div className="flex flex-row flex-wrap items-center">
-            <IconParent className="fill-content-primary-light dark:fill-content-primary-dark">
-                <UploadFileIcon />
-            </IconParent>
-            <p className="text-content-primary-light dark:text-content-primary-dark">
-                <span>投稿日 : </span>
-                {/* time にしないと、Googleとかの検索結果に日付が出ない？ */}
-                <time dateTime={timeTagTimeFormat}>{dateTimeFormat}</time>
-                <span>{` | ${diffDate} 日前`}</span>
-            </p>
+        <div className="flex flex-row flex-wrap items-center text-content-primary-light dark:text-content-primary-dark">
+            <Icon iconStyle="mask-[url('/icon/upload_file.svg')]" size="medium" color="currentColor" />
+            <span>投稿日 : </span>
+            {/* time にしないと、Googleとかの検索結果に日付が出ない？ */}
+            <time dateTime={timeTagTimeFormat}>{dateTimeFormat}</time>
+            <span>{` | ${diffDate} 日前`}</span>
         </div>
     )
 }

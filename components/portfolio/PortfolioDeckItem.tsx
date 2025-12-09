@@ -1,8 +1,7 @@
 import Link from "next/link"
 import { PortfolioDetailData } from "../../src/data/PortfolioData"
-import IconParent from "../IconParent"
-import ExpandMoreIcon from "../../public/icon/expand_more.svg"
 import CategoryNameIconDictionary from "./CategoryNameIconDictionary"
+import Icon from "../Icon"
 
 /** PortfolioDetailData へ渡すデータ。PortfolioDetailData にアイコンの名前を追加 */
 type PortfolioOtherDeckItemProps = {
@@ -33,9 +32,7 @@ export default function PortfolioOtherDeckItem({ name, description, link, catero
                 </div>
 
                 <div className="flex items-center">
-                    <IconParent>
-                        <ExpandMoreIcon className="-rotate-90" />
-                    </IconParent>
+                    <Icon iconStyle="mask-[url('/icon/expand_more.svg')]" className="-rotate-90" size="medium" color="theme" />
                 </div>
             </div>
         </Link>

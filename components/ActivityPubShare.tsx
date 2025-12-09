@@ -2,12 +2,9 @@
 "use client"
 
 import { useState } from "react"
-import IconParent from "./IconParent"
 import Button from "./Button"
 import RoundedCornerBox from "./RoundedCornerBox"
-import ShareIcon from "../public/icon/share.svg"
-import CloseIcon from "../public/icon/close.svg"
-import SendIcon from "../public/icon/send.svg"
+import Icon from "./Icon"
 
 /** ActivityPubShare に渡すデータ */
 type ActivityPubShareProps = {
@@ -68,9 +65,7 @@ function ActivityPubInputForm({ onClose, onSubmit }: ActivityPubInputFormProps) 
                 }}>
 
                 <button type="button" onClick={onClose}>
-                    <IconParent className="fill-content-primary-light dark:fill-content-primary-dark">
-                        <CloseIcon />
-                    </IconParent>
+                    <Icon iconStyle="mask-[url('/icon/close.svg')]" size="medium" color="theme" />
                 </button>
 
                 <input
@@ -80,9 +75,7 @@ function ActivityPubInputForm({ onClose, onSubmit }: ActivityPubInputFormProps) 
                     value={serverName} />
 
                 <button type="submit">
-                    <IconParent className="fill-content-primary-light dark:fill-content-primary-dark">
-                        <SendIcon />
-                    </IconParent>
+                    <Icon iconStyle="mask-[url('/icon/send.svg')]" size="medium" color="theme" />
                 </button>
 
             </form>
@@ -102,7 +95,7 @@ function ActivityPubShareButton({ onClick }: ActivityPubShareButtonProps) {
         <div className="flex" onClick={onClick}>
             <Button
                 variant="text"
-                startIcon={<ShareIcon />}
+                startIcon={<Icon iconStyle="mask-[url('/icon/share.svg')]" size="medium" color="currentColor" />}
                 text="Mastodon / Misskey で共有" />
         </div>
     )

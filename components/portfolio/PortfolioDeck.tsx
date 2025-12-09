@@ -3,7 +3,7 @@
 import Button from "../Button"
 import PortfolioOtherDeckItem from "./PortfolioDeckItem"
 import { PortfolioData } from "../../src/data/PortfolioData"
-import NorthEastIcon from "../../public/icon/north_east.svg"
+import Icon from "../Icon"
 
 /** PortfolioOtherDeck へ渡すデータ */
 type PortfolioOtherContainerProps = {
@@ -52,7 +52,7 @@ function PortfolioOtherDeckColumn({ portfolioData, onMoreClick }: PortfolioOther
                         text="くわしく"
                         variant="outlined"
                         size="small"
-                        endIcon={<NorthEastIcon />} />
+                        endIcon={<Icon iconStyle="mask-[url('/icon/north_east.svg')]" size="small" color="currentColor" />} />
                 </div>
             </div>
 

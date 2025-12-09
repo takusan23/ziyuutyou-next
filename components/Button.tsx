@@ -1,5 +1,4 @@
 import { ReactNode } from "react"
-import IconParent from "./IconParent"
 
 /** Button へ渡すデータ */
 export type ButtonProps = {
@@ -45,18 +44,6 @@ export default function Button({ text, startIcon, endIcon, variant, isDisabled, 
             break
     }
 
-    // アイコンの色
-    let iconColorClassName = ''
-    switch (nonNullVariant) {
-        case "text":
-        case "outlined":
-            iconColorClassName = 'fill-content-primary-light dark:fill-content-primary-dark'
-            break
-        case "contained":
-            iconColorClassName = 'fill-[#ffffff]'
-            break
-    }
-
     // 角丸。デフォルトは 100%
     // full ではなく 4xl を使っているのは https://github.com/tailwindlabs/tailwindcss/discussions/7402
     let roundedClassName = ''
@@ -84,31 +71,9 @@ export default function Button({ text, startIcon, endIcon, variant, isDisabled, 
     /** ボタンの中身を作成する */
     const createButtonContent = (
         <div className={`flex flex-row items-center space-x-1 ${buttonPaddingClassName}`}>
-            {
-                // 塗りつぶしだけ白色のアイコンにする
-                startIcon && (
-                    <IconParent
-                        size={(size === 'small') ? 'small' : 'medium'}
-                        className={iconColorClassName}
-                    >
-                        {startIcon}
-                    </IconParent>
-                )
-            }
-            <p>
-                {text}
-            </p>
-            {
-                // 後ろにアイコンを出す
-                endIcon && (
-                    <IconParent
-                        size={(size === 'small') ? 'small' : 'medium'}
-                        className={iconColorClassName}
-                    >
-                        {endIcon}
-                    </IconParent>
-                )
-            }
+            {startIcon}
+            <p>{text}</p>
+            {endIcon}
         </div>
     )
 

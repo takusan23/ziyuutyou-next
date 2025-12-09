@@ -1,8 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import ContentPasteIcon from "../../public/icon/content_paste.svg"
-import CelebrationIcon from "../../public/icon/celebration.svg"
+import Icon from "../Icon"
 
 /** CopyButton に渡す Props */
 type CopyButtonProps = {
@@ -29,8 +28,12 @@ export default function CopyButton({ text }: CopyButtonProps) {
     }
 
     return (
-        <button className="hidden group-hover:flex p-2 m-2 absolute top-0 right-0 cursor-pointer rounded-md bg-background-dark border-2 border-content-primary-dark text-content-primary-dark fill-content-primary-dark" onClick={execCopy}>
-            {special ? <CelebrationIcon /> : <ContentPasteIcon />}
+        <button className="hidden group-hover:flex p-2 m-2 absolute top-0 right-0 cursor-pointer rounded-md bg-background-dark border-2 border-content-primary-dark text-content-primary-dark" onClick={execCopy}>
+            {
+                special
+                    ? <Icon iconStyle="mask-[url('/icon/celebration.svg')]" size="medium" color="currentColor" />
+                    : <Icon iconStyle="mask-[url('/icon/content_paste.svg')]" size="medium" color="currentColor" />
+            }
         </button>
     )
 }

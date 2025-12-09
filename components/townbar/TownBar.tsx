@@ -1,7 +1,5 @@
-import TownTrafficImage from "../../public/townbar/town_traffic.svg"
-import TownTrainImage from "../../public/townbar/town_train.svg"
-import TownHouseImage from "../../public/townbar/town_house.svg"
-import TownStoreImage from "../../public/townbar/town_store.svg"
+import fs from "fs/promises"
+import path from "path"
 
 // 横に移動させる CSS
 // アニメーションの @keyframes は多分ありのままの CSS のが早い
@@ -17,8 +15,21 @@ export default function TownBar() {
             {/* <TownHouseImage /> */}
             {/* <TownTrainImage /> */}
             {/* <TownStoreImage /> */}
-            <TownTrafficImage />
-            <TownHouseImage />
+            <SvgFromFile name="town_traffic.svg" />
+            <SvgFromFile name="town_house.svg" />
         </div>
     )
+}
+
+/** 
+ * --- ローカルにある SVG を貼り付けているだけ ---
+ * SVGR を消したのでなくなった...
+ */
+
+type SvgFromFileProps = {
+    name: string
+}
+async function SvgFromFile({ name }: SvgFromFileProps) {
+    const svg = await fs.readFile(path.join(process.cwd(), `public`, `townbar`, name), { encoding: 'utf-8', })
+    return (<div dangerouslySetInnerHTML={{ __html: svg }} />)
 }

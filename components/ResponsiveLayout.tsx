@@ -2,7 +2,7 @@
 
 import { ReactNode, useEffect, useState } from "react"
 import { usePathname } from "next/navigation"
-import MenuIcon from "../public/icon/menu.svg"
+import Icon from "./Icon"
 
 // 定数
 const NAVIGATION_DRAWER_WIDTH = 'w-[250px]'
@@ -63,10 +63,11 @@ export default function ResponsiveLayout({ navigationDrawer, title, children }: 
             <main className={`flex flex-col grow ${MAIN_WIDTH}`}>
                 {/* タイトル部分。ナビゲーションドロワーが出る幅があれば出さない。 */}
                 <div className="flex sm:hidden flex-row items-center py-5">
-                    <MenuIcon
-                        className="h-6 w-6 ml-4 cursor-pointer fill-content-primary-light dark:fill-content-primary-dark"
-                        onClick={() => setDrawerOpen(!isDrawerOpen)}
-                    />
+                    <button
+                        className="ml-4"
+                        onClick={() => setDrawerOpen(!isDrawerOpen)}>
+                        <Icon iconStyle="mask-[url('/icon/menu.svg')]" className="h-6 w-6 cursor-pointer" color="theme" />
+                    </button>
                     <div className="ml-4">
                         {title}
                     </div>

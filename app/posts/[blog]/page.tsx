@@ -6,16 +6,17 @@ import TagChipGroup from "../../../components/TagChipGroup"
 import RoundedCornerBox from "../../../components/RoundedCornerBox"
 import { ExpandTocList, LargeTocList, TocListLayout } from "../../../components/TocList"
 import DateCountText from "../../../components/DateCountText"
-import IconParent from "../../../components/IconParent"
-import EditIcon from "../../../public/icon/edit.svg"
 import ActivityPubShare from "../../../components/ActivityPubShare"
 import MarkdownRender from "../../../components/markdownrender/MarkdownRender"
 import Title from "../../../components/Title"
 import NextLinkButton from "../../../components/NextLinkButton"
-import ArrowBackIcon from "../../../public/icon/arrow_back.svg"
 import PrevNextNavigation from "../../../components/PrevNextNavigation"
 import RelatedBlogList from "../../../components/RelatedBlogList"
-import TownBar from "../../../components/townbar/TownBar"
+import Icon from "../../../components/Icon"
+import dynamic from "next/dynamic"
+
+/** SVG だからビビって dynamic load。でも多分意味ない。 */
+const LazyTownBar = dynamic(() => import('../../../components/townbar/TownBar'))
 
 /** 一度に取得する件数 */
 const BLOG_SIZE_LIMIT = 10
@@ -65,11 +66,9 @@ export default async function BlogDetailPage(props: PageProps) {
 
     /** 文字数 */
     const textCountText = (
-        <div className="flex flex-row flex-wrap items-center">
-            <IconParent className="fill-content-primary-light dark:fill-content-primary-dark">
-                <EditIcon />
-            </IconParent>
-            <p className="text-content-primary-light dark:text-content-primary-dark">
+        <div className="flex flex-row flex-wrap items-center text-content-primary-light dark:text-content-primary-dark">
+            <Icon iconStyle="mask-[url('/icon/edit.svg')]" size="medium" color="currentColor" />
+            <p>
                 {`文字数(だいたい) : ${markdownData.textCount}`}
             </p>
         </div>
@@ -92,7 +91,7 @@ export default async function BlogDetailPage(props: PageProps) {
                     size="small"
                     variant="outlined"
                     href={`/posts/page/${backPostsPageNumber}/`}
-                    startIcon={<ArrowBackIcon />}
+                    startIcon={<Icon iconStyle="mask-[url('/icon/arrow_back.svg')]" size="small" color="currentColor" />}
                     text="記事一覧に戻る" />
 
                 <Title title={markdownData.title} />
@@ -132,7 +131,7 @@ export default async function BlogDetailPage(props: PageProps) {
             </article>
 
             <div className="hidden 2xl:flex">
-                <TownBar />
+                <LazyTownBar />
             </div>
         </div>
     )

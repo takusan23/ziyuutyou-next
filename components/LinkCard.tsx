@@ -2,8 +2,7 @@ import Link from "next/link"
 import LinkData from "../src/data/LinkData"
 import RoundedCornerBox from "./RoundedCornerBox"
 import RoundedCornerList from "./RoundedCornerList"
-import IconParent from "./IconParent"
-import OpenInBrowserIcon from "../public/icon/open_in_browser.svg"
+import Icon from "./Icon"
 
 /** LinkCard へ渡すデータ */
 type LinkCardProps = {
@@ -36,14 +35,12 @@ export default function LinkCard({ linkList }: LinkCardProps) {
                                 href={linkData.href}
                                 rel={linkData.rel}
                             >
-                                <div className="flex flex-row p-3 items-center">
+                                <div className="flex flex-row p-3 items-center text-content-text-light dark:text-content-text-dark">
                                     <div className="flex flex-col grow">
-                                        <p className="text-content-text-light dark:text-content-text-dark text-base">{linkData.name}</p>
-                                        <p className="text-content-text-light dark:text-content-text-dark text-sm">{linkData.description}</p>
+                                        <p className="text-base">{linkData.name}</p>
+                                        <p className="text-sm">{linkData.description}</p>
                                     </div>
-                                    <IconParent>
-                                        <OpenInBrowserIcon />
-                                    </IconParent>
+                                    <Icon iconStyle="mask-[url('/icon/open_in_browser.svg')]" size="medium" color="currentColor" />
                                 </div>
                             </Link>
                         </div>
