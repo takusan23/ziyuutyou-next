@@ -14,7 +14,7 @@
     "gray-matter": "^4.0.3",
     "hast-util-to-string": "^3.0.1",
     "hast-util-whitespace": "^3.0.0",
-    "next": "16.0.7",
+    "next": "^16.0.10",
     "react": "19.2.1",
     "react-dom": "19.2.1",
     "rehype-parse": "^9.0.1",
