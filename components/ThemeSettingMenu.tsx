@@ -2,12 +2,7 @@
 
 import { ReactNode } from "react"
 import useTheme from "./theme/useTheme"
-import IconParent from "./IconParent"
-import ExpandMoreIcon from "../public/icon/expand_more.svg"
-import FormatPaintIcon from "../public/icon/format_paint.svg"
-import LightModeIcon from "../public/icon/light_mode.svg"
-import DarkModeIcon from "../public/icon/dark_mode.svg"
-import DevicesIcon from "../public/icon/devices.svg"
+import Icon from "./Icon"
 
 /** ThemeMenuButton へ渡す Props */
 type ThemeMenuButtonProps = {
@@ -25,13 +20,11 @@ type ThemeMenuButtonProps = {
 function ThemeMenuButton({ name, icon, isSelected, onClick }: ThemeMenuButtonProps) {
     const iconBackgroundCss = isSelected ? "bg-background-light dark:bg-background-dark" : ""
     return (
-        <div className="flex flex-col flex-1 space-y-1 cursor-pointer" onClick={onClick}>
+        <div className="flex flex-col flex-1 space-y-1 cursor-pointer text-content-text-light dark:text-content-text-dark" onClick={onClick}>
             <div className={`flex flex-col items-center rounded-full mx-1 ${iconBackgroundCss}`}>
-                <IconParent>
-                    {icon}
-                </IconParent>
+                {icon}
             </div>
-            <p className="self-center text-content-text-light dark:text-content-text-dark">
+            <p className="self-center">
                 {name}
             </p>
         </div>
@@ -49,16 +42,12 @@ export default function ThemeSettingMenu() {
         <details open={false} className="group flex flex-col space-y-3 select-none cursor-pointer">
 
             {/* 展開してない時に出る部分 */}
-            <summary className="flex flex-row items-center space-x-4 list-none p-3 rounded-full hover:bg-hover-light dark:hover:bg-hover-dark">
-                <IconParent>
-                    <FormatPaintIcon />
-                </IconParent>
-                <p className="flex-1 text-content-text-light dark:text-content-text-dark text-base">
+            <summary className="flex flex-row items-center space-x-4 list-none p-3 rounded-full text-base text-content-text-light dark:text-content-text-dark hover:bg-hover-light dark:hover:bg-hover-dark">
+                <Icon iconStyle="mask-[url('/icon/format_paint.svg')]" size="medium" color="currentColor" />
+                <p className="flex-1">
                     テーマ設定
                 </p>
-                <IconParent className="group-open:rotate-180 fill-content-primary-light dark:fill-content-primary-dark">
-                    <ExpandMoreIcon />
-                </IconParent>
+                <Icon iconStyle="mask-[url('/icon/expand_more.svg')]" className="group-open:rotate-180" size="medium" color="currentColor" />
             </summary>
 
             {/* 展開したときに出るボタンたち */}
@@ -66,17 +55,17 @@ export default function ThemeSettingMenu() {
                 <ThemeMenuButton
                     name="ライト"
                     isSelected={theme === "light"}
-                    icon={<LightModeIcon />}
+                    icon={<Icon iconStyle="mask-[url('/icon/light_mode.svg')]" size="medium" color="currentColor" />}
                     onClick={() => setTheme('light')} />
                 <ThemeMenuButton
                     name="ダーク"
                     isSelected={theme === "dark"}
-                    icon={<DarkModeIcon />}
+                    icon={<Icon iconStyle="mask-[url('/icon/dark_mode.svg')]" size="medium" color="currentColor" />}
                     onClick={() => setTheme('dark')} />
                 <ThemeMenuButton
                     name="システム"
                     isSelected={theme === "system"}
-                    icon={<DevicesIcon />}
+                    icon={<Icon iconStyle="mask-[url('/icon/devices.svg')]" size="medium" color="currentColor" />}
                     onClick={() => setTheme('system')} />
             </div>
         </details>

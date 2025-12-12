@@ -1,6 +1,5 @@
 "use client"
 
-import IconParent from "../IconParent"
 import CategoryNameIconDictionary from "./CategoryNameIconDictionary"
 
 /** PortfolioTab へ渡すデータ */
@@ -23,9 +22,7 @@ export default function PortfolioTab({ label, isSelected, onClick }: PortfolioTa
                 onClick={onClick}
             >
                 {/* アイコン */}
-                <IconParent>
-                    <CategoryNameIconDictionary categoryName={label} />
-                </IconParent>
+                <CategoryNameIconDictionary categoryName={label} />
 
                 {/* ラベル */}
                 <p>{label}</p>

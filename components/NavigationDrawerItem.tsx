@@ -2,7 +2,6 @@
 
 import Link from "next/link"
 import { ReactNode } from "react"
-import IconParent from "./IconParent"
 import { usePathname } from "next/navigation"
 
 /** NavigationDraweItem へ渡すデータ */
@@ -26,11 +25,9 @@ export default function NavigationDrawerItem({ title, icon, path }: NavigationDr
 
     return (
         <Link href={path}>
-            <div className={`flex flex-row p-3 items-center space-x-4 rounded-full select-none cursor-pointer ${backgroundStyle}`}>
-                <IconParent>
-                    {icon}
-                </IconParent>
-                <p className="text-content-text-light dark:text-content-text-dark text-base">
+            <div className={`flex flex-row p-3 items-center space-x-4 rounded-full select-none cursor-pointer text-content-text-light dark:text-content-text-dark ${backgroundStyle}`}>
+                {icon}
+                <p className="text-base">
                     {title}
                 </p>
             </div>

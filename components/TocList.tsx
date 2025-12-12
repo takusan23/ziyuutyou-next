@@ -1,10 +1,9 @@
 import { ReactNode } from "react"
 import Link from "next/link"
 import RoundedCornerBox from "./RoundedCornerBox"
-import IconParent from "./IconParent"
-import ExpandMore from "../public/icon/expand_more.svg"
 import Spacer from "./Spacer"
 import MarkdownParser from "../src/MarkdownParser"
+import Icon from "./Icon"
 
 // 定数
 const TOC_LIST_WIDTH = 'w-[300px]'
@@ -59,13 +58,11 @@ export function ExpandTocList({ markdown }: TocListProps) {
 
                 {/* 展開してない時に出る部分 */}
                 <summary className="p-4 list-none [&::-webkit-details-marker]:hidden cursor-pointer">
-                    <div className="flex flex-row items-center group-open:border-b-[1px] border-content-primary-light dark:border-content-primary-dark">
-                        <p className="text-lg text-content-primary-light dark:text-content-primary-dark grow">
+                    <div className="flex flex-row items-center group-open:border-b-[1px] text-content-primary-light dark:text-content-primary-dark border-content-primary-light dark:border-content-primary-dark">
+                        <p className="text-lg grow">
                             目次
                         </p>
-                        <IconParent className="group-open:rotate-180 fill-content-primary-light dark:fill-content-primary-dark">
-                            <ExpandMore />
-                        </IconParent>
+                        <Icon iconStyle="mask-[url('/icon/expand_more.svg')]" className="group-open:rotate-180" size="medium" color="currentColor"/>
                     </div>
                 </summary>
 

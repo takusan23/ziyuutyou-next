@@ -2,8 +2,8 @@ import { Metadata } from "next"
 import ContentFolderManager from "../../../../src/ContentFolderManager"
 import EnvironmentTool from "../../../../src/EnvironmentTool"
 import NextLinkButton from "../../../../components/NextLinkButton"
-import SellIcon from "../../../../public/icon/sell.svg"
 import Title from "../../../../components/Title"
+import Icon from "../../../../components/Icon"
 
 /** head に値を入れる */
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ export default async function ClientAllTagPage() {
                         <NextLinkButton
                             key={tagData.name}
                             href={`/posts/tag/${tagData.name}/1/`}
-                            startIcon={<SellIcon className="w-5 h-5" />}
+                            startIcon={<Icon iconStyle="mask-[url('/icon/sell.svg')]" color="currentColor" className="w-5 h-5" />}
                             text={`${tagData.name} - ${tagData.count} 件`}
                         />
                     ))

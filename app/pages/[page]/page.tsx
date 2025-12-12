@@ -6,11 +6,10 @@ import DateCountText from "../../../components/DateCountText";
 import TagChipGroup from "../../../components/TagChipGroup";
 import { ExpandTocList, LargeTocList, TocListLayout } from "../../../components/TocList";
 import RoundedCornerBox from "../../../components/RoundedCornerBox";
-import IconParent from "../../../components/IconParent";
-import EditIcon from "../../../public/icon/edit.svg"
 import ActivityPubShare from "../../../components/ActivityPubShare";
 import MarkdownRender from "../../../components/markdownrender/MarkdownRender";
 import Title from "../../../components/Title";
+import Icon from "../../../components/Icon";
 
 /** 動的ルーティング */
 type PageProps = {
@@ -48,11 +47,9 @@ export default async function PageDetailPage(props: PageProps) {
 
     /** 文字数 */
     const textCountText = (
-        <div className="flex flex-row flex-wrap items-center">
-            <IconParent className="fill-content-primary-light dark:fill-content-primary-dark">
-                <EditIcon />
-            </IconParent>
-            <p className="text-content-primary-light dark:text-content-primary-dark">
+        <div className="flex flex-row flex-wrap items-center text-content-primary-light dark:text-content-primary-dark">
+            <Icon iconStyle="mask-[url('/icon/edit.svg')]" size="medium" color="currentColor" />
+            <p>
                 {`文字数(だいたい) : ${markdownData.textCount}`}
             </p>
         </div>

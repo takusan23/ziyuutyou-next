@@ -1,10 +1,5 @@
 import { ReactNode, useMemo } from "react"
-import AndroidIcon from "../../public/icon/android.svg"
-import WebIcon from "../../public/icon/web.svg"
-import VideoGameAssetIcon from "../../public/icon/videogame_asset.svg"
-import GridIcon from "../../public/icon/grid_view.svg"
-import LaptopIcon from "../../public/icon/laptop_windows.svg"
-import IconParent from "../IconParent"
+import Icon from "../Icon"
 
 /** カテゴリとアイコンの対応表の型 */
 type IconDictionary = {
@@ -16,11 +11,11 @@ type IconDictionary = {
 
 /** カテゴリ名に対応したアイコン一覧 */
 const CATEGORY_NAME_ICON_DICTIONARY: IconDictionary[] = [
-    { categoryName: "android", iconElement: <AndroidIcon /> },
-    { categoryName: "web", iconElement: <WebIcon /> },
-    { categoryName: "akashic", iconElement: <VideoGameAssetIcon /> },
-    { categoryName: "minecraft", iconElement: <GridIcon /> },
-    { categoryName: "windows", iconElement: <LaptopIcon /> }
+    { categoryName: "android", iconElement: <Icon iconStyle="mask-[url('/icon/android.svg')]" size="medium" color="theme" /> },
+    { categoryName: "web", iconElement: <Icon iconStyle="mask-[url('/icon/web.svg')]" size="medium" color="theme" /> },
+    { categoryName: "akashic", iconElement: <Icon iconStyle="mask-[url('/icon/videogame_asset.svg')]" size="medium" color="theme" /> },
+    { categoryName: "minecraft", iconElement: <Icon iconStyle="mask-[url('/icon/grid_view.svg')]" size="medium" color="theme" /> },
+    { categoryName: "windows", iconElement: <Icon iconStyle="mask-[url('/icon/laptop_windows.svg')]" size="medium" color="theme" /> }
 ]
 
 /** CategoryNameIconDictionary へ渡すデータ */
@@ -39,12 +34,6 @@ export default function CategoryNameIconDictionary({ categoryName }: CategoryNam
     )
 
     return (
-        <>
-            {
-                iconElement && <IconParent>
-                    {iconElement}
-                </IconParent>
-            }
-        </>
+        <>{iconElement}</>
     )
 }

@@ -3,8 +3,7 @@ import React from "react"
 import BlogItem from "../src/data/BlogItem"
 import Spacer from "./Spacer"
 import TagChipGroup from "./TagChipGroup"
-import IconParent from "./IconParent"
-import UploadFileIcon from "../public/icon/upload_file.svg"
+import Icon from "./Icon"
 
 /**
  * BlogItem と同じパラメーターを取るが、一部を除いて Optional にしたもの。
@@ -48,9 +47,7 @@ export default function BlogListItem({ blogItem }: BlogItemProps) {
                 blogItem.createdAt && <>
                     <Spacer space="small" />
                     <div className="flex flex-row items-center">
-                        <IconParent>
-                            <UploadFileIcon />
-                        </IconParent>
+                        <Icon iconStyle="mask-[url('/icon/upload_file.svg')]" size="medium" color="theme" />
                         <p className="text-content-primary-light dark:text-content-primary-dark text-md">
                             <time>{blogItem.createdAt}</time>
                             <span className="ml-1">投稿</span>
