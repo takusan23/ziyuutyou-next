@@ -216,9 +216,9 @@ async function HtmlElementRender({ element }: HtmlElementRenderProps) {
         case "tr":
             return <tr className="border-b-2 border-b-content-primary-light dark:border-b-content-primary-dark">{childrenJsx}</tr>
         case "td":
-            return <td className="p-2 text-center">{childrenJsx}</td>
+            return <td className="p-2 text-center text-content-text-light dark:text-content-text-dark">{childrenJsx}</td>
         case "th":
-            return <th className="text-center">{childrenJsx}</th>
+            return <th className="text-center text-content-text-light dark:text-content-text-dark">{childrenJsx}</th>
         case "thead":
             return <thead>{childrenJsx}</thead>
         case "tbody":
