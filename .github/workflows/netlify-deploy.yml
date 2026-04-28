@@ -33,8 +33,10 @@ jobs:
         run: npm run deploy
         
       # Netlify アップロード
+      # netlify/actions/cli@master が何年も放置されている、cli を直接呼び出したほうがよさそう
+      # すでにビルド済みなので no-build
       - name: Upload page
-        run: npm install -g netlify-cli && netlify deploy --dir="./out" --prod
+        run: npm install -g netlify-cli && netlify deploy --no-build --dir="./out" --prod
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
