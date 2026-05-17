@@ -2049,6 +2049,10 @@ class MainActivity : ComponentActivity() {
                     println("ensureActive() キャッチ")
                     throw e
                 }
+
+                withContext(Dispatchers.Default) {
+                    println("withContext に入りました")
+                }
                 
                 throw e
             }
@@ -2423,6 +2427,212 @@ class MainActivity : ComponentActivity() {
 ```plaintext
 await() で RuntimeException をキャッチ
 coroutineScope() で RuntimeException をキャッチ
+```
+
+### 追記 2026/05/18 付録 終わった await() から順次受け取りたい
+今のところこれは`Issue`にあるため、使いたい場合は自分で書く必要があるのですが全然難しくないです。  
+https://github.com/Kotlin/kotlinx.coroutines/issues/2752
+
+```kotlin
+class MainActivity : ComponentActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+
+        lifecycleScope.launch {
+            receiveAll()
+        }
+    }
+
+    suspend fun receiveAll() {
+        coroutineScope {
+            val deferredList = (1..10).map { i ->
+                async {
+                    delay(i * 1_000L)
+                    i
+                }
+            }
+            val all = deferredList.awaitAll() // 一番最後の await() に引っ張られる...
+            println(all)
+        }
+    }
+}
+```
+
+`awaitAll()`を使うことで`List<Deferred>`のように複数の`await`も一発で受け取れるといいました、が！  
+これはすべてが終わるまで待つ必要があります。速さを極めるなら、終わった順に受け取れる方法もあるとよいでしょう。
+
+`Flow`が出てくるくらいですが解説記事をもう書いているので↓↓  
+https://takusan.negitoro.dev/posts/amairo_kotlin_coroutines_flow/
+
+```kotlin
+class MainActivity : ComponentActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+
+        lifecycleScope.launch {
+            receiveUseFlow()
+        }
+    }
+
+    suspend fun receiveUseFlow() {
+        // 1~10 秒待ってから待った時間を変えす async{} のリスト
+        coroutineScope {
+            val deferredList = (1..10).map { i ->
+                async {
+                    delay(i * 1_000L)
+                    i
+                }
+            }
+            // 終わった await() を順次受け取る Flow
+            deferredList
+                .map { deferred ->
+                    // Deferred#await() 関数の関数参照を得て Flow に変換する（suspend fun で待つ代わりに Flow で受け取れる）
+                    deferred::await.asFlow()
+                }
+                // merge() で List<Flow> を Flow にする
+                .merge()
+                // 完了したものから受信
+                .collect { result ->
+                    println(result)
+                }
+        }
+    }
+}
+```
+
+これで終わった順に受け取れます。詳しい説明はたぶん`Flow`の解説記事のほうでやってると思うのではしょります、
+
+```kotlin
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+```
+
+### 追記 2026/05/18 付録 async で破棄が必要なクラスを返すとキャンセル時に破棄できないのでは
+`破棄が必要なクラス`という表現が一発で伝わる気がしないので補足すると、`AutoClosable インターフェース`の`use { }`、  
+`close()`や`destroy()`や`release()`関数を最後に呼び出す必要があるクラスのことを指しています。  
+そのへんの変数とかはガベージコレクションされるのでほったらかしにしてもよいかもですが、`OS`から払い出してもらった系やハードウェア系は明示的に閉じる必要がある場合が多いです。
+
+`InputStream`や`OutputStream`の`close()`や、`ExoPlayer`の`destroy()`、、、、などなど、最後にお片付けが必要なクラス。
+
+で、これらを`async { }`で返した後、`await()`せずに`cancel()`すると、誰が破棄するんだ問題に発展します。  
+`await()`するならその流れで破棄する処理を呼び出してくれるでしょうが、一方`cancel()`だけでは、成功しててもそのクラスは帰ってこないため閉じようがないのです。
+
+まあそもそも、これは`async { }`に限らず、`withContext { }`や`coroutineScope { }`でも破棄が必要なら抱えている問題で、  
+今のところ`Channel()`（まだ説明してない）と`suspendCancellableCoroutine`（一番最後に触れる）だけ？、キャンセルされても確実に破棄する仕組みがあります。
+
+`Channel`だと`onUndeliveredElement`  
+https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.channels/-channel.html
+
+`suspendCancellableCoroutine`だと`resume()`関数の`onCancellation`コールバック  
+https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-cancellable-continuation/resume.html
+
+それ以外の場合は、今のところ解決策がなさそうです。。。。  
+なので、**破棄が必要なクラス**はそもそも`async { }`では使わない方が良いかもしれません、、、
+
+- https://github.com/Kotlin/kotlinx.coroutines/issues/3504
+- https://github.com/Kotlin/kotlinx.coroutines/issues/1191
+
+こんな感じなコードを書くとわかりやすいですかね、`destroy()`できない。
+
+```kotlin
+class MainActivity : ComponentActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        lifecycleScope.launch {
+            destroyInvokeAsync()
+        }
+    }
+
+    private suspend fun destroyInvokeAsync() = coroutineScope {
+        val deferred = async {
+            RequireDestroyClass()
+        }
+        // キャンセルすると誰も destroy() を呼び出してくれない
+        println("deferred.cancel()")
+        deferred.cancel()
+    }
+
+    /** 破棄が必要なクラス例 */
+    class RequireDestroyClass {
+        fun destroy() {
+            println("destroy() よばれた！")
+        }
+    }
+}
+```
+
+**一応解決策**もありそうで、`async { }`には`getCompleted()`関数が用意されてて、呼び出した時点で`async { }`が終わっている場合は値を返してくれます。  
+ただ、厄介なことに完了していない場合は例外を投げてくるので`if`でチェックが必要なのと、なぜか`Experimental`アノテーションでマークされてます。なぜ、、、
+
+```kotlin
+val deferred = async {
+    RequireDestroyClass()
+}
+// キャンセルすると誰も destroy() を呼び出してくれない
+println("deferred.cancel()")
+deferred.cancel()
+// 完了していれば破棄する
+if (deferred.isCompleted) {
+    deferred.getCompleted().destroy()
+}
+```
+
+なので、こんな感じのを書けば、一応`destroy()`を呼び出すことができます。
+
+```kotlin
+class MainActivity : ComponentActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        lifecycleScope.launch {
+            destroyInvokeAsync()
+        }
+    }
+
+    private suspend fun destroyInvokeAsync() = coroutineScope {
+        val deferred = async {
+            RequireDestroyClass()
+        }
+        // 適当に待つ
+        delay(100)
+        // キャンセルすると誰も destroy() を呼び出してくれない
+        println("deferred.cancel()")
+        deferred.cancel()
+        // 完了していれば破棄する
+        if (deferred.isCompleted) {
+            deferred.getCompleted().destroy()
+        }
+    }
+
+    /** 破棄が必要なクラス例 */
+    class RequireDestroyClass {
+        fun destroy() {
+            println("destroy() よばれた！")
+        }
+    }
+}
+```
+
+`logcat`だとこう！
+
+```plaintext
+deferred.cancel()
+destroy() よばれた！
 ```
 
 # コルーチンコンテキストとディスパッチャ
@@ -3662,6 +3872,22 @@ private suspend fun request() {
 
 ちゃんと`logcat`には`ensureActive()`無しで`CancellationException !!!`が出ています。
 
+また、キャンセル対応ということで、キャンセル対応版のみ`resume()`を呼び出した時点で、既にコルーチンがキャンセルされたことを知るコールバックがあります。時すでに遅し的な。  
+これは、明示的に`close()`や`destroy()`を呼び出す必要がある場合に便利です。
+
+```kotlin
+suspend fun sampleSuspendCancellableCoroutine(context: Context): InputStream {
+    return suspendCancellableCoroutine { continuation ->
+        val inputStream = context.getExternalFilesDir(null)?.resolve("text.txt").inputStream()
+        continuation.resume(inputStream) { _, resourceToClose, _ ->
+            // close() や destroy() や release() が必要な API
+            // 呼び出し元コルーチンがキャンセルされたら個々のコールバックが
+            resourceToClose.close()
+        }
+    }
+}
+```
+
 ## 並列と並行（パラレルとコンカレント）
 https://stackoverflow.com/questions/1050222/
 
@@ -3907,6 +4133,32 @@ lifecycleScope.launch {
     // コルーチン終了時
 }
 ```
+
+# 追記 2026/05/18 例外とコルーチンは仲が悪いが直すのはもう少し先が良いという話
+それに気づいたとしても今はまだ早いです。自分で例外の代わりになる`Result<成功時のクラス,失敗時のクラス>`相当のクラスを作らないといけないからです。
+
+`Kotlin`の将来のバージョンでは`Rich Errors`機能が搭載されるらしいです！というわけでそれまで待ちましょう。  
+（しいていれば例外を投げるようなコードはコルーチンでは避けて書くよう心がけることはできるかもしれませんが、やっぱり`Result`相当が欲しくなるかと）
+
+例外とコルーチンは実はあんまり相性が良くない説があります。たとえば
+
+- 例外を投げられると何？親まで伝搬する？だから`SupervisorJob()`を使う？
+- `Deferred#await()`を呼び出すと、`成功の値を返す or 失敗時の例外を投げる or async がキャンセルされたらキャンセルを投げる`？
+- `try-catch / runCatching`え？`CancellationException`だけはキャッチしても再スローしないといけない？
+
+とくに最後は、`try-catch`を書きたくなったらそのたびに`catch(e: CancellableContinuation) { throw e }`してるので、つらいというかなんというか！  
+ところで、今をときめく（？）イケイケ言語では、例外の代わりに`成功した時の値 or 失敗した時の値`のどっちかを返す書き方がはやっているらしいです。  
+成功したらデータを返すし、もし失敗したら失敗したことを表すデータを返す。
+
+これは結構よさそうに見えます。コルーチンでも安心して使えそうですし。  
+この記事はコルーチンの話なので手短に話すと。。
+
+https://github.com/Kotlin/KEEP/blob/main/proposals/KEEP-0441-rich-errors-motivation.md
+
+一見すると`Java`のチェック例外（`void maybeFail() throws IOException`の`throws`の部分）と似ているようだが、ちゃんと別物らしい。  
+たとえば`nullable`のときの`?.`が`Rich Errors`でも使えるらしい。`Java`時代の`catch()`の連続になるのは勘弁。
+
+一つ心配なのは、初見だとものすごく`ユニオン型`に見えるが！これは`ユニオン型`ではないという点か。。。
 
 # おわりに
 いやーーーーーー`Kotlin Coroutines`、頭が良い！よく考えられてるなと思いました。

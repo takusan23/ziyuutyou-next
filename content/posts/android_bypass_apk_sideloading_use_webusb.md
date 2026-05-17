@@ -54,6 +54,11 @@ https://androidapksideloadwebapp.negitoro.dev
 
 ![installed](https://oekakityou.negitoro.dev/resize/d2ece96d-e8c9-4621-a8df-e4a18c18bbaa.png)
 
+# 追記 2026-05-18
+`apk`をこれまで通りインストールしたい上級者向けの案内が出てます。
+
+https://android-developers.googleblog.com/2026/03/android-developer-verification.html
+
 # 追記 2025-11-14
 上級者向けに`登録されてないAPK`をインストールする手段を用意するとのこと。どうなるかは分からないけどとりあえず喜んで良いのか・・！？
 

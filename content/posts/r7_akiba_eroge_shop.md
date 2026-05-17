@@ -262,7 +262,9 @@ tags:
 
 新し目の店舗なのでめっちゃきれい。そして広い。  
 エロゲコーナーは6階です、中古のタペストリーとかもありました。  
-`中古CD`とかは2階の階段じゃない方の棚の真ん中の方にありました。こっちはあんまりなかったです。。
+`中古CD`とかは2階入って左曲がるとあります。エレベーターの裏側というかなんというか。 ~~2階の階段じゃない方の棚の真ん中の方にありました。こっちはあんまりなかったです。。~~
+
+![トレーダー本店_2階_CD](https://oekakityou.negitoro.dev/resize/320c7372-2e67-4dfc-be9a-a8f8e7f2657c.jpg)
 
 記述時時点ですが、なんと今夏だけ20時半まで開けてくれるそうです！
 
@@ -299,6 +301,10 @@ tags:
 ![トレーダー本店_なか](https://oekakityou.negitoro.dev/resize/9695f9ee-bdea-439f-8077-a8666303e5b2.jpg)
 
 ![トレーダー本店_なか](https://oekakityou.negitoro.dev/resize/86fab377-db6b-40f0-9130-3a95a2cc7f9b.jpg)
+
+![トレーダー本店_なか](https://oekakityou.negitoro.dev/resize/5e5f8106-bcbd-400d-8aaf-2fb4c2436b03.jpg)
+
+![トレーダー本店_なか](https://oekakityou.negitoro.dev/resize/169d0ede-c9ca-425c-85c6-a128e0a8ee0c.jpg)
 
 店舗予約する場合は、入口近くにある壁に予約券が並んでいるので、これをレジに持っていく。  
 前金あり、前金は現金のみ
@@ -501,7 +507,7 @@ PCゲームを予約するとたまにクリアファイル貰えたりする、
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d405.0168458680896!2d139.7714797579938!3d35.69830109885349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c1d4097a74b%3A0x76073b6493176df5!2zQUtJSEFCQVJB44Ky44O844Oe44O844K65pys5bqX!5e0!3m2!1sja!2sus!4v1703691424387!5m2!1sja!2sus" width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-![ゲーマーズ1](https://oekakityou.negitoro.dev/resize/6acc4cb5-4c77-403a-a7bb-8e199233bd84.jpg)
+![ゲーマーズ1](https://oekakityou.negitoro.dev/resize/4ebc32d9-0bb4-41fd-91ca-9a483fddc3e9.jpg)
 
 ~~5階の奥の方、テレビがあって OP が流れてるところ。~~ 5階の奥から二番目の通路にあるはず。(狭くなってしまった)  
 店舗予約ですが、会員登録が必要になってて、すでに通販を使ったことあればあの会員証のバーコードのやつが提示できるのでそれを見せる。  

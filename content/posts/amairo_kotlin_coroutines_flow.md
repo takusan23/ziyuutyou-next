@@ -2708,6 +2708,8 @@ Flow 起動
 `HotFlow`にするには`stateIn()`か`shareIn()`を呼び出すとよいです。  
 `stateIn()`が`StateFlow`、`shareIn()`が`SharedFlow`になります。常に最新の値を持ってほしい場合は`stateIn()`、ただ共有だけできればいい場合は`shareIn()`でいいんじゃないかなと。  
 
+https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/state-in.html
+
 ```kotlin
 /** グローバル IP を取得する API を定期的に叩く TODO android.permission.INTERNET 権限と、OkHttp ライブラリを使っています */
 private val globalIpFlow = flow {
@@ -2726,6 +2728,54 @@ private val globalIpFlow = flow {
     started = SharingStarted.Eagerly, // 後述
     initialValue = null // StateFlow の場合は初期値が必要
 )
+```
+
+`stateIn`の初期値そのものを`Flow`から受け取る必要がある場合は、`サスペンド関数`版の`stateIn()`が用意されているため、それを呼び出す。  
+最初の値を受け取るまで`一時停止`し、終わったら`StateFlow#value`から取得できて呼び出し元に戻ってきます。
+
+```kotlin
+class MainActivity : ComponentActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        lifecycleScope.launch { toStateFlow() }
+    }
+
+    suspend fun toStateFlow() = coroutineScope {
+        val numberFlow = flow {
+            while (true){
+                emit(Random.nextInt())
+                delay(1_000)
+            }
+        }
+
+        // StateFlow.value に入れる値がもらえるまで一時停止する
+        val hotFlow = numberFlow.stateIn(this)
+
+        println("最初の値 ${hotFlow.value}")
+        launch {
+            hotFlow.collect { println("collect1 $it") }
+        }
+        launch {
+            hotFlow.collect { println("collect2 $it") }
+        }
+    }
+}
+```
+
+`HotFlow`なので値は共有されます！
+
+```plaintext
+最初の値 -1465865157
+collect1 -1465865157
+collect2 -1465865157
+collect1 822121804
+collect2 822121804
+collect1 -2026387320
+collect2 -2026387320
+collect1 886689645
+collect2 886689645
 ```
 
 ### 付録 SharingStarted の種類
