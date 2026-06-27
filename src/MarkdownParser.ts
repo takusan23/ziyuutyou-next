@@ -1,6 +1,6 @@
 import fs from "fs/promises"
 import path from "path"
-import matter from "gray-matter"
+import matter from "@11ty/gray-matter"
 import { unified } from "unified"
 import remarkParse from "remark-parse"
 import remarkRehype from "remark-rehype"
@@ -18,7 +18,7 @@ import HeadingData from "./data/HeadingData"
 /**
  * Markdown パーサー
  * 
- * - gray-matter (Markdown冒頭のメタデータをパースする)
+ * - @11ty/gray-matter (Markdown冒頭のメタデータをパースする)
  * - unified (Markdown / HTML 変換するためのシステム)
  * - remarkParse (Markdownパーサー)
  * - remarkRehype / rehypeStringify (HTML変換)

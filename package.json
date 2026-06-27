@@ -10,11 +10,11 @@
     "deploy": "npm run build && npm run pagefind-deploy"
   },
   "dependencies": {
+    "@11ty/gray-matter": "^2.1.0",
     "github-slugger": "^2.0.0",
-    "gray-matter": "^4.0.3",
     "hast-util-to-string": "^3.0.1",
     "hast-util-whitespace": "^3.0.0",
-    "next": "^16.2.6",
+    "next": "^16.2.9",
     "react": "19.2.5",
     "react-dom": "19.2.5",
     "rehype-parse": "^9.0.1",
@@ -27,20 +27,20 @@
     "unist-util-visit": "^5.1.0"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.2.2",
+    "@tailwindcss/postcss": "^4.3.1",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/react": "^16.3.2",
     "@types/node": "^24.0.3",
     "@types/react": "19.2.14",
-    "@vitejs/plugin-react": "^4.7.0",
-    "jsdom": "^29.0.2",
+    "@vitejs/plugin-react": "^6.0.2",
+    "jsdom": "^29.1.1",
     "pagefind": "^1.5.2",
-    "postcss": "^8.5.10",
+    "postcss": "^8.5.15",
     "shiki": "^4.0.2",
-    "tailwindcss": "^4.2.2",
+    "tailwindcss": "^4.3.1",
     "typescript": "^6.0.2",
     "vite-tsconfig-paths": "^6.1.1",
-    "vitest": "^4.1.4"
+    "vitest": "^4.1.9"
   },
   "overrides": {
     "@types/react": "19.2.14"

@@ -77,9 +77,9 @@ thx!!!
 - tailwindcss
     - MIT License
     - https://github.com/tailwindlabs/tailwindcss/blob/master/LICENSE
-- gray-matter
+- @11ty/gray-matter
     - MIT
-    - https://github.com/jonschlinkert/gray-matter/blob/master/LICENSE
+    - https://github.com/11ty/gray-matter/blob/main/LICENSE
 - rehype-stringify
     - MIT License
     - https://github.com/rehypejs/rehype/blob/main/license
