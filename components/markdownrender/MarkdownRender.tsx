@@ -260,8 +260,9 @@ async function HtmlElementRender({ element }: HtmlElementRenderProps) {
 
         // iframe
         // どのキーがあるか分からないので、スプレッドで
+        // TODO as any で黙らせています、さすがに markdown を書くときに変な属性を入れたりはしないやろ、、
         case "iframe":
-            return <iframe {...element.properties}>{childrenJsx}</iframe>
+            return <iframe {...element.properties as any}>{childrenJsx}</iframe>
 
         // セクション
         case "section":

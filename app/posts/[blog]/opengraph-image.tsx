@@ -1,8 +1,8 @@
 import fs from "fs/promises"
 import { ImageResponse } from "next/og"
-import ContentFolderManager from "../../../../src/ContentFolderManager"
-import EnvironmentTool from "../../../../src/EnvironmentTool"
-import FileReadTool from "../../../../src/FileReadTool"
+import ContentFolderManager from "../../../src/ContentFolderManager"
+import EnvironmentTool from "../../../src/EnvironmentTool"
+import FileReadTool from "../../../src/FileReadTool"
 import postcss from "postcss"
 
 /** 動的ルーティング */
@@ -10,20 +10,27 @@ type PageProps = {
     params: Promise<{ blog: string }>
 }
 
+/** <meta> に入れるサイズ */
+export const size = {
+    width: 1200,
+    height: 630
+}
+
+/** <meta> に入れる MIME-Type */
+export const contentType = 'image/png'
+
 /**
- * OGP 画像を生成するルートハンドラー
- * OGP 画像を静的書き出し時に生成するため、request 引数は使ってはいけない。
- * 
- * 使える CSS は以下参照：
- * https://github.com/vercel/satori
+ * 各記事の OGP 画像を生成する関数
+ * 各記事の生成は page.tsx
+ * 生成するべき画像は generateStaticParams() で返したものになる
  */
-export async function GET(_: Request, props: PageProps) {
-    const params = await props.params;
+export default async function Image(props: PageProps) {
+    const params = await props.params
     // 記事を取得
     const markdownData = await ContentFolderManager.getBlogItem(params.blog)
 
     // CSS 変数を取得する
-    const css = await fs.readFile('styles/css/global.css', { encoding: 'utf-8' })
+    const css = await FileReadTool.readTextFile('styles', 'css', 'global.css')
     // Tailwind CSS を入れると付いてくる PostCSS で CSS をパースする
     const cssParse = await postcss().process(css)
     // @thene { } を解析
@@ -181,8 +188,7 @@ export async function GET(_: Request, props: PageProps) {
             </div>
         ),
         {
-            width: 1200,
-            height: 630,
+            ...size,
             fonts: [
                 {
                     name: 'KoruriFont',
