@@ -1,8 +1,7 @@
-import fs from "fs/promises"
 import { ImageResponse } from "next/og"
-import ContentFolderManager from "../../../src/ContentFolderManager"
-import EnvironmentTool from "../../../src/EnvironmentTool"
-import FileReadTool from "../../../src/FileReadTool"
+import ContentFolderManager from "../../../../src/ContentFolderManager"
+import EnvironmentTool from "../../../../src/EnvironmentTool"
+import FileReadTool from "../../../../src/FileReadTool"
 import postcss from "postcss"
 
 /** 動的ルーティング */
@@ -10,21 +9,18 @@ type PageProps = {
     params: Promise<{ blog: string }>
 }
 
-/** <meta> に入れるサイズ */
-export const size = {
-    width: 1200,
-    height: 630
-}
-
-/** <meta> に入れる MIME-Type */
-export const contentType = 'image/png'
-
 /**
- * 各記事の OGP 画像を生成する関数
- * 各記事の生成は page.tsx
- * 生成するべき画像は generateStaticParams() で返したものになる
+ * OGP 画像を生成するルートハンドラー
+ * OGP 画像を静的書き出し時に生成するため、request 引数は使ってはいけない。
+ * 
+ * opengraph-image を作る Next.js 公式の方法を採用せずに、route.ts を使っている理由は、公式の方法は画像の URL に png みたいな拡張子が付かない
+ * 拡張子が付かないと一部の静的サイトホスティングではうまく動かない・・・
+ * 公式の機能に干渉しないようにルート名の拡張子を大文字にしている、小文字のままでは謎のエラーが出る
+ * 
+ * 使える CSS は以下参照：
+ * https://github.com/vercel/satori
  */
-export default async function Image(props: PageProps) {
+export async function GET(_: Request, props: PageProps) {
     const params = await props.params
     // 記事を取得
     const markdownData = await ContentFolderManager.getBlogItem(params.blog)
@@ -188,7 +184,8 @@ export default async function Image(props: PageProps) {
             </div>
         ),
         {
-            ...size,
+            width: 1200,
+            height: 630,
             fonts: [
                 {
                     name: 'KoruriFont',

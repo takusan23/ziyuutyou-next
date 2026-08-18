@@ -37,14 +37,15 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
     const ogpUrl = `${EnvironmentTool.BASE_URL}${markdownData.link}`
 
     return {
-        metadataBase: new URL(EnvironmentTool.BASE_URL),
         title: ogpTitle,
         alternates: {
             canonical: ogpUrl
         },
         openGraph: {
             title: ogpTitle,
-            url: ogpUrl
+            url: ogpUrl,
+            // OGP 画像は opengraph-image.PNG/route.tsx 参照
+            images: EnvironmentTool.DISABLE_OGP_IMAGE ? undefined : `${ogpUrl}opengraph-image.PNG`
         }
     }
 }
