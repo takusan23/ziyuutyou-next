@@ -91,20 +91,22 @@ tags:
     - 拡張機能も
     - ログインも
     - ウェブサイトの設定に関係なくズームができるように
+    - 下にバーを表示、翻訳ボタンを割り当て
+    - アプリアイコンを Momo にする
 - ショートカット+
     - Android 標準のファイラーをショートカットで呼び出せるように
         - `Files by Google` のことではない
         - パッケージ名 `com.android.documentsui.files.FileActivity`
             - これはプリインストールアプリのファイラーなので、`sdcard/Android/data`が見れる
-- System UI Tunner
-    - システムUI調整ツールを出し、時計の秒数まで表示するように
+    - 追加でシステムUI調整ツールを出し、時計の秒数まで表示するように
 - Slack
 - Google Authenticator（コードも引き継ぐ）
 - GitHub Mobile（ログインに二段階認証が必要？）
 - Xplore
 - VLC
 - Shizuku
-    - GitHub から APK ダウンロードしたほうが新しいかも
+    - ~~GitHub から APK ダウンロードしたほうが新しいかも~~
+    - フォーク版を使ってる thedjchi/Shizuku
 - aShellYou
 - DeployGate
 - Play Console (リジェクトの時に通知くる)
@@ -112,17 +114,20 @@ tags:
 - Google 翻訳（文字選択時に翻訳出来るように）
 - Yahoo 乗換案内
     - ヤフー製アプリはすごく電池を消費するのでバックグラウンドでの動作を無効にする
-- Yahoo 天気
+- ウェザーニュース
     - 雨雲レーダーのウィジェット
 - Okta Verify
 - ポイントカード
     - ラクウル（ソフマップ）
     - dカード？
+- YT Music
 - Nova Launcher (入れるなら)(なんと終わってしまったので代替を探す...)
 - Pixel Watch (メインなら)
+- ~~Fitbit~~ Google Health (メインなら)
 - LINE (メインなら、引き継ぎに前端末が必要？)
 - モバイルSuica (メインなら)
 - 三井住友銀行 (メインなら)
+- PayPay (ショートメールでログインできるはず)
 
 # 入れる自作アプリ
 自作アプリは apk 作ってないのでビルドする必要あり  
@@ -132,9 +137,6 @@ tags:
 - MobileStatusWidget
 - NewRadioSupporter
 - TelephoneyManagerAPI
-- RadioLogcat
-- ShizukuDensokuApiLogger
-- LogcatPhysicalChannelConfig
 - Iroenpitu
 
 お好みで

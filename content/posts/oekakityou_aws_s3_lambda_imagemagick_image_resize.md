@@ -66,6 +66,29 @@ tags:
 ## Lambda で動く UltraHDR 付き ImageMagick をビルドする
 画像を小さくするための`ImageMagick`を`Lambda`で動くようにビルドします
 
+### 追記 2026-08-24 UltraHDR で時たま失敗するから更新した
+
+```
+magick: received nullptr for compressed img->data field `/tmp/imageYYbmgR/input.jpg' @ error/uhdr.c/ReadUHDRImage/195.
+
+    at genericNodeError (node:internal/errors:983:15)
+    at wrappedFn (node:internal/errors:537:14)
+    at ChildProcess.exithandler (node:child_process:417:12)
+    at ChildProcess.emit (node:events:519:28)
+    at maybeClose (node:internal/child_process:1101:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:304:5) {
+  code: 1,
+  killed: false,
+  signal: null,
+  cmd: 'magick -define uhdr:output-color-transfer=hlg -define uhdr:hdr-color-transfer=hlg uhdr:/tmp/imageYYbmgR/input.jpg -auto-orient -strip uhdr:/tmp/imageYYbmgR/original.jpg',
+  stdout: '',
+  stderr: "magick: received nullptr for compressed img->data field `/tmp/imageYYbmgR/input.jpg' @ error/uhdr.c/ReadUHDRImage/195.\n"
+}
+```
+
+`ImageMagick`とか`UltraHDR`を最新バージョンのソースコードにしてビルドしなおしたら調子よくなりました。  
+書いた時点からバージョンが上がってたりする、けど！手順は変わってませんでした。（ついでに更新しました！）
+
 ### Lambda で ImageMagick を動かすためには
 いま`Node.js`で画像のリサイズをしたいなら`sharp`ってのが良いらしいんですが、  
 `UltraHDR`に対応していないので今回は`ImageMagick`にします。
@@ -169,9 +192,9 @@ https://www.zlib.net/
 
 ```shell
 cd ~
-wget https://www.zlib.net/zlib-1.3.1.tar.gz
-tar xvzf zlib-1.3.1.tar.gz
-cd zlib-1.3.1
+wget https://www.zlib.net/zlib-1.3.2.tar.gz
+tar xvzf zlib-1.3.2.tar.gz
+cd zlib-1.3.2
 ./configure --prefix=/opt
 make
 make install
@@ -184,9 +207,9 @@ http://www.libpng.org/pub/png/libpng.html
 
 ```shell
 cd ~
-wget http://prdownloads.sourceforge.net/libpng/libpng-1.6.47.tar.gz
-tar xvzf libpng-1.6.47.tar.gz
-cd libpng-1.6.47
+wget http://prdownloads.sourceforge.net/libpng/libpng-1.6.58.tar.gz
+tar xvzf libpng-1.6.58.tar.gz
+cd libpng-1.6.58
 ./configure --prefix=/opt CPPFLAGS=-I/opt/include LDFLAGS=-L/opt/lib --disable-dependency-tracking --enable-shared
 make
 make install
@@ -200,9 +223,9 @@ https://developers.google.com/speed/webp/docs/compiling?hl=ja
 
 ```shell
 cd ~
-wget https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-1.5.0.tar.gz
-tar xvzf libwebp-1.5.0.tar.gz
-cd libwebp-1.5.0
+wget https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-1.6.0.tar.gz
+tar xvzf libwebp-1.6.0.tar.gz
+cd libwebp-1.6.0
 ./configure --prefix=/opt CPPFLAGS=-I/opt/include LDFLAGS=-L/opt/lib --disable-dependency-tracking --enable-shared
 make
 make install
@@ -255,52 +278,18 @@ ninja install
 
 ### ImageMagick
 ソースコードを持ってきます  
-`7.1.1-47`は最新リリースに合わせてください→ https://github.com/ImageMagick/ImageMagick/releases
+`7.1.2-29`と`ImageMagick-7.1.2`は最新リリースに合わせてください→ https://github.com/ImageMagick/ImageMagick/releases
 
 ```shell
 cd ~
-git clone --depth 1 --branch 7.1.1-47 https://github.com/ImageMagick/ImageMagick.git ImageMagick-7.1.1
-cd ImageMagick-7.1.1
+git clone --depth 1 --branch 7.1.2-29 https://github.com/ImageMagick/ImageMagick.git ImageMagick-7.1.2
+cd ImageMagick-7.1.2
 ```
 
 そうしたら、デリゲートライブラリの捜索先に`/opt/lib`を指定します。これでさっきビルドした`libjpeg`たちを発見できるはずです。  
 `export ...`の1行ですね。  
 
 `configure`は先駆者のママです。何も分からず。。これで`AWS Lambda`で動く。  
-`UltraHDR`はデフォルト無効なので`yes`を付けます。
-
-```shell
-export PKG_CONFIG_PATH=/opt/lib/pkgconfig
-./configure CPPFLAGS=-I/opt/include LDFLAGS=-L/opt/lib --prefix=/opt --disable-docs --without-modules --enable-delegate-build --without-magick-plus-plus --without-perl --without-x --without-dmr --without-heic --without-jbig --without-lcms --without-openjp2 --without-lqr --without-lzma --without-pango --without-raw --with-rsvg --without-tiff --disable-openmp --disable-dependency-tracking --with-uhdr=yes
-```
-
-![Imgur](https://imgur.com/ZC3zi6g.png)
-
-`jpeg`や`png`、`uhdr`が`yes`になっているはず。
-
-![Imgur](https://imgur.com/Qo3vPgf.png)
-
-そしたら`make`して`make install`です。
-
-```shell
-make
-make install
-```
-
-### ImageMagick
-ソースコードを持ってきます  
-`7.1.1-47`は最新リリースに合わせてください→ https://github.com/ImageMagick/ImageMagick/releases
-
-```shell
-cd ~
-git clone --depth 1 --branch 7.1.1-47 https://github.com/ImageMagick/ImageMagick.git ImageMagick-7.1.1
-cd ImageMagick-7.1.1
-```
-
-そうしたら、デリゲートライブラリの捜索先に`/opt/lib`を指定します。これでさっきビルドした`libjpeg`たちを発見できるはずです。  
-`export ...`の1行ですね。  
-
-`configure`は先駆者のママです。何も分からず。。  
 `UltraHDR`はデフォルト無効なので`yes`を付けます。
 
 ```shell
@@ -332,9 +321,9 @@ make install
 結果。
 
 ```shell
-Version: ImageMagick 7.1.1-47 Q16-HDRI x86_64 c8f4e8cb7:20250329 https://imagemagick.org
+Version: ImageMagick 7.1.2-29 Q16-HDRI x86_64 b919b37fd:20260727 https://imagemagick.org
 Copyright: (C) 1999 ImageMagick Studio LLC
-License: https://imagemagick.org/script/license.php
+License: https://imagemagick.org/license/
 Features: Cipher DPC HDRI
 Delegates (built-in): jng jpeg png uhdr webp zlib zstd
 Compiler: gcc (11.3)

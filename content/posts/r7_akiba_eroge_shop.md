@@ -45,6 +45,10 @@ tags:
 
 ![アニメイト3](https://oekakityou.negitoro.dev/resize/74494997-5cb5-4a3b-850c-febacacce418.jpg)
 
+## らしんばんで大人向けコーナーが移転
+移転先はかつてげっちゅ屋があったビルの、大通り挟んで向かいのビル。ちょっと遠い！  
+のと多分エレベーターを待たないといけない、、
+
 # お店一覧
 前回とあんまり変わってません、順番を入れ替たくらい、  
 店舗特典とか CD とかも見かけたら書いておきます。
@@ -71,7 +75,7 @@ tags:
         - 新品・中古ともに 2 階
         - CD も 2 階のすみっこにあります
         - 20:00 まで
-        - 多分階段のみ
+        - 階段のみ
 - 駿河屋
     - [駿河屋 秋葉原本館](#駿河屋秋葉原本館)
         - [https://www.suruga-ya.jp/feature/akihabara_main/index.html](https://www.suruga-ya.jp/feature/akihabara_main/index.html)
@@ -82,13 +86,20 @@ tags:
             - エレベーター捕まらない...
     - [駿河屋 秋葉原駅前店](#駿河屋秋葉原駅前店)
         - [https://www.suruga-ya.jp/feature/akihabara_ekimae/index.html](https://www.suruga-ya.jp/feature/akihabara_ekimae/index.html)
-        - CD はこちらの 2 階の奥の角っこにあります
-        - ドラマ CD が気になるなら 3 階
+        - ~~CD はこちらの 2 階の奥の角っこにあります~~ エロゲ関連は 3 階にも混ざってそう。
+            - ドラマ CD が気になるなら 3 階
         - 21:00 まで
         - 階段のみです
+- [らしんばんAKIBA DEEP BASE](#らしんばんAKIBA_DEEP_BASE)
+    - [https://www.lashinbang.com/store/196/](https://www.lashinbang.com/store/196/)
+    - 秋葉原店新館ののれんかかってたコーナーが全部こっちに来てそう
+    - 中古だけです。3 階。エロゲコーナーは奥で真ん中の列
+    - 21:00 まで
+    - エレベーターのみ。2基あります。
+    - 支払いは現金のみ
 - [らしんばん秋葉原店新館](#らしんばん秋葉原店新館)
     - [https://www.lashinbang.com/store/13/](https://www.lashinbang.com/store/13/)
-    - 中古だけです 2 階にのれんが掛かっているエリアがありそこです
+    - ~~中古だけです 2 階にのれんが掛かっているエリアがありそこです~~→エロゲ本体は`DEPP BASE`の方に移転しました。
     - CD は CD コーナーにあります
         - レジの近く
     - 21:00 まで
@@ -266,7 +277,7 @@ tags:
 
 ![トレーダー本店_2階_CD](https://oekakityou.negitoro.dev/resize/320c7372-2e67-4dfc-be9a-a8f8e7f2657c.jpg)
 
-記述時時点ですが、なんと今夏だけ20時半まで開けてくれるそうです！
+記述時時点ですが、なんと今夏（2026年もだった!）だけ20時半まで開けてくれるそうです！
 
 ![トレーダー本店_そのほか_1](https://oekakityou.negitoro.dev/resize/cd434d25-54db-414c-bf86-61cbb9d4fa0a.jpg)
 
@@ -298,6 +309,8 @@ tags:
 
 ![トレーダー本店_階段_9](https://oekakityou.negitoro.dev/resize/4928c281-acd2-44cb-b9be-73e8fa454388.jpg)
 
+![トレーダー本店_階段_10](https://oekakityou.negitoro.dev/resize/41252463-bb2d-47bc-9ef3-3b73d89af326.jpg)
+
 ![トレーダー本店_なか](https://oekakityou.negitoro.dev/resize/9695f9ee-bdea-439f-8077-a8666303e5b2.jpg)
 
 ![トレーダー本店_なか](https://oekakityou.negitoro.dev/resize/86fab377-db6b-40f0-9130-3a95a2cc7f9b.jpg)
@@ -305,6 +318,8 @@ tags:
 ![トレーダー本店_なか](https://oekakityou.negitoro.dev/resize/5e5f8106-bcbd-400d-8aaf-2fb4c2436b03.jpg)
 
 ![トレーダー本店_なか](https://oekakityou.negitoro.dev/resize/169d0ede-c9ca-425c-85c6-a128e0a8ee0c.jpg)
+
+![トレーダー本店_なか](https://oekakityou.negitoro.dev/resize/184ed11b-b82b-452b-a3db-a31edfb7e1bb.jpg)
 
 店舗予約する場合は、入口近くにある壁に予約券が並んでいるので、これをレジに持っていく。  
 前金あり、前金は現金のみ
@@ -364,7 +379,7 @@ tags:
 ![駿河屋秋葉原本館2](https://oekakityou.negitoro.dev/resize/5efe7b62-4db0-4458-abe0-b1d5b8239432.jpg)
 
 新品・中古ともに**7階**。エレベーターもなかなか来ないので多分階段を上るしか無い。  
-前の記事にも書いた1階のジャンクコーナー？ハードオフみたいなのは健在です。
+~~前の記事にも書いた1階のジャンクコーナー？ハードオフみたいなのは健在です。~~→もう無さそうかも！（2026年8月）
 
 ![駿河屋秋葉原本館3](https://oekakityou.negitoro.dev/resize/155c0db0-5f60-40a7-853f-8a692f622717.jpg)
 
@@ -387,6 +402,8 @@ tags:
 ![駿河屋秋葉原本館_エレベーター_2](https://oekakityou.negitoro.dev/resize/9c2513b2-7d6a-4918-8487-81759162594f.jpg)
 
 ![駿河屋秋葉原本館_エレベーター_3](https://oekakityou.negitoro.dev/resize/b8c1ed8a-4e8d-4eab-8c11-a4929065a42b.jpg)
+
+![駿河屋秋葉原本館_エレベーター_4](https://oekakityou.negitoro.dev/resize/404b15a1-cb48-4592-a6d0-cad9b2c41529.jpg)
 
 店舗予約ですが、前金はないです。  
 多分会員証みたいなカードを作る必要があって、買い取りしない（免許証とか見せなくて良い）カードを発行してくれるはず。
@@ -418,6 +435,23 @@ https://takusan.negitoro.dev/posts/oosaka/
 # 中古のみ
 中古のみ扱っているお店です。
 
+## らしんばんAKIBA_DEEP_BASE
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d202.50071846165216!2d139.77165380133405!3d35.70133473008221!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c1de93c0001%3A0x4d2f6cca40772e11!2z44CSMTAxLTAwMjEg5p2x5Lqs6YO95Y2D5Luj55Sw5Yy65aSW56We55Sw77yU5LiB55uu77yU4oiS77yTIOeni-iRieWOn1NpbOODk-ODqw!5e0!3m2!1sja!2sjp!4v1787332473614!5m2!1sja!2sjp" width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+![らしんばんAKIBA_DEEP_BASE1](https://oekakityou.negitoro.dev/resize/36c762e8-7ca7-48b4-95eb-cc3ed46e8543.jpg)
+
+![らしんばんAKIBA_DEEP_BASE2](https://oekakityou.negitoro.dev/resize/118f80e9-118e-4856-a042-9df3f3441efa.jpg)
+
+![らしんばんAKIBA_DEEP_BASE3](https://oekakityou.negitoro.dev/resize/09f683ec-f43c-451f-95dc-cf399a7cd3ef.jpg)
+
+ちょっと遠い！かつてげっちゅ屋があったビルの、大通り挟んで向こう側にあるビルがそう。
+
+ビルの 3 階です。多分エレベーターしかありません。エレベーターに繋がる小道を通ってエレベーターを待ちます。（なんかたむろしててエレベーターまでたどり着けないことがあって1敗）  
+エロゲコーナーは奥のショーケースの方で、真ん中の通路です。
+
+支払いは現金のみだそうです！品ぞろえは結構ありました！！  
+けっこう詰め込まれてた。
+
 ## らしんばん秋葉原店新館
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d583.9071406234767!2d139.7701823463284!3d35.6994447983057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c1dacbd172f%3A0x6abc12977417ce04!2z44KJ44GX44KT44Gw44KT56eL6JGJ5Y6f5bqX5paw6aSo!5e0!3m2!1sja!2sjp!4v1703690970066!5m2!1sja!2sjp" width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -426,8 +460,10 @@ https://takusan.negitoro.dev/posts/oosaka/
 
 ![らしんばん2](https://oekakityou.negitoro.dev/resize/bf13706d-ec99-4ccf-b6c9-cab4a2617f91.jpg)
 
-中古のみの扱いです。2階の、のれんが掛かっているエリアがそこです。  
-品揃えも中ぐらいです。エロゲコーナーそんなに広くないので。。ただ他と比べて安いほうだと思います。  
+~~中古のみの扱いです。2階の、のれんが掛かっているエリアがそこです。~~  
+~~品揃えも中ぐらいです。エロゲコーナーそんなに広くないので。。ただ他と比べて安いほうだと思います。  ~~
+
+先述の通り、エロゲコーナー含む大人向けコーナーは`らしんばんAKIBA DEEP BASE`に移転しています。
 
 CDコーナーは真ん中らへん、レジの近く  
 どういうわけか知りませんが、極稀にお宝CDというか、**豪華版についてるCD**とかが単品で売ってたりします（？？？）
@@ -593,7 +629,8 @@ PCゲームを予約するとたまにクリアファイル貰えたりする、
 なので、店舗特典のタペストリーとかを探している場合は行ってみるといいかなと思います。ソフトハウスごとに別れてて探しやすい。
 
 ただめちゃめちゃ混んでる・・エスカレーター混みすぎやろって  
-R-18 コーナーは上りエスカレーターを降りて、右側の一番端。
+R-18 コーナーは上りエスカレーターを降りて、~~右側の一番端。~~ 奥の方に進むとのれんがかかってるコーナーにたどり着くのでくぐる。  
+密度が増してる気がする。天井近くまでタペストリーが並んでるからかな。
 
 ## えきまえ
 
